@@ -1,0 +1,38 @@
+on:
+  workflow_dispatch:
+  schedule:
+    # Run at the top of the hour, every hour
+    - cron:  '0 * * * *'
+
+name: Sync with smithy-rs commits
+
+env:
+  rust_version: 1.54.0
+  rust_toolchain_components: clippy,rustfmt
+  java_version: 11
+
+jobs:
+  repo-lint:
+    name: run sync tool
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: next
+    - uses: actions/checkout@v2
+      with:
+        repository: 'awslabs/smithy-rs'
+    - uses: actions-rs/toolchain@v1
+      with:
+        toolchain: ${{ env.rust_version }}
+        components: ${{ env.rust_toolchain_components }}
+        default: true
+    - name: build sync tool
+      working-directory: smithy-rs/tools/smithy-rs-sync
+      run: |
+          cargo run -- \
+          --smithy-rs ../../ \
+          --aws-sdk ../../../aws-sdk-rust
+    - name: push commits
+      run: git push
+      working-directory: aws-sdk-rust
