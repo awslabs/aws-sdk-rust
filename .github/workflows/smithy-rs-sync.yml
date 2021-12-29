@@ -17,13 +17,13 @@ jobs:
     name: run sync tool
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout aws-sdk-rust
+    - name: checkout aws-sdk-rust
       uses: actions/checkout@v2
       with:
         ref: next
         path: aws-sdk-rust
         fetch-depth: 0
-    - name: Checkout smithy-rs
+    - name: checkout smithy-rs
       uses: actions/checkout@v2
       with:
         repository: awslabs/smithy-rs
@@ -35,6 +35,9 @@ jobs:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
+    - uses: actions/setup-java@v1
+      with:
+        java-version: ${{ env.java_version }}
     - name: build sync tool
       run: cargo build --release
       working-directory: smithy-rs/tools/smithy-rs-sync
