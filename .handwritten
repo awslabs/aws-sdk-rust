@@ -16,7 +16,7 @@ tools/
 
 _config.yml
 .gitignore
-.handwritten_files
+.handwritten
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 CODEOWNERS
