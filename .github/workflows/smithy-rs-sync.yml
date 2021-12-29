@@ -17,12 +17,17 @@ jobs:
     name: run sync tool
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout aws-sdk-rust
+      uses: actions/checkout@v2
       with:
         ref: next
-    - uses: actions/checkout@v2
+        path: aws-sdk-rust
+    - name: Checkout smithy-rs
+      uses: actions/checkout@v2
       with:
-        repository: 'awslabs/smithy-rs'
+        repository: awslabs/smithy-rs
+        ref: main
+        path: smithy-rs
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: ${{ env.rust_version }}
