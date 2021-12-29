@@ -35,12 +35,14 @@ jobs:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
-    - name: run sync tool
+    - name: build sync tool
+      run: cargo build --release
       working-directory: smithy-rs/tools/smithy-rs-sync
+    - name: run sync tool
       run: |
-          cargo run -- \
-          --smithy-rs ../../ \
-          --aws-sdk ../../../aws-sdk-rust
+        smithy-rs/target/release/smithy-rs-sync \
+          --smithy-rs smithy-rs \
+          --aws-sdk aws-sdk-rust
     - name: push commits
       run: git push
       working-directory: aws-sdk-rust
