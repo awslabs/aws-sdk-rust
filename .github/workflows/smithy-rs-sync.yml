@@ -39,6 +39,7 @@ jobs:
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
+          ls -la ../../../aws-sdk-rust
           cargo run -- \
           --smithy-rs ../../ \
           --aws-sdk ../../../aws-sdk-rust
