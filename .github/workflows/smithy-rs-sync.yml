@@ -35,7 +35,6 @@ jobs:
         default: true
     - run: |
           pwd
-          cd ..
           ls -la
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
