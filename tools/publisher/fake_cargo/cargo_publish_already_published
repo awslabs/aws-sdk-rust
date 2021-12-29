@@ -1,3 +1,0 @@
-#!/bin/bash
-echo 'error: crate version `0.0.22-alpha` is already uploaded'
-exit 1
