@@ -33,13 +33,12 @@ jobs:
         toolchain: ${{ env.rust_version }}
         components: ${{ env.rust_toolchain_components }}
         default: true
-    - run: |
-          pwd
-          ls -la
+    - name: 'smithy-rs: run git fetch --all'
+      working-directory: smithy-rs
+      run: git fetch --all
     - name: run sync tool
       working-directory: smithy-rs/tools/smithy-rs-sync
       run: |
-          ls -la ../../../aws-sdk-rust
           cargo run -- \
           --smithy-rs ../../ \
           --aws-sdk ../../../aws-sdk-rust
