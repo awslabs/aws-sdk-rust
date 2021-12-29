@@ -44,8 +44,8 @@ jobs:
     - name: run sync tool
       run: |
         smithy-rs/target/release/smithy-rs-sync \
-          --smithy-rs smithy-rs \
-          --aws-sdk aws-sdk-rust
+          --smithy-rs /home/runner/work/aws-sdk-rust/aws-sdk-rust/smithy-rs \
+          --aws-sdk /home/runner/work/aws-sdk-rust/aws-sdk-rust/aws-sdk-rust
     - name: push commits
       run: git push
       working-directory: aws-sdk-rust
