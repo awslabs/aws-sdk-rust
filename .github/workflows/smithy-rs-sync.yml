@@ -41,6 +41,8 @@ jobs:
     - name: build sync tool
       run: cargo build --release
       working-directory: smithy-rs/tools/smithy-rs-sync
+    - name: cat .handwritten
+      run: cat aws-sdk-rust/.handwritten
     - name: run sync tool
       run: |
         smithy-rs/target/release/smithy-rs-sync \
