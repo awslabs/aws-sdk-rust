@@ -9,10 +9,8 @@ mod assume_role;
 
 pub use assume_role::{AssumeRoleProvider, AssumeRoleProviderBuilder};
 
-#[cfg(feature = "profile")]
 use aws_sdk_sts::middleware::DefaultMiddleware;
 
-#[cfg(feature = "profile")]
 impl crate::provider_config::ProviderConfig {
     pub(crate) fn sdk_client(
         &self,

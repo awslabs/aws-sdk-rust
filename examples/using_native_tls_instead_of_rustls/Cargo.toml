@@ -12,7 +12,7 @@ tracing-subscriber = "0.2.18"
 [dependencies.aws-config]
 path = "../../sdk/aws-config"
 default-features = false
-features = ["default-provider", "native-tls", "rt-tokio"]
+features = ["native-tls", "rt-tokio"]
 version = "0.3.0"
 
 [dependencies.aws-sdk-s3]

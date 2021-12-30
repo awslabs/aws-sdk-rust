@@ -66,13 +66,6 @@ impl HttpConnector {
         match self {
             HttpConnector::Prebuilt(conn) => conn.clone(),
             HttpConnector::ConnectorFn(func) => func(settings, sleep),
-            #[cfg(feature = "tcp-connector")]
-            HttpConnector::TcpConnector(connection) => Some(DynConnector::new(
-                aws_smithy_client::hyper_ext::Adapter::builder()
-                    .timeout(&settings.timeout_settings)
-                    .sleep_impl(sleep.unwrap())
-                    .build(connection.clone()),
-            )),
         }
     }
 }
@@ -146,7 +139,7 @@ impl ProviderConfig {
     ///
     /// # Examples
     /// ```no_run
-    /// # #[cfg(all(feature = "default-provider", any(feature = "rustls", feature = "native-tls")))]
+    /// # #[cfg(any(feature = "rustls", feature = "native-tls"))]
     /// # fn example() {
     /// use aws_config::provider_config::ProviderConfig;
     /// use aws_sdk_sts::Region;
@@ -184,7 +177,6 @@ impl ProviderConfig {
     /// let credential_provider = WebIdentityTokenCredentialsProvider::builder().configure(&conf).build();
     /// }
     /// ```
-    #[cfg(feature = "default-provider")]
     pub async fn with_default_region() -> Self {
         Self::without_region().load_default_region().await
     }
@@ -233,7 +225,6 @@ impl ProviderConfig {
         self
     }
 
-    #[cfg(feature = "default-provider")]
     /// Use the [default region chain](crate::default_provider::region) to set the
     /// region for this configuration
     ///

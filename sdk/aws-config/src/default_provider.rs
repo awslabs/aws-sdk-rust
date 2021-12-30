@@ -697,7 +697,6 @@ pub mod credentials {
 
         #[tokio::test]
         #[traced_test]
-        #[cfg(feature = "tcp-connector")]
         async fn no_providers_configured_err() {
             use aws_smithy_async::rt::sleep::TokioSleep;
             use aws_smithy_client::erase::boxclone::BoxCloneService;

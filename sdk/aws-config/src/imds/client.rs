@@ -457,7 +457,6 @@ impl Builder {
     ///
     /// # Examples
     /// ```no_run
-    /// # #[cfg(feature = "default-provider")]
     /// # async fn test() {
     /// use aws_config::imds::Client;
     /// use aws_config::provider_config::ProviderConfig;

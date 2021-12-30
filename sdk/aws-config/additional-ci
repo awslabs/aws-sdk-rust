@@ -15,4 +15,4 @@ echo "### Testing with all features enabled"
 cargo test --all-features
 
 echo "### Testing each feature in isolation"
-cargo hack test --each-feature --skip default
+cargo hack test --feature-powerset

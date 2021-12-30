@@ -17,14 +17,12 @@
 //!
 //! Load default SDK configuration:
 //! ```no_run
-//! # #[cfg(feature = "default-provider")]
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
 //! #     pub fn new(config: &aws_types::config::Config) -> Self { Client }
 //! #   }
 //! # }
-//! # #[cfg(feature = "default-provider")]
 //! # async fn docs() {
 //! let config = aws_config::load_from_env().await;
 //! let client = aws_sdk_dynamodb::Client::new(&config);
@@ -33,14 +31,12 @@
 //!
 //! Load SDK configuration with a region override:
 //! ```no_run
-//! # #[cfg(feature = "default-provider")]
 //! # mod aws_sdk_dynamodb {
 //! #   pub struct Client;
 //! #   impl Client {
 //! #     pub fn new(config: &aws_types::config::Config) -> Self { Client }
 //! #   }
 //! # }
-//! # #[cfg(feature = "default-provider")]
 //! # async fn docs() {
 //! # use aws_config::meta::region::RegionProviderChain;
 //! let region_provider = RegionProviderChain::default_provider().or_else("us-east-1");
@@ -53,7 +49,6 @@
 const PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 
 /// Providers that implement the default AWS provider chain
-#[cfg(feature = "default-provider")]
 pub mod default_provider;
 
 /// Providers that load configuration from environment variables
@@ -62,32 +57,25 @@ pub mod environment;
 /// Meta-providers that augment existing providers with new behavior
 pub mod meta;
 
-#[cfg(feature = "profile")]
 pub mod profile;
 
-#[cfg(feature = "sts")]
 pub mod sts;
 
-#[cfg(all(test, feature = "default-provider"))]
+#[cfg(test)]
 mod test_case;
 
-#[cfg(feature = "web-identity-token")]
 pub mod web_identity_token;
 
-#[cfg(feature = "http-provider")]
 pub mod ecs;
 
 pub mod provider_config;
 
 mod cache;
 
-#[cfg(feature = "imds")]
 pub mod imds;
 
-#[cfg(any(feature = "http-provider", feature = "imds"))]
 mod json_credentials;
 
-#[cfg(feature = "http-provider")]
 mod http_provider;
 
 // Re-export types from smithy-types
@@ -107,7 +95,6 @@ pub use aws_types::config::Config;
 /// let config = aws_config::from_env().region("us-east-1").load().await;
 /// # }
 /// ```
-#[cfg(feature = "default-provider")]
 pub fn from_env() -> ConfigLoader {
     ConfigLoader::default()
 }
@@ -115,16 +102,13 @@ pub fn from_env() -> ConfigLoader {
 /// Load a default configuration from the environment
 ///
 /// Convenience wrapper equivalent to `aws_config::from_env().load().await`
-#[cfg(feature = "default-provider")]
 pub async fn load_from_env() -> aws_types::config::Config {
     from_env().load().await
 }
 
-#[cfg(feature = "default-provider")]
 /// Load default sources for all configuration with override support
 pub use loader::ConfigLoader;
 
-#[cfg(feature = "default-provider")]
 mod loader {
     use std::sync::Arc;
 

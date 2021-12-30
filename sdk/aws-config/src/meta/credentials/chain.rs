@@ -21,7 +21,6 @@ use tracing::Instrument;
 /// # Examples
 ///
 /// ```no_run
-/// # #[cfg(feature = "profile")]
 /// # fn example() {
 /// use aws_config::meta::credentials::CredentialsProviderChain;
 /// use aws_config::environment::credentials::EnvironmentVariableCredentialsProvider;
@@ -58,7 +57,6 @@ impl CredentialsProviderChain {
     }
 
     /// Add a fallback to the default provider chain
-    #[cfg(feature = "default-provider")]
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub async fn or_default_provider(self) -> Self {
         self.or_else(
@@ -68,7 +66,6 @@ impl CredentialsProviderChain {
     }
 
     /// Creates a credential provider chain that starts with the default provider
-    #[cfg(feature = "default-provider")]
     #[cfg(any(feature = "rustls", feature = "native-tls"))]
     pub async fn default_provider() -> Self {
         Self::first_try(

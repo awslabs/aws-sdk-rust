@@ -15,7 +15,6 @@ use tracing::Instrument;
 /// # Examples
 ///
 /// ```no_run
-/// # #[cfg(feature = "default-provider")]
 /// # fn example() {
 /// use aws_types::region::Region;
 /// use std::env;
@@ -64,13 +63,11 @@ impl RegionProviderChain {
     }
 
     /// Create a region provider chain that starts by checking the default provider.
-    #[cfg(feature = "default-provider")]
     pub fn default_provider() -> Self {
         Self::first_try(crate::default_provider::region::default_provider())
     }
 
     /// Fallback to the default provider
-    #[cfg(feature = "default-provider")]
     pub fn or_default_provider(mut self) -> Self {
         self.providers
             .push(Box::new(crate::default_provider::region::default_provider()));
