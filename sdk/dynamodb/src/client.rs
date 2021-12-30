@@ -574,9 +574,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -965,9 +965,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -1277,9 +1277,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -1320,9 +1320,9 @@ pub mod fluent_builders {
         /// default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            signature: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(signature);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
@@ -1426,8 +1426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table.</p>
@@ -1436,8 +1436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specified name for the backup.</p>
-        pub fn backup_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_name(signature.into());
+        pub fn backup_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_name(input.into());
             self
         }
         /// <p>Specified name for the backup.</p>
@@ -1562,8 +1562,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(signature.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input.into());
             self
         }
         /// <p>The global table name.</p>
@@ -1681,8 +1681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table to create.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to create.</p>
@@ -2077,8 +2077,8 @@ pub mod fluent_builders {
         /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, signature: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode(signature);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode(input);
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage
@@ -2113,9 +2113,9 @@ pub mod fluent_builders {
         /// Guide</i>.</p>
         pub fn provisioned_throughput(
             mut self,
-            signature: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput(signature);
+            self.inner = self.inner.provisioned_throughput(input);
             self
         }
         /// <p>Represents the provisioned throughput settings for a specified table or index. The
@@ -2169,11 +2169,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn stream_specification(
-            mut self,
-            signature: crate::model::StreamSpecification,
-        ) -> Self {
-            self.inner = self.inner.stream_specification(signature);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.inner = self.inner.stream_specification(input);
             self
         }
         /// <p>The settings for DynamoDB Streams on the table. These settings consist of:</p>
@@ -2220,8 +2217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the settings used to enable server-side encryption.</p>
-        pub fn sse_specification(mut self, signature: crate::model::SseSpecification) -> Self {
-            self.inner = self.inner.sse_specification(signature);
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
+            self.inner = self.inner.sse_specification(input);
             self
         }
         /// <p>Represents the settings used to enable server-side encryption.</p>
@@ -2253,8 +2250,8 @@ pub mod fluent_builders {
         }
         /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
         /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-        pub fn table_class(mut self, signature: crate::model::TableClass) -> Self {
-            self.inner = self.inner.table_class(signature);
+        pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.inner = self.inner.table_class(input);
             self
         }
         /// <p>The table class of the new table. Valid values are <code>STANDARD</code> and
@@ -2329,8 +2326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN associated with the backup.</p>
-        pub fn backup_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(signature.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input.into());
             self
         }
         /// <p>The ARN associated with the backup.</p>
@@ -2409,8 +2406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table from which to delete the item.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table from which to delete the item.</p>
@@ -2484,11 +2481,8 @@ pub mod fluent_builders {
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn conditional_operator(
-            mut self,
-            signature: crate::model::ConditionalOperator,
-        ) -> Self {
-            self.inner = self.inner.conditional_operator(signature);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
@@ -2520,8 +2514,8 @@ pub mod fluent_builders {
         /// however, <code>DeleteItem</code> does not recognize any values other than
         /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, signature: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(signature);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
@@ -2577,9 +2571,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -2620,9 +2614,9 @@ pub mod fluent_builders {
         /// default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            signature: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(signature);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
@@ -2659,8 +2653,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(signature.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input.into());
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>DeleteItem</code>
@@ -2954,8 +2948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to delete.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to delete.</p>
@@ -3026,8 +3020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(signature.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
@@ -3108,8 +3102,8 @@ pub mod fluent_builders {
         }
         /// <p>Name of the table for which the customer wants to check the continuous backups and
         /// point in time recovery settings.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Name of the table for which the customer wants to check the continuous backups and
@@ -3180,8 +3174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to describe.</p>
@@ -3190,8 +3184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the global secondary index to describe, if applicable.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the global secondary index to describe, if applicable.</p>
@@ -3320,8 +3314,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
-        pub fn export_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_arn(signature.into());
+        pub fn export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the export.</p>
@@ -3395,8 +3389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table.</p>
-        pub fn global_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(signature.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input.into());
             self
         }
         /// <p>The name of the global table.</p>
@@ -3472,8 +3466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table to describe.</p>
-        pub fn global_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(signature.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input.into());
             self
         }
         /// <p>The name of the global table to describe.</p>
@@ -3547,8 +3541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table being described.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table being described.</p>
@@ -3759,8 +3753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to describe.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to describe.</p>
@@ -3833,8 +3827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table.</p>
@@ -3903,8 +3897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to be described.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to be described.</p>
@@ -3976,8 +3970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the DynamoDB table.</p>
@@ -3986,8 +3980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
@@ -4059,8 +4053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DynamoDB table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the DynamoDB table.</p>
@@ -4069,8 +4063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN for a Kinesis data stream.</p>
@@ -4140,8 +4134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The PartiQL statement representing the operation to run.</p>
-        pub fn statement(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement(signature.into());
+        pub fn statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement(input.into());
             self
         }
         /// <p>The PartiQL statement representing the operation to run.</p>
@@ -4168,8 +4162,8 @@ pub mod fluent_builders {
         }
         /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
         /// consistent read is used; otherwise, an eventually consistent read is used.</p>
-        pub fn consistent_read(mut self, signature: bool) -> Self {
-            self.inner = self.inner.consistent_read(signature);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
         /// <p>The consistency of a read operation. If set to <code>true</code>, then a strongly
@@ -4180,8 +4174,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
         /// statement response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
@@ -4217,9 +4211,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -4340,8 +4334,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
         /// statement response.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Set this value to get remaining results, if <code>NextToken</code> was returned in the
@@ -4357,9 +4351,9 @@ pub mod fluent_builders {
         /// returned in the response. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html">TransactGetItems</a> and <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html">TransactWriteItems</a>.</p>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is
@@ -4434,8 +4428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
-        pub fn table_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_arn(signature.into());
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the table to export.</p>
@@ -4445,8 +4439,8 @@ pub mod fluent_builders {
         }
         /// <p>Time in the past from which to export table data. The table export will be a snapshot
         /// of the table's state at this point in time.</p>
-        pub fn export_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.export_time(signature);
+        pub fn export_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.export_time(input);
             self
         }
         /// <p>Time in the past from which to export table data. The table export will be a snapshot
@@ -4468,8 +4462,8 @@ pub mod fluent_builders {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 8-hour idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Providing a <code>ClientToken</code> makes the call to
@@ -4487,8 +4481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(signature.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
@@ -4498,8 +4492,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
         /// stored in.</p>
-        pub fn s3_bucket_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_owner(signature.into());
+        pub fn s3_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_owner(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the bucket the export will be
@@ -4513,8 +4507,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
         /// snapshot.</p>
-        pub fn s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(signature.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input.into());
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported
@@ -4537,8 +4531,8 @@ pub mod fluent_builders {
         /// keys</p>
         /// </li>
         /// </ul>
-        pub fn s3_sse_algorithm(mut self, signature: crate::model::S3SseAlgorithm) -> Self {
-            self.inner = self.inner.s3_sse_algorithm(signature);
+        pub fn s3_sse_algorithm(mut self, input: crate::model::S3SseAlgorithm) -> Self {
+            self.inner = self.inner.s3_sse_algorithm(input);
             self
         }
         /// <p>Type of encryption used on the bucket where export data will be stored. Valid values
@@ -4564,8 +4558,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
         /// export data will be stored (if applicable).</p>
-        pub fn s3_sse_kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_sse_kms_key_id(signature.into());
+        pub fn s3_sse_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_sse_kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS managed key used to encrypt the S3 bucket where
@@ -4579,8 +4573,8 @@ pub mod fluent_builders {
         }
         /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
         /// <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
-        pub fn export_format(mut self, signature: crate::model::ExportFormat) -> Self {
-            self.inner = self.inner.export_format(signature);
+        pub fn export_format(mut self, input: crate::model::ExportFormat) -> Self {
+            self.inner = self.inner.export_format(input);
             self
         }
         /// <p>The format for the exported data. Valid values for <code>ExportFormat</code> are
@@ -4660,8 +4654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the requested item.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table containing the requested item.</p>
@@ -4726,8 +4720,8 @@ pub mod fluent_builders {
         /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
         /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
         /// reads.</p>
-        pub fn consistent_read(mut self, signature: bool) -> Self {
-            self.inner = self.inner.consistent_read(signature);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
         /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
@@ -4764,9 +4758,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -4808,8 +4802,8 @@ pub mod fluent_builders {
         /// requested attributes are not found, they do not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(signature.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input.into());
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These
@@ -5016,8 +5010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The backups from the table specified by <code>TableName</code> are listed. </p>
@@ -5026,8 +5020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of backups to return at once.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Maximum number of backups to return at once.</p>
@@ -5037,8 +5031,8 @@ pub mod fluent_builders {
         }
         /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
         /// inclusive.</p>
-        pub fn time_range_lower_bound(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.time_range_lower_bound(signature);
+        pub fn time_range_lower_bound(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.time_range_lower_bound(input);
             self
         }
         /// <p>Only backups created after this time are listed. <code>TimeRangeLowerBound</code> is
@@ -5052,8 +5046,8 @@ pub mod fluent_builders {
         }
         /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
         /// exclusive. </p>
-        pub fn time_range_upper_bound(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.time_range_upper_bound(signature);
+        pub fn time_range_upper_bound(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.time_range_upper_bound(input);
             self
         }
         /// <p>Only backups created before this time are listed. <code>TimeRangeUpperBound</code> is
@@ -5071,11 +5065,8 @@ pub mod fluent_builders {
         /// of results. This value may be specified as the <code>ExclusiveStartBackupArn</code> of a
         /// new <code>ListBackups</code> operation in order to fetch the next page of results.
         /// </p>
-        pub fn exclusive_start_backup_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_backup_arn(signature.into());
+        pub fn exclusive_start_backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_backup_arn(input.into());
             self
         }
         /// <p>
@@ -5107,8 +5098,8 @@ pub mod fluent_builders {
         /// <code>ALL</code> - All types of on-demand backups (USER and SYSTEM).</p>
         /// </li>
         /// </ul>
-        pub fn backup_type(mut self, signature: crate::model::BackupTypeFilter) -> Self {
-            self.inner = self.inner.backup_type(signature);
+        pub fn backup_type(mut self, input: crate::model::BackupTypeFilter) -> Self {
+            self.inner = self.inner.backup_type(input);
             self
         }
         /// <p>The backups from the table specified by <code>BackupType</code> are listed.</p>
@@ -5196,8 +5187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table.</p>
@@ -5206,8 +5197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to for the desired page, if there is one.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to for the desired page, if there is one.</p>
@@ -5216,8 +5207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to return per page.</p>
@@ -5286,8 +5277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
-        pub fn table_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_arn(signature.into());
+        pub fn table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the exported table.</p>
@@ -5296,8 +5287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to return per page.</p>
@@ -5308,8 +5299,8 @@ pub mod fluent_builders {
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to <code>ListExports</code>. When provided in this manner, the API fetches the next
         /// page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
@@ -5386,11 +5377,9 @@ pub mod fluent_builders {
         /// <p>The first global table name that this operation will evaluate.</p>
         pub fn exclusive_start_global_table_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .exclusive_start_global_table_name(signature.into());
+            self.inner = self.inner.exclusive_start_global_table_name(input.into());
             self
         }
         /// <p>The first global table name that this operation will evaluate.</p>
@@ -5407,8 +5396,8 @@ pub mod fluent_builders {
         /// operation and returns the table names collected up to that point, with a table name in
         /// the <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to the
         /// <code>ExclusiveStartGlobalTableName</code> parameter.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of table names to return, if the parameter is not specified
@@ -5422,8 +5411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lists the global tables in a specific Region.</p>
-        pub fn region_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(signature.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input.into());
             self
         }
         /// <p>Lists the global tables in a specific Region.</p>
@@ -5496,11 +5485,8 @@ pub mod fluent_builders {
         /// <p>The first table name that this operation will evaluate. Use the value that was
         /// returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you
         /// can obtain the next page of results.</p>
-        pub fn exclusive_start_table_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_table_name(signature.into());
+        pub fn exclusive_start_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_table_name(input.into());
             self
         }
         /// <p>The first table name that this operation will evaluate. Use the value that was
@@ -5515,8 +5501,8 @@ pub mod fluent_builders {
         }
         /// <p>A maximum number of table names to return. If this parameter is not specified, the
         /// limit is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>A maximum number of table names to return. If this parameter is not specified, the
@@ -5590,8 +5576,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
         /// Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon DynamoDB resource with tags to be listed. This value is an Amazon Resource
@@ -5603,8 +5589,8 @@ pub mod fluent_builders {
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
         /// call to ListTagOfResource. When provided in this manner, this API fetches the next page
         /// of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional string that, if supplied, must be copied from the output of a previous
@@ -5749,8 +5735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to contain the item.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to contain the item.</p>
@@ -5867,8 +5853,8 @@ pub mod fluent_builders {
         /// however, <code>PutItem</code> does not recognize any values other than
         /// <code>NONE</code> or <code>ALL_OLD</code>.</p>
         /// </note>
-        pub fn return_values(mut self, signature: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(signature);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appeared
@@ -5927,9 +5913,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -5970,9 +5956,9 @@ pub mod fluent_builders {
         /// default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            signature: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(signature);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
@@ -5989,11 +5975,8 @@ pub mod fluent_builders {
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn conditional_operator(
-            mut self,
-            signature: crate::model::ConditionalOperator,
-        ) -> Self {
-            self.inner = self.inner.conditional_operator(signature);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
@@ -6029,8 +6012,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information on condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Condition Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(signature.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input.into());
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional <code>PutItem</code>
@@ -6357,8 +6340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the requested items.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table containing the requested items.</p>
@@ -6370,8 +6353,8 @@ pub mod fluent_builders {
         /// secondary index on the table. Note that if you use the <code>IndexName</code> parameter,
         /// you must also provide <code>TableName.</code>
         /// </p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of an index to query. This index can be any local secondary index or global
@@ -6435,8 +6418,8 @@ pub mod fluent_builders {
         /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
         /// value for <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, signature: crate::model::Select) -> Self {
-            self.inner = self.inner.select(signature);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.inner = self.inner.select(input);
             self
         }
         /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
@@ -6526,8 +6509,8 @@ pub mod fluent_builders {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query and Scan</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching
@@ -6549,8 +6532,8 @@ pub mod fluent_builders {
         /// <p>Strongly consistent reads are not supported on global secondary indexes. If you query
         /// a global secondary index with <code>ConsistentRead</code> set to <code>true</code>, you
         /// will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, signature: bool) -> Self {
-            self.inner = self.inner.consistent_read(signature);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
         /// <p>Determines the read consistency model: If set to <code>true</code>, then the operation
@@ -6620,11 +6603,8 @@ pub mod fluent_builders {
         /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn conditional_operator(
-            mut self,
-            signature: crate::model::ConditionalOperator,
-        ) -> Self {
-            self.inner = self.inner.conditional_operator(signature);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
@@ -6648,8 +6628,8 @@ pub mod fluent_builders {
         /// the order in which they are stored (by sort key value). This is the default behavior. If
         /// <code>ScanIndexForward</code> is <code>false</code>, DynamoDB reads the results in
         /// reverse order by sort key value, and then returns the results to the client.</p>
-        pub fn scan_index_forward(mut self, signature: bool) -> Self {
-            self.inner = self.inner.scan_index_forward(signature);
+        pub fn scan_index_forward(mut self, input: bool) -> Self {
+            self.inner = self.inner.scan_index_forward(input);
             self
         }
         /// <p>Specifies the order for index traversal: If <code>true</code> (default), the traversal
@@ -6723,9 +6703,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -6767,8 +6747,8 @@ pub mod fluent_builders {
         /// the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Accessing Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(signature.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input.into());
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the table. These
@@ -6797,8 +6777,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(signature.into());
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Query</code>
@@ -6942,11 +6922,8 @@ pub mod fluent_builders {
         /// <code>ExpressionAttributeValues</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ExpressionPlaceholders.html">Using
         /// Placeholders for Attribute Names and Values</a> in the <i>Amazon DynamoDB
         /// Developer Guide</i>.</p>
-        pub fn key_condition_expression(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.key_condition_expression(signature.into());
+        pub fn key_condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_condition_expression(input.into());
             self
         }
         /// <p>The condition that specifies the key values for items to be retrieved by the
@@ -7345,8 +7322,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new table to which the backup must be restored.</p>
-        pub fn target_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_table_name(signature.into());
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_table_name(input.into());
             self
         }
         /// <p>The name of the new table to which the backup must be restored.</p>
@@ -7358,8 +7335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
-        pub fn backup_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_arn(signature.into());
+        pub fn backup_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) associated with the backup.</p>
@@ -7368,8 +7345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, signature: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode_override(signature);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode_override(input);
             self
         }
         /// <p>The billing mode of the restored table.</p>
@@ -7431,9 +7408,9 @@ pub mod fluent_builders {
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            signature: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput_override(signature);
+            self.inner = self.inner.provisioned_throughput_override(input);
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
@@ -7445,11 +7422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(
-            mut self,
-            signature: crate::model::SseSpecification,
-        ) -> Self {
-            self.inner = self.inner.sse_specification_override(signature);
+        pub fn sse_specification_override(mut self, input: crate::model::SseSpecification) -> Self {
+            self.inner = self.inner.sse_specification_override(input);
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
@@ -7572,8 +7546,8 @@ pub mod fluent_builders {
         }
         /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
         /// (ARN).</p>
-        pub fn source_table_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_table_arn(signature.into());
+        pub fn source_table_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_arn(input.into());
             self
         }
         /// <p>The DynamoDB table that will be restored. This value is an Amazon Resource Name
@@ -7586,8 +7560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the source table that is being restored.</p>
-        pub fn source_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_table_name(signature.into());
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_name(input.into());
             self
         }
         /// <p>Name of the source table that is being restored.</p>
@@ -7599,8 +7573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new table to which it must be restored to.</p>
-        pub fn target_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_table_name(signature.into());
+        pub fn target_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_table_name(input.into());
             self
         }
         /// <p>The name of the new table to which it must be restored to.</p>
@@ -7613,8 +7587,8 @@ pub mod fluent_builders {
         }
         /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
         /// is typically 5 minutes before the current time. </p>
-        pub fn use_latest_restorable_time(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(signature);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
         /// <p>Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
@@ -7624,8 +7598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Time in the past to restore the table to.</p>
-        pub fn restore_date_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.restore_date_time(signature);
+        pub fn restore_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.restore_date_time(input);
             self
         }
         /// <p>Time in the past to restore the table to.</p>
@@ -7637,8 +7611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The billing mode of the restored table.</p>
-        pub fn billing_mode_override(mut self, signature: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode_override(signature);
+        pub fn billing_mode_override(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode_override(input);
             self
         }
         /// <p>The billing mode of the restored table.</p>
@@ -7700,9 +7674,9 @@ pub mod fluent_builders {
         /// <p>Provisioned throughput settings for the restored table.</p>
         pub fn provisioned_throughput_override(
             mut self,
-            signature: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput_override(signature);
+            self.inner = self.inner.provisioned_throughput_override(input);
             self
         }
         /// <p>Provisioned throughput settings for the restored table.</p>
@@ -7714,11 +7688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
-        pub fn sse_specification_override(
-            mut self,
-            signature: crate::model::SseSpecification,
-        ) -> Self {
-            self.inner = self.inner.sse_specification_override(signature);
+        pub fn sse_specification_override(mut self, input: crate::model::SseSpecification) -> Self {
+            self.inner = self.inner.sse_specification_override(input);
             self
         }
         /// <p>The new server-side encryption settings for the restored table.</p>
@@ -7816,8 +7787,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table containing the requested items; or, if you provide
         /// <code>IndexName</code>, the name of the table to which that index belongs.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table containing the requested items; or, if you provide
@@ -7829,8 +7800,8 @@ pub mod fluent_builders {
         /// <p>The name of a secondary index to scan. This index can be any local secondary index or
         /// global secondary index. Note that if you use the <code>IndexName</code> parameter, you
         /// must also provide <code>TableName</code>.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of a secondary index to scan. This index can be any local secondary index or
@@ -7870,8 +7841,8 @@ pub mod fluent_builders {
         /// to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent
         /// operation to continue the operation. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Working with Queries</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to evaluate (not necessarily the number of matching
@@ -7940,8 +7911,8 @@ pub mod fluent_builders {
         /// <code>Select</code> can only be <code>SPECIFIC_ATTRIBUTES</code>. Any other
         /// value for <code>Select</code> will return an error.</p>
         /// </note>
-        pub fn select(mut self, signature: crate::model::Select) -> Self {
-            self.inner = self.inner.select(signature);
+        pub fn select(mut self, input: crate::model::Select) -> Self {
+            self.inner = self.inner.select(input);
             self
         }
         /// <p>The attributes to be returned in the result. You can retrieve all item attributes,
@@ -8031,11 +8002,8 @@ pub mod fluent_builders {
         /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn conditional_operator(
-            mut self,
-            signature: crate::model::ConditionalOperator,
-        ) -> Self {
-            self.inner = self.inner.conditional_operator(signature);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         /// <p>This is a legacy parameter. Use <code>FilterExpression</code> instead. For more
@@ -8112,9 +8080,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -8160,8 +8128,8 @@ pub mod fluent_builders {
         /// <code>Scan</code> operation will be sequential rather than parallel.</p>
         /// <p>If you specify <code>TotalSegments</code>, you must also specify
         /// <code>Segment</code>.</p>
-        pub fn total_segments(mut self, signature: i32) -> Self {
-            self.inner = self.inner.total_segments(signature);
+        pub fn total_segments(mut self, input: i32) -> Self {
+            self.inner = self.inner.total_segments(input);
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>TotalSegments</code> represents the
@@ -8192,8 +8160,8 @@ pub mod fluent_builders {
         /// the value provided for <code>TotalSegments</code>.</p>
         /// <p>If you provide <code>Segment</code>, you must also provide
         /// <code>TotalSegments</code>.</p>
-        pub fn segment(mut self, signature: i32) -> Self {
-            self.inner = self.inner.segment(signature);
+        pub fn segment(mut self, input: i32) -> Self {
+            self.inner = self.inner.segment(input);
             self
         }
         /// <p>For a parallel <code>Scan</code> request, <code>Segment</code> identifies an
@@ -8220,8 +8188,8 @@ pub mod fluent_builders {
         /// the requested attributes are not found, they will not appear in the result.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html">Specifying Item Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn projection_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.projection_expression(signature.into());
+        pub fn projection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.projection_expression(input.into());
             self
         }
         /// <p>A string that identifies one or more attributes to retrieve from the specified table
@@ -8248,8 +8216,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#FilteringResults">Filter
         /// Expressions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn filter_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_expression(signature.into());
+        pub fn filter_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_expression(input.into());
             self
         }
         /// <p>A string that contains conditions that DynamoDB applies after the <code>Scan</code>
@@ -8469,8 +8437,8 @@ pub mod fluent_builders {
         /// <p>The <code>ConsistentRead</code> parameter is not supported on global secondary
         /// indexes. If you scan a global secondary index with <code>ConsistentRead</code> set to
         /// true, you will receive a <code>ValidationException</code>.</p>
-        pub fn consistent_read(mut self, signature: bool) -> Self {
-            self.inner = self.inner.consistent_read(signature);
+        pub fn consistent_read(mut self, input: bool) -> Self {
+            self.inner = self.inner.consistent_read(input);
             self
         }
         /// <p>A Boolean value that determines the read consistency model during the scan:</p>
@@ -8562,8 +8530,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
         /// an Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Identifies the Amazon DynamoDB resource to which tags should be added. This value is
@@ -8699,9 +8667,9 @@ pub mod fluent_builders {
         /// value is valid.</p>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>A value of <code>TOTAL</code> causes consumed capacity information to be returned, and
@@ -8901,9 +8869,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -8944,9 +8912,9 @@ pub mod fluent_builders {
         /// default), no statistics are returned. </p>
         pub fn return_item_collection_metrics(
             mut self,
-            signature: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(signature);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
@@ -8977,8 +8945,8 @@ pub mod fluent_builders {
         /// <p>If you submit a request with the same client token but a change in other parameters
         /// within the 10-minute idempotency window, DynamoDB returns an
         /// <code>IdempotentParameterMismatch</code> exception.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Providing a <code>ClientRequestToken</code> makes the call to
@@ -9070,8 +9038,8 @@ pub mod fluent_builders {
         }
         /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
         /// Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The DynamoDB resource that the tags will be removed from. This value is an Amazon
@@ -9171,8 +9139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table.</p>
@@ -9183,9 +9151,9 @@ pub mod fluent_builders {
         /// <p>Represents the settings used to enable point in time recovery.</p>
         pub fn point_in_time_recovery_specification(
             mut self,
-            signature: crate::model::PointInTimeRecoverySpecification,
+            input: crate::model::PointInTimeRecoverySpecification,
         ) -> Self {
-            self.inner = self.inner.point_in_time_recovery_specification(signature);
+            self.inner = self.inner.point_in_time_recovery_specification(input);
             self
         }
         /// <p>Represents the settings used to enable point in time recovery.</p>
@@ -9262,8 +9230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table.</p>
@@ -9272,8 +9240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The global secondary index name, if applicable.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The global secondary index name, if applicable.</p>
@@ -9284,9 +9252,9 @@ pub mod fluent_builders {
         /// <p>Represents the contributor insights action.</p>
         pub fn contributor_insights_action(
             mut self,
-            signature: crate::model::ContributorInsightsAction,
+            input: crate::model::ContributorInsightsAction,
         ) -> Self {
-            self.inner = self.inner.contributor_insights_action(signature);
+            self.inner = self.inner.contributor_insights_action(input);
             self
         }
         /// <p>Represents the contributor insights action.</p>
@@ -9381,8 +9349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The global table name.</p>
-        pub fn global_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(signature.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input.into());
             self
         }
         /// <p>The global table name.</p>
@@ -9471,8 +9439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the global table</p>
-        pub fn global_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_table_name(signature.into());
+        pub fn global_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_table_name(input.into());
             self
         }
         /// <p>The name of the global table</p>
@@ -9499,8 +9467,8 @@ pub mod fluent_builders {
         /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
         /// </li>
         /// </ul>
-        pub fn global_table_billing_mode(mut self, signature: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.global_table_billing_mode(signature);
+        pub fn global_table_billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.global_table_billing_mode(input);
             self
         }
         /// <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
@@ -9529,10 +9497,10 @@ pub mod fluent_builders {
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a
         /// <code>ThrottlingException.</code>
         /// </p>
-        pub fn global_table_provisioned_write_capacity_units(mut self, signature: i64) -> Self {
+        pub fn global_table_provisioned_write_capacity_units(mut self, input: i64) -> Self {
             self.inner = self
                 .inner
-                .global_table_provisioned_write_capacity_units(signature);
+                .global_table_provisioned_write_capacity_units(input);
             self
         }
         /// <p>The maximum number of writes consumed per second before DynamoDB returns a
@@ -9551,11 +9519,11 @@ pub mod fluent_builders {
         /// table.</p>
         pub fn global_table_provisioned_write_capacity_auto_scaling_settings_update(
             mut self,
-            signature: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
             self.inner = self
                 .inner
-                .global_table_provisioned_write_capacity_auto_scaling_settings_update(signature);
+                .global_table_provisioned_write_capacity_auto_scaling_settings_update(input);
             self
         }
         /// <p>Auto scaling settings for managing provisioned write capacity for the global
@@ -9684,8 +9652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table containing the item to update.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table containing the item to update.</p>
@@ -9786,11 +9754,8 @@ pub mod fluent_builders {
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html">ConditionalOperator</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn conditional_operator(
-            mut self,
-            signature: crate::model::ConditionalOperator,
-        ) -> Self {
-            self.inner = self.inner.conditional_operator(signature);
+        pub fn conditional_operator(mut self, input: crate::model::ConditionalOperator) -> Self {
+            self.inner = self.inner.conditional_operator(input);
             self
         }
         /// <p>This is a legacy parameter. Use <code>ConditionExpression</code> instead. For more
@@ -9838,8 +9803,8 @@ pub mod fluent_builders {
         /// small network and processing overhead of receiving a larger response. No read capacity
         /// units are consumed.</p>
         /// <p>The values returned are strongly consistent.</p>
-        pub fn return_values(mut self, signature: crate::model::ReturnValue) -> Self {
-            self.inner = self.inner.return_values(signature);
+        pub fn return_values(mut self, input: crate::model::ReturnValue) -> Self {
+            self.inner = self.inner.return_values(input);
             self
         }
         /// <p>Use <code>ReturnValues</code> if you want to get the item attributes as they appear
@@ -9911,9 +9876,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn return_consumed_capacity(
             mut self,
-            signature: crate::model::ReturnConsumedCapacity,
+            input: crate::model::ReturnConsumedCapacity,
         ) -> Self {
-            self.inner = self.inner.return_consumed_capacity(signature);
+            self.inner = self.inner.return_consumed_capacity(input);
             self
         }
         /// <p>Determines the level of detail about either provisioned or on-demand throughput
@@ -9954,9 +9919,9 @@ pub mod fluent_builders {
         /// default), no statistics are returned.</p>
         pub fn return_item_collection_metrics(
             mut self,
-            signature: crate::model::ReturnItemCollectionMetrics,
+            input: crate::model::ReturnItemCollectionMetrics,
         ) -> Self {
-            self.inner = self.inner.return_item_collection_metrics(signature);
+            self.inner = self.inner.return_item_collection_metrics(input);
             self
         }
         /// <p>Determines whether item collection metrics are returned. If set to <code>SIZE</code>,
@@ -10073,8 +10038,8 @@ pub mod fluent_builders {
         /// <p>For more information on update expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.Modifying.html">Modifying
         /// Items and Attributes</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn update_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.update_expression(signature.into());
+        pub fn update_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.update_expression(input.into());
             self
         }
         /// <p>An expression that defines one or more attributes to be updated, the action to be
@@ -10210,8 +10175,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information about condition expressions, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html">Specifying Conditions</a> in the <i>Amazon DynamoDB Developer
         /// Guide</i>.</p>
-        pub fn condition_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.condition_expression(signature.into());
+        pub fn condition_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.condition_expression(input.into());
             self
         }
         /// <p>A condition that must be satisfied in order for a conditional update to
@@ -10532,8 +10497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table to be updated.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to be updated.</p>
@@ -10559,8 +10524,8 @@ pub mod fluent_builders {
         /// to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand Mode</a>. </p>
         /// </li>
         /// </ul>
-        pub fn billing_mode(mut self, signature: crate::model::BillingMode) -> Self {
-            self.inner = self.inner.billing_mode(signature);
+        pub fn billing_mode(mut self, input: crate::model::BillingMode) -> Self {
+            self.inner = self.inner.billing_mode(input);
             self
         }
         /// <p>Controls how you are charged for read and write throughput and how you manage
@@ -10591,9 +10556,9 @@ pub mod fluent_builders {
         /// <p>The new provisioned throughput settings for the specified table or index.</p>
         pub fn provisioned_throughput(
             mut self,
-            signature: crate::model::ProvisionedThroughput,
+            input: crate::model::ProvisionedThroughput,
         ) -> Self {
-            self.inner = self.inner.provisioned_throughput(signature);
+            self.inner = self.inner.provisioned_throughput(input);
             self
         }
         /// <p>The new provisioned throughput settings for the specified table or index.</p>
@@ -10672,11 +10637,8 @@ pub mod fluent_builders {
         /// a table that already has a stream, or if you try to disable a stream on a table that
         /// doesn't have a stream.</p>
         /// </note>
-        pub fn stream_specification(
-            mut self,
-            signature: crate::model::StreamSpecification,
-        ) -> Self {
-            self.inner = self.inner.stream_specification(signature);
+        pub fn stream_specification(mut self, input: crate::model::StreamSpecification) -> Self {
+            self.inner = self.inner.stream_specification(input);
             self
         }
         /// <p>Represents the DynamoDB Streams configuration for the table.</p>
@@ -10693,8 +10655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new server-side encryption settings for the specified table.</p>
-        pub fn sse_specification(mut self, signature: crate::model::SseSpecification) -> Self {
-            self.inner = self.inner.sse_specification(signature);
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
+            self.inner = self.inner.sse_specification(input);
             self
         }
         /// <p>The new server-side encryption settings for the specified table.</p>
@@ -10732,8 +10694,8 @@ pub mod fluent_builders {
         }
         /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
         /// <code>STANDARD_INFREQUENT_ACCESS</code>.</p>
-        pub fn table_class(mut self, signature: crate::model::TableClass) -> Self {
-            self.inner = self.inner.table_class(signature);
+        pub fn table_class(mut self, input: crate::model::TableClass) -> Self {
+            self.inner = self.inner.table_class(input);
             self
         }
         /// <p>The table class of the table to be updated. Valid values are <code>STANDARD</code> and
@@ -10834,8 +10796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the global table to be updated.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the global table to be updated.</p>
@@ -10847,11 +10809,11 @@ pub mod fluent_builders {
         /// secondary index.</p>
         pub fn provisioned_write_capacity_auto_scaling_update(
             mut self,
-            signature: crate::model::AutoScalingSettingsUpdate,
+            input: crate::model::AutoScalingSettingsUpdate,
         ) -> Self {
             self.inner = self
                 .inner
-                .provisioned_write_capacity_auto_scaling_update(signature);
+                .provisioned_write_capacity_auto_scaling_update(input);
             self
         }
         /// <p>Represents the auto scaling settings to be modified for a global table or global
@@ -10969,8 +10931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the table to be configured.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table to be configured.</p>
@@ -10982,9 +10944,9 @@ pub mod fluent_builders {
         /// table.</p>
         pub fn time_to_live_specification(
             mut self,
-            signature: crate::model::TimeToLiveSpecification,
+            input: crate::model::TimeToLiveSpecification,
         ) -> Self {
-            self.inner = self.inner.time_to_live_specification(signature);
+            self.inner = self.inner.time_to_live_specification(input);
             self
         }
         /// <p>Represents the settings used to enable or disable Time to Live for the specified

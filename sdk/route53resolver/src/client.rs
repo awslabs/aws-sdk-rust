@@ -647,8 +647,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed requests to be
         /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
         /// can be any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed requests to be
@@ -662,8 +662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the firewall rule group. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group. </p>
@@ -675,8 +675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The unique identifier of the VPC that you want to associate with the rule group. </p>
@@ -691,8 +691,8 @@ pub mod fluent_builders {
         /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 101, 200, and so on. You
         /// can change the priority setting for a rule group association after you create it.</p>
         /// <p>The allowed values for <code>Priority</code> are between 100 and 9900.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The setting that determines the processing order of the rule group among the rule
@@ -707,8 +707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name that lets you identify the association, to manage and use it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name that lets you identify the association, to manage and use it.</p>
@@ -720,9 +720,9 @@ pub mod fluent_builders {
         /// When you create the association, the default setting is <code>DISABLED</code>. </p>
         pub fn mutation_protection(
             mut self,
-            signature: crate::model::MutationProtectionStatus,
+            input: crate::model::MutationProtectionStatus,
         ) -> Self {
-            self.inner = self.inner.mutation_protection(signature);
+            self.inner = self.inner.mutation_protection(input);
             self
         }
         /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections.
@@ -818,8 +818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to associate IP addresses with.</p>
@@ -832,8 +832,8 @@ pub mod fluent_builders {
         }
         /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
         /// Resolver chooses an IP address for you from the available IPs in the specified subnet.</p>
-        pub fn ip_address(mut self, signature: crate::model::IpAddressUpdate) -> Self {
-            self.inner = self.inner.ip_address(signature);
+        pub fn ip_address(mut self, input: crate::model::IpAddressUpdate) -> Self {
+            self.inner = self.inner.ip_address(input);
             self
         }
         /// <p>Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
@@ -918,9 +918,9 @@ pub mod fluent_builders {
         /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
         pub fn resolver_query_log_config_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resolver_query_log_config_id(signature.into());
+            self.inner = self.inner.resolver_query_log_config_id(input.into());
             self
         }
         /// <p>The ID of the query logging configuration that you want to associate a VPC with.</p>
@@ -936,8 +936,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The VPCs and the query logging configuration must be in the same Region.</p>
         /// </note>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of an Amazon VPC that you want this query logging configuration to log queries for.</p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-        pub fn resolver_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_id(signature.into());
+        pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
@@ -1038,8 +1038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
@@ -1110,8 +1110,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows you to retry failed requests
         /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
         /// any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows you to retry failed requests
@@ -1125,8 +1125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name that lets you identify the domain list to manage and use it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name that lets you identify the domain list to manage and use it.</p>
@@ -1214,8 +1214,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows you to retry failed requests
         /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
         /// any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows you to retry failed requests
@@ -1229,8 +1229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the firewall rule group where you want to create the rule. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group where you want to create the rule. </p>
@@ -1242,11 +1242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the domain list that you want to use in the rule. </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list that you want to use in the rule. </p>
@@ -1262,8 +1259,8 @@ pub mod fluent_builders {
         /// <p>You must specify a unique priority for each rule in a rule group.
         /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
         /// can change the priority setting for the rules in a rule group at any time.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
@@ -1290,8 +1287,8 @@ pub mod fluent_builders {
         /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
         /// </li>
         /// </ul>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
@@ -1330,8 +1327,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This setting is required if the rule action setting is <code>BLOCK</code>.</p>
-        pub fn block_response(mut self, signature: crate::model::BlockResponse) -> Self {
-            self.inner = self.inner.block_response(signature);
+        pub fn block_response(mut self, input: crate::model::BlockResponse) -> Self {
+            self.inner = self.inner.block_response(input);
             self
         }
         /// <p>The way that you want DNS Firewall to block the request, used with the rule action
@@ -1360,8 +1357,8 @@ pub mod fluent_builders {
         }
         /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
         /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
-        pub fn block_override_domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.block_override_domain(signature.into());
+        pub fn block_override_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.block_override_domain(input.into());
             self
         }
         /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -1377,9 +1374,9 @@ pub mod fluent_builders {
         /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
         pub fn block_override_dns_type(
             mut self,
-            signature: crate::model::BlockOverrideDnsType,
+            input: crate::model::BlockOverrideDnsType,
         ) -> Self {
-            self.inner = self.inner.block_override_dns_type(signature);
+            self.inner = self.inner.block_override_dns_type(input);
             self
         }
         /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -1393,8 +1390,8 @@ pub mod fluent_builders {
         }
         /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
         /// <p>This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.</p>
-        pub fn block_override_ttl(mut self, signature: i32) -> Self {
-            self.inner = self.inner.block_override_ttl(signature);
+        pub fn block_override_ttl(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_override_ttl(input);
             self
         }
         /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -1404,8 +1401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name that lets you identify the rule in the rule group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name that lets you identify the rule in the rule group.</p>
@@ -1477,8 +1474,8 @@ pub mod fluent_builders {
         /// <p>A unique string defined by you to identify the request. This allows you to retry failed
         /// requests without the risk of running the operation twice. This can be any unique string,
         /// for example, a timestamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string defined by you to identify the request. This allows you to retry failed
@@ -1492,8 +1489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name that lets you identify the rule group, to manage and use it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name that lets you identify the rule group, to manage and use it.</p>
@@ -1591,8 +1588,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
         /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
         /// any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
@@ -1606,8 +1603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.</p>
@@ -1649,8 +1646,8 @@ pub mod fluent_builders {
         /// <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC to your network</p>
         /// </li>
         /// </ul>
-        pub fn direction(mut self, signature: crate::model::ResolverEndpointDirection) -> Self {
-            self.inner = self.inner.direction(signature);
+        pub fn direction(mut self, input: crate::model::ResolverEndpointDirection) -> Self {
+            self.inner = self.inner.direction(input);
             self
         }
         /// <p>Specify the applicable value:</p>
@@ -1776,8 +1773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to give the query logging configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to give the query logging configuration.</p>
@@ -1815,8 +1812,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn destination_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(signature.into());
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group,
@@ -1859,8 +1856,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
         /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
         /// any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
@@ -1954,8 +1951,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
         /// without the risk of running the operation twice. <code>CreatorRequestId</code> can be
         /// any unique string, for example, a date/time stamp. </p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed requests to be retried
@@ -1969,8 +1966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.</p>
@@ -1985,8 +1982,8 @@ pub mod fluent_builders {
         /// for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you create a rule and specify
         /// <code>SYSTEM</code> for <code>RuleType</code>.</p>
         /// <p>Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.</p>
-        pub fn rule_type(mut self, signature: crate::model::RuleTypeOption) -> Self {
-            self.inner = self.inner.rule_type(signature);
+        pub fn rule_type(mut self, input: crate::model::RuleTypeOption) -> Self {
+            self.inner = self.inner.rule_type(input);
             self
         }
         /// <p>When you want to forward DNS queries for specified domain name to resolvers on your network, specify <code>FORWARD</code>.</p>
@@ -2006,8 +2003,8 @@ pub mod fluent_builders {
         /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches
         /// multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using the Resolver rule that contains
         /// the most specific domain name (www.example.com).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If a query matches
@@ -2040,8 +2037,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify
         /// in <code>TargetIps</code>.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you specify
@@ -2131,11 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain list that you want to delete. </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list that you want to delete. </p>
@@ -2207,8 +2201,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group that you want to delete the rule from. </p>
@@ -2220,11 +2214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the domain list that's used in the rule.  </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list that's used in the rule.  </p>
@@ -2296,8 +2287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
@@ -2381,8 +2372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to delete.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to delete.</p>
@@ -2466,9 +2457,9 @@ pub mod fluent_builders {
         /// <p>The ID of the query logging configuration that you want to delete.</p>
         pub fn resolver_query_log_config_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resolver_query_log_config_id(signature.into());
+            self.inner = self.inner.resolver_query_log_config_id(input.into());
             self
         }
         /// <p>The ID of the query logging configuration that you want to delete.</p>
@@ -2542,8 +2533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver rule that you want to delete.</p>
-        pub fn resolver_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_id(signature.into());
+        pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to delete.</p>
@@ -2617,11 +2608,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .firewall_rule_group_association_id(signature.into());
+            self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
@@ -2699,8 +2688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to disassociate an IP address from.</p>
@@ -2712,8 +2701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
-        pub fn ip_address(mut self, signature: crate::model::IpAddressUpdate) -> Self {
-            self.inner = self.inner.ip_address(signature);
+        pub fn ip_address(mut self, input: crate::model::IpAddressUpdate) -> Self {
+            self.inner = self.inner.ip_address(input);
             self
         }
         /// <p>The IPv4 address that you want to remove from a Resolver endpoint.</p>
@@ -2804,9 +2793,9 @@ pub mod fluent_builders {
         /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
         pub fn resolver_query_log_config_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resolver_query_log_config_id(signature.into());
+            self.inner = self.inner.resolver_query_log_config_id(input.into());
             self
         }
         /// <p>The ID of the query logging configuration that you want to disassociate a specified VPC from.</p>
@@ -2818,8 +2807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.</p>
@@ -2892,8 +2881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
@@ -2902,8 +2891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
-        pub fn resolver_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_id(signature.into());
+        pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
@@ -2976,8 +2965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the VPC from Amazon VPC that the configuration is for.</p>
@@ -3046,11 +3035,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain list.  </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list.  </p>
@@ -3122,8 +3108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the firewall rule group. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group. </p>
@@ -3197,11 +3183,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .firewall_rule_group_association_id(signature.into());
+            self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
@@ -3274,8 +3258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) for the rule group.</p>
@@ -3345,8 +3329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Resource ID of the Amazon VPC that you want to get information about.</p>
@@ -3415,8 +3399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
@@ -3486,8 +3470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to get information about.</p>
@@ -3562,9 +3546,9 @@ pub mod fluent_builders {
         /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
         pub fn resolver_query_log_config_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resolver_query_log_config_id(signature.into());
+            self.inner = self.inner.resolver_query_log_config_id(input.into());
             self
         }
         /// <p>The ID of the Resolver query logging configuration that you want to get information about.</p>
@@ -3641,11 +3625,11 @@ pub mod fluent_builders {
         /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
         pub fn resolver_query_log_config_association_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .resolver_query_log_config_association_id(signature.into());
+                .resolver_query_log_config_association_id(input.into());
             self
         }
         /// <p>The ID of the Resolver query logging configuration association that you want to get information about.</p>
@@ -3720,8 +3704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
@@ -3791,8 +3775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver rule that you want to get information about.</p>
-        pub fn resolver_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_id(signature.into());
+        pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to get information about.</p>
@@ -3867,9 +3851,9 @@ pub mod fluent_builders {
         /// <p>The ID of the Resolver rule association that you want to get information about.</p>
         pub fn resolver_rule_association_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resolver_rule_association_id(signature.into());
+            self.inner = self.inner.resolver_rule_association_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule association that you want to get information about.</p>
@@ -3942,8 +3926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to get the Resolver rule policy for.</p>
@@ -4027,11 +4011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain list that you want to modify with the import operation.</p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list that you want to modify with the import operation.</p>
@@ -4043,8 +4024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
-        pub fn operation(mut self, signature: crate::model::FirewallDomainImportOperation) -> Self {
-            self.inner = self.inner.operation(signature);
+        pub fn operation(mut self, input: crate::model::FirewallDomainImportOperation) -> Self {
+            self.inner = self.inner.operation(input);
             self
         }
         /// <p>What you want DNS Firewall to do with the domains that are listed in the file. This must be set to <code>REPLACE</code>, which updates the domain list to exactly match the list in the file. </p>
@@ -4059,8 +4040,8 @@ pub mod fluent_builders {
         /// (Amazon S3) that contains the list of domains to import.</p>
         /// <p>The file must be in an S3 bucket that's in the same Region
         /// as your DNS Firewall. The file must be a text file and must contain a single domain per line.</p>
-        pub fn domain_file_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_file_url(signature.into());
+        pub fn domain_file_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_file_url(input.into());
             self
         }
         /// <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage Service
@@ -4139,8 +4120,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4156,8 +4137,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4234,8 +4215,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4251,8 +4232,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4326,11 +4307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain list whose domains you want to retrieve. </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list whose domains you want to retrieve. </p>
@@ -4345,8 +4323,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4362,8 +4340,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4438,8 +4416,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations
         /// for. Leave this blank to retrieve associations for any rule group. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group that you want to retrieve the associations
@@ -4453,8 +4431,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the VPC that you want to retrieve the associations
         /// for. Leave this blank to retrieve associations for any VPC. </p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The unique identifier of the VPC that you want to retrieve the associations
@@ -4466,8 +4444,8 @@ pub mod fluent_builders {
         /// <p>The setting that determines the processing order of the rule group among the rule
         /// groups that are associated with a single VPC. DNS Firewall filters VPC traffic starting
         /// from the rule group with the lowest numeric priority setting. </p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The setting that determines the processing order of the rule group among the rule
@@ -4478,11 +4456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
-        pub fn status(
-            mut self,
-            signature: crate::model::FirewallRuleGroupAssociationStatus,
-        ) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::FirewallRuleGroupAssociationStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The association <code>Status</code> setting that you want DNS Firewall to filter on for the list. If you don't specify this, then DNS Firewall returns all associations, regardless of status.</p>
@@ -4497,8 +4472,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4514,8 +4489,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4592,8 +4567,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4609,8 +4584,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4684,8 +4659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group that you want to retrieve the rules for. </p>
@@ -4699,8 +4674,8 @@ pub mod fluent_builders {
         /// <p>Optional additional filter for the rules to retrieve.</p>
         /// <p>The setting that determines the processing order of the rules in a rule group. DNS Firewall
         /// processes the rules in a rule group by order of priority, starting from the lowest setting.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>Optional additional filter for the rules to retrieve.</p>
@@ -4726,8 +4701,8 @@ pub mod fluent_builders {
         /// <code>BLOCK</code> - Disallow the request. If this is specified, additional handling details are provided in the rule's <code>BlockResponse</code> setting. </p>
         /// </li>
         /// </ul>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Optional additional filter for the rules to retrieve.</p>
@@ -4754,8 +4729,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Resolver provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 objects. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Resolver to return for this request. If more
@@ -4771,8 +4746,8 @@ pub mod fluent_builders {
         /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
         /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
         /// batch of objects, use the token that was returned for the prior request in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first call to this list request, omit this value.</p>
@@ -4848,8 +4823,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of Resolver configurations that you want to return in the response to
         /// a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>,
         /// up to 100 Resolver configurations are returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Resolver configurations that you want to return in the response to
@@ -4864,8 +4839,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListResolverConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and
         /// specify that value for <code>NextToken</code> in the request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> Resolver configurations, use
@@ -4940,8 +4915,8 @@ pub mod fluent_builders {
         /// <p>
         /// <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return.
         /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>
@@ -4956,8 +4931,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
         /// for <code>NextToken</code> in the request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
@@ -5047,8 +5022,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to get IP addresses for.</p>
@@ -5061,8 +5036,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 IP addresses. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code> request.
@@ -5075,8 +5050,8 @@ pub mod fluent_builders {
         /// <p>If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
         /// <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request, specify the value of
         /// <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
@@ -5149,8 +5124,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver endpoints. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Resolver endpoints that you want to return in the response to a <code>ListResolverEndpoints</code> request.
@@ -5162,8 +5137,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
         /// <p>If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another <code>ListResolverEndpoints</code> request
         /// to get the next group of Resolver endpoints. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
@@ -5262,8 +5237,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging associations. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query logging associations that you want to return in the response to a <code>ListResolverQueryLogConfigAssociations</code> request.
@@ -5276,8 +5251,8 @@ pub mod fluent_builders {
         /// <p>If there are more than <code>MaxResults</code> query logging associations that match the values that you specify for <code>Filters</code>,
         /// you can submit another <code>ListResolverQueryLogConfigAssociations</code> request to get the next group of associations. In the next request, specify the value of
         /// <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigAssociations</code> request, omit this value.</p>
@@ -5387,8 +5362,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn sort_by(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(signature.into());
+        pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(input.into());
             self
         }
         /// <p>The element that you want Resolver to sort query logging associations by. </p>
@@ -5475,8 +5450,8 @@ pub mod fluent_builders {
         /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigAssociations</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging associations to be listed in,
@@ -5555,8 +5530,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query logging configurations that you want to return in the response to a <code>ListResolverQueryLogConfigs</code> request.
@@ -5569,8 +5544,8 @@ pub mod fluent_builders {
         /// <p>If there are more than <code>MaxResults</code> query logging configurations that match the values that you specify for <code>Filters</code>,
         /// you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of
         /// <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.</p>
@@ -5685,8 +5660,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn sort_by(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(signature.into());
+        pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(input.into());
             self
         }
         /// <p>The element that you want Resolver to sort query logging configurations by. </p>
@@ -5778,8 +5753,8 @@ pub mod fluent_builders {
         /// <p>If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request and specify the <code>NextToken</code> parameter,
         /// you must use the same value for <code>SortOrder</code>, if any, as in the previous request.</p>
         /// </note>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>If you specified a value for <code>SortBy</code>, the order that you want query logging configurations to be listed in,
@@ -5857,8 +5832,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 rule associations. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of rule associations that you want to return in the response to a <code>ListResolverRuleAssociations</code> request.
@@ -5870,8 +5845,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
         /// <p>If you have more than <code>MaxResults</code> rule associations, you can submit another <code>ListResolverRuleAssociation</code> request
         /// to get the next group of rule associations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverRuleAssociation</code> request, omit this value.</p>
@@ -5968,8 +5943,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code> request.
@@ -5981,8 +5956,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
         /// <p>If you have more than <code>MaxResults</code> Resolver rules, you can submit another <code>ListResolverRules</code> request
         /// to get the next group of Resolver rules. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
@@ -6078,8 +6053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource that you want to list tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource that you want to list tags for.</p>
@@ -6089,8 +6064,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request.
         /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code> request.
@@ -6102,8 +6077,8 @@ pub mod fluent_builders {
         /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
         /// <p>If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code> request
         /// to get the next group of tags for the resource. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
@@ -6176,8 +6151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
@@ -6186,11 +6161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
-        pub fn firewall_rule_group_policy(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_rule_group_policy(signature.into());
+        pub fn firewall_rule_group_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_policy(input.into());
             self
         }
         /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
@@ -6263,8 +6235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
@@ -6302,11 +6274,9 @@ pub mod fluent_builders {
         /// with the account that you specified in <code>Arn</code>. </p>
         pub fn resolver_query_log_config_policy(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .resolver_query_log_config_policy(signature.into());
+            self.inner = self.inner.resolver_query_log_config_policy(input.into());
             self
         }
         /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
@@ -6406,8 +6376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
@@ -6447,8 +6417,8 @@ pub mod fluent_builders {
         ///
         /// <p>In the <code>Resource</code> section of the statement, specify the ARN for the rule that you want to share with another account. Specify the same ARN
         /// that you specified in <code>Arn</code>.</p>
-        pub fn resolver_rule_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_policy(signature.into());
+        pub fn resolver_rule_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_policy(input.into());
             self
         }
         /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
@@ -6584,8 +6554,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource that you want to add tags to. To get the ARN for a resource, use the applicable
@@ -6737,8 +6707,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable
@@ -6858,8 +6828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the VPC that the configuration is for.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the VPC that the configuration is for.</p>
@@ -6879,11 +6849,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This behavior is only enforced for VPCs that have at least one DNS Firewall rule group association. </p>
-        pub fn firewall_fail_open(
-            mut self,
-            signature: crate::model::FirewallFailOpenStatus,
-        ) -> Self {
-            self.inner = self.inner.firewall_fail_open(signature);
+        pub fn firewall_fail_open(mut self, input: crate::model::FirewallFailOpenStatus) -> Self {
+            self.inner = self.inner.firewall_fail_open(input);
             self
         }
         /// <p>Determines how Route 53 Resolver handles queries during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
@@ -6966,11 +6933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain list whose domains you want to update. </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list whose domains you want to update. </p>
@@ -6996,8 +6960,8 @@ pub mod fluent_builders {
         /// <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p>
         /// </li>
         /// </ul>
-        pub fn operation(mut self, signature: crate::model::FirewallDomainUpdateOperation) -> Self {
-            self.inner = self.inner.operation(signature);
+        pub fn operation(mut self, input: crate::model::FirewallDomainUpdateOperation) -> Self {
+            self.inner = self.inner.operation(input);
             self
         }
         /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
@@ -7130,8 +7094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the firewall rule group for the rule. </p>
-        pub fn firewall_rule_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.firewall_rule_group_id(signature.into());
+        pub fn firewall_rule_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_rule_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the firewall rule group for the rule. </p>
@@ -7143,11 +7107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the domain list to use in the rule.  </p>
-        pub fn firewall_domain_list_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.firewall_domain_list_id(signature.into());
+        pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.firewall_domain_list_id(input.into());
             self
         }
         /// <p>The ID of the domain list to use in the rule.  </p>
@@ -7163,8 +7124,8 @@ pub mod fluent_builders {
         /// <p>You must specify a unique priority for each rule in a rule group.
         /// To make it easier to insert rules later, leave space between the numbers, for example, use 100, 200, and so on. You
         /// can change the priority setting for the rules in a rule group at any time.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The setting that determines the processing order of the rule in the rule group. DNS Firewall
@@ -7191,8 +7152,8 @@ pub mod fluent_builders {
         /// <code>BLOCK</code> - Disallow the request. This option requires additional details in the rule's <code>BlockResponse</code>. </p>
         /// </li>
         /// </ul>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action that DNS Firewall should take on a DNS query when it matches one of the domains in the rule's domain list:</p>
@@ -7229,8 +7190,8 @@ pub mod fluent_builders {
         /// <code>OVERRIDE</code> - Provide a custom override in the response. This option requires custom handling details in the rule's <code>BlockOverride*</code> settings. </p>
         /// </li>
         /// </ul>
-        pub fn block_response(mut self, signature: crate::model::BlockResponse) -> Self {
-            self.inner = self.inner.block_response(signature);
+        pub fn block_response(mut self, input: crate::model::BlockResponse) -> Self {
+            self.inner = self.inner.block_response(input);
             self
         }
         /// <p>The way that you want DNS Firewall to block the request. Used for the rule action setting <code>BLOCK</code>.</p>
@@ -7256,8 +7217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-        pub fn block_override_domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.block_override_domain(signature.into());
+        pub fn block_override_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.block_override_domain(input.into());
             self
         }
         /// <p>The custom DNS record to send back in response to the query. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -7271,9 +7232,9 @@ pub mod fluent_builders {
         /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
         pub fn block_override_dns_type(
             mut self,
-            signature: crate::model::BlockOverrideDnsType,
+            input: crate::model::BlockOverrideDnsType,
         ) -> Self {
-            self.inner = self.inner.block_override_dns_type(signature);
+            self.inner = self.inner.block_override_dns_type(input);
             self
         }
         /// <p>The DNS record's type. This determines the format of the record value that you provided in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -7285,8 +7246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
-        pub fn block_override_ttl(mut self, signature: i32) -> Self {
-            self.inner = self.inner.block_override_ttl(signature);
+        pub fn block_override_ttl(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_override_ttl(input);
             self
         }
         /// <p>The recommended amount of time, in seconds, for the DNS resolver or web browser to cache the provided override record. Used for the rule action <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.</p>
@@ -7295,8 +7256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -7369,11 +7330,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
         pub fn firewall_rule_group_association_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .firewall_rule_group_association_id(signature.into());
+            self.inner = self.inner.firewall_rule_group_association_id(input.into());
             self
         }
         /// <p>The identifier of the <a>FirewallRuleGroupAssociation</a>. </p>
@@ -7390,8 +7349,8 @@ pub mod fluent_builders {
         /// <p>You must specify a unique priority for each rule group that you associate with a single VPC.
         /// To make it easier to insert rule groups later, leave space between the numbers, for example, use 100, 200, and so on. You
         /// can change the priority setting for a rule group association after you create it.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The setting that determines the processing order of the rule group among the rule
@@ -7407,9 +7366,9 @@ pub mod fluent_builders {
         /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
         pub fn mutation_protection(
             mut self,
-            signature: crate::model::MutationProtectionStatus,
+            input: crate::model::MutationProtectionStatus,
         ) -> Self {
-            self.inner = self.inner.mutation_protection(signature);
+            self.inner = self.inner.mutation_protection(input);
             self
         }
         /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
@@ -7421,8 +7380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the rule group association.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule group association.</p>
@@ -7492,8 +7451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Resource ID of the Amazon VPC that you want to update the Resolver configuration for.</p>
@@ -7511,9 +7470,9 @@ pub mod fluent_builders {
         /// <p></p>
         pub fn autodefined_reverse_flag(
             mut self,
-            signature: crate::model::AutodefinedReverseFlag,
+            input: crate::model::AutodefinedReverseFlag,
         ) -> Self {
-            self.inner = self.inner.autodefined_reverse_flag(signature);
+            self.inner = self.inner.autodefined_reverse_flag(input);
             self
         }
         /// <p>Indicates whether or not the Resolver will create autodefined rules for reverse DNS
@@ -7592,8 +7551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the virtual private cloud (VPC) that you're updating the DNSSEC validation status for.</p>
@@ -7603,8 +7562,8 @@ pub mod fluent_builders {
         }
         /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
         /// or <code>DISABLE</code>. Be aware that it can take time for a validation status change to be completed.</p>
-        pub fn validation(mut self, signature: crate::model::Validation) -> Self {
-            self.inner = self.inner.validation(signature);
+        pub fn validation(mut self, input: crate::model::Validation) -> Self {
+            self.inner = self.inner.validation(input);
             self
         }
         /// <p>The new value that you are specifying for DNSSEC validation for the VPC. The value can be <code>ENABLE</code>
@@ -7677,8 +7636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver endpoint that you want to update.</p>
-        pub fn resolver_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_endpoint_id(signature.into());
+        pub fn resolver_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the Resolver endpoint that you want to update.</p>
@@ -7690,8 +7649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Resolver endpoint that you want to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Resolver endpoint that you want to update.</p>
@@ -7761,8 +7720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Resolver rule that you want to update.</p>
-        pub fn resolver_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolver_rule_id(signature.into());
+        pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolver_rule_id(input.into());
             self
         }
         /// <p>The ID of the Resolver rule that you want to update.</p>
@@ -7774,8 +7733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new settings for the Resolver rule.</p>
-        pub fn config(mut self, signature: crate::model::ResolverRuleConfig) -> Self {
-            self.inner = self.inner.config(signature);
+        pub fn config(mut self, input: crate::model::ResolverRuleConfig) -> Self {
+            self.inner = self.inner.config(input);
             self
         }
         /// <p>The new settings for the Resolver rule.</p>

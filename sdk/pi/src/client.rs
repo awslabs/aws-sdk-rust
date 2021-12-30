@@ -179,8 +179,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is
         /// <code>RDS</code>.</p>
-        pub fn service_type(mut self, signature: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(signature);
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.inner = self.inner.service_type(input);
             self
         }
         /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is
@@ -197,8 +197,8 @@ pub mod fluent_builders {
         /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example,
         /// specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
         /// </p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
@@ -215,8 +215,8 @@ pub mod fluent_builders {
         /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for
         /// <code>EndTime</code>.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time specifying the beginning of the requested time series data. You must specify a
@@ -236,8 +236,8 @@ pub mod fluent_builders {
         /// returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for
         /// <code>StartTime</code>.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time specifying the end of the requested time series data. The value specified is
@@ -271,8 +271,8 @@ pub mod fluent_builders {
         /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
         /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
         /// For most use cases, you can query <code>db.load.avg</code> only. </p>
-        pub fn metric(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric(signature.into());
+        pub fn metric(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric(input.into());
             self
         }
         /// <p>The name of a Performance Insights metric to be measured.</p>
@@ -326,8 +326,8 @@ pub mod fluent_builders {
         ///
         /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning
         /// roughly 100-200 data points in the response.</p>
-        pub fn period_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.period_in_seconds(signature);
+        pub fn period_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.period_in_seconds(input);
             self
         }
         /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
@@ -365,8 +365,8 @@ pub mod fluent_builders {
         /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group.
         /// Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group.
         /// You can also request that Performance Insights return a limited number of values for a dimension.</p>
-        pub fn group_by(mut self, signature: crate::model::DimensionGroup) -> Self {
-            self.inner = self.inner.group_by(signature);
+        pub fn group_by(mut self, input: crate::model::DimensionGroup) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group.
@@ -381,8 +381,8 @@ pub mod fluent_builders {
         }
         /// <p>For each dimension specified in
         /// <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
-        pub fn partition_by(mut self, signature: crate::model::DimensionGroup) -> Self {
-            self.inner = self.inner.partition_by(signature);
+        pub fn partition_by(mut self, input: crate::model::DimensionGroup) -> Self {
+            self.inner = self.inner.partition_by(input);
             self
         }
         /// <p>For each dimension specified in
@@ -440,8 +440,8 @@ pub mod fluent_builders {
         /// token is included in the response so that the remaining
         /// results can be retrieved.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response.
@@ -456,8 +456,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous request. If
         /// this parameter is specified, the response includes only records beyond the token, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request. If
@@ -531,8 +531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
-        pub fn service_type(mut self, signature: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(signature);
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.inner = self.inner.service_type(input);
             self
         }
         /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
@@ -546,8 +546,8 @@ pub mod fluent_builders {
         /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS
         /// Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify
         /// <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS
@@ -559,8 +559,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the dimension group. The only valid value is <code>db.sql</code>. Performance Insights searches the
         /// specified group for the dimension group ID.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name of the dimension group. The only valid value is <code>db.sql</code>. Performance Insights searches the
@@ -571,8 +571,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>,
         /// the group ID is <code>db.sql.id</code>.</p>
-        pub fn group_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_identifier(signature.into());
+        pub fn group_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_identifier(input.into());
             self
         }
         /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>,
@@ -675,8 +675,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is
         /// <code>RDS</code>.</p>
-        pub fn service_type(mut self, signature: crate::model::ServiceType) -> Self {
-            self.inner = self.inner.service_type(signature);
+        pub fn service_type(mut self, input: crate::model::ServiceType) -> Self {
+            self.inner = self.inner.service_type(input);
             self
         }
         /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         /// this data source.</p>
         /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify
         /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
@@ -728,8 +728,8 @@ pub mod fluent_builders {
         /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
         /// will be returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time specifying the beginning of the requested time series data. You can't
@@ -747,8 +747,8 @@ pub mod fluent_builders {
         /// <p>The date and time specifying the end of the requested time series data.  The value specified is
         /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time specifying the end of the requested time series data.  The value specified is
@@ -789,8 +789,8 @@ pub mod fluent_builders {
         ///
         /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for
         /// you, with a goal of returning roughly 100-200 data points in the response.</p>
-        pub fn period_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.period_in_seconds(signature);
+        pub fn period_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.period_in_seconds(input);
             self
         }
         /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
@@ -830,8 +830,8 @@ pub mod fluent_builders {
         /// token is included in the response so that the remaining
         /// results can be retrieved.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return in the response.
@@ -846,8 +846,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous request. If
         /// this parameter is specified, the response includes only records beyond the token, up to the
         /// value specified by <code>MaxRecords</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request. If

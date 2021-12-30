@@ -439,8 +439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -542,8 +542,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -553,8 +553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with(signature.into());
+        pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -572,8 +572,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -659,8 +659,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -670,8 +670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the lens being created.</p>
-        pub fn lens_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(signature.into());
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The version of the lens being created.</p>
@@ -680,8 +680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to true if this new major lens version.</p>
-        pub fn is_major_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_major_version(signature);
+        pub fn is_major_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_major_version(input);
             self
         }
         /// <p>Set to true if this new major lens version.</p>
@@ -699,8 +699,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -781,8 +781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -792,8 +792,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the milestone in a workload.</p>
         /// <p>Milestone names must be unique within a workload.</p>
-        pub fn milestone_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.milestone_name(signature.into());
+        pub fn milestone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.milestone_name(input.into());
             self
         }
         /// <p>The name of the milestone in a workload.</p>
@@ -815,8 +815,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -903,8 +903,8 @@ pub mod fluent_builders {
         /// <p>The name of the workload.</p>
         /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
-        pub fn workload_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name(signature.into());
+        pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
@@ -918,8 +918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the workload.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the workload.</p>
@@ -928,8 +928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment for the workload.</p>
-        pub fn environment(mut self, signature: crate::model::WorkloadEnvironment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::WorkloadEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The environment for the workload.</p>
@@ -1013,8 +1013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
-        pub fn architectural_design(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.architectural_design(signature.into());
+        pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.architectural_design(input.into());
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
         }
         /// <p>The review owner of the workload. The name, email address, or identifier for the
         /// primary group or individual that owns the workload review process.</p>
-        pub fn review_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.review_owner(signature.into());
+        pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.review_owner(input.into());
             self
         }
         /// <p>The review owner of the workload. The name, email address, or identifier for the
@@ -1176,8 +1176,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn industry_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry_type(signature.into());
+        pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
@@ -1327,8 +1327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry for the workload.</p>
-        pub fn industry(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry(signature.into());
+        pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry(input.into());
             self
         }
         /// <p>The industry for the workload.</p>
@@ -1354,8 +1354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -1373,8 +1373,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -1483,8 +1483,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1493,8 +1493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with(signature.into());
+        pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -1503,8 +1503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission granted on a workload share.</p>
-        pub fn permission_type(mut self, signature: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>Permission granted on a workload share.</p>
@@ -1525,8 +1525,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -1622,8 +1622,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -1642,8 +1642,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -1664,8 +1664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the lens to be deleted.</p>
-        pub fn lens_status(mut self, signature: crate::model::LensStatusType) -> Self {
-            self.inner = self.inner.lens_status(signature);
+        pub fn lens_status(mut self, input: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(input);
             self
         }
         /// <p>The status of the lens to be deleted.</p>
@@ -1750,8 +1750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(signature.into());
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -1761,8 +1761,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -1781,8 +1781,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -1863,8 +1863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1882,8 +1882,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -1964,8 +1964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(signature.into());
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -1974,8 +1974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -2080,8 +2080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2184,8 +2184,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2195,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lens version to be exported.</p>
-        pub fn lens_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(signature.into());
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The lens version to be exported.</p>
@@ -2265,8 +2265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2276,8 +2276,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2287,8 +2287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the question.</p>
-        pub fn question_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_id(signature.into());
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
             self
         }
         /// <p>The ID of the question.</p>
@@ -2298,8 +2298,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2370,8 +2370,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2381,8 +2381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lens version to be retrieved.</p>
-        pub fn lens_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_version(signature.into());
+        pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_version(input.into());
             self
         }
         /// <p>The lens version to be retrieved.</p>
@@ -2451,8 +2451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2462,8 +2462,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2474,8 +2474,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2545,8 +2545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2556,8 +2556,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2568,8 +2568,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2640,8 +2640,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2651,8 +2651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base version of the lens.</p>
-        pub fn base_lens_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_lens_version(signature.into());
+        pub fn base_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_lens_version(input.into());
             self
         }
         /// <p>The base version of the lens.</p>
@@ -2664,8 +2664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The lens version to target a difference for.</p>
-        pub fn target_lens_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_lens_version(signature.into());
+        pub fn target_lens_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_lens_version(input.into());
             self
         }
         /// <p>The lens version to target a difference for.</p>
@@ -2737,8 +2737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2748,8 +2748,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -2819,8 +2819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -2908,8 +2908,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -2919,8 +2919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON representation of a lens.</p>
-        pub fn json_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.json_string(signature.into());
+        pub fn json_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.json_string(input.into());
             self
         }
         /// <p>The JSON representation of a lens.</p>
@@ -2938,8 +2938,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent
@@ -3043,8 +3043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3054,8 +3054,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -3066,8 +3066,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
         /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_id(signature.into());
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -3078,8 +3078,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3089,8 +3089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3099,8 +3099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3169,8 +3169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3179,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3189,8 +3189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of lenses to be returned.</p>
-        pub fn lens_type(mut self, signature: crate::model::LensType) -> Self {
-            self.inner = self.inner.lens_type(signature);
+        pub fn lens_type(mut self, input: crate::model::LensType) -> Self {
+            self.inner = self.inner.lens_type(input);
             self
         }
         /// <p>The type of lenses to be returned.</p>
@@ -3199,8 +3199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of lenses to be returned.</p>
-        pub fn lens_status(mut self, signature: crate::model::LensStatusType) -> Self {
-            self.inner = self.inner.lens_status(signature);
+        pub fn lens_status(mut self, input: crate::model::LensStatusType) -> Self {
+            self.inner = self.inner.lens_status(input);
             self
         }
         /// <p>The status of lenses to be returned.</p>
@@ -3212,8 +3212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full name of the lens.</p>
-        pub fn lens_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_name(signature.into());
+        pub fn lens_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name(input.into());
             self
         }
         /// <p>The full name of the lens.</p>
@@ -3282,8 +3282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3293,8 +3293,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -3305,8 +3305,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
         /// <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-        pub fn pillar_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pillar_id(signature.into());
+        pub fn pillar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pillar_id(input.into());
             self
         }
         /// <p>The ID used to identify a pillar, for example, <code>security</code>.</p>
@@ -3317,8 +3317,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3328,8 +3328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3338,8 +3338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3408,8 +3408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3419,8 +3419,8 @@ pub mod fluent_builders {
         }
         /// <p>The milestone number.</p>
         /// <p>A workload can have a maximum of 100 milestones.</p>
-        pub fn milestone_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.milestone_number(signature);
+        pub fn milestone_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.milestone_number(input);
             self
         }
         /// <p>The milestone number.</p>
@@ -3430,8 +3430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3440,8 +3440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3511,8 +3511,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -3522,8 +3522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
-        pub fn shared_with_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with_prefix(signature.into());
+        pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the lens is shared.</p>
@@ -3535,8 +3535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3545,8 +3545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3615,8 +3615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3625,8 +3625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3635,8 +3635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3705,8 +3705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -3715,8 +3715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3725,8 +3725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3796,8 +3796,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional string added to the beginning of each workload name returned in the
         /// results.</p>
-        pub fn workload_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name_prefix(signature.into());
+        pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
         /// <p>An optional string added to the beginning of each workload name returned in the
@@ -3810,8 +3810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
-        pub fn lens_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_name_prefix(signature.into());
+        pub fn lens_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_name_prefix(input.into());
             self
         }
         /// <p>An optional string added to the beginning of each lens name returned in the results.</p>
@@ -3823,8 +3823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of share invitations to be returned.</p>
-        pub fn share_resource_type(mut self, signature: crate::model::ShareResourceType) -> Self {
-            self.inner = self.inner.share_resource_type(signature);
+        pub fn share_resource_type(mut self, input: crate::model::ShareResourceType) -> Self {
+            self.inner = self.inner.share_resource_type(input);
             self
         }
         /// <p>The type of share invitations to be returned.</p>
@@ -3836,8 +3836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -3846,8 +3846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -3916,8 +3916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(signature.into());
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -3987,8 +3987,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional string added to the beginning of each workload name returned in the
         /// results.</p>
-        pub fn workload_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name_prefix(signature.into());
+        pub fn workload_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name_prefix(input.into());
             self
         }
         /// <p>An optional string added to the beginning of each workload name returned in the
@@ -4001,8 +4001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -4011,8 +4011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -4081,8 +4081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4091,8 +4091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
-        pub fn shared_with_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_with_prefix(signature.into());
+        pub fn shared_with_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_with_prefix(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID or IAM role with which the workload is shared.</p>
@@ -4104,8 +4104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next set of results.</p>
@@ -4114,8 +4114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for this request.</p>
@@ -4184,8 +4184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(signature.into());
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -4281,8 +4281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the workload.</p>
-        pub fn workload_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_arn(signature.into());
+        pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_arn(input.into());
             self
         }
         /// <p>The ARN for the workload.</p>
@@ -4370,8 +4370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4381,8 +4381,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -4392,8 +4392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the question.</p>
-        pub fn question_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.question_id(signature.into());
+        pub fn question_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.question_id(input.into());
             self
         }
         /// <p>The ID of the question.</p>
@@ -4446,8 +4446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -4456,8 +4456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines whether this question is applicable to a lens review.</p>
-        pub fn is_applicable(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_applicable(signature);
+        pub fn is_applicable(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_applicable(input);
             self
         }
         /// <p>Defines whether this question is applicable to a lens review.</p>
@@ -4466,8 +4466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason why a question is not applicable to your workload.</p>
-        pub fn reason(mut self, signature: crate::model::AnswerReason) -> Self {
-            self.inner = self.inner.reason(signature);
+        pub fn reason(mut self, input: crate::model::AnswerReason) -> Self {
+            self.inner = self.inner.reason(input);
             self
         }
         /// <p>The reason why a question is not applicable to your workload.</p>
@@ -4539,8 +4539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4550,8 +4550,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -4561,8 +4561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn lens_notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_notes(signature.into());
+        pub fn lens_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -4654,8 +4654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the share invitation.</p>
-        pub fn share_invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_invitation_id(signature.into());
+        pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_invitation_id(input.into());
             self
         }
         /// <p>The ID assigned to the share invitation.</p>
@@ -4669,9 +4669,9 @@ pub mod fluent_builders {
         /// <p>Share invitation action taken by contributor.</p>
         pub fn share_invitation_action(
             mut self,
-            signature: crate::model::ShareInvitationAction,
+            input: crate::model::ShareInvitationAction,
         ) -> Self {
-            self.inner = self.inner.share_invitation_action(signature);
+            self.inner = self.inner.share_invitation_action(input);
             self
         }
         /// <p>Share invitation action taken by contributor.</p>
@@ -4743,8 +4743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -4755,8 +4755,8 @@ pub mod fluent_builders {
         /// <p>The name of the workload.</p>
         /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization
         /// are ignored when checking for uniqueness.</p>
-        pub fn workload_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_name(signature.into());
+        pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_name(input.into());
             self
         }
         /// <p>The name of the workload.</p>
@@ -4770,8 +4770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the workload.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the workload.</p>
@@ -4780,8 +4780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment for the workload.</p>
-        pub fn environment(mut self, signature: crate::model::WorkloadEnvironment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::WorkloadEnvironment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The environment for the workload.</p>
@@ -4865,8 +4865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
-        pub fn architectural_design(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.architectural_design(signature.into());
+        pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.architectural_design(input.into());
             self
         }
         /// <p>The URL of the architectural design for the workload.</p>
@@ -4879,8 +4879,8 @@ pub mod fluent_builders {
         }
         /// <p>The review owner of the workload. The name, email address, or identifier for the
         /// primary group or individual that owns the workload review process.</p>
-        pub fn review_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.review_owner(signature.into());
+        pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.review_owner(input.into());
             self
         }
         /// <p>The review owner of the workload. The name, email address, or identifier for the
@@ -4894,8 +4894,8 @@ pub mod fluent_builders {
         /// <p>If a <b>Review owner</b> is not added to the workload within
         /// 60 days of acknowledgement, access to the workload is restricted until an owner is
         /// added.</p>
-        pub fn is_review_owner_update_acknowledged(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_review_owner_update_acknowledged(signature);
+        pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_review_owner_update_acknowledged(input);
             self
         }
         /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review
@@ -5049,8 +5049,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn industry_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry_type(signature.into());
+        pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry_type(input.into());
             self
         }
         /// <p>The industry type for the workload.</p>
@@ -5200,8 +5200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The industry for the workload.</p>
-        pub fn industry(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.industry(signature.into());
+        pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.industry(input.into());
             self
         }
         /// <p>The industry for the workload.</p>
@@ -5210,8 +5210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notes associated with the workload.</p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>The notes associated with the workload.</p>
@@ -5222,9 +5222,9 @@ pub mod fluent_builders {
         /// <p>The improvement status for a workload.</p>
         pub fn improvement_status(
             mut self,
-            signature: crate::model::WorkloadImprovementStatus,
+            input: crate::model::WorkloadImprovementStatus,
         ) -> Self {
-            self.inner = self.inner.improvement_status(signature);
+            self.inner = self.inner.improvement_status(input);
             self
         }
         /// <p>The improvement status for a workload.</p>
@@ -5296,8 +5296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID associated with the workload share.</p>
-        pub fn share_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_id(signature.into());
+        pub fn share_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_id(input.into());
             self
         }
         /// <p>The ID associated with the workload share.</p>
@@ -5306,8 +5306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -5316,8 +5316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Permission granted on a workload share.</p>
-        pub fn permission_type(mut self, signature: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>Permission granted on a workload share.</p>
@@ -5389,8 +5389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-        pub fn workload_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workload_id(signature.into());
+        pub fn workload_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workload_id(input.into());
             self
         }
         /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -5400,8 +5400,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
         /// <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-        pub fn lens_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lens_alias(signature.into());
+        pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lens_alias(input.into());
             self
         }
         /// <p>The alias of the lens, for example, <code>serverless</code>.</p>
@@ -5412,8 +5412,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the milestone in a workload.</p>
         /// <p>Milestone names must be unique within a workload.</p>
-        pub fn milestone_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.milestone_name(signature.into());
+        pub fn milestone_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.milestone_name(input.into());
             self
         }
         /// <p>The name of the milestone in a workload.</p>
@@ -5435,8 +5435,8 @@ pub mod fluent_builders {
         /// automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI,
         /// you must provide this token or the request will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure that this request is idempotent

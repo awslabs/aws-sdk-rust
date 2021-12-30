@@ -166,8 +166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
-        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(signature.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The unique name of the device you want to get the registration status from.</p>
@@ -176,8 +176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
@@ -283,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the version of the agent.</p>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>Returns the version of the agent.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the device.</p>
-        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(signature.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The unique name of the device.</p>
@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>

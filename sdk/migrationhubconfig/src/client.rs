@@ -175,8 +175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the home region of the calling account.</p>
-        pub fn home_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(signature.into());
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
             self
         }
         /// <p>The name of the home region of the calling account.</p>
@@ -186,8 +186,8 @@ pub mod fluent_builders {
         }
         /// <p>The account for which this command sets up a home region control. The <code>Target</code>
         /// is always of type <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, signature: crate::model::Target) -> Self {
-            self.inner = self.inner.target(signature);
+        pub fn target(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
         /// <p>The account for which this command sets up a home region control. The <code>Target</code>
@@ -198,8 +198,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
         /// the caller has permission to make the call.</p>
-        pub fn dry_run(mut self, signature: bool) -> Self {
-            self.inner = self.inner.dry_run(signature);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Optional Boolean flag to indicate whether any effect should take place. It tests whether
@@ -271,8 +271,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ControlID</code> is a unique identifier string of your
         /// <code>HomeRegionControl</code> object.</p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p>The <code>ControlID</code> is a unique identifier string of your
@@ -282,8 +282,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the home region you'd like to view.</p>
-        pub fn home_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_region(signature.into());
+        pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_region(input.into());
             self
         }
         /// <p>The name of the home region you'd like to view.</p>
@@ -294,8 +294,8 @@ pub mod fluent_builders {
         /// <p>The target parameter specifies the identifier to which the home region is applied, which
         /// is always of type <code>ACCOUNT</code>. It applies the home region to the current
         /// <code>ACCOUNT</code>.</p>
-        pub fn target(mut self, signature: crate::model::Target) -> Self {
-            self.inner = self.inner.target(signature);
+        pub fn target(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
         /// <p>The target parameter specifies the identifier to which the home region is applied, which
@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of filtering results to display per page. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of filtering results to display per page. </p>
@@ -318,8 +318,8 @@ pub mod fluent_builders {
         /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.
         /// To retrieve the next page of results, make the call again using the returned token in
         /// <code>NextToken</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If a <code>NextToken</code> was returned by a previous call, more results are available.

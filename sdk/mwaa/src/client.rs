@@ -229,8 +229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Create a CLI token request for a MWAA environment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Create a CLI token request for a MWAA environment.</p>
@@ -299,8 +299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -309,8 +309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an AWS Identity and Access Management (IAM) role that grants MWAA permission to access AWS services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
@@ -322,8 +322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-        pub fn source_bucket_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_bucket_arn(signature.into());
+        pub fn source_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_bucket_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
@@ -335,8 +335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
-        pub fn dag_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dag_s3_path(signature.into());
+        pub fn dag_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dag_s3_path(input.into());
             self
         }
         /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
@@ -345,11 +345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
-        pub fn network_configuration(
-            mut self,
-            signature: crate::model::NetworkConfiguration,
-        ) -> Self {
-            self.inner = self.inner.network_configuration(signature);
+        pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
+            self.inner = self.inner.network_configuration(input);
             self
         }
         /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
@@ -361,8 +358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
-        pub fn plugins_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plugins_s3_path(signature.into());
+        pub fn plugins_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plugins_s3_path(input.into());
             self
         }
         /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
@@ -374,11 +371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
-        pub fn plugins_s3_object_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.plugins_s3_object_version(signature.into());
+        pub fn plugins_s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plugins_s3_object_version(input.into());
             self
         }
         /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
@@ -390,8 +384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
-        pub fn requirements_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requirements_s3_path(signature.into());
+        pub fn requirements_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requirements_s3_path(input.into());
             self
         }
         /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
@@ -405,9 +399,9 @@ pub mod fluent_builders {
         /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
         pub fn requirements_s3_object_version(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.requirements_s3_object_version(signature.into());
+            self.inner = self.inner.requirements_s3_object_version(input.into());
             self
         }
         /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
@@ -442,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
-        pub fn environment_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_class(signature.into());
+        pub fn environment_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_class(input.into());
             self
         }
         /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
@@ -455,8 +449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
-        pub fn max_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_workers(signature);
+        pub fn max_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_workers(input);
             self
         }
         /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
@@ -465,8 +459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Key Management Service (KMS) key to encrypt the data in your environment. You can use an AWS owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get started with Amazon Managed Workflows for Apache Airflow</a>.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>The AWS Key Management Service (KMS) key to encrypt the data in your environment. You can use an AWS owned CMK, or a Customer managed CMK (advanced). To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/get-started.html">Get started with Amazon Managed Workflows for Apache Airflow</a>.</p>
@@ -475,8 +469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
-        pub fn airflow_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.airflow_version(signature.into());
+        pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.airflow_version(input.into());
             self
         }
         /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
@@ -490,9 +484,9 @@ pub mod fluent_builders {
         /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
         pub fn logging_configuration(
             mut self,
-            signature: crate::model::LoggingConfigurationInput,
+            input: crate::model::LoggingConfigurationInput,
         ) -> Self {
-            self.inner = self.inner.logging_configuration(signature);
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
@@ -511,9 +505,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.weekly_maintenance_window_start(signature.into());
+            self.inner = self.inner.weekly_maintenance_window_start(input.into());
             self
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
@@ -553,11 +547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
-        pub fn webserver_access_mode(
-            mut self,
-            signature: crate::model::WebserverAccessMode,
-        ) -> Self {
-            self.inner = self.inner.webserver_access_mode(signature);
+        pub fn webserver_access_mode(mut self, input: crate::model::WebserverAccessMode) -> Self {
+            self.inner = self.inner.webserver_access_mode(input);
             self
         }
         /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
@@ -569,8 +560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
-        pub fn min_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.min_workers(signature);
+        pub fn min_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_workers(input);
             self
         }
         /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
@@ -579,8 +570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment.</p>
-        pub fn schedulers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.schedulers(signature);
+        pub fn schedulers(mut self, input: i32) -> Self {
+            self.inner = self.inner.schedulers(input);
             self
         }
         /// <p>The number of Apache Airflow schedulers to run in your environment.</p>
@@ -649,8 +640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Create an Airflow Web UI login token request for a MWAA environment.</p>
@@ -719,8 +710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -789,8 +780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -859,8 +850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Retrieves the next page of the results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Retrieves the next page of the results.</p>
@@ -869,8 +860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.</p>
@@ -939,8 +930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
@@ -1009,8 +1000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Publishes environment metric data to Amazon CloudWatch.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>Publishes environment metric data to Amazon CloudWatch.</p>
@@ -1099,8 +1090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
@@ -1192,8 +1183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.</p>
@@ -1279,8 +1270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -1289,8 +1280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.</p>
@@ -1302,8 +1293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
-        pub fn airflow_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.airflow_version(signature.into());
+        pub fn airflow_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.airflow_version(input.into());
             self
         }
         /// <p>The Apache Airflow version for your environment. For example, <code>v1.10.12</code>. If no value is specified, defaults to the latest version. Valid values: <code>v1.10.12</code>.</p>
@@ -1315,8 +1306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
-        pub fn source_bucket_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_bucket_arn(signature.into());
+        pub fn source_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_bucket_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.</p>
@@ -1328,8 +1319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
-        pub fn dag_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dag_s3_path(signature.into());
+        pub fn dag_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dag_s3_path(input.into());
             self
         }
         /// <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.</p>
@@ -1338,8 +1329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
-        pub fn plugins_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plugins_s3_path(signature.into());
+        pub fn plugins_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plugins_s3_path(input.into());
             self
         }
         /// <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.</p>
@@ -1351,11 +1342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
-        pub fn plugins_s3_object_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.plugins_s3_object_version(signature.into());
+        pub fn plugins_s3_object_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plugins_s3_object_version(input.into());
             self
         }
         /// <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
@@ -1367,8 +1355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
-        pub fn requirements_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requirements_s3_path(signature.into());
+        pub fn requirements_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requirements_s3_path(input.into());
             self
         }
         /// <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.</p>
@@ -1382,9 +1370,9 @@ pub mod fluent_builders {
         /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
         pub fn requirements_s3_object_version(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.requirements_s3_object_version(signature.into());
+            self.inner = self.inner.requirements_s3_object_version(input.into());
             self
         }
         /// <p>The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a requirements.txt file is updated. To learn more, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.</p>
@@ -1419,8 +1407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
-        pub fn environment_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_class(signature.into());
+        pub fn environment_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_class(input.into());
             self
         }
         /// <p>The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.</p>
@@ -1432,8 +1420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
-        pub fn max_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_workers(signature);
+        pub fn max_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_workers(input);
             self
         }
         /// <p>The maximum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. For example, <code>20</code>. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the one worker that is included with your environment, or the number you specify in <code>MinWorkers</code>.</p>
@@ -1444,9 +1432,9 @@ pub mod fluent_builders {
         /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
         pub fn network_configuration(
             mut self,
-            signature: crate::model::UpdateNetworkConfigurationInput,
+            input: crate::model::UpdateNetworkConfigurationInput,
         ) -> Self {
-            self.inner = self.inner.network_configuration(signature);
+            self.inner = self.inner.network_configuration(input);
             self
         }
         /// <p>The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.</p>
@@ -1460,9 +1448,9 @@ pub mod fluent_builders {
         /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
         pub fn logging_configuration(
             mut self,
-            signature: crate::model::LoggingConfigurationInput,
+            input: crate::model::LoggingConfigurationInput,
         ) -> Self {
-            self.inner = self.inner.logging_configuration(signature);
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.</p>
@@ -1481,9 +1469,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn weekly_maintenance_window_start(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.weekly_maintenance_window_start(signature.into());
+            self.inner = self.inner.weekly_maintenance_window_start(input.into());
             self
         }
         /// <p>The day and time of the week to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only. Supported input includes the following:</p>
@@ -1500,11 +1488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
-        pub fn webserver_access_mode(
-            mut self,
-            signature: crate::model::WebserverAccessMode,
-        ) -> Self {
-            self.inner = self.inner.webserver_access_mode(signature);
+        pub fn webserver_access_mode(mut self, input: crate::model::WebserverAccessMode) -> Self {
+            self.inner = self.inner.webserver_access_mode(input);
             self
         }
         /// <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access modes</a>.</p>
@@ -1516,8 +1501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
-        pub fn min_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.min_workers(signature);
+        pub fn min_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_workers(input);
             self
         }
         /// <p>The minimum number of workers that you want to run in your environment. MWAA scales the number of Apache Airflow workers up to the number you specify in the <code>MaxWorkers</code> field. When there are no more tasks running, and no more in the queue, MWAA disposes of the extra workers leaving the worker count you specify in the <code>MinWorkers</code> field. For example, <code>2</code>.</p>
@@ -1526,8 +1511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>
-        pub fn schedulers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.schedulers(signature);
+        pub fn schedulers(mut self, input: i32) -> Self {
+            self.inner = self.inner.schedulers(input);
             self
         }
         /// <p>The number of Apache Airflow schedulers to run in your Amazon MWAA environment.</p>

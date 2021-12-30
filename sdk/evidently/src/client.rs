@@ -392,8 +392,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
@@ -486,8 +486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
@@ -496,8 +496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the new experiment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the new experiment.</p>
@@ -506,8 +506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the experiment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the experiment.</p>
@@ -555,8 +555,8 @@ pub mod fluent_builders {
         /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
         /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
         /// the experiment name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(signature.into());
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
         /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
@@ -574,8 +574,8 @@ pub mod fluent_builders {
         /// is the total audience minus the audience that you have allocated to overrides or current launches of
         /// this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 10,000 to allocate 10% of the available audience.</p>
-        pub fn sampling_rate(mut self, signature: i64) -> Self {
-            self.inner = self.inner.sampling_rate(signature);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
         /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
@@ -589,8 +589,8 @@ pub mod fluent_builders {
         /// <p>A structure that contains the configuration of which variation to use as the "control"
         /// version. tThe "control" version is used for comparison with other variations. This structure
         /// also specifies how much experiment traffic is allocated to each variation.</p>
-        pub fn online_ab_config(mut self, signature: crate::model::OnlineAbConfig) -> Self {
-            self.inner = self.inner.online_ab_config(signature);
+        pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
+            self.inner = self.inner.online_ab_config(input);
             self
         }
         /// <p>A structure that contains the configuration of which variation to use as the "control"
@@ -705,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that is to contain the new feature.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that is to contain the new feature.</p>
@@ -715,8 +715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new feature.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new feature.</p>
@@ -729,9 +729,9 @@ pub mod fluent_builders {
         /// variation to all users instead.</p>
         pub fn evaluation_strategy(
             mut self,
-            signature: crate::model::FeatureEvaluationStrategy,
+            input: crate::model::FeatureEvaluationStrategy,
         ) -> Self {
-            self.inner = self.inner.evaluation_strategy(signature);
+            self.inner = self.inner.evaluation_strategy(input);
             self
         }
         /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
@@ -745,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the feature.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the feature.</p>
@@ -777,8 +777,8 @@ pub mod fluent_builders {
         /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
         /// <p>If you omit <code>defaultVariation</code>, the first variation listed in
         /// the <code>variations</code> structure is used as the default variation.</p>
-        pub fn default_variation(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_variation(signature.into());
+        pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_variation(input.into());
             self
         }
         /// <p>The name of the variation to use as the default variation. The default
@@ -928,8 +928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to create the launch in.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to create the launch in.</p>
@@ -938,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new launch.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new launch.</p>
@@ -948,8 +948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the launch.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the launch.</p>
@@ -961,9 +961,9 @@ pub mod fluent_builders {
         /// variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
-            signature: crate::model::ScheduledSplitsLaunchConfig,
+            input: crate::model::ScheduledSplitsLaunchConfig,
         ) -> Self {
-            self.inner = self.inner.scheduled_splits_config(signature);
+            self.inner = self.inner.scheduled_splits_config(input);
             self
         }
         /// <p>An array of structures that define the traffic allocation percentages among the feature
@@ -1015,8 +1015,8 @@ pub mod fluent_builders {
         /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
         /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
         /// the launch name as the <code>randomizationsSalt</code>.</p>
-        pub fn randomization_salt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(signature.into());
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
         /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
@@ -1130,8 +1130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the project.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the project.</p>
@@ -1140,8 +1140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the project.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the project.</p>
@@ -1153,8 +1153,8 @@ pub mod fluent_builders {
         /// evaluation events for longer term storage, if you choose to do so. If you choose
         /// not to store these events, Evidently deletes them after using them to produce metrics and other experiment
         /// results that you can view.</p>
-        pub fn data_delivery(mut self, signature: crate::model::ProjectDataDeliveryConfig) -> Self {
-            self.inner = self.inner.data_delivery(signature);
+        pub fn data_delivery(mut self, input: crate::model::ProjectDataDeliveryConfig) -> Self {
+            self.inner = self.inner.data_delivery(input);
             self
         }
         /// <p>A structure that contains information about where Evidently is to store
@@ -1267,8 +1267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to delete.</p>
@@ -1277,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to delete.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to delete.</p>
@@ -1347,8 +1347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature to delete.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature to delete.</p>
@@ -1357,8 +1357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature to delete.</p>
-        pub fn feature(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(signature.into());
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature to delete.</p>
@@ -1428,8 +1428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch to delete.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch to delete.</p>
@@ -1438,8 +1438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to delete.</p>
-        pub fn launch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(signature.into());
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to delete.</p>
@@ -1509,8 +1509,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to delete.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to delete.</p>
@@ -1593,8 +1593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains this feature.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains this feature.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature being evaluated.</p>
-        pub fn feature(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(signature.into());
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature being evaluated.</p>
@@ -1615,8 +1615,8 @@ pub mod fluent_builders {
         /// <p>An internal ID that represents a unique user of the application. This
         /// <code>entityID</code> is checked against any override rules assigned for this
         /// feature.</p>
-        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(signature.into());
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>An internal ID that represents a unique user of the application. This
@@ -1628,8 +1628,8 @@ pub mod fluent_builders {
         }
         /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
         /// in the evaluation events sent to Evidently from the user session. </p>
-        pub fn evaluation_context(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_context(signature.into());
+        pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_context(input.into());
             self
         }
         /// <p>A JSON block of attributes that you can optionally pass in. This JSON block is included
@@ -1703,8 +1703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment.</p>
@@ -1713,8 +1713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment that you want to see the details of.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment that you want to see the details of.</p>
@@ -1783,8 +1783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
@@ -1793,8 +1793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to retrieve the results of.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to retrieve the results of.</p>
@@ -1803,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the experiment started.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time that the experiment started.</p>
@@ -1816,8 +1816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time that the experiment ended, if it is completed.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time that the experiment ended, if it is completed.</p>
@@ -1864,8 +1864,8 @@ pub mod fluent_builders {
         }
         /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
         /// which uses the mean of the collected values as the statistic.</p>
-        pub fn base_stat(mut self, signature: crate::model::ExperimentBaseStat) -> Self {
-            self.inner = self.inner.base_stat(signature);
+        pub fn base_stat(mut self, input: crate::model::ExperimentBaseStat) -> Self {
+            self.inner = self.inner.base_stat(input);
             self
         }
         /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>,
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>In seconds, the amount of time to aggregate results together. </p>
-        pub fn period(mut self, signature: i64) -> Self {
-            self.inner = self.inner.period(signature);
+        pub fn period(mut self, input: i64) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>In seconds, the amount of time to aggregate results together. </p>
@@ -2041,8 +2041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature.</p>
@@ -2051,8 +2051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature that you want to retrieve information for.</p>
-        pub fn feature(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(signature.into());
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature that you want to retrieve information for.</p>
@@ -2122,8 +2122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch.</p>
@@ -2132,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch that you want to see the details of.</p>
-        pub fn launch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(signature.into());
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch that you want to see the details of.</p>
@@ -2203,8 +2203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to see the details of.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to see the details of.</p>
@@ -2273,8 +2273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to return the experiment list from.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the experiment list from.</p>
@@ -2283,8 +2283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2294,8 +2294,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
         /// <code>ListExperiments</code> operation.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
@@ -2365,8 +2365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to return the feature list from.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the feature list from.</p>
@@ -2375,8 +2375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2386,8 +2386,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
         /// <code>ListFeatures</code> operation.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
@@ -2457,8 +2457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to return the launch list from.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to return the launch list from.</p>
@@ -2467,8 +2467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2478,8 +2478,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
         /// <code>ListLaunches</code> operation.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
@@ -2550,8 +2550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -2561,8 +2561,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
         /// <code>ListProjects</code> operation.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
@@ -2632,8 +2632,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
@@ -2703,8 +2703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to write the events to.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to write the events to.</p>
@@ -2793,8 +2793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to start.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to start.</p>
@@ -2803,8 +2803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to start.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to start.</p>
@@ -2813,8 +2813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time to end the experiment.</p>
-        pub fn analysis_complete_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.analysis_complete_time(signature);
+        pub fn analysis_complete_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.analysis_complete_time(input);
             self
         }
         /// <p>The date and time to end the experiment.</p>
@@ -2887,8 +2887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch to start.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch to start.</p>
@@ -2897,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to start.</p>
-        pub fn launch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(signature.into());
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to start.</p>
@@ -2968,8 +2968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment to stop.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment to stop.</p>
@@ -2978,8 +2978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to stop.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to stop.</p>
@@ -2989,11 +2989,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
         /// <code>CANCELLED</code> after it stops.</p>
-        pub fn desired_state(
-            mut self,
-            signature: crate::model::ExperimentStopDesiredState,
-        ) -> Self {
-            self.inner = self.inner.desired_state(signature);
+        pub fn desired_state(mut self, input: crate::model::ExperimentStopDesiredState) -> Self {
+            self.inner = self.inner.desired_state(input);
             self
         }
         /// <p>Specify whether the experiment is to be considered <code>COMPLETED</code> or
@@ -3006,8 +3003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that describes why you are stopping the experiment.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A string that describes why you are stopping the experiment.</p>
@@ -3080,8 +3077,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch that you want to stop.</p>
@@ -3090,8 +3087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch to stop.</p>
-        pub fn launch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(signature.into());
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch to stop.</p>
@@ -3101,8 +3098,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
         /// <code>CANCELLED</code> after it stops.</p>
-        pub fn desired_state(mut self, signature: crate::model::LaunchStopDesiredState) -> Self {
-            self.inner = self.inner.desired_state(signature);
+        pub fn desired_state(mut self, input: crate::model::LaunchStopDesiredState) -> Self {
+            self.inner = self.inner.desired_state(input);
             self
         }
         /// <p>Specify whether to consider the launch as <code>COMPLETED</code> or
@@ -3115,8 +3112,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that describes why you are stopping the launch.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A string that describes why you are stopping the launch.</p>
@@ -3197,8 +3194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're adding tags to.</p>
@@ -3290,8 +3287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch Evidently resource that you're removing tags from.</p>
@@ -3379,8 +3376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
@@ -3389,8 +3386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to update.</p>
-        pub fn experiment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment(signature.into());
+        pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment(input.into());
             self
         }
         /// <p>The name of the experiment to update.</p>
@@ -3399,8 +3396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the experiment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the experiment.</p>
@@ -3448,8 +3445,8 @@ pub mod fluent_builders {
         /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
         /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
         /// the experiment name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(signature.into());
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
         /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID
@@ -3467,8 +3464,8 @@ pub mod fluent_builders {
         /// is the total audience minus the audience that you have allocated to overrides or current launches of
         /// this feature.</p>
         /// <p>This is represented in thousandths of a percent. For example, specify 20,000 to allocate 20% of the available audience.</p>
-        pub fn sampling_rate(mut self, signature: i64) -> Self {
-            self.inner = self.inner.sampling_rate(signature);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
         /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience
@@ -3482,8 +3479,8 @@ pub mod fluent_builders {
         /// <p>A structure that contains the configuration of which variation o use as the "control"
         /// version. The "control" version is used for comparison with other variations. This structure
         /// also specifies how much experiment traffic is allocated to each variation.</p>
-        pub fn online_ab_config(mut self, signature: crate::model::OnlineAbConfig) -> Self {
-            self.inner = self.inner.online_ab_config(signature);
+        pub fn online_ab_config(mut self, input: crate::model::OnlineAbConfig) -> Self {
+            self.inner = self.inner.online_ab_config(input);
             self
         }
         /// <p>A structure that contains the configuration of which variation o use as the "control"
@@ -3559,8 +3556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the feature to be updated.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the feature to be updated.</p>
@@ -3569,8 +3566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the feature to be updated.</p>
-        pub fn feature(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature(signature.into());
+        pub fn feature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature(input.into());
             self
         }
         /// <p>The name of the feature to be updated.</p>
@@ -3583,9 +3580,9 @@ pub mod fluent_builders {
         /// to all users instead.</p>
         pub fn evaluation_strategy(
             mut self,
-            signature: crate::model::FeatureEvaluationStrategy,
+            input: crate::model::FeatureEvaluationStrategy,
         ) -> Self {
-            self.inner = self.inner.evaluation_strategy(signature);
+            self.inner = self.inner.evaluation_strategy(input);
             self
         }
         /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing
@@ -3599,8 +3596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the feature.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the feature.</p>
@@ -3657,8 +3654,8 @@ pub mod fluent_builders {
         /// <p>The name of the variation to use as the default variation. The default
         /// variation is served to users who are not allocated to any ongoing launches
         /// or experiments of this feature.</p>
-        pub fn default_variation(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_variation(signature.into());
+        pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_variation(input.into());
             self
         }
         /// <p>The name of the variation to use as the default variation. The default
@@ -3763,8 +3760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
@@ -3773,8 +3770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch that is to be updated.</p>
-        pub fn launch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.launch(signature.into());
+        pub fn launch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.launch(input.into());
             self
         }
         /// <p>The name of the launch that is to be updated.</p>
@@ -3783,8 +3780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the launch.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the launch.</p>
@@ -3834,8 +3831,8 @@ pub mod fluent_builders {
         /// to determine which variation the user session is served. This randomization ID is a combination of the entity ID
         /// and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses
         /// the launch name as the <code>randomizationSalt</code>.</p>
-        pub fn randomization_salt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.randomization_salt(signature.into());
+        pub fn randomization_salt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.randomization_salt(input.into());
             self
         }
         /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID
@@ -3853,9 +3850,9 @@ pub mod fluent_builders {
         /// variations during each step of the launch.</p>
         pub fn scheduled_splits_config(
             mut self,
-            signature: crate::model::ScheduledSplitsLaunchConfig,
+            input: crate::model::ScheduledSplitsLaunchConfig,
         ) -> Self {
-            self.inner = self.inner.scheduled_splits_config(signature);
+            self.inner = self.inner.scheduled_splits_config(input);
             self
         }
         /// <p>An array of structures that define the traffic allocation percentages among the feature
@@ -3933,8 +3930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project to update.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project to update.</p>
@@ -3943,8 +3940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the project.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the project.</p>
@@ -4017,8 +4014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-        pub fn project(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project(signature.into());
+        pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project(input.into());
             self
         }
         /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
@@ -4027,8 +4024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
-        pub fn s3_destination(mut self, signature: crate::model::S3DestinationConfig) -> Self {
-            self.inner = self.inner.s3_destination(signature);
+        pub fn s3_destination(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination(input);
             self
         }
         /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
@@ -4043,9 +4040,9 @@ pub mod fluent_builders {
         /// events.</p>
         pub fn cloud_watch_logs(
             mut self,
-            signature: crate::model::CloudWatchLogsDestinationConfig,
+            input: crate::model::CloudWatchLogsDestinationConfig,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs(signature);
+            self.inner = self.inner.cloud_watch_logs(input);
             self
         }
         /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation

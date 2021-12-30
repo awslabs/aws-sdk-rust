@@ -348,8 +348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -419,8 +419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.</p>
@@ -489,8 +489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -499,8 +499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
-        pub fn analysis_scheme(mut self, signature: crate::model::AnalysisScheme) -> Self {
-            self.inner = self.inner.analysis_scheme(signature);
+        pub fn analysis_scheme(mut self, input: crate::model::AnalysisScheme) -> Self {
+            self.inner = self.inner.analysis_scheme(input);
             self
         }
         /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
@@ -572,8 +572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -582,8 +582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
-        pub fn expression(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.expression(signature);
+        pub fn expression(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.expression(input);
             self
         }
         /// <p>A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.  </p>
@@ -655,8 +655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -665,8 +665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The index field and field options you want to configure. </p>
-        pub fn index_field(mut self, signature: crate::model::IndexField) -> Self {
-            self.inner = self.inner.index_field(signature);
+        pub fn index_field(mut self, input: crate::model::IndexField) -> Self {
+            self.inner = self.inner.index_field(input);
             self
         }
         /// <p>The index field and field options you want to configure. </p>
@@ -738,8 +738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -748,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
-        pub fn suggester(mut self, signature: crate::model::Suggester) -> Self {
-            self.inner = self.inner.suggester(signature);
+        pub fn suggester(mut self, input: crate::model::Suggester) -> Self {
+            self.inner = self.inner.suggester(input);
             self
         }
         /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
@@ -821,8 +821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -831,8 +831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the analysis scheme you want to delete.</p>
-        pub fn analysis_scheme_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_scheme_name(signature.into());
+        pub fn analysis_scheme_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_scheme_name(input.into());
             self
         }
         /// <p>The name of the analysis scheme you want to delete.</p>
@@ -905,8 +905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to permanently delete.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to permanently delete.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -985,8 +985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
-        pub fn expression_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression_name(signature.into());
+        pub fn expression_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression_name(input.into());
             self
         }
         /// <p>The name of the <code><a>Expression</a></code> to delete.</p>
@@ -1058,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1068,8 +1068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
-        pub fn index_field_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_field_name(signature.into());
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_field_name(input.into());
             self
         }
         /// <p>The name of the index field your want to remove from the domain's indexing options.</p>
@@ -1141,8 +1141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1151,8 +1151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the suggester you want to delete.</p>
-        pub fn suggester_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suggester_name(signature.into());
+        pub fn suggester_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suggester_name(input.into());
             self
         }
         /// <p>Specifies the name of the suggester you want to delete.</p>
@@ -1224,8 +1224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1251,8 +1251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1321,8 +1321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1331,8 +1331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1401,8 +1401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain.</p>
@@ -1411,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</p>
@@ -1560,8 +1560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1587,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1659,8 +1659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1686,8 +1686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1756,8 +1756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -1827,8 +1827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1837,8 +1837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -1907,8 +1907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain you want to describe.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain you want to describe.</p>
@@ -1934,8 +1934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
-        pub fn deployed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: bool) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p>Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
@@ -2004,8 +2004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2134,8 +2134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2144,8 +2144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </p>
@@ -2214,8 +2214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain.</p>
@@ -2226,9 +2226,9 @@ pub mod fluent_builders {
         /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
         pub fn domain_endpoint_options(
             mut self,
-            signature: crate::model::DomainEndpointOptions,
+            input: crate::model::DomainEndpointOptions,
         ) -> Self {
-            self.inner = self.inner.domain_endpoint_options(signature);
+            self.inner = self.inner.domain_endpoint_options(input);
             self
         }
         /// <p>Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </p>
@@ -2300,8 +2300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2310,8 +2310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The desired instance type and desired number of replicas of each index partition.</p>
-        pub fn scaling_parameters(mut self, signature: crate::model::ScalingParameters) -> Self {
-            self.inner = self.inner.scaling_parameters(signature);
+        pub fn scaling_parameters(mut self, input: crate::model::ScalingParameters) -> Self {
+            self.inner = self.inner.scaling_parameters(input);
             self
         }
         /// <p>The desired instance type and desired number of replicas of each index partition.</p>
@@ -2385,8 +2385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
@@ -2395,8 +2395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access rules you want to configure. These rules replace any existing rules. </p>
-        pub fn access_policies(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policies(signature.into());
+        pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policies(input.into());
             self
         }
         /// <p>The access rules you want to configure. These rules replace any existing rules. </p>

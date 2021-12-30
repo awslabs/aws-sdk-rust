@@ -349,8 +349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -364,8 +364,8 @@ pub mod fluent_builders {
         /// <p>
         /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
         /// </p>
-        pub fn ops_center_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.ops_center_enabled(signature);
+        pub fn ops_center_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.ops_center_enabled(input);
             self
         }
         /// <p>
@@ -378,8 +378,8 @@ pub mod fluent_builders {
         /// <p>
         /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
         /// </p>
-        pub fn cwe_monitor_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cwe_monitor_enabled(signature);
+        pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
         /// <p>
@@ -393,8 +393,8 @@ pub mod fluent_builders {
         /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
         /// receive notifications for updates to the opsItem.
         /// </p>
-        pub fn ops_item_sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_sns_topic_arn(signature.into());
+        pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
         /// <p>
@@ -432,8 +432,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(signature);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -442,8 +442,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_create(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_create(signature);
+        pub fn auto_create(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_create(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -512,8 +512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -525,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -615,8 +615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -628,8 +628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(signature.into());
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -641,8 +641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(signature.into());
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -651,8 +651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-        pub fn pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(signature.into());
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
@@ -663,8 +663,8 @@ pub mod fluent_builders {
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
         /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
         /// </p>
-        pub fn rank(mut self, signature: i32) -> Self {
-            self.inner = self.inner.rank(signature);
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
@@ -735,8 +735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -809,8 +809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -822,8 +822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -895,8 +895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -908,8 +908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(signature.into());
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -921,8 +921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(signature.into());
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -991,8 +991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1064,8 +1064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1077,8 +1077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1150,8 +1150,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1163,8 +1163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1238,8 +1238,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1251,8 +1251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -1266,8 +1266,8 @@ pub mod fluent_builders {
         /// <p>The tier of the application component. Supported tiers include
         /// <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
         /// and <code>DEFAULT</code>.</p>
-        pub fn tier(mut self, signature: crate::model::Tier) -> Self {
-            self.inner = self.inner.tier(signature);
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
         /// <p>The tier of the application component. Supported tiers include
@@ -1338,8 +1338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1351,8 +1351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(signature.into());
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -1364,8 +1364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(signature.into());
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -1434,8 +1434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the observation.</p>
-        pub fn observation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.observation_id(signature.into());
+        pub fn observation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.observation_id(input.into());
             self
         }
         /// <p>The ID of the observation.</p>
@@ -1507,8 +1507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the problem.</p>
-        pub fn problem_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.problem_id(signature.into());
+        pub fn problem_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.problem_id(input.into());
             self
         }
         /// <p>The ID of the problem.</p>
@@ -1577,8 +1577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the problem.</p>
-        pub fn problem_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.problem_id(signature.into());
+        pub fn problem_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.problem_id(input.into());
             self
         }
         /// <p>The ID of the problem.</p>
@@ -1648,8 +1648,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -1659,8 +1659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -1729,8 +1729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -1743,8 +1743,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -1754,8 +1754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -1837,8 +1837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Resource group to which the application belongs. </p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>Resource group to which the application belongs. </p>
@@ -1850,8 +1850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the event. </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time of the event. </p>
@@ -1863,8 +1863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the event.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time of the event.</p>
@@ -1876,8 +1876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
-        pub fn event_status(mut self, signature: crate::model::ConfigurationEventStatus) -> Self {
-            self.inner = self.inner.event_status(signature);
+        pub fn event_status(mut self, input: crate::model::ConfigurationEventStatus) -> Self {
+            self.inner = self.inner.event_status(input);
             self
         }
         /// <p>The status of the configuration update event. Possible values include INFO, WARN, and ERROR.</p>
@@ -1895,8 +1895,8 @@ pub mod fluent_builders {
         /// another <code>ListConfigurationHistory</code> request with the returned
         /// <code>NextToken</code> value. If this parameter is not used, then
         /// <code>ListConfigurationHistory</code> returns all results. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of results returned by <code>ListConfigurationHistory</code> in
@@ -1914,8 +1914,8 @@ pub mod fluent_builders {
         /// <code>MaxResults</code> was used and the results exceeded the value of that parameter. Pagination
         /// continues from the end of the previous results that returned the <code>NextToken</code> value. This
         /// value is <code>null</code> when there are no more results to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>NextToken</code> value returned from a previous paginated <code>ListConfigurationHistory</code> request where
@@ -1987,8 +1987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2000,8 +2000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(signature.into());
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -2014,8 +2014,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2025,8 +2025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2095,8 +2095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2109,8 +2109,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2120,8 +2120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2190,8 +2190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2204,8 +2204,8 @@ pub mod fluent_builders {
         }
         /// <p>The time when the problem was detected, in epoch
         /// seconds. If you don't specify a time frame for the request, problems within the past seven days are returned.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The time when the problem was detected, in epoch
@@ -2219,8 +2219,8 @@ pub mod fluent_builders {
         }
         /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
         /// past seven days are returned.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The time when the problem ended, in epoch seconds. If not specified, problems within the
@@ -2234,8 +2234,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2245,8 +2245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -2255,8 +2255,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2334,8 +2334,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
         /// information for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to retrieve tag
@@ -2412,8 +2412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to add one or more tags to.</p>
@@ -2505,8 +2505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application that you want to remove one or more tags from.</p>
@@ -2600,8 +2600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2615,8 +2615,8 @@ pub mod fluent_builders {
         /// <p>
         /// When set to <code>true</code>, creates opsItems for any problems detected on an application.
         /// </p>
-        pub fn ops_center_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.ops_center_enabled(signature);
+        pub fn ops_center_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.ops_center_enabled(input);
             self
         }
         /// <p>
@@ -2629,8 +2629,8 @@ pub mod fluent_builders {
         /// <p>
         /// Indicates whether Application Insights can listen to CloudWatch events for the application resources, such as <code>instance terminated</code>, <code>failed deployment</code>, and others.
         /// </p>
-        pub fn cwe_monitor_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cwe_monitor_enabled(signature);
+        pub fn cwe_monitor_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cwe_monitor_enabled(input);
             self
         }
         /// <p>
@@ -2643,8 +2643,8 @@ pub mod fluent_builders {
         /// <p>
         /// The SNS topic provided to Application Insights that is associated to the created opsItem. Allows you to
         /// receive notifications for updates to the opsItem.</p>
-        pub fn ops_item_sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_sns_topic_arn(signature.into());
+        pub fn ops_item_sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_sns_topic_arn(input.into());
             self
         }
         /// <p>
@@ -2659,8 +2659,8 @@ pub mod fluent_builders {
         }
         /// <p>
         /// Disassociates the SNS topic from the opsItem created for detected problems.</p>
-        pub fn remove_sns_topic(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remove_sns_topic(signature);
+        pub fn remove_sns_topic(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_sns_topic(input);
             self
         }
         /// <p>
@@ -2670,8 +2670,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(signature);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2741,8 +2741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2754,8 +2754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -2767,8 +2767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the component.</p>
-        pub fn new_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_component_name(signature.into());
+        pub fn new_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_component_name(input.into());
             self
         }
         /// <p>The new name of the component.</p>
@@ -2859,8 +2859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -2872,8 +2872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the component.</p>
-        pub fn component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.component_name(signature.into());
+        pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_name(input.into());
             self
         }
         /// <p>The name of the component.</p>
@@ -2885,8 +2885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the application component is monitored.</p>
-        pub fn monitor(mut self, signature: bool) -> Self {
-            self.inner = self.inner.monitor(signature);
+        pub fn monitor(mut self, input: bool) -> Self {
+            self.inner = self.inner.monitor(input);
             self
         }
         /// <p>Indicates whether the application component is monitored.</p>
@@ -2896,8 +2896,8 @@ pub mod fluent_builders {
         }
         /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
         /// <code>DOT_NET_WEB</code>, <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
-        pub fn tier(mut self, signature: crate::model::Tier) -> Self {
-            self.inner = self.inner.tier(signature);
+        pub fn tier(mut self, input: crate::model::Tier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
         /// <p>The tier of the application component. Supported tiers include <code>DOT_NET_WORKER</code>,
@@ -2910,11 +2910,8 @@ pub mod fluent_builders {
         /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working with JSON</a>.
         /// You can send a request to <code>DescribeComponentConfigurationRecommendation</code> to see the recommended configuration for a component. For the complete
         /// format of the component configuration file, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component Configuration</a>.</p>
-        pub fn component_configuration(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.component_configuration(signature.into());
+        pub fn component_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.component_configuration(input.into());
             self
         }
         /// <p>The configuration settings of the component. The value is the escaped JSON of the configuration. For
@@ -2929,8 +2926,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn auto_config_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_config_enabled(signature);
+        pub fn auto_config_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_config_enabled(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -2999,8 +2996,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource group.</p>
-        pub fn resource_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_name(signature.into());
+        pub fn resource_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_name(input.into());
             self
         }
         /// <p>The name of the resource group.</p>
@@ -3012,8 +3009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern set.</p>
-        pub fn pattern_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_set_name(signature.into());
+        pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_set_name(input.into());
             self
         }
         /// <p>The name of the log pattern set.</p>
@@ -3025,8 +3022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log pattern.</p>
-        pub fn pattern_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern_name(signature.into());
+        pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern_name(input.into());
             self
         }
         /// <p>The name of the log pattern.</p>
@@ -3035,8 +3032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
-        pub fn pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(signature.into());
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
         /// <p>The log pattern. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference constructions are not supported.</p>
@@ -3047,8 +3044,8 @@ pub mod fluent_builders {
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
         /// Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
         /// </p>
-        pub fn rank(mut self, signature: i32) -> Self {
-            self.inner = self.inner.rank(signature);
+        pub fn rank(mut self, input: i32) -> Self {
+            self.inner = self.inner.rank(input);
             self
         }
         /// <p>Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.

@@ -304,8 +304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>
@@ -402,8 +402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The label of the new high-availability partition group.</p>
-        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(signature.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The label of the new high-availability partition group.</p>
@@ -491,8 +491,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
-        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(signature.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The identifier of the subnet in your VPC in which to place the HSM.</p>
@@ -501,8 +501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSH public key to install on the HSM.</p>
-        pub fn ssh_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_key(signature.into());
+        pub fn ssh_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_key(input.into());
             self
         }
         /// <p>The SSH public key to install on the HSM.</p>
@@ -513,8 +513,8 @@ pub mod fluent_builders {
         /// <p>The IP address to assign to the HSM's ENI.</p>
         /// <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR
         /// range of the subnet.</p>
-        pub fn eni_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_ip(signature.into());
+        pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_ip(input.into());
             self
         }
         /// <p>The IP address to assign to the HSM's ENI.</p>
@@ -526,8 +526,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
         /// behalf.</p>
-        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(signature.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your
@@ -537,8 +537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>The external ID from <code>IamRoleArn</code>, if present.</p>
@@ -559,8 +559,8 @@ pub mod fluent_builders {
         /// trial.</p>
         /// </li>
         /// </ul>
-        pub fn subscription_type(mut self, signature: crate::model::SubscriptionType) -> Self {
-            self.inner = self.inner.subscription_type(signature);
+        pub fn subscription_type(mut self, input: crate::model::SubscriptionType) -> Self {
+            self.inner = self.inner.subscription_type(input);
             self
         }
         /// <p>Specifies the type of subscription for the HSM.</p>
@@ -585,8 +585,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
         /// same token will be ignored.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the
@@ -597,8 +597,8 @@ pub mod fluent_builders {
         }
         /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
         /// syslog monitoring server.</p>
-        pub fn syslog_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.syslog_ip(signature.into());
+        pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.syslog_ip(input.into());
             self
         }
         /// <p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one
@@ -678,8 +678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The label for the client.</p>
-        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(signature.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The label for the client.</p>
@@ -689,8 +689,8 @@ pub mod fluent_builders {
         }
         /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
         /// by this client.</p>
-        pub fn certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(signature.into());
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used
@@ -770,8 +770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the high-availability partition group to delete.</p>
-        pub fn hapg_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hapg_arn(signature.into());
+        pub fn hapg_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hapg_arn(input.into());
             self
         }
         /// <p>The ARN of the high-availability partition group to delete.</p>
@@ -851,8 +851,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the HSM to delete.</p>
-        pub fn hsm_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_arn(signature.into());
+        pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_arn(input.into());
             self
         }
         /// <p>The ARN of the HSM to delete.</p>
@@ -931,8 +931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the client to delete.</p>
-        pub fn client_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_arn(signature.into());
+        pub fn client_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_arn(input.into());
             self
         }
         /// <p>The ARN of the client to delete.</p>
@@ -1011,8 +1011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the high-availability partition group to describe.</p>
-        pub fn hapg_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hapg_arn(signature.into());
+        pub fn hapg_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hapg_arn(input.into());
             self
         }
         /// <p>The ARN of the high-availability partition group to describe.</p>
@@ -1093,8 +1093,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
         /// parameter must be specified.</p>
-        pub fn hsm_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_arn(signature.into());
+        pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_arn(input.into());
             self
         }
         /// <p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
@@ -1105,8 +1105,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
         /// <code>HsmSerialNumber</code> parameter must be specified.</p>
-        pub fn hsm_serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_serial_number(signature.into());
+        pub fn hsm_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_serial_number(input.into());
             self
         }
         /// <p>The serial number of the HSM. Either the <code>HsmArn</code> or the
@@ -1189,8 +1189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the client.</p>
-        pub fn client_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_arn(signature.into());
+        pub fn client_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_arn(input.into());
             self
         }
         /// <p>The ARN of the client.</p>
@@ -1199,11 +1199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate fingerprint.</p>
-        pub fn certificate_fingerprint(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.certificate_fingerprint(signature.into());
+        pub fn certificate_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_fingerprint(input.into());
             self
         }
         /// <p>The certificate fingerprint.</p>
@@ -1286,8 +1283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the client.</p>
-        pub fn client_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_arn(signature.into());
+        pub fn client_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_arn(input.into());
             self
         }
         /// <p>The ARN of the client.</p>
@@ -1296,8 +1293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client version.</p>
-        pub fn client_version(mut self, signature: crate::model::ClientVersion) -> Self {
-            self.inner = self.inner.client_version(signature);
+        pub fn client_version(mut self, input: crate::model::ClientVersion) -> Self {
+            self.inner = self.inner.client_version(input);
             self
         }
         /// <p>The client version.</p>
@@ -1473,8 +1470,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
         /// null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass
@@ -1560,8 +1557,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
         /// null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass
@@ -1646,8 +1643,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
         /// Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>.
@@ -1727,8 +1724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
@@ -1807,8 +1804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the high-availability partition group to modify.</p>
-        pub fn hapg_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hapg_arn(signature.into());
+        pub fn hapg_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hapg_arn(input.into());
             self
         }
         /// <p>The ARN of the high-availability partition group to modify.</p>
@@ -1817,8 +1814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new label for the high-availability partition group.</p>
-        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(signature.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The new label for the high-availability partition group.</p>
@@ -1922,8 +1919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the HSM to modify.</p>
-        pub fn hsm_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_arn(signature.into());
+        pub fn hsm_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_arn(input.into());
             self
         }
         /// <p>The ARN of the HSM to modify.</p>
@@ -1933,8 +1930,8 @@ pub mod fluent_builders {
         }
         /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
         /// Availability Zone as the current subnet.</p>
-        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(signature.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same
@@ -1947,8 +1944,8 @@ pub mod fluent_builders {
         /// HSM.</p>
         /// <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP
         /// address will be randomly chosen from the CIDR range of the new subnet.</p>
-        pub fn eni_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eni_ip(signature.into());
+        pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eni_ip(input.into());
             self
         }
         /// <p>The new IP address for the elastic network interface (ENI) attached to the
@@ -1960,8 +1957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new IAM role ARN.</p>
-        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(signature.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The new IAM role ARN.</p>
@@ -1970,8 +1967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new external ID.</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>The new external ID.</p>
@@ -1981,8 +1978,8 @@ pub mod fluent_builders {
         }
         /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
         /// one syslog monitoring server.</p>
-        pub fn syslog_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.syslog_ip(signature.into());
+        pub fn syslog_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.syslog_ip(input.into());
             self
         }
         /// <p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports
@@ -2064,8 +2061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the client.</p>
-        pub fn client_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_arn(signature.into());
+        pub fn client_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_arn(input.into());
             self
         }
         /// <p>The ARN of the client.</p>
@@ -2074,8 +2071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new certificate for the client.</p>
-        pub fn certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(signature.into());
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The new certificate for the client.</p>
@@ -2156,8 +2153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>

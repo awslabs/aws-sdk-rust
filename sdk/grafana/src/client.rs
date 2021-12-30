@@ -235,8 +235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to associate the license with.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to associate the license with.</p>
@@ -245,8 +245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of license to associate with the workspace.</p>
-        pub fn license_type(mut self, signature: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(signature);
+        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
+            self.inner = self.inner.license_type(input);
             self
         }
         /// <p>The type of license to associate with the workspace.</p>
@@ -325,8 +325,8 @@ pub mod fluent_builders {
         /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
         /// specify which organizational units the workspace can access in the
         /// <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn account_access_type(mut self, signature: crate::model::AccountAccessType) -> Self {
-            self.inner = self.inner.account_access_type(signature);
+        pub fn account_access_type(mut self, input: crate::model::AccountAccessType) -> Self {
+            self.inner = self.inner.account_access_type(input);
             self
         }
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
@@ -341,8 +341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
@@ -352,8 +352,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services
         /// data sources and notification channels in other accounts in an organization.</p>
-        pub fn organization_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_role_name(signature.into());
+        pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_role_name(input.into());
             self
         }
         /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services
@@ -375,8 +375,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
         /// Amazon Web Services data sources and notification channels</a>
         /// </p>
-        pub fn permission_type(mut self, signature: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
@@ -398,8 +398,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the CloudFormation stack set to use to generate IAM roles
         /// to be used for this workspace.</p>
-        pub fn stack_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(signature.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input.into());
             self
         }
         /// <p>The name of the CloudFormation stack set to use to generate IAM roles
@@ -441,8 +441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-        pub fn workspace_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_description(signature.into());
+        pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_description(input.into());
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
@@ -454,8 +454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the workspace. It does not have to be unique.</p>
-        pub fn workspace_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_name(signature.into());
+        pub fn workspace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_name(input.into());
             self
         }
         /// <p>The name for the workspace. It does not have to be unique.</p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
         /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
         /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
         /// automatically created.</p>
-        pub fn workspace_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_role_arn(signature.into());
+        pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_role_arn(input.into());
             self
         }
         /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
@@ -620,8 +620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to delete.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to delete.</p>
@@ -690,8 +690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to display information about.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to display information about.</p>
@@ -760,8 +760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to return authentication information about.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to return authentication information about.</p>
@@ -830,8 +830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
@@ -840,8 +840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of license to remove from the workspace.</p>
-        pub fn license_type(mut self, signature: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(signature);
+        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
+            self.inner = self.inner.license_type(input);
             self
         }
         /// <p>The type of license to remove from the workspace.</p>
@@ -919,8 +919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to include in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response.</p>
@@ -930,8 +930,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
         /// <code>ListPermissions</code> operation.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use when requesting the next set of results. You received this token from a previous
@@ -943,8 +943,8 @@ pub mod fluent_builders {
         /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users
         /// are returned. If you specify <code>SSO_GROUP</code>, only the permissions of Amazon Web Services SSO groups
         /// are returned.</p>
-        pub fn user_type(mut self, signature: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(signature);
+        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
+            self.inner = self.inner.user_type(input);
             self
         }
         /// <p>(Optional) If you specify <code>SSO_USER</code>, then only the permissions of Amazon Web Services SSO users
@@ -955,8 +955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>(Optional) Limits the results to only the user that matches this ID.</p>
@@ -965,8 +965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>(Optional) Limits the results to only the group that matches this ID.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to list permissions for. This parameter is required.</p>
@@ -1046,8 +1046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of workspaces to include in the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workspaces to include in the results.</p>
@@ -1057,8 +1057,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of workspaces to return. (You receive this token from a
         /// previous <code>ListWorkspaces</code> operation.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of workspaces to return. (You receive this token from a
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workspace to update.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to update.</p>
@@ -1223,8 +1223,8 @@ pub mod fluent_builders {
         /// other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must
         /// specify which organizational units the workspace can access in the
         /// <code>workspaceOrganizationalUnits</code> parameter.</p>
-        pub fn account_access_type(mut self, signature: crate::model::AccountAccessType) -> Self {
-            self.inner = self.inner.account_access_type(signature);
+        pub fn account_access_type(mut self, input: crate::model::AccountAccessType) -> Self {
+            self.inner = self.inner.account_access_type(input);
             self
         }
         /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in
@@ -1239,8 +1239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
-        pub fn organization_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_role_name(signature.into());
+        pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_role_name(input.into());
             self
         }
         /// <p>The name of an IAM role that already exists to use to access resources through Organizations.</p>
@@ -1261,8 +1261,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for
         /// Amazon Web Services data sources and notification channels</a>
         /// </p>
-        pub fn permission_type(mut self, signature: crate::model::PermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::PermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates
@@ -1284,8 +1284,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the CloudFormation stack set to use to generate IAM roles
         /// to be used for this workspace.</p>
-        pub fn stack_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_set_name(signature.into());
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_set_name(input.into());
             self
         }
         /// <p>The name of the CloudFormation stack set to use to generate IAM roles
@@ -1327,8 +1327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
-        pub fn workspace_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_description(signature.into());
+        pub fn workspace_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_description(input.into());
             self
         }
         /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workspace to update.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to update.</p>
@@ -1350,8 +1350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new name for the workspace to update.</p>
-        pub fn workspace_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_name(signature.into());
+        pub fn workspace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_name(input.into());
             self
         }
         /// <p>A new name for the workspace to update.</p>
@@ -1413,8 +1413,8 @@ pub mod fluent_builders {
         /// this field and you specify some Amazon Web Services resources in <code>workspaceDataSources</code> or
         /// <code>workspaceNotificationDestinations</code>, a new IAM role with the necessary permissions is
         /// automatically created.</p>
-        pub fn workspace_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_role_arn(signature.into());
+        pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_role_arn(input.into());
             self
         }
         /// <p>The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
@@ -1493,8 +1493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the workspace to update the authentication for.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The ID of the workspace to update the authentication for.</p>
@@ -1532,8 +1532,8 @@ pub mod fluent_builders {
         /// map SAML assertion attributes to workspace user information and
         /// define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles
         /// in the workspace.</p>
-        pub fn saml_configuration(mut self, signature: crate::model::SamlConfiguration) -> Self {
-            self.inner = self.inner.saml_configuration(signature);
+        pub fn saml_configuration(mut self, input: crate::model::SamlConfiguration) -> Self {
+            self.inner = self.inner.saml_configuration(input);
             self
         }
         /// <p>If the workspace uses SAML, use this structure to

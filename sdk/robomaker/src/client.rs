@@ -733,8 +733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The deployment job ARN to cancel.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The deployment job ARN to cancel.</p>
@@ -803,8 +803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The simulation job ARN to cancel.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The simulation job ARN to cancel.</p>
@@ -874,8 +874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the batch to cancel.</p>
-        pub fn batch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch(signature.into());
+        pub fn batch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch(input.into());
             self
         }
         /// <p>The id of the batch to cancel.</p>
@@ -944,8 +944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to cancel.</p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job to cancel.</p>
@@ -1091,8 +1091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The requested deployment configuration.</p>
-        pub fn deployment_config(mut self, signature: crate::model::DeploymentConfig) -> Self {
-            self.inner = self.inner.deployment_config(signature);
+        pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(input);
             self
         }
         /// <p>The requested deployment configuration.</p>
@@ -1105,8 +1105,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1119,8 +1119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet to deploy.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -1327,8 +1327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the robot.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the robot.</p>
@@ -1337,8 +1337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target architecture of the robot.</p>
-        pub fn architecture(mut self, signature: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(signature);
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
         /// <p>The target architecture of the robot.</p>
@@ -1350,8 +1350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Greengrass group id.</p>
-        pub fn greengrass_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.greengrass_group_id(signature.into());
+        pub fn greengrass_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.greengrass_group_id(input.into());
             self
         }
         /// <p>The Greengrass group id.</p>
@@ -1446,8 +1446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the robot application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the robot application.</p>
@@ -1473,8 +1473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
-        pub fn robot_software_suite(mut self, signature: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(signature);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribuition) used by the robot application.</p>
@@ -1512,8 +1512,8 @@ pub mod fluent_builders {
         }
         /// <p>The object that contains that URI of the Docker image that you use for your robot
         /// application.</p>
-        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains that URI of the Docker image that you use for your robot
@@ -1586,8 +1586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the robot application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the robot application.</p>
@@ -1597,8 +1597,8 @@ pub mod fluent_builders {
         }
         /// <p>The current revision id for the robot application. If you provide a value and it matches
         /// the latest revision ID, a new version will be created.</p>
-        pub fn current_revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(signature.into());
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The current revision id for the robot application. If you provide a value and it matches
@@ -1630,8 +1630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
-        pub fn image_digest(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(signature.into());
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(input.into());
             self
         }
         /// <p>A SHA256 identifier for the Docker image that you use for your robot application.</p>
@@ -1700,8 +1700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the simulation application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the simulation application.</p>
@@ -1729,9 +1729,9 @@ pub mod fluent_builders {
         /// <p>The simulation software suite used by the simulation application.</p>
         pub fn simulation_software_suite(
             mut self,
-            signature: crate::model::SimulationSoftwareSuite,
+            input: crate::model::SimulationSoftwareSuite,
         ) -> Self {
-            self.inner = self.inner.simulation_software_suite(signature);
+            self.inner = self.inner.simulation_software_suite(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
@@ -1743,8 +1743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
-        pub fn robot_software_suite(mut self, signature: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(signature);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the simulation application.</p>
@@ -1756,8 +1756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn rendering_engine(mut self, signature: crate::model::RenderingEngine) -> Self {
-            self.inner = self.inner.rendering_engine(signature);
+        pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
+            self.inner = self.inner.rendering_engine(input);
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
@@ -1795,8 +1795,8 @@ pub mod fluent_builders {
         }
         /// <p>The object that contains the Docker image URI used to create your simulation
         /// application.</p>
-        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains the Docker image URI used to create your simulation
@@ -1871,8 +1871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -1882,8 +1882,8 @@ pub mod fluent_builders {
         }
         /// <p>The current revision id for the simulation application. If you provide a value and it
         /// matches the latest revision ID, a new version will be created.</p>
-        pub fn current_revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(signature.into());
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The current revision id for the simulation application. If you provide a value and it
@@ -1916,8 +1916,8 @@ pub mod fluent_builders {
         }
         /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
         /// application.</p>
-        pub fn image_digest(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_digest(signature.into());
+        pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_digest(input.into());
             self
         }
         /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation
@@ -1992,8 +1992,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2006,8 +2006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
-        pub fn output_location(mut self, signature: crate::model::OutputLocation) -> Self {
-            self.inner = self.inner.output_location(signature);
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>Location for output files generated by the simulation job.</p>
@@ -2019,8 +2019,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The logging configuration.</p>
-        pub fn logging_config(mut self, signature: crate::model::LoggingConfig) -> Self {
-            self.inner = self.inner.logging_config(signature);
+        pub fn logging_config(mut self, input: crate::model::LoggingConfig) -> Self {
+            self.inner = self.inner.logging_config(input);
             self
         }
         /// <p>The logging configuration.</p>
@@ -2034,8 +2034,8 @@ pub mod fluent_builders {
         /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
         /// <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will
         /// transition to <code>Completed</code>.</p>
-        pub fn max_job_duration_in_seconds(mut self, signature: i64) -> Self {
-            self.inner = self.inner.max_job_duration_in_seconds(signature);
+        pub fn max_job_duration_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.max_job_duration_in_seconds(input);
             self
         }
         /// <p>The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When
@@ -2048,8 +2048,8 @@ pub mod fluent_builders {
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
         /// specified in its associated policies on your behalf. This is how credentials are passed in
         /// to your simulation job. </p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>The IAM role name that allows the simulation instance to call the AWS APIs that are
@@ -2071,8 +2071,8 @@ pub mod fluent_builders {
         /// <p>Stop the simulation job and terminate the instance.</p>
         /// </dd>
         /// </dl>
-        pub fn failure_behavior(mut self, signature: crate::model::FailureBehavior) -> Self {
-            self.inner = self.inner.failure_behavior(signature);
+        pub fn failure_behavior(mut self, input: crate::model::FailureBehavior) -> Self {
+            self.inner = self.inner.failure_behavior(input);
             self
         }
         /// <p>The failure behavior the simulation job.</p>
@@ -2186,8 +2186,8 @@ pub mod fluent_builders {
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
         /// identifying the list of security group IDs and subnet IDs. These must belong to the same
         /// VPC. You must provide at least one security group and one subnet ID. </p>
-        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>If your simulation job accesses resources in a VPC, you provide this parameter
@@ -2201,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Compute information for the simulation job.</p>
-        pub fn compute(mut self, signature: crate::model::Compute) -> Self {
-            self.inner = self.inner.compute(signature);
+        pub fn compute(mut self, input: crate::model::Compute) -> Self {
+            self.inner = self.inner.compute(input);
             self
         }
         /// <p>Compute information for the simulation job.</p>
@@ -2272,8 +2272,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2303,8 +2303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output location.</p>
-        pub fn output_location(mut self, signature: crate::model::OutputLocation) -> Self {
-            self.inner = self.inner.output_location(signature);
+        pub fn output_location(mut self, input: crate::model::OutputLocation) -> Self {
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>The output location.</p>
@@ -2317,8 +2317,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
         /// the export.</p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>The IAM role that the world export process uses to access the Amazon S3 bucket and put
@@ -2414,8 +2414,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2429,8 +2429,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
         /// create.</p>
-        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(signature.into());
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template describing the worlds you want to
@@ -2440,8 +2440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the world count.</p>
-        pub fn world_count(mut self, signature: crate::model::WorldCount) -> Self {
-            self.inner = self.inner.world_count(signature);
+        pub fn world_count(mut self, input: crate::model::WorldCount) -> Self {
+            self.inner = self.inner.world_count(input);
             self
         }
         /// <p>Information about the world count.</p>
@@ -2564,8 +2564,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2578,8 +2578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the world template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the world template.</p>
@@ -2588,8 +2588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The world template body.</p>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The world template body.</p>
@@ -2601,8 +2601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn template_location(mut self, signature: crate::model::TemplateLocation) -> Self {
-            self.inner = self.inner.template_location(signature);
+        pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
+            self.inner = self.inner.template_location(input);
             self
         }
         /// <p>The location of the world template.</p>
@@ -2699,8 +2699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2769,8 +2769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(signature.into());
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -2839,8 +2839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the the robot application.</p>
@@ -2849,8 +2849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the robot application to delete.</p>
-        pub fn application_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(signature.into());
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the robot application to delete.</p>
@@ -2922,8 +2922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application to delete.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application to delete.</p>
@@ -2932,8 +2932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the simulation application to delete.</p>
-        pub fn application_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(signature.into());
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the simulation application to delete.</p>
@@ -3005,8 +3005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
-        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(signature.into());
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to delete.</p>
@@ -3075,8 +3075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -3085,8 +3085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(signature.into());
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -3155,8 +3155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the deployment job.</p>
@@ -3225,8 +3225,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -3295,8 +3295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
-        pub fn robot(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(signature.into());
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot to be described.</p>
@@ -3365,8 +3365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot application.</p>
@@ -3375,8 +3375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the robot application to describe.</p>
-        pub fn application_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(signature.into());
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the robot application to describe.</p>
@@ -3448,8 +3448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -3458,8 +3458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the simulation application to describe.</p>
-        pub fn application_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_version(signature.into());
+        pub fn application_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_version(input.into());
             self
         }
         /// <p>The version of the simulation application to describe.</p>
@@ -3531,8 +3531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
@@ -3601,8 +3601,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The id of the batch to describe.</p>
-        pub fn batch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch(signature.into());
+        pub fn batch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch(input.into());
             self
         }
         /// <p>The id of the batch to describe.</p>
@@ -3671,8 +3671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
-        pub fn world(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.world(signature.into());
+        pub fn world(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.world(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world you want to describe.</p>
@@ -3741,8 +3741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world export job to describe.</p>
@@ -3811,8 +3811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generation job to describe.</p>
@@ -3881,8 +3881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
-        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(signature.into());
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template you want to describe.</p>
@@ -3951,8 +3951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
-        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(signature.into());
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template.</p>
@@ -3961,8 +3961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
-        pub fn generation_job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.generation_job(signature.into());
+        pub fn generation_job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.generation_job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world generator job.</p>
@@ -4064,8 +4064,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListDeploymentJobs</code> again and assign that token to
         /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
         /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4084,8 +4084,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 200. If this parameter is not used, then
         /// <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code>
         /// value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListDeploymentJobs</code> only returns
@@ -4169,8 +4169,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4193,8 +4193,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 200. If this parameter is not used, then
         /// <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if
         /// applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListFleets</code> only returns
@@ -4291,8 +4291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The version qualifier of the robot application.</p>
-        pub fn version_qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_qualifier(signature.into());
+        pub fn version_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_qualifier(input.into());
             self
         }
         /// <p>The version qualifier of the robot application.</p>
@@ -4308,8 +4308,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListRobotApplications</code> again and assign that token to
         /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
         /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4328,8 +4328,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this parameter is not used, then
         /// <code>ListRobotApplications</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListRobotApplications</code> only returns
@@ -4430,8 +4430,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListRobots</code> again and assign that token to the
         /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
         /// previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4450,8 +4450,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 200. If this parameter is not used, then
         /// <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if
         /// applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListRobots</code> only returns
@@ -4552,8 +4552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The version qualifier of the simulation application.</p>
-        pub fn version_qualifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_qualifier(signature.into());
+        pub fn version_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_qualifier(input.into());
             self
         }
         /// <p>The version qualifier of the simulation application.</p>
@@ -4569,8 +4569,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListSimulationApplications</code> again and assign that
         /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
         /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4589,8 +4589,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
         /// not used, then <code>ListSimulationApplications</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListSimulationApplications</code> only returns
@@ -4691,8 +4691,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListSimulationJobBatches</code> again and assign that token
         /// to the request object's <code>nextToken</code> parameter. If there are no remaining
         /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4709,8 +4709,8 @@ pub mod fluent_builders {
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>ListSimulationJobBatches</code> request with the returned
         /// <code>nextToken</code> value. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListSimulationJobBatches</code> only returns
@@ -4805,8 +4805,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListSimulationJobs</code> again and assign that token to
         /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
         /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -4825,8 +4825,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 1000. If this parameter is not used, then
         /// <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code>
         /// value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListSimulationJobs</code> only returns
@@ -4928,8 +4928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.</p>
@@ -5002,8 +5002,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListWorldExportJobs</code> again and assign that token to
         /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
         /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -5022,8 +5022,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this parameter is not used, then
         /// <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code>
         /// value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListWorldExportJobs</code> only returns
@@ -5121,8 +5121,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that
         /// token to the request object's <code>nextToken</code> parameter. If there are no remaining
         /// results, the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -5141,8 +5141,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is
         /// not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns
@@ -5240,8 +5240,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListWorlds</code> again and assign that token to the
         /// request object's <code>nextToken</code> parameter. If there are no remaining results, the
         /// previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -5260,8 +5260,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If this parameter is not used, then
         /// <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if
         /// applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListWorlds</code> only returns
@@ -5357,8 +5357,8 @@ pub mod fluent_builders {
         /// next set of results, call <code>ListWorldTemplates</code> again and assign that token to
         /// the request object's <code>nextToken</code> parameter. If there are no remaining results,
         /// the previous response object's NextToken parameter is set to null. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results, the
@@ -5377,8 +5377,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this parameter is not used, then
         /// <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code>
         /// value if applicable. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>When this parameter is used, <code>ListWorldTemplates</code> only returns
@@ -5453,8 +5453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -5463,8 +5463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
-        pub fn robot(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.robot(signature.into());
+        pub fn robot(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.robot(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the robot.</p>
@@ -5533,8 +5533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
-        pub fn job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job(signature.into());
+        pub fn job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the simulation job.</p>
@@ -5605,8 +5605,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5619,8 +5619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The batch policy.</p>
-        pub fn batch_policy(mut self, signature: crate::model::BatchPolicy) -> Self {
-            self.inner = self.inner.batch_policy(signature);
+        pub fn batch_policy(mut self, input: crate::model::BatchPolicy) -> Self {
+            self.inner = self.inner.batch_policy(input);
             self
         }
         /// <p>The batch policy.</p>
@@ -5739,8 +5739,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -5753,8 +5753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target fleet for the synchronization.</p>
-        pub fn fleet(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet(signature.into());
+        pub fn fleet(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet(input.into());
             self
         }
         /// <p>The target fleet for the synchronization.</p>
@@ -5827,8 +5827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.</p>
@@ -5925,8 +5925,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
         /// tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing
@@ -6015,8 +6015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the robot application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the robot application.</p>
@@ -6042,8 +6042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-        pub fn robot_software_suite(mut self, signature: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(signature);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
@@ -6055,8 +6055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn current_revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(signature.into());
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The revision id for the robot application.</p>
@@ -6068,8 +6068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
-        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains the Docker image URI for your robot application.</p>
@@ -6141,8 +6141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application information for the simulation application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application information for the simulation application.</p>
@@ -6170,9 +6170,9 @@ pub mod fluent_builders {
         /// <p>The simulation software suite used by the simulation application.</p>
         pub fn simulation_software_suite(
             mut self,
-            signature: crate::model::SimulationSoftwareSuite,
+            input: crate::model::SimulationSoftwareSuite,
         ) -> Self {
-            self.inner = self.inner.simulation_software_suite(signature);
+            self.inner = self.inner.simulation_software_suite(input);
             self
         }
         /// <p>The simulation software suite used by the simulation application.</p>
@@ -6184,8 +6184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
-        pub fn robot_software_suite(mut self, signature: crate::model::RobotSoftwareSuite) -> Self {
-            self.inner = self.inner.robot_software_suite(signature);
+        pub fn robot_software_suite(mut self, input: crate::model::RobotSoftwareSuite) -> Self {
+            self.inner = self.inner.robot_software_suite(input);
             self
         }
         /// <p>Information about the robot software suite (ROS distribution).</p>
@@ -6197,8 +6197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
-        pub fn rendering_engine(mut self, signature: crate::model::RenderingEngine) -> Self {
-            self.inner = self.inner.rendering_engine(signature);
+        pub fn rendering_engine(mut self, input: crate::model::RenderingEngine) -> Self {
+            self.inner = self.inner.rendering_engine(input);
             self
         }
         /// <p>The rendering engine for the simulation application.</p>
@@ -6210,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision id for the robot application.</p>
-        pub fn current_revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_revision_id(signature.into());
+        pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_revision_id(input.into());
             self
         }
         /// <p>The revision id for the robot application.</p>
@@ -6223,8 +6223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
-        pub fn environment(mut self, signature: crate::model::Environment) -> Self {
-            self.inner = self.inner.environment(signature);
+        pub fn environment(mut self, input: crate::model::Environment) -> Self {
+            self.inner = self.inner.environment(input);
             self
         }
         /// <p>The object that contains the Docker image URI for your simulation application.</p>
@@ -6296,8 +6296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
-        pub fn template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template(signature.into());
+        pub fn template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template(input.into());
             self
         }
         /// <p>The Amazon Resource Name (arn) of the world template to update.</p>
@@ -6306,8 +6306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the template.</p>
@@ -6316,8 +6316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The world template body.</p>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The world template body.</p>
@@ -6329,8 +6329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the world template.</p>
-        pub fn template_location(mut self, signature: crate::model::TemplateLocation) -> Self {
-            self.inner = self.inner.template_location(signature);
+        pub fn template_location(mut self, input: crate::model::TemplateLocation) -> Self {
+            self.inner = self.inner.template_location(input);
             self
         }
         /// <p>The location of the world template.</p>

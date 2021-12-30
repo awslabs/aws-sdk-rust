@@ -319,8 +319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group that we are setting up notifications for.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group that we are setting up notifications for.</p>
@@ -414,8 +414,8 @@ pub mod fluent_builders {
         /// The name of the profiling group associated with the
         /// the frame metrics used to return the time series values.
         /// </p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>
@@ -458,8 +458,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>
@@ -480,8 +480,8 @@ pub mod fluent_builders {
         /// Specify using the ISO 8601 format. The maximum period duration
         /// is one day (<code>PT24H</code> or <code>P1D</code>).
         /// </p>
-        pub fn period(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.period(signature.into());
+        pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.period(input.into());
             self
         }
         /// <p>
@@ -515,8 +515,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn target_resolution(mut self, signature: crate::model::AggregationPeriod) -> Self {
-            self.inner = self.inner.target_resolution(signature);
+        pub fn target_resolution(mut self, input: crate::model::AggregationPeriod) -> Self {
+            self.inner = self.inner.target_resolution(input);
             self
         }
         /// <p>The requested resolution of time steps for the returned time series of values.
@@ -638,8 +638,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the profiling group for which the configured agent is collecting profiling data.
         /// </p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>
@@ -655,8 +655,8 @@ pub mod fluent_builders {
         /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
         /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
         /// Fargate container, it is the container's task ID. </p>
-        pub fn fleet_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_instance_id(signature.into());
+        pub fn fleet_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_instance_id(input.into());
             self
         }
         /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
@@ -849,8 +849,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to create.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to create.</p>
@@ -867,8 +867,8 @@ pub mod fluent_builders {
         /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
         /// If not specified, <code>Default</code> is used.         
         /// </p>
-        pub fn compute_platform(mut self, signature: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(signature);
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
         /// <p>
@@ -886,8 +886,8 @@ pub mod fluent_builders {
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
         /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
@@ -901,9 +901,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn agent_orchestration_config(
             mut self,
-            signature: crate::model::AgentOrchestrationConfig,
+            input: crate::model::AgentOrchestrationConfig,
         ) -> Self {
-            self.inner = self.inner.agent_orchestration_config(signature);
+            self.inner = self.inner.agent_orchestration_config(input);
             self
         }
         /// <p>
@@ -1004,8 +1004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to delete.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to delete.</p>
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the profiling group to get information about.
         /// </p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>
@@ -1172,8 +1172,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
@@ -1193,8 +1193,8 @@ pub mod fluent_builders {
         /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
         /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
@@ -1209,8 +1209,8 @@ pub mod fluent_builders {
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
         /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
         /// analysis data is returned from smaller time windows (for example, one hour).</p>
-        pub fn daily_reports_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.daily_reports_only(signature);
+        pub fn daily_reports_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.daily_reports_only(input);
             self
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group we want to get the notification configuration for.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group we want to get the notification configuration for.</p>
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -1500,8 +1500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to get.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to get.</p>
@@ -1520,8 +1520,8 @@ pub mod fluent_builders {
         /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
         /// or <code>endTime</code>, but not both.
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time of the profile to get. Specify using
@@ -1548,8 +1548,8 @@ pub mod fluent_builders {
         /// <p>
         /// To get the latest aggregated profile, specify only <code>period</code>.
         /// </p>
-        pub fn period(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.period(signature.into());
+        pub fn period(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.period(input.into());
             self
         }
         /// <p>
@@ -1574,8 +1574,8 @@ pub mod fluent_builders {
         /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
         /// or <code>startTime</code>, but not both.
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>
@@ -1602,8 +1602,8 @@ pub mod fluent_builders {
         /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
         /// and <code>B</code>.
         /// </p>
-        pub fn max_depth(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_depth(signature);
+        pub fn max_depth(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_depth(input);
             self
         }
         /// <p>
@@ -1638,8 +1638,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn accept(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accept(signature.into());
+        pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accept(input.into());
             self
         }
         /// <p>
@@ -1740,8 +1740,8 @@ pub mod fluent_builders {
         /// <p>
         /// The name of the profiling group to get analysis data about.
         /// </p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>
@@ -1760,8 +1760,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>
@@ -1783,8 +1783,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>
@@ -1861,8 +1861,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(signature.into());
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>
@@ -1991,8 +1991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group from which to search for analysis data.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group from which to search for analysis data.</p>
@@ -2009,8 +2009,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>
@@ -2032,8 +2032,8 @@ pub mod fluent_builders {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>
@@ -2057,8 +2057,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
@@ -2079,8 +2079,8 @@ pub mod fluent_builders {
         /// element. The remaining results of the initial request
         /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
@@ -2096,8 +2096,8 @@ pub mod fluent_builders {
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
         /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
         /// analysis data is returned from smaller time windows (for example, one hour).</p>
-        pub fn daily_reports_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.daily_reports_only(signature);
+        pub fn daily_reports_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.daily_reports_only(input);
             self
         }
         /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
@@ -2169,8 +2169,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -2182,8 +2182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
@@ -2195,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
@@ -2228,8 +2228,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn period(mut self, signature: crate::model::AggregationPeriod) -> Self {
-            self.inner = self.inner.period(signature);
+        pub fn period(mut self, input: crate::model::AggregationPeriod) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>
@@ -2263,8 +2263,8 @@ pub mod fluent_builders {
         /// <p>The order (ascending or descending by start time of the profile) to
         /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
         /// </p>
-        pub fn order_by(mut self, signature: crate::model::OrderBy) -> Self {
-            self.inner = self.inner.order_by(signature);
+        pub fn order_by(mut self, input: crate::model::OrderBy) -> Self {
+            self.inner = self.inner.order_by(input);
             self
         }
         /// <p>The order (ascending or descending by start time of the profile) to
@@ -2281,8 +2281,8 @@ pub mod fluent_builders {
         /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
         /// <code>nextToken</code> value.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
@@ -2305,8 +2305,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2397,8 +2397,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is only used to retrieve
         /// the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2421,8 +2421,8 @@ pub mod fluent_builders {
         /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
         /// <code>nextToken</code> value.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
@@ -2443,8 +2443,8 @@ pub mod fluent_builders {
         /// </a> objects
         /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
         /// a list of profiling group names is returned.</p>
-        pub fn include_description(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_description(signature);
+        pub fn include_description(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_description(input);
             self
         }
         /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
@@ -2523,8 +2523,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>
@@ -2604,8 +2604,8 @@ pub mod fluent_builders {
         /// The name of the profiling group with the aggregated profile that receives the
         /// submitted profiling data.
         /// </p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>
@@ -2622,8 +2622,8 @@ pub mod fluent_builders {
         /// <p>
         /// The submitted profiling data.
         /// </p>
-        pub fn agent_profile(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.agent_profile(signature);
+        pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.agent_profile(input);
             self
         }
         /// <p>
@@ -2638,8 +2638,8 @@ pub mod fluent_builders {
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
         /// accidental submission of duplicate profiling data if there are failures and retries. </p>
-        pub fn profile_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_token(signature.into());
+        pub fn profile_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_token(input.into());
             self
         }
         /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
@@ -2671,8 +2671,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>
@@ -2785,8 +2785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to grant access to.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to grant access to.</p>
@@ -2803,8 +2803,8 @@ pub mod fluent_builders {
         /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
         /// and <code>PostAgentProfile</code> permissions.
         /// </p>
-        pub fn action_group(mut self, signature: crate::model::ActionGroup) -> Self {
-            self.inner = self.inner.action_group(signature);
+        pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
+            self.inner = self.inner.action_group(input);
             self
         }
         /// <p>
@@ -2849,8 +2849,8 @@ pub mod fluent_builders {
         /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
         /// profiling group, you must specify the <code>revisionId</code>.
         /// </p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>
@@ -2924,8 +2924,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group we want to change notification configuration for.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group we want to change notification configuration for.</p>
@@ -2937,8 +2937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
-        pub fn channel_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_id(signature.into());
+        pub fn channel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_id(input.into());
             self
         }
         /// <p>The id of the channel that we want to stop receiving notifications.</p>
@@ -3015,8 +3015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group.</p>
@@ -3032,8 +3032,8 @@ pub mod fluent_builders {
         /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
         /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
         /// </p>
-        pub fn action_group(mut self, signature: crate::model::ActionGroup) -> Self {
-            self.inner = self.inner.action_group(signature);
+        pub fn action_group(mut self, input: crate::model::ActionGroup) -> Self {
+            self.inner = self.inner.action_group(input);
             self
         }
         /// <p>
@@ -3052,8 +3052,8 @@ pub mod fluent_builders {
         /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
         /// you want to remove permissions.
         /// </p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>
@@ -3126,8 +3126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group that is associated with the analysis data.</p>
@@ -3143,8 +3143,8 @@ pub mod fluent_builders {
         /// <code>AnomalyInstance</code>
         /// </a> object
         /// that is included in the analysis data.</p>
-        pub fn anomaly_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_instance_id(signature.into());
+        pub fn anomaly_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_instance_id(input.into());
             self
         }
         /// <p>The universally unique identifier (UUID) of the
@@ -3162,8 +3162,8 @@ pub mod fluent_builders {
         /// <p>
         /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
         /// </p>
-        pub fn r#type(mut self, signature: crate::model::FeedbackType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::FeedbackType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>
@@ -3174,8 +3174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional feedback about this anomaly.</p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>Optional feedback about this anomaly.</p>
@@ -3248,8 +3248,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>
@@ -3351,8 +3351,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>
@@ -3446,8 +3446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the profiling group to update.</p>
-        pub fn profiling_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profiling_group_name(signature.into());
+        pub fn profiling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profiling_group_name(input.into());
             self
         }
         /// <p>The name of the profiling group to update.</p>
@@ -3463,9 +3463,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn agent_orchestration_config(
             mut self,
-            signature: crate::model::AgentOrchestrationConfig,
+            input: crate::model::AgentOrchestrationConfig,
         ) -> Self {
-            self.inner = self.inner.agent_orchestration_config(signature);
+            self.inner = self.inner.agent_orchestration_config(input);
             self
         }
         /// <p>

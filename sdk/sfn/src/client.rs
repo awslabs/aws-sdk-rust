@@ -355,8 +355,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For more information,
@@ -516,8 +516,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the state machine. </p>
@@ -548,8 +548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-        pub fn definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(signature.into());
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
@@ -558,8 +558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
@@ -570,8 +570,8 @@ pub mod fluent_builders {
         /// <p>Determines whether a Standard or Express state machine is created. The default is
         /// <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it
         /// has been created.</p>
-        pub fn r#type(mut self, signature: crate::model::StateMachineType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::StateMachineType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Determines whether a Standard or Express state machine is created. The default is
@@ -590,11 +590,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
         /// Levels</a> in the AWS Step Functions User Guide.</p>
         /// </note>
-        pub fn logging_configuration(
-            mut self,
-            signature: crate::model::LoggingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.logging_configuration(signature);
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>Defines what execution history events are logged and where they are logged.</p>
@@ -638,11 +635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
-        pub fn tracing_configuration(
-            mut self,
-            signature: crate::model::TracingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.tracing_configuration(signature);
+        pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
+            self.inner = self.inner.tracing_configuration(input);
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
@@ -714,8 +708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
-        pub fn activity_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(signature.into());
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to delete.</p>
@@ -790,8 +784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to delete.</p>
@@ -866,8 +860,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
-        pub fn activity_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(signature.into());
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to describe.</p>
@@ -940,8 +934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
-        pub fn execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(signature.into());
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to describe.</p>
@@ -1016,8 +1010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to describe.</p>
@@ -1093,8 +1087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
-        pub fn execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(signature.into());
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution you want state machine information for.</p>
@@ -1179,8 +1173,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
         /// using <a>CreateActivity</a>.)</p>
-        pub fn activity_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activity_arn(signature.into());
+        pub fn activity_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activity_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the activity to retrieve tasks from (assigned when you create the task
@@ -1191,8 +1185,8 @@ pub mod fluent_builders {
         }
         /// <p>You can provide an arbitrary name in order to identify the worker that the task is
         /// assigned to. This name is used when it is logged in the execution history.</p>
-        pub fn worker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.worker_name(signature.into());
+        pub fn worker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_name(input.into());
             self
         }
         /// <p>You can provide an arbitrary name in order to identify the worker that the task is
@@ -1267,8 +1261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution.</p>
-        pub fn execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(signature.into());
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution.</p>
@@ -1282,8 +1276,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
         /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
@@ -1294,8 +1288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>Lists events in descending order of their <code>timeStamp</code>.</p>
@@ -1305,8 +1299,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
@@ -1317,8 +1311,8 @@ pub mod fluent_builders {
         }
         /// <p>You can select whether execution data (input or output of a history event) is returned.
         /// The default is <code>true</code>.</p>
-        pub fn include_execution_data(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_execution_data(signature);
+        pub fn include_execution_data(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_execution_data(input);
             self
         }
         /// <p>You can select whether execution data (input or output of a history event) is returned.
@@ -1395,8 +1389,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
         /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
@@ -1408,8 +1402,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
@@ -1486,8 +1480,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
@@ -1500,8 +1494,8 @@ pub mod fluent_builders {
         }
         /// <p>If specified, only list the executions whose current execution status matches the given
         /// filter.</p>
-        pub fn status_filter(mut self, signature: crate::model::ExecutionStatus) -> Self {
-            self.inner = self.inner.status_filter(signature);
+        pub fn status_filter(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
         /// <p>If specified, only list the executions whose current execution status matches the given
@@ -1516,8 +1510,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
         /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
@@ -1529,8 +1523,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
@@ -1607,8 +1601,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
         /// The default is 100 and the maximum allowed page size is 1000. A value of 0 uses the default.</p>
         /// <p>This is only an upper limit. The actual number of results returned per call might be fewer than the specified maximum.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to obtain further pages of results.
@@ -1620,8 +1614,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
         /// Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page.
@@ -1692,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -1765,8 +1759,8 @@ pub mod fluent_builders {
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
         /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
         /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
@@ -1777,8 +1771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The error code of the failure.</p>
-        pub fn error(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error(signature.into());
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error(input.into());
             self
         }
         /// <p>The error code of the failure.</p>
@@ -1787,8 +1781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
-        pub fn cause(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cause(signature.into());
+        pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cause(input.into());
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
@@ -1873,8 +1867,8 @@ pub mod fluent_builders {
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
         /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
         /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
@@ -1949,8 +1943,8 @@ pub mod fluent_builders {
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
         /// tasks are assigned to a worker, or in the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-contextobject.html">context object</a> when a
         /// workflow enters a task state. See <a>GetActivityTaskOutput$taskToken</a>.</p>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The token that represents this task. Task tokens are generated by Step Functions when
@@ -1961,8 +1955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn output(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output(signature.into());
+        pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output(input.into());
             self
         }
         /// <p>The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
@@ -2039,8 +2033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -2076,8 +2070,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days. For more information,
@@ -2119,8 +2113,8 @@ pub mod fluent_builders {
         /// </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn input(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(signature.into());
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
@@ -2138,8 +2132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
-        pub fn trace_header(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_header(signature.into());
+        pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_header(input.into());
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
@@ -2208,8 +2202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
@@ -2221,8 +2215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the execution.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the execution.</p>
@@ -2240,8 +2234,8 @@ pub mod fluent_builders {
         /// </p>
         /// </note>
         /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-        pub fn input(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(signature.into());
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>The string that contains the JSON input data for the execution, for example:</p>
@@ -2259,8 +2253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
-        pub fn trace_header(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trace_header(signature.into());
+        pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trace_header(input.into());
             self
         }
         /// <p>Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.</p>
@@ -2330,8 +2324,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-        pub fn execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_arn(signature.into());
+        pub fn execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
@@ -2343,8 +2337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The error code of the failure.</p>
-        pub fn error(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.error(signature.into());
+        pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.error(input.into());
             self
         }
         /// <p>The error code of the failure.</p>
@@ -2353,8 +2347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
-        pub fn cause(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cause(signature.into());
+        pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cause(input.into());
             self
         }
         /// <p>A more detailed explanation of the cause of the failure.</p>
@@ -2428,8 +2422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -2517,8 +2511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>
@@ -2614,8 +2608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-        pub fn state_machine_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state_machine_arn(signature.into());
+        pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state_machine_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
@@ -2627,8 +2621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-        pub fn definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(signature.into());
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
@@ -2637,8 +2631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
@@ -2648,11 +2642,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
         /// options.</p>
-        pub fn logging_configuration(
-            mut self,
-            signature: crate::model::LoggingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.logging_configuration(signature);
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs
@@ -2665,11 +2656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>
-        pub fn tracing_configuration(
-            mut self,
-            signature: crate::model::TracingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.tracing_configuration(signature);
+        pub fn tracing_configuration(mut self, input: crate::model::TracingConfiguration) -> Self {
+            self.inner = self.inner.tracing_configuration(input);
             self
         }
         /// <p>Selects whether AWS X-Ray tracing is enabled.</p>

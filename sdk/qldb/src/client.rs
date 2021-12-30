@@ -306,8 +306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(signature.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -317,8 +317,8 @@ pub mod fluent_builders {
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
         /// canceled.</p>
-        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(signature.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input.into());
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
@@ -391,8 +391,8 @@ pub mod fluent_builders {
         /// the ledgers in your account in the current Region.</p>
         /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
         /// in the <i>Amazon QLDB Developer Guide</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger that you want to create. The name must be unique among all of
@@ -461,8 +461,8 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, signature: crate::model::PermissionsMode) -> Self {
-            self.inner = self.inner.permissions_mode(signature);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.inner = self.inner.permissions_mode(input);
             self
         }
         /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
@@ -506,8 +506,8 @@ pub mod fluent_builders {
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
@@ -568,8 +568,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
         /// the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
@@ -689,8 +689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger that you want to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger that you want to delete.</p>
@@ -764,8 +764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(signature.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -775,8 +775,8 @@ pub mod fluent_builders {
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
         /// describe.</p>
-        pub fn stream_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_id(signature.into());
+        pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_id(input.into());
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
@@ -854,8 +854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -865,8 +865,8 @@ pub mod fluent_builders {
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
         /// describe.</p>
-        pub fn export_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_id(signature.into());
+        pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_id(input.into());
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
@@ -937,8 +937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger that you want to describe.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger that you want to describe.</p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1031,8 +1031,8 @@ pub mod fluent_builders {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.inclusive_start_time(signature);
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.inclusive_start_time(input);
             self
         }
         /// <p>The inclusive start date and time for the range of journal contents to export.</p>
@@ -1056,8 +1056,8 @@ pub mod fluent_builders {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
-        pub fn exclusive_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.exclusive_end_time(signature);
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.exclusive_end_time(input);
             self
         }
         /// <p>The exclusive end date and time for the range of journal contents to export.</p>
@@ -1077,9 +1077,9 @@ pub mod fluent_builders {
         /// request.</p>
         pub fn s3_export_configuration(
             mut self,
-            signature: crate::model::S3ExportConfiguration,
+            input: crate::model::S3ExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.s3_export_configuration(signature);
+            self.inner = self.inner.s3_export_configuration(input);
             self
         }
         /// <p>The configuration settings of the Amazon S3 bucket destination for your export
@@ -1102,8 +1102,8 @@ pub mod fluent_builders {
         /// encryption of your exported data.</p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -1191,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1203,8 +1203,8 @@ pub mod fluent_builders {
         /// <p>The location of the block that you want to request. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, signature: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.block_address(signature);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.block_address(input);
             self
         }
         /// <p>The location of the block that you want to request. An address is an Amazon Ion
@@ -1221,8 +1221,8 @@ pub mod fluent_builders {
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, signature: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.digest_tip_address(signature);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.digest_tip_address(input);
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
@@ -1298,8 +1298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1370,8 +1370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1382,8 +1382,8 @@ pub mod fluent_builders {
         /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
         /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
-        pub fn block_address(mut self, signature: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.block_address(signature);
+        pub fn block_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.block_address(input);
             self
         }
         /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
-        pub fn document_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_id(signature.into());
+        pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_id(input.into());
             self
         }
         /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
@@ -1410,8 +1410,8 @@ pub mod fluent_builders {
         /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
         /// <code>sequenceNo</code>.</p>
         /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
-        pub fn digest_tip_address(mut self, signature: crate::model::ValueHolder) -> Self {
-            self.inner = self.inner.digest_tip_address(signature);
+        pub fn digest_tip_address(mut self, input: crate::model::ValueHolder) -> Self {
+            self.inner = self.inner.digest_tip_address(input);
             self
         }
         /// <p>The latest block location covered by the digest for which to request a proof. An address
@@ -1496,8 +1496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(signature.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1508,8 +1508,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single
@@ -1523,8 +1523,8 @@ pub mod fluent_builders {
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
         /// request. (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
@@ -1617,8 +1617,8 @@ pub mod fluent_builders {
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3Exports</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
@@ -1695,8 +1695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1707,8 +1707,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single
         /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
         /// returned might be fewer.)</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single
@@ -1722,8 +1722,8 @@ pub mod fluent_builders {
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
         /// here.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
@@ -1799,8 +1799,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
         /// (The actual number of results returned might be fewer.)</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
@@ -1812,8 +1812,8 @@ pub mod fluent_builders {
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
         /// you received a value for <code>NextToken</code> in the response from a previous
         /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
@@ -1887,8 +1887,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
@@ -1962,8 +1962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn ledger_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ledger_name(signature.into());
+        pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ledger_name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -1973,8 +1973,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
         /// journal stream to write data records to a Kinesis Data Streams resource.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
@@ -2019,8 +2019,8 @@ pub mod fluent_builders {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.inclusive_start_time(signature);
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.inclusive_start_time(input);
             self
         }
         /// <p>The inclusive start date and time from which to start streaming journal data. This
@@ -2043,8 +2043,8 @@ pub mod fluent_builders {
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
         /// <code>2019-06-13T21:36:34Z</code>.</p>
-        pub fn exclusive_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.exclusive_end_time(signature);
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.exclusive_end_time(input);
             self
         }
         /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
@@ -2060,11 +2060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
-        pub fn kinesis_configuration(
-            mut self,
-            signature: crate::model::KinesisConfiguration,
-        ) -> Self {
-            self.inner = self.inner.kinesis_configuration(signature);
+        pub fn kinesis_configuration(mut self, input: crate::model::KinesisConfiguration) -> Self {
+            self.inner = self.inner.kinesis_configuration(input);
             self
         }
         /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
@@ -2081,8 +2078,8 @@ pub mod fluent_builders {
         /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
         /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
         /// Guide</i>.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
@@ -2161,8 +2158,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
@@ -2268,8 +2265,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
@@ -2358,8 +2355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -2371,8 +2368,8 @@ pub mod fluent_builders {
         /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
         /// <p>If deletion protection is enabled, you must first disable it before you can delete the
         /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
@@ -2433,8 +2430,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
         /// the <i>Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
@@ -2558,8 +2555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ledger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the ledger.</p>
@@ -2597,8 +2594,8 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
         /// the security of your ledger data.</p>
         /// </note>
-        pub fn permissions_mode(mut self, signature: crate::model::PermissionsMode) -> Self {
-            self.inner = self.inner.permissions_mode(signature);
+        pub fn permissions_mode(mut self, input: crate::model::PermissionsMode) -> Self {
+            self.inner = self.inner.permissions_mode(input);
             self
         }
         /// <p>The permissions mode to assign to the ledger. This parameter can have one of the

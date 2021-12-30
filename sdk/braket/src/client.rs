@@ -243,8 +243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Amazon Braket job to cancel.</p>
-        pub fn job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_arn(signature.into());
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon Braket job to cancel.</p>
@@ -313,8 +313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the task to cancel.</p>
-        pub fn quantum_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quantum_task_arn(signature.into());
+        pub fn quantum_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quantum_task_arn(input.into());
             self
         }
         /// <p>The ARN of the task to cancel.</p>
@@ -326,8 +326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token associated with the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token associated with the request.</p>
@@ -396,8 +396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -409,9 +409,9 @@ pub mod fluent_builders {
         /// about the Python scripts used for entry and training.</p>
         pub fn algorithm_specification(
             mut self,
-            signature: crate::model::AlgorithmSpecification,
+            input: crate::model::AlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.algorithm_specification(signature);
+            self.inner = self.inner.algorithm_specification(input);
             self
         }
         /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information
@@ -444,8 +444,8 @@ pub mod fluent_builders {
         }
         /// <p>The path to the S3 location where you want to store job artifacts and the
         /// encryption key used to store them.</p>
-        pub fn output_data_config(mut self, signature: crate::model::JobOutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::JobOutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>The path to the S3 location where you want to store job artifacts and the
@@ -458,8 +458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the output locations for job checkpoint data.</p>
-        pub fn checkpoint_config(mut self, signature: crate::model::JobCheckpointConfig) -> Self {
-            self.inner = self.inner.checkpoint_config(signature);
+        pub fn checkpoint_config(mut self, input: crate::model::JobCheckpointConfig) -> Self {
+            self.inner = self.inner.checkpoint_config(input);
             self
         }
         /// <p>Information about the output locations for job checkpoint data.</p>
@@ -471,8 +471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Braket job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the Amazon Braket job.</p>
@@ -483,8 +483,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
         /// tasks on behalf of a user. It can access user resources, run an Amazon Braket job container
         /// on behalf of user, and output resources to the users' s3 buckets.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform
@@ -495,8 +495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The user-defined criteria that specifies when a job stops running.</p>
-        pub fn stopping_condition(mut self, signature: crate::model::JobStoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+        pub fn stopping_condition(mut self, input: crate::model::JobStoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p> The user-defined criteria that specifies when a job stops running.</p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         }
         /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
         /// Braket.</p>
-        pub fn instance_config(mut self, signature: crate::model::InstanceConfig) -> Self {
-            self.inner = self.inner.instance_config(signature);
+        pub fn instance_config(mut self, input: crate::model::InstanceConfig) -> Self {
+            self.inner = self.inner.instance_config(input);
             self
         }
         /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon
@@ -550,8 +550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
-        pub fn device_config(mut self, signature: crate::model::DeviceConfig) -> Self {
-            self.inner = self.inner.device_config(signature);
+        pub fn device_config(mut self, input: crate::model::DeviceConfig) -> Self {
+            self.inner = self.inner.device_config(input);
             self
         }
         /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
@@ -646,8 +646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The client token associated with the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The client token associated with the request.</p>
@@ -656,8 +656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the device to run the task on.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to run the task on.</p>
@@ -666,8 +666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters for the device to run the task on.</p>
-        pub fn device_parameters(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_parameters(signature.into());
+        pub fn device_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_parameters(input.into());
             self
         }
         /// <p>The parameters for the device to run the task on.</p>
@@ -679,8 +679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shots to use for the task.</p>
-        pub fn shots(mut self, signature: i64) -> Self {
-            self.inner = self.inner.shots(signature);
+        pub fn shots(mut self, input: i64) -> Self {
+            self.inner = self.inner.shots(input);
             self
         }
         /// <p>The number of shots to use for the task.</p>
@@ -689,8 +689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 bucket to store task result files in.</p>
-        pub fn output_s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_bucket(signature.into());
+        pub fn output_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_bucket(input.into());
             self
         }
         /// <p>The S3 bucket to store task result files in.</p>
@@ -702,8 +702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-        pub fn output_s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_key_prefix(signature.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_key_prefix(input.into());
             self
         }
         /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
@@ -715,8 +715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action associated with the task.</p>
-        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(signature.into());
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
         /// <p>The action associated with the task.</p>
@@ -748,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
-        pub fn job_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_token(signature.into());
+        pub fn job_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_token(input.into());
             self
         }
         /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
@@ -818,8 +818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device to retrieve.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to retrieve.</p>
@@ -888,8 +888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the job to retrieve.</p>
-        pub fn job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_arn(signature.into());
+        pub fn job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_arn(input.into());
             self
         }
         /// <p>The ARN of the job to retrieve.</p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>the ARN of the task to retrieve.</p>
-        pub fn quantum_task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quantum_task_arn(signature.into());
+        pub fn quantum_task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quantum_task_arn(input.into());
             self
         }
         /// <p>the ARN of the task to retrieve.</p>
@@ -1031,8 +1031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> for the resource whose tags to display.</p>
@@ -1101,8 +1101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -1111,8 +1111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1199,8 +1199,8 @@ pub mod fluent_builders {
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned
         /// from the previous request to continue results where the previous request ended.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned
@@ -1210,8 +1210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1297,8 +1297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -1307,8 +1307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to return in the response.</p>
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> of the resource to which a tag will be added.</p>
@@ -1487,8 +1487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specify the <code>resourceArn</code> for the resource from which to remove the tags.</p>

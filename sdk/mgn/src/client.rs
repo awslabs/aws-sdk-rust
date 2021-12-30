@@ -373,8 +373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
@@ -388,9 +388,9 @@ pub mod fluent_builders {
         /// <p>The request to change the source server migration lifecycle state.</p>
         pub fn life_cycle(
             mut self,
-            signature: crate::model::ChangeServerLifeCycleStateSourceServerLifecycle,
+            input: crate::model::ChangeServerLifeCycleStateSourceServerLifecycle,
         ) -> Self {
-            self.inner = self.inner.life_cycle(signature);
+            self.inner = self.inner.life_cycle(input);
             self
         }
         /// <p>The request to change the source server migration lifecycle state.</p>
@@ -466,8 +466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
@@ -479,8 +479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
@@ -518,11 +518,9 @@ pub mod fluent_builders {
         /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
@@ -534,8 +532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
@@ -549,9 +547,9 @@ pub mod fluent_builders {
         /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Request to configure the Staging Disk EBS volume type to "gp2" during Replication Settings template creation.</p>
@@ -567,9 +565,9 @@ pub mod fluent_builders {
         /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Request to configure EBS enryption during Replication Settings template creation.</p>
@@ -581,8 +579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Request to configure an EBS enryption key during Replication Settings template creation.</p>
@@ -594,8 +592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
@@ -606,9 +604,9 @@ pub mod fluent_builders {
         /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>Request to configure  data plane routing during Replication Settings template creation.</p>
@@ -620,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to create Public IP during Replication Settings template creation.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Request to create Public IP during Replication Settings template creation.</p>
@@ -736,8 +734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to delete Job from service by Job ID.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>Request to delete Job from service by Job ID.</p>
@@ -810,11 +808,11 @@ pub mod fluent_builders {
         /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .replication_configuration_template_id(signature.into());
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>Request to delete Replication Configuration Template from service by Replication Configuration Template ID.</p>
@@ -886,8 +884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to delete Source Server from service by Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to delete Source Server from service by Server ID.</p>
@@ -959,8 +957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of resource to be deleted.</p>
-        pub fn vcenter_client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vcenter_client_id(signature.into());
+        pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vcenter_client_id(input.into());
             self
         }
         /// <p>ID of resource to be deleted.</p>
@@ -1032,8 +1030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to describe Job log job ID.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>Request to describe Job log job ID.</p>
@@ -1042,8 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log item maximum results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Job log item maximum results.</p>
@@ -1052,8 +1050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log next token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Job log next token.</p>
@@ -1122,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to describe Job log filters.</p>
-        pub fn filters(mut self, signature: crate::model::DescribeJobsRequestFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::DescribeJobsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Request to describe Job log filters.</p>
@@ -1135,8 +1133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job log by max results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Job log by max results.</p>
@@ -1145,8 +1143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Job logby next token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Job logby next token.</p>
@@ -1241,8 +1239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Replication Configuration template by max results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to describe Replication Configuration template by max results.</p>
@@ -1251,8 +1249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -1321,11 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to filter Source Servers list.</p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::DescribeSourceServersRequestFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::DescribeSourceServersRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Request to filter Source Servers list.</p>
@@ -1337,8 +1332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to filter Source Servers list by maximum results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request to filter Source Servers list by maximum results.</p>
@@ -1347,8 +1342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request to filter Source Servers list by next token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Request to filter Source Servers list by next token.</p>
@@ -1417,8 +1412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum results to be returned in DescribeVcenterClients.</p>
@@ -1427,8 +1422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next pagination token to be provided for DescribeVcenterClients.</p>
@@ -1497,8 +1492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to disconnect Source Server from service by Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to disconnect Source Server from service by Server ID.</p>
@@ -1570,8 +1565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to finalize Cutover by Soure Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to finalize Cutover by Soure Server ID.</p>
@@ -1643,8 +1638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to get Launch Configuration information by Source Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to get Launch Configuration information by Source Server ID.</p>
@@ -1716,8 +1711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request to get Replication Configuaration by Source Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Request to get Replication Configuaration by Source Server ID.</p>
@@ -1849,8 +1844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>List tags for resource request by ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>List tags for resource request by ARN.</p>
@@ -1919,8 +1914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Mark as archived by Source Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Mark as archived by Source Server ID.</p>
@@ -1992,8 +1987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Retry data replication for Source Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Retry data replication for Source Server ID.</p>
@@ -2165,8 +2160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of source server on which to start replication.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>ID of source server on which to start replication.</p>
@@ -2338,8 +2333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Tag resource by ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Tag resource by ARN.</p>
@@ -2531,8 +2526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Untag resource by ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Untag resource by ARN.</p>
@@ -2618,8 +2613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Update Launch configuration by Source Server ID request.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Update Launch configuration by Source Server ID request.</p>
@@ -2631,8 +2626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration name request.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Update Launch configuration name request.</p>
@@ -2641,8 +2636,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration launch disposition request.</p>
-        pub fn launch_disposition(mut self, signature: crate::model::LaunchDisposition) -> Self {
-            self.inner = self.inner.launch_disposition(signature);
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
             self
         }
         /// <p>Update Launch configuration launch disposition request.</p>
@@ -2656,11 +2651,9 @@ pub mod fluent_builders {
         /// <p>Update Launch configuration Target instance right sizing request.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
-            signature: crate::model::TargetInstanceTypeRightSizingMethod,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
         ) -> Self {
-            self.inner = self
-                .inner
-                .target_instance_type_right_sizing_method(signature);
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
             self
         }
         /// <p>Update Launch configuration Target instance right sizing request.</p>
@@ -2674,8 +2667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration copy Private IP request.</p>
-        pub fn copy_private_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_private_ip(signature);
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
             self
         }
         /// <p>Update Launch configuration copy Private IP request.</p>
@@ -2684,8 +2677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration copy Tags request.</p>
-        pub fn copy_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags(signature);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>Update Launch configuration copy Tags request.</p>
@@ -2694,8 +2687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update Launch configuration licensing request.</p>
-        pub fn licensing(mut self, signature: crate::model::Licensing) -> Self {
-            self.inner = self.inner.licensing(signature);
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
             self
         }
         /// <p>Update Launch configuration licensing request.</p>
@@ -2767,8 +2760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Update replication configuration Source Server ID request.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Update replication configuration Source Server ID request.</p>
@@ -2780,8 +2773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration name request.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Update replication configuration name request.</p>
@@ -2790,8 +2783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration Staging Area subnet request.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Update replication configuration Staging Area subnet request.</p>
@@ -2803,8 +2796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Update replication configuration associate default Application Migration Service Security group request.</p>
@@ -2842,11 +2835,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration Replication Server instance type request.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Update replication configuration Replication Server instance type request.</p>
@@ -2858,8 +2849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration use dedicated Replication Server request.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Update replication configuration use dedicated Replication Server request.</p>
@@ -2873,9 +2864,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration use default large Staging Disk type request.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Update replication configuration use default large Staging Disk type request.</p>
@@ -2913,9 +2904,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration EBS encryption request.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Update replication configuration EBS encryption request.</p>
@@ -2927,8 +2918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration EBS encryption key ARN request.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Update replication configuration EBS encryption key ARN request.</p>
@@ -2940,8 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration bandwidth throttling request.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Update replication configuration bandwidth throttling request.</p>
@@ -2952,9 +2943,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration data plane routing request.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>Update replication configuration data plane routing request.</p>
@@ -2966,8 +2957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration create Public IP request.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Update replication configuration create Public IP request.</p>
@@ -3063,11 +3054,11 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template template ID request.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .replication_configuration_template_id(signature.into());
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>Update replication configuration template template ID request.</p>
@@ -3079,8 +3070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template ARN request.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Update replication configuration template ARN request.</p>
@@ -3089,8 +3080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template Staging Area subnet ID request.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>Update replication configuration template Staging Area subnet ID request.</p>
@@ -3102,8 +3093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Update replication configuration template associate default Application Migration Service Security group request.</p>
@@ -3141,11 +3132,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template Replication Server instance type request.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>Update replication configuration template Replication Server instance type request.</p>
@@ -3157,8 +3146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template use dedicated Replication Server request.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Update replication configuration template use dedicated Replication Server request.</p>
@@ -3172,9 +3161,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template use default large Staging Disk type request.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>Update replication configuration template use default large Staging Disk type request.</p>
@@ -3190,9 +3179,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template EBS encryption request.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>Update replication configuration template EBS encryption request.</p>
@@ -3204,8 +3193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template EBS encryption key ARN request.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>Update replication configuration template EBS encryption key ARN request.</p>
@@ -3217,8 +3206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template bandwidth throttling request.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Update replication configuration template bandwidth throttling request.</p>
@@ -3229,9 +3218,9 @@ pub mod fluent_builders {
         /// <p>Update replication configuration template data plane routing request.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>Update replication configuration template data plane routing request.</p>
@@ -3243,8 +3232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update replication configuration template create Public IP request.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Update replication configuration template create Public IP request.</p>
@@ -3336,8 +3325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of source server on which to update replication type.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>ID of source server on which to update replication type.</p>
@@ -3349,8 +3338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Replication type to which to update source server.</p>
-        pub fn replication_type(mut self, signature: crate::model::ReplicationType) -> Self {
-            self.inner = self.inner.replication_type(signature);
+        pub fn replication_type(mut self, input: crate::model::ReplicationType) -> Self {
+            self.inner = self.inner.replication_type(input);
             self
         }
         /// <p>Replication type to which to update source server.</p>

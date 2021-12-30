@@ -894,8 +894,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you’re associating the alias with.</p>
-        pub fn target_distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_distribution_id(signature.into());
+        pub fn target_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_distribution_id(input.into());
             self
         }
         /// <p>The ID of the distribution that you’re associating the alias with.</p>
@@ -907,8 +907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
@@ -997,8 +997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, signature: crate::model::CachePolicyConfig) -> Self {
-            self.inner = self.inner.cache_policy_config(signature);
+        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
+            self.inner = self.inner.cache_policy_config(input);
             self
         }
         /// <p>A cache policy configuration.</p>
@@ -1077,11 +1077,9 @@ pub mod fluent_builders {
         /// <p>The current configuration information for the identity.</p>
         pub fn cloud_front_origin_access_identity_config(
             mut self,
-            signature: crate::model::CloudFrontOriginAccessIdentityConfig,
+            input: crate::model::CloudFrontOriginAccessIdentityConfig,
         ) -> Self {
-            self.inner = self
-                .inner
-                .cloud_front_origin_access_identity_config(signature);
+            self.inner = self.inner.cloud_front_origin_access_identity_config(input);
             self
         }
         /// <p>The current configuration information for the identity.</p>
@@ -1167,8 +1165,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, signature: crate::model::DistributionConfig) -> Self {
-            self.inner = self.inner.distribution_config(signature);
+        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
+            self.inner = self.inner.distribution_config(input);
             self
         }
         /// <p>The distribution's configuration information.</p>
@@ -1242,9 +1240,9 @@ pub mod fluent_builders {
         /// <p>The distribution's configuration information. </p>
         pub fn distribution_config_with_tags(
             mut self,
-            signature: crate::model::DistributionConfigWithTags,
+            input: crate::model::DistributionConfigWithTags,
         ) -> Self {
-            self.inner = self.inner.distribution_config_with_tags(signature);
+            self.inner = self.inner.distribution_config_with_tags(input);
             self
         }
         /// <p>The distribution's configuration information. </p>
@@ -1318,9 +1316,9 @@ pub mod fluent_builders {
         /// <p>The request to create a new field-level encryption configuration.</p>
         pub fn field_level_encryption_config(
             mut self,
-            signature: crate::model::FieldLevelEncryptionConfig,
+            input: crate::model::FieldLevelEncryptionConfig,
         ) -> Self {
-            self.inner = self.inner.field_level_encryption_config(signature);
+            self.inner = self.inner.field_level_encryption_config(input);
             self
         }
         /// <p>The request to create a new field-level encryption configuration.</p>
@@ -1394,9 +1392,9 @@ pub mod fluent_builders {
         /// <p>The request to create a field-level encryption profile.</p>
         pub fn field_level_encryption_profile_config(
             mut self,
-            signature: crate::model::FieldLevelEncryptionProfileConfig,
+            input: crate::model::FieldLevelEncryptionProfileConfig,
         ) -> Self {
-            self.inner = self.inner.field_level_encryption_profile_config(signature);
+            self.inner = self.inner.field_level_encryption_profile_config(input);
             self
         }
         /// <p>The request to create a field-level encryption profile.</p>
@@ -1478,8 +1476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name to identify the function.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name to identify the function.</p>
@@ -1489,8 +1487,8 @@ pub mod fluent_builders {
         }
         /// <p>Configuration information about the function, including an optional comment and the
         /// function’s runtime.</p>
-        pub fn function_config(mut self, signature: crate::model::FunctionConfig) -> Self {
-            self.inner = self.inner.function_config(signature);
+        pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
+            self.inner = self.inner.function_config(input);
             self
         }
         /// <p>Configuration information about the function, including an optional comment and the
@@ -1504,8 +1502,8 @@ pub mod fluent_builders {
         }
         /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
         /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn function_code(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.function_code(signature);
+        pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.function_code(input);
             self
         }
         /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
@@ -1578,8 +1576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's id.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The distribution's id.</p>
@@ -1591,8 +1589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The batch information for the invalidation.</p>
-        pub fn invalidation_batch(mut self, signature: crate::model::InvalidationBatch) -> Self {
-            self.inner = self.inner.invalidation_batch(signature);
+        pub fn invalidation_batch(mut self, input: crate::model::InvalidationBatch) -> Self {
+            self.inner = self.inner.invalidation_batch(input);
             self
         }
         /// <p>The batch information for the invalidation.</p>
@@ -1671,8 +1669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A key group configuration.</p>
-        pub fn key_group_config(mut self, signature: crate::model::KeyGroupConfig) -> Self {
-            self.inner = self.inner.key_group_config(signature);
+        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
+            self.inner = self.inner.key_group_config(input);
             self
         }
         /// <p>A key group configuration.</p>
@@ -1747,8 +1745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are enabling metrics for.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The ID of the distribution that you are enabling metrics for.</p>
@@ -1763,9 +1761,9 @@ pub mod fluent_builders {
         /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn monitoring_subscription(
             mut self,
-            signature: crate::model::MonitoringSubscription,
+            input: crate::model::MonitoringSubscription,
         ) -> Self {
-            self.inner = self.inner.monitoring_subscription(signature);
+            self.inner = self.inner.monitoring_subscription(input);
             self
         }
         /// <p>A monitoring subscription. This structure contains information about whether additional
@@ -1864,9 +1862,9 @@ pub mod fluent_builders {
         /// <p>An origin request policy configuration.</p>
         pub fn origin_request_policy_config(
             mut self,
-            signature: crate::model::OriginRequestPolicyConfig,
+            input: crate::model::OriginRequestPolicyConfig,
         ) -> Self {
-            self.inner = self.inner.origin_request_policy_config(signature);
+            self.inner = self.inner.origin_request_policy_config(input);
             self
         }
         /// <p>An origin request policy configuration.</p>
@@ -1938,8 +1936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A CloudFront public key configuration.</p>
-        pub fn public_key_config(mut self, signature: crate::model::PublicKeyConfig) -> Self {
-            self.inner = self.inner.public_key_config(signature);
+        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
+            self.inner = self.inner.public_key_config(input);
             self
         }
         /// <p>A CloudFront public key configuration.</p>
@@ -2054,8 +2052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique name to identify this real-time log configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique name to identify this real-time log configuration.</p>
@@ -2066,8 +2064,8 @@ pub mod fluent_builders {
         /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
         /// percentage of viewer requests that are represented in the real-time log data. You must
         /// provide an integer between 1 and 100, inclusive.</p>
-        pub fn sampling_rate(mut self, signature: i64) -> Self {
-            self.inner = self.inner.sampling_rate(signature);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
         /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
@@ -2148,9 +2146,9 @@ pub mod fluent_builders {
         /// specify the response headers.</p>
         pub fn response_headers_policy_config(
             mut self,
-            signature: crate::model::ResponseHeadersPolicyConfig,
+            input: crate::model::ResponseHeadersPolicyConfig,
         ) -> Self {
-            self.inner = self.inner.response_headers_policy_config(signature);
+            self.inner = self.inner.response_headers_policy_config(input);
             self
         }
         /// <p>Contains metadata about the response headers policy, and a set of configurations that
@@ -2227,9 +2225,9 @@ pub mod fluent_builders {
         /// <p>The streaming distribution's configuration information.</p>
         pub fn streaming_distribution_config(
             mut self,
-            signature: crate::model::StreamingDistributionConfig,
+            input: crate::model::StreamingDistributionConfig,
         ) -> Self {
-            self.inner = self.inner.streaming_distribution_config(signature);
+            self.inner = self.inner.streaming_distribution_config(input);
             self
         }
         /// <p>The streaming distribution's configuration information.</p>
@@ -2307,11 +2305,9 @@ pub mod fluent_builders {
         /// <p> The streaming distribution's configuration information. </p>
         pub fn streaming_distribution_config_with_tags(
             mut self,
-            signature: crate::model::StreamingDistributionConfigWithTags,
+            input: crate::model::StreamingDistributionConfigWithTags,
         ) -> Self {
-            self.inner = self
-                .inner
-                .streaming_distribution_config_with_tags(signature);
+            self.inner = self.inner.streaming_distribution_config_with_tags(input);
             self
         }
         /// <p> The streaming distribution's configuration information. </p>
@@ -2392,8 +2388,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the cache policy that you are deleting. To get the
         /// identifier, you can use <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the cache policy that you are deleting. To get the
@@ -2406,8 +2402,8 @@ pub mod fluent_builders {
         /// policy’s <code>ETag</code> value, which you can get using
         /// <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
         /// <code>GetCachePolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the cache policy that you are deleting. The version is the cache
@@ -2481,8 +2477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The origin access identity's ID.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The origin access identity's ID.</p>
@@ -2492,8 +2488,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
         /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header you received from a previous <code>GET</code>
@@ -2563,8 +2559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution ID. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The distribution ID. </p>
@@ -2574,8 +2570,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when you disabled the
         /// distribution. For example: <code>E2QWRUHAPOMQZL</code>. </p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when you disabled the
@@ -2645,8 +2641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the configuration you want to delete from CloudFront.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the configuration you want to delete from CloudFront.</p>
@@ -2656,8 +2652,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// configuration identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
@@ -2727,8 +2723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Request the ID of the profile you want to delete from CloudFront.</p>
@@ -2738,8 +2734,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// profile to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
@@ -2815,8 +2811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are deleting.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function that you are deleting.</p>
@@ -2826,8 +2822,8 @@ pub mod fluent_builders {
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
         /// you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are deleting, which
@@ -2904,8 +2900,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the key group that you are deleting. To get the identifier, use
         /// <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the key group that you are deleting. To get the identifier, use
@@ -2917,8 +2913,8 @@ pub mod fluent_builders {
         /// <p>The version of the key group that you are deleting. The version is the key group’s
         /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or
         /// <code>GetKeyGroupConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the key group that you are deleting. The version is the key group’s
@@ -2989,8 +2985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are disabling metrics for.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The ID of the distribution that you are disabling metrics for.</p>
@@ -3069,8 +3065,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the origin request policy that you are deleting. To get the
         /// identifier, you can use <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the origin request policy that you are deleting. To get the
@@ -3083,8 +3079,8 @@ pub mod fluent_builders {
         /// request policy’s <code>ETag</code> value, which you can get using
         /// <code>ListOriginRequestPolicies</code>, <code>GetOriginRequestPolicy</code>, or
         /// <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the origin request policy that you are deleting. The version is the origin
@@ -3156,8 +3152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the public key you want to remove from CloudFront.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the public key you want to remove from CloudFront.</p>
@@ -3167,8 +3163,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// public key identity to delete. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
@@ -3244,8 +3240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the real-time log configuration to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the real-time log configuration to delete.</p>
@@ -3254,8 +3250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to delete.</p>
@@ -3331,8 +3327,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the response headers policy that you are deleting.</p>
         /// <p>To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy that you are deleting.</p>
@@ -3346,8 +3342,8 @@ pub mod fluent_builders {
         /// get using <code>ListResponseHeadersPolicies</code>,
         /// <code>GetResponseHeadersPolicy</code>, or
         /// <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are deleting.</p>
@@ -3467,8 +3463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution ID. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The distribution ID. </p>
@@ -3478,8 +3474,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when you disabled the
         /// streaming distribution. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when you disabled the
@@ -3553,8 +3549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are getting information about.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function that you are getting information about.</p>
@@ -3563,8 +3559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, signature: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
@@ -3653,8 +3649,8 @@ pub mod fluent_builders {
         /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
         /// not attached to a cache behavior, you can get the identifier using
         /// <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
@@ -3736,8 +3732,8 @@ pub mod fluent_builders {
         /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache policy is
         /// not attached to a cache behavior, you can get the identifier using
         /// <code>ListCachePolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the cache policy. If the cache policy is attached to a
@@ -3810,8 +3806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity's ID.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identity's ID.</p>
@@ -3882,8 +3878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity's ID. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identity's ID. </p>
@@ -3952,8 +3948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
@@ -4022,8 +4018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The distribution's ID. If the ID is empty, an empty distribution configuration is returned.</p>
@@ -4092,8 +4088,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
@@ -4162,8 +4158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Request the ID for the field-level encryption configuration information.</p>
@@ -4232,8 +4228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Get the ID for the field-level encryption profile information.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Get the ID for the field-level encryption profile information.</p>
@@ -4304,8 +4300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Get the ID for the field-level encryption profile configuration information.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>Get the ID for the field-level encryption profile configuration information.</p>
@@ -4377,8 +4373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function whose code you are getting.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function whose code you are getting.</p>
@@ -4387,8 +4383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, signature: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p>The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
@@ -4460,8 +4456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The distribution's ID.</p>
@@ -4474,8 +4470,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the invalidation request, for example,
         /// <code>IDFDVBD632BHDS5</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the invalidation request, for example,
@@ -4551,8 +4547,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the key group that you are getting. To get the identifier, use
         /// <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the key group that you are getting. To get the identifier, use
@@ -4628,8 +4624,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the key group whose configuration you are getting. To get the
         /// identifier, use <code>ListKeyGroups</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the key group whose configuration you are getting. To get the
@@ -4700,8 +4696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the distribution that you are getting metrics information for.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The ID of the distribution that you are getting metrics information for.</p>
@@ -4790,8 +4786,8 @@ pub mod fluent_builders {
         /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
         /// policy is not attached to a cache behavior, you can get the identifier using
         /// <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the origin request policy. If the origin request policy is
@@ -4874,8 +4870,8 @@ pub mod fluent_builders {
         /// <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request
         /// policy is not attached to a cache behavior, you can get the identifier using
         /// <code>ListOriginRequestPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the origin request policy. If the origin request policy is
@@ -4948,8 +4944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the public key you are getting.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the public key you are getting.</p>
@@ -5018,8 +5014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the public key whose configuration you are getting.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the public key whose configuration you are getting.</p>
@@ -5091,8 +5087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the real-time log configuration to get.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the real-time log configuration to get.</p>
@@ -5101,8 +5097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration to get.</p>
@@ -5183,8 +5179,8 @@ pub mod fluent_builders {
         /// <code>GetDistribution</code>. If the response headers policy is not attached to a
         /// cache behavior, you can get the identifier using
         /// <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
@@ -5269,8 +5265,8 @@ pub mod fluent_builders {
         /// <code>GetDistribution</code>. If the response headers policy is not attached to a
         /// cache behavior, you can get the identifier using
         /// <code>ListResponseHeadersPolicies</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy.</p>
@@ -5344,8 +5340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The streaming distribution's ID.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The streaming distribution's ID.</p>
@@ -5414,8 +5410,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The streaming distribution's ID.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The streaming distribution's ID.</p>
@@ -5502,8 +5498,8 @@ pub mod fluent_builders {
         /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::CachePolicyType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>A filter to return only the specified kinds of cache policies. Valid values
@@ -5529,8 +5525,8 @@ pub mod fluent_builders {
         /// cache policies. The response includes cache policies in the list that occur after the
         /// marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5542,8 +5538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of cache policies that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of cache policies that you want in the response.</p>
@@ -5618,8 +5614,8 @@ pub mod fluent_builders {
         /// get the next page of results, set the <code>Marker</code> to the value of the
         /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
         /// identity on that page).</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of origin
@@ -5633,8 +5629,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of origin access identities you want in the response body.
         /// </p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of origin access identities you want in the response body.
@@ -5727,8 +5723,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
         /// includes the provided alias.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
@@ -5741,8 +5737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
@@ -5754,8 +5750,8 @@ pub mod fluent_builders {
         /// conflicting aliases. The response includes conflicting aliases in the list that occur
         /// after the marker. To get the next page of the list, set this field’s value to the value
         /// of <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in the list of
@@ -5767,8 +5763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conflicting aliases that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of conflicting aliases that you want in the response.</p>
@@ -5841,8 +5837,8 @@ pub mod fluent_builders {
         /// get the next page of results, set the <code>Marker</code> to the value of the
         /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
         /// distribution on that page).</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of
@@ -5855,8 +5851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distributions you want in the response body.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distributions you want in the response body.</p>
@@ -5934,8 +5930,8 @@ pub mod fluent_builders {
         /// distribution IDs. The response includes distribution IDs in the list that occur after
         /// the marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -5947,8 +5943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -5957,8 +5953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
-        pub fn cache_policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_policy_id(signature.into());
+        pub fn cache_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_policy_id(input.into());
             self
         }
         /// <p>The ID of the cache policy whose associated distribution IDs you want to list.</p>
@@ -6039,8 +6035,8 @@ pub mod fluent_builders {
         /// distribution IDs. The response includes distribution IDs in the list that occur after
         /// the marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6052,8 +6048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -6062,8 +6058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
-        pub fn key_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_group_id(signature.into());
+        pub fn key_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_group_id(input.into());
             self
         }
         /// <p>The ID of the key group whose associated distribution IDs you are listing.</p>
@@ -6143,8 +6139,8 @@ pub mod fluent_builders {
         /// distribution IDs. The response includes distribution IDs in the list that occur after
         /// the marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6156,8 +6152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distribution IDs that you want in the response.</p>
@@ -6167,11 +6163,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the origin request policy whose associated distribution IDs you want to
         /// list.</p>
-        pub fn origin_request_policy_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.origin_request_policy_id(signature.into());
+        pub fn origin_request_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin_request_policy_id(input.into());
             self
         }
         /// <p>The ID of the origin request policy whose associated distribution IDs you want to
@@ -6258,8 +6251,8 @@ pub mod fluent_builders {
         /// distributions. The response includes distributions in the list that occur after the
         /// marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6271,8 +6264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distributions that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distributions that you want in the response.</p>
@@ -6282,11 +6275,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the real-time log configuration whose associated distributions you want to
         /// list.</p>
-        pub fn realtime_log_config_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.realtime_log_config_name(signature.into());
+        pub fn realtime_log_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.realtime_log_config_name(input.into());
             self
         }
         /// <p>The name of the real-time log configuration whose associated distributions you want to
@@ -6300,11 +6290,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
         /// distributions you want to list.</p>
-        pub fn realtime_log_config_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.realtime_log_config_arn(signature.into());
+        pub fn realtime_log_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.realtime_log_config_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the real-time log configuration whose associated
@@ -6388,8 +6375,8 @@ pub mod fluent_builders {
         /// distribution IDs. The response includes distribution IDs in the list that occur after
         /// the marker. To get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6401,8 +6388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distribution IDs that you want to get in the response.</p>
@@ -6412,11 +6399,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the response headers policy whose associated distribution IDs you want to
         /// list.</p>
-        pub fn response_headers_policy_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.response_headers_policy_id(signature.into());
+        pub fn response_headers_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_headers_policy_id(input.into());
             self
         }
         /// <p>The ID of the response headers policy whose associated distribution IDs you want to
@@ -6493,8 +6477,8 @@ pub mod fluent_builders {
         /// includes a <code>NextMarker</code> element. To get the next page of results, submit another
         /// request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code>
         /// from the last response. (For the first request, omit <code>Marker</code>.) </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If
@@ -6508,8 +6492,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
         /// The maximum and default values are both 100.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of distributions that you want CloudFront to return in the response body.
@@ -6521,8 +6505,8 @@ pub mod fluent_builders {
         /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
         /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
         /// associated with a web ACL.</p>
-        pub fn web_acl_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.web_acl_id(signature.into());
+        pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.web_acl_id(input.into());
             self
         }
         /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
@@ -6595,8 +6579,8 @@ pub mod fluent_builders {
         /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
         /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
         /// <code>NextMarker</code> from the current page's response (which is also the ID of the last configuration on that page). </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of configurations. The results include configurations in the list that
@@ -6607,8 +6591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of field-level encryption configurations you want in the response body. </p>
@@ -6679,8 +6663,8 @@ pub mod fluent_builders {
         /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
         /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
         /// <code>NextMarker</code> from the current page's response (which is also the ID of the last profile on that page). </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of profiles. The results include profiles in the list that
@@ -6691,8 +6675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
@@ -6771,8 +6755,8 @@ pub mod fluent_builders {
         /// functions. The response includes functions in the list that occur after the marker. To
         /// get the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -6784,8 +6768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of functions that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of functions that you want in the response.</p>
@@ -6795,8 +6779,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional filter to return only the functions that are in the specified stage,
         /// either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
-        pub fn stage(mut self, signature: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p>An optional filter to return only the functions that are in the specified stage,
@@ -6869,8 +6853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's ID.</p>
-        pub fn distribution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.distribution_id(signature.into());
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input.into());
             self
         }
         /// <p>The distribution's ID.</p>
@@ -6887,8 +6871,8 @@ pub mod fluent_builders {
         /// results, and so on. To get the next page of results, set <code>Marker</code> to the value of
         /// the <code>NextMarker</code> from the current page's response. This value is the same as the ID
         /// of the last invalidation batch on that page. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter when paginating results to indicate where to begin in your list of
@@ -6903,8 +6887,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of invalidation batches that you want in the response
         /// body.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of invalidation batches that you want in the response
@@ -6982,8 +6966,8 @@ pub mod fluent_builders {
         /// groups. The response includes key groups in the list that occur after the marker. To get
         /// the next page of the list, set this field’s value to the value of
         /// <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of key
@@ -6995,8 +6979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of key groups that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of key groups that you want in the response.</p>
@@ -7083,8 +7067,8 @@ pub mod fluent_builders {
         /// <code>custom</code> – Returns only the custom policies created in your Amazon Web Services account.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::OriginRequestPolicyType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>A filter to return only the specified kinds of origin request policies. Valid values
@@ -7110,8 +7094,8 @@ pub mod fluent_builders {
         /// origin request policies. The response includes origin request policies in the list that
         /// occur after the marker. To get the next page of the list, set this field’s value to the
         /// value of <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of
@@ -7123,8 +7107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of origin request policies that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of origin request policies that you want in the response.</p>
@@ -7195,8 +7179,8 @@ pub mod fluent_builders {
         /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
         /// occur after the marker. To get the next page of results, set the <code>Marker</code> to the value of the
         /// <code>NextMarker</code> from the current page's response (which is also the ID of the last public key on that page). </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this when paginating results to indicate where to begin in your list of public keys. The results include public keys in the list that
@@ -7207,8 +7191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of public keys you want in the response body. </p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of public keys you want in the response body. </p>
@@ -7282,8 +7266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of real-time log configurations that you want in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of real-time log configurations that you want in the response.</p>
@@ -7295,8 +7279,8 @@ pub mod fluent_builders {
         /// log configurations. The response includes real-time log configurations in the list that
         /// occur after the marker. To get the next page of the list, set this field’s value to the
         /// value of <code>NextMarker</code> from the current page’s response.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of real-time
@@ -7387,8 +7371,8 @@ pub mod fluent_builders {
         /// Amazon Web Services account.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::ResponseHeadersPolicyType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ResponseHeadersPolicyType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>A filter to get only the specified kind of response headers policies. Valid values
@@ -7415,8 +7399,8 @@ pub mod fluent_builders {
         /// headers policies. The response includes response headers policies in the list that occur
         /// after the marker. To get the next page of the list, set this field’s value to the value
         /// of <code>NextMarker</code> from the current page’s response. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this field when paginating results to indicate where to begin in your list of response
@@ -7428,8 +7412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of response headers policies that you want to get in the response.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The maximum number of response headers policies that you want to get in the response.</p>
@@ -7498,8 +7482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
@@ -7508,8 +7492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
@@ -7578,8 +7562,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -7656,8 +7640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are publishing.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function that you are publishing.</p>
@@ -7667,8 +7651,8 @@ pub mod fluent_builders {
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
         /// you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are publishing, which
@@ -7738,8 +7722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -7748,8 +7732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
-        pub fn tags(mut self, signature: crate::model::Tags) -> Self {
-            self.inner = self.inner.tags(signature);
+        pub fn tags(mut self, input: crate::model::Tags) -> Self {
+            self.inner = self.inner.tags(input);
             self
         }
         /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
@@ -7827,8 +7811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are testing.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function that you are testing.</p>
@@ -7838,8 +7822,8 @@ pub mod fluent_builders {
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
         /// you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are testing, which
@@ -7850,8 +7834,8 @@ pub mod fluent_builders {
         }
         /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
         /// <code>LIVE</code>.</p>
-        pub fn stage(mut self, signature: crate::model::FunctionStage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::FunctionStage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p>The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
@@ -7865,8 +7849,8 @@ pub mod fluent_builders {
         }
         /// <p>The event object to test the function with. For more information about the structure of the
         /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function">Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn event_object(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.event_object(signature);
+        pub fn event_object(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.event_object(input);
             self
         }
         /// <p>The event object to test the function with. For more information about the structure of the
@@ -7939,8 +7923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> An ARN of a CloudFront resource.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p> An ARN of a CloudFront resource.</p>
@@ -7949,8 +7933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
-        pub fn tag_keys(mut self, signature: crate::model::TagKeys) -> Self {
-            self.inner = self.inner.tag_keys(signature);
+        pub fn tag_keys(mut self, input: crate::model::TagKeys) -> Self {
+            self.inner = self.inner.tag_keys(input);
             self
         }
         /// <p> A complex type that contains zero or more <code>Tag</code> key elements.</p>
@@ -8036,8 +8020,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cache policy configuration.</p>
-        pub fn cache_policy_config(mut self, signature: crate::model::CachePolicyConfig) -> Self {
-            self.inner = self.inner.cache_policy_config(signature);
+        pub fn cache_policy_config(mut self, input: crate::model::CachePolicyConfig) -> Self {
+            self.inner = self.inner.cache_policy_config(input);
             self
         }
         /// <p>A cache policy configuration.</p>
@@ -8051,8 +8035,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
         /// in a cache behavior’s <code>CachePolicyId</code> field in the response to
         /// <code>GetDistributionConfig</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the cache policy that you are updating. The identifier is returned
@@ -8065,8 +8049,8 @@ pub mod fluent_builders {
         /// <p>The version of the cache policy that you are updating. The version is returned in the cache
         /// policy’s <code>ETag</code> field in the response to
         /// <code>GetCachePolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the cache policy that you are updating. The version is returned in the cache
@@ -8141,11 +8125,9 @@ pub mod fluent_builders {
         /// <p>The identity's configuration information.</p>
         pub fn cloud_front_origin_access_identity_config(
             mut self,
-            signature: crate::model::CloudFrontOriginAccessIdentityConfig,
+            input: crate::model::CloudFrontOriginAccessIdentityConfig,
         ) -> Self {
-            self.inner = self
-                .inner
-                .cloud_front_origin_access_identity_config(signature);
+            self.inner = self.inner.cloud_front_origin_access_identity_config(input);
             self
         }
         /// <p>The identity's configuration information.</p>
@@ -8159,8 +8141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity's id.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identity's id.</p>
@@ -8170,8 +8152,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// identity's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
@@ -8319,8 +8301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The distribution's configuration information.</p>
-        pub fn distribution_config(mut self, signature: crate::model::DistributionConfig) -> Self {
-            self.inner = self.inner.distribution_config(signature);
+        pub fn distribution_config(mut self, input: crate::model::DistributionConfig) -> Self {
+            self.inner = self.inner.distribution_config(input);
             self
         }
         /// <p>The distribution's configuration information.</p>
@@ -8332,8 +8314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The distribution's id.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The distribution's id.</p>
@@ -8343,8 +8325,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
@@ -8416,9 +8398,9 @@ pub mod fluent_builders {
         /// <p>Request to update a field-level encryption configuration. </p>
         pub fn field_level_encryption_config(
             mut self,
-            signature: crate::model::FieldLevelEncryptionConfig,
+            input: crate::model::FieldLevelEncryptionConfig,
         ) -> Self {
-            self.inner = self.inner.field_level_encryption_config(signature);
+            self.inner = self.inner.field_level_encryption_config(input);
             self
         }
         /// <p>Request to update a field-level encryption configuration. </p>
@@ -8430,8 +8412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the configuration you want to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the configuration you want to update.</p>
@@ -8441,8 +8423,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the configuration identity to update.
@@ -8514,9 +8496,9 @@ pub mod fluent_builders {
         /// <p>Request to update a field-level encryption profile. </p>
         pub fn field_level_encryption_profile_config(
             mut self,
-            signature: crate::model::FieldLevelEncryptionProfileConfig,
+            input: crate::model::FieldLevelEncryptionProfileConfig,
         ) -> Self {
-            self.inner = self.inner.field_level_encryption_profile_config(signature);
+            self.inner = self.inner.field_level_encryption_profile_config(input);
             self
         }
         /// <p>Request to update a field-level encryption profile. </p>
@@ -8528,8 +8510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the field-level encryption profile request. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the field-level encryption profile request. </p>
@@ -8539,8 +8521,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the profile identity to update.
@@ -8615,8 +8597,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the function that you are updating.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the function that you are updating.</p>
@@ -8626,8 +8608,8 @@ pub mod fluent_builders {
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
         /// you can get using <code>DescribeFunction</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The current version (<code>ETag</code> value) of the function that you are updating, which
@@ -8637,8 +8619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information about the function.</p>
-        pub fn function_config(mut self, signature: crate::model::FunctionConfig) -> Self {
-            self.inner = self.inner.function_config(signature);
+        pub fn function_config(mut self, input: crate::model::FunctionConfig) -> Self {
+            self.inner = self.inner.function_config(input);
             self
         }
         /// <p>Configuration information about the function.</p>
@@ -8651,8 +8633,8 @@ pub mod fluent_builders {
         }
         /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
         /// code for CloudFront Functions</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
-        pub fn function_code(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.function_code(signature);
+        pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.function_code(input);
             self
         }
         /// <p>The function code. For more information about writing a CloudFront function, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html">Writing function
@@ -8742,8 +8724,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The key group configuration.</p>
-        pub fn key_group_config(mut self, signature: crate::model::KeyGroupConfig) -> Self {
-            self.inner = self.inner.key_group_config(signature);
+        pub fn key_group_config(mut self, input: crate::model::KeyGroupConfig) -> Self {
+            self.inner = self.inner.key_group_config(input);
             self
         }
         /// <p>The key group configuration.</p>
@@ -8755,8 +8737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the key group that you are updating.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the key group that you are updating.</p>
@@ -8766,8 +8748,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the key group that you are updating. The version is the key group’s
         /// <code>ETag</code> value.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the key group that you are updating. The version is the key group’s
@@ -8856,9 +8838,9 @@ pub mod fluent_builders {
         /// <p>An origin request policy configuration.</p>
         pub fn origin_request_policy_config(
             mut self,
-            signature: crate::model::OriginRequestPolicyConfig,
+            input: crate::model::OriginRequestPolicyConfig,
         ) -> Self {
-            self.inner = self.inner.origin_request_policy_config(signature);
+            self.inner = self.inner.origin_request_policy_config(input);
             self
         }
         /// <p>An origin request policy configuration.</p>
@@ -8872,8 +8854,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
         /// returned in a cache behavior’s <code>OriginRequestPolicyId</code> field in the response
         /// to <code>GetDistributionConfig</code>.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier for the origin request policy that you are updating. The identifier is
@@ -8886,8 +8868,8 @@ pub mod fluent_builders {
         /// <p>The version of the origin request policy that you are updating. The version is returned in
         /// the origin request policy’s <code>ETag</code> field in the response to
         /// <code>GetOriginRequestPolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the origin request policy that you are updating. The version is returned in
@@ -8958,8 +8940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A public key configuration.</p>
-        pub fn public_key_config(mut self, signature: crate::model::PublicKeyConfig) -> Self {
-            self.inner = self.inner.public_key_config(signature);
+        pub fn public_key_config(mut self, input: crate::model::PublicKeyConfig) -> Self {
+            self.inner = self.inner.public_key_config(input);
             self
         }
         /// <p>A public key configuration.</p>
@@ -8971,8 +8953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the public key that you are updating.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the public key that you are updating.</p>
@@ -8982,8 +8964,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
         /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the public key to update.
@@ -9113,8 +9095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for this real-time log configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for this real-time log configuration.</p>
@@ -9123,8 +9105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for this real-time log configuration.</p>
@@ -9135,8 +9117,8 @@ pub mod fluent_builders {
         /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
         /// percentage of viewer requests that are represented in the real-time log data. You must
         /// provide an integer between 1 and 100, inclusive.</p>
-        pub fn sampling_rate(mut self, signature: i64) -> Self {
-            self.inner = self.inner.sampling_rate(signature);
+        pub fn sampling_rate(mut self, input: i64) -> Self {
+            self.inner = self.inner.sampling_rate(input);
             self
         }
         /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
@@ -9227,9 +9209,9 @@ pub mod fluent_builders {
         /// <p>A response headers policy configuration.</p>
         pub fn response_headers_policy_config(
             mut self,
-            signature: crate::model::ResponseHeadersPolicyConfig,
+            input: crate::model::ResponseHeadersPolicyConfig,
         ) -> Self {
-            self.inner = self.inner.response_headers_policy_config(signature);
+            self.inner = self.inner.response_headers_policy_config(input);
             self
         }
         /// <p>A response headers policy configuration.</p>
@@ -9241,8 +9223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the response headers policy that you are updating.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier for the response headers policy that you are updating.</p>
@@ -9253,8 +9235,8 @@ pub mod fluent_builders {
         /// <p>The version of the response headers policy that you are updating.</p>
         /// <p>The version is returned in the cache policy’s <code>ETag</code> field in the response
         /// to <code>GetResponseHeadersPolicyConfig</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The version of the response headers policy that you are updating.</p>
@@ -9327,9 +9309,9 @@ pub mod fluent_builders {
         /// <p>The streaming distribution's configuration information.</p>
         pub fn streaming_distribution_config(
             mut self,
-            signature: crate::model::StreamingDistributionConfig,
+            input: crate::model::StreamingDistributionConfig,
         ) -> Self {
-            self.inner = self.inner.streaming_distribution_config(signature);
+            self.inner = self.inner.streaming_distribution_config(input);
             self
         }
         /// <p>The streaming distribution's configuration information.</p>
@@ -9341,8 +9323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The streaming distribution's id.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The streaming distribution's id.</p>
@@ -9352,8 +9334,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the
         /// streaming distribution's configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
-        pub fn if_match(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.if_match(signature.into());
+        pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.if_match(input.into());
             self
         }
         /// <p>The value of the <code>ETag</code> header that you received when retrieving the

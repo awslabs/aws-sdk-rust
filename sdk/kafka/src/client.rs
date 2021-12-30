@@ -411,8 +411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
@@ -498,8 +498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
@@ -585,11 +585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the broker nodes in the cluster.</p>
-        pub fn broker_node_group_info(
-            mut self,
-            signature: crate::model::BrokerNodeGroupInfo,
-        ) -> Self {
-            self.inner = self.inner.broker_node_group_info(signature);
+        pub fn broker_node_group_info(mut self, input: crate::model::BrokerNodeGroupInfo) -> Self {
+            self.inner = self.inner.broker_node_group_info(input);
             self
         }
         /// <p>Information about the broker nodes in the cluster.</p>
@@ -601,11 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Includes all client authentication related information.</p>
-        pub fn client_authentication(
-            mut self,
-            signature: crate::model::ClientAuthentication,
-        ) -> Self {
-            self.inner = self.inner.client_authentication(signature);
+        pub fn client_authentication(mut self, input: crate::model::ClientAuthentication) -> Self {
+            self.inner = self.inner.client_authentication(input);
             self
         }
         /// <p>Includes all client authentication related information.</p>
@@ -617,8 +611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -627,8 +621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-        pub fn configuration_info(mut self, signature: crate::model::ConfigurationInfo) -> Self {
-            self.inner = self.inner.configuration_info(signature);
+        pub fn configuration_info(mut self, input: crate::model::ConfigurationInfo) -> Self {
+            self.inner = self.inner.configuration_info(input);
             self
         }
         /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
@@ -640,8 +634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Includes all encryption-related information.</p>
-        pub fn encryption_info(mut self, signature: crate::model::EncryptionInfo) -> Self {
-            self.inner = self.inner.encryption_info(signature);
+        pub fn encryption_info(mut self, input: crate::model::EncryptionInfo) -> Self {
+            self.inner = self.inner.encryption_info(input);
             self
         }
         /// <p>Includes all encryption-related information.</p>
@@ -653,8 +647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-        pub fn enhanced_monitoring(mut self, signature: crate::model::EnhancedMonitoring) -> Self {
-            self.inner = self.inner.enhanced_monitoring(signature);
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMonitoring) -> Self {
+            self.inner = self.inner.enhanced_monitoring(input);
             self
         }
         /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
@@ -666,8 +660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The settings for open monitoring.</p>
-        pub fn open_monitoring(mut self, signature: crate::model::OpenMonitoringInfo) -> Self {
-            self.inner = self.inner.open_monitoring(signature);
+        pub fn open_monitoring(mut self, input: crate::model::OpenMonitoringInfo) -> Self {
+            self.inner = self.inner.open_monitoring(input);
             self
         }
         /// <p>The settings for open monitoring.</p>
@@ -679,8 +673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of Apache Kafka.</p>
-        pub fn kafka_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kafka_version(signature.into());
+        pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kafka_version(input.into());
             self
         }
         /// <p>The version of Apache Kafka.</p>
@@ -692,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn logging_info(mut self, signature: crate::model::LoggingInfo) -> Self {
-            self.inner = self.inner.logging_info(signature);
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.inner = self.inner.logging_info(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -705,8 +699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of broker nodes in the cluster.</p>
-        pub fn number_of_broker_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_broker_nodes(signature);
+        pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_broker_nodes(input);
             self
         }
         /// <p>The number of broker nodes in the cluster.</p>
@@ -798,8 +792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -831,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the provisioned cluster.</p>
-        pub fn provisioned(mut self, signature: crate::model::ProvisionedRequest) -> Self {
-            self.inner = self.inner.provisioned(signature);
+        pub fn provisioned(mut self, input: crate::model::ProvisionedRequest) -> Self {
+            self.inner = self.inner.provisioned(input);
             self
         }
         /// <p>Information about the provisioned cluster.</p>
@@ -844,8 +838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the serverless cluster.</p>
-        pub fn serverless(mut self, signature: crate::model::ServerlessRequest) -> Self {
-            self.inner = self.inner.serverless(signature);
+        pub fn serverless(mut self, input: crate::model::ServerlessRequest) -> Self {
+            self.inner = self.inner.serverless(input);
             self
         }
         /// <p>Information about the serverless cluster.</p>
@@ -917,8 +911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the configuration.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the configuration.</p>
@@ -944,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the configuration.</p>
@@ -955,8 +949,8 @@ pub mod fluent_builders {
         }
         /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
         /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
-        pub fn server_properties(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.server_properties(signature);
+        pub fn server_properties(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.server_properties(input);
             self
         }
         /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
@@ -1029,8 +1023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -1039,8 +1033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the MSK cluster.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the MSK cluster.</p>
@@ -1112,8 +1106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
@@ -1182,8 +1176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -1252,8 +1246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
-        pub fn cluster_operation_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_operation_arn(signature.into());
+        pub fn cluster_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_operation_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.</p>
@@ -1325,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -1395,8 +1389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
@@ -1465,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
@@ -1475,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
-        pub fn revision(mut self, signature: i64) -> Self {
-            self.inner = self.inner.revision(signature);
+        pub fn revision(mut self, input: i64) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p>A string that uniquely identifies a revision of an MSK configuration.</p>
@@ -1545,8 +1539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -1615,8 +1609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster check.</p>
@@ -1685,8 +1679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -1695,8 +1689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -1706,8 +1700,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -1777,8 +1771,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-        pub fn cluster_name_filter(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name_filter(signature.into());
+        pub fn cluster_name_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name_filter(input.into());
             self
         }
         /// <p>Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
@@ -1790,8 +1784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -1801,8 +1795,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -1872,8 +1866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
-        pub fn cluster_name_filter(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name_filter(signature.into());
+        pub fn cluster_name_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name_filter(input.into());
             self
         }
         /// <p>Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.</p>
@@ -1885,8 +1879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify either PROVISIONED or SERVERLESS.</p>
-        pub fn cluster_type_filter(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_type_filter(signature.into());
+        pub fn cluster_type_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_type_filter(input.into());
             self
         }
         /// <p>Specify either PROVISIONED or SERVERLESS.</p>
@@ -1898,8 +1892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -1909,8 +1903,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -1980,8 +1974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.</p>
@@ -1990,8 +1984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -2001,8 +1995,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -2072,8 +2066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -2083,8 +2077,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -2154,8 +2148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -2164,8 +2158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
@@ -2234,8 +2228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -2244,8 +2238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
@@ -2255,8 +2249,8 @@ pub mod fluent_builders {
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
         /// To get the next batch, provide this token in your next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
@@ -2326,8 +2320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The arn of the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The arn of the cluster.</p>
@@ -2336,8 +2330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maxResults of the query.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maxResults of the query.</p>
@@ -2346,8 +2340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken of the query.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken of the query.</p>
@@ -2416,8 +2410,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
@@ -2503,8 +2497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
@@ -2573,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
@@ -2666,8 +2660,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.</p>
@@ -2791,8 +2785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -2801,8 +2795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
@@ -2814,8 +2808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
-        pub fn target_number_of_broker_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.target_number_of_broker_nodes(signature);
+        pub fn target_number_of_broker_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.target_number_of_broker_nodes(input);
             self
         }
         /// <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
@@ -2887,8 +2881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -2897,8 +2891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
@@ -2990,8 +2984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -3000,8 +2994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
@@ -3013,8 +3007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
-        pub fn target_instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_instance_type(signature.into());
+        pub fn target_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_instance_type(input.into());
             self
         }
         /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
@@ -3086,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -3096,8 +3090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
-        pub fn configuration_info(mut self, signature: crate::model::ConfigurationInfo) -> Self {
-            self.inner = self.inner.configuration_info(signature);
+        pub fn configuration_info(mut self, input: crate::model::ConfigurationInfo) -> Self {
+            self.inner = self.inner.configuration_info(input);
             self
         }
         /// <p>Represents the configuration that you want MSK to use for the brokers in a cluster.</p>
@@ -3109,8 +3103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the cluster that needs to be updated.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of the cluster that needs to be updated.</p>
@@ -3182,8 +3176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
@@ -3192,8 +3186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom configuration that should be applied on the new version of cluster.</p>
-        pub fn configuration_info(mut self, signature: crate::model::ConfigurationInfo) -> Self {
-            self.inner = self.inner.configuration_info(signature);
+        pub fn configuration_info(mut self, input: crate::model::ConfigurationInfo) -> Self {
+            self.inner = self.inner.configuration_info(input);
             self
         }
         /// <p>The custom configuration that should be applied on the new version of cluster.</p>
@@ -3205,8 +3199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Current cluster version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>Current cluster version.</p>
@@ -3218,8 +3212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Target Kafka version.</p>
-        pub fn target_kafka_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_kafka_version(signature.into());
+        pub fn target_kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_kafka_version(input.into());
             self
         }
         /// <p>Target Kafka version.</p>
@@ -3291,8 +3285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
@@ -3301,8 +3295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the configuration revision.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the configuration revision.</p>
@@ -3312,8 +3306,8 @@ pub mod fluent_builders {
         }
         /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
         /// When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
-        pub fn server_properties(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.server_properties(signature);
+        pub fn server_properties(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.server_properties(input);
             self
         }
         /// <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
@@ -3386,8 +3380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
@@ -3396,8 +3390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the broker access configuration.</p>
-        pub fn connectivity_info(mut self, signature: crate::model::ConnectivityInfo) -> Self {
-            self.inner = self.inner.connectivity_info(signature);
+        pub fn connectivity_info(mut self, input: crate::model::ConnectivityInfo) -> Self {
+            self.inner = self.inner.connectivity_info(input);
             self
         }
         /// <p>Information about the broker access configuration.</p>
@@ -3409,8 +3403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
@@ -3482,8 +3476,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -3492,8 +3486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
@@ -3505,8 +3499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
-        pub fn enhanced_monitoring(mut self, signature: crate::model::EnhancedMonitoring) -> Self {
-            self.inner = self.inner.enhanced_monitoring(signature);
+        pub fn enhanced_monitoring(mut self, input: crate::model::EnhancedMonitoring) -> Self {
+            self.inner = self.inner.enhanced_monitoring(input);
             self
         }
         /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
@@ -3518,8 +3512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The settings for open monitoring.</p>
-        pub fn open_monitoring(mut self, signature: crate::model::OpenMonitoringInfo) -> Self {
-            self.inner = self.inner.open_monitoring(signature);
+        pub fn open_monitoring(mut self, input: crate::model::OpenMonitoringInfo) -> Self {
+            self.inner = self.inner.open_monitoring(input);
             self
         }
         /// <p>The settings for open monitoring.</p>
@@ -3531,8 +3525,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn logging_info(mut self, signature: crate::model::LoggingInfo) -> Self {
-            self.inner = self.inner.logging_info(signature);
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.inner = self.inner.logging_info(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3604,11 +3598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Includes all client authentication related information.</p>
-        pub fn client_authentication(
-            mut self,
-            signature: crate::model::ClientAuthentication,
-        ) -> Self {
-            self.inner = self.inner.client_authentication(signature);
+        pub fn client_authentication(mut self, input: crate::model::ClientAuthentication) -> Self {
+            self.inner = self.inner.client_authentication(input);
             self
         }
         /// <p>Includes all client authentication related information.</p>
@@ -3620,8 +3611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -3630,8 +3621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
@@ -3643,8 +3634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Includes all encryption-related information.</p>
-        pub fn encryption_info(mut self, signature: crate::model::EncryptionInfo) -> Self {
-            self.inner = self.inner.encryption_info(signature);
+        pub fn encryption_info(mut self, input: crate::model::EncryptionInfo) -> Self {
+            self.inner = self.inner.encryption_info(input);
             self
         }
         /// <p>Includes all encryption-related information.</p>

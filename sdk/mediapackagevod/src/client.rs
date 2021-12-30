@@ -279,8 +279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, signature: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(signature);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(input);
             self
         }
         /// Configure egress access logging.
@@ -292,8 +292,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
@@ -362,8 +362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The unique identifier for the Asset.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The unique identifier for the Asset.
@@ -372,8 +372,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingGroup for the Asset.
-        pub fn packaging_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(signature.into());
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// The ID of the PackagingGroup for the Asset.
@@ -385,8 +385,8 @@ pub mod fluent_builders {
             self
         }
         /// The resource ID to include in SPEKE key requests.
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// The resource ID to include in SPEKE key requests.
@@ -395,8 +395,8 @@ pub mod fluent_builders {
             self
         }
         /// ARN of the source object in S3.
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// ARN of the source object in S3.
@@ -405,8 +405,8 @@ pub mod fluent_builders {
             self
         }
         /// The IAM role ARN used to access the source S3 bucket.
-        pub fn source_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_role_arn(signature.into());
+        pub fn source_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_role_arn(input.into());
             self
         }
         /// The IAM role ARN used to access the source S3 bucket.
@@ -501,8 +501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A CMAF packaging configuration.
-        pub fn cmaf_package(mut self, signature: crate::model::CmafPackage) -> Self {
-            self.inner = self.inner.cmaf_package(signature);
+        pub fn cmaf_package(mut self, input: crate::model::CmafPackage) -> Self {
+            self.inner = self.inner.cmaf_package(input);
             self
         }
         /// A CMAF packaging configuration.
@@ -514,8 +514,8 @@ pub mod fluent_builders {
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
-        pub fn dash_package(mut self, signature: crate::model::DashPackage) -> Self {
-            self.inner = self.inner.dash_package(signature);
+        pub fn dash_package(mut self, input: crate::model::DashPackage) -> Self {
+            self.inner = self.inner.dash_package(input);
             self
         }
         /// A Dynamic Adaptive Streaming over HTTP (DASH) packaging configuration.
@@ -527,8 +527,8 @@ pub mod fluent_builders {
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
-        pub fn hls_package(mut self, signature: crate::model::HlsPackage) -> Self {
-            self.inner = self.inner.hls_package(signature);
+        pub fn hls_package(mut self, input: crate::model::HlsPackage) -> Self {
+            self.inner = self.inner.hls_package(input);
             self
         }
         /// An HTTP Live Streaming (HLS) packaging configuration.
@@ -540,8 +540,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingConfiguration.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the PackagingConfiguration.
@@ -550,8 +550,8 @@ pub mod fluent_builders {
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
-        pub fn mss_package(mut self, signature: crate::model::MssPackage) -> Self {
-            self.inner = self.inner.mss_package(signature);
+        pub fn mss_package(mut self, input: crate::model::MssPackage) -> Self {
+            self.inner = self.inner.mss_package(input);
             self
         }
         /// A Microsoft Smooth Streaming (MSS) PackagingConfiguration.
@@ -563,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a PackagingGroup.
-        pub fn packaging_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(signature.into());
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// The ID of a PackagingGroup.
@@ -659,8 +659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, signature: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(signature);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         /// CDN Authorization credentials
@@ -672,8 +672,8 @@ pub mod fluent_builders {
             self
         }
         /// Configure egress access logging.
-        pub fn egress_access_logs(mut self, signature: crate::model::EgressAccessLogs) -> Self {
-            self.inner = self.inner.egress_access_logs(signature);
+        pub fn egress_access_logs(mut self, input: crate::model::EgressAccessLogs) -> Self {
+            self.inner = self.inner.egress_access_logs(input);
             self
         }
         /// Configure egress access logging.
@@ -685,8 +685,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the PackagingGroup.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the PackagingGroup.
@@ -778,8 +778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD Asset resource to delete.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD Asset resource to delete.
@@ -848,8 +848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD PackagingConfiguration resource to delete.
@@ -918,8 +918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
@@ -988,8 +988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of an MediaPackage VOD Asset resource.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of an MediaPackage VOD Asset resource.
@@ -1058,8 +1058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a MediaPackage VOD PackagingConfiguration resource.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingConfiguration resource.
@@ -1128,8 +1128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
@@ -1198,8 +1198,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1208,8 +1208,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// Returns Assets associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(signature.into());
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// Returns Assets associated with the specified PackagingGroup.
@@ -1291,8 +1291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1301,8 +1301,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1311,8 +1311,8 @@ pub mod fluent_builders {
             self
         }
         /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
-        pub fn packaging_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.packaging_group_id(signature.into());
+        pub fn packaging_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.packaging_group_id(input.into());
             self
         }
         /// Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.
@@ -1384,8 +1384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Upper bound on number of records to return.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Upper bound on number of records to return.
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
             self
         }
         /// A token used to resume pagination from the end of a previous request.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// A token used to resume pagination from the end of a previous request.
@@ -1464,8 +1464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1534,8 +1534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1627,8 +1627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) for the resource. You can get this from the response to any request to the resource.
@@ -1714,8 +1714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// CDN Authorization credentials
-        pub fn authorization(mut self, signature: crate::model::Authorization) -> Self {
-            self.inner = self.inner.authorization(signature);
+        pub fn authorization(mut self, input: crate::model::Authorization) -> Self {
+            self.inner = self.inner.authorization(input);
             self
         }
         /// CDN Authorization credentials
@@ -1727,8 +1727,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The ID of a MediaPackage VOD PackagingGroup resource.

@@ -316,8 +316,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference to delete.</p>
@@ -337,8 +337,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
         /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to delete.</p>
@@ -483,8 +483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of export jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of export jobs.</p>
@@ -495,8 +495,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of export jobs to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of export jobs to return with a single request.</p>
@@ -658,11 +658,8 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(
-            mut self,
-            signature: crate::model::S3DestinationConfig,
-        ) -> Self {
-            self.inner = self.inner.s3_destination_config(signature);
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination_config(input);
             self
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
@@ -683,8 +680,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(signature);
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The format of the export file.</p>
@@ -708,8 +705,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(signature);
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -732,9 +729,9 @@ pub mod fluent_builders {
         /// to export.</p>
         pub fn recommendation_preferences(
             mut self,
-            signature: crate::model::RecommendationPreferences,
+            input: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(signature);
+            self.inner = self.inner.recommendation_preferences(input);
             self
         }
         /// <p>An object to specify the preferences for the Auto Scaling group recommendations
@@ -891,11 +888,8 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(
-            mut self,
-            signature: crate::model::S3DestinationConfig,
-        ) -> Self {
-            self.inner = self.inner.s3_destination_config(signature);
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination_config(input);
             self
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
@@ -916,8 +910,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(signature);
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The format of the export file.</p>
@@ -941,8 +935,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(signature);
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1109,11 +1103,8 @@ pub mod fluent_builders {
         /// specify an object prefix when you create the export job, you must include the object
         /// prefix in the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(
-            mut self,
-            signature: crate::model::S3DestinationConfig,
-        ) -> Self {
-            self.inner = self.inner.s3_destination_config(signature);
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination_config(input);
             self
         }
         /// <p>An object to specify the destination Amazon Simple Storage Service (Amazon S3) bucket
@@ -1135,8 +1126,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(signature);
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The format of the export file.</p>
@@ -1158,8 +1149,8 @@ pub mod fluent_builders {
         /// file if this parameter is omitted.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(signature);
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1180,9 +1171,9 @@ pub mod fluent_builders {
         /// recommendations to export.</p>
         pub fn recommendation_preferences(
             mut self,
-            signature: crate::model::RecommendationPreferences,
+            input: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(signature);
+            self.inner = self.inner.recommendation_preferences(input);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 instance
@@ -1346,11 +1337,8 @@ pub mod fluent_builders {
         /// an object prefix when you create the export job, you must include the object prefix in
         /// the policy that you add to the S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html">Amazon S3 Bucket Policy for Compute Optimizer</a> in the
         /// <i>Compute Optimizer User Guide</i>.</p>
-        pub fn s3_destination_config(
-            mut self,
-            signature: crate::model::S3DestinationConfig,
-        ) -> Self {
-            self.inner = self.inner.s3_destination_config(signature);
+        pub fn s3_destination_config(mut self, input: crate::model::S3DestinationConfig) -> Self {
+            self.inner = self.inner.s3_destination_config(input);
             self
         }
         /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and
@@ -1371,8 +1359,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the export file.</p>
         /// <p>The only export file format currently supported is <code>Csv</code>.</p>
-        pub fn file_format(mut self, signature: crate::model::FileFormat) -> Self {
-            self.inner = self.inner.file_format(signature);
+        pub fn file_format(mut self, input: crate::model::FileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The format of the export file.</p>
@@ -1396,8 +1384,8 @@ pub mod fluent_builders {
         /// parameters are mutually exclusive.</p>
         /// <p>Recommendations for member accounts are not included in the export if this parameter,
         /// or the account IDs parameter, is omitted.</p>
-        pub fn include_member_accounts(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(signature);
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
             self
         }
         /// <p>Indicates whether to include recommendations for resources in all member accounts of
@@ -1530,8 +1518,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to advance to the next page of Auto Scaling group
         /// recommendations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of Auto Scaling group
@@ -1544,8 +1532,8 @@ pub mod fluent_builders {
         /// request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Auto Scaling group recommendations to return with a single
@@ -1577,9 +1565,9 @@ pub mod fluent_builders {
         /// to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            signature: crate::model::RecommendationPreferences,
+            input: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(signature);
+            self.inner = self.inner.recommendation_preferences(input);
             self
         }
         /// <p>An object to specify the preferences for the Auto Scaling group recommendations
@@ -1675,8 +1663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of volume recommendations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of volume recommendations.</p>
@@ -1687,8 +1675,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of volume recommendations to return with a single request.</p>
@@ -1826,8 +1814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of instance recommendations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of instance recommendations.</p>
@@ -1838,8 +1826,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of instance recommendations to return with a single request.</p>
@@ -1897,9 +1885,9 @@ pub mod fluent_builders {
         /// recommendations to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            signature: crate::model::RecommendationPreferences,
+            input: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(signature);
+            self.inner = self.inner.recommendation_preferences(input);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 instance
@@ -1982,8 +1970,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation
         /// projected metrics.</p>
-        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(signature.into());
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instances for which to return recommendation
@@ -1993,8 +1981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The statistic of the projected metrics.</p>
-        pub fn stat(mut self, signature: crate::model::MetricStatistic) -> Self {
-            self.inner = self.inner.stat(signature);
+        pub fn stat(mut self, input: crate::model::MetricStatistic) -> Self {
+            self.inner = self.inner.stat(input);
             self
         }
         /// <p>The statistic of the projected metrics.</p>
@@ -2006,8 +1994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The granularity, in seconds, of the projected metrics data points.</p>
-        pub fn period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.period(signature);
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>The granularity, in seconds, of the projected metrics data points.</p>
@@ -2016,8 +2004,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The timestamp of the first projected metrics data point to return.</p>
@@ -2029,8 +2017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The timestamp of the last projected metrics data point to return.</p>
@@ -2045,9 +2033,9 @@ pub mod fluent_builders {
         /// projected metrics to return in the response.</p>
         pub fn recommendation_preferences(
             mut self,
-            signature: crate::model::RecommendationPreferences,
+            input: crate::model::RecommendationPreferences,
         ) -> Self {
-            self.inner = self.inner.recommendation_preferences(signature);
+            self.inner = self.inner.recommendation_preferences(input);
             self
         }
         /// <p>An object to specify the preferences for the Amazon EC2 recommendation
@@ -2129,8 +2117,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
         /// recommendation preferences. Only EC2 instance and Auto Scaling group ARNs are
         /// currently supported.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to confirm effective
@@ -2288,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of account enrollment statuses.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of account enrollment statuses.</p>
@@ -2301,8 +2289,8 @@ pub mod fluent_builders {
         /// can specify up to 100 statuses to return with each request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of account enrollment statuses to return with a single request. You
@@ -2457,8 +2445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of function recommendations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of function recommendations.</p>
@@ -2469,8 +2457,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of function recommendations to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of function recommendations to return with a single request.</p>
@@ -2552,8 +2540,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference for which to return
@@ -2574,8 +2562,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html">Activating
         /// enhanced infrastructure metrics</a> in the <i>Compute Optimizer User
         /// Guide</i>.</p>
-        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to return.</p>
@@ -2589,8 +2577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of recommendation preferences.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of recommendation preferences.</p>
@@ -2602,8 +2590,8 @@ pub mod fluent_builders {
         /// request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of recommendation preferences to return with a single
@@ -2720,8 +2708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to advance to the next page of recommendation summaries.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to advance to the next page of recommendation summaries.</p>
@@ -2732,8 +2720,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
         /// <p>To retrieve the remaining results, make another request with the returned
         /// <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of recommendation summaries to return with a single request.</p>
@@ -2811,8 +2799,8 @@ pub mod fluent_builders {
         /// <p>The <code>Ec2Instance</code> option encompasses standalone instances and instances
         /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option
         /// encompasses only instances that are part of an Auto Scaling group.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The target resource type of the recommendation preference to create.</p>
@@ -2840,8 +2828,8 @@ pub mod fluent_builders {
         /// Resource Name (ARN). This will configure the preference for all instances that are
         /// part of the specified the Auto Scaling group.</p>
         /// </note>
-        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p>An object that describes the scope of the recommendation preference to create.</p>
@@ -2869,9 +2857,9 @@ pub mod fluent_builders {
         /// applied.</p>
         pub fn enhanced_infrastructure_metrics(
             mut self,
-            signature: crate::model::EnhancedInfrastructureMetrics,
+            input: crate::model::EnhancedInfrastructureMetrics,
         ) -> Self {
-            self.inner = self.inner.enhanced_infrastructure_metrics(signature);
+            self.inner = self.inner.enhanced_infrastructure_metrics(input);
             self
         }
         /// <p>The status of the enhanced infrastructure metrics recommendation preference to create
@@ -2975,8 +2963,8 @@ pub mod fluent_builders {
         /// the enrollment status of an account. They are returned in the response of a request
         /// to update the enrollment status of an account.</p>
         /// </note>
-        pub fn status(mut self, signature: crate::model::Status) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::Status) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new enrollment status of the account.</p>
@@ -3007,8 +2995,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to enroll member accounts of the organization if the account is the
         /// management account of an organization.</p>
-        pub fn include_member_accounts(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_member_accounts(signature);
+        pub fn include_member_accounts(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_member_accounts(input);
             self
         }
         /// <p>Indicates whether to enroll member accounts of the organization if the account is the

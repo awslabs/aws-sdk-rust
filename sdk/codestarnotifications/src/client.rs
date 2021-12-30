@@ -246,8 +246,8 @@ pub mod fluent_builders {
         }
         /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
         /// account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the notification rule. Notifictaion rule names must be unique in your AWS
@@ -277,8 +277,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
         /// repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline,
@@ -309,8 +309,8 @@ pub mod fluent_builders {
         /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
         /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
         /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-        pub fn detail_type(mut self, signature: crate::model::DetailType) -> Self {
-            self.inner = self.inner.detail_type(signature);
+        pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
+            self.inner = self.inner.detail_type(input);
             self
         }
         /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
@@ -331,8 +331,8 @@ pub mod fluent_builders {
         /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
         /// idempotency token is created for you.</p>
         /// </note>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
@@ -375,8 +375,8 @@ pub mod fluent_builders {
         }
         /// <p>The status of the notification rule. The default value is ENABLED. If the status is
         /// set to DISABLED, notifications aren't sent for the notification rule.</p>
-        pub fn status(mut self, signature: crate::model::NotificationRuleStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the notification rule. The default value is ENABLED. If the status is
@@ -449,8 +449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>
@@ -519,8 +519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
-        pub fn target_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_address(signature.into());
+        pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_address(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
         /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
         /// default value is FALSE. If set to TRUE, all associations between that target and every
         /// notification rule in your AWS account are deleted.</p>
-        pub fn force_unsubscribe_all(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_unsubscribe_all(signature);
+        pub fn force_unsubscribe_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_unsubscribe_all(input);
             self
         }
         /// <p>A Boolean value that can be used to delete all associations with this SNS topic. The
@@ -606,8 +606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -694,8 +694,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -706,8 +706,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
         /// results that can be returned is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of
@@ -803,8 +803,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -815,8 +815,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
         /// results that can be returned is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
@@ -886,8 +886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the notification rule.</p>
@@ -982,8 +982,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -994,8 +994,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
         /// results that can be returned is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-negative integer used to limit the number of returned results. The maximum number of
@@ -1067,8 +1067,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>
@@ -1077,8 +1077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the SNS topics associated with a  notification rule.</p>
-        pub fn target(mut self, signature: crate::model::Target) -> Self {
-            self.inner = self.inner.target(signature);
+        pub fn target(mut self, input: crate::model::Target) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
         /// <p>Information about the SNS topics associated with a  notification rule.</p>
@@ -1088,8 +1088,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -1162,8 +1162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>
@@ -1257,8 +1257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -1267,8 +1267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
-        pub fn target_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_address(signature.into());
+        pub fn target_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_address(input.into());
             self
         }
         /// <p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>
@@ -1342,8 +1342,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
         /// tags.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule from which to remove the
@@ -1435,8 +1435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the notification rule.</p>
@@ -1445,8 +1445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the notification rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the notification rule.</p>
@@ -1456,8 +1456,8 @@ pub mod fluent_builders {
         }
         /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
         /// disabled (not sending notifications).</p>
-        pub fn status(mut self, signature: crate::model::NotificationRuleStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::NotificationRuleStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the notification rule. Valid statuses include enabled (sending notifications) or
@@ -1508,8 +1508,8 @@ pub mod fluent_builders {
         /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the
         /// contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information
         /// provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>
-        pub fn detail_type(mut self, signature: crate::model::DetailType) -> Self {
-            self.inner = self.inner.detail_type(signature);
+        pub fn detail_type(mut self, input: crate::model::DetailType) -> Self {
+            self.inner = self.inner.detail_type(input);
             self
         }
         /// <p>The level of detail to include in the notifications for this resource. BASIC will include only the

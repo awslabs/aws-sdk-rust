@@ -170,8 +170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
-        pub fn forecast_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(signature.into());
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to query.</p>
@@ -181,8 +181,8 @@ pub mod fluent_builders {
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
         /// (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
-        pub fn start_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(signature.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(input.into());
             self
         }
         /// <p>The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
@@ -193,8 +193,8 @@ pub mod fluent_builders {
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
         /// (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
-        pub fn end_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(signature.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(input.into());
             self
         }
         /// <p>The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss
@@ -245,8 +245,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a

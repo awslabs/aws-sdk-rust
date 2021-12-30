@@ -206,8 +206,8 @@ pub mod fluent_builders {
         /// <p>The Kinesis video stream name from where you want to get the media content. If you
         /// don't specify the <code>streamName</code>, you must specify the
         /// <code>streamARN</code>.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The Kinesis video stream name from where you want to get the media content. If you
@@ -219,8 +219,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the stream from where you want to get the media content. If you don't
         /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the stream from where you want to get the media content. If you don't
@@ -230,8 +230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the starting chunk to get from the specified stream. </p>
-        pub fn start_selector(mut self, signature: crate::model::StartSelector) -> Self {
-            self.inner = self.inner.start_selector(signature);
+        pub fn start_selector(mut self, input: crate::model::StartSelector) -> Self {
+            self.inner = self.inner.start_selector(input);
             self
         }
         /// <p>Identifies the starting chunk to get from the specified stream. </p>

@@ -878,8 +878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -888,8 +888,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// The ARN of the role you wish to associate with this group. The existence of the role is not validated.
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the service role you wish to associate with your account.
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// The ARN of the service role you wish to associate with your account.
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1041,11 +1041,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the connector definition.
-        pub fn initial_version(
-            mut self,
-            signature: crate::model::ConnectorDefinitionVersion,
-        ) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::ConnectorDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the connector definition.
@@ -1057,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the connector definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the connector definition.
@@ -1150,8 +1147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1163,11 +1160,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -1256,8 +1250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1269,8 +1263,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the core definition.
-        pub fn initial_version(mut self, signature: crate::model::CoreDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::CoreDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the core definition.
@@ -1282,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the core definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the core definition.
@@ -1375,8 +1369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1388,8 +1382,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -1478,8 +1472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1491,8 +1485,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the deployment if you wish to redeploy a previous deployment.
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// The ID of the deployment if you wish to redeploy a previous deployment.
@@ -1504,8 +1498,8 @@ pub mod fluent_builders {
             self
         }
         /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
-        pub fn deployment_type(mut self, signature: crate::model::DeploymentType) -> Self {
-            self.inner = self.inner.deployment_type(signature);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
@@ -1517,8 +1511,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -1527,8 +1521,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the group version to be deployed.
-        pub fn group_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_version_id(signature.into());
+        pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_version_id(input.into());
             self
         }
         /// The ID of the group version to be deployed.
@@ -1600,8 +1594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1613,8 +1607,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the device definition.
-        pub fn initial_version(mut self, signature: crate::model::DeviceDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::DeviceDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the device definition.
@@ -1626,8 +1620,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the device definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the device definition.
@@ -1719,8 +1713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1732,8 +1726,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -1822,8 +1816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1835,11 +1829,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the function definition.
-        pub fn initial_version(
-            mut self,
-            signature: crate::model::FunctionDefinitionVersion,
-        ) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::FunctionDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the function definition.
@@ -1851,8 +1842,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the function definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the function definition.
@@ -1944,8 +1935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -1957,8 +1948,8 @@ pub mod fluent_builders {
             self
         }
         /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
-        pub fn default_config(mut self, signature: crate::model::FunctionDefaultConfig) -> Self {
-            self.inner = self.inner.default_config(signature);
+        pub fn default_config(mut self, input: crate::model::FunctionDefaultConfig) -> Self {
+            self.inner = self.inner.default_config(input);
             self
         }
         /// The default configuration that applies to all Lambda functions in this function definition version. Individual Lambda functions can override these settings.
@@ -1970,8 +1961,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -2060,8 +2051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2073,8 +2064,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the group.
-        pub fn initial_version(mut self, signature: crate::model::GroupVersion) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::GroupVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the group.
@@ -2086,8 +2077,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the group.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the group.
@@ -2179,8 +2170,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2192,8 +2183,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -2262,8 +2253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2277,11 +2268,9 @@ pub mod fluent_builders {
         /// The ARN of the connector definition version for this group.
         pub fn connector_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .connector_definition_version_arn(signature.into());
+            self.inner = self.inner.connector_definition_version_arn(input.into());
             self
         }
         /// The ARN of the connector definition version for this group.
@@ -2295,9 +2284,9 @@ pub mod fluent_builders {
         /// The ARN of the core definition version for this group.
         pub fn core_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.core_definition_version_arn(signature.into());
+            self.inner = self.inner.core_definition_version_arn(input.into());
             self
         }
         /// The ARN of the core definition version for this group.
@@ -2311,9 +2300,9 @@ pub mod fluent_builders {
         /// The ARN of the device definition version for this group.
         pub fn device_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.device_definition_version_arn(signature.into());
+            self.inner = self.inner.device_definition_version_arn(input.into());
             self
         }
         /// The ARN of the device definition version for this group.
@@ -2327,9 +2316,9 @@ pub mod fluent_builders {
         /// The ARN of the function definition version for this group.
         pub fn function_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.function_definition_version_arn(signature.into());
+            self.inner = self.inner.function_definition_version_arn(input.into());
             self
         }
         /// The ARN of the function definition version for this group.
@@ -2341,8 +2330,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -2353,9 +2342,9 @@ pub mod fluent_builders {
         /// The ARN of the logger definition version for this group.
         pub fn logger_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logger_definition_version_arn(signature.into());
+            self.inner = self.inner.logger_definition_version_arn(input.into());
             self
         }
         /// The ARN of the logger definition version for this group.
@@ -2369,9 +2358,9 @@ pub mod fluent_builders {
         /// The ARN of the resource definition version for this group.
         pub fn resource_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_definition_version_arn(signature.into());
+            self.inner = self.inner.resource_definition_version_arn(input.into());
             self
         }
         /// The ARN of the resource definition version for this group.
@@ -2385,11 +2374,9 @@ pub mod fluent_builders {
         /// The ARN of the subscription definition version for this group.
         pub fn subscription_definition_version_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .subscription_definition_version_arn(signature.into());
+            self.inner = self.inner.subscription_definition_version_arn(input.into());
             self
         }
         /// The ARN of the subscription definition version for this group.
@@ -2461,8 +2448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2474,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the logger definition.
-        pub fn initial_version(mut self, signature: crate::model::LoggerDefinitionVersion) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::LoggerDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the logger definition.
@@ -2487,8 +2474,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the logger definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the logger definition.
@@ -2580,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2593,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -2683,8 +2670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2696,11 +2683,8 @@ pub mod fluent_builders {
             self
         }
         /// Information about the initial version of the resource definition.
-        pub fn initial_version(
-            mut self,
-            signature: crate::model::ResourceDefinitionVersion,
-        ) -> Self {
-            self.inner = self.inner.initial_version(signature);
+        pub fn initial_version(mut self, input: crate::model::ResourceDefinitionVersion) -> Self {
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the resource definition.
@@ -2712,8 +2696,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the resource definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the resource definition.
@@ -2805,8 +2789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2818,8 +2802,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -2908,8 +2892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -2921,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
-        pub fn s3_url_signer_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_url_signer_role(signature.into());
+        pub fn s3_url_signer_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_url_signer_role(input.into());
             self
         }
         /// The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
@@ -2934,8 +2918,8 @@ pub mod fluent_builders {
             self
         }
         /// The piece of software on the Greengrass core that will be updated.
-        pub fn software_to_update(mut self, signature: crate::model::SoftwareToUpdate) -> Self {
-            self.inner = self.inner.software_to_update(signature);
+        pub fn software_to_update(mut self, input: crate::model::SoftwareToUpdate) -> Self {
+            self.inner = self.inner.software_to_update(input);
             self
         }
         /// The piece of software on the Greengrass core that will be updated.
@@ -2947,11 +2931,8 @@ pub mod fluent_builders {
             self
         }
         /// The minimum level of log statements that should be logged by the OTA Agent during an update.
-        pub fn update_agent_log_level(
-            mut self,
-            signature: crate::model::UpdateAgentLogLevel,
-        ) -> Self {
-            self.inner = self.inner.update_agent_log_level(signature);
+        pub fn update_agent_log_level(mut self, input: crate::model::UpdateAgentLogLevel) -> Self {
+            self.inner = self.inner.update_agent_log_level(input);
             self
         }
         /// The minimum level of log statements that should be logged by the OTA Agent during an update.
@@ -2982,9 +2963,9 @@ pub mod fluent_builders {
         /// The architecture of the cores which are the targets of an update.
         pub fn update_targets_architecture(
             mut self,
-            signature: crate::model::UpdateTargetsArchitecture,
+            input: crate::model::UpdateTargetsArchitecture,
         ) -> Self {
-            self.inner = self.inner.update_targets_architecture(signature);
+            self.inner = self.inner.update_targets_architecture(input);
             self
         }
         /// The architecture of the cores which are the targets of an update.
@@ -2998,9 +2979,9 @@ pub mod fluent_builders {
         /// The operating system of the cores which are the targets of an update.
         pub fn update_targets_operating_system(
             mut self,
-            signature: crate::model::UpdateTargetsOperatingSystem,
+            input: crate::model::UpdateTargetsOperatingSystem,
         ) -> Self {
-            self.inner = self.inner.update_targets_operating_system(signature);
+            self.inner = self.inner.update_targets_operating_system(input);
             self
         }
         /// The operating system of the cores which are the targets of an update.
@@ -3072,8 +3053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -3087,9 +3068,9 @@ pub mod fluent_builders {
         /// Information about the initial version of the subscription definition.
         pub fn initial_version(
             mut self,
-            signature: crate::model::SubscriptionDefinitionVersion,
+            input: crate::model::SubscriptionDefinitionVersion,
         ) -> Self {
-            self.inner = self.inner.initial_version(signature);
+            self.inner = self.inner.initial_version(input);
             self
         }
         /// Information about the initial version of the subscription definition.
@@ -3101,8 +3082,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the subscription definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the subscription definition.
@@ -3196,8 +3177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -3209,11 +3190,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -3302,11 +3280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -3378,8 +3353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -3451,8 +3426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -3524,8 +3499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -3597,8 +3572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -3667,8 +3642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -3740,8 +3715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -3813,11 +3788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -3889,8 +3861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4021,8 +3993,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4091,8 +4063,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(signature.into());
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -4164,8 +4136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The thing name.
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -4234,11 +4206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -4310,11 +4279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -4328,9 +4294,9 @@ pub mod fluent_builders {
         /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn connector_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.connector_definition_version_id(signature.into());
+            self.inner = self.inner.connector_definition_version_id(input.into());
             self
         }
         /// The ID of the connector definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListConnectorDefinitionVersions'' requests. If the version is the last one that was associated with a connector definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4342,8 +4308,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -4412,8 +4378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -4485,8 +4451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -4498,11 +4464,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
-        pub fn core_definition_version_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.core_definition_version_id(signature.into());
+        pub fn core_definition_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_version_id(input.into());
             self
         }
         /// The ID of the core definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListCoreDefinitionVersions'' requests. If the version is the last one that was associated with a core definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4574,8 +4537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the deployment.
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// The ID of the deployment.
@@ -4587,8 +4550,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -4657,8 +4620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -4730,8 +4693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -4745,9 +4708,9 @@ pub mod fluent_builders {
         /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn device_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.device_definition_version_id(signature.into());
+            self.inner = self.inner.device_definition_version_id(input.into());
             self
         }
         /// The ID of the device definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListDeviceDefinitionVersions'' requests. If the version is the last one that was associated with a device definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4759,8 +4722,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -4829,8 +4792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -4902,8 +4865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -4917,9 +4880,9 @@ pub mod fluent_builders {
         /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn function_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.function_definition_version_id(signature.into());
+            self.inner = self.inner.function_definition_version_id(input.into());
             self
         }
         /// The ID of the function definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListFunctionDefinitionVersions'' requests. If the version is the last one that was associated with a function definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -4931,8 +4894,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5001,8 +4964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5071,11 +5034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the certificate authority.
-        pub fn certificate_authority_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.certificate_authority_id(signature.into());
+        pub fn certificate_authority_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_authority_id(input.into());
             self
         }
         /// The ID of the certificate authority.
@@ -5087,8 +5047,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5157,8 +5117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5227,8 +5187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -5237,8 +5197,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
-        pub fn group_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_version_id(signature.into());
+        pub fn group_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_version_id(input.into());
             self
         }
         /// The ID of the group version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListGroupVersions'' requests. If the version is the last one that was associated with a group, the value also maps to the ''LatestVersion'' property of the corresponding ''GroupInformation'' object.
@@ -5310,8 +5270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -5383,8 +5343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -5398,9 +5358,9 @@ pub mod fluent_builders {
         /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn logger_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.logger_definition_version_id(signature.into());
+            self.inner = self.inner.logger_definition_version_id(input.into());
             self
         }
         /// The ID of the logger definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListLoggerDefinitionVersions'' requests. If the version is the last one that was associated with a logger definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5412,8 +5372,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5482,8 +5442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -5555,8 +5515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -5570,9 +5530,9 @@ pub mod fluent_builders {
         /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn resource_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.resource_definition_version_id(signature.into());
+            self.inner = self.inner.resource_definition_version_id(input.into());
             self
         }
         /// The ID of the resource definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListResourceDefinitionVersions'' requests. If the version is the last one that was associated with a resource definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5704,11 +5664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -5780,8 +5737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -5790,11 +5747,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -5808,11 +5762,9 @@ pub mod fluent_builders {
         /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
         pub fn subscription_definition_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .subscription_definition_version_id(signature.into());
+            self.inner = self.inner.subscription_definition_version_id(input.into());
             self
         }
         /// The ID of the subscription definition version. This value maps to the ''Version'' property of the corresponding ''VersionInformation'' object, which is returned by ''ListSubscriptionDefinitionVersions'' requests. If the version is the last one that was associated with a subscription definition, the value also maps to the ''LatestVersion'' property of the corresponding ''DefinitionInformation'' object.
@@ -5884,8 +5836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The thing name.
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -5954,8 +5906,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(signature.into());
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -5967,8 +5919,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -5977,8 +5929,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6047,8 +5999,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6057,8 +6009,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6127,8 +6079,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6137,8 +6089,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6207,11 +6159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -6223,8 +6172,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6233,8 +6182,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6303,8 +6252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6313,8 +6262,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6383,8 +6332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -6396,8 +6345,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6406,8 +6355,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6476,8 +6425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -6486,8 +6435,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6496,8 +6445,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6566,8 +6515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6576,8 +6525,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6646,8 +6595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -6659,8 +6608,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6669,8 +6618,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6739,8 +6688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6749,8 +6698,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6819,8 +6768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -6832,8 +6781,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6842,8 +6791,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -6912,8 +6861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -6982,8 +6931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -6992,8 +6941,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7062,8 +7011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -7072,8 +7021,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7082,8 +7031,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7152,8 +7101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7162,8 +7111,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7232,8 +7181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -7245,8 +7194,8 @@ pub mod fluent_builders {
             self
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7255,8 +7204,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7325,8 +7274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7335,8 +7284,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7405,8 +7354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7415,8 +7364,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7425,8 +7374,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -7498,8 +7447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7508,8 +7457,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7580,8 +7529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The maximum number of results to be returned per request.
-        pub fn max_results(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_results(signature.into());
+        pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_results(input.into());
             self
         }
         /// The maximum number of results to be returned per request.
@@ -7590,8 +7539,8 @@ pub mod fluent_builders {
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// The token for the next set of results, or ''null'' if there are no additional results.
@@ -7600,11 +7549,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -7676,8 +7622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -7746,8 +7692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -7759,8 +7705,8 @@ pub mod fluent_builders {
             self
         }
         /// If true, performs a best-effort only core reset.
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// If true, performs a best-effort only core reset.
@@ -7769,8 +7715,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -7839,8 +7785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A client token used to correlate requests and responses.
-        pub fn amzn_client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amzn_client_token(signature.into());
+        pub fn amzn_client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amzn_client_token(input.into());
             self
         }
         /// A client token used to correlate requests and responses.
@@ -7852,8 +7798,8 @@ pub mod fluent_builders {
             self
         }
         /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
@@ -7865,8 +7811,8 @@ pub mod fluent_builders {
             self
         }
         /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
-        pub fn input_file_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_file_uri(signature.into());
+        pub fn input_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_file_uri(input.into());
             self
         }
         /// The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
@@ -7961,8 +7907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the bulk deployment.
-        pub fn bulk_deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bulk_deployment_id(signature.into());
+        pub fn bulk_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bulk_deployment_id(input.into());
             self
         }
         /// The ID of the bulk deployment.
@@ -8034,8 +7980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -8127,8 +8073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource.
@@ -8231,8 +8177,8 @@ pub mod fluent_builders {
             self
         }
         /// The thing name.
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.
@@ -8301,11 +8247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the connector definition.
-        pub fn connector_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.connector_definition_id(signature.into());
+        pub fn connector_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_definition_id(input.into());
             self
         }
         /// The ID of the connector definition.
@@ -8317,8 +8260,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8387,8 +8330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the core definition.
-        pub fn core_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.core_definition_id(signature.into());
+        pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.core_definition_id(input.into());
             self
         }
         /// The ID of the core definition.
@@ -8400,8 +8343,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8470,8 +8413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the device definition.
-        pub fn device_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_definition_id(signature.into());
+        pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_definition_id(input.into());
             self
         }
         /// The ID of the device definition.
@@ -8483,8 +8426,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8553,8 +8496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Lambda function definition.
-        pub fn function_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_definition_id(signature.into());
+        pub fn function_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_definition_id(input.into());
             self
         }
         /// The ID of the Lambda function definition.
@@ -8566,8 +8509,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8636,8 +8579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -8646,8 +8589,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8720,11 +8663,9 @@ pub mod fluent_builders {
         /// The amount of time remaining before the certificate expires, in milliseconds.
         pub fn certificate_expiry_in_milliseconds(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .certificate_expiry_in_milliseconds(signature.into());
+            self.inner = self.inner.certificate_expiry_in_milliseconds(input.into());
             self
         }
         /// The amount of time remaining before the certificate expires, in milliseconds.
@@ -8736,8 +8677,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the Greengrass group.
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// The ID of the Greengrass group.
@@ -8806,8 +8747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the logger definition.
-        pub fn logger_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logger_definition_id(signature.into());
+        pub fn logger_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logger_definition_id(input.into());
             self
         }
         /// The ID of the logger definition.
@@ -8819,8 +8760,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8889,8 +8830,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8899,8 +8840,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the resource definition.
-        pub fn resource_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_definition_id(signature.into());
+        pub fn resource_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_definition_id(input.into());
             self
         }
         /// The ID of the resource definition.
@@ -8972,8 +8913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the definition.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the definition.
@@ -8982,11 +8923,8 @@ pub mod fluent_builders {
             self
         }
         /// The ID of the subscription definition.
-        pub fn subscription_definition_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.subscription_definition_id(signature.into());
+        pub fn subscription_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_definition_id(input.into());
             self
         }
         /// The ID of the subscription definition.
@@ -9060,9 +8998,9 @@ pub mod fluent_builders {
         /// Configuration for telemetry service.
         pub fn telemetry_configuration(
             mut self,
-            signature: crate::model::TelemetryConfigurationUpdate,
+            input: crate::model::TelemetryConfigurationUpdate,
         ) -> Self {
-            self.inner = self.inner.telemetry_configuration(signature);
+            self.inner = self.inner.telemetry_configuration(input);
             self
         }
         /// Configuration for telemetry service.
@@ -9074,8 +9012,8 @@ pub mod fluent_builders {
             self
         }
         /// The thing name.
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// The thing name.

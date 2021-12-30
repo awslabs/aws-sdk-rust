@@ -181,8 +181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The friendly name of the role that is assigned to the user.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The friendly name of the role that is assigned to the user.</p>
@@ -191,8 +191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
@@ -202,8 +202,8 @@ pub mod fluent_builders {
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
@@ -273,8 +273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The page token from the previous response output when you request subsequent pages.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The page token from the previous response output when you request subsequent pages.</p>
@@ -283,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items that clients can request per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items that clients can request per page.</p>
@@ -294,8 +294,8 @@ pub mod fluent_builders {
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
@@ -305,8 +305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The identifier for the AWS account that is assigned to the user.</p>
@@ -377,8 +377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
@@ -387,8 +387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is the number of items clients can request per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This is the number of items clients can request per page.</p>
@@ -398,8 +398,8 @@ pub mod fluent_builders {
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
@@ -470,8 +470,8 @@ pub mod fluent_builders {
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see

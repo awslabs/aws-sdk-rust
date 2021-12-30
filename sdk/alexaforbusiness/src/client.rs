@@ -844,8 +844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The unique identifier of the skill.</p>
@@ -914,8 +914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the contact to associate with an address book.</p>
-        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(signature.into());
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The ARN of the contact to associate with an address book.</p>
@@ -924,8 +924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the address book with which to associate the contact.</p>
-        pub fn address_book_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(signature.into());
+        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_book_arn(input.into());
             self
         }
         /// <p>The ARN of the address book with which to associate the contact.</p>
@@ -997,8 +997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device ARN.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The device ARN.</p>
@@ -1007,8 +1007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the network profile to associate with a device.</p>
-        pub fn network_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(signature.into());
+        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_arn(input.into());
             self
         }
         /// <p>The ARN of the network profile to associate with a device.</p>
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device to associate to a room. Required.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to associate to a room. Required.</p>
@@ -1092,8 +1092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the room with which to associate the device. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room with which to associate the device. Required.</p>
@@ -1163,8 +1163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group to associate with a room. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group to associate with a room. Required.</p>
@@ -1176,8 +1176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the room with which to associate the skill group. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room with which to associate the skill group. Required.</p>
@@ -1246,8 +1246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group to associate the skill to. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group to associate the skill to. Required.</p>
@@ -1259,8 +1259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The unique identifier of the skill.</p>
@@ -1329,8 +1329,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The private skill ID you want to make available to enrolled users.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The private skill ID you want to make available to enrolled users.</p>
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the address book.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the address book.</p>
@@ -1409,8 +1409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the address book.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the address book.</p>
@@ -1420,8 +1420,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, user-specified identifier for the request that ensures
         /// idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for the request that ensures
@@ -1512,8 +1512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name identifier of the schedule.</p>
-        pub fn schedule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_name(signature.into());
+        pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_name(input.into());
             self
         }
         /// <p>The name identifier of the schedule.</p>
@@ -1526,8 +1526,8 @@ pub mod fluent_builders {
         }
         /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
         /// retrieved from a download link by calling ListBusinessReportSchedule. </p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be
@@ -1540,8 +1540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 key where the report is delivered.</p>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p>The S3 key where the report is delivered.</p>
@@ -1554,8 +1554,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of
         /// individual files).</p>
-        pub fn format(mut self, signature: crate::model::BusinessReportFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of
@@ -1568,11 +1568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content range of the reports.</p>
-        pub fn content_range(
-            mut self,
-            signature: crate::model::BusinessReportContentRange,
-        ) -> Self {
-            self.inner = self.inner.content_range(signature);
+        pub fn content_range(mut self, input: crate::model::BusinessReportContentRange) -> Self {
+            self.inner = self.inner.content_range(input);
             self
         }
         /// <p>The content range of the reports.</p>
@@ -1585,8 +1582,8 @@ pub mod fluent_builders {
         }
         /// <p>The recurrence of the reports. If this isn't specified, the report will only be
         /// delivered one time when the API is called. </p>
-        pub fn recurrence(mut self, signature: crate::model::BusinessReportRecurrence) -> Self {
-            self.inner = self.inner.recurrence(signature);
+        pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
+            self.inner = self.inner.recurrence(input);
             self
         }
         /// <p>The recurrence of the reports. If this isn't specified, the report will only be
@@ -1599,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client request token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client request token.</p>
@@ -1689,11 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the conference provider.</p>
-        pub fn conference_provider_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.conference_provider_name(signature.into());
+        pub fn conference_provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conference_provider_name(input.into());
             self
         }
         /// <p>The name of the conference provider.</p>
@@ -1707,9 +1701,9 @@ pub mod fluent_builders {
         /// <p>Represents a type within a list of predefined types.</p>
         pub fn conference_provider_type(
             mut self,
-            signature: crate::model::ConferenceProviderType,
+            input: crate::model::ConferenceProviderType,
         ) -> Self {
-            self.inner = self.inner.conference_provider_type(signature);
+            self.inner = self.inner.conference_provider_type(input);
             self
         }
         /// <p>Represents a type within a list of predefined types.</p>
@@ -1721,8 +1715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn ip_dial_in(mut self, signature: crate::model::IpDialIn) -> Self {
-            self.inner = self.inner.ip_dial_in(signature);
+        pub fn ip_dial_in(mut self, input: crate::model::IpDialIn) -> Self {
+            self.inner = self.inner.ip_dial_in(input);
             self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
@@ -1734,8 +1728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The information for PSTN conferencing.</p>
-        pub fn pstn_dial_in(mut self, signature: crate::model::PstnDialIn) -> Self {
-            self.inner = self.inner.pstn_dial_in(signature);
+        pub fn pstn_dial_in(mut self, input: crate::model::PstnDialIn) -> Self {
+            self.inner = self.inner.pstn_dial_in(input);
             self
         }
         /// <p>The information for PSTN conferencing.</p>
@@ -1747,8 +1741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The meeting settings for the conference provider.</p>
-        pub fn meeting_setting(mut self, signature: crate::model::MeetingSetting) -> Self {
-            self.inner = self.inner.meeting_setting(signature);
+        pub fn meeting_setting(mut self, input: crate::model::MeetingSetting) -> Self {
+            self.inner = self.inner.meeting_setting(input);
             self
         }
         /// <p>The meeting settings for the conference provider.</p>
@@ -1760,8 +1754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The request token of the client.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The request token of the client.</p>
@@ -1850,8 +1844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the contact to display on the console.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the contact to display on the console.</p>
@@ -1861,8 +1855,8 @@ pub mod fluent_builders {
         }
         /// <p>The first name of the contact that is used to call the contact on the
         /// device.</p>
-        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(signature.into());
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The first name of the contact that is used to call the contact on the
@@ -1873,8 +1867,8 @@ pub mod fluent_builders {
         }
         /// <p>The last name of the contact that is used to call the contact on the
         /// device.</p>
-        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(signature.into());
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The last name of the contact that is used to call the contact on the
@@ -1886,8 +1880,8 @@ pub mod fluent_builders {
         /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
         /// WORK. You can specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
         /// which lets you specify the phone number type and multiple numbers.</p>
-        pub fn phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(signature.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The phone number of the contact in E.164 format. The phone number type defaults to
@@ -1933,8 +1927,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, user-specified identifier for this request that ensures
         /// idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for this request that ensures
@@ -2024,8 +2018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the gateway group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the gateway group.</p>
@@ -2034,8 +2028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the gateway group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the gateway group.</p>
@@ -2044,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p> A unique, user-specified identifier for the request that ensures idempotency.</p>
@@ -2134,8 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the network profile associated with a device.</p>
-        pub fn network_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_name(signature.into());
+        pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_name(input.into());
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
@@ -2147,8 +2141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Detailed information about a device's network profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Detailed information about a device's network profile.</p>
@@ -2157,8 +2151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SSID of the Wi-Fi network.</p>
-        pub fn ssid(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssid(signature.into());
+        pub fn ssid(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssid(input.into());
             self
         }
         /// <p>The SSID of the Wi-Fi network.</p>
@@ -2168,8 +2162,8 @@ pub mod fluent_builders {
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
         /// WEP, or OPEN.</p>
-        pub fn security_type(mut self, signature: crate::model::NetworkSecurityType) -> Self {
-            self.inner = self.inner.security_type(signature);
+        pub fn security_type(mut self, input: crate::model::NetworkSecurityType) -> Self {
+            self.inner = self.inner.security_type(input);
             self
         }
         /// <p>The security type of the Wi-Fi network. This can be WPA2_ENTERPRISE, WPA2_PSK, WPA_PSK,
@@ -2183,8 +2177,8 @@ pub mod fluent_builders {
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
         /// supported.</p>
-        pub fn eap_method(mut self, signature: crate::model::NetworkEapMethod) -> Self {
-            self.inner = self.inner.eap_method(signature);
+        pub fn eap_method(mut self, input: crate::model::NetworkEapMethod) -> Self {
+            self.inner = self.inner.eap_method(input);
             self
         }
         /// <p>The authentication standard that is used in the EAP framework. Currently, EAP_TLS is
@@ -2197,8 +2191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current password of the Wi-Fi network.</p>
-        pub fn current_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_password(signature.into());
+        pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_password(input.into());
             self
         }
         /// <p>The current password of the Wi-Fi network.</p>
@@ -2212,8 +2206,8 @@ pub mod fluent_builders {
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
         /// transmitted to the device and is used when the password of the network changes to
         /// NextPassword. </p>
-        pub fn next_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_password(signature.into());
+        pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_password(input.into());
             self
         }
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
@@ -2228,11 +2222,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
         /// (ACM). This is used to issue certificates to the devices. </p>
-        pub fn certificate_authority_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.certificate_authority_arn(signature.into());
+        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
@@ -2264,8 +2255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for the request that ensures idempotency.</p>
@@ -2354,8 +2345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a room profile.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of a room profile.</p>
@@ -2364,8 +2355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone used by a room profile.</p>
-        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(signature.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>The time zone used by a room profile.</p>
@@ -2374,8 +2365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The valid address for the room.</p>
-        pub fn address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address(signature.into());
+        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address(input.into());
             self
         }
         /// <p>The valid address for the room.</p>
@@ -2384,8 +2375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The distance unit to be used by devices in the profile.</p>
-        pub fn distance_unit(mut self, signature: crate::model::DistanceUnit) -> Self {
-            self.inner = self.inner.distance_unit(signature);
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.inner = self.inner.distance_unit(input);
             self
         }
         /// <p>The distance unit to be used by devices in the profile.</p>
@@ -2397,8 +2388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The temperature unit to be used by devices in the profile.</p>
-        pub fn temperature_unit(mut self, signature: crate::model::TemperatureUnit) -> Self {
-            self.inner = self.inner.temperature_unit(signature);
+        pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
+            self.inner = self.inner.temperature_unit(input);
             self
         }
         /// <p>The temperature unit to be used by devices in the profile.</p>
@@ -2410,8 +2401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
-        pub fn wake_word(mut self, signature: crate::model::WakeWord) -> Self {
-            self.inner = self.inner.wake_word(signature);
+        pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
+            self.inner = self.inner.wake_word(input);
             self
         }
         /// <p>A wake word for Alexa, Echo, Amazon, or a computer.</p>
@@ -2420,8 +2411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(signature.into());
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The locale of the room profile. (This is currently only available to a limited preview audience.)</p>
@@ -2430,8 +2421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user-specified token that is used during the creation of a profile.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The user-specified token that is used during the creation of a profile.</p>
@@ -2443,8 +2434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether room profile setup is enabled.</p>
-        pub fn setup_mode_disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.setup_mode_disabled(signature);
+        pub fn setup_mode_disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.setup_mode_disabled(input);
             self
         }
         /// <p>Whether room profile setup is enabled.</p>
@@ -2453,8 +2444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum volume limit for a room profile.</p>
-        pub fn max_volume_limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_volume_limit(signature);
+        pub fn max_volume_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_volume_limit(input);
             self
         }
         /// <p>The maximum volume limit for a room profile.</p>
@@ -2463,8 +2454,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether PSTN calling is enabled.</p>
-        pub fn pstn_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.pstn_enabled(signature);
+        pub fn pstn_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.pstn_enabled(input);
             self
         }
         /// <p>Whether PSTN calling is enabled.</p>
@@ -2473,8 +2464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn data_retention_opt_in(mut self, signature: bool) -> Self {
-            self.inner = self.inner.data_retention_opt_in(signature);
+        pub fn data_retention_opt_in(mut self, input: bool) -> Self {
+            self.inner = self.inner.data_retention_opt_in(input);
             self
         }
         /// <p>Whether data retention of the profile is enabled.</p>
@@ -2485,9 +2476,9 @@ pub mod fluent_builders {
         /// <p>The meeting room settings of a room profile.</p>
         pub fn meeting_room_configuration(
             mut self,
-            signature: crate::model::CreateMeetingRoomConfiguration,
+            input: crate::model::CreateMeetingRoomConfiguration,
         ) -> Self {
-            self.inner = self.inner.meeting_room_configuration(signature);
+            self.inner = self.inner.meeting_room_configuration(input);
             self
         }
         /// <p>The meeting room settings of a room profile.</p>
@@ -2576,8 +2567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the room.</p>
-        pub fn room_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_name(signature.into());
+        pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_name(input.into());
             self
         }
         /// <p>The name for the room.</p>
@@ -2586,8 +2577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the room.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the room.</p>
@@ -2596,8 +2587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The profile ARN for the room. This is required.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The profile ARN for the room. This is required.</p>
@@ -2606,8 +2597,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The calendar ARN for the room.</p>
-        pub fn provider_calendar_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_calendar_id(signature.into());
+        pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_calendar_id(input.into());
             self
         }
         /// <p>The calendar ARN for the room.</p>
@@ -2620,8 +2611,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
         /// </p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
@@ -2711,8 +2702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the skill group.</p>
-        pub fn skill_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_name(signature.into());
+        pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_name(input.into());
             self
         }
         /// <p>The name for the skill group.</p>
@@ -2724,8 +2715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the skill group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the skill group.</p>
@@ -2735,8 +2726,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
         /// </p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
@@ -2826,8 +2817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the user.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The ARN for the user.</p>
@@ -2836,8 +2827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first name for the user.</p>
-        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(signature.into());
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The first name for the user.</p>
@@ -2846,8 +2837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last name for the user.</p>
-        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(signature.into());
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The last name for the user.</p>
@@ -2856,8 +2847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address for the user.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address for the user.</p>
@@ -2867,8 +2858,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
         /// </p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, user-specified identifier for this request that ensures idempotency.
@@ -2958,8 +2949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the address book to delete.</p>
-        pub fn address_book_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(signature.into());
+        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_book_arn(input.into());
             self
         }
         /// <p>The ARN of the address book to delete.</p>
@@ -3032,8 +3023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the business report schedule.</p>
-        pub fn schedule_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_arn(signature.into());
+        pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_arn(input.into());
             self
         }
         /// <p>The ARN of the business report schedule.</p>
@@ -3102,11 +3093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the conference provider.</p>
-        pub fn conference_provider_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.conference_provider_arn(signature.into());
+        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conference_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the conference provider.</p>
@@ -3178,8 +3166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the contact to delete.</p>
-        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(signature.into());
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The ARN of the contact to delete.</p>
@@ -3248,8 +3236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device for which to request details.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device for which to request details.</p>
@@ -3320,8 +3308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device.</p>
@@ -3330,8 +3318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of usage data to delete.</p>
-        pub fn device_usage_type(mut self, signature: crate::model::DeviceUsageType) -> Self {
-            self.inner = self.inner.device_usage_type(signature);
+        pub fn device_usage_type(mut self, input: crate::model::DeviceUsageType) -> Self {
+            self.inner = self.inner.device_usage_type(input);
             self
         }
         /// <p>The type of usage data to delete.</p>
@@ -3403,8 +3391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the gateway group to delete.</p>
-        pub fn gateway_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(signature.into());
+        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_group_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway group to delete.</p>
@@ -3476,8 +3464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(signature.into());
+        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_arn(input.into());
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
@@ -3549,8 +3537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room profile to delete. Required.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The ARN of the room profile to delete. Required.</p>
@@ -3619,8 +3607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room to delete. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room to delete. Required.</p>
@@ -3689,8 +3677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room from which to remove the room skill parameter details.</p>
@@ -3699,8 +3687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The ID of the skill from which to remove the room skill parameter details.</p>
@@ -3709,8 +3697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room skill parameter key for which to remove details.</p>
-        pub fn parameter_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_key(signature.into());
+        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_key(input.into());
             self
         }
         /// <p>The room skill parameter key for which to remove details.</p>
@@ -3782,8 +3770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The unique identifier of a skill.</p>
@@ -3792,8 +3780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room that the skill is authorized for.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The room that the skill is authorized for.</p>
@@ -3862,8 +3850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group to delete. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group to delete. Required.</p>
@@ -3935,8 +3923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user to delete in the organization. Required.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The ARN of the user to delete in the organization. Required.</p>
@@ -3945,8 +3933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user's enrollment in the organization. Required.</p>
-        pub fn enrollment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrollment_id(signature.into());
+        pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.enrollment_id(input.into());
             self
         }
         /// <p>The ARN of the user's enrollment in the organization. Required.</p>
@@ -4020,8 +4008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the contact to disassociate from an address book.</p>
-        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(signature.into());
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The ARN of the contact to disassociate from an address book.</p>
@@ -4030,8 +4018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the address from which to disassociate the contact.</p>
-        pub fn address_book_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(signature.into());
+        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_book_arn(input.into());
             self
         }
         /// <p>The ARN of the address from which to disassociate the contact.</p>
@@ -4105,8 +4093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device to disassociate from a room. Required.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to disassociate from a room. Required.</p>
@@ -4175,8 +4163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of a skill. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The unique identifier of a skill. Required.</p>
@@ -4188,8 +4176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of a skill group to associate to a skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The ARN of a skill group to associate to a skill.</p>
@@ -4259,8 +4247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p> The private skill ID you want to make unavailable for enrolled users.</p>
@@ -4330,8 +4318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group to disassociate from a room. Required.</p>
@@ -4344,8 +4332,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the room from which the skill group is to be disassociated.
         /// Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room from which the skill group is to be disassociated.
@@ -4415,8 +4403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The room that the appliances are associated with.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The room that the appliances are associated with.</p>
@@ -4485,8 +4473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the address book for which to request details.</p>
-        pub fn address_book_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(signature.into());
+        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_book_arn(input.into());
             self
         }
         /// <p>The ARN of the address book for which to request details.</p>
@@ -4618,11 +4606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the newly created conference provider.</p>
-        pub fn conference_provider_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.conference_provider_arn(signature.into());
+        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conference_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the newly created conference provider.</p>
@@ -4694,8 +4679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the contact for which to request details.</p>
-        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(signature.into());
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The ARN of the contact for which to request details.</p>
@@ -4764,8 +4749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device for which to request details. Required.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device for which to request details. Required.</p>
@@ -4834,8 +4819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the gateway to get.</p>
-        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(signature.into());
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway to get.</p>
@@ -4904,8 +4889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the gateway group to get.</p>
-        pub fn gateway_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(signature.into());
+        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_group_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway group to get.</p>
@@ -5038,8 +5023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(signature.into());
+        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_arn(input.into());
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
@@ -5111,8 +5096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room profile for which to request details. Required.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The ARN of the room profile for which to request details. Required.</p>
@@ -5181,8 +5166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room for which to request details. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room for which to request details. Required.</p>
@@ -5251,8 +5236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room from which to get the room skill parameter details. </p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room from which to get the room skill parameter details. </p>
@@ -5262,8 +5247,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the skill from which to get the room skill parameter details.
         /// Required.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The ARN of the skill from which to get the room skill parameter details.
@@ -5273,8 +5258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room skill parameter key for which to get details. Required.</p>
-        pub fn parameter_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_key(signature.into());
+        pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_key(input.into());
             self
         }
         /// <p>The room skill parameter key for which to get details. Required.</p>
@@ -5346,8 +5331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group for which to get details. Required.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group for which to get details. Required.</p>
@@ -5419,8 +5404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token used to list the remaining schedules from the previous API call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token used to list the remaining schedules from the previous API call.</p>
@@ -5429,8 +5414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of schedules listed in the call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of schedules listed in the call.</p>
@@ -5499,8 +5484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The tokens used for pagination.</p>
@@ -5510,8 +5495,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of conference providers to be returned, per paginated
         /// calls.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of conference providers to be returned, per paginated
@@ -5582,8 +5567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a device.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of a device.</p>
@@ -5595,8 +5580,8 @@ pub mod fluent_builders {
         /// list of all device events in reverse chronological order. If EventType is specified, this
         /// returns a list of device events for that EventType in reverse chronological order.
         /// </p>
-        pub fn event_type(mut self, signature: crate::model::DeviceEventType) -> Self {
-            self.inner = self.inner.event_type(signature);
+        pub fn event_type(mut self, input: crate::model::DeviceEventType) -> Self {
+            self.inner = self.inner.event_type(input);
             self
         }
         /// <p>The event type to filter device events. If EventType isn't specified, this returns a
@@ -5614,8 +5599,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response only includes
         /// results beyond the token, up to the value specified by MaxResults. When the end of results
         /// is reached, the response has a value of null.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -5629,8 +5614,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. The default value is 50. If
         /// more results exist than the specified MaxResults value, a token is included in the response
         /// so that the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. The default value is 50. If
@@ -5702,8 +5687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
@@ -5712,8 +5697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
@@ -5784,8 +5769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The gateway group ARN for which to list gateways.</p>
-        pub fn gateway_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(signature.into());
+        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_group_arn(input.into());
             self
         }
         /// <p>The gateway group ARN for which to list gateways.</p>
@@ -5797,8 +5782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token used to paginate though multiple pages of gateway summaries.</p>
@@ -5807,8 +5792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of gateway summaries to return. The default is 50.</p>
@@ -5877,8 +5862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group for which to list enabled skills.</p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group for which to list enabled skills.</p>
@@ -5890,8 +5875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the skill is enabled under the user's account.</p>
-        pub fn enablement_type(mut self, signature: crate::model::EnablementTypeFilter) -> Self {
-            self.inner = self.inner.enablement_type(signature);
+        pub fn enablement_type(mut self, input: crate::model::EnablementTypeFilter) -> Self {
+            self.inner = self.inner.enablement_type(input);
             self
         }
         /// <p>Whether the skill is enabled under the user's account.</p>
@@ -5903,8 +5888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the skill is publicly available or is a private skill.</p>
-        pub fn skill_type(mut self, signature: crate::model::SkillTypeFilter) -> Self {
-            self.inner = self.inner.skill_type(signature);
+        pub fn skill_type(mut self, input: crate::model::SkillTypeFilter) -> Self {
+            self.inner = self.inner.skill_type(input);
             self
         }
         /// <p>Whether the skill is publicly available or is a private skill.</p>
@@ -5918,8 +5903,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -5932,8 +5917,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -6004,8 +5989,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The tokens used for pagination.</p>
@@ -6014,8 +5999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of categories returned, per paginated calls.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of categories returned, per paginated calls.</p>
@@ -6085,8 +6070,8 @@ pub mod fluent_builders {
         }
         /// <p>The category ID for which the skills are being retrieved from the skill
         /// store.</p>
-        pub fn category_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.category_id(signature);
+        pub fn category_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.category_id(input);
             self
         }
         /// <p>The category ID for which the skills are being retrieved from the skill
@@ -6096,8 +6081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The tokens used for pagination.</p>
@@ -6106,8 +6091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of skills returned per paginated calls.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of skills returned per paginated calls.</p>
@@ -6176,8 +6161,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The room that the appliances are associated with.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The room that the appliances are associated with.</p>
@@ -6186,8 +6171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of appliances to be returned, per paginated calls.</p>
@@ -6196,8 +6181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tokens used for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The tokens used for pagination.</p>
@@ -6266,8 +6251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the specified resource for which to list tags.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the specified resource for which to list tags.</p>
@@ -6278,8 +6263,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -6292,8 +6277,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -6365,11 +6350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The conference preference of a specific conference provider.</p>
-        pub fn conference_preference(
-            mut self,
-            signature: crate::model::ConferencePreference,
-        ) -> Self {
-            self.inner = self.inner.conference_preference(signature);
+        pub fn conference_preference(mut self, input: crate::model::ConferencePreference) -> Self {
+            self.inner = self.inner.conference_preference(input);
             self
         }
         /// <p>The conference preference of a specific conference provider.</p>
@@ -6442,8 +6424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the organization sending the enrollment invite to a user.</p>
-        pub fn organization_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_name(signature.into());
+        pub fn organization_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_name(input.into());
             self
         }
         /// <p>The name of the organization sending the enrollment invite to a user.</p>
@@ -6456,8 +6438,8 @@ pub mod fluent_builders {
         }
         /// <p>The email ID of the organization or individual contact that the enrolled user can use.
         /// </p>
-        pub fn contact_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_email(signature.into());
+        pub fn contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_email(input.into());
             self
         }
         /// <p>The email ID of the organization or individual contact that the enrolled user can use.
@@ -6550,8 +6532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
@@ -6560,8 +6542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
@@ -6570,8 +6552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated room skill parameter. Required.</p>
-        pub fn room_skill_parameter(mut self, signature: crate::model::RoomSkillParameter) -> Self {
-            self.inner = self.inner.room_skill_parameter(signature);
+        pub fn room_skill_parameter(mut self, input: crate::model::RoomSkillParameter) -> Self {
+            self.inner = self.inner.room_skill_parameter(input);
             self
         }
         /// <p>The updated room skill parameter. Required.</p>
@@ -6670,8 +6652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The unique identifier of a skill.</p>
@@ -6680,8 +6662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room that the skill is authorized for.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The room that the skill is authorized for.</p>
@@ -6752,8 +6734,8 @@ pub mod fluent_builders {
         }
         /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
         /// device.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID of the OEM used for code-based linking authorization on an AVS
@@ -6765,8 +6747,8 @@ pub mod fluent_builders {
         /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
         /// part of the Device Authorization Request component of the OAuth code-based linking
         /// specification.</p>
-        pub fn user_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_code(signature.into());
+        pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_code(input.into());
             self
         }
         /// <p>The code that is obtained after your AVS device has made a POST request to LWA as a
@@ -6777,8 +6759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product ID used to identify your AVS device during authorization.</p>
-        pub fn product_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_id(signature.into());
+        pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_id(input.into());
             self
         }
         /// <p>The product ID used to identify your AVS device during authorization.</p>
@@ -6788,8 +6770,8 @@ pub mod fluent_builders {
         }
         /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
         /// AVS device.</p>
-        pub fn device_serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_serial_number(signature.into());
+        pub fn device_serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_serial_number(input.into());
             self
         }
         /// <p>The key generated by the OEM that uniquely identifies a specified instance of your
@@ -6803,8 +6785,8 @@ pub mod fluent_builders {
         }
         /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
         /// product on Amazon's Developer Console.</p>
-        pub fn amazon_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.amazon_id(signature.into());
+        pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.amazon_id(input.into());
             self
         }
         /// <p>The device type ID for your AVS device generated by Amazon when the OEM creates a new
@@ -6814,8 +6796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>
@@ -6903,8 +6885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the skill.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The unique identifier of the skill.</p>
@@ -6979,8 +6961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user. Required.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The ARN of the user. Required.</p>
@@ -6989,8 +6971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the skill that was requested. Required.</p>
-        pub fn skill_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_id(signature.into());
+        pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_id(input.into());
             self
         }
         /// <p>The ARN of the skill that was requested. Required.</p>
@@ -7059,8 +7041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The ARN of the user for whom to revoke an enrollment invitation. Required.</p>
@@ -7069,8 +7051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
-        pub fn enrollment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.enrollment_id(signature.into());
+        pub fn enrollment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.enrollment_id(input.into());
             self
         }
         /// <p>The ARN of the enrollment invitation to revoke. Required.</p>
@@ -7183,8 +7165,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response only includes
         /// results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7197,8 +7179,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified MaxResults value, a token is included in the response so that the remaining
         /// results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -7310,8 +7292,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response only includes
         /// results beyond the token, up to the value specified by MaxResults.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7324,8 +7306,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified MaxResults value, a token is included in the response so that the remaining
         /// results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -7398,8 +7380,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7412,8 +7394,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -7531,8 +7513,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by MaxResults. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7545,8 +7527,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than the
         /// specified MaxResults value, a token is included in the response so that the remaining
         /// results can be retrieved. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the
@@ -7658,8 +7640,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7672,8 +7654,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -7785,8 +7767,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7799,8 +7781,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -7913,8 +7895,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.
         /// Required.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -7928,8 +7910,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -8042,8 +8024,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by <code>MaxResults</code>.
         /// Required.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -8057,8 +8039,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to include in the response. If more results exist than
         /// the specified <code>MaxResults</code> value, a token is included in the response so that
         /// the remaining results can be retrieved. Required.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than
@@ -8185,8 +8167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
-        pub fn content(mut self, signature: crate::model::Content) -> Self {
-            self.inner = self.inner.content(signature);
+        pub fn content(mut self, input: crate::model::Content) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// <p>The announcement content. This can contain only one of the three possible announcement types (text, SSML or audio).</p>
@@ -8196,8 +8178,8 @@ pub mod fluent_builders {
         }
         /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
         /// announcement is not delivered.</p>
-        pub fn time_to_live_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.time_to_live_in_seconds(signature);
+        pub fn time_to_live_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.time_to_live_in_seconds(input);
             self
         }
         /// <p>The time to live for an announcement. Default is 300. If delivery doesn't occur within this time, the
@@ -8207,8 +8189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique, user-specified identifier for the request that ensures idempotency.</p>
@@ -8281,8 +8263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user to whom to send an invitation. Required.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The ARN of the user to whom to send an invitation. Required.</p>
@@ -8372,8 +8354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room with which the device to sync is associated. Required.</p>
@@ -8382,8 +8364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the device to sync. Required.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to sync. Required.</p>
@@ -8470,8 +8452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The room where smart home appliance discovery was initiated.</p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The room where smart home appliance discovery was initiated.</p>
@@ -8540,8 +8522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the resource to which to add metadata tags. Required. </p>
@@ -8629,8 +8611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the resource from which to remove metadata tags. Required. </p>
@@ -8718,8 +8700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room to update.</p>
-        pub fn address_book_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_book_arn(signature.into());
+        pub fn address_book_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_book_arn(input.into());
             self
         }
         /// <p>The ARN of the room to update.</p>
@@ -8731,8 +8713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the room.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the room.</p>
@@ -8741,8 +8723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the room.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the room.</p>
@@ -8812,8 +8794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the business report schedule.</p>
-        pub fn schedule_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_arn(signature.into());
+        pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_arn(input.into());
             self
         }
         /// <p>The ARN of the business report schedule.</p>
@@ -8822,8 +8804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 location of the output reports.</p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The S3 location of the output reports.</p>
@@ -8835,8 +8817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 key where the report is delivered.</p>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p>The S3 key where the report is delivered.</p>
@@ -8849,8 +8831,8 @@ pub mod fluent_builders {
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of
         /// individual files).</p>
-        pub fn format(mut self, signature: crate::model::BusinessReportFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::BusinessReportFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format of the generated report (individual CSV files or zipped files of
@@ -8863,8 +8845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name identifier of the schedule.</p>
-        pub fn schedule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_name(signature.into());
+        pub fn schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_name(input.into());
             self
         }
         /// <p>The name identifier of the schedule.</p>
@@ -8876,8 +8858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The recurrence of the reports.</p>
-        pub fn recurrence(mut self, signature: crate::model::BusinessReportRecurrence) -> Self {
-            self.inner = self.inner.recurrence(signature);
+        pub fn recurrence(mut self, input: crate::model::BusinessReportRecurrence) -> Self {
+            self.inner = self.inner.recurrence(input);
             self
         }
         /// <p>The recurrence of the reports.</p>
@@ -8949,11 +8931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the conference provider.</p>
-        pub fn conference_provider_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.conference_provider_arn(signature.into());
+        pub fn conference_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conference_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the conference provider.</p>
@@ -8967,9 +8946,9 @@ pub mod fluent_builders {
         /// <p>The type of the conference provider.</p>
         pub fn conference_provider_type(
             mut self,
-            signature: crate::model::ConferenceProviderType,
+            input: crate::model::ConferenceProviderType,
         ) -> Self {
-            self.inner = self.inner.conference_provider_type(signature);
+            self.inner = self.inner.conference_provider_type(input);
             self
         }
         /// <p>The type of the conference provider.</p>
@@ -8981,8 +8960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
-        pub fn ip_dial_in(mut self, signature: crate::model::IpDialIn) -> Self {
-            self.inner = self.inner.ip_dial_in(signature);
+        pub fn ip_dial_in(mut self, input: crate::model::IpDialIn) -> Self {
+            self.inner = self.inner.ip_dial_in(input);
             self
         }
         /// <p>The IP endpoint and protocol for calling.</p>
@@ -8994,8 +8973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The information for PSTN conferencing.</p>
-        pub fn pstn_dial_in(mut self, signature: crate::model::PstnDialIn) -> Self {
-            self.inner = self.inner.pstn_dial_in(signature);
+        pub fn pstn_dial_in(mut self, input: crate::model::PstnDialIn) -> Self {
+            self.inner = self.inner.pstn_dial_in(input);
             self
         }
         /// <p>The information for PSTN conferencing.</p>
@@ -9007,8 +8986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The meeting settings for the conference provider.</p>
-        pub fn meeting_setting(mut self, signature: crate::model::MeetingSetting) -> Self {
-            self.inner = self.inner.meeting_setting(signature);
+        pub fn meeting_setting(mut self, input: crate::model::MeetingSetting) -> Self {
+            self.inner = self.inner.meeting_setting(input);
             self
         }
         /// <p>The meeting settings for the conference provider.</p>
@@ -9080,8 +9059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the contact to update.</p>
-        pub fn contact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_arn(signature.into());
+        pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_arn(input.into());
             self
         }
         /// <p>The ARN of the contact to update.</p>
@@ -9090,8 +9069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated display name of the contact.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The updated display name of the contact.</p>
@@ -9100,8 +9079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated first name of the contact.</p>
-        pub fn first_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.first_name(signature.into());
+        pub fn first_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.first_name(input.into());
             self
         }
         /// <p>The updated first name of the contact.</p>
@@ -9110,8 +9089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated last name of the contact.</p>
-        pub fn last_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.last_name(signature.into());
+        pub fn last_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.last_name(input.into());
             self
         }
         /// <p>The updated last name of the contact.</p>
@@ -9122,8 +9101,8 @@ pub mod fluent_builders {
         /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
         /// can either specify PhoneNumber or PhoneNumbers. We recommend that you use PhoneNumbers,
         /// which lets you specify the phone number type and multiple numbers.</p>
-        pub fn phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(signature.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>The updated phone number of the contact. The phone number type defaults to WORK. You
@@ -9228,8 +9207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the device to update. Required.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device to update. Required.</p>
@@ -9238,8 +9217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated device name. Required.</p>
-        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(signature.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The updated device name. Required.</p>
@@ -9309,8 +9288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the gateway to update.</p>
-        pub fn gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_arn(signature.into());
+        pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway to update.</p>
@@ -9319,8 +9298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the gateway.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the gateway.</p>
@@ -9329,8 +9308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the gateway.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the gateway.</p>
@@ -9340,8 +9319,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated software version of the gateway. The gateway automatically updates its
         /// software version during normal operation.</p>
-        pub fn software_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.software_version(signature.into());
+        pub fn software_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.software_version(input.into());
             self
         }
         /// <p>The updated software version of the gateway. The gateway automatically updates its
@@ -9415,8 +9394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the gateway group to update.</p>
-        pub fn gateway_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_group_arn(signature.into());
+        pub fn gateway_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_group_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway group to update.</p>
@@ -9428,8 +9407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the gateway group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the gateway group.</p>
@@ -9438,8 +9417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the gateway group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the gateway group.</p>
@@ -9508,8 +9487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile associated with a device.</p>
-        pub fn network_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_arn(signature.into());
+        pub fn network_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_arn(input.into());
             self
         }
         /// <p>The ARN of the network profile associated with a device.</p>
@@ -9521,8 +9500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
-        pub fn network_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_profile_name(signature.into());
+        pub fn network_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_profile_name(input.into());
             self
         }
         /// <p>The name of the network profile associated with a device.</p>
@@ -9534,8 +9513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Detailed information about a device's network profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Detailed information about a device's network profile.</p>
@@ -9544,8 +9523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current password of the Wi-Fi network.</p>
-        pub fn current_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_password(signature.into());
+        pub fn current_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_password(input.into());
             self
         }
         /// <p>The current password of the Wi-Fi network.</p>
@@ -9559,8 +9538,8 @@ pub mod fluent_builders {
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
         /// transmitted to the device and is used when the password of the network changes to
         /// NextPassword. </p>
-        pub fn next_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_password(signature.into());
+        pub fn next_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_password(input.into());
             self
         }
         /// <p>The next, or subsequent, password of the Wi-Fi network. This password is asynchronously
@@ -9575,11 +9554,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
         /// (ACM). This is used to issue certificates to the devices. </p>
-        pub fn certificate_authority_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.certificate_authority_arn(signature.into());
+        pub fn certificate_authority_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_authority_arn(input.into());
             self
         }
         /// <p>The ARN of the Private Certificate Authority (PCA) created in AWS Certificate Manager
@@ -9671,8 +9647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room profile to update. Required.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The ARN of the room profile to update. Required.</p>
@@ -9681,8 +9657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for the room profile.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The updated name for the room profile.</p>
@@ -9692,8 +9668,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
         /// default status.</p>
-        pub fn is_default(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_default(signature);
+        pub fn is_default(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_default(input);
             self
         }
         /// <p>Sets the profile as default if selected. If this is missing, no update is done to the
@@ -9703,8 +9679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated timezone for the room profile.</p>
-        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(signature.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>The updated timezone for the room profile.</p>
@@ -9713,8 +9689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated address for the room profile.</p>
-        pub fn address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address(signature.into());
+        pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address(input.into());
             self
         }
         /// <p>The updated address for the room profile.</p>
@@ -9723,8 +9699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated distance unit for the room profile.</p>
-        pub fn distance_unit(mut self, signature: crate::model::DistanceUnit) -> Self {
-            self.inner = self.inner.distance_unit(signature);
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.inner = self.inner.distance_unit(input);
             self
         }
         /// <p>The updated distance unit for the room profile.</p>
@@ -9736,8 +9712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated temperature unit for the room profile.</p>
-        pub fn temperature_unit(mut self, signature: crate::model::TemperatureUnit) -> Self {
-            self.inner = self.inner.temperature_unit(signature);
+        pub fn temperature_unit(mut self, input: crate::model::TemperatureUnit) -> Self {
+            self.inner = self.inner.temperature_unit(input);
             self
         }
         /// <p>The updated temperature unit for the room profile.</p>
@@ -9749,8 +9725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated wake word for the room profile.</p>
-        pub fn wake_word(mut self, signature: crate::model::WakeWord) -> Self {
-            self.inner = self.inner.wake_word(signature);
+        pub fn wake_word(mut self, input: crate::model::WakeWord) -> Self {
+            self.inner = self.inner.wake_word(input);
             self
         }
         /// <p>The updated wake word for the room profile.</p>
@@ -9759,8 +9735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
-        pub fn locale(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale(signature.into());
+        pub fn locale(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale(input.into());
             self
         }
         /// <p>The updated locale for the room profile. (This is currently only available to a limited preview audience.)</p>
@@ -9769,8 +9745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the setup mode of the profile is enabled.</p>
-        pub fn setup_mode_disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.setup_mode_disabled(signature);
+        pub fn setup_mode_disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.setup_mode_disabled(input);
             self
         }
         /// <p>Whether the setup mode of the profile is enabled.</p>
@@ -9779,8 +9755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated maximum volume limit for the room profile.</p>
-        pub fn max_volume_limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_volume_limit(signature);
+        pub fn max_volume_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_volume_limit(input);
             self
         }
         /// <p>The updated maximum volume limit for the room profile.</p>
@@ -9789,8 +9765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the PSTN setting of the room profile is enabled.</p>
-        pub fn pstn_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.pstn_enabled(signature);
+        pub fn pstn_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.pstn_enabled(input);
             self
         }
         /// <p>Whether the PSTN setting of the room profile is enabled.</p>
@@ -9799,8 +9775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether data retention of the profile is enabled.</p>
-        pub fn data_retention_opt_in(mut self, signature: bool) -> Self {
-            self.inner = self.inner.data_retention_opt_in(signature);
+        pub fn data_retention_opt_in(mut self, input: bool) -> Self {
+            self.inner = self.inner.data_retention_opt_in(input);
             self
         }
         /// <p>Whether data retention of the profile is enabled.</p>
@@ -9811,9 +9787,9 @@ pub mod fluent_builders {
         /// <p>The updated meeting room settings of a room profile.</p>
         pub fn meeting_room_configuration(
             mut self,
-            signature: crate::model::UpdateMeetingRoomConfiguration,
+            input: crate::model::UpdateMeetingRoomConfiguration,
         ) -> Self {
-            self.inner = self.inner.meeting_room_configuration(signature);
+            self.inner = self.inner.meeting_room_configuration(input);
             self
         }
         /// <p>The updated meeting room settings of a room profile.</p>
@@ -9885,8 +9861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the room to update. </p>
-        pub fn room_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_arn(signature.into());
+        pub fn room_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_arn(input.into());
             self
         }
         /// <p>The ARN of the room to update. </p>
@@ -9895,8 +9871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for the room.</p>
-        pub fn room_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_name(signature.into());
+        pub fn room_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_name(input.into());
             self
         }
         /// <p>The updated name for the room.</p>
@@ -9905,8 +9881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for the room.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description for the room.</p>
@@ -9915,8 +9891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated provider calendar ARN for the room.</p>
-        pub fn provider_calendar_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_calendar_id(signature.into());
+        pub fn provider_calendar_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_calendar_id(input.into());
             self
         }
         /// <p>The updated provider calendar ARN for the room.</p>
@@ -9928,8 +9904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated profile ARN for the room.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The updated profile ARN for the room.</p>
@@ -9998,8 +9974,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the skill group to update. </p>
-        pub fn skill_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_arn(signature.into());
+        pub fn skill_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_arn(input.into());
             self
         }
         /// <p>The ARN of the skill group to update. </p>
@@ -10011,8 +9987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for the skill group.</p>
-        pub fn skill_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.skill_group_name(signature.into());
+        pub fn skill_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.skill_group_name(input.into());
             self
         }
         /// <p>The updated name for the skill group.</p>
@@ -10024,8 +10000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for the skill group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description for the skill group.</p>

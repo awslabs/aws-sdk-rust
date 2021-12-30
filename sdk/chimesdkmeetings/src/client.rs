@@ -234,8 +234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK ID of the meeting to which you're adding attendees.</p>
@@ -326,8 +326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting.</p>
@@ -336,8 +336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn external_user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_user_id(signature.into());
+        pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_user_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
@@ -415,8 +415,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -468,8 +468,8 @@ pub mod fluent_builders {
         /// <code>us-west-2</code>
         /// .
         /// </p>
-        pub fn media_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(signature.into());
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
@@ -518,8 +518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(signature.into());
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -531,8 +531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(signature.into());
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -546,9 +546,9 @@ pub mod fluent_builders {
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
         pub fn notifications_configuration(
             mut self,
-            signature: crate::model::NotificationsConfiguration,
+            input: crate::model::NotificationsConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(signature);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -562,9 +562,9 @@ pub mod fluent_builders {
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
         pub fn meeting_features(
             mut self,
-            signature: crate::model::MeetingFeaturesConfiguration,
+            input: crate::model::MeetingFeaturesConfiguration,
         ) -> Self {
-            self.inner = self.inner.meeting_features(signature);
+            self.inner = self.inner.meeting_features(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -642,8 +642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -655,8 +655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which to create the meeting.</p>
-        pub fn media_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(signature.into());
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>The Region in which to create the meeting.</p>
@@ -665,8 +665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(signature.into());
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -678,8 +678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(signature.into());
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -693,9 +693,9 @@ pub mod fluent_builders {
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
         pub fn meeting_features(
             mut self,
-            signature: crate::model::MeetingFeaturesConfiguration,
+            input: crate::model::MeetingFeaturesConfiguration,
         ) -> Self {
-            self.inner = self.inner.meeting_features(signature);
+            self.inner = self.inner.meeting_features(input);
             self
         }
         /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
@@ -709,9 +709,9 @@ pub mod fluent_builders {
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
         pub fn notifications_configuration(
             mut self,
-            signature: crate::model::NotificationsConfiguration,
+            input: crate::model::NotificationsConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(signature);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -803,8 +803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -813,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -886,8 +886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -960,8 +960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -970,8 +970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -1042,8 +1042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -1126,8 +1126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -1206,8 +1206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
@@ -1219,9 +1219,9 @@ pub mod fluent_builders {
         /// <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn transcription_configuration(
             mut self,
-            signature: crate::model::TranscriptionConfiguration,
+            input: crate::model::TranscriptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.transcription_configuration(signature);
+            self.inner = self.inner.transcription_configuration(input);
             self
         }
         /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or
@@ -1294,8 +1294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>

@@ -312,8 +312,8 @@ pub mod fluent_builders {
         /// <p>The name of the delivery stream. This name must be unique per AWS account in the same
         /// AWS Region. If the delivery streams are in different accounts or different Regions, you can
         /// have multiple delivery streams with the same name.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream. This name must be unique per AWS account in the same
@@ -340,8 +340,8 @@ pub mod fluent_builders {
         /// stream as a source.</p>
         /// </li>
         /// </ul>
-        pub fn delivery_stream_type(mut self, signature: crate::model::DeliveryStreamType) -> Self {
-            self.inner = self.inner.delivery_stream_type(signature);
+        pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
+            self.inner = self.inner.delivery_stream_type(input);
             self
         }
         /// <p>The delivery stream type. This parameter can be one of the following
@@ -369,9 +369,9 @@ pub mod fluent_builders {
         /// Resource Name (ARN) and the role ARN for the source stream.</p>
         pub fn kinesis_stream_source_configuration(
             mut self,
-            signature: crate::model::KinesisStreamSourceConfiguration,
+            input: crate::model::KinesisStreamSourceConfiguration,
         ) -> Self {
-            self.inner = self.inner.kinesis_stream_source_configuration(signature);
+            self.inner = self.inner.kinesis_stream_source_configuration(input);
             self
         }
         /// <p>When a Kinesis data stream is used as the source for the delivery stream, a <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream Amazon
@@ -387,11 +387,11 @@ pub mod fluent_builders {
         /// Server-Side Encryption (SSE).</p>
         pub fn delivery_stream_encryption_configuration_input(
             mut self,
-            signature: crate::model::DeliveryStreamEncryptionConfigurationInput,
+            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
         ) -> Self {
             self.inner = self
                 .inner
-                .delivery_stream_encryption_configuration_input(signature);
+                .delivery_stream_encryption_configuration_input(input);
             self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
@@ -409,9 +409,9 @@ pub mod fluent_builders {
         /// The destination in Amazon S3. You can specify only one destination.</p>
         pub fn s3_destination_configuration(
             mut self,
-            signature: crate::model::S3DestinationConfiguration,
+            input: crate::model::S3DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.s3_destination_configuration(signature);
+            self.inner = self.inner.s3_destination_configuration(input);
             self
         }
         /// <p>[Deprecated]
@@ -426,9 +426,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
         pub fn extended_s3_destination_configuration(
             mut self,
-            signature: crate::model::ExtendedS3DestinationConfiguration,
+            input: crate::model::ExtendedS3DestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.extended_s3_destination_configuration(signature);
+            self.inner = self.inner.extended_s3_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon S3. You can specify only one destination.</p>
@@ -442,9 +442,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
         pub fn redshift_destination_configuration(
             mut self,
-            signature: crate::model::RedshiftDestinationConfiguration,
+            input: crate::model::RedshiftDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.redshift_destination_configuration(signature);
+            self.inner = self.inner.redshift_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon Redshift. You can specify only one destination.</p>
@@ -458,11 +458,9 @@ pub mod fluent_builders {
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
         pub fn elasticsearch_destination_configuration(
             mut self,
-            signature: crate::model::ElasticsearchDestinationConfiguration,
+            input: crate::model::ElasticsearchDestinationConfiguration,
         ) -> Self {
-            self.inner = self
-                .inner
-                .elasticsearch_destination_configuration(signature);
+            self.inner = self.inner.elasticsearch_destination_configuration(input);
             self
         }
         /// <p>The destination in Amazon ES. You can specify only one destination.</p>
@@ -478,11 +476,11 @@ pub mod fluent_builders {
         #[allow(missing_docs)] // documentation missing in model
         pub fn amazonopensearchservice_destination_configuration(
             mut self,
-            signature: crate::model::AmazonopensearchserviceDestinationConfiguration,
+            input: crate::model::AmazonopensearchserviceDestinationConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .amazonopensearchservice_destination_configuration(signature);
+                .amazonopensearchservice_destination_configuration(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -500,9 +498,9 @@ pub mod fluent_builders {
         /// <p>The destination in Splunk. You can specify only one destination.</p>
         pub fn splunk_destination_configuration(
             mut self,
-            signature: crate::model::SplunkDestinationConfiguration,
+            input: crate::model::SplunkDestinationConfiguration,
         ) -> Self {
-            self.inner = self.inner.splunk_destination_configuration(signature);
+            self.inner = self.inner.splunk_destination_configuration(input);
             self
         }
         /// <p>The destination in Splunk. You can specify only one destination.</p>
@@ -517,11 +515,9 @@ pub mod fluent_builders {
         /// You can specify only one destination.</p>
         pub fn http_endpoint_destination_configuration(
             mut self,
-            signature: crate::model::HttpEndpointDestinationConfiguration,
+            input: crate::model::HttpEndpointDestinationConfiguration,
         ) -> Self {
-            self.inner = self
-                .inner
-                .http_endpoint_destination_configuration(signature);
+            self.inner = self.inner.http_endpoint_destination_configuration(input);
             self
         }
         /// <p>Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination.
@@ -634,8 +630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -654,8 +650,8 @@ pub mod fluent_builders {
         /// happens due to an AWS KMS issue, Kinesis Data Firehose keeps retrying the delete
         /// operation.</p>
         /// <p>The default value is false.</p>
-        pub fn allow_force_delete(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_force_delete(signature);
+        pub fn allow_force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_force_delete(input);
             self
         }
         /// <p>Set this to true if you want to delete the delivery stream even if Kinesis Data Firehose
@@ -737,8 +733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -751,8 +747,8 @@ pub mod fluent_builders {
         }
         /// <p>The limit on the number of destinations to return. You can have one destination per
         /// delivery stream.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit on the number of destinations to return. You can have one destination per
@@ -765,9 +761,9 @@ pub mod fluent_builders {
         /// Data Firehose supports one destination per delivery stream.</p>
         pub fn exclusive_start_destination_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_destination_id(signature.into());
+            self.inner = self.inner.exclusive_start_destination_id(input.into());
             self
         }
         /// <p>The ID of the destination to start returning the destination information. Kinesis
@@ -847,8 +843,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of delivery streams to list. The default value is 10.</p>
@@ -871,8 +867,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>This parameter is optional. If this parameter is omitted, delivery streams of all
         /// types are returned.</p>
-        pub fn delivery_stream_type(mut self, signature: crate::model::DeliveryStreamType) -> Self {
-            self.inner = self.inner.delivery_stream_type(signature);
+        pub fn delivery_stream_type(mut self, input: crate::model::DeliveryStreamType) -> Self {
+            self.inner = self.inner.delivery_stream_type(input);
             self
         }
         /// <p>The delivery stream type. This can be one of the following values:</p>
@@ -903,11 +899,11 @@ pub mod fluent_builders {
         /// <code>ExclusiveStartDeliveryStreamName</code>.</p>
         pub fn exclusive_start_delivery_stream_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .exclusive_start_delivery_stream_name(signature.into());
+                .exclusive_start_delivery_stream_name(input.into());
             self
         }
         /// <p>The list of delivery streams returned by this call to
@@ -983,8 +979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream whose tags you want to list.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream whose tags you want to list.</p>
@@ -998,11 +994,8 @@ pub mod fluent_builders {
         /// <p>The key to use as the starting point for the list of tags. If you set this parameter,
         /// <code>ListTagsForDeliveryStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>.</p>
-        pub fn exclusive_start_tag_key(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_tag_key(signature.into());
+        pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_tag_key(input.into());
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If you set this parameter,
@@ -1019,8 +1012,8 @@ pub mod fluent_builders {
         /// associated with the delivery stream, <code>HasMoreTags</code> is set to <code>true</code>
         /// in the response. To list additional tags, set <code>ExclusiveStartTagKey</code> to the last
         /// key in the response. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags
@@ -1123,8 +1116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1136,8 +1129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The record.</p>
-        pub fn record(mut self, signature: crate::model::Record) -> Self {
-            self.inner = self.inner.record(signature);
+        pub fn record(mut self, input: crate::model::Record) -> Self {
+            self.inner = self.inner.record(input);
             self
         }
         /// <p>The record.</p>
@@ -1256,8 +1249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1382,8 +1375,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the delivery stream for which you want to enable server-side encryption
         /// (SSE).</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream for which you want to enable server-side encryption
@@ -1399,11 +1392,11 @@ pub mod fluent_builders {
         /// Server-Side Encryption (SSE).</p>
         pub fn delivery_stream_encryption_configuration_input(
             mut self,
-            signature: crate::model::DeliveryStreamEncryptionConfigurationInput,
+            input: crate::model::DeliveryStreamEncryptionConfigurationInput,
         ) -> Self {
             self.inner = self
                 .inner
-                .delivery_stream_encryption_configuration_input(signature);
+                .delivery_stream_encryption_configuration_input(input);
             self
         }
         /// <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed for
@@ -1498,8 +1491,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the delivery stream for which you want to disable server-side encryption
         /// (SSE).</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream for which you want to disable server-side encryption
@@ -1580,8 +1573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream to which you want to add the tags.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream to which you want to add the tags.</p>
@@ -1673,8 +1666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1788,8 +1781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery stream.</p>
-        pub fn delivery_stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_stream_name(signature.into());
+        pub fn delivery_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_stream_name(input.into());
             self
         }
         /// <p>The name of the delivery stream.</p>
@@ -1807,11 +1800,9 @@ pub mod fluent_builders {
         /// configuration with the new configuration.</p>
         pub fn current_delivery_stream_version_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .current_delivery_stream_version_id(signature.into());
+            self.inner = self.inner.current_delivery_stream_version_id(input.into());
             self
         }
         /// <p>Obtain this value from the <code>VersionId</code> result of <a>DeliveryStreamDescription</a>. This value is required, and helps the service
@@ -1827,8 +1818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the destination.</p>
-        pub fn destination_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_id(signature.into());
+        pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_id(input.into());
             self
         }
         /// <p>The ID of the destination.</p>
@@ -1840,11 +1831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
-        pub fn s3_destination_update(
-            mut self,
-            signature: crate::model::S3DestinationUpdate,
-        ) -> Self {
-            self.inner = self.inner.s3_destination_update(signature);
+        pub fn s3_destination_update(mut self, input: crate::model::S3DestinationUpdate) -> Self {
+            self.inner = self.inner.s3_destination_update(input);
             self
         }
         /// <p>[Deprecated] Describes an update for a destination in Amazon S3.</p>
@@ -1858,9 +1846,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon S3.</p>
         pub fn extended_s3_destination_update(
             mut self,
-            signature: crate::model::ExtendedS3DestinationUpdate,
+            input: crate::model::ExtendedS3DestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.extended_s3_destination_update(signature);
+            self.inner = self.inner.extended_s3_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon S3.</p>
@@ -1874,9 +1862,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
         pub fn redshift_destination_update(
             mut self,
-            signature: crate::model::RedshiftDestinationUpdate,
+            input: crate::model::RedshiftDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.redshift_destination_update(signature);
+            self.inner = self.inner.redshift_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon Redshift.</p>
@@ -1890,9 +1878,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Amazon ES.</p>
         pub fn elasticsearch_destination_update(
             mut self,
-            signature: crate::model::ElasticsearchDestinationUpdate,
+            input: crate::model::ElasticsearchDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.elasticsearch_destination_update(signature);
+            self.inner = self.inner.elasticsearch_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Amazon ES.</p>
@@ -1906,11 +1894,9 @@ pub mod fluent_builders {
         #[allow(missing_docs)] // documentation missing in model
         pub fn amazonopensearchservice_destination_update(
             mut self,
-            signature: crate::model::AmazonopensearchserviceDestinationUpdate,
+            input: crate::model::AmazonopensearchserviceDestinationUpdate,
         ) -> Self {
-            self.inner = self
-                .inner
-                .amazonopensearchservice_destination_update(signature);
+            self.inner = self.inner.amazonopensearchservice_destination_update(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -1926,9 +1912,9 @@ pub mod fluent_builders {
         /// <p>Describes an update for a destination in Splunk.</p>
         pub fn splunk_destination_update(
             mut self,
-            signature: crate::model::SplunkDestinationUpdate,
+            input: crate::model::SplunkDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.splunk_destination_update(signature);
+            self.inner = self.inner.splunk_destination_update(input);
             self
         }
         /// <p>Describes an update for a destination in Splunk.</p>
@@ -1942,9 +1928,9 @@ pub mod fluent_builders {
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>
         pub fn http_endpoint_destination_update(
             mut self,
-            signature: crate::model::HttpEndpointDestinationUpdate,
+            input: crate::model::HttpEndpointDestinationUpdate,
         ) -> Self {
-            self.inner = self.inner.http_endpoint_destination_update(signature);
+            self.inner = self.inner.http_endpoint_destination_update(input);
             self
         }
         /// <p>Describes an update to the specified HTTP endpoint destination.</p>

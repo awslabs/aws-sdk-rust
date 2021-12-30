@@ -175,8 +175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The unique identifier string for each client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
@@ -185,8 +185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
-        pub fn client_secret(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_secret(signature.into());
+        pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_secret(input.into());
             self
         }
         /// <p>A secret string generated for the client. This value should come from the persisted result of the <a>RegisterClient</a> API.</p>
@@ -198,8 +198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
-        pub fn grant_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_type(signature.into());
+        pub fn grant_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_type(input.into());
             self
         }
         /// <p>Supports grant types for authorization code, refresh token, and device code request.</p>
@@ -210,8 +210,8 @@ pub mod fluent_builders {
         /// <p>Used only when calling this API for the device code grant type. This short-term code is
         /// used to identify this authentication attempt. This should come from an in-memory reference to
         /// the result of the <a>StartDeviceAuthorization</a> API.</p>
-        pub fn device_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_code(signature.into());
+        pub fn device_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_code(input.into());
             self
         }
         /// <p>Used only when calling this API for the device code grant type. This short-term code is
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
-        pub fn code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code(signature.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
             self
         }
         /// <p>The authorization code received from the authorization service. This parameter is required to perform an authorization grant request to get access to a token.</p>
@@ -232,8 +232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
-        pub fn refresh_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.refresh_token(signature.into());
+        pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.refresh_token(input.into());
             self
         }
         /// <p>The token used to obtain an access token in the event that the access token is invalid or expired. This token is not issued by the service.</p>
@@ -265,8 +265,8 @@ pub mod fluent_builders {
         }
         /// <p>The location of the application that will receive the authorization code. Users authorize
         /// the service to send the request to this location.</p>
-        pub fn redirect_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.redirect_uri(signature.into());
+        pub fn redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.redirect_uri(input.into());
             self
         }
         /// <p>The location of the application that will receive the authorization code. Users authorize
@@ -337,8 +337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The friendly name of the client.</p>
-        pub fn client_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_name(signature.into());
+        pub fn client_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_name(input.into());
             self
         }
         /// <p>The friendly name of the client.</p>
@@ -347,8 +347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
-        pub fn client_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_type(signature.into());
+        pub fn client_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_type(input.into());
             self
         }
         /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
@@ -438,8 +438,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
         /// should come from the persisted result of the <a>RegisterClient</a> API
         /// operation.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The unique identifier string for the client that is registered with AWS SSO. This value
@@ -451,8 +451,8 @@ pub mod fluent_builders {
         }
         /// <p>A secret string that is generated for the client. This value should come from the
         /// persisted result of the <a>RegisterClient</a> API operation.</p>
-        pub fn client_secret(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_secret(signature.into());
+        pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_secret(input.into());
             self
         }
         /// <p>A secret string that is generated for the client. This value should come from the
@@ -466,8 +466,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
         /// the User Portal</a> in the <i>AWS Single Sign-On User Guide</i>.</p>
-        pub fn start_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_url(signature.into());
+        pub fn start_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_url(input.into());
             self
         }
         /// <p>The URL for the AWS SSO user portal. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using

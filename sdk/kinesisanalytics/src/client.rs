@@ -312,8 +312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -325,8 +325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -342,9 +342,9 @@ pub mod fluent_builders {
         /// the <code>PutLogEvents</code> policy action enabled.</p>
         pub fn cloud_watch_logging_option(
             mut self,
-            signature: crate::model::CloudWatchLoggingOption,
+            input: crate::model::CloudWatchLoggingOption,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option(signature);
+            self.inner = self.inner.cloud_watch_logging_option(input);
             self
         }
         /// <p>Provides the CloudWatch log stream Amazon Resource Name (ARN) and the IAM role ARN.
@@ -434,8 +434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of your existing Amazon Kinesis Analytics application to which you want to add the streaming source.</p>
@@ -448,8 +448,8 @@ pub mod fluent_builders {
         }
         /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
         /// to find the current application version.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Current version of your Amazon Kinesis Analytics application. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation
@@ -462,8 +462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
-        pub fn input(mut self, signature: crate::model::Input) -> Self {
-            self.inner = self.inner.input(signature);
+        pub fn input(mut self, input: crate::model::Input) -> Self {
+            self.inner = self.inner.input(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Input.html">Input</a> to add.</p>
@@ -539,8 +539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to which you want to add the input processing configuration.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application to which you want to add the input processing configuration.</p>
@@ -554,8 +554,8 @@ pub mod fluent_builders {
         /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get the current application version.  If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Version of the application to which you want to add the input processing configuration. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
@@ -570,8 +570,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the input configuration to add the input processing configuration to. You
         /// can get a list of the input IDs for an application using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(signature.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
         /// <p>The ID of the input configuration to add the input processing configuration to. You
@@ -583,9 +583,9 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
         pub fn input_processing_configuration(
             mut self,
-            signature: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(signature);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to add to the application.</p>
@@ -676,8 +676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application to which you want to add the output configuration.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application to which you want to add the output configuration.</p>
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current
         /// application version. If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned. </p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Version of the application to which you want to add the output configuration. You
@@ -711,8 +711,8 @@ pub mod fluent_builders {
         /// configuration, you specify the name of an in-application stream, a destination (that is,
         /// an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda
         /// function), and record the formation to use when writing to the destination.</p>
-        pub fn output(mut self, signature: crate::model::Output) -> Self {
-            self.inner = self.inner.output(signature);
+        pub fn output(mut self, input: crate::model::Output) -> Self {
+            self.inner = self.inner.output(input);
             self
         }
         /// <p>An array of objects, each describing one output configuration. In the output
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of an existing application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of an existing application.</p>
@@ -813,8 +813,8 @@ pub mod fluent_builders {
         /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
         /// If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Version of the application for which you are adding the reference data source.
@@ -829,11 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
-        pub fn reference_data_source(
-            mut self,
-            signature: crate::model::ReferenceDataSource,
-        ) -> Self {
-            self.inner = self.inner.reference_data_source(signature);
+        pub fn reference_data_source(mut self, input: crate::model::ReferenceDataSource) -> Self {
+            self.inner = self.inner.reference_data_source(input);
             self
         }
         /// <p>The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.</p>
@@ -931,8 +928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).</p>
@@ -944,11 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Summary description of the application.</p>
-        pub fn application_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.application_description(signature.into());
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>Summary description of the application.</p>
@@ -1058,8 +1052,8 @@ pub mod fluent_builders {
         /// if your <code>Outputs</code> defines output streams named
         /// <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>,
         /// then your application code must create these streams. </p>
-        pub fn application_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_code(signature.into());
+        pub fn application_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_code(input.into());
             self
         }
         /// <p>One or more SQL statements that read input data, transform it, and generate output.
@@ -1171,8 +1165,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the Amazon Kinesis Analytics application to delete.</p>
@@ -1186,8 +1180,8 @@ pub mod fluent_builders {
         /// <p>
         /// You can use the <code>DescribeApplication</code> operation to get this value.
         /// </p>
-        pub fn create_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.create_timestamp(signature);
+        pub fn create_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.create_timestamp(input);
             self
         }
         /// <p>
@@ -1268,8 +1262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -1281,8 +1275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -1297,9 +1291,9 @@ pub mod fluent_builders {
         /// delete. You can get the <code>CloudWatchLoggingOptionId</code> by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation. </p>
         pub fn cloud_watch_logging_option_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logging_option_id(signature.into());
+            self.inner = self.inner.cloud_watch_logging_option_id(input.into());
             self
         }
         /// <p>The <code>CloudWatchLoggingOptionId</code> of the CloudWatch logging option to
@@ -1368,8 +1362,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The Kinesis Analytics application name.</p>
@@ -1381,8 +1375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The version ID of the Kinesis Analytics application.</p>
@@ -1395,8 +1389,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the input configuration from which to delete the input processing
         /// configuration. You can get a list of the input IDs for an application by using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation.</p>
-        pub fn input_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_id(signature.into());
+        pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_id(input.into());
             self
         }
         /// <p>The ID of the input configuration from which to delete the input processing
@@ -1471,8 +1465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Kinesis Analytics application name.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Amazon Kinesis Analytics application name.</p>
@@ -1488,8 +1482,8 @@ pub mod fluent_builders {
         /// If the version specified is not the current version, the
         /// <code>ConcurrentModificationException</code> is returned.
         /// </p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Amazon Kinesis Analytics application version.
@@ -1512,8 +1506,8 @@ pub mod fluent_builders {
         /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the specific
         /// <code>OutputId</code>.
         /// </p>
-        pub fn output_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_id(signature.into());
+        pub fn output_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_id(input.into());
             self
         }
         /// <p>The ID of the configuration to delete.
@@ -1599,8 +1593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of an existing application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of an existing application.</p>
@@ -1615,8 +1609,8 @@ pub mod fluent_builders {
         /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the current application version.
         /// If the version specified
         /// is not the current version, the <code>ConcurrentModificationException</code> is returned.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>Version of the application.  
@@ -1635,8 +1629,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html">AddApplicationReferenceDataSource</a>, Amazon Kinesis Analytics assigns an ID.
         /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get the reference ID.
         /// </p>
-        pub fn reference_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reference_id(signature.into());
+        pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_id(input.into());
             self
         }
         /// <p>ID of the reference data source. When you add a reference data source to your
@@ -1718,8 +1712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application.</p>
@@ -1805,8 +1799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the streaming source.</p>
@@ -1815,8 +1809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf.</p>
@@ -1827,9 +1821,9 @@ pub mod fluent_builders {
         /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
         pub fn input_starting_position_configuration(
             mut self,
-            signature: crate::model::InputStartingPositionConfiguration,
+            input: crate::model::InputStartingPositionConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_starting_position_configuration(signature);
+            self.inner = self.inner.input_starting_position_configuration(input);
             self
         }
         /// <p>Point at which you want Amazon Kinesis Analytics to start reading records from the specified streaming source discovery purposes.</p>
@@ -1842,8 +1836,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify this parameter to discover a schema from data in an Amazon S3
         /// object.</p>
-        pub fn s3_configuration(mut self, signature: crate::model::S3Configuration) -> Self {
-            self.inner = self.inner.s3_configuration(signature);
+        pub fn s3_configuration(mut self, input: crate::model::S3Configuration) -> Self {
+            self.inner = self.inner.s3_configuration(input);
             self
         }
         /// <p>Specify this parameter to discover a schema from data in an Amazon S3
@@ -1858,9 +1852,9 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
         pub fn input_processing_configuration(
             mut self,
-            signature: crate::model::InputProcessingConfiguration,
+            input: crate::model::InputProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.input_processing_configuration(signature);
+            self.inner = self.inner.input_processing_configuration(input);
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a> to use to preprocess the records before discovering the schema of the records.</p>
@@ -1948,8 +1942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of applications to list.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Maximum number of applications to list.</p>
@@ -1960,11 +1954,9 @@ pub mod fluent_builders {
         /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
         pub fn exclusive_start_application_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .exclusive_start_application_name(signature.into());
+            self.inner = self.inner.exclusive_start_application_name(input.into());
             self
         }
         /// <p>Name of the application to start the list with. When using pagination to retrieve the list, you don't need to specify this parameter in the first request. However, in subsequent requests, you add the last application name from the previous response to get the next page of applications.</p>
@@ -2036,8 +2028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application for which to retrieve tags.</p>
@@ -2117,8 +2109,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the application.</p>
@@ -2217,8 +2209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the running application to stop.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the running application to stop.</p>
@@ -2291,8 +2283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the application to assign the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the application to assign the tags.</p>
@@ -2378,8 +2370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Kinesis Analytics application from which to remove the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis Analytics application from which to remove the tags.</p>
@@ -2474,8 +2466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>Name of the Amazon Kinesis Analytics application to update.</p>
@@ -2488,8 +2480,8 @@ pub mod fluent_builders {
         }
         /// <p>The current application version ID. You can use the
         /// <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a> operation to get this value.</p>
-        pub fn current_application_version_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.current_application_version_id(signature);
+        pub fn current_application_version_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.current_application_version_id(input);
             self
         }
         /// <p>The current application version ID. You can use the
@@ -2502,8 +2494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes application updates.</p>
-        pub fn application_update(mut self, signature: crate::model::ApplicationUpdate) -> Self {
-            self.inner = self.inner.application_update(signature);
+        pub fn application_update(mut self, input: crate::model::ApplicationUpdate) -> Self {
+            self.inner = self.inner.application_update(input);
             self
         }
         /// <p>Describes application updates.</p>

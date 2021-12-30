@@ -230,8 +230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the app monitor.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the app monitor.</p>
@@ -240,8 +240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -295,9 +295,9 @@ pub mod fluent_builders {
         /// <p>If you omit this argument, the sample rate used for RUM is set to 10% of the user sessions.</p>
         pub fn app_monitor_configuration(
             mut self,
-            signature: crate::model::AppMonitorConfiguration,
+            input: crate::model::AppMonitorConfiguration,
         ) -> Self {
-            self.inner = self.inner.app_monitor_configuration(signature);
+            self.inner = self.inner.app_monitor_configuration(input);
             self
         }
         /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
@@ -319,8 +319,8 @@ pub mod fluent_builders {
         /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
         /// Amazon CloudWatch Logs charges.</p>
         /// <p>If you omit this parameter, the default is <code>false</code>.</p>
-        pub fn cw_log_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cw_log_enabled(signature);
+        pub fn cw_log_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cw_log_enabled(input);
             self
         }
         /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM
@@ -393,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app monitor to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor to delete.</p>
@@ -463,8 +463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app monitor to retrieve information for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app monitor to retrieve information for.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
@@ -544,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that defines the time range that you want to retrieve results from.</p>
-        pub fn time_range(mut self, signature: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.time_range(signature);
+        pub fn time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.time_range(input);
             self
         }
         /// <p>A structure that defines the time range that you want to retrieve results from.</p>
@@ -576,8 +576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -656,8 +656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in one operation. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in one operation. </p>
@@ -666,8 +666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -736,8 +736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource that you want to see the tags of.</p>
@@ -809,8 +809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the app monitor that is sending this data.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the app monitor that is sending this data.</p>
@@ -819,8 +819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for this batch of RUM event data.</p>
-        pub fn batch_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_id(signature.into());
+        pub fn batch_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_id(input.into());
             self
         }
         /// <p>A unique identifier for this batch of RUM event data.</p>
@@ -829,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
-        pub fn app_monitor_details(mut self, signature: crate::model::AppMonitorDetails) -> Self {
-            self.inner = self.inner.app_monitor_details(signature);
+        pub fn app_monitor_details(mut self, input: crate::model::AppMonitorDetails) -> Self {
+            self.inner = self.inner.app_monitor_details(input);
             self
         }
         /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
@@ -842,8 +842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
-        pub fn user_details(mut self, signature: crate::model::UserDetails) -> Self {
-            self.inner = self.inner.user_details(signature);
+        pub fn user_details(mut self, input: crate::model::UserDetails) -> Self {
+            self.inner = self.inner.user_details(input);
             self
         }
         /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
@@ -945,8 +945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're adding tags to.</p>
@@ -1038,8 +1038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the CloudWatch RUM resource that you're removing tags from.</p>
@@ -1135,8 +1135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the app monitor to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the app monitor to update.</p>
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The top-level internet domain name for which your application has administrative authority.</p>
@@ -1162,9 +1162,9 @@ pub mod fluent_builders {
         /// to send data to Amazon Web Services</a>.</p>
         pub fn app_monitor_configuration(
             mut self,
-            signature: crate::model::AppMonitorConfiguration,
+            input: crate::model::AppMonitorConfiguration,
         ) -> Self {
-            self.inner = self.inner.app_monitor_configuration(signature);
+            self.inner = self.inner.app_monitor_configuration(input);
             self
         }
         /// <p>A structure that contains much of the configuration data for the app monitor. If you are using
@@ -1184,8 +1184,8 @@ pub mod fluent_builders {
         /// sends a copy of this telemetry data to Amazon CloudWatch Logs
         /// in your account. This enables you to keep the telemetry data for more than 30 days, but it does incur
         /// Amazon CloudWatch Logs charges.</p>
-        pub fn cw_log_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cw_log_enabled(signature);
+        pub fn cw_log_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cw_log_enabled(input);
             self
         }
         /// <p>Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM

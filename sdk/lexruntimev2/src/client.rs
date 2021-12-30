@@ -200,8 +200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the session data.</p>
@@ -211,8 +211,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias identifier in use for the bot that contains the session
         /// data.</p>
-        pub fn bot_alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(signature.into());
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The alias identifier in use for the bot that contains the session
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(signature.into());
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -232,8 +232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session to delete.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session to delete.</p>
@@ -310,8 +310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that contains the session data.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that contains the session data.</p>
@@ -321,8 +321,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias identifier in use for the bot that contains the session
         /// data.</p>
-        pub fn bot_alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(signature.into());
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The alias identifier in use for the bot that contains the session
@@ -332,8 +332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(signature.into());
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -342,8 +342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session to return.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session to return.</p>
@@ -414,8 +414,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that receives the session data.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that receives the session data.</p>
@@ -425,8 +425,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias identifier of the bot that receives the session
         /// data.</p>
-        pub fn bot_alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(signature.into());
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The alias identifier of the bot that receives the session
@@ -436,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(signature.into());
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -446,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session that receives the session data.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session that receives the session data.</p>
@@ -478,8 +478,8 @@ pub mod fluent_builders {
         /// the current intent, attributes, context, and dialog action. Use the
         /// dialog action to determine the next step that Amazon Lex V2 should use in the
         /// conversation with the user.</p>
-        pub fn session_state(mut self, signature: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(signature);
+        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.session_state(input);
             self
         }
         /// <p>Sets the state of the session with the user. You can use this to set
@@ -532,8 +532,8 @@ pub mod fluent_builders {
         /// returns text in the response.</p>
         /// </li>
         /// </ul>
-        pub fn response_content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(signature.into());
+        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_content_type(input.into());
             self
         }
         /// <p>The message that Amazon Lex V2 returns in the response can be either text or
@@ -642,8 +642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that processes the request.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that processes the request.</p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias identifier in use for the bot that processes the
         /// request.</p>
-        pub fn bot_alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(signature.into());
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The alias identifier in use for the bot that processes the
@@ -664,8 +664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(signature.into());
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -675,8 +675,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the user session that is having the
         /// conversation.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the user session that is having the
@@ -686,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
@@ -696,8 +696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current state of the dialog between the user and the bot.</p>
-        pub fn session_state(mut self, signature: crate::model::SessionState) -> Self {
-            self.inner = self.inner.session_state(signature);
+        pub fn session_state(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.session_state(input);
             self
         }
         /// <p>The current state of the dialog between the user and the bot.</p>
@@ -862,8 +862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bot that should receive the request.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The identifier of the bot that should receive the request.</p>
@@ -873,8 +873,8 @@ pub mod fluent_builders {
         }
         /// <p>The alias identifier in use for the bot that should receive the
         /// request.</p>
-        pub fn bot_alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias_id(signature.into());
+        pub fn bot_alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias_id(input.into());
             self
         }
         /// <p>The alias identifier in use for the bot that should receive the
@@ -884,8 +884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale where the session is in use.</p>
-        pub fn locale_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.locale_id(signature.into());
+        pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.locale_id(input.into());
             self
         }
         /// <p>The locale where the session is in use.</p>
@@ -894,8 +894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the session in use.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The identifier of the session in use.</p>
@@ -909,8 +909,8 @@ pub mod fluent_builders {
         /// conversation with the user.</p>
         /// <p>The <code>sessionState</code> field must be compressed using gzip
         /// and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn session_state(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_state(signature.into());
+        pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_state(input.into());
             self
         }
         /// <p>Sets the state of the session with the user. You can use this to set
@@ -933,8 +933,8 @@ pub mod fluent_builders {
         /// <code>x-amz-lex:</code>.</p>
         /// <p>The <code>requestAttributes</code> field must be compressed using
         /// gzip and then base64 encoded before sending to Amazon Lex V2.</p>
-        pub fn request_attributes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_attributes(signature.into());
+        pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_attributes(input.into());
             self
         }
         /// <p>Request-specific information passed between the client application
@@ -987,8 +987,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn request_content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_content_type(signature.into());
+        pub fn request_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_content_type(input.into());
             self
         }
         /// <p>Indicates the format for audio input or that the content is text.
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn response_content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.response_content_type(signature.into());
+        pub fn response_content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_content_type(input.into());
             self
         }
         /// <p>The message that Amazon Lex V2 returns in the response can be either text or
@@ -1129,8 +1129,8 @@ pub mod fluent_builders {
         }
         /// <p>User input in PCM or Opus audio format or text format as described
         /// in the <code>requestContentType</code> parameter.</p>
-        pub fn input_stream(mut self, signature: aws_smithy_http::byte_stream::ByteStream) -> Self {
-            self.inner = self.inner.input_stream(signature);
+        pub fn input_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
+            self.inner = self.inner.input_stream(input);
             self
         }
         /// <p>User input in PCM or Opus audio format or text format as described

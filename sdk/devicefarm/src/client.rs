@@ -705,8 +705,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the device pool.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the device pool.</p>
@@ -715,8 +715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device pool's name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The device pool's name.</p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device pool's description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The device pool's description.</p>
@@ -757,8 +757,8 @@ pub mod fluent_builders {
         /// parameter.</p>
         /// <p>By specifying the maximum number of devices, you can control the costs that you incur
         /// by running tests.</p>
-        pub fn max_devices(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_devices(signature);
+        pub fn max_devices(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_devices(input);
             self
         }
         /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
@@ -833,8 +833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your instance profile.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of your instance profile.</p>
@@ -843,8 +843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of your instance profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of your instance profile.</p>
@@ -854,8 +854,8 @@ pub mod fluent_builders {
         }
         /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
         /// <code>false</code> for private devices.</p>
-        pub fn package_cleanup(mut self, signature: bool) -> Self {
-            self.inner = self.inner.package_cleanup(signature);
+        pub fn package_cleanup(mut self, input: bool) -> Self {
+            self.inner = self.inner.package_cleanup(input);
             self
         }
         /// <p>When set to <code>true</code>, Device Farm removes app packages after a test run. The default value is
@@ -892,8 +892,8 @@ pub mod fluent_builders {
         }
         /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
         /// <code>true</code>.</p>
-        pub fn reboot_after_use(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reboot_after_use(signature);
+        pub fn reboot_after_use(mut self, input: bool) -> Self {
+            self.inner = self.inner.reboot_after_use(input);
             self
         }
         /// <p>When set to <code>true</code>, Device Farm reboots the instance after a test run. The default value is
@@ -964,8 +964,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
         /// network profile.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new network profile.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new network profile.</p>
@@ -985,8 +985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the network profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the network profile.</p>
@@ -995,8 +995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of network profile to create. Valid values are listed here.</p>
-        pub fn r#type(mut self, signature: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to create. Valid values are listed here.</p>
@@ -1009,8 +1009,8 @@ pub mod fluent_builders {
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
         /// 104857600.</p>
-        pub fn uplink_bandwidth_bits(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_bandwidth_bits(signature);
+        pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -1021,8 +1021,8 @@ pub mod fluent_builders {
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
         /// 104857600.</p>
-        pub fn downlink_bandwidth_bits(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_bandwidth_bits(signature);
+        pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -1033,8 +1033,8 @@ pub mod fluent_builders {
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
         /// 2000.</p>
-        pub fn uplink_delay_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_delay_ms(signature);
+        pub fn uplink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_delay_ms(input);
             self
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
@@ -1045,8 +1045,8 @@ pub mod fluent_builders {
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
         /// 2000.</p>
-        pub fn downlink_delay_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_delay_ms(signature);
+        pub fn downlink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_delay_ms(input);
             self
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
@@ -1057,8 +1057,8 @@ pub mod fluent_builders {
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
         /// 0 to 2000.</p>
-        pub fn uplink_jitter_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_jitter_ms(signature);
+        pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
@@ -1069,8 +1069,8 @@ pub mod fluent_builders {
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
         /// 0 to 2000.</p>
-        pub fn downlink_jitter_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_jitter_ms(signature);
+        pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
@@ -1081,8 +1081,8 @@ pub mod fluent_builders {
         }
         /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
         /// percent.</p>
-        pub fn uplink_loss_percent(mut self, signature: i32) -> Self {
-            self.inner = self.inner.uplink_loss_percent(signature);
+        pub fn uplink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.uplink_loss_percent(input);
             self
         }
         /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
@@ -1092,8 +1092,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-        pub fn downlink_loss_percent(mut self, signature: i32) -> Self {
-            self.inner = self.inner.downlink_loss_percent(signature);
+        pub fn downlink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.downlink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
@@ -1162,8 +1162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project's name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The project's name.</p>
@@ -1173,8 +1173,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
         /// specified execution timeout value unless overridden when scheduling a run.</p>
-        pub fn default_job_timeout_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.default_job_timeout_minutes(signature);
+        pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_job_timeout_minutes(input);
             self
         }
         /// <p>Sets the execution timeout value (in minutes) for a project. All test runs in this project use the
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
         /// access session.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to create a remote
@@ -1256,8 +1256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the device for which you want to create a remote access session.</p>
-        pub fn device_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_arn(signature.into());
+        pub fn device_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_arn(input.into());
             self
         }
         /// <p>The ARN of the device for which you want to create a remote access session.</p>
@@ -1267,8 +1267,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
         /// remote access session.</p>
-        pub fn instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_arn(signature.into());
+        pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance for which you want to create a
@@ -1282,8 +1282,8 @@ pub mod fluent_builders {
         /// set to <code>true</code>.</p>
         /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
         /// longer supported</a>.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting to remote
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
         /// your remote access session.</p>
         /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
         /// longer supported</a>.</p>
-        pub fn remote_debug_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remote_debug_enabled(signature);
+        pub fn remote_debug_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_debug_enabled(input);
             self
         }
         /// <p>Set to <code>true</code> if you want to access devices remotely for debugging in
@@ -1316,8 +1316,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to enable remote recording for the remote access
         /// session.</p>
-        pub fn remote_record_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remote_record_enabled(signature);
+        pub fn remote_record_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_record_enabled(input);
             self
         }
         /// <p>Set to <code>true</code> to enable remote recording for the remote access
@@ -1328,8 +1328,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
         /// session.</p>
-        pub fn remote_record_app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_record_app_arn(signature.into());
+        pub fn remote_record_app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_record_app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote access
@@ -1342,8 +1342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the remote access session to create.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the remote access session to create.</p>
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
         /// identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
         /// <p>Remote debugging is <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
         /// longer supported</a>.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>Unique identifier for the client. If you want access to multiple devices on the same client, you should
@@ -1372,9 +1372,9 @@ pub mod fluent_builders {
         /// <p>The configuration information for the remote access session request.</p>
         pub fn configuration(
             mut self,
-            signature: crate::model::CreateRemoteAccessSessionConfiguration,
+            input: crate::model::CreateRemoteAccessSessionConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(signature);
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The configuration information for the remote access session request.</p>
@@ -1402,8 +1402,8 @@ pub mod fluent_builders {
         /// framework-based tests and watch the screen in this mode.</p>
         /// </li>
         /// </ul>
-        pub fn interaction_mode(mut self, signature: crate::model::InteractionMode) -> Self {
-            self.inner = self.inner.interaction_mode(signature);
+        pub fn interaction_mode(mut self, input: crate::model::InteractionMode) -> Self {
+            self.inner = self.inner.interaction_mode(input);
             self
         }
         /// <p>The interaction mode of the remote access session. Valid values are:</p>
@@ -1434,8 +1434,8 @@ pub mod fluent_builders {
         /// devices, Device Farm always signs your apps again.</p>
         /// <p>For more information on how Device Farm modifies your uploads during tests, see <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a>
         /// </p>
-        pub fn skip_app_resign(mut self, signature: bool) -> Self {
-            self.inner = self.inner.skip_app_resign(signature);
+        pub fn skip_app_resign(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_app_resign(input);
             self
         }
         /// <p>When set to <code>true</code>, for private devices, Device Farm does not sign your app again. For public
@@ -1508,8 +1508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Human-readable name of the Selenium testing project.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Human-readable name of the Selenium testing project.</p>
@@ -1518,8 +1518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable description of the project.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Human-readable description of the project.</p>
@@ -1528,8 +1528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
-        pub fn vpc_config(mut self, signature: crate::model::TestGridVpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::TestGridVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
         }
         /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
         /// with the short-term URL. </p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>ARN (from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>) to associate
@@ -1614,8 +1614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lifetime, in seconds, of the URL.</p>
-        pub fn expires_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.expires_in_seconds(signature);
+        pub fn expires_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.expires_in_seconds(input);
             self
         }
         /// <p>Lifetime, in seconds, of the URL.</p>
@@ -1684,8 +1684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the upload.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the upload.</p>
@@ -1697,8 +1697,8 @@ pub mod fluent_builders {
         /// uploading an iOS app, the file name must end with the <code>.ipa</code> extension. If you are uploading an
         /// Android app, the file name must end with the <code>.apk</code> extension. For all others, the file name must
         /// end with the <code>.zip</code> file extension.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The upload's file name. The name should not contain any forward slashes (<code>/</code>). If you are
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p> If you call <code>CreateUpload</code> with <code>WEB_APP</code> specified, AWS
         /// Device Farm throws an <code>ArgumentException</code> error.</p>
-        pub fn r#type(mut self, signature: crate::model::UploadType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The upload's upload type.</p>
@@ -1922,8 +1922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The upload's content type (for example, <code>application/octet-stream</code>).</p>
@@ -1994,11 +1994,8 @@ pub mod fluent_builders {
         }
         /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
         /// configurations more easily.</p>
-        pub fn vpce_configuration_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.vpce_configuration_name(signature.into());
+        pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
         /// <p>The friendly name you give to your VPC endpoint configuration, to manage your
@@ -2011,8 +2008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-        pub fn vpce_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_service_name(signature.into());
+        pub fn vpce_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_service_name(input.into());
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
@@ -2025,8 +2022,8 @@ pub mod fluent_builders {
         }
         /// <p>The DNS name of the service running in your VPC that you want Device Farm to
         /// test.</p>
-        pub fn service_dns_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_dns_name(signature.into());
+        pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_dns_name(input.into());
             self
         }
         /// <p>The DNS name of the service running in your VPC that you want Device Farm to
@@ -2041,9 +2038,9 @@ pub mod fluent_builders {
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
         pub fn vpce_configuration_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.vpce_configuration_description(signature.into());
+            self.inner = self.inner.vpce_configuration_description(input.into());
             self
         }
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
@@ -2116,8 +2113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm device pool to delete.</p>
@@ -2187,8 +2184,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
         /// delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile you are requesting to
@@ -2258,8 +2255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the network profile to delete.</p>
@@ -2329,8 +2326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm project to delete.</p>
@@ -2400,8 +2397,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
         /// access.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the session for which you want to delete remote
@@ -2472,8 +2469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the run to delete.</p>
@@ -2548,8 +2545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project to delete, from <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
@@ -2618,8 +2615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm upload to delete.</p>
@@ -2689,8 +2686,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
         /// delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
@@ -2821,8 +2818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device type's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The device type's ARN.</p>
@@ -2892,8 +2889,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
         /// about.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instance you're requesting information
@@ -2963,8 +2960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device pool's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The device pool's ARN.</p>
@@ -3033,8 +3030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device pool's ARN.</p>
-        pub fn device_pool_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_pool_arn(signature.into());
+        pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_pool_arn(input.into());
             self
         }
         /// <p>The device pool's ARN.</p>
@@ -3046,8 +3043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app that is associated with the specified device pool.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The ARN of the app that is associated with the specified device pool.</p>
@@ -3114,8 +3111,8 @@ pub mod fluent_builders {
         /// <p>XCTEST_UI.</p>
         /// </li>
         /// </ul>
-        pub fn test_type(mut self, signature: crate::model::TestType) -> Self {
-            self.inner = self.inner.test_type(signature);
+        pub fn test_type(mut self, input: crate::model::TestType) -> Self {
+            self.inner = self.inner.test_type(input);
             self
         }
         /// <p>The test type for the specified device pool.</p>
@@ -3182,8 +3179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the uploaded test to be run against the device pool.</p>
-        pub fn test(mut self, signature: crate::model::ScheduleRunTest) -> Self {
-            self.inner = self.inner.test(signature);
+        pub fn test(mut self, input: crate::model::ScheduleRunTest) -> Self {
+            self.inner = self.inner.test(input);
             self
         }
         /// <p>Information about the uploaded test to be run against the device pool.</p>
@@ -3195,8 +3192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains information about the settings for a run.</p>
-        pub fn configuration(mut self, signature: crate::model::ScheduleRunConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ScheduleRunConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>An object that contains information about the settings for a run.</p>
@@ -3268,8 +3265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an instance profile.</p>
@@ -3338,8 +3335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The job's ARN.</p>
@@ -3408,8 +3405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the network profile to return information about.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the network profile to return information about.</p>
@@ -3482,8 +3479,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -3553,8 +3550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The project's ARN.</p>
@@ -3624,8 +3621,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
         /// get session information.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session about which you want to
@@ -3695,8 +3692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The run's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run's ARN.</p>
@@ -3765,8 +3762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The suite's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The suite's ARN.</p>
@@ -3835,8 +3832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The test's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The test's ARN.</p>
@@ -3905,8 +3902,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the Selenium testing project, from either <a>CreateTestGridProject</a> or <a>ListTestGridProjects</a>.</p>
@@ -3984,8 +3981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN for the project that this session belongs to. See <a>CreateTestGridProject</a> and <a>ListTestGridProjects</a>.</p>
@@ -3994,8 +3991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID associated with this session.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>An ID associated with this session.</p>
@@ -4004,8 +4001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
-        pub fn session_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(signature.into());
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
         /// <p>An ARN that uniquely identifies a <a>TestGridSession</a>.</p>
@@ -4074,8 +4071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The upload's ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The upload's ARN.</p>
@@ -4146,8 +4143,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
         /// describe.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
@@ -4220,11 +4217,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
         /// requesting information.</p>
-        pub fn remote_access_session_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.remote_access_session_arn(signature.into());
+        pub fn remote_access_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_access_session_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session about which you are
@@ -4237,8 +4231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the app about which you are requesting information.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The ARN of the app about which you are requesting information.</p>
@@ -4307,8 +4301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The run, job, suite, or test ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run, job, suite, or test ARN.</p>
@@ -4329,8 +4323,8 @@ pub mod fluent_builders {
         /// <p>SCREENSHOT</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::ArtifactCategory) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ArtifactCategory) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The artifacts' type.</p>
@@ -4355,8 +4349,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -4427,8 +4421,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -4438,8 +4432,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -4509,8 +4503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The project ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The project ARN.</p>
@@ -4530,8 +4524,8 @@ pub mod fluent_builders {
         /// developer.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::DevicePoolType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DevicePoolType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The device pools' type.</p>
@@ -4555,8 +4549,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -4626,8 +4620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project.</p>
@@ -4637,8 +4631,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -4905,8 +4899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -4916,8 +4910,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -4987,8 +4981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The run's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The run's Amazon Resource Name (ARN).</p>
@@ -4998,8 +4992,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5070,8 +5064,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
         /// profiles.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list network
@@ -5081,8 +5075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-        pub fn r#type(mut self, signature: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
@@ -5095,8 +5089,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5169,8 +5163,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5244,8 +5238,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5319,8 +5313,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5392,8 +5386,8 @@ pub mod fluent_builders {
         /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
         /// returns a list of all projects for the AWS account. You can also specify a project
         /// ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Optional. If no Amazon Resource Name (ARN) is specified, then AWS Device Farm
@@ -5405,8 +5399,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5477,8 +5471,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
         /// information.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project about which you are requesting
@@ -5489,8 +5483,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5561,8 +5555,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
         /// runs.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
@@ -5573,8 +5567,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5644,8 +5638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the job used to list samples.</p>
@@ -5655,8 +5649,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5726,8 +5720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The job's Amazon Resource Name (ARN).</p>
@@ -5737,8 +5731,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -5812,8 +5806,8 @@ pub mod fluent_builders {
         /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
         /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
         /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource or resources for which to list tags. You can associate tags
@@ -5886,8 +5880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Return no more than this number of results.</p>
-        pub fn max_result(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_result(signature);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>Return no more than this number of results.</p>
@@ -5896,8 +5890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>From a response, used to continue a paginated listing. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>From a response, used to continue a paginated listing. </p>
@@ -5966,8 +5960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the session to retrieve.</p>
-        pub fn session_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(signature.into());
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
         /// <p>The ARN of the session to retrieve.</p>
@@ -5976,8 +5970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of sessions to return per response.</p>
-        pub fn max_result(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_result(signature);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>The maximum number of sessions to return per response.</p>
@@ -5986,8 +5980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -6056,8 +6050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a <a>TestGridSession</a>. </p>
-        pub fn session_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_arn(signature.into());
+        pub fn session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_arn(input.into());
             self
         }
         /// <p>The ARN of a <a>TestGridSession</a>. </p>
@@ -6066,8 +6060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limit results to a specified type of artifact.</p>
-        pub fn r#type(mut self, signature: crate::model::TestGridSessionArtifactCategory) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::TestGridSessionArtifactCategory) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Limit results to a specified type of artifact.</p>
@@ -6079,8 +6073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned by a request.</p>
-        pub fn max_result(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_result(signature);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>The maximum number of results to be returned by a request.</p>
@@ -6089,8 +6083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -6159,8 +6153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of a <a>TestGridProject</a>.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>ARN of a <a>TestGridProject</a>.</p>
@@ -6169,8 +6163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions in this state.</p>
-        pub fn status(mut self, signature: crate::model::TestGridSessionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TestGridSessionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Return only sessions in this state.</p>
@@ -6182,8 +6176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions created after this time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Return only sessions created after this time.</p>
@@ -6195,8 +6189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only  sessions created before this time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>Return only  sessions created before this time.</p>
@@ -6208,8 +6202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions that ended after this time.</p>
-        pub fn end_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time_after(signature);
+        pub fn end_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time_after(input);
             self
         }
         /// <p>Return only sessions that ended after this time.</p>
@@ -6221,8 +6215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only sessions that ended before this time.</p>
-        pub fn end_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time_before(signature);
+        pub fn end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time_before(input);
             self
         }
         /// <p>Return only sessions that ended before this time.</p>
@@ -6234,8 +6228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only this many results at a time.</p>
-        pub fn max_result(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_result(signature);
+        pub fn max_result(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_result(input);
             self
         }
         /// <p>Return only this many results at a time.</p>
@@ -6244,8 +6238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token.</p>
@@ -6314,8 +6308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The test suite's Amazon Resource Name (ARN).</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The test suite's Amazon Resource Name (ARN).</p>
@@ -6325,8 +6319,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -6400,8 +6394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique problems' ARNs.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The unique problems' ARNs.</p>
@@ -6411,8 +6405,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -6483,8 +6477,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
         /// uploads.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to list
@@ -6593,8 +6587,8 @@ pub mod fluent_builders {
         /// <p>XCTEST_UI_TEST_SPEC</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::UploadType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::UploadType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of upload.</p>
@@ -6703,8 +6697,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
         /// be used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can
@@ -6775,8 +6769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An integer that specifies the maximum number of items you want to return in the API response.</p>
@@ -6786,8 +6780,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -6860,8 +6854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the offering.</p>
-        pub fn offering_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(signature.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input.into());
             self
         }
         /// <p>The ID of the offering.</p>
@@ -6870,8 +6864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of device slots to purchase in an offering request.</p>
-        pub fn quantity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.quantity(signature);
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.inner = self.inner.quantity(input);
             self
         }
         /// <p>The number of device slots to purchase in an offering request.</p>
@@ -6880,8 +6874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the offering promotion to be applied to the purchase.</p>
-        pub fn offering_promotion_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_promotion_id(signature.into());
+        pub fn offering_promotion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_promotion_id(input.into());
             self
         }
         /// <p>The ID of the offering promotion to be applied to the purchase.</p>
@@ -6955,8 +6949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a request to renew an offering.</p>
-        pub fn offering_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_id(signature.into());
+        pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_id(input.into());
             self
         }
         /// <p>The ID of a request to renew an offering.</p>
@@ -6965,8 +6959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quantity requested in an offering renewal.</p>
-        pub fn quantity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.quantity(signature);
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.inner = self.inner.quantity(input);
             self
         }
         /// <p>The quantity requested in an offering renewal.</p>
@@ -7035,8 +7029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the project for the run to be scheduled.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>The ARN of the project for the run to be scheduled.</p>
@@ -7046,8 +7040,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
         /// See <a>ListUploads</a>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The ARN of an application package to run tests against, created with <a>CreateUpload</a>.
@@ -7057,8 +7051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the device pool for the run to be scheduled.</p>
-        pub fn device_pool_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_pool_arn(signature.into());
+        pub fn device_pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_pool_arn(input.into());
             self
         }
         /// <p>The ARN of the device pool for the run to be scheduled.</p>
@@ -7079,9 +7073,9 @@ pub mod fluent_builders {
         /// request.</p>
         pub fn device_selection_configuration(
             mut self,
-            signature: crate::model::DeviceSelectionConfiguration,
+            input: crate::model::DeviceSelectionConfiguration,
         ) -> Self {
-            self.inner = self.inner.device_selection_configuration(signature);
+            self.inner = self.inner.device_selection_configuration(input);
             self
         }
         /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of
@@ -7100,8 +7094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the run to be scheduled.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the run to be scheduled.</p>
@@ -7110,8 +7104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the test for the run to be scheduled.</p>
-        pub fn test(mut self, signature: crate::model::ScheduleRunTest) -> Self {
-            self.inner = self.inner.test(signature);
+        pub fn test(mut self, input: crate::model::ScheduleRunTest) -> Self {
+            self.inner = self.inner.test(input);
             self
         }
         /// <p>Information about the test for the run to be scheduled.</p>
@@ -7123,8 +7117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the settings for the run to be scheduled.</p>
-        pub fn configuration(mut self, signature: crate::model::ScheduleRunConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ScheduleRunConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Information about the settings for the run to be scheduled.</p>
@@ -7139,9 +7133,9 @@ pub mod fluent_builders {
         /// (in minutes).</p>
         pub fn execution_configuration(
             mut self,
-            signature: crate::model::ExecutionConfiguration,
+            input: crate::model::ExecutionConfiguration,
         ) -> Self {
-            self.inner = self.inner.execution_configuration(signature);
+            self.inner = self.inner.execution_configuration(input);
             self
         }
         /// <p>Specifies configuration information about a test run, such as the execution timeout
@@ -7217,8 +7211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm job to stop.</p>
@@ -7287,8 +7281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the remote access session to stop.</p>
@@ -7360,8 +7354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Represents the Amazon Resource Name (ARN) of the Device Farm run to stop.</p>
@@ -7436,8 +7430,8 @@ pub mod fluent_builders {
         /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
         /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
         /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource or resources to which to add tags. You can associate tags
@@ -7533,8 +7527,8 @@ pub mod fluent_builders {
         /// <code>NETWORK_PROFILE</code>, <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
         /// <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
         /// <code>VPCE_CONFIGURATION</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource or resources from which to delete tags. You can associate
@@ -7624,8 +7618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device instance.</p>
@@ -7634,8 +7628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the profile that you want to associate with the device instance.</p>
-        pub fn profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_arn(signature.into());
+        pub fn profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_arn(input.into());
             self
         }
         /// <p>The ARN of the profile that you want to associate with the device instance.</p>
@@ -7723,8 +7717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
@@ -7733,8 +7727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that represents the name of the device pool to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A string that represents the name of the device pool to update.</p>
@@ -7743,8 +7737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the device pool to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device pool to update.</p>
@@ -7779,8 +7773,8 @@ pub mod fluent_builders {
         /// by running tests.</p>
         /// <p>If you use this parameter in your request, you cannot use the
         /// <code>clearMaxDevices</code> parameter in the same request.</p>
-        pub fn max_devices(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_devices(signature);
+        pub fn max_devices(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_devices(input);
             self
         }
         /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds
@@ -7801,8 +7795,8 @@ pub mod fluent_builders {
         /// that meet the criteria specified in the <code>rules</code> parameter.</p>
         /// <p>If you use this parameter in your request, you cannot use the <code>maxDevices</code>
         /// parameter in the same request.</p>
-        pub fn clear_max_devices(mut self, signature: bool) -> Self {
-            self.inner = self.inner.clear_max_devices(signature);
+        pub fn clear_max_devices(mut self, input: bool) -> Self {
+            self.inner = self.inner.clear_max_devices(input);
             self
         }
         /// <p>Sets whether the <code>maxDevices</code> parameter applies to your device pool. If you set this parameter
@@ -7876,8 +7870,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
@@ -7886,8 +7880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name for your instance profile.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name for your instance profile.</p>
@@ -7896,8 +7890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description for your instance profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description for your instance profile.</p>
@@ -7907,8 +7901,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated choice for whether you want to specify package cleanup. The default value
         /// is <code>false</code> for private devices.</p>
-        pub fn package_cleanup(mut self, signature: bool) -> Self {
-            self.inner = self.inner.package_cleanup(signature);
+        pub fn package_cleanup(mut self, input: bool) -> Self {
+            self.inner = self.inner.package_cleanup(input);
             self
         }
         /// <p>The updated choice for whether you want to specify package cleanup. The default value
@@ -7945,8 +7939,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated choice for whether you want to reboot the device after use. The default
         /// value is <code>true</code>.</p>
-        pub fn reboot_after_use(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reboot_after_use(signature);
+        pub fn reboot_after_use(mut self, input: bool) -> Self {
+            self.inner = self.inner.reboot_after_use(input);
             self
         }
         /// <p>The updated choice for whether you want to reboot the device after use. The default
@@ -8017,8 +8011,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
         /// profile settings.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project for which you want to update network
@@ -8029,8 +8023,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the network profile about which you are returning
         /// information.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the network profile about which you are returning
@@ -8041,8 +8035,8 @@ pub mod fluent_builders {
         }
         /// <p>The description of the network profile about which you are returning
         /// information.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the network profile about which you are returning
@@ -8052,8 +8046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
-        pub fn r#type(mut self, signature: crate::model::NetworkProfileType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::NetworkProfileType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of network profile to return information about. Valid values are listed here.</p>
@@ -8066,8 +8060,8 @@ pub mod fluent_builders {
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
         /// 104857600.</p>
-        pub fn uplink_bandwidth_bits(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_bandwidth_bits(signature);
+        pub fn uplink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_bandwidth_bits(input);
             self
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -8078,8 +8072,8 @@ pub mod fluent_builders {
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
         /// 104857600.</p>
-        pub fn downlink_bandwidth_bits(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_bandwidth_bits(signature);
+        pub fn downlink_bandwidth_bits(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_bandwidth_bits(input);
             self
         }
         /// <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -8090,8 +8084,8 @@ pub mod fluent_builders {
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
         /// 2000.</p>
-        pub fn uplink_delay_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_delay_ms(signature);
+        pub fn uplink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_delay_ms(input);
             self
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
@@ -8102,8 +8096,8 @@ pub mod fluent_builders {
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
         /// 2000.</p>
-        pub fn downlink_delay_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_delay_ms(signature);
+        pub fn downlink_delay_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_delay_ms(input);
             self
         }
         /// <p>Delay time for all packets to destination in milliseconds as an integer from 0 to
@@ -8114,8 +8108,8 @@ pub mod fluent_builders {
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
         /// 0 to 2000.</p>
-        pub fn uplink_jitter_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.uplink_jitter_ms(signature);
+        pub fn uplink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.uplink_jitter_ms(input);
             self
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
@@ -8126,8 +8120,8 @@ pub mod fluent_builders {
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
         /// 0 to 2000.</p>
-        pub fn downlink_jitter_ms(mut self, signature: i64) -> Self {
-            self.inner = self.inner.downlink_jitter_ms(signature);
+        pub fn downlink_jitter_ms(mut self, input: i64) -> Self {
+            self.inner = self.inner.downlink_jitter_ms(input);
             self
         }
         /// <p>Time variation in the delay of received packets in milliseconds as an integer from
@@ -8138,8 +8132,8 @@ pub mod fluent_builders {
         }
         /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
         /// percent.</p>
-        pub fn uplink_loss_percent(mut self, signature: i32) -> Self {
-            self.inner = self.inner.uplink_loss_percent(signature);
+        pub fn uplink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.uplink_loss_percent(input);
             self
         }
         /// <p>Proportion of transmitted packets that fail to arrive from 0 to 100
@@ -8149,8 +8143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
-        pub fn downlink_loss_percent(mut self, signature: i32) -> Self {
-            self.inner = self.inner.downlink_loss_percent(signature);
+        pub fn downlink_loss_percent(mut self, input: i32) -> Self {
+            self.inner = self.inner.downlink_loss_percent(input);
             self
         }
         /// <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
@@ -8220,8 +8214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the project whose name to update.</p>
@@ -8230,8 +8224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that represents the new name of the project that you are updating.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A string that represents the new name of the project that you are updating.</p>
@@ -8240,8 +8234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes a test run in the project executes before it times out.</p>
-        pub fn default_job_timeout_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.default_job_timeout_minutes(signature);
+        pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_job_timeout_minutes(input);
             self
         }
         /// <p>The number of minutes a test run in the project executes before it times out.</p>
@@ -8310,8 +8304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the project to update.</p>
-        pub fn project_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_arn(signature.into());
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input.into());
             self
         }
         /// <p>ARN of the project to update.</p>
@@ -8320,8 +8314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable name for the project.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Human-readable name for the project.</p>
@@ -8330,8 +8324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Human-readable description for the project.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Human-readable description for the project.</p>
@@ -8340,8 +8334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
-        pub fn vpc_config(mut self, signature: crate::model::TestGridVpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::TestGridVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>The VPC security groups and subnets that are attached to a project.</p>
@@ -8413,8 +8407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
@@ -8424,8 +8418,8 @@ pub mod fluent_builders {
         }
         /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
         /// name must end with the <code>.yaml</code> or <code>.yml</code> file extension.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The upload's test spec file name. The name must not contain any forward slashes (/). The test spec file
@@ -8435,8 +8429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The upload's content type (for example, <code>application/x-yaml</code>).</p>
@@ -8445,8 +8439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
-        pub fn edit_content(mut self, signature: bool) -> Self {
-            self.inner = self.inner.edit_content(signature);
+        pub fn edit_content(mut self, input: bool) -> Self {
+            self.inner = self.inner.edit_content(input);
             self
         }
         /// <p>Set to true if the YAML file has changed and must be updated. Otherwise, set to false.</p>
@@ -8516,8 +8510,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
         /// update.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
@@ -8528,11 +8522,8 @@ pub mod fluent_builders {
         }
         /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
         /// easily.</p>
-        pub fn vpce_configuration_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.vpce_configuration_name(signature.into());
+        pub fn vpce_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_configuration_name(input.into());
             self
         }
         /// <p>The friendly name you give to your VPC endpoint configuration to manage your configurations more
@@ -8545,8 +8536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
-        pub fn vpce_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpce_service_name(signature.into());
+        pub fn vpce_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpce_service_name(input.into());
             self
         }
         /// <p>The name of the VPC endpoint service running in your AWS account that you want Device Farm to test.</p>
@@ -8559,8 +8550,8 @@ pub mod fluent_builders {
         }
         /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
         /// be in use on the internet.</p>
-        pub fn service_dns_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_dns_name(signature.into());
+        pub fn service_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_dns_name(input.into());
             self
         }
         /// <p>The DNS (domain) name used to connect to your private service in your VPC. The DNS name must not already
@@ -8575,9 +8566,9 @@ pub mod fluent_builders {
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>
         pub fn vpce_configuration_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.vpce_configuration_description(signature.into());
+            self.inner = self.inner.vpce_configuration_description(input.into());
             self
         }
         /// <p>An optional description that provides details about your VPC endpoint configuration.</p>

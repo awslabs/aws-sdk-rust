@@ -437,8 +437,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique system-generated ID of the job for which you want to confirm
         /// receipt.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID of the job for which you want to confirm
@@ -450,8 +450,8 @@ pub mod fluent_builders {
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
         /// is being worked on by only one job worker. Get this number from the response of the
         /// <a>PollForJobs</a> request that returned this job.</p>
-        pub fn nonce(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(signature.into());
+        pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(input.into());
             self
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
@@ -523,8 +523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID of the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID of the job.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
         /// is being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a> request.</p>
-        pub fn nonce(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(signature.into());
+        pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(input.into());
             self
         }
         /// <p>A system-generated random number that AWS CodePipeline uses to ensure that the job
@@ -546,8 +546,8 @@ pub mod fluent_builders {
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
         /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
@@ -619,8 +619,8 @@ pub mod fluent_builders {
         }
         /// <p>The category of the custom action, such as a build action or a test
         /// action.</p>
-        pub fn category(mut self, signature: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(signature);
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
         /// <p>The category of the custom action, such as a build action or a test
@@ -634,8 +634,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the service used in the custom action, such as AWS
         /// CodeDeploy.</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the service used in the custom action, such as AWS
@@ -645,8 +645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version identifier of the custom action.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version identifier of the custom action.</p>
@@ -655,8 +655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>URLs that provide users information about this custom action.</p>
-        pub fn settings(mut self, signature: crate::model::ActionTypeSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::ActionTypeSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>URLs that provide users information about this custom action.</p>
@@ -702,8 +702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
-        pub fn input_artifact_details(mut self, signature: crate::model::ArtifactDetails) -> Self {
-            self.inner = self.inner.input_artifact_details(signature);
+        pub fn input_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
+            self.inner = self.inner.input_artifact_details(input);
             self
         }
         /// <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -715,8 +715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
-        pub fn output_artifact_details(mut self, signature: crate::model::ArtifactDetails) -> Self {
-            self.inner = self.inner.output_artifact_details(signature);
+        pub fn output_artifact_details(mut self, input: crate::model::ArtifactDetails) -> Self {
+            self.inner = self.inner.output_artifact_details(input);
             self
         }
         /// <p>The details of the output artifact of the action, such as its commit ID.</p>
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the structure of actions and stages to be performed in the pipeline.
         /// </p>
-        pub fn pipeline(mut self, signature: crate::model::PipelineDeclaration) -> Self {
-            self.inner = self.inner.pipeline(signature);
+        pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
+            self.inner = self.inner.pipeline(input);
             self
         }
         /// <p>Represents the structure of actions and stages to be performed in the pipeline.
@@ -912,8 +912,8 @@ pub mod fluent_builders {
         }
         /// <p>The category of the custom action that you want to delete, such as source or
         /// deploy.</p>
-        pub fn category(mut self, signature: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(signature);
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
         /// <p>The category of the custom action that you want to delete, such as source or
@@ -927,8 +927,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the service used in the custom action, such as AWS
         /// CodeDeploy.</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the service used in the custom action, such as AWS
@@ -938,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the custom action to delete.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the custom action to delete.</p>
@@ -1008,8 +1008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to be deleted.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline to be deleted.</p>
@@ -1082,8 +1082,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the webhook you want to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the webhook you want to delete.</p>
@@ -1154,8 +1154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the webhook you want to deregister.</p>
-        pub fn webhook_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_name(signature.into());
+        pub fn webhook_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_name(input.into());
             self
         }
         /// <p>The name of the webhook you want to deregister.</p>
@@ -1226,8 +1226,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
         /// one stage to another.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline in which you want to disable the flow of artifacts from
@@ -1241,8 +1241,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the stage where you want to disable the inbound or outbound transition
         /// of artifacts.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage where you want to disable the inbound or outbound transition
@@ -1255,8 +1255,8 @@ pub mod fluent_builders {
         /// being processed by the actions in that stage (inbound), or prevented from transitioning
         /// from the stage after they have been processed by the actions in that stage
         /// (outbound).</p>
-        pub fn transition_type(mut self, signature: crate::model::StageTransitionType) -> Self {
-            self.inner = self.inner.transition_type(signature);
+        pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
+            self.inner = self.inner.transition_type(input);
             self
         }
         /// <p>Specifies whether artifacts are prevented from transitioning into the stage and
@@ -1273,8 +1273,8 @@ pub mod fluent_builders {
         /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
         /// approval or manual tests. This message is displayed in the pipeline console
         /// UI.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason given to the user that a stage is disabled, such as waiting for manual
@@ -1346,8 +1346,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
         /// stage to another.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline in which you want to enable the flow of artifacts from one
@@ -1361,8 +1361,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the stage where you want to enable the transition of artifacts, either
         /// into the stage (inbound) or from that stage to the next stage (outbound).</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage where you want to enable the transition of artifacts, either
@@ -1374,8 +1374,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
         /// actions in that stage (inbound) or whether already processed artifacts are allowed to
         /// transition to the next stage (outbound).</p>
-        pub fn transition_type(mut self, signature: crate::model::StageTransitionType) -> Self {
-            self.inner = self.inner.transition_type(signature);
+        pub fn transition_type(mut self, input: crate::model::StageTransitionType) -> Self {
+            self.inner = self.inner.transition_type(input);
             self
         }
         /// <p>Specifies whether artifacts are allowed to enter the stage and be processed by the
@@ -1484,8 +1484,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn category(mut self, signature: crate::model::ActionCategory) -> Self {
-            self.inner = self.inner.category(signature);
+        pub fn category(mut self, input: crate::model::ActionCategory) -> Self {
+            self.inner = self.inner.category(input);
             self
         }
         /// <p>Defines what kind of action can be taken in the stage. The following are the valid
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
         }
         /// <p>The creator of an action type that was created with any supported integration model.
         /// There are two valid values: <code>AWS</code> and <code>ThirdParty</code>.</p>
-        pub fn owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(signature.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
         /// <p>The creator of an action type that was created with any supported integration model.
@@ -1543,8 +1543,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the action type being called. The provider name is specified when the
         /// action type is created.</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the action type being called. The provider name is specified when the
@@ -1554,8 +1554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string that describes the action type version.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>A string that describes the action type version.</p>
@@ -1630,8 +1630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID for the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID for the job.</p>
@@ -1703,8 +1703,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the pipeline for which you want to get information. Pipeline names must
         /// be unique under an AWS user account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline for which you want to get information. Pipeline names must
@@ -1715,8 +1715,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the pipeline. If you do not specify a version, defaults to
         /// the current version.</p>
-        pub fn version(mut self, signature: i32) -> Self {
-            self.inner = self.inner.version(signature);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
         /// <p>The version number of the pipeline. If you do not specify a version, defaults to
@@ -1788,8 +1788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline about which you want to get execution details.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline about which you want to get execution details.</p>
@@ -1802,8 +1802,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the pipeline execution about which you want to get execution
         /// details.</p>
-        pub fn pipeline_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(signature.into());
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
         /// <p>The ID of the pipeline execution about which you want to get execution
@@ -1882,8 +1882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline about which you want to get information.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline about which you want to get information.</p>
@@ -1959,8 +1959,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique system-generated ID used for identifying the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID used for identifying the job.</p>
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
         /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
@@ -2041,8 +2041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the pipeline for which you want to list action execution history.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p> The name of the pipeline for which you want to list action execution history.</p>
@@ -2054,8 +2054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Input information used to filter action execution history.</p>
-        pub fn filter(mut self, signature: crate::model::ActionExecutionFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ActionExecutionFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Input information used to filter action execution history.</p>
@@ -2074,8 +2074,8 @@ pub mod fluent_builders {
         /// <p>Detailed execution history is available for executions run on or after February
         /// 21, 2019.</p>
         /// </note>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2092,8 +2092,8 @@ pub mod fluent_builders {
         }
         /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
         /// which can be used to return the next set of action executions in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that was returned from the previous <code>ListActionExecutions</code> call,
@@ -2164,8 +2164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filters the list of action types to those created by a specified entity.</p>
-        pub fn action_owner_filter(mut self, signature: crate::model::ActionOwner) -> Self {
-            self.inner = self.inner.action_owner_filter(signature);
+        pub fn action_owner_filter(mut self, input: crate::model::ActionOwner) -> Self {
+            self.inner = self.inner.action_owner_filter(input);
             self
         }
         /// <p>Filters the list of action types to those created by a specified entity.</p>
@@ -2178,8 +2178,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous list action types call, which can
         /// be used to return the next set of action types in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous list action types call, which can
@@ -2189,8 +2189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region to filter on for the list of action types.</p>
-        pub fn region_filter(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_filter(signature.into());
+        pub fn region_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_filter(input.into());
             self
         }
         /// <p>The Region to filter on for the list of action types.</p>
@@ -2263,8 +2263,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the pipeline for which you want to get execution summary
         /// information.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline for which you want to get execution summary
@@ -2280,8 +2280,8 @@ pub mod fluent_builders {
         /// results, make another call with the returned nextToken value. Pipeline history is
         /// limited to the most recent 12 months, based on pipeline execution start times. Default
         /// value is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2295,8 +2295,8 @@ pub mod fluent_builders {
         /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
         /// call, which can be used to return the next set of pipeline executions in the
         /// list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that was returned from the previous <code>ListPipelineExecutions</code>
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous list pipelines call. It can be
         /// used to return the next set of pipelines in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous list pipelines call. It can be
@@ -2381,8 +2381,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
         /// pipelines, make another call with the returned nextToken value. The minimum value you
         /// can specify is 1. The maximum accepted value is 1000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of pipelines to return in a single call. To retrieve the remaining
@@ -2454,8 +2454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
@@ -2466,8 +2466,8 @@ pub mod fluent_builders {
         /// <p>The token that was returned from the previous API call, which would be used to return
         /// the next page of the list. The ListTagsforResource call lists all available tags in one
         /// call and does not use pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that was returned from the previous API call, which would be used to return
@@ -2478,8 +2478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -2551,8 +2551,8 @@ pub mod fluent_builders {
         }
         /// <p>The token that was returned from the previous ListWebhooks call, which can be used
         /// to return the next set of webhooks in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that was returned from the previous ListWebhooks call, which can be used
@@ -2563,8 +2563,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
         /// results, make another call with the returned nextToken value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. To retrieve the remaining
@@ -2643,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents information about an action type.</p>
-        pub fn action_type_id(mut self, signature: crate::model::ActionTypeId) -> Self {
-            self.inner = self.inner.action_type_id(signature);
+        pub fn action_type_id(mut self, input: crate::model::ActionTypeId) -> Self {
+            self.inner = self.inner.action_type_id(input);
             self
         }
         /// <p>Represents information about an action type.</p>
@@ -2656,8 +2656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-        pub fn max_batch_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_batch_size(signature);
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -2761,8 +2761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents information about an action type.</p>
-        pub fn action_type_id(mut self, signature: crate::model::ActionTypeId) -> Self {
-            self.inner = self.inner.action_type_id(signature);
+        pub fn action_type_id(mut self, input: crate::model::ActionTypeId) -> Self {
+            self.inner = self.inner.action_type_id(input);
             self
         }
         /// <p>Represents information about an action type.</p>
@@ -2774,8 +2774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
-        pub fn max_batch_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_batch_size(signature);
+        pub fn max_batch_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_batch_size(input);
             self
         }
         /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -2845,8 +2845,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the pipeline that starts processing the revision to the
         /// source.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline that starts processing the revision to the
@@ -2859,8 +2859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage that contains the action that acts on the revision.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage that contains the action that acts on the revision.</p>
@@ -2869,8 +2869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the action that processes the revision.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action that processes the revision.</p>
@@ -2879,8 +2879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
-        pub fn action_revision(mut self, signature: crate::model::ActionRevision) -> Self {
-            self.inner = self.inner.action_revision(signature);
+        pub fn action_revision(mut self, input: crate::model::ActionRevision) -> Self {
+            self.inner = self.inner.action_revision(input);
             self
         }
         /// <p>Represents information about the version (or revision) of an action.</p>
@@ -2953,8 +2953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline that contains the action. </p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline that contains the action. </p>
@@ -2966,8 +2966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage that contains the action.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage that contains the action.</p>
@@ -2976,8 +2976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the action for which approval is requested.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action for which approval is requested.</p>
@@ -2986,8 +2986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about the result of the approval request.</p>
-        pub fn result(mut self, signature: crate::model::ApprovalResult) -> Self {
-            self.inner = self.inner.result(signature);
+        pub fn result(mut self, input: crate::model::ApprovalResult) -> Self {
+            self.inner = self.inner.result(input);
             self
         }
         /// <p>Represents information about the result of the approval request.</p>
@@ -3001,8 +3001,8 @@ pub mod fluent_builders {
         /// <p>The system-generated token used to identify a unique approval request. The token
         /// for each open approval request can be obtained using the <a>GetPipelineState</a> action. It is used to validate that the approval
         /// request corresponding to this token is still valid.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The system-generated token used to identify a unique approval request. The token
@@ -3075,8 +3075,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
         /// from <code>PollForJobs</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID of the job that failed. This is the same ID returned
@@ -3086,8 +3086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The details about the failure of a job.</p>
-        pub fn failure_details(mut self, signature: crate::model::FailureDetails) -> Self {
-            self.inner = self.inner.failure_details(signature);
+        pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
+            self.inner = self.inner.failure_details(input);
             self
         }
         /// <p>The details about the failure of a job.</p>
@@ -3161,8 +3161,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
         /// returned from <code>PollForJobs</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique system-generated ID of the job that succeeded. This is the same ID
@@ -3173,8 +3173,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the current revision of the artifact successfully worked on by the
         /// job.</p>
-        pub fn current_revision(mut self, signature: crate::model::CurrentRevision) -> Self {
-            self.inner = self.inner.current_revision(signature);
+        pub fn current_revision(mut self, input: crate::model::CurrentRevision) -> Self {
+            self.inner = self.inner.current_revision(input);
             self
         }
         /// <p>The ID of the current revision of the artifact successfully worked on by the
@@ -3191,8 +3191,8 @@ pub mod fluent_builders {
         /// token to identify the running instance of the action. It can be reused to return more
         /// information about the progress of the custom action. When the action is complete, no
         /// continuation token should be supplied.</p>
-        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(signature.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(input.into());
             self
         }
         /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
@@ -3209,8 +3209,8 @@ pub mod fluent_builders {
         }
         /// <p>The execution details of the successful job, such as the actions taken by the job
         /// worker.</p>
-        pub fn execution_details(mut self, signature: crate::model::ExecutionDetails) -> Self {
-            self.inner = self.inner.execution_details(signature);
+        pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
+            self.inner = self.inner.execution_details(input);
             self
         }
         /// <p>The execution details of the successful job, such as the actions taken by the job
@@ -3312,8 +3312,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the job that failed. This is the same ID returned from
         /// <code>PollForThirdPartyJobs</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the job that failed. This is the same ID returned from
@@ -3324,8 +3324,8 @@ pub mod fluent_builders {
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
         /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
@@ -3335,8 +3335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about failure details.</p>
-        pub fn failure_details(mut self, signature: crate::model::FailureDetails) -> Self {
-            self.inner = self.inner.failure_details(signature);
+        pub fn failure_details(mut self, input: crate::model::FailureDetails) -> Self {
+            self.inner = self.inner.failure_details(input);
             self
         }
         /// <p>Represents information about failure details.</p>
@@ -3410,8 +3410,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the job that successfully completed. This is the same ID returned from
         /// <code>PollForThirdPartyJobs</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the job that successfully completed. This is the same ID returned from
@@ -3422,8 +3422,8 @@ pub mod fluent_builders {
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
         /// the calling entity is allowed access to the job and its details.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The clientToken portion of the clientId and clientToken pair used to verify that
@@ -3433,8 +3433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents information about a current revision.</p>
-        pub fn current_revision(mut self, signature: crate::model::CurrentRevision) -> Self {
-            self.inner = self.inner.current_revision(signature);
+        pub fn current_revision(mut self, input: crate::model::CurrentRevision) -> Self {
+            self.inner = self.inner.current_revision(input);
             self
         }
         /// <p>Represents information about a current revision.</p>
@@ -3450,8 +3450,8 @@ pub mod fluent_builders {
         /// token to identify the running instance of the action. It can be reused to return more
         /// information about the progress of the partner action. When the action is complete, no
         /// continuation token should be supplied.</p>
-        pub fn continuation_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.continuation_token(signature.into());
+        pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.continuation_token(input.into());
             self
         }
         /// <p>A token generated by a job worker, such as an AWS CodeDeploy deployment ID, that a
@@ -3468,8 +3468,8 @@ pub mod fluent_builders {
         }
         /// <p>The details of the actions taken and results produced on an artifact as it passes
         /// through stages in the pipeline. </p>
-        pub fn execution_details(mut self, signature: crate::model::ExecutionDetails) -> Self {
-            self.inner = self.inner.execution_details(signature);
+        pub fn execution_details(mut self, input: crate::model::ExecutionDetails) -> Self {
+            self.inner = self.inner.execution_details(input);
             self
         }
         /// <p>The details of the actions taken and results produced on an artifact as it passes
@@ -3551,8 +3551,8 @@ pub mod fluent_builders {
         /// name, the pipeline name, and the action name. Give the webhook a unique name that helps
         /// you identify it. You might name the webhook after the pipeline and action it targets so
         /// that you can easily recognize what it's used for later.</p>
-        pub fn webhook(mut self, signature: crate::model::WebhookDefinition) -> Self {
-            self.inner = self.inner.webhook(signature);
+        pub fn webhook(mut self, input: crate::model::WebhookDefinition) -> Self {
+            self.inner = self.inner.webhook(input);
             self
         }
         /// <p>The detail provided in an input file to create the webhook, such as the webhook
@@ -3646,8 +3646,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an existing webhook created with PutWebhook to register with a
         /// supported third party. </p>
-        pub fn webhook_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_name(signature.into());
+        pub fn webhook_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_name(input.into());
             self
         }
         /// <p>The name of an existing webhook created with PutWebhook to register with a
@@ -3720,8 +3720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline that contains the failed stage.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline that contains the failed stage.</p>
@@ -3733,8 +3733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the failed stage to be retried.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the failed stage to be retried.</p>
@@ -3744,8 +3744,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
         /// the failed stage</p>
-        pub fn pipeline_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(signature.into());
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
         /// <p>The ID of the pipeline execution in the failed stage to be retried. Use the <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
@@ -3759,8 +3759,8 @@ pub mod fluent_builders {
         }
         /// <p>The scope of the retry attempt. Currently, the only supported value is
         /// FAILED_ACTIONS.</p>
-        pub fn retry_mode(mut self, signature: crate::model::StageRetryMode) -> Self {
-            self.inner = self.inner.retry_mode(signature);
+        pub fn retry_mode(mut self, input: crate::model::StageRetryMode) -> Self {
+            self.inner = self.inner.retry_mode(input);
             self
         }
         /// <p>The scope of the retry attempt. Currently, the only supported value is
@@ -3834,8 +3834,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to start.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the pipeline to start.</p>
@@ -3845,8 +3845,8 @@ pub mod fluent_builders {
         }
         /// <p>The system-generated unique ID used to identify a unique execution
         /// request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The system-generated unique ID used to identify a unique execution
@@ -3924,8 +3924,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to stop.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to stop.</p>
@@ -3939,8 +3939,8 @@ pub mod fluent_builders {
         /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
         /// <code>GetPipelineState</code> action to retrieve the current
         /// pipelineExecutionId.</p>
-        pub fn pipeline_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_id(signature.into());
+        pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_id(input.into());
             self
         }
         /// <p>The ID of the pipeline execution to be stopped in the current stage. Use the
@@ -3958,8 +3958,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This option can lead to failed or out-of-sequence tasks.</p>
         /// </note>
-        pub fn abandon(mut self, signature: bool) -> Self {
-            self.inner = self.inner.abandon(signature);
+        pub fn abandon(mut self, input: bool) -> Self {
+            self.inner = self.inner.abandon(input);
             self
         }
         /// <p>Use this option to stop the pipeline execution by abandoning, rather than finishing,
@@ -3972,8 +3972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>Use this option to enter comments, such as the reason the pipeline was stopped.</p>
@@ -4043,8 +4043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource you want to add tags to.</p>
@@ -4130,8 +4130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource to remove tags from.</p>
@@ -4220,8 +4220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action type definition for the action type to be updated.</p>
-        pub fn action_type(mut self, signature: crate::model::ActionTypeDeclaration) -> Self {
-            self.inner = self.inner.action_type(signature);
+        pub fn action_type(mut self, input: crate::model::ActionTypeDeclaration) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
         /// <p>The action type definition for the action type to be updated.</p>
@@ -4296,8 +4296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to be updated.</p>
-        pub fn pipeline(mut self, signature: crate::model::PipelineDeclaration) -> Self {
-            self.inner = self.inner.pipeline(signature);
+        pub fn pipeline(mut self, input: crate::model::PipelineDeclaration) -> Self {
+            self.inner = self.inner.pipeline(input);
             self
         }
         /// <p>The name of the pipeline to be updated.</p>

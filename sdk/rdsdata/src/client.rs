@@ -202,8 +202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -212,8 +212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(signature.into());
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input.into());
             self
         }
         /// <p>The SQL statement to run.</p>
@@ -232,8 +232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(signature.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -242,8 +242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(signature.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -299,8 +299,8 @@ pub mod fluent_builders {
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this
         /// parameter.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of a transaction that was started by using the
@@ -387,8 +387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -397,8 +397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -407,8 +407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(signature.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -417,8 +417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(signature.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -488,8 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -498,8 +498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -508,8 +508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of the transaction to end and commit.</p>
@@ -585,11 +585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
-        pub fn db_cluster_or_instance_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_cluster_or_instance_arn(signature.into());
+        pub fn db_cluster_or_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_or_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the Aurora Serverless DB cluster.</p>
@@ -601,8 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
-        pub fn aws_secret_store_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_secret_store_arn(signature.into());
+        pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_secret_store_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
@@ -617,8 +614,8 @@ pub mod fluent_builders {
         /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
         /// statement is permitted, including data definition, data manipulation, and commit
         /// statements. </p>
-        pub fn sql_statements(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql_statements(signature.into());
+        pub fn sql_statements(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql_statements(input.into());
             self
         }
         /// <p>One or more SQL statements to run on the DB cluster.</p>
@@ -633,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(signature.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -643,8 +640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database schema.</p>
-        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(signature.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -719,8 +716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -729,8 +726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -739,8 +736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SQL statement to run.</p>
-        pub fn sql(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sql(signature.into());
+        pub fn sql(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sql(input.into());
             self
         }
         /// <p>The SQL statement to run.</p>
@@ -749,8 +746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database.</p>
-        pub fn database(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(signature.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The name of the database.</p>
@@ -762,8 +759,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
         /// </note>
-        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(signature.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The name of the database schema.</p>
@@ -801,8 +798,8 @@ pub mod fluent_builders {
         /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
         /// transaction that you want to include the SQL statement in.</p>
         /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of a transaction that was started by using the
@@ -817,8 +814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
-        pub fn include_result_metadata(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_result_metadata(signature);
+        pub fn include_result_metadata(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_result_metadata(input);
             self
         }
         /// <p>A value that indicates whether to include metadata in the results.</p>
@@ -834,8 +831,8 @@ pub mod fluent_builders {
         /// the call times out. When a DDL statement terminates before it is finished
         /// running, it can result in errors and possibly corrupted data structures.</p>
         /// </important>
-        pub fn continue_after_timeout(mut self, signature: bool) -> Self {
-            self.inner = self.inner.continue_after_timeout(signature);
+        pub fn continue_after_timeout(mut self, input: bool) -> Self {
+            self.inner = self.inner.continue_after_timeout(input);
             self
         }
         /// <p>A value that indicates whether to continue running the statement after
@@ -851,8 +848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Options that control how the result set is returned.</p>
-        pub fn result_set_options(mut self, signature: crate::model::ResultSetOptions) -> Self {
-            self.inner = self.inner.result_set_options(signature);
+        pub fn result_set_options(mut self, input: crate::model::ResultSetOptions) -> Self {
+            self.inner = self.inner.result_set_options(input);
             self
         }
         /// <p>Options that control how the result set is returned.</p>
@@ -924,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
@@ -934,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
@@ -944,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The identifier of the transaction to roll back.</p>

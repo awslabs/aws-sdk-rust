@@ -342,8 +342,8 @@ pub mod fluent_builders {
         /// administrator account. This must be an Organizations member account.
         /// For more information about Organizations, see
         /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
-        pub fn admin_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account(signature.into());
+        pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
@@ -419,8 +419,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
         /// <code>PutAppsList</code>, <code>ListAppsLists</code>, and <code>GetAppsList</code>.</p>
-        pub fn list_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(signature.into());
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the applications list that you want to delete. You can retrieve this ID from
@@ -552,8 +552,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
         /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the policy that you want to delete. You can retrieve this ID from
@@ -592,8 +592,8 @@ pub mod fluent_builders {
         /// specify that only resources in specific accounts or with specific tags are in scope of the
         /// policy, those accounts and resources are handled by the policy. All others are out of scope.
         /// If you don't specify tags or accounts, all resources are in scope. </p>
-        pub fn delete_all_policy_resources(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_all_policy_resources(signature);
+        pub fn delete_all_policy_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_all_policy_resources(input);
             self
         }
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
         /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.</p>
-        pub fn list_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(signature.into());
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the protocols list that you want to delete. You can retrieve this ID from
@@ -886,8 +886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
-        pub fn list_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(signature.into());
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
@@ -896,8 +896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-        pub fn default_list(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_list(signature);
+        pub fn default_list(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_list(input);
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
@@ -990,8 +990,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
         /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
@@ -1001,8 +1001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
-        pub fn member_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account(signature.into());
+        pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
@@ -1207,8 +1207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the policy for which you want to get the attack information.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the policy for which you want to get the attack information.</p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
         /// for.</p>
-        pub fn member_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account_id(signature.into());
+        pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
         /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
         /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
@@ -1251,8 +1251,8 @@ pub mod fluent_builders {
         /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
         /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
@@ -1269,8 +1269,8 @@ pub mod fluent_builders {
         /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
         /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
         /// from the previous response to get information about another batch of objects.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
@@ -1284,8 +1284,8 @@ pub mod fluent_builders {
         /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
         /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
-        pub fn list_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.list_id(signature.into());
+        pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.list_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
@@ -1366,8 +1366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
-        pub fn default_list(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_list(signature);
+        pub fn default_list(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_list(input);
             self
         }
         /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
@@ -1436,8 +1436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
@@ -1446,8 +1446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID that you want the details for.</p>
-        pub fn member_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_account(signature.into());
+        pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that you want the details for.</p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the resource that has violations.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource that has violations.</p>
@@ -1476,8 +1476,8 @@ pub mod fluent_builders {
         /// <code>AWS::NetworkFirewall::FirewallPolicy</code>, and
         /// <code>AWS::EC2::Subnet</code>.
         /// </p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
@@ -1556,8 +1556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
-        pub fn default_lists(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_lists(signature);
+        pub fn default_lists(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_lists(input);
             self
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
@@ -1568,8 +1568,8 @@ pub mod fluent_builders {
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
         /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
@@ -1583,8 +1583,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
@@ -1658,8 +1658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
@@ -1674,8 +1674,8 @@ pub mod fluent_builders {
         /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
         /// <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -1694,8 +1694,8 @@ pub mod fluent_builders {
         /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
         /// use to get another batch of <code>PolicyComplianceStatus</code> objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
@@ -1776,8 +1776,8 @@ pub mod fluent_builders {
         /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
         /// value of <code>NextToken</code> from the previous response to get information about another
         /// batch of member account IDs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
@@ -1794,8 +1794,8 @@ pub mod fluent_builders {
         /// for this request. If you have more IDs than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
         /// use to get another batch of member account IDs.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
@@ -1873,8 +1873,8 @@ pub mod fluent_builders {
         /// second and subsequent <code>ListPolicies</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
         /// <code>PolicySummary</code> objects.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
@@ -1892,8 +1892,8 @@ pub mod fluent_builders {
         /// the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of
         /// <code>PolicySummary</code> objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
@@ -1965,8 +1965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
-        pub fn default_lists(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_lists(signature);
+        pub fn default_lists(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_lists(input);
             self
         }
         /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
@@ -1977,8 +1977,8 @@ pub mod fluent_builders {
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
         /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
@@ -1992,8 +1992,8 @@ pub mod fluent_builders {
         /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
         /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
@@ -2065,8 +2065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
@@ -2135,8 +2135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager applications list to be created.</p>
-        pub fn apps_list(mut self, signature: crate::model::AppsListData) -> Self {
-            self.inner = self.inner.apps_list(signature);
+        pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
+            self.inner = self.inner.apps_list(input);
             self
         }
         /// <p>The details of the Firewall Manager applications list to be created.</p>
@@ -2230,8 +2230,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
         /// Firewall Manager.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
@@ -2245,8 +2245,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
         /// Firewall Manager activity. </p>
-        pub fn sns_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_role_name(signature.into());
+        pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_role_name(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
@@ -2351,8 +2351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager policy to be created.</p>
-        pub fn policy(mut self, signature: crate::model::Policy) -> Self {
-            self.inner = self.inner.policy(signature);
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
         /// <p>The details of the Firewall Manager policy to be created.</p>
@@ -2438,8 +2438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details of the Firewall Manager protocols list to be created.</p>
-        pub fn protocols_list(mut self, signature: crate::model::ProtocolsListData) -> Self {
-            self.inner = self.inner.protocols_list(signature);
+        pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
+            self.inner = self.inner.protocols_list(input);
             self
         }
         /// <p>The details of the Firewall Manager protocols list to be created.</p>
@@ -2528,8 +2528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
@@ -2615,8 +2615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>

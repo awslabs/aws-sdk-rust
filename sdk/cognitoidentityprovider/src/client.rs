@@ -881,8 +881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
@@ -969,8 +969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -979,8 +979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username for the user.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the user.</p>
@@ -989,8 +989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The group name.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The group name.</p>
@@ -1061,8 +1061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for which you want to confirm user registration.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for which you want to confirm user registration.</p>
@@ -1071,8 +1071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name for which you want to confirm user registration.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name for which you want to confirm user registration.</p>
@@ -1253,8 +1253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where the user will be created.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where the user will be created.</p>
@@ -1265,8 +1265,8 @@ pub mod fluent_builders {
         /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
         /// between 1 and 128 characters. After the user is created, the username cannot be
         /// changed.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the user. Must be unique within the user pool. Must be a UTF-8 string
@@ -1403,8 +1403,8 @@ pub mod fluent_builders {
         /// you specified when you created the user pool. To reset the account after that time
         /// limit, you must call <code>AdminCreateUser</code> again, specifying
         /// <code>"RESEND"</code> for the <code>MessageAction</code> parameter.</p>
-        pub fn temporary_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.temporary_password(signature.into());
+        pub fn temporary_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.temporary_password(input.into());
             self
         }
         /// <p>The user's temporary password. This password must conform to the password policy that
@@ -1435,8 +1435,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is set to <code>False</code>, the API throws an
         /// <code>AliasExistsException</code> error if the alias already exists. The default
         /// value is <code>False</code>.</p>
-        pub fn force_alias_creation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_alias_creation(signature);
+        pub fn force_alias_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_alias_creation(input);
             self
         }
         /// <p>This parameter is only used if the <code>phone_number_verified</code> or
@@ -1457,8 +1457,8 @@ pub mod fluent_builders {
         /// exists and reset the expiration limit on the user's account. Set to
         /// <code>"SUPPRESS"</code> to suppress sending the message. Only one value can be
         /// specified.</p>
-        pub fn message_action(mut self, signature: crate::model::MessageActionType) -> Self {
-            self.inner = self.inner.message_action(signature);
+        pub fn message_action(mut self, input: crate::model::MessageActionType) -> Self {
+            self.inner = self.inner.message_action(input);
             self
         }
         /// <p>Set to <code>"RESEND"</code> to resend the invitation message to a user that already
@@ -1638,8 +1638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to delete the user.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to delete the user.</p>
@@ -1648,8 +1648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user you wish to delete.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user you wish to delete.</p>
@@ -1720,8 +1720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to delete user attributes.</p>
@@ -1730,8 +1730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user from which you would like to delete attributes.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user from which you would like to delete attributes.</p>
@@ -1848,8 +1848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -1858,8 +1858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user to be disabled.</p>
-        pub fn user(mut self, signature: crate::model::ProviderUserIdentifierType) -> Self {
-            self.inner = self.inner.user(signature);
+        pub fn user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
+            self.inner = self.inner.user(input);
             self
         }
         /// <p>The user to be disabled.</p>
@@ -1932,8 +1932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to disable the user.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to disable the user.</p>
@@ -1942,8 +1942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user you wish to disable.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user you wish to disable.</p>
@@ -2013,8 +2013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to enable the user.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to enable the user.</p>
@@ -2023,8 +2023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user you wish to enable.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user you wish to enable.</p>
@@ -2094,8 +2094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -2104,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -2114,8 +2114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -2185,8 +2185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -2195,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -2205,8 +2205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -2278,8 +2278,8 @@ pub mod fluent_builders {
         }
         /// <p>The user pool ID for the user pool where you want to get information about the
         /// user.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to get information about the
@@ -2289,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user you wish to retrieve.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user you wish to retrieve.</p>
@@ -2379,8 +2379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -2389,8 +2389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID.</p>
@@ -2456,8 +2456,8 @@ pub mod fluent_builders {
         /// using the SRP process to verify passwords.</p>
         /// </li>
         /// </ul>
-        pub fn auth_flow(mut self, signature: crate::model::AuthFlowType) -> Self {
-            self.inner = self.inner.auth_flow(signature);
+        pub fn auth_flow(mut self, input: crate::model::AuthFlowType) -> Self {
+            self.inner = self.inner.auth_flow(input);
             self
         }
         /// <p>The authentication flow for this call to execute. The API action will depend on this
@@ -2757,11 +2757,8 @@ pub mod fluent_builders {
         }
         /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
         /// <code>AdminInitiateAuth</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
@@ -2776,8 +2773,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn context_data(mut self, signature: crate::model::ContextDataType) -> Self {
-            self.inner = self.inner.context_data(signature);
+        pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
+            self.inner = self.inner.context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -2871,8 +2868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -2892,11 +2889,8 @@ pub mod fluent_builders {
         /// ignored.</p>
         /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in
         /// Cognito user pools.</p>
-        pub fn destination_user(
-            mut self,
-            signature: crate::model::ProviderUserIdentifierType,
-        ) -> Self {
-            self.inner = self.inner.destination_user(signature);
+        pub fn destination_user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
+            self.inner = self.inner.destination_user(input);
             self
         }
         /// <p>The existing user in the user pool to be linked to the external identity provider user
@@ -2938,8 +2932,8 @@ pub mod fluent_builders {
         /// <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>, Cognito will
         /// automatically parse the default unique identifier found in the subject from the SAML
         /// token.</p>
-        pub fn source_user(mut self, signature: crate::model::ProviderUserIdentifierType) -> Self {
-            self.inner = self.inner.source_user(signature);
+        pub fn source_user(mut self, input: crate::model::ProviderUserIdentifierType) -> Self {
+            self.inner = self.inner.source_user(input);
             self
         }
         /// <p>An external identity provider account for a user who does not currently exist yet in
@@ -3031,8 +3025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -3041,8 +3035,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -3051,8 +3045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The limit of the devices request.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit of the devices request.</p>
@@ -3061,8 +3055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -3135,8 +3129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The username for the user.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the user.</p>
@@ -3145,8 +3139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -3155,8 +3149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The limit of the request to list groups.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit of the request to list groups.</p>
@@ -3166,8 +3160,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3238,8 +3232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -3248,8 +3242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool username or an alias.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user pool username or an alias.</p>
@@ -3258,8 +3252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of authentication events to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of authentication events to return.</p>
@@ -3268,8 +3262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -3339,8 +3333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -3349,8 +3343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username for the user.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username for the user.</p>
@@ -3359,8 +3353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The group name.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The group name.</p>
@@ -3458,8 +3452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to reset the user's password.</p>
@@ -3468,8 +3462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user whose password you wish to reset.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user whose password you wish to reset.</p>
@@ -3642,8 +3636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Cognito user pool.</p>
@@ -3652,8 +3646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID.</p>
@@ -3662,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
-        pub fn challenge_name(mut self, signature: crate::model::ChallengeNameType) -> Self {
-            self.inner = self.inner.challenge_name(signature);
+        pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
+            self.inner = self.inner.challenge_name(input);
             self
         }
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html">AdminInitiateAuth</a>.</p>
@@ -3780,8 +3774,8 @@ pub mod fluent_builders {
         /// determines that the caller needs to go through another challenge, they return a session
         /// with other challenge parameters. This session should be passed as it is to the next
         /// <code>RespondToAuthChallenge</code> API call.</p>
-        pub fn session(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session(signature.into());
+        pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session(input.into());
             self
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
@@ -3795,11 +3789,8 @@ pub mod fluent_builders {
         }
         /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
         /// <code>AdminRespondToAuthChallenge</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The analytics metadata for collecting Amazon Pinpoint metrics for
@@ -3814,8 +3805,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn context_data(mut self, signature: crate::model::ContextDataType) -> Self {
-            self.inner = self.inner.context_data(signature);
+        pub fn context_data(mut self, input: crate::model::ContextDataType) -> Self {
+            self.inner = self.inner.context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -3986,8 +3977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SMS text message MFA settings.</p>
-        pub fn sms_mfa_settings(mut self, signature: crate::model::SmsMfaSettingsType) -> Self {
-            self.inner = self.inner.sms_mfa_settings(signature);
+        pub fn sms_mfa_settings(mut self, input: crate::model::SmsMfaSettingsType) -> Self {
+            self.inner = self.inner.sms_mfa_settings(input);
             self
         }
         /// <p>The SMS text message MFA settings.</p>
@@ -4001,9 +3992,9 @@ pub mod fluent_builders {
         /// <p>The time-based one-time password software token MFA settings.</p>
         pub fn software_token_mfa_settings(
             mut self,
-            signature: crate::model::SoftwareTokenMfaSettingsType,
+            input: crate::model::SoftwareTokenMfaSettingsType,
         ) -> Self {
-            self.inner = self.inner.software_token_mfa_settings(signature);
+            self.inner = self.inner.software_token_mfa_settings(input);
             self
         }
         /// <p>The time-based one-time password software token MFA settings.</p>
@@ -4015,8 +4006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool username or alias.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user pool username or alias.</p>
@@ -4025,8 +4016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -4104,8 +4095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to set the user's password.</p>
@@ -4114,8 +4105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user whose password you wish to set.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user whose password you wish to set.</p>
@@ -4124,8 +4115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for the user.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the user.</p>
@@ -4136,8 +4127,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>True</code> if the password is permanent, <code>False</code> if it is
         /// temporary.</p>
-        pub fn permanent(mut self, signature: bool) -> Self {
-            self.inner = self.inner.permanent(signature);
+        pub fn permanent(mut self, input: bool) -> Self {
+            self.inner = self.inner.permanent(input);
             self
         }
         /// <p>
@@ -4212,8 +4203,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the user pool that contains the user that you are setting options
         /// for.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The ID of the user pool that contains the user that you are setting options
@@ -4223,8 +4214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user that you are setting options for.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user that you are setting options for.</p>
@@ -4314,8 +4305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -4324,8 +4315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool username.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user pool username.</p>
@@ -4334,8 +4325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication event ID.</p>
-        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(signature.into());
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(input.into());
             self
         }
         /// <p>The authentication event ID.</p>
@@ -4344,8 +4335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication event feedback value.</p>
-        pub fn feedback_value(mut self, signature: crate::model::FeedbackValueType) -> Self {
-            self.inner = self.inner.feedback_value(signature);
+        pub fn feedback_value(mut self, input: crate::model::FeedbackValueType) -> Self {
+            self.inner = self.inner.feedback_value(input);
             self
         }
         /// <p>The authentication event feedback value.</p>
@@ -4418,8 +4409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -4428,8 +4419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -4438,8 +4429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -4450,9 +4441,9 @@ pub mod fluent_builders {
         /// <p>The status indicating whether a device has been remembered or not.</p>
         pub fn device_remembered_status(
             mut self,
-            signature: crate::model::DeviceRememberedStatusType,
+            input: crate::model::DeviceRememberedStatusType,
         ) -> Self {
-            self.inner = self.inner.device_remembered_status(signature);
+            self.inner = self.inner.device_remembered_status(input);
             self
         }
         /// <p>The status indicating whether a device has been remembered or not.</p>
@@ -4548,8 +4539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to update user attributes.</p>
@@ -4558,8 +4549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user for whom you want to update user attributes.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user for whom you want to update user attributes.</p>
@@ -4737,8 +4728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -4747,8 +4738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -4826,8 +4817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -4837,8 +4828,8 @@ pub mod fluent_builders {
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
         /// service. This allows authentication of the user as part of the MFA setup process.</p>
-        pub fn session(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session(signature.into());
+        pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session(input.into());
             self
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
@@ -4908,8 +4899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The old password.</p>
-        pub fn previous_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.previous_password(signature.into());
+        pub fn previous_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.previous_password(input.into());
             self
         }
         /// <p>The old password.</p>
@@ -4921,8 +4912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password.</p>
-        pub fn proposed_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposed_password(signature.into());
+        pub fn proposed_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposed_password(input.into());
             self
         }
         /// <p>The new password.</p>
@@ -4934,8 +4925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -5005,8 +4996,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -5015,8 +5006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -5027,9 +5018,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the device secret verifier.</p>
         pub fn device_secret_verifier_config(
             mut self,
-            signature: crate::model::DeviceSecretVerifierConfigType,
+            input: crate::model::DeviceSecretVerifierConfigType,
         ) -> Self {
-            self.inner = self.inner.device_secret_verifier_config(signature);
+            self.inner = self.inner.device_secret_verifier_config(input);
             self
         }
         /// <p>The configuration of the device secret verifier.</p>
@@ -5041,8 +5032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device name.</p>
-        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(signature.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The device name.</p>
@@ -5111,8 +5102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
@@ -5122,8 +5113,8 @@ pub mod fluent_builders {
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
         /// user pool client and username plus the client ID in the message.</p>
-        pub fn secret_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_hash(signature.into());
+        pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_hash(input.into());
             self
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
@@ -5134,8 +5125,8 @@ pub mod fluent_builders {
         }
         /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
         /// password.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user for whom you want to enter a code to retrieve a forgotten
@@ -5146,8 +5137,8 @@ pub mod fluent_builders {
         }
         /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
         /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">ForgotPassword</a>.</p>
-        pub fn confirmation_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.confirmation_code(signature.into());
+        pub fn confirmation_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.confirmation_code(input.into());
             self
         }
         /// <p>The confirmation code sent by a user's request to retrieve a forgotten password. For
@@ -5160,8 +5151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password sent by a user's request to retrieve a forgotten password.</p>
@@ -5171,11 +5162,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>ConfirmForgotPassword</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -5190,8 +5178,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -5351,8 +5339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the app client associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The ID of the app client associated with the user pool.</p>
@@ -5362,8 +5350,8 @@ pub mod fluent_builders {
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
         /// user pool client and username plus the client ID in the message.</p>
-        pub fn secret_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_hash(signature.into());
+        pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_hash(input.into());
             self
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
@@ -5373,8 +5361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user whose registration you wish to confirm.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user whose registration you wish to confirm.</p>
@@ -5383,8 +5371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The confirmation code sent by a user's request to confirm registration.</p>
-        pub fn confirmation_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.confirmation_code(signature.into());
+        pub fn confirmation_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.confirmation_code(input.into());
             self
         }
         /// <p>The confirmation code sent by a user's request to confirm registration.</p>
@@ -5401,8 +5389,8 @@ pub mod fluent_builders {
         /// different user, the API call will migrate the alias from the previous user to the newly
         /// created user being confirmed. If set to <code>False</code>, the API will throw an
         /// <b>AliasExistsException</b> error.</p>
-        pub fn force_alias_creation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_alias_creation(signature);
+        pub fn force_alias_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_alias_creation(input);
             self
         }
         /// <p>Boolean to be specified to force user confirmation irrespective of existing alias. By
@@ -5417,11 +5405,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>ConfirmSignUp</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -5436,8 +5421,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -5595,8 +5580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group. Must be unique.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group. Must be unique.</p>
@@ -5605,8 +5590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -5615,8 +5600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string containing the description of the group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A string containing the description of the group.</p>
@@ -5625,8 +5610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The role ARN for the group.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The role ARN for the group.</p>
@@ -5648,8 +5633,8 @@ pub mod fluent_builders {
         /// two groups have different role ARNs, the <code>cognito:preferred_role</code> claim is
         /// not set in users' tokens.</p>
         /// <p>The default <code>Precedence</code> value is null.</p>
-        pub fn precedence(mut self, signature: i32) -> Self {
-            self.inner = self.inner.precedence(signature);
+        pub fn precedence(mut self, input: i32) -> Self {
+            self.inner = self.inner.precedence(input);
             self
         }
         /// <p>A nonnegative integer value that specifies the precedence of this group relative to
@@ -5731,8 +5716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -5741,8 +5726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -5754,8 +5739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider type.</p>
-        pub fn provider_type(mut self, signature: crate::model::IdentityProviderTypeType) -> Self {
-            self.inner = self.inner.provider_type(signature);
+        pub fn provider_type(mut self, input: crate::model::IdentityProviderTypeType) -> Self {
+            self.inner = self.inner.provider_type(input);
             self
         }
         /// <p>The identity provider type.</p>
@@ -6104,8 +6089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -6116,8 +6101,8 @@ pub mod fluent_builders {
         /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
         /// endpoint where the resource server is located. For example,
         /// <code>https://my-weather-api.example.com</code>.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>A unique resource server identifier for the resource server. This could be an HTTPS
@@ -6128,8 +6113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the resource server.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A friendly name for the resource server.</p>
@@ -6217,8 +6202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job name for the user import job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The job name for the user import job.</p>
@@ -6227,8 +6212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -6237,11 +6222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
-        pub fn cloud_watch_logs_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_role_arn(signature.into());
+        pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
             self
         }
         /// <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.</p>
@@ -6331,8 +6313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string used to name the user pool.</p>
-        pub fn pool_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pool_name(signature.into());
+        pub fn pool_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pool_name(input.into());
             self
         }
         /// <p>A string used to name the user pool.</p>
@@ -6341,8 +6323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policies associated with the new user pool.</p>
-        pub fn policies(mut self, signature: crate::model::UserPoolPolicyType) -> Self {
-            self.inner = self.inner.policies(signature);
+        pub fn policies(mut self, input: crate::model::UserPoolPolicyType) -> Self {
+            self.inner = self.inner.policies(input);
             self
         }
         /// <p>The policies associated with the new user pool.</p>
@@ -6364,8 +6346,8 @@ pub mod fluent_builders {
         /// <p>For adding permission using the CLI, see <a href="https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html"> add-permission
         /// </a>.</p>
         /// </note>
-        pub fn lambda_config(mut self, signature: crate::model::LambdaConfigType) -> Self {
-            self.inner = self.inner.lambda_config(signature);
+        pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
+            self.inner = self.inner.lambda_config(input);
             self
         }
         /// <p>The Lambda trigger configuration information for the new user pool.</p>
@@ -6445,11 +6427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string representing the SMS verification message.</p>
-        pub fn sms_verification_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sms_verification_message(signature.into());
+        pub fn sms_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sms_verification_message(input.into());
             self
         }
         /// <p>A string representing the SMS verification message.</p>
@@ -6462,11 +6441,8 @@ pub mod fluent_builders {
         }
         /// <p>A string representing the email verification message. EmailVerificationMessage is
         /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-        pub fn email_verification_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.email_verification_message(signature.into());
+        pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_verification_message(input.into());
             self
         }
         /// <p>A string representing the email verification message. EmailVerificationMessage is
@@ -6480,11 +6456,8 @@ pub mod fluent_builders {
         }
         /// <p>A string representing the email verification subject. EmailVerificationSubject is
         /// allowed only if <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount">EmailSendingAccount</a> is DEVELOPER. </p>
-        pub fn email_verification_subject(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.email_verification_subject(signature.into());
+        pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_verification_subject(input.into());
             self
         }
         /// <p>A string representing the email verification subject. EmailVerificationSubject is
@@ -6500,9 +6473,9 @@ pub mod fluent_builders {
         /// permission to access the user's information.</p>
         pub fn verification_message_template(
             mut self,
-            signature: crate::model::VerificationMessageTemplateType,
+            input: crate::model::VerificationMessageTemplateType,
         ) -> Self {
-            self.inner = self.inner.verification_message_template(signature);
+            self.inner = self.inner.verification_message_template(input);
             self
         }
         /// <p>The template for the verification message that the user sees when the app requests
@@ -6515,11 +6488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string representing the SMS authentication message.</p>
-        pub fn sms_authentication_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sms_authentication_message(signature.into());
+        pub fn sms_authentication_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sms_authentication_message(input.into());
             self
         }
         /// <p>A string representing the SMS authentication message.</p>
@@ -6531,8 +6501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies MFA configuration details.</p>
-        pub fn mfa_configuration(mut self, signature: crate::model::UserPoolMfaType) -> Self {
-            self.inner = self.inner.mfa_configuration(signature);
+        pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
+            self.inner = self.inner.mfa_configuration(input);
             self
         }
         /// <p>Specifies MFA configuration details.</p>
@@ -6546,9 +6516,9 @@ pub mod fluent_builders {
         /// <p>The device configuration.</p>
         pub fn device_configuration(
             mut self,
-            signature: crate::model::DeviceConfigurationType,
+            input: crate::model::DeviceConfigurationType,
         ) -> Self {
-            self.inner = self.inner.device_configuration(signature);
+            self.inner = self.inner.device_configuration(input);
             self
         }
         /// <p>The device configuration.</p>
@@ -6560,11 +6530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email configuration.</p>
-        pub fn email_configuration(
-            mut self,
-            signature: crate::model::EmailConfigurationType,
-        ) -> Self {
-            self.inner = self.inner.email_configuration(signature);
+        pub fn email_configuration(mut self, input: crate::model::EmailConfigurationType) -> Self {
+            self.inner = self.inner.email_configuration(input);
             self
         }
         /// <p>The email configuration.</p>
@@ -6576,8 +6543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SMS configuration.</p>
-        pub fn sms_configuration(mut self, signature: crate::model::SmsConfigurationType) -> Self {
-            self.inner = self.inner.sms_configuration(signature);
+        pub fn sms_configuration(mut self, input: crate::model::SmsConfigurationType) -> Self {
+            self.inner = self.inner.sms_configuration(input);
             self
         }
         /// <p>The SMS configuration.</p>
@@ -6618,9 +6585,9 @@ pub mod fluent_builders {
         /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
         pub fn admin_create_user_config(
             mut self,
-            signature: crate::model::AdminCreateUserConfigType,
+            input: crate::model::AdminCreateUserConfigType,
         ) -> Self {
-            self.inner = self.inner.admin_create_user_config(signature);
+            self.inner = self.inner.admin_create_user_config(input);
             self
         }
         /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
@@ -6652,8 +6619,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to enable advanced security risk detection. Set the key
         /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
-        pub fn user_pool_add_ons(mut self, signature: crate::model::UserPoolAddOnsType) -> Self {
-            self.inner = self.inner.user_pool_add_ons(signature);
+        pub fn user_pool_add_ons(mut self, input: crate::model::UserPoolAddOnsType) -> Self {
+            self.inner = self.inner.user_pool_add_ons(input);
             self
         }
         /// <p>Used to enable advanced security risk detection. Set the key
@@ -6671,9 +6638,9 @@ pub mod fluent_builders {
         /// been set. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.</p>
         pub fn username_configuration(
             mut self,
-            signature: crate::model::UsernameConfigurationType,
+            input: crate::model::UsernameConfigurationType,
         ) -> Self {
-            self.inner = self.inner.username_configuration(signature);
+            self.inner = self.inner.username_configuration(input);
             self
         }
         /// <p>You can choose to set case sensitivity on the username input for the selected sign-in
@@ -6695,9 +6662,9 @@ pub mod fluent_builders {
         /// the recovery method where SMS is preferred over email.</p>
         pub fn account_recovery_setting(
             mut self,
-            signature: crate::model::AccountRecoverySettingType,
+            input: crate::model::AccountRecoverySettingType,
         ) -> Self {
-            self.inner = self.inner.account_recovery_setting(signature);
+            self.inner = self.inner.account_recovery_setting(input);
             self
         }
         /// <p>Use this setting to define which verified available method a user can use to recover
@@ -6776,8 +6743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to create a user pool client.</p>
@@ -6786,8 +6753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client name for the user pool client you would like to create.</p>
-        pub fn client_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_name(signature.into());
+        pub fn client_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_name(input.into());
             self
         }
         /// <p>The client name for the user pool client you would like to create.</p>
@@ -6797,8 +6764,8 @@ pub mod fluent_builders {
         }
         /// <p>Boolean to specify whether you want to generate a secret for the user pool client
         /// being created.</p>
-        pub fn generate_secret(mut self, signature: bool) -> Self {
-            self.inner = self.inner.generate_secret(signature);
+        pub fn generate_secret(mut self, input: bool) -> Self {
+            self.inner = self.inner.generate_secret(input);
             self
         }
         /// <p>Boolean to specify whether you want to generate a secret for the user pool client
@@ -6809,8 +6776,8 @@ pub mod fluent_builders {
         }
         /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
         /// be used.</p>
-        pub fn refresh_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.refresh_token_validity(signature);
+        pub fn refresh_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.refresh_token_validity(input);
             self
         }
         /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
@@ -6822,8 +6789,8 @@ pub mod fluent_builders {
         /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
         /// valid and cannot be used. This value will be overridden if you have entered a value in
         /// TokenValidityUnits.</p>
-        pub fn access_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.access_token_validity(signature);
+        pub fn access_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.access_token_validity(input);
             self
         }
         /// <p>The time limit, between 5 minutes and 1 day, after which the access token is no longer
@@ -6836,8 +6803,8 @@ pub mod fluent_builders {
         /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
         /// valid and cannot be used. This value will be overridden if you have entered a value in
         /// TokenValidityUnits.</p>
-        pub fn id_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.id_token_validity(signature);
+        pub fn id_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.id_token_validity(input);
             self
         }
         /// <p>The time limit, between 5 minutes and 1 day, after which the ID token is no longer
@@ -6849,11 +6816,8 @@ pub mod fluent_builders {
         }
         /// <p>The units in which the validity times are represented in. Default for RefreshToken is
         /// days, and default for ID and access tokens are hours.</p>
-        pub fn token_validity_units(
-            mut self,
-            signature: crate::model::TokenValidityUnitsType,
-        ) -> Self {
-            self.inner = self.inner.token_validity_units(signature);
+        pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
+            self.inner = self.inner.token_validity_units(input);
             self
         }
         /// <p>The units in which the validity times are represented in. Default for RefreshToken is
@@ -7108,8 +7072,8 @@ pub mod fluent_builders {
         /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
         /// purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
-        pub fn default_redirect_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_redirect_uri(signature.into());
+        pub fn default_redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_redirect_uri(input.into());
             self
         }
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -7195,8 +7159,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
         /// with Cognito user pools.</p>
-        pub fn allowed_o_auth_flows_user_pool_client(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allowed_o_auth_flows_user_pool_client(signature);
+        pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
+            self.inner = self.inner.allowed_o_auth_flows_user_pool_client(input);
             self
         }
         /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
@@ -7218,9 +7182,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn analytics_configuration(
             mut self,
-            signature: crate::model::AnalyticsConfigurationType,
+            input: crate::model::AnalyticsConfigurationType,
         ) -> Self {
-            self.inner = self.inner.analytics_configuration(signature);
+            self.inner = self.inner.analytics_configuration(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
@@ -7267,9 +7231,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn prevent_user_existence_errors(
             mut self,
-            signature: crate::model::PreventUserExistenceErrorTypes,
+            input: crate::model::PreventUserExistenceErrorTypes,
         ) -> Self {
-            self.inner = self.inner.prevent_user_existence_errors(signature);
+            self.inner = self.inner.prevent_user_existence_errors(input);
             self
         }
         /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
@@ -7309,8 +7273,8 @@ pub mod fluent_builders {
         /// <p>Enables or disables token revocation. For more information
         /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
         /// <p>If you don't include this parameter, token revocation is automatically enabled for the new user pool client.</p>
-        pub fn enable_token_revocation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_token_revocation(signature);
+        pub fn enable_token_revocation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_token_revocation(input);
             self
         }
         /// <p>Enables or disables token revocation. For more information
@@ -7381,8 +7345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain string.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain string.</p>
@@ -7391,8 +7355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -7406,11 +7370,8 @@ pub mod fluent_builders {
         /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
         /// instead.</p>
         /// <p>For more information about the hosted domain and custom domains, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring a User Pool Domain</a>.</p>
-        pub fn custom_domain_config(
-            mut self,
-            signature: crate::model::CustomDomainConfigType,
-        ) -> Self {
-            self.inner = self.inner.custom_domain_config(signature);
+        pub fn custom_domain_config(mut self, input: crate::model::CustomDomainConfigType) -> Self {
+            self.inner = self.inner.custom_domain_config(input);
             self
         }
         /// <p>The configuration for a custom domain that hosts the sign-up and sign-in webpages for
@@ -7488,8 +7449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -7498,8 +7459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -7568,8 +7529,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -7578,8 +7539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -7651,8 +7612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that hosts the resource server.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that hosts the resource server.</p>
@@ -7661,8 +7622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the resource server.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The identifier for the resource server.</p>
@@ -7731,8 +7692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token from a request to delete a user.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token from a request to delete a user.</p>
@@ -7822,8 +7783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access token used in the request to delete user attributes.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token used in the request to delete user attributes.</p>
@@ -7892,8 +7853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool you want to delete.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool you want to delete.</p>
@@ -7962,8 +7923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to delete the client.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to delete the client.</p>
@@ -7972,8 +7933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
@@ -8042,8 +8003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain string.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain string.</p>
@@ -8052,8 +8013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -8122,8 +8083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -8132,8 +8093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -8205,8 +8166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that hosts the resource server.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that hosts the resource server.</p>
@@ -8215,8 +8176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the resource server</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The identifier for the resource server</p>
@@ -8285,8 +8246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -8295,8 +8256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID.</p>
@@ -8365,8 +8326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -8375,8 +8336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID for the user import job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID for the user import job.</p>
@@ -8445,8 +8406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool you want to describe.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool you want to describe.</p>
@@ -8516,8 +8477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool you want to describe.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool you want to describe.</p>
@@ -8526,8 +8487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID of the app associated with the user pool.</p>
@@ -8596,8 +8557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain string.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain string.</p>
@@ -8666,8 +8627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token for the forgotten device request.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token for the forgotten device request.</p>
@@ -8676,8 +8637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -8770,8 +8731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the client associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The ID of the client associated with the user pool.</p>
@@ -8781,8 +8742,8 @@ pub mod fluent_builders {
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
         /// user pool client and username plus the client ID in the message.</p>
-        pub fn secret_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_hash(signature.into());
+        pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_hash(input.into());
             self
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
@@ -8794,8 +8755,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -8810,8 +8771,8 @@ pub mod fluent_builders {
         }
         /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
         /// password.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user for whom you want to enter a code to reset a forgotten
@@ -8822,11 +8783,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>ForgotPassword</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -8987,8 +8945,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are to be imported into.</p>
@@ -9057,8 +9015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -9067,8 +9025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -9138,8 +9096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -9148,8 +9106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -9218,8 +9176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -9228,8 +9186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider ID.</p>
-        pub fn idp_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idp_identifier(signature.into());
+        pub fn idp_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idp_identifier(input.into());
             self
         }
         /// <p>The identity provider ID.</p>
@@ -9301,8 +9259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -9374,8 +9332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -9384,8 +9342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client ID for the client app.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID for the client app.</p>
@@ -9455,8 +9413,8 @@ pub mod fluent_builders {
         }
         /// <p>The access token returned by the server response to get information about the
         /// user.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token returned by the server response to get information about the
@@ -9544,8 +9502,8 @@ pub mod fluent_builders {
         }
         /// <p>The access token returned by the server response to get the user attribute
         /// verification code.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token returned by the server response to get the user attribute
@@ -9556,8 +9514,8 @@ pub mod fluent_builders {
         }
         /// <p>The attribute name returned by the server response to get the user attribute
         /// verification code.</p>
-        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(signature.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The attribute name returned by the server response to get the user attribute
@@ -9715,8 +9673,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -9787,8 +9745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -9927,8 +9885,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>
         /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
-        pub fn auth_flow(mut self, signature: crate::model::AuthFlowType) -> Self {
-            self.inner = self.inner.auth_flow(signature);
+        pub fn auth_flow(mut self, input: crate::model::AuthFlowType) -> Self {
+            self.inner = self.inner.auth_flow(input);
             self
         }
         /// <p>The authentication flow for this call to execute. The API action will depend on this
@@ -10211,8 +10169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app client ID.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID.</p>
@@ -10222,11 +10180,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>InitiateAuth</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -10241,8 +10196,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -10316,8 +10271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access tokens for the request to list devices.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access tokens for the request to list devices.</p>
@@ -10326,8 +10281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The limit of the device request.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit of the device request.</p>
@@ -10336,8 +10291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token for the list request.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>The pagination token for the list request.</p>
@@ -10410,8 +10365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -10420,8 +10375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The limit of the request to list groups.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit of the request to list groups.</p>
@@ -10431,8 +10386,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -10502,8 +10457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -10512,8 +10467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of identity providers to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of identity providers to return.</p>
@@ -10522,8 +10477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -10592,8 +10547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -10602,8 +10557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource servers to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of resource servers to return.</p>
@@ -10612,8 +10567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token.</p>
@@ -10685,8 +10640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
@@ -10755,8 +10710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -10765,8 +10720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of import jobs you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of import jobs you want the request to return.</p>
@@ -10777,8 +10732,8 @@ pub mod fluent_builders {
         /// <p>An identifier that was returned from the previous call to
         /// <code>ListUserImportJobs</code>, which can be used to return the next set of import
         /// jobs in the list.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to
@@ -10852,8 +10807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to list user pool clients.</p>
@@ -10863,8 +10818,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results you want the request to return when listing the user
         /// pool clients.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return when listing the user
@@ -10875,8 +10830,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -10947,8 +10902,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -10959,8 +10914,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results you want the request to return when listing the user
         /// pools.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return when listing the user
@@ -11030,8 +10985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool on which the search should be performed.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool on which the search should be performed.</p>
@@ -11061,8 +11016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of users to be returned.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Maximum number of users to be returned.</p>
@@ -11072,8 +11027,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -11164,8 +11119,8 @@ pub mod fluent_builders {
         /// <p>Custom attributes are not searchable.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api">Searching for Users Using the ListUsers API</a> and <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples of Using the ListUsers API</a> in the <i>Amazon Cognito
         /// Developer Guide</i>.</p>
-        pub fn filter(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter(signature.into());
+        pub fn filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter(input.into());
             self
         }
         /// <p>A filter string of the form "<i>AttributeName</i>
@@ -11313,8 +11268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -11323,8 +11278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -11333,8 +11288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The limit of the request to list users.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The limit of the request to list users.</p>
@@ -11344,8 +11299,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -11433,8 +11388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the client associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The ID of the client associated with the user pool.</p>
@@ -11444,8 +11399,8 @@ pub mod fluent_builders {
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
         /// user pool client and username plus the client ID in the message.</p>
-        pub fn secret_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_hash(signature.into());
+        pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_hash(input.into());
             self
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
@@ -11457,8 +11412,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -11472,8 +11427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user to whom you wish to resend a confirmation code.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user to whom you wish to resend a confirmation code.</p>
@@ -11483,11 +11438,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>ResendConfirmationCode</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -11662,8 +11614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app client ID.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID.</p>
@@ -11674,8 +11626,8 @@ pub mod fluent_builders {
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
         /// <p>
         /// <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.</p>
-        pub fn challenge_name(mut self, signature: crate::model::ChallengeNameType) -> Self {
-            self.inner = self.inner.challenge_name(signature);
+        pub fn challenge_name(mut self, input: crate::model::ChallengeNameType) -> Self {
+            self.inner = self.inner.challenge_name(input);
             self
         }
         /// <p>The challenge name. For more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">InitiateAuth</a>.</p>
@@ -11693,8 +11645,8 @@ pub mod fluent_builders {
         /// determines that the caller needs to go through another challenge, they return a session
         /// with other challenge parameters. This session should be passed as it is to the next
         /// <code>RespondToAuthChallenge</code> API call.</p>
-        pub fn session(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session(signature.into());
+        pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session(input.into());
             self
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
@@ -11821,11 +11773,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
         /// <code>RespondToAuthChallenge</code> calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for
@@ -11840,8 +11789,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -12005,8 +11954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token that you want to revoke.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The token that you want to revoke.</p>
@@ -12015,8 +11964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client ID for the token that you want to revoke.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID for the token that you want to revoke.</p>
@@ -12025,8 +11974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
-        pub fn client_secret(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_secret(signature.into());
+        pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_secret(input.into());
             self
         }
         /// <p>The secret for the client ID. This is required only if the client ID has a secret.</p>
@@ -12102,8 +12051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID. </p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID. </p>
@@ -12117,8 +12066,8 @@ pub mod fluent_builders {
         /// <p>Otherwise, <code>ClientId</code> is mapped to the client. When the client ID is not
         /// null, the user pool configuration is overridden and the risk configuration for the
         /// client is used instead.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The app client ID. If <code>ClientId</code> is null, then the risk configuration is
@@ -12134,11 +12083,9 @@ pub mod fluent_builders {
         /// <p>The compromised credentials risk configuration.</p>
         pub fn compromised_credentials_risk_configuration(
             mut self,
-            signature: crate::model::CompromisedCredentialsRiskConfigurationType,
+            input: crate::model::CompromisedCredentialsRiskConfigurationType,
         ) -> Self {
-            self.inner = self
-                .inner
-                .compromised_credentials_risk_configuration(signature);
+            self.inner = self.inner.compromised_credentials_risk_configuration(input);
             self
         }
         /// <p>The compromised credentials risk configuration.</p>
@@ -12154,9 +12101,9 @@ pub mod fluent_builders {
         /// <p>The account takeover risk configuration.</p>
         pub fn account_takeover_risk_configuration(
             mut self,
-            signature: crate::model::AccountTakeoverRiskConfigurationType,
+            input: crate::model::AccountTakeoverRiskConfigurationType,
         ) -> Self {
-            self.inner = self.inner.account_takeover_risk_configuration(signature);
+            self.inner = self.inner.account_takeover_risk_configuration(input);
             self
         }
         /// <p>The account takeover risk configuration.</p>
@@ -12170,9 +12117,9 @@ pub mod fluent_builders {
         /// <p>The configuration to override the risk decision.</p>
         pub fn risk_exception_configuration(
             mut self,
-            signature: crate::model::RiskExceptionConfigurationType,
+            input: crate::model::RiskExceptionConfigurationType,
         ) -> Self {
-            self.inner = self.inner.risk_exception_configuration(signature);
+            self.inner = self.inner.risk_exception_configuration(input);
             self
         }
         /// <p>The configuration to override the risk decision.</p>
@@ -12255,8 +12202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -12265,8 +12212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client ID for the client app.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID for the client app.</p>
@@ -12275,8 +12222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The CSS values in the UI customization.</p>
-        pub fn css(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.css(signature.into());
+        pub fn css(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.css(input.into());
             self
         }
         /// <p>The CSS values in the UI customization.</p>
@@ -12285,8 +12232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The uploaded logo image for the UI customization.</p>
-        pub fn image_file(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.image_file(signature);
+        pub fn image_file(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.image_file(input);
             self
         }
         /// <p>The uploaded logo image for the UI customization.</p>
@@ -12366,8 +12313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
-        pub fn sms_mfa_settings(mut self, signature: crate::model::SmsMfaSettingsType) -> Self {
-            self.inner = self.inner.sms_mfa_settings(signature);
+        pub fn sms_mfa_settings(mut self, input: crate::model::SmsMfaSettingsType) -> Self {
+            self.inner = self.inner.sms_mfa_settings(input);
             self
         }
         /// <p>The SMS text message multi-factor authentication (MFA) settings.</p>
@@ -12381,9 +12328,9 @@ pub mod fluent_builders {
         /// <p>The time-based one-time password software token MFA settings.</p>
         pub fn software_token_mfa_settings(
             mut self,
-            signature: crate::model::SoftwareTokenMfaSettingsType,
+            input: crate::model::SoftwareTokenMfaSettingsType,
         ) -> Self {
-            self.inner = self.inner.software_token_mfa_settings(signature);
+            self.inner = self.inner.software_token_mfa_settings(input);
             self
         }
         /// <p>The time-based one-time password software token MFA settings.</p>
@@ -12395,8 +12342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access token for the user.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token for the user.</p>
@@ -12482,8 +12429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -12492,8 +12439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SMS text message MFA configuration.</p>
-        pub fn sms_mfa_configuration(mut self, signature: crate::model::SmsMfaConfigType) -> Self {
-            self.inner = self.inner.sms_mfa_configuration(signature);
+        pub fn sms_mfa_configuration(mut self, input: crate::model::SmsMfaConfigType) -> Self {
+            self.inner = self.inner.sms_mfa_configuration(input);
             self
         }
         /// <p>The SMS text message MFA configuration.</p>
@@ -12507,9 +12454,9 @@ pub mod fluent_builders {
         /// <p>The software token MFA configuration.</p>
         pub fn software_token_mfa_configuration(
             mut self,
-            signature: crate::model::SoftwareTokenMfaConfigType,
+            input: crate::model::SoftwareTokenMfaConfigType,
         ) -> Self {
-            self.inner = self.inner.software_token_mfa_configuration(signature);
+            self.inner = self.inner.software_token_mfa_configuration(input);
             self
         }
         /// <p>The software token MFA configuration.</p>
@@ -12539,8 +12486,8 @@ pub mod fluent_builders {
         /// an MFA factor enabled.</p>
         /// </li>
         /// </ul>
-        pub fn mfa_configuration(mut self, signature: crate::model::UserPoolMfaType) -> Self {
-            self.inner = self.inner.mfa_configuration(signature);
+        pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
+            self.inner = self.inner.mfa_configuration(input);
             self
         }
         /// <p>The MFA configuration. Users who don't have an MFA factor set up won't be able to
@@ -12633,8 +12580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token for the set user settings request.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token for the set user settings request.</p>
@@ -12740,8 +12687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the client associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The ID of the client associated with the user pool.</p>
@@ -12751,8 +12698,8 @@ pub mod fluent_builders {
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
         /// user pool client and username plus the client ID in the message.</p>
-        pub fn secret_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_hash(signature.into());
+        pub fn secret_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_hash(input.into());
             self
         }
         /// <p>A keyed-hash message authentication code (HMAC) calculated using the secret key of a
@@ -12762,8 +12709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user you wish to register.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name of the user you wish to register.</p>
@@ -12772,8 +12719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of the user you wish to register.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user you wish to register.</p>
@@ -12821,11 +12768,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
         /// calls.</p>
-        pub fn analytics_metadata(
-            mut self,
-            signature: crate::model::AnalyticsMetadataType,
-        ) -> Self {
-            self.inner = self.inner.analytics_metadata(signature);
+        pub fn analytics_metadata(mut self, input: crate::model::AnalyticsMetadataType) -> Self {
+            self.inner = self.inner.analytics_metadata(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code>
@@ -12840,8 +12784,8 @@ pub mod fluent_builders {
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
         /// for evaluating the risk of an unexpected event by Amazon Cognito advanced
         /// security.</p>
-        pub fn user_context_data(mut self, signature: crate::model::UserContextDataType) -> Self {
-            self.inner = self.inner.user_context_data(signature);
+        pub fn user_context_data(mut self, input: crate::model::UserContextDataType) -> Self {
+            self.inner = self.inner.user_context_data(input);
             self
         }
         /// <p>Contextual data such as the user's device fingerprint, IP address, or location used
@@ -13000,8 +12944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -13010,8 +12954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID for the user import job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID for the user import job.</p>
@@ -13080,8 +13024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool that the users are being imported into.</p>
@@ -13090,8 +13034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job ID for the user import job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID for the user import job.</p>
@@ -13173,8 +13117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool to assign the tags to.</p>
@@ -13267,8 +13211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.</p>
@@ -13356,8 +13300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -13366,8 +13310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool username.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user pool username.</p>
@@ -13376,8 +13320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event ID.</p>
-        pub fn event_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_id(signature.into());
+        pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_id(input.into());
             self
         }
         /// <p>The event ID.</p>
@@ -13386,8 +13330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The feedback token.</p>
-        pub fn feedback_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feedback_token(signature.into());
+        pub fn feedback_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feedback_token(input.into());
             self
         }
         /// <p>The feedback token.</p>
@@ -13399,8 +13343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication event feedback value.</p>
-        pub fn feedback_value(mut self, signature: crate::model::FeedbackValueType) -> Self {
-            self.inner = self.inner.feedback_value(signature);
+        pub fn feedback_value(mut self, input: crate::model::FeedbackValueType) -> Self {
+            self.inner = self.inner.feedback_value(input);
             self
         }
         /// <p>The authentication event feedback value.</p>
@@ -13472,8 +13416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -13482,8 +13426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device key.</p>
-        pub fn device_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_key(signature.into());
+        pub fn device_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_key(input.into());
             self
         }
         /// <p>The device key.</p>
@@ -13494,9 +13438,9 @@ pub mod fluent_builders {
         /// <p>The status of whether a device is remembered.</p>
         pub fn device_remembered_status(
             mut self,
-            signature: crate::model::DeviceRememberedStatusType,
+            input: crate::model::DeviceRememberedStatusType,
         ) -> Self {
-            self.inner = self.inner.device_remembered_status(signature);
+            self.inner = self.inner.device_remembered_status(input);
             self
         }
         /// <p>The status of whether a device is remembered.</p>
@@ -13569,8 +13513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -13579,8 +13523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -13589,8 +13533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string containing the new description of the group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A string containing the new description of the group.</p>
@@ -13601,8 +13545,8 @@ pub mod fluent_builders {
         /// <p>The new role ARN for the group. This is used for setting the
         /// <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
         /// token.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The new role ARN for the group. This is used for setting the
@@ -13614,8 +13558,8 @@ pub mod fluent_builders {
         }
         /// <p>The new precedence value for the group. For more information about this parameter, see
         /// <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html">CreateGroup</a>.</p>
-        pub fn precedence(mut self, signature: i32) -> Self {
-            self.inner = self.inner.precedence(signature);
+        pub fn precedence(mut self, input: i32) -> Self {
+            self.inner = self.inner.precedence(input);
             self
         }
         /// <p>The new precedence value for the group. For more information about this parameter, see
@@ -13685,8 +13629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID.</p>
@@ -13695,8 +13639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity provider name.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The identity provider name.</p>
@@ -13837,8 +13781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool.</p>
@@ -13847,8 +13791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the resource server.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The identifier for the resource server.</p>
@@ -13857,8 +13801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resource server.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the resource server.</p>
@@ -13982,8 +13926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The access token for the request to update user attributes.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token for the request to update user attributes.</p>
@@ -14154,8 +14098,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user pool ID for the user pool you want to update.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool you want to update.</p>
@@ -14164,8 +14108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A container with the policies you wish to update in a user pool.</p>
-        pub fn policies(mut self, signature: crate::model::UserPoolPolicyType) -> Self {
-            self.inner = self.inner.policies(signature);
+        pub fn policies(mut self, input: crate::model::UserPoolPolicyType) -> Self {
+            self.inner = self.inner.policies(input);
             self
         }
         /// <p>A container with the policies you wish to update in a user pool.</p>
@@ -14178,8 +14122,8 @@ pub mod fluent_builders {
         }
         /// <p>The Lambda configuration information from the request to update the user
         /// pool.</p>
-        pub fn lambda_config(mut self, signature: crate::model::LambdaConfigType) -> Self {
-            self.inner = self.inner.lambda_config(signature);
+        pub fn lambda_config(mut self, input: crate::model::LambdaConfigType) -> Self {
+            self.inner = self.inner.lambda_config(input);
             self
         }
         /// <p>The Lambda configuration information from the request to update the user
@@ -14214,11 +14158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A container with information about the SMS verification message.</p>
-        pub fn sms_verification_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sms_verification_message(signature.into());
+        pub fn sms_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sms_verification_message(input.into());
             self
         }
         /// <p>A container with information about the SMS verification message.</p>
@@ -14230,11 +14171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of the email verification message.</p>
-        pub fn email_verification_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.email_verification_message(signature.into());
+        pub fn email_verification_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_verification_message(input.into());
             self
         }
         /// <p>The contents of the email verification message.</p>
@@ -14246,11 +14184,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subject of the email verification message.</p>
-        pub fn email_verification_subject(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.email_verification_subject(signature.into());
+        pub fn email_verification_subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_verification_subject(input.into());
             self
         }
         /// <p>The subject of the email verification message.</p>
@@ -14264,9 +14199,9 @@ pub mod fluent_builders {
         /// <p>The template for verification messages.</p>
         pub fn verification_message_template(
             mut self,
-            signature: crate::model::VerificationMessageTemplateType,
+            input: crate::model::VerificationMessageTemplateType,
         ) -> Self {
-            self.inner = self.inner.verification_message_template(signature);
+            self.inner = self.inner.verification_message_template(input);
             self
         }
         /// <p>The template for verification messages.</p>
@@ -14278,11 +14213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of the SMS authentication message.</p>
-        pub fn sms_authentication_message(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sms_authentication_message(signature.into());
+        pub fn sms_authentication_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sms_authentication_message(input.into());
             self
         }
         /// <p>The contents of the SMS authentication message.</p>
@@ -14313,8 +14245,8 @@ pub mod fluent_builders {
         /// token.</p>
         /// </li>
         /// </ul>
-        pub fn mfa_configuration(mut self, signature: crate::model::UserPoolMfaType) -> Self {
-            self.inner = self.inner.mfa_configuration(signature);
+        pub fn mfa_configuration(mut self, input: crate::model::UserPoolMfaType) -> Self {
+            self.inner = self.inner.mfa_configuration(input);
             self
         }
         /// <p>Can be one of the following values:</p>
@@ -14347,9 +14279,9 @@ pub mod fluent_builders {
         /// <p>Device configuration.</p>
         pub fn device_configuration(
             mut self,
-            signature: crate::model::DeviceConfigurationType,
+            input: crate::model::DeviceConfigurationType,
         ) -> Self {
-            self.inner = self.inner.device_configuration(signature);
+            self.inner = self.inner.device_configuration(input);
             self
         }
         /// <p>Device configuration.</p>
@@ -14361,11 +14293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Email configuration.</p>
-        pub fn email_configuration(
-            mut self,
-            signature: crate::model::EmailConfigurationType,
-        ) -> Self {
-            self.inner = self.inner.email_configuration(signature);
+        pub fn email_configuration(mut self, input: crate::model::EmailConfigurationType) -> Self {
+            self.inner = self.inner.email_configuration(input);
             self
         }
         /// <p>Email configuration.</p>
@@ -14377,8 +14306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>SMS configuration.</p>
-        pub fn sms_configuration(mut self, signature: crate::model::SmsConfigurationType) -> Self {
-            self.inner = self.inner.sms_configuration(signature);
+        pub fn sms_configuration(mut self, input: crate::model::SmsConfigurationType) -> Self {
+            self.inner = self.inner.sms_configuration(input);
             self
         }
         /// <p>SMS configuration.</p>
@@ -14419,9 +14348,9 @@ pub mod fluent_builders {
         /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
         pub fn admin_create_user_config(
             mut self,
-            signature: crate::model::AdminCreateUserConfigType,
+            input: crate::model::AdminCreateUserConfigType,
         ) -> Self {
-            self.inner = self.inner.admin_create_user_config(signature);
+            self.inner = self.inner.admin_create_user_config(input);
             self
         }
         /// <p>The configuration for <code>AdminCreateUser</code> requests.</p>
@@ -14434,8 +14363,8 @@ pub mod fluent_builders {
         }
         /// <p>Used to enable advanced security risk detection. Set the key
         /// <code>AdvancedSecurityMode</code> to the value "AUDIT".</p>
-        pub fn user_pool_add_ons(mut self, signature: crate::model::UserPoolAddOnsType) -> Self {
-            self.inner = self.inner.user_pool_add_ons(signature);
+        pub fn user_pool_add_ons(mut self, input: crate::model::UserPoolAddOnsType) -> Self {
+            self.inner = self.inner.user_pool_add_ons(input);
             self
         }
         /// <p>Used to enable advanced security risk detection. Set the key
@@ -14455,9 +14384,9 @@ pub mod fluent_builders {
         /// the recovery method where SMS is preferred over email.</p>
         pub fn account_recovery_setting(
             mut self,
-            signature: crate::model::AccountRecoverySettingType,
+            input: crate::model::AccountRecoverySettingType,
         ) -> Self {
-            self.inner = self.inner.account_recovery_setting(signature);
+            self.inner = self.inner.account_recovery_setting(input);
             self
         }
         /// <p>Use this setting to define which verified available method a user can use to recover
@@ -14542,8 +14471,8 @@ pub mod fluent_builders {
         }
         /// <p>The user pool ID for the user pool where you want to update the user pool
         /// client.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The user pool ID for the user pool where you want to update the user pool
@@ -14553,8 +14482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the client associated with the user pool.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The ID of the client associated with the user pool.</p>
@@ -14563,8 +14492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client name from the update user pool client request.</p>
-        pub fn client_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_name(signature.into());
+        pub fn client_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_name(input.into());
             self
         }
         /// <p>The client name from the update user pool client request.</p>
@@ -14574,8 +14503,8 @@ pub mod fluent_builders {
         }
         /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
         /// be used.</p>
-        pub fn refresh_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.refresh_token_validity(signature);
+        pub fn refresh_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.refresh_token_validity(input);
             self
         }
         /// <p>The time limit, in days, after which the refresh token is no longer valid and cannot
@@ -14586,8 +14515,8 @@ pub mod fluent_builders {
         }
         /// <p>The time limit, after which the access token is no longer valid and cannot be
         /// used.</p>
-        pub fn access_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.access_token_validity(signature);
+        pub fn access_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.access_token_validity(input);
             self
         }
         /// <p>The time limit, after which the access token is no longer valid and cannot be
@@ -14597,8 +14526,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
-        pub fn id_token_validity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.id_token_validity(signature);
+        pub fn id_token_validity(mut self, input: i32) -> Self {
+            self.inner = self.inner.id_token_validity(input);
             self
         }
         /// <p>The time limit, after which the ID token is no longer valid and cannot be used.</p>
@@ -14608,11 +14537,8 @@ pub mod fluent_builders {
         }
         /// <p>The units in which the validity times are represented in. Default for RefreshToken is
         /// days, and default for ID and access tokens are hours.</p>
-        pub fn token_validity_units(
-            mut self,
-            signature: crate::model::TokenValidityUnitsType,
-        ) -> Self {
-            self.inner = self.inner.token_validity_units(signature);
+        pub fn token_validity_units(mut self, input: crate::model::TokenValidityUnitsType) -> Self {
+            self.inner = self.inner.token_validity_units(input);
             self
         }
         /// <p>The units in which the validity times are represented in. Default for RefreshToken is
@@ -14851,8 +14777,8 @@ pub mod fluent_builders {
         /// <p>Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing
         /// purposes only.</p>
         /// <p>App callback URLs such as myapp://example are also supported.</p>
-        pub fn default_redirect_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_redirect_uri(signature.into());
+        pub fn default_redirect_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_redirect_uri(input.into());
             self
         }
         /// <p>The default redirect URI. Must be in the <code>CallbackURLs</code> list.</p>
@@ -14938,8 +14864,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
         /// with Cognito user pools.</p>
-        pub fn allowed_o_auth_flows_user_pool_client(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allowed_o_auth_flows_user_pool_client(signature);
+        pub fn allowed_o_auth_flows_user_pool_client(mut self, input: bool) -> Self {
+            self.inner = self.inner.allowed_o_auth_flows_user_pool_client(input);
             self
         }
         /// <p>Set to true if the client is allowed to follow the OAuth protocol when interacting
@@ -14961,9 +14887,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn analytics_configuration(
             mut self,
-            signature: crate::model::AnalyticsConfigurationType,
+            input: crate::model::AnalyticsConfigurationType,
         ) -> Self {
-            self.inner = self.inner.analytics_configuration(signature);
+            self.inner = self.inner.analytics_configuration(input);
             self
         }
         /// <p>The Amazon Pinpoint analytics configuration for collecting metrics for this user
@@ -15010,9 +14936,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn prevent_user_existence_errors(
             mut self,
-            signature: crate::model::PreventUserExistenceErrorTypes,
+            input: crate::model::PreventUserExistenceErrorTypes,
         ) -> Self {
-            self.inner = self.inner.prevent_user_existence_errors(signature);
+            self.inner = self.inner.prevent_user_existence_errors(input);
             self
         }
         /// <p>Use this setting to choose which errors and responses are returned by Cognito APIs
@@ -15051,8 +14977,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables or disables token revocation. For more information
         /// about revoking tokens, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
-        pub fn enable_token_revocation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_token_revocation(signature);
+        pub fn enable_token_revocation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_token_revocation(input);
             self
         }
         /// <p>Enables or disables token revocation. For more information
@@ -15145,8 +15071,8 @@ pub mod fluent_builders {
         /// your application. For example: <code>auth.example.com</code>. </p>
         /// <p>This string can include only lowercase letters, numbers, and hyphens. Do not use a
         /// hyphen for the first or last character. Use periods to separate subdomain names.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain name for the custom domain that hosts the sign-up and sign-in pages for
@@ -15159,8 +15085,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the user pool that is associated with the custom domain that you are
         /// updating the certificate for.</p>
-        pub fn user_pool_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_pool_id(signature.into());
+        pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_pool_id(input.into());
             self
         }
         /// <p>The ID of the user pool that is associated with the custom domain that you are
@@ -15172,11 +15098,8 @@ pub mod fluent_builders {
         /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
         /// your application. Use this object to specify an SSL certificate that is managed by
         /// ACM.</p>
-        pub fn custom_domain_config(
-            mut self,
-            signature: crate::model::CustomDomainConfigType,
-        ) -> Self {
-            self.inner = self.inner.custom_domain_config(signature);
+        pub fn custom_domain_config(mut self, input: crate::model::CustomDomainConfigType) -> Self {
+            self.inner = self.inner.custom_domain_config(input);
             self
         }
         /// <p>The configuration for a custom domain that hosts the sign-up and sign-in pages for
@@ -15252,8 +15175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The access token.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>The access token.</p>
@@ -15263,8 +15186,8 @@ pub mod fluent_builders {
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
         /// service.</p>
-        pub fn session(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session(signature.into());
+        pub fn session(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session(input.into());
             self
         }
         /// <p>The session which should be passed both ways in challenge-response calls to the
@@ -15274,8 +15197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
-        pub fn user_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_code(signature.into());
+        pub fn user_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_code(input.into());
             self
         }
         /// <p>The one time password computed using the secret code returned by <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AssociateSoftwareToken.html">AssociateSoftwareToken"</a>.</p>
@@ -15284,8 +15207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The friendly device name.</p>
-        pub fn friendly_device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.friendly_device_name(signature.into());
+        pub fn friendly_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.friendly_device_name(input.into());
             self
         }
         /// <p>The friendly device name.</p>
@@ -15357,8 +15280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Represents the access token of the request to verify user attributes.</p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p>Represents the access token of the request to verify user attributes.</p>
@@ -15367,8 +15290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The attribute name in the request to verify user attributes.</p>
-        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(signature.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The attribute name in the request to verify user attributes.</p>
@@ -15380,8 +15303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The verification code in the request to verify user attributes.</p>
-        pub fn code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code(signature.into());
+        pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code(input.into());
             self
         }
         /// <p>The verification code in the request to verify user attributes.</p>

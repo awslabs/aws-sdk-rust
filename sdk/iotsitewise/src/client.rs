@@ -635,8 +635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the parent asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the parent asset.</p>
@@ -647,8 +647,8 @@ pub mod fluent_builders {
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
         /// of assets to be formed that all come from the same asset model. For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(signature.into());
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
@@ -659,8 +659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the child asset to be associated.</p>
-        pub fn child_asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.child_asset_id(signature.into());
+        pub fn child_asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.child_asset_id(input.into());
             self
         }
         /// <p>The ID of the child asset to be associated.</p>
@@ -672,8 +672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -744,8 +744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -754,8 +754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -764,8 +764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -844,8 +844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to which to associate the assets.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to which to associate the assets.</p>
@@ -871,8 +871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project from which to disassociate the assets.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project from which to disassociate the assets.</p>
@@ -968,8 +968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1142,8 +1142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-        pub fn access_policy_identity(mut self, signature: crate::model::Identity) -> Self {
-            self.inner = self.inner.access_policy_identity(signature);
+        pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
+            self.inner = self.inner.access_policy_identity(input);
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
@@ -1155,8 +1155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-        pub fn access_policy_resource(mut self, signature: crate::model::Resource) -> Self {
-            self.inner = self.inner.access_policy_resource(signature);
+        pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.access_policy_resource(input);
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -1168,8 +1168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn access_policy_permission(mut self, signature: crate::model::Permission) -> Self {
-            self.inner = self.inner.access_policy_permission(signature);
+        pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.access_policy_permission(input);
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
@@ -1181,8 +1181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1279,8 +1279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the asset.</p>
-        pub fn asset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_name(signature.into());
+        pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
@@ -1289,8 +1289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset model from which to create the asset.</p>
-        pub fn asset_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(signature.into());
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model from which to create the asset.</p>
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1403,8 +1403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the asset model.</p>
-        pub fn asset_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_name(signature.into());
+        pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
@@ -1416,11 +1416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the asset model.</p>
-        pub fn asset_model_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.asset_model_description(signature.into());
+        pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_description(input.into());
             self
         }
         /// <p>A description for the asset model.</p>
@@ -1514,8 +1511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1611,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project in which to create the dashboard.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project in which to create the dashboard.</p>
@@ -1621,8 +1618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the dashboard.</p>
-        pub fn dashboard_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(signature.into());
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
         /// <p>A friendly name for the dashboard.</p>
@@ -1634,8 +1631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the dashboard.</p>
-        pub fn dashboard_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_description(signature.into());
+        pub fn dashboard_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_description(input.into());
             self
         }
         /// <p>A description for the dashboard.</p>
@@ -1648,8 +1645,8 @@ pub mod fluent_builders {
         }
         /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn dashboard_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_definition(signature.into());
+        pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_definition(input.into());
             self
         }
         /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
@@ -1662,8 +1659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1761,8 +1758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, friendly name for the gateway.</p>
-        pub fn gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_name(signature.into());
+        pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
@@ -1771,8 +1768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
-        pub fn gateway_platform(mut self, signature: crate::model::GatewayPlatform) -> Self {
-            self.inner = self.inner.gateway_platform(signature);
+        pub fn gateway_platform(mut self, input: crate::model::GatewayPlatform) -> Self {
+            self.inner = self.inner.gateway_platform(input);
             self
         }
         /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
@@ -1877,8 +1874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A friendly name for the portal.</p>
-        pub fn portal_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_name(signature.into());
+        pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_name(input.into());
             self
         }
         /// <p>A friendly name for the portal.</p>
@@ -1887,8 +1884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the portal.</p>
-        pub fn portal_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_description(signature.into());
+        pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_description(input.into());
             self
         }
         /// <p>A description for the portal.</p>
@@ -1900,8 +1897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
-        pub fn portal_contact_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_contact_email(signature.into());
+        pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_contact_email(input.into());
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
@@ -1913,8 +1910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -1924,8 +1921,8 @@ pub mod fluent_builders {
         }
         /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
         /// image is displayed on a dark background.</p>
-        pub fn portal_logo_image_file(mut self, signature: crate::model::ImageFile) -> Self {
-            self.inner = self.inner.portal_logo_image_file(signature);
+        pub fn portal_logo_image_file(mut self, input: crate::model::ImageFile) -> Self {
+            self.inner = self.inner.portal_logo_image_file(input);
             self
         }
         /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
@@ -1940,8 +1937,8 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
         /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
@@ -1998,8 +1995,8 @@ pub mod fluent_builders {
         /// <p>You can't change this value after you create a portal.</p>
         /// <p>Default: <code>SSO</code>
         /// </p>
-        pub fn portal_auth_mode(mut self, signature: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.portal_auth_mode(signature);
+        pub fn portal_auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.portal_auth_mode(input);
             self
         }
         /// <p>The service to use to authenticate users to the portal. Choose from the following
@@ -2035,11 +2032,8 @@ pub mod fluent_builders {
         /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
         /// address in Amazon SES</a>.</p>
         /// </important>
-        pub fn notification_sender_email(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.notification_sender_email(signature.into());
+        pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_sender_email(input.into());
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
@@ -2058,8 +2052,8 @@ pub mod fluent_builders {
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
         /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-        pub fn alarms(mut self, signature: crate::model::Alarms) -> Self {
-            self.inner = self.inner.alarms(signature);
+        pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
+            self.inner = self.inner.alarms(input);
             self
         }
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
@@ -2134,8 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal in which to create the project.</p>
-        pub fn portal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(signature.into());
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal in which to create the project.</p>
@@ -2144,8 +2138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A friendly name for the project.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>A friendly name for the project.</p>
@@ -2154,8 +2148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the project.</p>
-        pub fn project_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(signature.into());
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>A description for the project.</p>
@@ -2167,8 +2161,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2266,8 +2260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy to be deleted.</p>
-        pub fn access_policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(signature.into());
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy to be deleted.</p>
@@ -2279,8 +2273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2354,8 +2348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to delete.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to delete.</p>
@@ -2364,8 +2358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2438,8 +2432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model to delete.</p>
-        pub fn asset_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(signature.into());
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model to delete.</p>
@@ -2451,8 +2445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2521,8 +2515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard to delete.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard to delete.</p>
@@ -2531,8 +2525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2602,8 +2596,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to delete.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to delete.</p>
@@ -2672,8 +2666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal to delete.</p>
-        pub fn portal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(signature.into());
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal to delete.</p>
@@ -2682,8 +2676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2752,8 +2746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -2762,8 +2756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2853,8 +2847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -2863,8 +2857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -2873,8 +2867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -2883,8 +2877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -2954,8 +2948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy.</p>
-        pub fn access_policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(signature.into());
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy.</p>
@@ -3027,8 +3021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -3097,8 +3091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model.</p>
-        pub fn asset_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(signature.into());
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model.</p>
@@ -3177,8 +3171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -3187,8 +3181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -3257,8 +3251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard.</p>
@@ -3391,8 +3385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway device.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway device.</p>
@@ -3467,8 +3461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway that defines the capability configuration.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway that defines the capability configuration.</p>
@@ -3481,8 +3475,8 @@ pub mod fluent_builders {
         /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
-        pub fn capability_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capability_namespace(signature.into());
+        pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_namespace(input.into());
             self
         }
         /// <p>The namespace of the capability configuration.
@@ -3618,8 +3612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal.</p>
-        pub fn portal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(signature.into());
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal.</p>
@@ -3688,8 +3682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -3837,8 +3831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -3847,8 +3841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -3857,8 +3851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -3928,8 +3922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the parent asset from which to disassociate the child asset.</p>
@@ -3941,8 +3935,8 @@ pub mod fluent_builders {
         /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
         /// to identify the correct asset to disassociate. For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(signature.into());
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
@@ -3954,8 +3948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the child asset to disassociate.</p>
-        pub fn child_asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.child_asset_id(signature.into());
+        pub fn child_asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.child_asset_id(input.into());
             self
         }
         /// <p>The ID of the child asset to disassociate.</p>
@@ -3967,8 +3961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -4039,8 +4033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The alias that identifies the time series.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The alias that identifies the time series.</p>
@@ -4049,8 +4043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -4059,8 +4053,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4069,8 +4063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -4150,8 +4144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4160,8 +4154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4173,8 +4167,8 @@ pub mod fluent_builders {
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(signature.into());
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
@@ -4206,8 +4200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time interval over which to aggregate data.</p>
-        pub fn resolution(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution(signature.into());
+        pub fn resolution(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution(input.into());
             self
         }
         /// <p>The time interval over which to aggregate data.</p>
@@ -4233,8 +4227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn start_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(signature);
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4246,8 +4240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn end_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(signature);
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4261,8 +4255,8 @@ pub mod fluent_builders {
         /// <p>The chronological sorting order of the requested information.</p>
         /// <p>Default: <code>ASCENDING</code>
         /// </p>
-        pub fn time_ordering(mut self, signature: crate::model::TimeOrdering) -> Self {
-            self.inner = self.inner.time_ordering(signature);
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
@@ -4276,8 +4270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4287,8 +4281,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -4369,8 +4363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4379,8 +4373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4392,8 +4386,8 @@ pub mod fluent_builders {
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(signature.into());
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
@@ -4479,8 +4473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4489,8 +4483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4502,8 +4496,8 @@ pub mod fluent_builders {
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(signature.into());
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
@@ -4518,8 +4512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn start_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_date(signature);
+        pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_date(input);
             self
         }
         /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4531,8 +4525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
-        pub fn end_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_date(signature);
+        pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_date(input);
             self
         }
         /// <p>The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
@@ -4563,8 +4557,8 @@ pub mod fluent_builders {
         /// <p>The chronological sorting order of the requested information.</p>
         /// <p>Default: <code>ASCENDING</code>
         /// </p>
-        pub fn time_ordering(mut self, signature: crate::model::TimeOrdering) -> Self {
-            self.inner = self.inner.time_ordering(signature);
+        pub fn time_ordering(mut self, input: crate::model::TimeOrdering) -> Self {
+            self.inner = self.inner.time_ordering(input);
             self
         }
         /// <p>The chronological sorting order of the requested information.</p>
@@ -4578,8 +4572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4589,8 +4583,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -4676,8 +4670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -4686,8 +4680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property.</p>
@@ -4699,8 +4693,8 @@ pub mod fluent_builders {
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn property_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(signature.into());
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
@@ -4716,8 +4710,8 @@ pub mod fluent_builders {
         }
         /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
         /// Unix epoch time.</p>
-        pub fn start_time_in_seconds(mut self, signature: i64) -> Self {
-            self.inner = self.inner.start_time_in_seconds(signature);
+        pub fn start_time_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.start_time_in_seconds(input);
             self
         }
         /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
@@ -4727,8 +4721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
-        pub fn start_time_offset_in_nanos(mut self, signature: i32) -> Self {
-            self.inner = self.inner.start_time_offset_in_nanos(signature);
+        pub fn start_time_offset_in_nanos(mut self, input: i32) -> Self {
+            self.inner = self.inner.start_time_offset_in_nanos(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>startTimeInSeconds</code>.</p>
@@ -4738,8 +4732,8 @@ pub mod fluent_builders {
         }
         /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
         /// Unix epoch time.</p>
-        pub fn end_time_in_seconds(mut self, signature: i64) -> Self {
-            self.inner = self.inner.end_time_in_seconds(signature);
+        pub fn end_time_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.end_time_in_seconds(input);
             self
         }
         /// <p>The inclusive end of the range from which to interpolate data, expressed in seconds in
@@ -4749,8 +4743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
-        pub fn end_time_offset_in_nanos(mut self, signature: i32) -> Self {
-            self.inner = self.inner.end_time_offset_in_nanos(signature);
+        pub fn end_time_offset_in_nanos(mut self, input: i32) -> Self {
+            self.inner = self.inner.end_time_offset_in_nanos(input);
             self
         }
         /// <p>The nanosecond offset converted from <code>endTimeInSeconds</code>.</p>
@@ -4760,8 +4754,8 @@ pub mod fluent_builders {
         }
         /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
         /// only the asset property values that have a specific quality.</p>
-        pub fn quality(mut self, signature: crate::model::Quality) -> Self {
-            self.inner = self.inner.quality(signature);
+        pub fn quality(mut self, input: crate::model::Quality) -> Self {
+            self.inner = self.inner.quality(input);
             self
         }
         /// <p>The quality of the asset property value. You can use this parameter as a filter to choose
@@ -4772,8 +4766,8 @@ pub mod fluent_builders {
         }
         /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
         /// previous one ends.</p>
-        pub fn interval_in_seconds(mut self, signature: i64) -> Self {
-            self.inner = self.inner.interval_in_seconds(signature);
+        pub fn interval_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.interval_in_seconds(input);
             self
         }
         /// <p>The time interval in seconds over which to interpolate data. Each interval starts when the
@@ -4783,8 +4777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -4793,8 +4787,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
@@ -4829,8 +4823,8 @@ pub mod fluent_builders {
         /// same interpolated value for the rest of the days.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The interpolation type.</p>
@@ -4888,8 +4882,8 @@ pub mod fluent_builders {
         /// plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the
         /// data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to
         /// compute the second interpolated value, and so on. </p>
-        pub fn interval_window_in_seconds(mut self, signature: i64) -> Self {
-            self.inner = self.inner.interval_window_in_seconds(signature);
+        pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.interval_window_in_seconds(input);
             self
         }
         /// <p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by
@@ -4983,8 +4977,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
         /// if you specify <code>identityId</code>.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
@@ -4998,8 +4992,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
         /// <code>GROUP</code> for <code>identityType</code>.</p>
-        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(signature.into());
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
@@ -5010,8 +5004,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resource (portal or project). This parameter is required if you specify
         /// <code>resourceId</code>.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource (portal or project). This parameter is required if you specify
@@ -5025,8 +5019,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the resource. This parameter is required if you specify
         /// <code>resourceType</code>.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource. This parameter is required if you specify
@@ -5038,8 +5032,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
         /// <i>IAM User Guide</i>. This parameter is required if you specify
         /// <code>IAM</code> for <code>identityType</code>.</p>
-        pub fn iam_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_arn(signature.into());
+        pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
@@ -5050,8 +5044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5061,8 +5055,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5132,8 +5126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5143,8 +5137,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5216,8 +5210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset.</p>
@@ -5235,8 +5229,8 @@ pub mod fluent_builders {
         /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p>
         /// </li>
         /// </ul>
-        pub fn traversal_type(mut self, signature: crate::model::TraversalType) -> Self {
-            self.inner = self.inner.traversal_type(signature);
+        pub fn traversal_type(mut self, input: crate::model::TraversalType) -> Self {
+            self.inner = self.inner.traversal_type(input);
             self
         }
         /// <p>The type of traversal to use to identify asset relationships. Choose the following
@@ -5257,8 +5251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5267,8 +5261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5349,8 +5343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5360,8 +5354,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5372,8 +5366,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
         /// required if you choose <code>ALL</code> for <code>filter</code>.</p>
-        pub fn asset_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(signature.into());
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
@@ -5401,8 +5395,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Default: <code>ALL</code>
         /// </p>
-        pub fn filter(mut self, signature: crate::model::ListAssetsFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ListAssetsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter for the requested list of assets. Choose one of the following options:</p>
@@ -5498,8 +5492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to query.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to query.</p>
@@ -5512,8 +5506,8 @@ pub mod fluent_builders {
         /// parameter is required if you choose <code>CHILD</code> for
         /// <code>traversalDirection</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn hierarchy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_id(signature.into());
+        pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_id(input.into());
             self
         }
         /// <p>The ID of the hierarchy by which child assets are associated to the asset. To find a
@@ -5540,8 +5534,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Default: <code>CHILD</code>
         /// </p>
-        pub fn traversal_direction(mut self, signature: crate::model::TraversalDirection) -> Self {
-            self.inner = self.inner.traversal_direction(signature);
+        pub fn traversal_direction(mut self, input: crate::model::TraversalDirection) -> Self {
+            self.inner = self.inner.traversal_direction(input);
             self
         }
         /// <p>The direction to list associated assets. Choose one of the following options:</p>
@@ -5567,8 +5561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5578,8 +5572,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5649,8 +5643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -5659,8 +5653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5670,8 +5664,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5741,8 +5735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5752,8 +5746,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5823,8 +5817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5834,8 +5828,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5905,8 +5899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -5915,8 +5909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -5926,8 +5920,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -5997,8 +5991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal.</p>
-        pub fn portal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(signature.into());
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal.</p>
@@ -6007,8 +6001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -6018,8 +6012,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -6089,8 +6083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.</p>
@@ -6159,8 +6153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to be used for the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to be used for the next set of paginated results.</p>
@@ -6169,8 +6163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for each paginated request.</p>
@@ -6179,8 +6173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset in which the asset property was created.</p>
@@ -6189,8 +6183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias prefix of the time series.</p>
-        pub fn alias_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_prefix(signature.into());
+        pub fn alias_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_prefix(input.into());
             self
         }
         /// <p>The alias prefix of the time series.</p>
@@ -6212,8 +6206,8 @@ pub mod fluent_builders {
         /// property.</p>
         /// </li>
         /// </ul>
-        pub fn time_series_type(mut self, signature: crate::model::ListTimeSeriesType) -> Self {
-            self.inner = self.inner.time_series_type(signature);
+        pub fn time_series_type(mut self, input: crate::model::ListTimeSeriesType) -> Self {
+            self.inner = self.inner.time_series_type(input);
             self
         }
         /// <p>The type of the time series. The time series type can be one of the following
@@ -6300,8 +6294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
-        pub fn encryption_type(mut self, signature: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(signature);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         /// <p>The type of encryption used for the encryption configuration.</p>
@@ -6314,8 +6308,8 @@ pub mod fluent_builders {
         }
         /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
         /// use <code>KMS_BASED_ENCRYPTION</code>.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Key ID of the customer managed key used for KMS encryption. This is required if you
@@ -6385,8 +6379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The logging options to set.</p>
-        pub fn logging_options(mut self, signature: crate::model::LoggingOptions) -> Self {
-            self.inner = self.inner.logging_options(signature);
+        pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
+            self.inner = self.inner.logging_options(input);
             self
         }
         /// <p>The logging options to set.</p>
@@ -6471,8 +6465,8 @@ pub mod fluent_builders {
         /// The cold tier is a customer-managed Amazon S3 bucket.</p>
         /// </li>
         /// </ul>
-        pub fn storage_type(mut self, signature: crate::model::StorageType) -> Self {
-            self.inner = self.inner.storage_type(signature);
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
         /// <p>The storage tier that you specified for your data.
@@ -6498,8 +6492,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
         /// you must specify a <code>MultiLayerStorage</code> object.</p>
-        pub fn multi_layer_storage(mut self, signature: crate::model::MultiLayerStorage) -> Self {
-            self.inner = self.inner.multi_layer_storage(signature);
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.inner = self.inner.multi_layer_storage(input);
             self
         }
         /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
@@ -6530,9 +6524,9 @@ pub mod fluent_builders {
         /// in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn disassociated_data_storage(
             mut self,
-            signature: crate::model::DisassociatedDataStorageState,
+            input: crate::model::DisassociatedDataStorageState,
         ) -> Self {
-            self.inner = self.inner.disassociated_data_storage(signature);
+            self.inner = self.inner.disassociated_data_storage(input);
             self
         }
         /// <p>Contains the storage configuration for time series (data streams) that aren't associated with asset properties.
@@ -6560,8 +6554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
-        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(signature);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.</p>
@@ -6634,8 +6628,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
@@ -6731,8 +6725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.</p>
@@ -6819,8 +6813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the access policy.</p>
-        pub fn access_policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_policy_id(signature.into());
+        pub fn access_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_policy_id(input.into());
             self
         }
         /// <p>The ID of the access policy.</p>
@@ -6832,8 +6826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
-        pub fn access_policy_identity(mut self, signature: crate::model::Identity) -> Self {
-            self.inner = self.inner.access_policy_identity(signature);
+        pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
+            self.inner = self.inner.access_policy_identity(input);
             self
         }
         /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
@@ -6845,8 +6839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
-        pub fn access_policy_resource(mut self, signature: crate::model::Resource) -> Self {
-            self.inner = self.inner.access_policy_resource(signature);
+        pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
+            self.inner = self.inner.access_policy_resource(input);
             self
         }
         /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
@@ -6858,8 +6852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
-        pub fn access_policy_permission(mut self, signature: crate::model::Permission) -> Self {
-            self.inner = self.inner.access_policy_permission(signature);
+        pub fn access_policy_permission(mut self, input: crate::model::Permission) -> Self {
+            self.inner = self.inner.access_policy_permission(input);
             self
         }
         /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
@@ -6871,8 +6865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -6942,8 +6936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to update.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to update.</p>
@@ -6952,8 +6946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
-        pub fn asset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_name(signature.into());
+        pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset.</p>
@@ -6962,8 +6956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7044,8 +7038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset model to update.</p>
-        pub fn asset_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_id(signature.into());
+        pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_id(input.into());
             self
         }
         /// <p>The ID of the asset model to update.</p>
@@ -7057,8 +7051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
-        pub fn asset_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_model_name(signature.into());
+        pub fn asset_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the asset model.</p>
@@ -7070,11 +7064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the asset model.</p>
-        pub fn asset_model_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.asset_model_description(signature.into());
+        pub fn asset_model_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_model_description(input.into());
             self
         }
         /// <p>A description for the asset model.</p>
@@ -7160,8 +7151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7235,8 +7226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the asset to be updated.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The ID of the asset to be updated.</p>
@@ -7245,8 +7236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset property to be updated.</p>
-        pub fn property_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_id(signature.into());
+        pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_id(input.into());
             self
         }
         /// <p>The ID of the asset property to be updated.</p>
@@ -7259,8 +7250,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
-        pub fn property_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.property_alias(signature.into());
+        pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.property_alias(input.into());
             self
         }
         /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
@@ -7281,9 +7272,9 @@ pub mod fluent_builders {
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn property_notification_state(
             mut self,
-            signature: crate::model::PropertyNotificationState,
+            input: crate::model::PropertyNotificationState,
         ) -> Self {
-            self.inner = self.inner.property_notification_state(signature);
+            self.inner = self.inner.property_notification_state(input);
             self
         }
         /// <p>The MQTT notification state (enabled or disabled) for this asset property.
@@ -7298,8 +7289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7368,8 +7359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dashboard to update.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID of the dashboard to update.</p>
@@ -7378,8 +7369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the dashboard.</p>
-        pub fn dashboard_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_name(signature.into());
+        pub fn dashboard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_name(input.into());
             self
         }
         /// <p>A new friendly name for the dashboard.</p>
@@ -7391,8 +7382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the dashboard.</p>
-        pub fn dashboard_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_description(signature.into());
+        pub fn dashboard_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_description(input.into());
             self
         }
         /// <p>A new description for the dashboard.</p>
@@ -7405,8 +7396,8 @@ pub mod fluent_builders {
         }
         /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn dashboard_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_definition(signature.into());
+        pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_definition(input.into());
             self
         }
         /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
@@ -7419,8 +7410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7489,8 +7480,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to update.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to update.</p>
@@ -7499,8 +7490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
-        pub fn gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_name(signature.into());
+        pub fn gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_name(input.into());
             self
         }
         /// <p>A unique, friendly name for the gateway.</p>
@@ -7575,8 +7566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the gateway to be updated.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the gateway to be updated.</p>
@@ -7589,8 +7580,8 @@ pub mod fluent_builders {
         /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
-        pub fn capability_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.capability_namespace(signature.into());
+        pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_namespace(input.into());
             self
         }
         /// <p>The namespace of the gateway capability configuration to be updated.
@@ -7607,11 +7598,8 @@ pub mod fluent_builders {
         }
         /// <p>The JSON document that defines the configuration for the gateway capability. For more
         /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
-        pub fn capability_configuration(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.capability_configuration(signature.into());
+        pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.capability_configuration(input.into());
             self
         }
         /// <p>The JSON document that defines the configuration for the gateway capability. For more
@@ -7684,8 +7672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the portal to update.</p>
-        pub fn portal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_id(signature.into());
+        pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_id(input.into());
             self
         }
         /// <p>The ID of the portal to update.</p>
@@ -7694,8 +7682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the portal.</p>
-        pub fn portal_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_name(signature.into());
+        pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_name(input.into());
             self
         }
         /// <p>A new friendly name for the portal.</p>
@@ -7704,8 +7692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the portal.</p>
-        pub fn portal_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_description(signature.into());
+        pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_description(input.into());
             self
         }
         /// <p>A new description for the portal.</p>
@@ -7717,8 +7705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
-        pub fn portal_contact_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.portal_contact_email(signature.into());
+        pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.portal_contact_email(input.into());
             self
         }
         /// <p>The Amazon Web Services administrator's contact email address.</p>
@@ -7738,8 +7726,8 @@ pub mod fluent_builders {
         /// <p>The ID of an existing image. Choose this option to keep an existing image.</p>
         /// </li>
         /// </ul>
-        pub fn portal_logo_image(mut self, signature: crate::model::Image) -> Self {
-            self.inner = self.inner.portal_logo_image(signature);
+        pub fn portal_logo_image(mut self, input: crate::model::Image) -> Self {
+            self.inner = self.inner.portal_logo_image(input);
             self
         }
         /// <p>Contains an image that is one of the following:</p>
@@ -7761,8 +7749,8 @@ pub mod fluent_builders {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
         /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
         /// <i>IoT SiteWise User Guide</i>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
@@ -7773,8 +7761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -7783,11 +7771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
-        pub fn notification_sender_email(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.notification_sender_email(signature.into());
+        pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_sender_email(input.into());
             self
         }
         /// <p>The email address that sends alarm notifications.</p>
@@ -7801,8 +7786,8 @@ pub mod fluent_builders {
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
         /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
         /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-        pub fn alarms(mut self, signature: crate::model::Alarms) -> Self {
-            self.inner = self.inner.alarms(signature);
+        pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
+            self.inner = self.inner.alarms(input);
             self
         }
         /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
@@ -7873,8 +7858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to update.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to update.</p>
@@ -7883,8 +7868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new friendly name for the project.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>A new friendly name for the project.</p>
@@ -7893,8 +7878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the project.</p>
-        pub fn project_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(signature.into());
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>A new description for the project.</p>
@@ -7906,8 +7891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>

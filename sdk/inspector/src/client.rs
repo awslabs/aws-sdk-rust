@@ -524,8 +524,8 @@ pub mod fluent_builders {
         }
         /// <p>The user-defined name that identifies the assessment target that you want to create.
         /// The name must be unique within the AWS account.</p>
-        pub fn assessment_target_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_name(signature.into());
+        pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_name(input.into());
             self
         }
         /// <p>The user-defined name that identifies the assessment target that you want to create.
@@ -540,8 +540,8 @@ pub mod fluent_builders {
         /// <p>The ARN that specifies the resource group that is used to create the assessment
         /// target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account
         /// and region are included in the assessment target.</p>
-        pub fn resource_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_arn(signature.into());
+        pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the resource group that is used to create the assessment
@@ -619,8 +619,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN that specifies the assessment target for which you want to create the
         /// assessment template.</p>
-        pub fn assessment_target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(signature.into());
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment target for which you want to create the
@@ -636,11 +636,8 @@ pub mod fluent_builders {
         /// create. You can create several assessment templates for an assessment target. The names of
         /// the assessment templates that correspond to a particular assessment target must be
         /// unique.</p>
-        pub fn assessment_template_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.assessment_template_name(signature.into());
+        pub fn assessment_template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_name(input.into());
             self
         }
         /// <p>The user-defined name that identifies the assessment template that you want to
@@ -655,8 +652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the assessment run in seconds.</p>
-        pub fn duration_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration_in_seconds(signature);
+        pub fn duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration_in_seconds(input);
             self
         }
         /// <p>The duration of the assessment run in seconds.</p>
@@ -770,11 +767,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN that specifies the assessment template for which you want to create an
         /// exclusions preview.</p>
-        pub fn assessment_template_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.assessment_template_arn(signature.into());
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template for which you want to create an
@@ -932,8 +926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment run that you want to delete.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run that you want to delete.</p>
@@ -1006,8 +1000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment target that you want to delete.</p>
-        pub fn assessment_target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(signature.into());
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment target that you want to delete.</p>
@@ -1080,11 +1074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment template that you want to delete.</p>
-        pub fn assessment_template_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.assessment_template_arn(signature.into());
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template that you want to delete.</p>
@@ -1469,8 +1460,8 @@ pub mod fluent_builders {
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and
         /// recommendation.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and
@@ -1558,8 +1549,8 @@ pub mod fluent_builders {
         }
         /// <p>The locale into which you want to translate a finding description, recommendation,
         /// and the short description that identifies the finding.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale into which you want to translate a finding description, recommendation,
@@ -1725,8 +1716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale that you want to translate a rules package description into.</p>
@@ -1797,8 +1788,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN that specifies the assessment run for which you want to generate a
         /// report.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run for which you want to generate a
@@ -1812,8 +1803,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
         /// generate.</p>
-        pub fn report_file_format(mut self, signature: crate::model::ReportFileFormat) -> Self {
-            self.inner = self.inner.report_file_format(signature);
+        pub fn report_file_format(mut self, input: crate::model::ReportFileFormat) -> Self {
+            self.inner = self.inner.report_file_format(input);
             self
         }
         /// <p>Specifies the file format (html or pdf) of the assessment report that you want to
@@ -1828,8 +1819,8 @@ pub mod fluent_builders {
         /// <p>Specifies the type of the assessment report that you want to generate. There are two
         /// types of assessment reports: a finding report and a full report. For more information, see
         /// <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_reports.html">Assessment Reports</a>. </p>
-        pub fn report_type(mut self, signature: crate::model::ReportType) -> Self {
-            self.inner = self.inner.report_type(signature);
+        pub fn report_type(mut self, input: crate::model::ReportType) -> Self {
+            self.inner = self.inner.report_type(input);
             self
         }
         /// <p>Specifies the type of the assessment report that you want to generate. There are two
@@ -1906,11 +1897,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN that specifies the assessment template for which the exclusions preview was
         /// requested.</p>
-        pub fn assessment_template_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.assessment_template_arn(signature.into());
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template for which the exclusions preview was
@@ -1923,8 +1911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
-        pub fn preview_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preview_token(signature.into());
+        pub fn preview_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preview_token(input.into());
             self
         }
         /// <p>The unique identifier associated of the exclusions preview.</p>
@@ -1939,8 +1927,8 @@ pub mod fluent_builders {
         /// to null on your first call to the GetExclusionsPreviewRequest action. Subsequent calls to
         /// the action fill nextToken in the request with the value of nextToken from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -1953,8 +1941,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 100. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -1965,8 +1953,8 @@ pub mod fluent_builders {
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and
         /// recommendation.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>The locale into which you want to translate the exclusion's title, description, and
@@ -2038,8 +2026,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
         /// to obtain.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run that has the telemetry data that you want
@@ -2113,8 +2101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment run whose agents you want to list.</p>
@@ -2130,8 +2118,8 @@ pub mod fluent_builders {
         /// <p>For a record to match a filter, all specified filter attributes must match. When
         /// multiple values are specified for a filter attribute, any of the values can
         /// match.</p>
-        pub fn filter(mut self, signature: crate::model::AgentFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::AgentFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can use this parameter to specify a subset of data to be included in the action's
@@ -2148,8 +2136,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2163,8 +2151,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in
         /// the response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in
@@ -2258,8 +2246,8 @@ pub mod fluent_builders {
         /// <p>For a record to match a filter, all specified filter attributes must match. When
         /// multiple values are specified for a filter attribute, any of the values can
         /// match.</p>
-        pub fn filter(mut self, signature: crate::model::AssessmentRunFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::AssessmentRunFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can use this parameter to specify a subset of data to be included in the action's
@@ -2279,8 +2267,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2294,8 +2282,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in
         /// the response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items that you want in
@@ -2371,8 +2359,8 @@ pub mod fluent_builders {
         /// <p>For a record to match a filter, all specified filter attributes must match. When
         /// multiple values are specified for a filter attribute, any of the values can
         /// match.</p>
-        pub fn filter(mut self, signature: crate::model::AssessmentTargetFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::AssessmentTargetFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can use this parameter to specify a subset of data to be included in the action's
@@ -2392,8 +2380,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2407,8 +2395,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -2502,8 +2490,8 @@ pub mod fluent_builders {
         /// <p>For a record to match a filter, all specified filter attributes must match. When
         /// multiple values are specified for a filter attribute, any of the values can
         /// match.</p>
-        pub fn filter(mut self, signature: crate::model::AssessmentTemplateFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::AssessmentTemplateFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can use this parameter to specify a subset of data to be included in the action's
@@ -2523,8 +2511,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2538,8 +2526,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -2611,8 +2599,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the assessment template for which you want to list the existing event
         /// subscriptions.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template for which you want to list the existing event
@@ -2626,8 +2614,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2641,8 +2629,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -2713,8 +2701,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the assessment run that generated the exclusions that you want to
         /// list.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment run that generated the exclusions that you want to
@@ -2730,8 +2718,8 @@ pub mod fluent_builders {
         /// to null on your first call to the ListExclusionsRequest action. Subsequent calls to the
         /// action fill nextToken in the request with the value of nextToken from the previous response
         /// to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2744,8 +2732,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 100. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -2839,8 +2827,8 @@ pub mod fluent_builders {
         /// <p>For a record to match a filter, all specified filter attributes must match. When
         /// multiple values are specified for a filter attribute, any of the values can
         /// match.</p>
-        pub fn filter(mut self, signature: crate::model::FindingFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::FindingFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can use this parameter to specify a subset of data to be included in the action's
@@ -2860,8 +2848,8 @@ pub mod fluent_builders {
         /// Subsequent calls to the action fill <b>nextToken</b> in the
         /// request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2875,8 +2863,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -2950,8 +2938,8 @@ pub mod fluent_builders {
         /// action. Subsequent calls to the action fill <b>nextToken</b> in
         /// the request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -2965,8 +2953,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -3036,8 +3024,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN that specifies the assessment template whose tags you want to list.</p>
@@ -3107,8 +3095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment target whose agents you want to preview.</p>
-        pub fn preview_agents_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.preview_agents_arn(signature.into());
+        pub fn preview_agents_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preview_agents_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment target whose agents you want to preview.</p>
@@ -3124,8 +3112,8 @@ pub mod fluent_builders {
         /// Subsequent calls to the action fill <b>nextToken</b> in the
         /// request with the value of <b>NextToken</b> from the previous
         /// response to continue listing data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>You can use this parameter when paginating results. Set the value of this parameter
@@ -3139,8 +3127,8 @@ pub mod fluent_builders {
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
         /// response. The default value is 10. The maximum value is 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>You can use this parameter to indicate the maximum number of items you want in the
@@ -3212,8 +3200,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
         /// perform security assessments. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM role that grants Amazon Inspector access to AWS Services needed to
@@ -3381,8 +3369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment template that you want to set tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template that you want to set tags to.</p>
@@ -3473,11 +3461,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the assessment template of the assessment run that you want to
         /// start.</p>
-        pub fn assessment_template_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.assessment_template_arn(signature.into());
+        pub fn assessment_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_template_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template of the assessment run that you want to
@@ -3491,8 +3476,8 @@ pub mod fluent_builders {
         }
         /// <p>You can specify the name for the assessment run. The name must be unique for the
         /// assessment template whose ARN is used to start the assessment run.</p>
-        pub fn assessment_run_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_name(signature.into());
+        pub fn assessment_run_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_name(input.into());
             self
         }
         /// <p>You can specify the name for the assessment run. The name must be unique for the
@@ -3566,8 +3551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment run that you want to stop.</p>
-        pub fn assessment_run_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_run_arn(signature.into());
+        pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_run_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment run that you want to stop.</p>
@@ -3582,8 +3567,8 @@ pub mod fluent_builders {
         /// START_EVALUATION (the default value), stops the AWS agent from collecting data and begins
         /// the results evaluation and the findings generation process. SKIP_EVALUATION cancels the
         /// assessment run immediately, after which no findings are generated.</p>
-        pub fn stop_action(mut self, signature: crate::model::StopAction) -> Self {
-            self.inner = self.inner.stop_action(signature);
+        pub fn stop_action(mut self, input: crate::model::StopAction) -> Self {
+            self.inner = self.inner.stop_action(input);
             self
         }
         /// <p>An input option that can be set to either START_EVALUATION or SKIP_EVALUATION.
@@ -3660,8 +3645,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want
         /// to receive SNS notifications.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want
@@ -3671,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
-        pub fn event(mut self, signature: crate::model::InspectorEvent) -> Self {
-            self.inner = self.inner.event(signature);
+        pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>The event for which you want to receive SNS notifications.</p>
@@ -3684,8 +3669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
-        pub fn topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(signature.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
@@ -3756,8 +3741,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want
         /// to stop receiving SNS notifications.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment template that is used during the event for which you want
@@ -3767,8 +3752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
-        pub fn event(mut self, signature: crate::model::InspectorEvent) -> Self {
-            self.inner = self.inner.event(signature);
+        pub fn event(mut self, input: crate::model::InspectorEvent) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>The event for which you want to stop receiving SNS notifications.</p>
@@ -3780,8 +3765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
-        pub fn topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_arn(signature.into());
+        pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_arn(input.into());
             self
         }
         /// <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
@@ -3853,8 +3838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the assessment target that you want to update.</p>
-        pub fn assessment_target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_arn(signature.into());
+        pub fn assessment_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_arn(input.into());
             self
         }
         /// <p>The ARN of the assessment target that you want to update.</p>
@@ -3866,8 +3851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assessment target that you want to update.</p>
-        pub fn assessment_target_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_target_name(signature.into());
+        pub fn assessment_target_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_target_name(input.into());
             self
         }
         /// <p>The name of the assessment target that you want to update.</p>
@@ -3880,8 +3865,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the resource group that is used to specify the new resource group to
         /// associate with the assessment target.</p>
-        pub fn resource_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_group_arn(signature.into());
+        pub fn resource_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_group_arn(input.into());
             self
         }
         /// <p>The ARN of the resource group that is used to specify the new resource group to

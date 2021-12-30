@@ -382,8 +382,8 @@ pub mod fluent_builders {
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
         /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-        pub fn home_directory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_directory(signature.into());
+        pub fn home_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_directory(input.into());
             self
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
@@ -399,8 +399,8 @@ pub mod fluent_builders {
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
         /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
-        pub fn home_directory_type(mut self, signature: crate::model::HomeDirectoryType) -> Self {
-            self.inner = self.inner.home_directory_type(signature);
+        pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
+            self.inner = self.inner.home_directory_type(input);
             self
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
@@ -504,8 +504,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
         /// Reference</i>.</p>
         /// </note>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
@@ -531,8 +531,8 @@ pub mod fluent_builders {
         /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
         /// files and directories in your file system determine the level of access your users get when
         /// transferring files into and out of your Amazon EFS file systems.</p>
-        pub fn posix_profile(mut self, signature: crate::model::PosixProfile) -> Self {
-            self.inner = self.inner.posix_profile(signature);
+        pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
+            self.inner = self.inner.posix_profile(input);
             self
         }
         /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
@@ -551,8 +551,8 @@ pub mod fluent_builders {
         /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
         /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
         /// server to access your resources when servicing your users' transfer requests.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -564,8 +564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
         ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>A unique identifier that is required to identify specific groups within your directory.
@@ -708,8 +708,8 @@ pub mod fluent_builders {
         /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
         /// address specified and information about the issuer.</p>
         /// </note>
-        pub fn certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(signature.into());
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
@@ -761,8 +761,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>After the server is created, the domain cannot be changed.</p>
         /// </note>
-        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(signature);
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
         /// <p>The domain of the storage system that is used for file transfers. There are two domains
@@ -781,8 +781,8 @@ pub mod fluent_builders {
         /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
         /// the internet. Your VPC's default security groups are automatically assigned to your
         /// endpoint.</p>
-        pub fn endpoint_details(mut self, signature: crate::model::EndpointDetails) -> Self {
-            self.inner = self.inner.endpoint_details(signature);
+        pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
+            self.inner = self.inner.endpoint_details(input);
             self
         }
         /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
@@ -816,8 +816,8 @@ pub mod fluent_builders {
         /// restrict traffic by the client's public IP address. This is not possible with
         /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
-        pub fn endpoint_type(mut self, signature: crate::model::EndpointType) -> Self {
-            self.inner = self.inner.endpoint_type(signature);
+        pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
         /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
@@ -859,8 +859,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
         /// Family User Guide</i>.</p>
-        pub fn host_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_key(signature.into());
+        pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key(input.into());
             self
         }
         /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
@@ -887,9 +887,9 @@ pub mod fluent_builders {
         /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
         pub fn identity_provider_details(
             mut self,
-            signature: crate::model::IdentityProviderDetails,
+            input: crate::model::IdentityProviderDetails,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(signature);
+            self.inner = self.inner.identity_provider_details(input);
             self
         }
         /// <p>Required when <code>IdentityProviderType</code> is set to
@@ -916,11 +916,8 @@ pub mod fluent_builders {
         /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
         /// <p>Use the <code>LAMBDA</code> value to directly use a Lambda function as your identity provider. If you choose this value,
         /// you must specify the ARN for the lambda function in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code> data type.</p>
-        pub fn identity_provider_type(
-            mut self,
-            signature: crate::model::IdentityProviderType,
-        ) -> Self {
-            self.inner = self.inner.identity_provider_type(signature);
+        pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
+            self.inner = self.inner.identity_provider_type(input);
             self
         }
         /// <p>Specifies the mode of authentication for a server. The default value is
@@ -945,8 +942,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
         /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
         /// your CloudWatch logs.</p>
-        pub fn logging_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logging_role(signature.into());
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logging_role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
@@ -1044,8 +1041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
-        pub fn security_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_policy_name(signature.into());
+        pub fn security_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_policy_name(input.into());
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -1074,8 +1071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
-        pub fn workflow_details(mut self, signature: crate::model::WorkflowDetails) -> Self {
-            self.inner = self.inner.workflow_details(signature);
+        pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
+            self.inner = self.inner.workflow_details(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
@@ -1154,8 +1151,8 @@ pub mod fluent_builders {
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
         /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-        pub fn home_directory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_directory(signature.into());
+        pub fn home_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_directory(input.into());
             self
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
@@ -1171,8 +1168,8 @@ pub mod fluent_builders {
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
         /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
-        pub fn home_directory_type(mut self, signature: crate::model::HomeDirectoryType) -> Self {
-            self.inner = self.inner.home_directory_type(signature);
+        pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
+            self.inner = self.inner.home_directory_type(input);
             self
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
@@ -1290,8 +1287,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
         /// </note>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
@@ -1323,8 +1320,8 @@ pub mod fluent_builders {
         /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
         /// files and directories in Amazon EFS determine the level of access your users get when
         /// transferring files into and out of your Amazon EFS file systems.</p>
-        pub fn posix_profile(mut self, signature: crate::model::PosixProfile) -> Self {
-            self.inner = self.inner.posix_profile(signature);
+        pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
+            self.inner = self.inner.posix_profile(input);
             self
         }
         /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
@@ -1343,8 +1340,8 @@ pub mod fluent_builders {
         /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
         /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
         /// server to access your resources when servicing your users' transfer requests.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -1357,8 +1354,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server
         /// that you added your user to.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server
@@ -1369,8 +1366,8 @@ pub mod fluent_builders {
         }
         /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
         /// server.</p>
-        pub fn ssh_public_key_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_body(signature.into());
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_body(input.into());
             self
         }
         /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
@@ -1405,8 +1402,8 @@ pub mod fluent_builders {
         /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
         /// '-', period '.', and at sign '@'. The user name can't start
         /// with a hyphen, period, or at sign.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
@@ -1481,8 +1478,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A textual description for the workflow.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A textual description for the workflow.</p>
@@ -1673,8 +1670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
@@ -1695,8 +1692,8 @@ pub mod fluent_builders {
         ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>A unique identifier that is required to identify specific groups within your directory.
@@ -1779,8 +1776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique system-assigned identifier for a server instance.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A unique system-assigned identifier for a server instance.</p>
@@ -1850,8 +1847,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
         /// that has the user assigned to it.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
@@ -1861,8 +1858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier used to reference your user's specific SSH key.</p>
-        pub fn ssh_public_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(signature.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input.into());
             self
         }
         /// <p>A unique identifier used to reference your user's specific SSH key.</p>
@@ -1874,8 +1871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique string that identifies a user whose public key is being deleted.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>A unique string that identifies a user whose public key is being deleted.</p>
@@ -1951,8 +1948,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
         /// it.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
@@ -1962,8 +1959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique string that identifies a user that is being deleted from a server.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>A unique string that identifies a user that is being deleted from a server.</p>
@@ -2032,8 +2029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the workflow.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>A unique identifier for the workflow.</p>
@@ -2107,8 +2104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
@@ -2129,8 +2126,8 @@ pub mod fluent_builders {
         ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>A unique identifier that is required to identify specific groups within your directory.
@@ -2211,8 +2208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the execution of a workflow.</p>
-        pub fn execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_id(signature.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_id(input.into());
             self
         }
         /// <p>A unique identifier for the execution of a workflow.</p>
@@ -2221,8 +2218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the workflow.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>A unique identifier for the workflow.</p>
@@ -2294,8 +2291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
-        pub fn security_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_policy_name(signature.into());
+        pub fn security_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_policy_name(input.into());
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -2372,8 +2369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server.</p>
@@ -2446,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
@@ -2457,8 +2454,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
         /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
@@ -2528,8 +2525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the workflow.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>A unique identifier for the workflow.</p>
@@ -2603,8 +2600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server.</p>
@@ -2613,8 +2610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public key portion of an SSH key pair.</p>
-        pub fn ssh_public_key_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_body(signature.into());
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_body(input.into());
             self
         }
         /// <p>The public key portion of an SSH key pair.</p>
@@ -2626,8 +2623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user account that is assigned to one or more servers.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user account that is assigned to one or more servers.</p>
@@ -2696,8 +2693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the maximum number of access SIDs to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of access SIDs to return.</p>
@@ -2709,8 +2706,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
         /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
         /// accesses.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
@@ -2722,8 +2719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
@@ -2792,8 +2789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the aximum number of executions to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the aximum number of executions to return.</p>
@@ -2823,8 +2820,8 @@ pub mod fluent_builders {
         /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
         /// for all 100 executions have been returned.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -2854,8 +2851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the workflow.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>A unique identifier for the workflow.</p>
@@ -2926,8 +2923,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of security policies to return as a response to the
         /// <code>ListSecurityPolicies</code> query.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of security policies to return as a response to the
@@ -2940,8 +2937,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> parameter is returned in the output. You can then pass the
         /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
         /// security policies.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
@@ -3015,8 +3012,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
         /// query.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
@@ -3029,8 +3026,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> parameter is returned in the output. You can then pass the
         /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
         /// servers.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When additional results are obtained from the <code>ListServers</code> command, a
@@ -3104,8 +3101,8 @@ pub mod fluent_builders {
         }
         /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
         /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
@@ -3116,8 +3113,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of tags to return as a response to the
         /// <code>ListTagsForResource</code> request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of tags to return as a response to the
@@ -3129,8 +3126,8 @@ pub mod fluent_builders {
         /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
         /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
         /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
@@ -3203,8 +3200,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
         /// request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
@@ -3217,8 +3214,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
         /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
         /// users.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you can get additional results from the <code>ListUsers</code> call, a
@@ -3230,8 +3227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
@@ -3300,8 +3297,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the maximum number of workflows to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of workflows to return.</p>
@@ -3313,8 +3310,8 @@ pub mod fluent_builders {
         /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
         /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
         /// continue listing additional workflows.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -3390,8 +3387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the workflow.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>A unique identifier for the workflow.</p>
@@ -3400,8 +3397,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the execution of a workflow.</p>
-        pub fn execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_id(signature.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_id(input.into());
             self
         }
         /// <p>A unique identifier for the execution of a workflow.</p>
@@ -3410,8 +3407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
@@ -3420,8 +3417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the specified step succeeded or failed.</p>
-        pub fn status(mut self, signature: crate::model::CustomStepStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::CustomStepStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Indicates whether the specified step succeeded or failed.</p>
@@ -3501,8 +3498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server that you start.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that you start.</p>
@@ -3585,8 +3582,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A system-assigned unique identifier for a server that you stopped.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server that you stopped.</p>
@@ -3659,8 +3656,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
         /// role.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
@@ -3788,8 +3785,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned identifier for a specific server. That server's user authentication
         /// method is tested with a user name and password.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned identifier for a specific server. That server's user authentication
@@ -3813,8 +3810,8 @@ pub mod fluent_builders {
         /// <p>File Transfer Protocol (FTP)</p>
         /// </li>
         /// </ul>
-        pub fn server_protocol(mut self, signature: crate::model::Protocol) -> Self {
-            self.inner = self.inner.server_protocol(signature);
+        pub fn server_protocol(mut self, input: crate::model::Protocol) -> Self {
+            self.inner = self.inner.server_protocol(input);
             self
         }
         /// <p>The type of file transfer protocol to be tested.</p>
@@ -3840,8 +3837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source IP address of the user account to be tested.</p>
-        pub fn source_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_ip(signature.into());
+        pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_ip(input.into());
             self
         }
         /// <p>The source IP address of the user account to be tested.</p>
@@ -3850,8 +3847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user account to be tested.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user account to be tested.</p>
@@ -3860,8 +3857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of the user account to be tested.</p>
-        pub fn user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_password(signature.into());
+        pub fn user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_password(input.into());
             self
         }
         /// <p>The password of the user account to be tested.</p>
@@ -3937,8 +3934,8 @@ pub mod fluent_builders {
         }
         /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
         /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
@@ -4029,8 +4026,8 @@ pub mod fluent_builders {
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
         /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-        pub fn home_directory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_directory(signature.into());
+        pub fn home_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_directory(input.into());
             self
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
@@ -4046,8 +4043,8 @@ pub mod fluent_builders {
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
         /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
-        pub fn home_directory_type(mut self, signature: crate::model::HomeDirectoryType) -> Self {
-            self.inner = self.inner.home_directory_type(signature);
+        pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
+            self.inner = self.inner.home_directory_type(input);
             self
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
@@ -4152,8 +4149,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
         /// Reference</i>.</p>
         /// </note>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
@@ -4180,8 +4177,8 @@ pub mod fluent_builders {
         /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
         /// files and directories in your file system determine the level of access your users get when
         /// transferring files into and out of your Amazon EFS file systems.</p>
-        pub fn posix_profile(mut self, signature: crate::model::PosixProfile) -> Self {
-            self.inner = self.inner.posix_profile(signature);
+        pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
+            self.inner = self.inner.posix_profile(input);
             self
         }
         /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
@@ -4200,8 +4197,8 @@ pub mod fluent_builders {
         /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
         /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
         /// server to access your resources when servicing your users' transfer requests.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -4213,8 +4210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
@@ -4235,8 +4232,8 @@ pub mod fluent_builders {
         ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>A unique identifier that is required to identify specific groups within your directory.
@@ -4358,8 +4355,8 @@ pub mod fluent_builders {
         /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
         /// address specified and information about the issuer.</p>
         /// </note>
-        pub fn certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(signature.into());
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
@@ -4411,8 +4408,8 @@ pub mod fluent_builders {
         /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
         /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
         /// </p>
-        pub fn protocol_details(mut self, signature: crate::model::ProtocolDetails) -> Self {
-            self.inner = self.inner.protocol_details(signature);
+        pub fn protocol_details(mut self, input: crate::model::ProtocolDetails) -> Self {
+            self.inner = self.inner.protocol_details(input);
             self
         }
         /// <p>
@@ -4434,8 +4431,8 @@ pub mod fluent_builders {
         /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
         /// the internet. Your VPC's default security groups are automatically assigned to your
         /// endpoint.</p>
-        pub fn endpoint_details(mut self, signature: crate::model::EndpointDetails) -> Self {
-            self.inner = self.inner.endpoint_details(signature);
+        pub fn endpoint_details(mut self, input: crate::model::EndpointDetails) -> Self {
+            self.inner = self.inner.endpoint_details(input);
             self
         }
         /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
@@ -4469,8 +4466,8 @@ pub mod fluent_builders {
         /// restrict traffic by the client's public IP address. This is not possible with
         /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
         /// </note>
-        pub fn endpoint_type(mut self, signature: crate::model::EndpointType) -> Self {
-            self.inner = self.inner.endpoint_type(signature);
+        pub fn endpoint_type(mut self, input: crate::model::EndpointType) -> Self {
+            self.inner = self.inner.endpoint_type(input);
             self
         }
         /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
@@ -4512,8 +4509,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
         /// Family User Guide</i>.</p>
-        pub fn host_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_key(signature.into());
+        pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_key(input.into());
             self
         }
         /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
@@ -4537,9 +4534,9 @@ pub mod fluent_builders {
         /// authentication API method.</p>
         pub fn identity_provider_details(
             mut self,
-            signature: crate::model::IdentityProviderDetails,
+            input: crate::model::IdentityProviderDetails,
         ) -> Self {
-            self.inner = self.inner.identity_provider_details(signature);
+            self.inner = self.inner.identity_provider_details(input);
             self
         }
         /// <p>An array containing all of the information required to call a customer's
@@ -4554,8 +4551,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
         /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
         /// your CloudWatch logs.</p>
-        pub fn logging_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.logging_role(signature.into());
+        pub fn logging_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.logging_role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
@@ -4645,8 +4642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
-        pub fn security_policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_policy_name(signature.into());
+        pub fn security_policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_policy_name(input.into());
             self
         }
         /// <p>Specifies the name of the security policy that is attached to the server.</p>
@@ -4659,8 +4656,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned unique identifier for a server instance that the user account is
         /// assigned to.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance that the user account is
@@ -4670,8 +4667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
-        pub fn workflow_details(mut self, signature: crate::model::WorkflowDetails) -> Self {
-            self.inner = self.inner.workflow_details(signature);
+        pub fn workflow_details(mut self, input: crate::model::WorkflowDetails) -> Self {
+            self.inner = self.inner.workflow_details(input);
             self
         }
         /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
@@ -4749,8 +4746,8 @@ pub mod fluent_builders {
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
         /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
-        pub fn home_directory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_directory(signature.into());
+        pub fn home_directory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_directory(input.into());
             self
         }
         /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
@@ -4766,8 +4763,8 @@ pub mod fluent_builders {
         /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
         /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
         /// S3 or EFS paths visible to your users.</p>
-        pub fn home_directory_type(mut self, signature: crate::model::HomeDirectoryType) -> Self {
-            self.inner = self.inner.home_directory_type(signature);
+        pub fn home_directory_type(mut self, input: crate::model::HomeDirectoryType) -> Self {
+            self.inner = self.inner.home_directory_type(input);
             self
         }
         /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
@@ -4885,8 +4882,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
         /// </note>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
@@ -4918,8 +4915,8 @@ pub mod fluent_builders {
         /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
         /// that are set on files and directories in your file system determines the level of access your
         /// users get when transferring files into and out of your Amazon EFS file systems.</p>
-        pub fn posix_profile(mut self, signature: crate::model::PosixProfile) -> Self {
-            self.inner = self.inner.posix_profile(signature);
+        pub fn posix_profile(mut self, input: crate::model::PosixProfile) -> Self {
+            self.inner = self.inner.posix_profile(input);
             self
         }
         /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
@@ -4938,8 +4935,8 @@ pub mod fluent_builders {
         /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
         /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
         /// server to access your resources when servicing your users' transfer requests.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
@@ -4952,8 +4949,8 @@ pub mod fluent_builders {
         }
         /// <p>A system-assigned unique identifier for a server instance that the user account is
         /// assigned to.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>A system-assigned unique identifier for a server instance that the user account is
@@ -4967,8 +4964,8 @@ pub mod fluent_builders {
         /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
         /// '-', period '.', and at sign '@'. The user name can't start
         /// with a hyphen, period, or at sign.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>A unique string that identifies a user and is associated with a server as specified by the

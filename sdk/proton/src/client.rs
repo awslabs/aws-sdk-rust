@@ -692,8 +692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
@@ -777,8 +777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment with the deployment to cancel.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The name of the environment with the deployment to cancel.</p>
@@ -864,8 +864,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service instance with the deployment to cancel.</p>
-        pub fn service_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(signature.into());
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The name of the service instance with the deployment to cancel.</p>
@@ -877,8 +877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service with the service instance deployment to cancel.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service with the service instance deployment to cancel.</p>
@@ -961,8 +961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service with the service pipeline deployment to cancel.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service with the service pipeline deployment to cancel.</p>
@@ -1047,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -1057,8 +1057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>Proton Administrator Guide</i>.</p>
@@ -1070,8 +1070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the environment template.</p>
-        pub fn template_major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(signature.into());
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the environment template.</p>
@@ -1083,8 +1083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the environment template.</p>
-        pub fn template_minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(signature.into());
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the environment template.</p>
@@ -1096,8 +1096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment that's being created and deployed.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment that's being created and deployed.</p>
@@ -1108,8 +1108,8 @@ pub mod fluent_builders {
         /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
         /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>Proton Administrator
         /// Guide</i>.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>A link to a YAML formatted spec file that provides inputs as defined in the environment template bundle schema file. For more information, see
@@ -1122,11 +1122,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
         /// include either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value and omit the
         /// <code>provisioningRepository</code> parameter when you use standard provisioning.</p>
-        pub fn proton_service_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.proton_service_role_arn(signature.into());
+        pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proton_service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf. You must
@@ -1145,11 +1142,9 @@ pub mod fluent_builders {
         /// guide</i>.</p>
         pub fn environment_account_connection_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .environment_account_connection_id(signature.into());
+            self.inner = self.inner.environment_account_connection_id(input.into());
             self
         }
         /// <p>The ID of the environment account connection that you provide if you're provisioning your environment infrastructure resources to an
@@ -1190,9 +1185,9 @@ pub mod fluent_builders {
         /// </important>
         pub fn provisioning_repository(
             mut self,
-            signature: crate::model::RepositoryBranchInput,
+            input: crate::model::RepositoryBranchInput,
         ) -> Self {
-            self.inner = self.inner.provisioning_repository(signature);
+            self.inner = self.inner.provisioning_repository(input);
             self
         }
         /// <p>The repository that you provide with pull request provisioning. If you provide this parameter, you must omit the
@@ -1278,8 +1273,8 @@ pub mod fluent_builders {
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
         /// first request created.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the
@@ -1291,8 +1286,8 @@ pub mod fluent_builders {
         /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
         /// this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision
         /// environment infrastructure resources in the associated environment account.</p>
-        pub fn management_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.management_account_id(signature.into());
+        pub fn management_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.management_account_id(input.into());
             self
         }
         /// <p>The ID of the management account that accepts or rejects the environment account connection. You create an manage the Proton environment in
@@ -1307,8 +1302,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
         /// infrastructure resources in the associated environment account.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision
@@ -1318,8 +1313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Proton environment that's created in the associated management account.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The name of the Proton environment that's created in the associated management account.</p>
@@ -1423,8 +1418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -1433,8 +1428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template name as displayed in the developer interface.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The environment template name as displayed in the developer interface.</p>
@@ -1443,8 +1438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment template.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment template.</p>
@@ -1453,8 +1448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
-        pub fn encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(signature.into());
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>A customer provided encryption key that Proton uses to encrypt data.</p>
@@ -1466,8 +1461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
-        pub fn provisioning(mut self, signature: crate::model::Provisioning) -> Self {
-            self.inner = self.inner.provisioning(signature);
+        pub fn provisioning(mut self, input: crate::model::Provisioning) -> Self {
+            self.inner = self.inner.provisioning(input);
             self
         }
         /// <p>When included, indicates that the environment template is for customer provisioned and managed infrastructure.</p>
@@ -1559,8 +1554,8 @@ pub mod fluent_builders {
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
         /// first request created.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the
@@ -1570,8 +1565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -1583,8 +1578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new version of an environment template.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new version of an environment template.</p>
@@ -1595,8 +1590,8 @@ pub mod fluent_builders {
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
         /// <p>To create a new major and minor version of the environment template, <i>exclude</i>
         /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To create a new minor version of the environment template, include a <code>major Version</code>.</p>
@@ -1610,8 +1605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
-        pub fn source(mut self, signature: crate::model::TemplateVersionSourceInput) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::TemplateVersionSourceInput) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of an template.</p>
@@ -1702,8 +1697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(signature);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -1715,8 +1710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
@@ -1725,8 +1720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
-        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(signature.into());
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of your Amazon Web Services CodeStar connection. For more information, see <a href="https://docs.aws.amazon.com/setting-up-for-service">Setting up for Proton</a> in the <i>Proton Administrator Guide</i>.</p>
@@ -1738,8 +1733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
-        pub fn encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(signature.into());
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon Web Services KMS) key.</p>
@@ -1814,8 +1809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -1824,8 +1819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the Proton service.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the Proton service.</p>
@@ -1834,8 +1829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template that's used to create the service.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template that's used to create the service.</p>
@@ -1847,8 +1842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template that was used to create the service.</p>
-        pub fn template_major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(signature.into());
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template that was used to create the service.</p>
@@ -1860,8 +1855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template that was used to create the service.</p>
-        pub fn template_minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(signature.into());
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template that was used to create the service.</p>
@@ -1877,8 +1872,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-create-svc.html.html">Create a service</a> in the <i>Proton
         /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-create.html">Create a service</a> in the
         /// <i>Proton User Guide</i>.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>A link to a spec file that provides inputs as defined in the service template bundle schema file. The spec file is in YAML format. Don’t
@@ -1894,11 +1889,8 @@ pub mod fluent_builders {
         /// Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/proton-setup.html#setup-repo-connection">Setting up
         /// with Proton</a> in the <i>Proton User Guide</i>. <i>Don't</i> include this parameter if your service
         /// template <i>doesn't</i> include a service pipeline.</p>
-        pub fn repository_connection_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.repository_connection_arn(signature.into());
+        pub fn repository_connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the repository connection. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/setting-up-for-service.html#setting-up-vcontrol">Set up repository connection</a> in the <i>Proton
@@ -1914,8 +1906,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
         /// a service pipeline.</p>
-        pub fn repository_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_id(signature.into());
+        pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_id(input.into());
             self
         }
         /// <p>The ID of the code repository. <i>Don't</i> include this parameter if your service template <i>doesn't</i> include
@@ -1929,8 +1921,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
         /// your service template <i>doesn't</i> include a service pipeline.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the code repository branch that holds the code that's deployed in Proton. <i>Don't</i> include this parameter if
@@ -2021,8 +2013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -2031,8 +2023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template as displayed in the developer interface.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the service template as displayed in the developer interface.</p>
@@ -2041,8 +2033,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the service template.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the service template.</p>
@@ -2051,8 +2043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A customer provided encryption key that's used to encrypt data.</p>
-        pub fn encryption_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_key(signature.into());
+        pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_key(input.into());
             self
         }
         /// <p>A customer provided encryption key that's used to encrypt data.</p>
@@ -2067,8 +2059,8 @@ pub mod fluent_builders {
         /// <i>won't</i> be included for your service. Once specified, this parameter <i>can't</i> be changed. For more
         /// information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-template-bundles.html">Service template bundles</a> in the
         /// <i>Proton Administrator Guide</i>.</p>
-        pub fn pipeline_provisioning(mut self, signature: crate::model::Provisioning) -> Self {
-            self.inner = self.inner.pipeline_provisioning(signature);
+        pub fn pipeline_provisioning(mut self, input: crate::model::Provisioning) -> Self {
+            self.inner = self.inner.pipeline_provisioning(input);
             self
         }
         /// <p>Proton includes a service pipeline for your service by default. When included, this parameter indicates that an Proton service pipeline
@@ -2162,8 +2154,8 @@ pub mod fluent_builders {
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
         /// request created.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first
@@ -2173,8 +2165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -2186,8 +2178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new version of a service template.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new version of a service template.</p>
@@ -2198,8 +2190,8 @@ pub mod fluent_builders {
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
         /// <p>To create a new major and minor version of the service template, <i>exclude</i>
         /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
@@ -2213,8 +2205,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
-        pub fn source(mut self, signature: crate::model::TemplateVersionSourceInput) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::TemplateVersionSourceInput) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
@@ -2328,8 +2320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your registered template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of your registered template.</p>
@@ -2341,8 +2333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the registered template.</p>
-        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(signature);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The type of the registered template.</p>
@@ -2354,8 +2346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The provider type for your repository.</p>
-        pub fn repository_provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(signature);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The provider type for your repository.</p>
@@ -2367,8 +2359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of your repository, for example <code>myrepos/myrepo</code>.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of your repository, for example <code>myrepos/myrepo</code>.</p>
@@ -2380,8 +2372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch of the registered repository for your template.</p>
-        pub fn branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(signature.into());
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The branch of the registered repository for your template.</p>
@@ -2391,8 +2383,8 @@ pub mod fluent_builders {
         }
         /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
         /// repository directory.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A repository subdirectory path to your template bundle directory. When included, Proton limits the template bundle search to this
@@ -2462,8 +2454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment to delete.</p>
@@ -2539,8 +2531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to delete.</p>
@@ -2609,8 +2601,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template to delete.</p>
@@ -2684,8 +2676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -2697,8 +2689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template major version to delete.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>The environment template major version to delete.</p>
@@ -2710,8 +2702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment template minor version to delete.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>The environment template minor version to delete.</p>
@@ -2783,8 +2775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(signature);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -2796,8 +2788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -2866,8 +2858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service to delete.</p>
@@ -2936,8 +2928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template to delete.</p>
@@ -3011,8 +3003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -3024,8 +3016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service template major version to delete.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>The service template major version to delete.</p>
@@ -3037,8 +3029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service template minor version to delete.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>The service template minor version to delete.</p>
@@ -3110,8 +3102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -3123,8 +3115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(signature);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -3256,8 +3248,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment that you want to get the detail data for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment that you want to get the detail data for.</p>
@@ -3328,8 +3320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
@@ -3398,8 +3390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template that you want to get the detail data for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template that you want to get the detail data for.</p>
@@ -3468,8 +3460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -3481,8 +3473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view environment template major version detail data, include <code>major Version</code>.</p>
@@ -3494,8 +3486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To view environment template minor version detail data, include <code>minorVersion</code>.</p>
@@ -3567,8 +3559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository provider.</p>
-        pub fn provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.provider(signature);
+        pub fn provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -3580,8 +3572,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The repository name, for example <code>myrepos/myrepo</code>.</p>
@@ -3650,8 +3642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository name.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The repository name.</p>
@@ -3663,8 +3655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(signature);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -3676,8 +3668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository branch.</p>
-        pub fn branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(signature.into());
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The repository branch.</p>
@@ -3686,8 +3678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository sync type.</p>
-        pub fn sync_type(mut self, signature: crate::model::SyncType) -> Self {
-            self.inner = self.inner.sync_type(signature);
+        pub fn sync_type(mut self, input: crate::model::SyncType) -> Self {
+            self.inner = self.inner.sync_type(input);
             self
         }
         /// <p>The repository sync type.</p>
@@ -3756,8 +3748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service that you want to get the detail data for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service that you want to get the detail data for.</p>
@@ -3827,8 +3819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a service instance that you want to get the detail data for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a service instance that you want to get the detail data for.</p>
@@ -3837,8 +3829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -3907,8 +3899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template that you want to get detail data for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template that you want to get detail data for.</p>
@@ -3977,8 +3969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -3990,8 +3982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view service template major version detail data, include <code>major Version</code>.</p>
@@ -4003,8 +3995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To view service template minor version detail data, include <code>minorVersion</code>.</p>
@@ -4076,8 +4068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -4089,8 +4081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(signature);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -4162,8 +4154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The template name.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The template name.</p>
@@ -4175,8 +4167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template type.</p>
-        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(signature);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The template type.</p>
@@ -4188,8 +4180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The template version.</p>
-        pub fn template_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_version(signature.into());
+        pub fn template_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_version(input.into());
             self
         }
         /// <p>The template version.</p>
@@ -4265,9 +4257,9 @@ pub mod fluent_builders {
         /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
         pub fn requested_by(
             mut self,
-            signature: crate::model::EnvironmentAccountConnectionRequesterAccountType,
+            input: crate::model::EnvironmentAccountConnectionRequesterAccountType,
         ) -> Self {
-            self.inner = self.inner.requested_by(signature);
+            self.inner = self.inner.requested_by(input);
             self
         }
         /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
@@ -4281,8 +4273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment name that's associated with each listed environment account connection.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name that's associated with each listed environment account connection.</p>
@@ -4314,8 +4306,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
         /// environment account connections that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next environment account connection in the array of environment account connections, after the list of
@@ -4325,8 +4317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of environment account connections to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environment account connections to list.</p>
@@ -4395,8 +4387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The environment name.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name.</p>
@@ -4409,8 +4401,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
         /// that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next environment output in the array of environment outputs, after the list of environment outputs
@@ -4482,8 +4474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The environment name.</p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p>The environment name.</p>
@@ -4496,8 +4488,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
         /// list of environment provisioned resources that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next environment provisioned resource in the array of environment provisioned resources, after the
@@ -4568,8 +4560,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
         /// requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next environment in the array of environments, after the list of environments that was previously
@@ -4579,8 +4571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of environments to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environments to list.</p>
@@ -4670,8 +4662,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
         /// templates that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next environment template in the array of environment templates, after the list of environment
@@ -4681,8 +4673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of environment templates to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of environment templates to list.</p>
@@ -4752,8 +4744,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
         /// the list of major or minor versions that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of an environment template, after
@@ -4763,8 +4755,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of major or minor versions of an environment template to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of major or minor versions of an environment template to list.</p>
@@ -4773,8 +4765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -4788,8 +4780,8 @@ pub mod fluent_builders {
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
         /// <p>To view a list of major versions of an environment template, <i>exclude</i>
         /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of an environment template, include <code>major Version</code>.</p>
@@ -4864,8 +4856,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
         /// requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next repository in the array of repositories, after the list of repositories previously
@@ -4875,8 +4867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of repositories to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of repositories to list.</p>
@@ -4945,8 +4937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The repository name.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The repository name.</p>
@@ -4958,8 +4950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(signature);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -4971,8 +4963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-        pub fn sync_type(mut self, signature: crate::model::SyncType) -> Self {
-            self.inner = self.inner.sync_type(signature);
+        pub fn sync_type(mut self, input: crate::model::SyncType) -> Self {
+            self.inner = self.inner.sync_type(input);
             self
         }
         /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
@@ -4982,8 +4974,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
         /// repository sync definitions previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next repository sync definition in the array of repository sync definitions, after the list of
@@ -5053,8 +5045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service instance name.</p>
-        pub fn service_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(signature.into());
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The service instance name.</p>
@@ -5066,8 +5058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5076,8 +5068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
@@ -5148,8 +5140,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5158,8 +5150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service instance name.</p>
-        pub fn service_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_instance_name(signature.into());
+        pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_instance_name(input.into());
             self
         }
         /// <p>The service instance name.</p>
@@ -5172,8 +5164,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
         /// resources that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
@@ -5243,8 +5235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -5254,8 +5246,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
         /// previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next service in the array of service instances, after the list of service instances that was
@@ -5265,8 +5257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of service instances to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of service instances to list.</p>
@@ -5335,8 +5327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5345,8 +5337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next output in the array of outputs, after the list of outputs that was previously requested.</p>
@@ -5417,8 +5409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service name.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The service name.</p>
@@ -5428,8 +5420,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
         /// resources that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next provisioned resource in the array of provisioned resources, after the list of provisioned
@@ -5500,8 +5492,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
         /// requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next service in the array of services, after the list of services that was previously
@@ -5511,8 +5503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of services to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of services to list.</p>
@@ -5582,8 +5574,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
         /// previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next service template in the array of service templates, after the list of service templates
@@ -5593,8 +5585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of service templates to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of service templates to list.</p>
@@ -5664,8 +5656,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
         /// list of major or minor versions that was previously requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next major or minor version in the array of major or minor versions of a service template, after the
@@ -5675,8 +5667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of major or minor versions of a service template to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of major or minor versions of a service template to list.</p>
@@ -5685,8 +5677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -5700,8 +5692,8 @@ pub mod fluent_builders {
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
         /// <p>To view a list of major versions of a service template, <i>exclude</i>
         /// <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To view a list of minor of versions under a major version of a service template, include <code>major Version</code>.</p>
@@ -5775,8 +5767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for the listed tags.</p>
@@ -5786,8 +5778,8 @@ pub mod fluent_builders {
         }
         /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
         /// requested.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to indicate the location of the next resource tag in the array of resource tags, after the list of resource tags that was previously
@@ -5797,8 +5789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tags to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tags to list.</p>
@@ -5875,8 +5867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
@@ -5885,8 +5877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of your provisioned resource.</p>
-        pub fn status(mut self, signature: crate::model::ResourceDeploymentStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ResourceDeploymentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of your provisioned resource.</p>
@@ -5915,8 +5907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment ID for your provisioned resource.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID for your provisioned resource.</p>
@@ -5928,8 +5920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment status message for your provisioned resource.</p>
-        pub fn status_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_message(signature.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_message(input.into());
             self
         }
         /// <p>The deployment status message for your provisioned resource.</p>
@@ -6008,8 +6000,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to reject.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to reject.</p>
@@ -6078,8 +6070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the resource tag is applied to.</p>
@@ -6165,8 +6157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that the tag is to be removed from.</p>
@@ -6258,11 +6250,8 @@ pub mod fluent_builders {
         /// <a href="https://aws.amazon.com/service-terms">Amazon Web Services Feature Preview terms</a>, see section 2 on Beta and
         /// Previews.</p>
         /// </important>
-        pub fn pipeline_service_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.pipeline_service_role_arn(signature.into());
+        pub fn pipeline_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton pipeline service role.</p>
@@ -6288,9 +6277,9 @@ pub mod fluent_builders {
         /// </important>
         pub fn pipeline_provisioning_repository(
             mut self,
-            signature: crate::model::RepositoryBranchInput,
+            input: crate::model::RepositoryBranchInput,
         ) -> Self {
-            self.inner = self.inner.pipeline_provisioning_repository(signature);
+            self.inner = self.inner.pipeline_provisioning_repository(input);
             self
         }
         /// <p>The repository that you provide with pull request provisioning.</p>
@@ -6415,8 +6404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment to update.</p>
@@ -6425,8 +6414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment update.</p>
@@ -6435,8 +6424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The formatted specification that defines the update.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The formatted specification that defines the update.</p>
@@ -6445,8 +6434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the environment to update.</p>
-        pub fn template_major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(signature.into());
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the environment to update.</p>
@@ -6458,8 +6447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the environment to update.</p>
-        pub fn template_minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(signature.into());
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the environment to update.</p>
@@ -6471,11 +6460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
-        pub fn proton_service_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.proton_service_role_arn(signature.into());
+        pub fn proton_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proton_service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make API calls to other services your behalf.</p>
@@ -6521,8 +6507,8 @@ pub mod fluent_builders {
         /// (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, signature: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(signature);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>There are four modes for updating an environment as described in the following. The <code>deploymentType</code> field defines the mode.</p>
@@ -6572,11 +6558,9 @@ pub mod fluent_builders {
         /// account connection was created in and is associated with the current environment.</p>
         pub fn environment_account_connection_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .environment_account_connection_id(signature.into());
+            self.inner = self.inner.environment_account_connection_id(input.into());
             self
         }
         /// <p>The ID of the environment account connection.</p>
@@ -6598,9 +6582,9 @@ pub mod fluent_builders {
         /// </important>
         pub fn provisioning_repository(
             mut self,
-            signature: crate::model::RepositoryBranchInput,
+            input: crate::model::RepositoryBranchInput,
         ) -> Self {
-            self.inner = self.inner.provisioning_repository(signature);
+            self.inner = self.inner.provisioning_repository(input);
             self
         }
         /// <p>The repository that you provide with pull request provisioning.</p>
@@ -6682,8 +6666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the environment account connection to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the environment account connection to update.</p>
@@ -6692,8 +6676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role that is associated with the environment account connection to update.</p>
@@ -6762,8 +6746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment template to update.</p>
@@ -6772,8 +6756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment template to update as displayed in the developer interface.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the environment template to update as displayed in the developer interface.</p>
@@ -6782,8 +6766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment template update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment template update.</p>
@@ -6852,8 +6836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the environment template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the environment template.</p>
@@ -6865,8 +6849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To update a major version of an environment template, include <code>major Version</code>.</p>
@@ -6878,8 +6862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To update a minor version of an environment template, include <code>minorVersion</code>.</p>
@@ -6891,8 +6875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of environment template version to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of environment template version to update.</p>
@@ -6901,8 +6885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the environment template minor version to update.</p>
-        pub fn status(mut self, signature: crate::model::TemplateVersionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the environment template minor version to update.</p>
@@ -6979,8 +6963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to edit.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service to edit.</p>
@@ -6989,8 +6973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The edited service description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The edited service description.</p>
@@ -7002,8 +6986,8 @@ pub mod fluent_builders {
         /// <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <i>Edit a
         /// service</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-update.html">Proton Administrator Guide</a> or
         /// the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-update.html">Proton User Guide</a>.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list.
@@ -7111,8 +7095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service instance to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service instance to update.</p>
@@ -7121,8 +7105,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that the service instance belongs to.</p>
@@ -7167,8 +7151,8 @@ pub mod fluent_builders {
         /// (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, signature: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(signature);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>The deployment type.</p>
@@ -7216,8 +7200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The formatted specification that defines the service instance update.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The formatted specification that defines the service instance update.</p>
@@ -7226,8 +7210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template to update.</p>
-        pub fn template_major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(signature.into());
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template to update.</p>
@@ -7239,8 +7223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template to update.</p>
-        pub fn template_minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(signature.into());
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template to update.</p>
@@ -7348,8 +7332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service to that the pipeline is associated with.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service to that the pipeline is associated with.</p>
@@ -7358,8 +7342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The spec for the service pipeline to update.</p>
-        pub fn spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spec(signature.into());
+        pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spec(input.into());
             self
         }
         /// <p>The spec for the service pipeline to update.</p>
@@ -7404,8 +7388,8 @@ pub mod fluent_builders {
         /// (optional).</p>
         /// </dd>
         /// </dl>
-        pub fn deployment_type(mut self, signature: crate::model::DeploymentUpdateType) -> Self {
-            self.inner = self.inner.deployment_type(signature);
+        pub fn deployment_type(mut self, input: crate::model::DeploymentUpdateType) -> Self {
+            self.inner = self.inner.deployment_type(input);
             self
         }
         /// <p>The deployment type.</p>
@@ -7453,8 +7437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
-        pub fn template_major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_major_version(signature.into());
+        pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_major_version(input.into());
             self
         }
         /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
@@ -7466,8 +7450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
-        pub fn template_minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_minor_version(signature.into());
+        pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_minor_version(input.into());
             self
         }
         /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
@@ -7539,8 +7523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the service template to update.</p>
@@ -7549,8 +7533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service template to update as displayed in the developer interface.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the service template to update as displayed in the developer interface.</p>
@@ -7559,8 +7543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the service template update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the service template update.</p>
@@ -7629,8 +7613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service template.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the service template.</p>
@@ -7642,8 +7626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-        pub fn major_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_version(signature.into());
+        pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_version(input.into());
             self
         }
         /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
@@ -7655,8 +7639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-        pub fn minor_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.minor_version(signature.into());
+        pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.minor_version(input.into());
             self
         }
         /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
@@ -7668,8 +7652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of a service template version to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of a service template version to update.</p>
@@ -7678,8 +7662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the service template minor version to update.</p>
-        pub fn status(mut self, signature: crate::model::TemplateVersionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TemplateVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the service template minor version to update.</p>
@@ -7773,8 +7757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The synced template name.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The synced template name.</p>
@@ -7786,8 +7770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The synced template type.</p>
-        pub fn template_type(mut self, signature: crate::model::TemplateType) -> Self {
-            self.inner = self.inner.template_type(signature);
+        pub fn template_type(mut self, input: crate::model::TemplateType) -> Self {
+            self.inner = self.inner.template_type(input);
             self
         }
         /// <p>The synced template type.</p>
@@ -7799,8 +7783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository provider.</p>
-        pub fn repository_provider(mut self, signature: crate::model::RepositoryProvider) -> Self {
-            self.inner = self.inner.repository_provider(signature);
+        pub fn repository_provider(mut self, input: crate::model::RepositoryProvider) -> Self {
+            self.inner = self.inner.repository_provider(input);
             self
         }
         /// <p>The repository provider.</p>
@@ -7812,8 +7796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository, for example <code>myrepos/myrepo</code>.</p>
@@ -7825,8 +7809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The repository branch.</p>
-        pub fn branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch(signature.into());
+        pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch(input.into());
             self
         }
         /// <p>The repository branch.</p>
@@ -7835,8 +7819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>

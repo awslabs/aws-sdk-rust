@@ -294,8 +294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique client idempotency token.</p>
@@ -304,8 +304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the cluster.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster.</p>
@@ -374,8 +374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique client idempotency token.</p>
@@ -384,8 +384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster for the control panel.</p>
@@ -394,8 +394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(signature.into());
+        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_name(input.into());
             self
         }
         /// <p>The name of the control panel.</p>
@@ -467,8 +467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique client idempotency token.</p>
@@ -477,8 +477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that includes the routing control.</p>
@@ -487,8 +487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that includes the routing control.</p>
@@ -500,8 +500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(signature.into());
+        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_name(input.into());
             self
         }
         /// <p>The name of the routing control.</p>
@@ -573,8 +573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A new assertion rule for a control panel.</p>
-        pub fn assertion_rule(mut self, signature: crate::model::NewAssertionRule) -> Self {
-            self.inner = self.inner.assertion_rule(signature);
+        pub fn assertion_rule(mut self, input: crate::model::NewAssertionRule) -> Self {
+            self.inner = self.inner.assertion_rule(input);
             self
         }
         /// <p>A new assertion rule for a control panel.</p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique client idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique client idempotency token.</p>
@@ -596,8 +596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new gating rule for a control panel.</p>
-        pub fn gating_rule(mut self, signature: crate::model::NewGatingRule) -> Self {
-            self.inner = self.inner.gating_rule(signature);
+        pub fn gating_rule(mut self, input: crate::model::NewGatingRule) -> Self {
+            self.inner = self.inner.gating_rule(input);
             self
         }
         /// <p>A new gating rule for a control panel.</p>
@@ -669,8 +669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're deleting.</p>
@@ -739,8 +739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're deleting.</p>
@@ -812,8 +812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're deleting.</p>
@@ -885,8 +885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request body that you include when you update a safety rule.</p>
-        pub fn safety_rule_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(signature.into());
+        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rule_arn(input.into());
             self
         }
         /// <p>The request body that you include when you update a safety rule.</p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the cluster that you're getting details for.</p>
@@ -1028,8 +1028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
@@ -1101,8 +1101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
@@ -1174,8 +1174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request body that you include when you update a safety rule.</p>
-        pub fn safety_rule_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.safety_rule_arn(signature.into());
+        pub fn safety_rule_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.safety_rule_arn(input.into());
             self
         }
         /// <p>The request body that you include when you update a safety rule.</p>
@@ -1247,8 +1247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1257,8 +1257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1267,8 +1267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control that you're getting details for.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1350,8 +1350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1420,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
-        pub fn cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_arn(signature.into());
+        pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a cluster.</p>
@@ -1430,8 +1430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1440,8 +1440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1510,8 +1510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting routing control details for.</p>
@@ -1523,8 +1523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1533,8 +1533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel that you're getting details for.</p>
@@ -1616,8 +1616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of objects that you want to return with this call.</p>
@@ -1626,8 +1626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that identifies which batch of results you want to see.</p>
@@ -1696,8 +1696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
-        pub fn control_panel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_arn(signature.into());
+        pub fn control_panel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the control panel.</p>
@@ -1709,8 +1709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the control panel.</p>
-        pub fn control_panel_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_panel_name(signature.into());
+        pub fn control_panel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_panel_name(input.into());
             self
         }
         /// <p>The name of the control panel.</p>
@@ -1782,8 +1782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the routing control.</p>
@@ -1795,8 +1795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing control.</p>
-        pub fn routing_control_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_name(signature.into());
+        pub fn routing_control_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_name(input.into());
             self
         }
         /// <p>The name of the routing control.</p>
@@ -1868,11 +1868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
-        pub fn assertion_rule_update(
-            mut self,
-            signature: crate::model::AssertionRuleUpdate,
-        ) -> Self {
-            self.inner = self.inner.assertion_rule_update(signature);
+        pub fn assertion_rule_update(mut self, input: crate::model::AssertionRuleUpdate) -> Self {
+            self.inner = self.inner.assertion_rule_update(input);
             self
         }
         /// <p>An update to an assertion rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
@@ -1884,8 +1881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>
-        pub fn gating_rule_update(mut self, signature: crate::model::GatingRuleUpdate) -> Self {
-            self.inner = self.inner.gating_rule_update(signature);
+        pub fn gating_rule_update(mut self, input: crate::model::GatingRuleUpdate) -> Self {
+            self.inner = self.inner.gating_rule_update(input);
             self
         }
         /// <p>Update to a gating rule. You can update the name or the evaluation period (wait period). If you don't specify one of the items to update, the item is unchanged.</p>

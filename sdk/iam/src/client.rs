@@ -1346,9 +1346,9 @@ pub mod fluent_builders {
         /// add the client ID to. You can get a list of OIDC provider ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect (OIDC) provider resource to
@@ -1362,8 +1362,8 @@ pub mod fluent_builders {
         }
         /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
         /// resource.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID (also known as audience) to add to the IAM OpenID Connect provider
@@ -1447,8 +1447,8 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the instance profile to update.</p>
@@ -1464,8 +1464,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to add.</p>
@@ -1538,8 +1538,8 @@ pub mod fluent_builders {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group to update.</p>
@@ -1552,8 +1552,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to add.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to add.</p>
@@ -1633,8 +1633,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the group to attach the policy to.</p>
@@ -1646,8 +1646,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
@@ -1733,8 +1733,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the role to attach the policy to.</p>
@@ -1746,8 +1746,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
@@ -1826,8 +1826,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM user to attach the policy to.</p>
@@ -1839,8 +1839,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to attach.</p>
@@ -1918,8 +1918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IAM user's current password.</p>
-        pub fn old_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.old_password(signature.into());
+        pub fn old_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.old_password(input.into());
             self
         }
         /// <p>The IAM user's current password.</p>
@@ -1936,8 +1936,8 @@ pub mod fluent_builders {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn new_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_password(signature.into());
+        pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_password(input.into());
             self
         }
         /// <p>The new password. The new password must conform to the Amazon Web Services account's password
@@ -2029,8 +2029,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user that the new key will belong to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user that the new key will belong to.</p>
@@ -2107,8 +2107,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_alias(signature.into());
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_alias(input.into());
             self
         }
         /// <p>The account alias to create.</p>
@@ -2191,8 +2191,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p> The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -2210,8 +2210,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group to create. Do not include the path in this value.</p>
@@ -2289,8 +2289,8 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the instance profile to create.</p>
@@ -2310,8 +2310,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -2425,8 +2425,8 @@ pub mod fluent_builders {
         /// exist.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user to create a password for. The user must already
@@ -2445,8 +2445,8 @@ pub mod fluent_builders {
         /// characters. Any of these characters are valid in a password. However, many tools, such
         /// as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have
         /// special meaning within that tool.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The new password for the user.</p>
@@ -2462,8 +2462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, signature: bool) -> Self {
-            self.inner = self.inner.password_reset_required(signature);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.password_reset_required(input);
             self
         }
         /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
@@ -2577,8 +2577,8 @@ pub mod fluent_builders {
         /// <p>You cannot register the same provider multiple times in a single Amazon Web Services account. If you
         /// try to submit a URL that has already been used for an OpenID Connect provider in the
         /// Amazon Web Services account, you will get an error.</p>
-        pub fn url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.url(signature.into());
+        pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.url(input.into());
             self
         }
         /// <p>The URL of the identity provider. The URL must begin with <code>https://</code> and
@@ -2779,8 +2779,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The friendly name of the policy.</p>
@@ -2802,8 +2802,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You cannot use an asterisk (*) in the path name.</p>
         /// </note>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>The path for the policy.</p>
@@ -2847,8 +2847,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The JSON policy document that you want to use as the content for the new
@@ -2889,8 +2889,8 @@ pub mod fluent_builders {
         /// example, "Grants access to production DynamoDB tables."</p>
         /// <p>The policy description is immutable. After a value is assigned, it cannot be
         /// changed.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A friendly description of the policy.</p>
@@ -3001,8 +3001,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a new
@@ -3035,8 +3035,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The JSON policy document that you want to use as the content for this new version of
@@ -3075,8 +3075,8 @@ pub mod fluent_builders {
         /// and roles that the policy is attached to.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn set_as_default(mut self, signature: bool) -> Self {
-            self.inner = self.inner.set_as_default(signature);
+        pub fn set_as_default(mut self, input: bool) -> Self {
+            self.inner = self.inner.set_as_default(input);
             self
         }
         /// <p>Specifies whether to set this version as the policy's default version.</p>
@@ -3160,8 +3160,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -3179,8 +3179,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to create.</p>
@@ -3216,9 +3216,9 @@ pub mod fluent_builders {
         /// <p> Upon success, the response includes the same trust policy in JSON format.</p>
         pub fn assume_role_policy_document(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.assume_role_policy_document(signature.into());
+            self.inner = self.inner.assume_role_policy_document(input.into());
             self
         }
         /// <p>The trust relationship policy document that grants an entity permission to assume the
@@ -3252,8 +3252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the role.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the role.</p>
@@ -3274,8 +3274,8 @@ pub mod fluent_builders {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_session_duration(signature);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_session_duration(input);
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -3297,8 +3297,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(signature.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input.into());
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
@@ -3424,8 +3424,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based
         /// federation</a> in the <i>IAM User Guide</i>
         /// </p>
-        pub fn saml_metadata_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_metadata_document(signature.into());
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_metadata_document(input.into());
             self
         }
         /// <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The
@@ -3446,8 +3446,8 @@ pub mod fluent_builders {
         /// <p>The name of the provider to create.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the provider to create.</p>
@@ -3562,8 +3562,8 @@ pub mod fluent_builders {
         /// that work with IAM</a> in the <i>IAM User Guide</i>. Look for
         /// the services that have <b>Yes </b>in the <b>Service-Linked Role</b> column. Choose the <b>Yes</b> link to view the service-linked role documentation for that
         /// service.</p>
-        pub fn aws_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_service_name(signature.into());
+        pub fn aws_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_service_name(input.into());
             self
         }
         /// <p>The service principal for the Amazon Web Services service to which this role is attached. You use a
@@ -3582,8 +3582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the role.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the role.</p>
@@ -3600,8 +3600,8 @@ pub mod fluent_builders {
         /// <p>Some services do not support the <code>CustomSuffix</code> parameter. If you provide
         /// an optional suffix and the operation fails, try the operation again without the
         /// suffix.</p>
-        pub fn custom_suffix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_suffix(signature.into());
+        pub fn custom_suffix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_suffix(input.into());
             self
         }
         /// <p></p>
@@ -3695,8 +3695,8 @@ pub mod fluent_builders {
         /// that they can be used only to access the specified service.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user that is to be associated with the credentials. The new
@@ -3711,8 +3711,8 @@ pub mod fluent_builders {
         /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The
         /// service you specify here is the only service that can be accessed using these
         /// credentials.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the Amazon Web Services service that is to be associated with the credentials. The
@@ -3791,8 +3791,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p> The path for the user name. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -3810,8 +3810,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to create.</p>
@@ -3824,8 +3824,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(signature.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input.into());
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
@@ -3945,8 +3945,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p> The path for the virtual MFA device. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -3964,11 +3964,8 @@ pub mod fluent_builders {
         /// device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn virtual_mfa_device_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.virtual_mfa_device_name(signature.into());
+        pub fn virtual_mfa_device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_mfa_device_name(input.into());
             self
         }
         /// <p>The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA
@@ -4078,8 +4075,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA device you want to deactivate.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose MFA device you want to deactivate.</p>
@@ -4094,8 +4091,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -4177,8 +4174,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose access key pair you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose access key pair you want to delete.</p>
@@ -4192,8 +4189,8 @@ pub mod fluent_builders {
         /// delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(signature.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input.into());
             self
         }
         /// <p>The access key ID for the access key ID and secret access key you want to
@@ -4273,8 +4270,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of
         /// lowercase letters, digits, and dashes. You cannot start or finish with a dash, nor can you have
         /// two dashes in a row.</p>
-        pub fn account_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_alias(signature.into());
+        pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_alias(input.into());
             self
         }
         /// <p>The name of the account alias to delete.</p>
@@ -4412,8 +4409,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM group to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the IAM group to delete.</p>
@@ -4492,8 +4489,8 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) identifying the group that the policy is embedded
@@ -4507,8 +4504,8 @@ pub mod fluent_builders {
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
@@ -4590,8 +4587,8 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the instance profile to delete.</p>
@@ -4679,8 +4676,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose password you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose password you want to delete.</p>
@@ -4759,9 +4756,9 @@ pub mod fluent_builders {
         /// delete. You can get a list of OpenID Connect provider resource ARNs by using the <a>ListOpenIDConnectProviders</a> operation.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource object to
@@ -4859,8 +4856,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to delete.</p>
@@ -4937,8 +4934,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
         /// version.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to delete a
@@ -4954,8 +4951,8 @@ pub mod fluent_builders {
         /// followed by a period '.' and a string of letters and digits.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The policy version to delete.</p>
@@ -5037,8 +5034,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to delete.</p>
@@ -5115,8 +5112,8 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM role from which you want to remove the
@@ -5194,8 +5191,8 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) identifying the role that the policy is embedded
@@ -5209,8 +5206,8 @@ pub mod fluent_builders {
         /// <p>The name of the inline policy to delete from the specified IAM role.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the inline policy to delete from the specified IAM role.</p>
@@ -5287,8 +5284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
@@ -5376,11 +5373,8 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate you want to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the server certificate you want to delete.</p>
@@ -5470,8 +5464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service-linked role to be deleted.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the service-linked role to be deleted.</p>
@@ -5544,8 +5538,8 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the service-specific credential. If this
@@ -5563,9 +5557,9 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(signature.into());
+            self.inner = self.inner.service_specific_credential_id(input.into());
             self
         }
         /// <p>The unique identifier of the service-specific credential. You can get this value by
@@ -5646,8 +5640,8 @@ pub mod fluent_builders {
         /// <p>The name of the user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user the signing certificate belongs to.</p>
@@ -5660,8 +5654,8 @@ pub mod fluent_builders {
         /// <p>The ID of the signing certificate to delete.</p>
         /// <p>The format of this parameter, as described by its <a href="http://wikipedia.org/wiki/regex">regex</a> pattern, is a string of
         /// characters that can be upper- or lower-cased letters or digits.</p>
-        pub fn certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(signature.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input.into());
             self
         }
         /// <p>The ID of the signing certificate to delete.</p>
@@ -5741,8 +5735,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -5755,8 +5749,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(signature.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input.into());
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
@@ -5864,8 +5858,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to delete.</p>
@@ -5942,8 +5936,8 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the
@@ -6021,8 +6015,8 @@ pub mod fluent_builders {
         /// in.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) identifying the user that the policy is embedded
@@ -6036,8 +6030,8 @@ pub mod fluent_builders {
         /// <p>The name identifying the policy document to delete.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name identifying the policy document to delete.</p>
@@ -6116,8 +6110,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -6199,8 +6193,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
@@ -6212,8 +6206,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
@@ -6289,8 +6283,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM role to detach the policy from.</p>
@@ -6302,8 +6296,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
@@ -6379,8 +6373,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM user to detach the policy from.</p>
@@ -6392,8 +6386,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
@@ -6467,8 +6461,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user for whom you want to enable the MFA device.</p>
@@ -6483,8 +6477,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting
         /// of upper and lowercase alphanumeric characters with no spaces. You can also include any of the
         /// following characters: =,.@:/-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices,
@@ -6509,8 +6503,8 @@ pub mod fluent_builders {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code1(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code1(signature.into());
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code1(input.into());
             self
         }
         /// <p>An authentication code emitted by the device. </p>
@@ -6540,8 +6534,8 @@ pub mod fluent_builders {
         /// time. If this happens, you can <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_sync.html">resync the
         /// device</a>.</p>
         /// </important>
-        pub fn authentication_code2(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code2(signature.into());
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code2(input.into());
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
@@ -6820,8 +6814,8 @@ pub mod fluent_builders {
         /// organization root ID is <code>r-f6g7h8i9j0example</code> and your organization ID is
         /// <code>o-a1b2c3d4e5</code>. Your entity path is
         /// <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.</p>
-        pub fn entity_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_path(signature.into());
+        pub fn entity_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_path(input.into());
             self
         }
         /// <p>The path of the Organizations entity (root, OU, or account). You can build an entity path
@@ -6838,11 +6832,8 @@ pub mod fluent_builders {
         /// optional.</p>
         /// <p>This ID is used to generate information about when an account principal that is
         /// limited by the SCP attempted to access an Amazon Web Services service.</p>
-        pub fn organizations_policy_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.organizations_policy_id(signature.into());
+        pub fn organizations_policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizations_policy_id(input.into());
             self
         }
         /// <p>The identifier of the Organizations service control policy (SCP). This parameter is
@@ -6974,8 +6965,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
         /// information about when the resource was last used in an attempt to access an Amazon Web Services
         /// service.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the IAM resource (user, group, role, or managed policy) used to generate
@@ -6992,9 +6983,9 @@ pub mod fluent_builders {
         /// include this optional parameter, the operation generates service data.</p>
         pub fn granularity(
             mut self,
-            signature: crate::model::AccessAdvisorUsageGranularityType,
+            input: crate::model::AccessAdvisorUsageGranularityType,
         ) -> Self {
-            self.inner = self.inner.granularity(signature);
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The level of detail that you want to generate. You can specify whether you want to
@@ -7074,8 +7065,8 @@ pub mod fluent_builders {
         /// <p>The identifier of an access key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(signature.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input.into());
             self
         }
         /// <p>The identifier of an access key.</p>
@@ -7194,8 +7185,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7214,8 +7205,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -7555,8 +7546,8 @@ pub mod fluent_builders {
         /// in unencoded form here for clarity, but must be URL encoded to be included as a part of
         /// a real HTML request.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_source_arn(signature.into());
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_source_arn(input.into());
             self
         }
         /// <p>The ARN of a user, group, or role whose policies contain the context keys that you
@@ -7751,8 +7742,8 @@ pub mod fluent_builders {
         /// <p>The name of the group.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -7766,8 +7757,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -7786,8 +7777,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -7879,8 +7870,8 @@ pub mod fluent_builders {
         /// <p>The name of the group the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group the policy is associated with.</p>
@@ -7893,8 +7884,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document to get.</p>
@@ -7970,8 +7961,8 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the instance profile to get information about.</p>
@@ -8056,8 +8047,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose login profile you want to retrieve.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose login profile you want to retrieve.</p>
@@ -8133,9 +8124,9 @@ pub mod fluent_builders {
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the OIDC provider resource object in IAM to get
@@ -8227,8 +8218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the request generated by the <a>GenerateOrganizationsAccessReport</a> operation.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the request generated by the <a>GenerateOrganizationsAccessReport</a> operation.</p>
@@ -8244,8 +8235,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -8264,8 +8255,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -8279,8 +8270,8 @@ pub mod fluent_builders {
         /// <p>The key that is used to sort the results. If you choose the namespace key, the results
         /// are returned in alphabetical order. If you choose the time key, the results are sorted
         /// numerically by the date and time.</p>
-        pub fn sort_key(mut self, signature: crate::model::SortKeyType) -> Self {
-            self.inner = self.inner.sort_key(signature);
+        pub fn sort_key(mut self, input: crate::model::SortKeyType) -> Self {
+            self.inner = self.inner.sort_key(input);
             self
         }
         /// <p>The key that is used to sort the results. If you choose the namespace key, the results
@@ -8365,8 +8356,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
@@ -8454,8 +8445,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
         /// about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the managed policy that you want information
@@ -8469,8 +8460,8 @@ pub mod fluent_builders {
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that
         /// consists of the lowercase letter 'v' followed by one or two digits, and optionally
         /// followed by a period '.' and a string of letters and digits.</p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>Identifies the policy version to retrieve.</p>
@@ -8553,8 +8544,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role to get information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role to get information about.</p>
@@ -8643,8 +8634,8 @@ pub mod fluent_builders {
         /// <p>The name of the role associated with the policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role associated with the policy.</p>
@@ -8657,8 +8648,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document to get.</p>
@@ -8735,8 +8726,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
         /// information about.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider resource object in IAM to get
@@ -8816,11 +8807,8 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate you want to retrieve information about.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the server certificate you want to retrieve information about.</p>
@@ -8948,8 +8936,8 @@ pub mod fluent_builders {
         /// returned by <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
         /// within a session, or by the same user when used to call
         /// <code>GetServiceLastAccessedDetail</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the request generated by the <a>GenerateServiceLastAccessedDetails</a> operation. The <code>JobId</code>
@@ -8968,8 +8956,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -8988,8 +8976,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -9089,8 +9077,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code>
         /// operation.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the request generated by the <code>GenerateServiceLastAccessedDetails</code>
@@ -9107,8 +9095,8 @@ pub mod fluent_builders {
         /// <code>(service prefix: a4b)</code>. For more information about service namespaces,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
         /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn service_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_namespace(signature.into());
+        pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_namespace(input.into());
             self
         }
         /// <p>The service namespace for an Amazon Web Services service. Provide the service namespace to learn
@@ -9134,8 +9122,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -9154,8 +9142,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -9234,8 +9222,8 @@ pub mod fluent_builders {
         }
         /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
         /// <code>task/aws-service-role/<service-principal-name>/<role-name>/<task-uuid></code>.</p>
-        pub fn deletion_task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deletion_task_id(signature.into());
+        pub fn deletion_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deletion_task_id(input.into());
             self
         }
         /// <p>The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a> operation in the format
@@ -9314,8 +9302,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -9328,8 +9316,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(signature.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input.into());
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
@@ -9345,8 +9333,8 @@ pub mod fluent_builders {
         /// <p>Specifies the public key encoding format to use in the response. To retrieve the
         /// public key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM
         /// format, use <code>PEM</code>.</p>
-        pub fn encoding(mut self, signature: crate::model::EncodingType) -> Self {
-            self.inner = self.inner.encoding(signature);
+        pub fn encoding(mut self, input: crate::model::EncodingType) -> Self {
+            self.inner = self.inner.encoding(input);
             self
         }
         /// <p>Specifies the public key encoding format to use in the response. To retrieve the
@@ -9426,8 +9414,8 @@ pub mod fluent_builders {
         /// <p>This parameter is optional. If it is not included, it defaults to the user making the
         /// request. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to get information about.</p>
@@ -9515,8 +9503,8 @@ pub mod fluent_builders {
         /// <p>The name of the user who the policy is associated with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user who the policy is associated with.</p>
@@ -9529,8 +9517,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document to get.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document to get.</p>
@@ -9615,8 +9603,8 @@ pub mod fluent_builders {
         /// <p>The name of the user.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user.</p>
@@ -9630,8 +9618,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -9650,8 +9638,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -9732,8 +9720,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -9752,8 +9740,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -9840,8 +9828,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the group to list attached policies for.</p>
@@ -9857,8 +9845,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -9875,8 +9863,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -9895,8 +9883,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -9983,8 +9971,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the role to list attached policies for.</p>
@@ -10000,8 +9988,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -10018,8 +10006,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10038,8 +10026,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10126,8 +10114,8 @@ pub mod fluent_builders {
         /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the user to list attached policies for.</p>
@@ -10143,8 +10131,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -10161,8 +10149,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10181,8 +10169,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10267,8 +10255,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
@@ -10283,8 +10271,8 @@ pub mod fluent_builders {
         /// are attached to the specified policy are returned. This parameter is optional. If it is
         /// not included, all attached entities (users, groups, and roles) are returned. The
         /// argument for this parameter must be one of the valid values listed below.</p>
-        pub fn entity_filter(mut self, signature: crate::model::EntityType) -> Self {
-            self.inner = self.inner.entity_filter(signature);
+        pub fn entity_filter(mut self, input: crate::model::EntityType) -> Self {
+            self.inner = self.inner.entity_filter(input);
             self
         }
         /// <p>The entity type to use for filtering the results.</p>
@@ -10305,8 +10293,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -10325,8 +10313,8 @@ pub mod fluent_builders {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, signature: crate::model::PolicyUsageType) -> Self {
-            self.inner = self.inner.policy_usage_filter(signature);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.inner = self.inner.policy_usage_filter(input);
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -10346,8 +10334,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10366,8 +10354,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10453,8 +10441,8 @@ pub mod fluent_builders {
         /// <p>The name of the group to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group to list policies for.</p>
@@ -10468,8 +10456,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10488,8 +10476,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10574,8 +10562,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p> The path prefix for filtering the results. For example, the prefix
@@ -10594,8 +10582,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10614,8 +10602,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10695,8 +10683,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to list groups for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to list groups for.</p>
@@ -10710,8 +10698,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10730,8 +10718,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10823,8 +10811,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p> The path prefix for filtering the results. For example, the prefix
@@ -10843,8 +10831,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10863,8 +10851,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -10947,8 +10935,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to list instance profiles for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to list instance profiles for.</p>
@@ -10962,8 +10950,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -10982,8 +10970,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11063,8 +11051,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile whose tags you want to see.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the IAM instance profile whose tags you want to see.</p>
@@ -11081,8 +11069,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11101,8 +11089,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11185,8 +11173,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA devices you want to list.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose MFA devices you want to list.</p>
@@ -11200,8 +11188,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11220,8 +11208,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11302,8 +11290,8 @@ pub mod fluent_builders {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The unique identifier for the IAM virtual MFA device whose tags you want to see.
@@ -11321,8 +11309,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11341,8 +11329,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11492,9 +11480,9 @@ pub mod fluent_builders {
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the OpenID Connect (OIDC) identity provider whose tags you want to
@@ -11512,8 +11500,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11532,8 +11520,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11629,8 +11617,8 @@ pub mod fluent_builders {
         /// <code>Local</code>.</p>
         /// <p>This parameter is optional. If it is not included, or if it is set to
         /// <code>All</code>, all policies are returned.</p>
-        pub fn scope(mut self, signature: crate::model::PolicyScopeType) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::PolicyScopeType) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p>The scope to use for filtering the results.</p>
@@ -11651,8 +11639,8 @@ pub mod fluent_builders {
         /// the policies that are attached to an IAM user, group, or role. When
         /// <code>OnlyAttached</code> is <code>false</code>, or when the parameter is not
         /// included, all policies are returned.</p>
-        pub fn only_attached(mut self, signature: bool) -> Self {
-            self.inner = self.inner.only_attached(signature);
+        pub fn only_attached(mut self, input: bool) -> Self {
+            self.inner = self.inner.only_attached(input);
             self
         }
         /// <p>A flag to filter the results to only the attached policies.</p>
@@ -11669,8 +11657,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p>The path prefix for filtering the results. This parameter is optional. If it is not
@@ -11688,8 +11676,8 @@ pub mod fluent_builders {
         /// the policies used to set permissions boundaries, set the value
         /// to <code>PermissionsBoundary</code>.</p>
         /// <p>This parameter is optional. If it is not included, all policies are returned. </p>
-        pub fn policy_usage_filter(mut self, signature: crate::model::PolicyUsageType) -> Self {
-            self.inner = self.inner.policy_usage_filter(signature);
+        pub fn policy_usage_filter(mut self, input: crate::model::PolicyUsageType) -> Self {
+            self.inner = self.inner.policy_usage_filter(input);
             self
         }
         /// <p>The policy usage method to use for filtering the results.</p>
@@ -11709,8 +11697,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11729,8 +11717,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -11848,8 +11836,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -11862,8 +11850,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
         /// list.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
@@ -11966,8 +11954,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM customer managed policy whose tags you want to see.</p>
@@ -11981,8 +11969,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12001,8 +11989,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12083,8 +12071,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
         /// versions.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the
@@ -12098,8 +12086,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12118,8 +12106,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12205,8 +12193,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to list policies for.</p>
@@ -12220,8 +12208,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12240,8 +12228,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12332,8 +12320,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p> The path prefix for filtering the results. For example, the prefix
@@ -12352,8 +12340,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12372,8 +12360,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12453,8 +12441,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role for which you want to see the list of tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role for which you want to see the list of tags.</p>
@@ -12468,8 +12456,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12488,8 +12476,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12637,8 +12625,8 @@ pub mod fluent_builders {
         /// you want to see.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the Security Assertion Markup Language (SAML) identity provider whose tags
@@ -12656,8 +12644,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12676,8 +12664,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12771,8 +12759,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p> The path prefix for filtering the results. For example:
@@ -12791,8 +12779,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12811,8 +12799,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -12899,11 +12887,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate whose tags you want to see.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the IAM server certificate whose tags you want to see.</p>
@@ -12920,8 +12905,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -12940,8 +12925,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13026,8 +13011,8 @@ pub mod fluent_builders {
         /// used to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose service-specific credentials you want information about. If
@@ -13041,8 +13026,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not
         /// specified, then Amazon Web Services returns service-specific credentials for all services.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>Filters the returned results to only those for the specified Amazon Web Services service. If not
@@ -13123,8 +13108,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user whose signing certificates you want to examine.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user whose signing certificates you want to examine.</p>
@@ -13138,8 +13123,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13158,8 +13143,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13246,8 +13231,8 @@ pub mod fluent_builders {
         /// used to sign the request.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user to list SSH public keys for. If none is specified, the
@@ -13263,8 +13248,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13283,8 +13268,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13369,8 +13354,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to list policies for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to list policies for.</p>
@@ -13384,8 +13369,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13404,8 +13389,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13496,8 +13481,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn path_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_prefix(signature.into());
+        pub fn path_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_prefix(input.into());
             self
         }
         /// <p> The path prefix for filtering the results. For example:
@@ -13516,8 +13501,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13536,8 +13521,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13616,8 +13601,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user whose tags you want to see.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user whose tags you want to see.</p>
@@ -13631,8 +13616,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13651,8 +13636,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13741,8 +13726,8 @@ pub mod fluent_builders {
         /// If you do not specify an <code>AssignmentStatus</code>, the operation defaults to
         /// <code>Any</code>, which lists both assigned and unassigned virtual MFA
         /// devices.,</p>
-        pub fn assignment_status(mut self, signature: crate::model::AssignmentStatusType) -> Self {
-            self.inner = self.inner.assignment_status(signature);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatusType) -> Self {
+            self.inner = self.inner.assignment_status(input);
             self
         }
         /// <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices to list.
@@ -13760,8 +13745,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -13780,8 +13765,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -13873,8 +13858,8 @@ pub mod fluent_builders {
         /// <p>The name of the group to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group to associate the policy with.</p>
@@ -13887,8 +13872,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document.</p>
@@ -13919,8 +13904,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The policy document.</p>
@@ -14024,8 +14009,8 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the
         /// permissions boundary.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM role for which you want to set the
@@ -14036,8 +14021,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// role.</p>
-        pub fn permissions_boundary(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(signature.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input.into());
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
@@ -14131,8 +14116,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to associate the policy with.</p>
@@ -14145,8 +14130,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document.</p>
@@ -14176,8 +14161,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The policy document.</p>
@@ -14279,8 +14264,8 @@ pub mod fluent_builders {
         }
         /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the
         /// permissions boundary.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name (friendly name, not ARN) of the IAM user for which you want to set the
@@ -14291,8 +14276,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
         /// user.</p>
-        pub fn permissions_boundary(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.permissions_boundary(signature.into());
+        pub fn permissions_boundary(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.permissions_boundary(input.into());
             self
         }
         /// <p>The ARN of the policy that is used to set the permissions boundary for the
@@ -14381,8 +14366,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to associate the policy with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to associate the policy with.</p>
@@ -14395,8 +14380,8 @@ pub mod fluent_builders {
         /// <p>The name of the policy document.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy document.</p>
@@ -14427,8 +14412,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The policy document.</p>
@@ -14530,9 +14515,9 @@ pub mod fluent_builders {
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource to remove the
@@ -14547,8 +14532,8 @@ pub mod fluent_builders {
         }
         /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
         /// resource. For more information about client IDs, see <a>CreateOpenIDConnectProvider</a>.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The client ID (also known as audience) to remove from the IAM OIDC provider
@@ -14629,8 +14614,8 @@ pub mod fluent_builders {
         /// <p>The name of the instance profile to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the instance profile to update.</p>
@@ -14646,8 +14631,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to remove.</p>
@@ -14720,8 +14705,8 @@ pub mod fluent_builders {
         /// <p>The name of the group to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group to update.</p>
@@ -14734,8 +14719,8 @@ pub mod fluent_builders {
         /// <p>The name of the user to remove.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to remove.</p>
@@ -14813,8 +14798,8 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the service-specific credential. If this
@@ -14831,9 +14816,9 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(signature.into());
+            self.inner = self.inner.service_specific_credential_id(input.into());
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -14912,8 +14897,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose MFA device you want to resynchronize.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose MFA device you want to resynchronize.</p>
@@ -14926,8 +14911,8 @@ pub mod fluent_builders {
         /// <p>Serial number that uniquely identifies the MFA device.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>Serial number that uniquely identifies the MFA device.</p>
@@ -14942,8 +14927,8 @@ pub mod fluent_builders {
         }
         /// <p>An authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code1(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code1(signature.into());
+        pub fn authentication_code1(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code1(input.into());
             self
         }
         /// <p>An authentication code emitted by the device.</p>
@@ -14957,8 +14942,8 @@ pub mod fluent_builders {
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
         /// <p>The format for this parameter is a sequence of six digits.</p>
-        pub fn authentication_code2(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authentication_code2(signature.into());
+        pub fn authentication_code2(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authentication_code2(input.into());
             self
         }
         /// <p>A subsequent authentication code emitted by the device.</p>
@@ -15038,8 +15023,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
         /// set.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM policy whose default version you want to
@@ -15052,8 +15037,8 @@ pub mod fluent_builders {
         /// <p>The version of the policy to set as the default (operative) version.</p>
         /// <p>For more information about managed policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
         /// policies</a> in the <i>IAM User Guide</i>.</p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The version of the policy to set as the default (operative) version.</p>
@@ -15152,9 +15137,9 @@ pub mod fluent_builders {
         /// <i>IAM User Guide</i>.</p>
         pub fn global_endpoint_token_version(
             mut self,
-            signature: crate::model::GlobalEndpointTokenVersion,
+            input: crate::model::GlobalEndpointTokenVersion,
         ) -> Self {
-            self.inner = self.inner.global_endpoint_token_version(signature);
+            self.inner = self.inner.global_endpoint_token_version(input);
             self
         }
         /// <p>The version of the global endpoint token. Version 1 tokens are valid only in Amazon Web Services Regions that are available by default. These tokens do not work in
@@ -15465,8 +15450,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(signature.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -15510,8 +15495,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:iam::<i>AWS-account-ID</i>:root</code>. For example,
         /// to represent the account with the 112233445566 ID, use the following ARN:
         /// <code>arn:aws:iam::112233445566-ID:root</code>. </p>
-        pub fn resource_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(signature.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input.into());
             self
         }
         /// <p>An ARN representing the Amazon Web Services account ID that specifies the owner of any simulated
@@ -15540,8 +15525,8 @@ pub mod fluent_builders {
         /// a value to use in evaluating the policy.</p>
         /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an
         /// assumed role, federated user, or a service principal.</p>
-        pub fn caller_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_arn(signature.into());
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API
@@ -15626,11 +15611,8 @@ pub mod fluent_builders {
         /// <p>instance, image, security-group, network-interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.resource_handling_option(signature.into());
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_handling_option(input.into());
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -15699,8 +15681,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -15719,8 +15701,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -15824,8 +15806,8 @@ pub mod fluent_builders {
         /// <p>The maximum length of the policy document that you can pass in this operation,
         /// including whitespace, is listed below. To view the maximum character counts of a managed policy with no whitespaces, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entity-length">IAM and STS character quotas</a>.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn policy_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_source_arn(signature.into());
+        pub fn policy_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_source_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a user, group, or role whose policies you want to
@@ -16049,8 +16031,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn resource_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(signature.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
             self
         }
         /// <p>A resource-based policy to include in the simulation provided as a string. Each
@@ -16090,8 +16072,8 @@ pub mod fluent_builders {
         /// <code>CallerArn</code>. This parameter is required only if you specify a
         /// resource-based policy and account that owns the resource is different from the account
         /// that owns the simulated calling user <code>CallerArn</code>.</p>
-        pub fn resource_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(signature.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input.into());
             self
         }
         /// <p>An Amazon Web Services account ID that specifies the owner of any simulated resource that does not
@@ -16125,8 +16107,8 @@ pub mod fluent_builders {
         /// that the resource-based policy's <code>Principal</code> element has a value to use in
         /// evaluating the policy.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn caller_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.caller_arn(signature.into());
+        pub fn caller_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.caller_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user that you want to specify as the simulated caller of the API
@@ -16220,11 +16202,8 @@ pub mod fluent_builders {
         /// <p>instance, image, security group, network interface, subnet, volume</p>
         /// </li>
         /// </ul>
-        pub fn resource_handling_option(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.resource_handling_option(signature.into());
+        pub fn resource_handling_option(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_handling_option(input.into());
             self
         }
         /// <p>Specifies the type of simulation to run. Different API operations that support
@@ -16293,8 +16272,8 @@ pub mod fluent_builders {
         /// <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code>
         /// contains a value to include in the subsequent call that tells the service where to continue
         /// from.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>Use this only when paginating results to indicate the
@@ -16313,8 +16292,8 @@ pub mod fluent_builders {
         /// you receive a response indicating that the results are truncated. Set it to the value of the
         /// <code>Marker</code> element in the response that you received to indicate where the next call
         /// should start.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>Use this parameter only when paginating results and only after
@@ -16423,8 +16402,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile to which you want to add tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the IAM instance profile to which you want to add tags.</p>
@@ -16556,8 +16535,8 @@ pub mod fluent_builders {
         /// For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The unique identifier for the IAM virtual MFA device to which you want to add tags.
@@ -16692,9 +16671,9 @@ pub mod fluent_builders {
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the OIDC identity provider in IAM to which you want to add tags.</p>
@@ -16824,8 +16803,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM customer managed policy to which you want to add tags.</p>
@@ -16961,8 +16940,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role to which you want to add tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role to which you want to add tags.</p>
@@ -17089,8 +17068,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the SAML identity provider in IAM to which you want to add tags.</p>
@@ -17232,11 +17211,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate to which you want to add tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the IAM server certificate to which you want to add tags.</p>
@@ -17374,8 +17350,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user to which you want to add tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user to which you want to add tags.</p>
@@ -17466,8 +17442,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn instance_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_name(signature.into());
+        pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_name(input.into());
             self
         }
         /// <p>The name of the IAM instance profile from which you want to remove tags.</p>
@@ -17565,8 +17541,8 @@ pub mod fluent_builders {
         /// tags. For virtual MFA devices, the serial number is the same as the ARN.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The unique identifier for the IAM virtual MFA device from which you want to remove
@@ -17667,9 +17643,9 @@ pub mod fluent_builders {
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the OIDC provider in IAM from which you want to remove tags.</p>
@@ -17766,8 +17742,8 @@ pub mod fluent_builders {
         /// tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM customer managed policy from which you want to remove
@@ -17861,8 +17837,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM role from which you want to remove tags.</p>
         /// <p>This parameter accepts (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that consist of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role from which you want to remove tags.</p>
@@ -17958,8 +17934,8 @@ pub mod fluent_builders {
         /// tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The ARN of the SAML identity provider in IAM from which you want to remove
@@ -18064,11 +18040,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the IAM server certificate from which you want to remove tags.</p>
@@ -18164,8 +18137,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user from which you want to remove tags.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user from which you want to remove tags.</p>
@@ -18266,8 +18239,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose key you want to update.</p>
@@ -18280,8 +18253,8 @@ pub mod fluent_builders {
         /// <p>The access key ID of the secret access key you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn access_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key_id(signature.into());
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input.into());
             self
         }
         /// <p>The access key ID of the secret access key you want to update.</p>
@@ -18297,8 +18270,8 @@ pub mod fluent_builders {
         /// <p> The status you want to assign to the secret access key. <code>Active</code> means
         /// that the key can be used for programmatic calls to Amazon Web Services, while <code>Inactive</code>
         /// means that the key cannot be used.</p>
-        pub fn status(mut self, signature: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The status you want to assign to the secret access key. <code>Active</code> means
@@ -18386,8 +18359,8 @@ pub mod fluent_builders {
         /// <p>The minimum number of characters allowed in an IAM user password.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>6</code>.</p>
-        pub fn minimum_password_length(mut self, signature: i32) -> Self {
-            self.inner = self.inner.minimum_password_length(signature);
+        pub fn minimum_password_length(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_password_length(input);
             self
         }
         /// <p>The minimum number of characters allowed in an IAM user password.</p>
@@ -18403,8 +18376,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// symbol character.</p>
-        pub fn require_symbols(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_symbols(signature);
+        pub fn require_symbols(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_symbols(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one of the following
@@ -18422,8 +18395,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// numeric character.</p>
-        pub fn require_numbers(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_numbers(signature);
+        pub fn require_numbers(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_numbers(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0
@@ -18440,8 +18413,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// uppercase character.</p>
-        pub fn require_uppercase_characters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_uppercase_characters(signature);
+        pub fn require_uppercase_characters(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_uppercase_characters(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one uppercase character
@@ -18461,8 +18434,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that passwords do not require at least one
         /// lowercase character.</p>
-        pub fn require_lowercase_characters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_lowercase_characters(signature);
+        pub fn require_lowercase_characters(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_lowercase_characters(input);
             self
         }
         /// <p>Specifies whether IAM user passwords must contain at least one lowercase character
@@ -18483,8 +18456,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users in the account do not
         /// automatically have permissions to change their own password.</p>
-        pub fn allow_users_to_change_password(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_users_to_change_password(signature);
+        pub fn allow_users_to_change_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_users_to_change_password(input);
             self
         }
         /// <p> Allows all IAM users in your account to use the Amazon Web Services Management Console to change their own
@@ -18503,8 +18476,8 @@ pub mod fluent_builders {
         /// <p>The number of days that an IAM user password is valid.</p>
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM user passwords never expire.</p>
-        pub fn max_password_age(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_password_age(signature);
+        pub fn max_password_age(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_password_age(input);
             self
         }
         /// <p>The number of days that an IAM user password is valid.</p>
@@ -18519,8 +18492,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
         /// previous passwords.</p>
-        pub fn password_reuse_prevention(mut self, signature: i32) -> Self {
-            self.inner = self.inner.password_reuse_prevention(signature);
+        pub fn password_reuse_prevention(mut self, input: i32) -> Self {
+            self.inner = self.inner.password_reuse_prevention(input);
             self
         }
         /// <p>Specifies the number of previous passwords that IAM users are prevented from
@@ -18537,8 +18510,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify a value for this parameter, then the operation uses the default
         /// value of <code>false</code>. The result is that IAM users can change their passwords
         /// after they expire and continue to sign in as the user.</p>
-        pub fn hard_expiry(mut self, signature: bool) -> Self {
-            self.inner = self.inner.hard_expiry(signature);
+        pub fn hard_expiry(mut self, input: bool) -> Self {
+            self.inner = self.inner.hard_expiry(input);
             self
         }
         /// <p>Prevents IAM users from setting a new password after their password has expired. The
@@ -18616,8 +18589,8 @@ pub mod fluent_builders {
         /// <p>The name of the role to update with the new policy.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role to update with the new policy.</p>
@@ -18647,8 +18620,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn policy_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_document(signature.into());
+        pub fn policy_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_document(input.into());
             self
         }
         /// <p>The policy that grants an entity permission to assume the role.</p>
@@ -18756,8 +18729,8 @@ pub mod fluent_builders {
         /// the original name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Name of the IAM group to update. If you're changing the name of the group, this is
@@ -18773,8 +18746,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(signature.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input.into());
             self
         }
         /// <p>New path for the IAM group. Only include this if changing the group's path.</p>
@@ -18790,8 +18763,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_group_name(signature.into());
+        pub fn new_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_group_name(input.into());
             self
         }
         /// <p>New name for the IAM group. Only include this if changing the group's name.</p>
@@ -18874,8 +18847,8 @@ pub mod fluent_builders {
         /// <p>The name of the user whose password you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user whose password you want to update.</p>
@@ -18904,8 +18877,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>However, the format can be further restricted by the account administrator by setting
         /// a password policy on the Amazon Web Services account. For more information, see <a>UpdateAccountPasswordPolicy</a>.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The new password for the specified IAM user.</p>
@@ -18933,8 +18906,8 @@ pub mod fluent_builders {
         }
         /// <p>Allows this new password to be used only once by requiring the specified IAM user to
         /// set a new password on next sign-in.</p>
-        pub fn password_reset_required(mut self, signature: bool) -> Self {
-            self.inner = self.inner.password_reset_required(signature);
+        pub fn password_reset_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.password_reset_required(input);
             self
         }
         /// <p>Allows this new password to be used only once by requiring the specified IAM user to
@@ -19032,9 +19005,9 @@ pub mod fluent_builders {
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn open_id_connect_provider_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.open_id_connect_provider_arn(signature.into());
+            self.inner = self.inner.open_id_connect_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which
@@ -19128,8 +19101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role that you want to modify.</p>
@@ -19138,8 +19111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
@@ -19160,8 +19133,8 @@ pub mod fluent_builders {
         /// or the <code>assume-role*</code> CLI operations but does not apply when you use those
         /// operations to create a console URL. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
         /// roles</a> in the <i>IAM User Guide</i>.</p>
-        pub fn max_session_duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_session_duration(signature);
+        pub fn max_session_duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_session_duration(input);
             self
         }
         /// <p>The maximum session duration (in seconds) that you want to set for the specified role.
@@ -19244,8 +19217,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the role that you want to modify.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the role that you want to modify.</p>
@@ -19254,8 +19227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description that you want to apply to the specified role.</p>
@@ -19331,8 +19304,8 @@ pub mod fluent_builders {
         /// to validate the SAML authentication response (assertions) that are received from the
         /// IdP. You must generate the metadata document using the identity management software that
         /// is used as your organization's IdP.</p>
-        pub fn saml_metadata_document(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_metadata_document(signature.into());
+        pub fn saml_metadata_document(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_metadata_document(input.into());
             self
         }
         /// <p>An XML document generated by an identity provider (IdP) that supports SAML 2.0. The
@@ -19349,8 +19322,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn saml_provider_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.saml_provider_arn(signature.into());
+        pub fn saml_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.saml_provider_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SAML provider to update.</p>
@@ -19444,11 +19417,8 @@ pub mod fluent_builders {
         /// <p>The name of the server certificate that you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name of the server certificate that you want to update.</p>
@@ -19467,8 +19437,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(signature.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input.into());
             self
         }
         /// <p>The new path for the server certificate. Include this only if you are updating the
@@ -19487,9 +19457,9 @@ pub mod fluent_builders {
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
         pub fn new_server_certificate_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_server_certificate_name(signature.into());
+            self.inner = self.inner.new_server_certificate_name(input.into());
             self
         }
         /// <p>The new name for the server certificate. Include this only if you are updating the
@@ -19571,8 +19541,8 @@ pub mod fluent_builders {
         /// to call the operation.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the service-specific credential. If you do
@@ -19589,9 +19559,9 @@ pub mod fluent_builders {
         /// consist of any upper or lowercased letter or digit.</p>
         pub fn service_specific_credential_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.service_specific_credential_id(signature.into());
+            self.inner = self.inner.service_specific_credential_id(input.into());
             self
         }
         /// <p>The unique identifier of the service-specific credential.</p>
@@ -19605,8 +19575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status to be assigned to the service-specific credential.</p>
-        pub fn status(mut self, signature: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status to be assigned to the service-specific credential.</p>
@@ -19684,8 +19654,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user the signing certificate belongs to.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user the signing certificate belongs to.</p>
@@ -19698,8 +19668,8 @@ pub mod fluent_builders {
         /// <p>The ID of the signing certificate you want to update.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(signature.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input.into());
             self
         }
         /// <p>The ID of the signing certificate you want to update.</p>
@@ -19715,8 +19685,8 @@ pub mod fluent_builders {
         /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
         /// certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code> means that
         /// the certificate cannot be used.</p>
-        pub fn status(mut self, signature: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The status you want to assign to the certificate. <code>Active</code> means that the
@@ -19795,8 +19765,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -19809,8 +19779,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for the SSH public key.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can
         /// consist of any upper or lowercased letter or digit.</p>
-        pub fn ssh_public_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_id(signature.into());
+        pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_id(input.into());
             self
         }
         /// <p>The unique identifier for the SSH public key.</p>
@@ -19826,8 +19796,8 @@ pub mod fluent_builders {
         /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
         /// be used for authentication with an CodeCommit repository. <code>Inactive</code> means that
         /// the key cannot be used.</p>
-        pub fn status(mut self, signature: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status to assign to the SSH public key. <code>Active</code> means that the key can
@@ -19913,8 +19883,8 @@ pub mod fluent_builders {
         /// original user name.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>Name of the user to update. If you're changing the name of the user, this is the
@@ -19931,8 +19901,8 @@ pub mod fluent_builders {
         /// of either a forward slash (/) by itself or a string that must begin and end with forward slashes.
         /// In addition, it can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>), including
         /// most punctuation characters, digits, and upper and lowercased letters.</p>
-        pub fn new_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_path(signature.into());
+        pub fn new_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_path(input.into());
             self
         }
         /// <p>New path for the IAM user. Include this parameter only if you're changing the user's
@@ -19950,8 +19920,8 @@ pub mod fluent_builders {
         /// <p>IAM user, group, role, and policy names must be unique within the account. Names are
         /// not distinguished by case. For example, you cannot create resources named both
         /// "MyResource" and "myresource".</p>
-        pub fn new_user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_user_name(signature.into());
+        pub fn new_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_user_name(input.into());
             self
         }
         /// <p>New name for the user. Include this parameter only if you're changing the user's
@@ -20060,8 +20030,8 @@ pub mod fluent_builders {
         /// parameter. The path must begin with <code>/cloudfront</code> and must include a
         /// trailing slash (for example, <code>/cloudfront/test/</code>).</p>
         /// </note>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>The path for the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -20085,11 +20055,8 @@ pub mod fluent_builders {
         /// of the certificate cannot contain any spaces.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn server_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.server_certificate_name(signature.into());
+        pub fn server_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_certificate_name(input.into());
             self
         }
         /// <p>The name for the server certificate. Do not include the path in this value. The name
@@ -20120,8 +20087,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(signature.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input.into());
             self
         }
         /// <p>The contents of the public key certificate in PEM-encoded format.</p>
@@ -20165,8 +20132,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn private_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.private_key(signature.into());
+        pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.private_key(input.into());
             self
         }
         /// <p>The contents of the private key in PEM-encoded format.</p>
@@ -20208,8 +20175,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_chain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_chain(signature.into());
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_chain(input.into());
             self
         }
         /// <p>The contents of the certificate chain. This is typically a concatenation of the
@@ -20348,8 +20315,8 @@ pub mod fluent_builders {
         /// <p>The name of the user the signing certificate is for.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user the signing certificate is for.</p>
@@ -20376,8 +20343,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn certificate_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(signature.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input.into());
             self
         }
         /// <p>The contents of the signing certificate.</p>
@@ -20471,8 +20438,8 @@ pub mod fluent_builders {
         /// <p>The name of the IAM user to associate the SSH public key with.</p>
         /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
         /// characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the IAM user to associate the SSH public key with.</p>
@@ -20501,8 +20468,8 @@ pub mod fluent_builders {
         /// carriage return (<code>\u000D</code>)</p>
         /// </li>
         /// </ul>
-        pub fn ssh_public_key_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key_body(signature.into());
+        pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key_body(input.into());
             self
         }
         /// <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.

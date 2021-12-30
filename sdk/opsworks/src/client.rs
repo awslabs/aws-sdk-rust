@@ -699,8 +699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -794,8 +794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(signature.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -804,8 +804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -882,8 +882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -892,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -975,11 +975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
-        pub fn elastic_load_balancer_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.elastic_load_balancer_name(signature.into());
+        pub fn elastic_load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_load_balancer_name(input.into());
             self
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
@@ -991,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The ID of the layer to which the Elastic Load Balancing instance is to be attached.</p>
@@ -1066,8 +1063,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The source stack ID.</p>
-        pub fn source_stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_stack_id(signature.into());
+        pub fn source_stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_stack_id(input.into());
             self
         }
         /// <p>The source stack ID.</p>
@@ -1079,8 +1076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cloned stack name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The cloned stack name.</p>
@@ -1090,8 +1087,8 @@ pub mod fluent_builders {
         }
         /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(signature.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region(input.into());
             self
         }
         /// <p>The cloned stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see
@@ -1127,8 +1124,8 @@ pub mod fluent_builders {
         /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
         /// VPC</a>. For more information about default VPC and EC2 Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. </p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC that the cloned stack is to be launched into. It must be in the specified region. All
@@ -1194,8 +1191,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must set this parameter to a valid service role ARN or the action will fail; there is no default value. You can specify the source stack's service role ARN, if you prefer, but you must do so explicitly.</p>
         /// </note>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The stack AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
@@ -1219,9 +1216,9 @@ pub mod fluent_builders {
         /// Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(signature.into());
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
@@ -1270,8 +1267,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can specify a different Linux operating system for the cloned stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
-        pub fn default_os(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(signature.into());
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's operating system, which must be set to one of the following.</p>
@@ -1377,8 +1374,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
         /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(signature.into());
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
         /// <p>The stack's host name theme, with spaces are replaced by underscores. The theme is used to
@@ -1456,11 +1453,8 @@ pub mod fluent_builders {
         /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
         /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
         /// </p>
-        pub fn default_availability_zone(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_availability_zone(signature.into());
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
         /// <p>The cloned stack's default Availability Zone, which must be in the specified region. For more
@@ -1481,8 +1475,8 @@ pub mod fluent_builders {
         /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
         /// default values and when this parameter is required, see the <code>VpcId</code> parameter
         /// description. </p>
-        pub fn default_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(signature.into());
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
         /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
@@ -1505,8 +1499,8 @@ pub mod fluent_builders {
         /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
         /// Modify the Stack Configuration Attributes</a>
         /// </p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It is used to override the corresponding default stack configuration JSON values. The string should be in the following format:</p>
@@ -1523,9 +1517,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            signature: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(signature);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you clone a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -1538,8 +1532,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
         /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, signature: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(signature);
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
@@ -1552,8 +1546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(signature);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether to use custom cookbooks.</p>
@@ -1576,8 +1570,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
         /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(signature);
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
@@ -1604,8 +1598,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(signature);
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
@@ -1624,8 +1618,8 @@ pub mod fluent_builders {
         /// Access</a>. You can override this setting by specifying a different key pair, or no key
         /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
         /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(signature.into());
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
         /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
@@ -1643,8 +1637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to clone the source stack's permissions.</p>
-        pub fn clone_permissions(mut self, signature: bool) -> Self {
-            self.inner = self.inner.clone_permissions(signature);
+        pub fn clone_permissions(mut self, input: bool) -> Self {
+            self.inner = self.inner.clone_permissions(input);
             self
         }
         /// <p>Whether to clone the source stack's permissions.</p>
@@ -1671,8 +1665,8 @@ pub mod fluent_builders {
         }
         /// <p>The default root device type. This value is used by default for all instances in the cloned
         /// stack, but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, signature: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(signature);
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
         /// <p>The default root device type. This value is used by default for all instances in the cloned
@@ -1703,8 +1697,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -1800,8 +1794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -1810,8 +1804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app's short name.</p>
-        pub fn shortname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(signature.into());
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>The app's short name.</p>
@@ -1820,8 +1814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app name.</p>
@@ -1830,8 +1824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the app.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the app.</p>
@@ -1860,8 +1854,8 @@ pub mod fluent_builders {
         /// applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances
         /// that are members of the corresponding layer. If your app isn't one of the standard types, or
         /// you prefer to implement your own Deploy recipes, specify <code>other</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::AppType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The app type. Each supported type is associated with a particular layer. For example, PHP
@@ -1873,8 +1867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
-        pub fn app_source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.app_source(signature);
+        pub fn app_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.app_source(input);
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
@@ -1904,8 +1898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to enable SSL for the app.</p>
-        pub fn enable_ssl(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_ssl(signature);
+        pub fn enable_ssl(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ssl(input);
             self
         }
         /// <p>Whether to enable SSL for the app.</p>
@@ -1914,8 +1908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-        pub fn ssl_configuration(mut self, signature: crate::model::SslConfiguration) -> Self {
-            self.inner = self.inner.ssl_configuration(signature);
+        pub fn ssl_configuration(mut self, input: crate::model::SslConfiguration) -> Self {
+            self.inner = self.inner.ssl_configuration(input);
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -2045,8 +2039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -2055,8 +2049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID. This parameter is required for app deployments, but not for other deployment commands.</p>
@@ -2100,8 +2094,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
         /// associated arguments.</p>
-        pub fn command(mut self, signature: crate::model::DeploymentCommand) -> Self {
-            self.inner = self.inner.command(signature);
+        pub fn command(mut self, input: crate::model::DeploymentCommand) -> Self {
+            self.inner = self.inner.command(input);
             self
         }
         /// <p>A <code>DeploymentCommand</code> object that specifies the deployment command and any
@@ -2114,8 +2108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-defined comment.</p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>A user-defined comment.</p>
@@ -2130,8 +2124,8 @@ pub mod fluent_builders {
         /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
         /// Modify the Stack Configuration Attributes</a> and
         /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Overriding Attributes With Custom JSON</a>.</p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. You can use this parameter to override some corresponding default stack configuration JSON values. The string should be in the following format:</p>
@@ -2212,8 +2206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -2243,8 +2237,8 @@ pub mod fluent_builders {
         /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>. The parameter values that you use to specify the various types are
         /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(signature.into());
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
@@ -2260,8 +2254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-        pub fn auto_scaling_type(mut self, signature: crate::model::AutoScalingType) -> Self {
-            self.inner = self.inner.auto_scaling_type(signature);
+        pub fn auto_scaling_type(mut self, input: crate::model::AutoScalingType) -> Self {
+            self.inner = self.inner.auto_scaling_type(input);
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
@@ -2273,8 +2267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance host name.</p>
-        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(signature.into());
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance host name.</p>
@@ -2316,8 +2310,8 @@ pub mod fluent_builders {
         /// specify the custom AMI that you want to use. Block device mappings are not supported if the value is <code>Custom</code>. For more information about supported operating
         /// systems, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">Operating Systems</a>For more information about how to use custom AMIs with AWS OpsWorks Stacks, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Using
         /// Custom AMIs</a>.</p>
-        pub fn os(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os(signature.into());
+        pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os(input.into());
             self
         }
         /// <p>The instance's operating system, which must be set to one of the following.</p>
@@ -2365,8 +2359,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If you specify a custom AMI, you must set <code>Os</code> to <code>Custom</code>.</p>
         /// </note>
-        pub fn ami_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_id(signature.into());
+        pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_id(input.into());
             self
         }
         /// <p>A custom AMI ID to be used to create the instance. The AMI should be based on one of the
@@ -2381,8 +2375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
-        pub fn ssh_key_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_key_name(signature.into());
+        pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_key_name(input.into());
             self
         }
         /// <p>The instance's Amazon EC2 key-pair name.</p>
@@ -2391,8 +2385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The instance Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.</p>
@@ -2404,8 +2398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
-        pub fn virtualization_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtualization_type(signature.into());
+        pub fn virtualization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtualization_type(input.into());
             self
         }
         /// <p>The instance's virtualization type, <code>paravirtual</code> or <code>hvm</code>.</p>
@@ -2417,8 +2411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
-        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(signature.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.</p>
@@ -2430,8 +2424,8 @@ pub mod fluent_builders {
         /// necessarily support both architectures. For a list of the architectures that are supported by
         /// the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Families and
         /// Types</a>.</p>
-        pub fn architecture(mut self, signature: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(signature);
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
         /// <p>The instance architecture. The default option is <code>x86_64</code>. Instance types do not
@@ -2446,8 +2440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn root_device_type(mut self, signature: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.root_device_type(signature);
+        pub fn root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.root_device_type(input);
             self
         }
         /// <p>The instance root device type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
@@ -2489,8 +2483,8 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the default value of <code>true</code> to ensure that your
         /// instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(signature);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
         /// <p>Whether to install operating system and package updates when the instance boots. The default
@@ -2508,8 +2502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create an Amazon EBS-optimized instance.</p>
-        pub fn ebs_optimized(mut self, signature: bool) -> Self {
-            self.inner = self.inner.ebs_optimized(signature);
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.inner = self.inner.ebs_optimized(input);
             self
         }
         /// <p>Whether to create an Amazon EBS-optimized instance.</p>
@@ -2535,8 +2529,8 @@ pub mod fluent_builders {
         /// <p>The default setting is <code>INHERIT</code>. To specify an agent version,
         /// you must use the complete version number, not the abbreviated number shown on the console.
         /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>. AgentVersion cannot be set to Chef 12.2.</p>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -2565,8 +2559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
-        pub fn tenancy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tenancy(signature.into());
+        pub fn tenancy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tenancy(input.into());
             self
         }
         /// <p>The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter:  <code>dedicated</code>, <code>default</code>, or <code>host</code>. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Dedicated Hosts Overview</a> and <a href="http://aws.amazon.com/ec2/dedicated-hosts/">Amazon EC2 Dedicated Hosts</a>. For more information about dedicated instances, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> and <a href="http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/">Amazon EC2 Dedicated Instances</a>.</p>
@@ -2648,8 +2642,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The layer stack ID.</p>
@@ -2658,8 +2652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
-        pub fn r#type(mut self, signature: crate::model::LayerType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::LayerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The layer type. A stack cannot have more than one built-in layer of the same type. It can have any number of custom layers. Built-in layers are not available in Chef 12 stacks.</p>
@@ -2668,8 +2662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer name, which is used by the console.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The layer name, which is used by the console.</p>
@@ -2679,8 +2673,8 @@ pub mod fluent_builders {
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
         /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>.</p>
-        pub fn shortname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(signature.into());
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters, which are limited to the alphanumeric characters, '-', '_', and '.'.</p>
@@ -2717,9 +2711,9 @@ pub mod fluent_builders {
         /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
-            signature: crate::model::CloudWatchLogsConfiguration,
+            input: crate::model::CloudWatchLogsConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_configuration(signature);
+            self.inner = self.inner.cloud_watch_logs_configuration(input);
             self
         }
         /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
@@ -2734,9 +2728,9 @@ pub mod fluent_builders {
         /// about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.</p>
         pub fn custom_instance_profile_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_instance_profile_arn(signature.into());
+            self.inner = self.inner.custom_instance_profile_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more information
@@ -2753,8 +2747,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
         /// Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS CLI.
         /// </p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
@@ -2818,8 +2812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
-        pub fn enable_auto_healing(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_healing(signature);
+        pub fn enable_auto_healing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_healing(input);
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
@@ -2830,8 +2824,8 @@ pub mod fluent_builders {
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
         /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
         /// a Layer</a>.</p>
-        pub fn auto_assign_elastic_ips(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_assign_elastic_ips(signature);
+        pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_elastic_ips(input);
             self
         }
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
@@ -2844,8 +2838,8 @@ pub mod fluent_builders {
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
         /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
         /// a Layer</a>.</p>
-        pub fn auto_assign_public_ips(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_assign_public_ips(signature);
+        pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_public_ips(input);
             self
         }
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
@@ -2856,8 +2850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
-        pub fn custom_recipes(mut self, signature: crate::model::Recipes) -> Self {
-            self.inner = self.inner.custom_recipes(signature);
+        pub fn custom_recipes(mut self, input: crate::model::Recipes) -> Self {
+            self.inner = self.inner.custom_recipes(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.</p>
@@ -2878,8 +2872,8 @@ pub mod fluent_builders {
         /// <p>To ensure that your
         /// instances have the latest security updates, we strongly recommend using the default value of <code>true</code>.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(signature);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
         /// <p>Whether to install operating system and package updates when the instance boots. The default
@@ -2897,8 +2891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
-        pub fn use_ebs_optimized_instances(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_ebs_optimized_instances(signature);
+        pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_ebs_optimized_instances(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
@@ -2911,9 +2905,9 @@ pub mod fluent_builders {
         /// draining.</p>
         pub fn lifecycle_event_configuration(
             mut self,
-            signature: crate::model::LifecycleEventConfiguration,
+            input: crate::model::LifecycleEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_event_configuration(signature);
+            self.inner = self.inner.lifecycle_event_configuration(input);
             self
         }
         /// <p>A <code>LifeCycleEventConfiguration</code> object that you can use to configure the Shutdown event to
@@ -2992,8 +2986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The stack name.</p>
@@ -3022,8 +3016,8 @@ pub mod fluent_builders {
         /// <code>--region</code> parameter always specifies a regional API endpoint; it
         /// cannot be used to specify a classic AWS OpsWorks Stacks region.</p>
         /// </note>
-        pub fn region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region(signature.into());
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region(input.into());
             self
         }
         /// <p>The stack's AWS region, such as <code>ap-south-1</code>. For more information about
@@ -3078,8 +3072,8 @@ pub mod fluent_builders {
         /// <p>For more information about how to use AWS OpsWorks Stacks with a VPC, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-vpc.html">Running a Stack in a
         /// VPC</a>. For more information about default VPC and EC2-Classic, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// Platforms</a>. </p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the VPC that the stack is to be launched into. The VPC must be in the stack's region. All instances are launched into this VPC. You cannot change the ID later.</p>
@@ -3140,8 +3134,8 @@ pub mod fluent_builders {
         /// resources on your behalf. You must set this parameter to the Amazon Resource Name (ARN) for an
         /// existing IAM role. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The stack's AWS Identity and Access Management (IAM) role, which allows AWS OpsWorks Stacks to work with AWS
@@ -3160,9 +3154,9 @@ pub mod fluent_builders {
         /// Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(signature.into());
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM profile that is the default profile for all of the stack's EC2 instances.
@@ -3210,8 +3204,8 @@ pub mod fluent_builders {
         /// <p>The default option is the current Amazon Linux version.
         /// For more information about supported operating systems,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        pub fn default_os(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(signature.into());
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's default operating system, which is installed on every instance unless you specify a different operating system when you create the instance. You can specify one of the following.</p>
@@ -3316,8 +3310,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
         /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(signature.into());
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
         /// <p>The stack's host name theme, with spaces replaced by underscores. The theme is used to
@@ -3395,11 +3389,8 @@ pub mod fluent_builders {
         /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
         /// be in the same zone. For more information, see the <code>VpcId</code> parameter description.
         /// </p>
-        pub fn default_availability_zone(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_availability_zone(signature.into());
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
         /// <p>The stack's default Availability Zone, which must be in the specified region. For more
@@ -3420,8 +3411,8 @@ pub mod fluent_builders {
         /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
         /// default values and when this parameter is required, see the <code>VpcId</code> parameter
         /// description. </p>
-        pub fn default_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(signature.into());
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
         /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
@@ -3443,8 +3434,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
         /// Modify the Stack Configuration Attributes</a>.</p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration attribute values or to pass data to recipes. The string should be in the following format:</p>
@@ -3460,9 +3451,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            signature: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(signature);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you create a stack we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -3475,8 +3466,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
         /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, signature: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(signature);
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
@@ -3489,8 +3480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(signature);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
@@ -3513,8 +3504,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
         /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(signature);
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
@@ -3542,8 +3533,8 @@ pub mod fluent_builders {
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or
         /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(signature);
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
@@ -3563,8 +3554,8 @@ pub mod fluent_builders {
         /// Access</a>. You can override this setting by specifying a different key pair, or no key
         /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
         /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(signature.into());
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
         /// <p>A default Amazon EC2 key pair name. The default value is none. If you specify a key pair name, AWS
@@ -3584,8 +3575,8 @@ pub mod fluent_builders {
         /// <p>The default root device type. This value is the default for all instances in the stack,
         /// but you can override it when you create an instance. The default option is
         /// <code>instance-store</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, signature: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(signature);
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
         /// <p>The default root device type. This value is the default for all instances in the stack,
@@ -3615,8 +3606,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -3708,8 +3699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN; this can also be a federated user's ARN.</p>
@@ -3721,8 +3712,8 @@ pub mod fluent_builders {
         /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
         /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
         /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-        pub fn ssh_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_username(signature.into());
+        pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_username(input.into());
             self
         }
         /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
@@ -3734,8 +3725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's public SSH key.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's public SSH key.</p>
@@ -3749,8 +3740,8 @@ pub mod fluent_builders {
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
         /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Setting an IAM
         /// User's Public SSH Key</a>.</p>
-        pub fn allow_self_management(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_self_management(signature);
+        pub fn allow_self_management(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_self_management(input);
             self
         }
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
@@ -3826,8 +3817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -3903,8 +3894,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -3913,8 +3904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to delete the instance Elastic IP address.</p>
-        pub fn delete_elastic_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_elastic_ip(signature);
+        pub fn delete_elastic_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_elastic_ip(input);
             self
         }
         /// <p>Whether to delete the instance Elastic IP address.</p>
@@ -3923,8 +3914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
-        pub fn delete_volumes(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_volumes(signature);
+        pub fn delete_volumes(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_volumes(input);
             self
         }
         /// <p>Whether to delete the instance's Amazon EBS volumes.</p>
@@ -4000,8 +3991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -4077,8 +4068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -4151,8 +4142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -4229,8 +4220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster's Amazon Resource Number (ARN).</p>
-        pub fn ecs_cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecs_cluster_arn(signature.into());
+        pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecs_cluster_arn(input.into());
             self
         }
         /// <p>The cluster's Amazon Resource Number (ARN).</p>
@@ -4308,8 +4299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -4385,8 +4376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -4460,8 +4451,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(signature.into());
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -4540,8 +4531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
-        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(signature.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The AWS OpsWorks Stacks volume ID, which is the GUID that AWS OpsWorks Stacks assigned to the instance when you registered the volume with the stack, not the Amazon EC2 volume ID.</p>
@@ -4612,8 +4603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -4624,9 +4615,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager.</p>
         pub fn configuration_manager(
             mut self,
-            signature: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(signature);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager.</p>
@@ -4707,8 +4698,8 @@ pub mod fluent_builders {
         }
         /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
         /// of the apps in the specified stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
@@ -4808,8 +4799,8 @@ pub mod fluent_builders {
         }
         /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
         /// description of the commands associated with the specified deployment.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns a
@@ -4823,8 +4814,8 @@ pub mod fluent_builders {
         }
         /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
         /// description of the commands associated with the specified instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID. If you include this parameter, <code>DescribeCommands</code> returns a
@@ -4924,8 +4915,8 @@ pub mod fluent_builders {
         }
         /// <p>The stack ID. If you include this parameter, the command returns a
         /// description of the commands associated with the specified stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID. If you include this parameter, the command returns a
@@ -4936,8 +4927,8 @@ pub mod fluent_builders {
         }
         /// <p>The app ID. If you include this parameter, the command returns a
         /// description of the commands associated with the specified app.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID. If you include this parameter, the command returns a
@@ -5055,8 +5046,8 @@ pub mod fluent_builders {
         }
         /// <p>A stack ID.
         /// <code>DescribeEcsClusters</code> returns a description of the cluster that is registered with the stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID.
@@ -5071,8 +5062,8 @@ pub mod fluent_builders {
         /// again and assign that token to the request object's <code>NextToken</code> parameter.
         /// If there are no remaining results, the previous response
         /// object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous paginated request did not return all of the remaining results,
@@ -5089,8 +5080,8 @@ pub mod fluent_builders {
         /// of results to be returned with a single call. If the number of available results exceeds this maximum, the
         /// response includes a <code>NextToken</code> value that you can assign
         /// to the <code>NextToken</code> request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>To receive a paginated response, use this parameter to specify the maximum number
@@ -5171,8 +5162,8 @@ pub mod fluent_builders {
         }
         /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
         /// description of the Elastic IP addresses associated with the specified instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
@@ -5183,8 +5174,8 @@ pub mod fluent_builders {
         }
         /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
         /// description of the Elastic IP addresses that are registered with the specified stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. If you include this parameter, <code>DescribeElasticIps</code> returns a
@@ -5283,8 +5274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. The action describes the stack's Elastic Load Balancing instances.</p>
@@ -5379,8 +5370,8 @@ pub mod fluent_builders {
         }
         /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
         /// the instances associated with the specified stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
@@ -5391,8 +5382,8 @@ pub mod fluent_builders {
         }
         /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
         /// the instances associated with the specified layer.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions of
@@ -5491,8 +5482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5796,8 +5787,8 @@ pub mod fluent_builders {
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
         /// Identifiers</a>.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN. For more information about IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
@@ -5807,8 +5798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5886,8 +5877,8 @@ pub mod fluent_builders {
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
         /// descriptions of the RAID arrays associated with the specified instance. </p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
@@ -5897,8 +5888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -5994,8 +5985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The ID of the stack with which the instances are registered. The operation returns descriptions of all registered Amazon RDS instances.</p>
@@ -6088,8 +6079,8 @@ pub mod fluent_builders {
         }
         /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
         /// descriptions of the errors associated with the specified stack.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
@@ -6100,8 +6091,8 @@ pub mod fluent_builders {
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
         /// descriptions of the errors associated with the specified instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
@@ -6199,8 +6190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -6359,8 +6350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -6604,8 +6595,8 @@ pub mod fluent_builders {
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
         /// of the volumes associated with the specified instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID. If you use this parameter, <code>DescribeVolumes</code> returns descriptions
@@ -6615,8 +6606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>A stack ID. The action describes the stack's registered Amazon EBS volumes.</p>
@@ -6626,8 +6617,8 @@ pub mod fluent_builders {
         }
         /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
         /// descriptions of the volumes associated with the specified RAID array.</p>
-        pub fn raid_array_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.raid_array_id(signature.into());
+        pub fn raid_array_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.raid_array_id(input.into());
             self
         }
         /// <p>The RAID array ID. If you use this parameter, <code>DescribeVolumes</code> returns
@@ -6726,11 +6717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
-        pub fn elastic_load_balancer_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.elastic_load_balancer_name(signature.into());
+        pub fn elastic_load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_load_balancer_name(input.into());
             self
         }
         /// <p>The Elastic Load Balancing instance's name.</p>
@@ -6742,8 +6730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The ID of the layer that the Elastic Load Balancing instance is attached to.</p>
@@ -6818,8 +6806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -6893,8 +6881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -6966,8 +6954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance's AWS OpsWorks Stacks ID.</p>
@@ -6976,8 +6964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
-        pub fn valid_for_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.valid_for_in_minutes(signature);
+        pub fn valid_for_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.valid_for_in_minutes(input);
             self
         }
         /// <p>The length of time (in minutes) that the grant is valid. When the grant expires at the end of this period, the user will no longer be able to use the credentials to log in. If the user is logged in at the time, he or she automatically will be logged out.</p>
@@ -7046,8 +7034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -7057,8 +7045,8 @@ pub mod fluent_builders {
         }
         /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter to a <code>ListTagsRequest</code> call.
@@ -7069,8 +7057,8 @@ pub mod fluent_builders {
         }
         /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter to a <code>ListTagsRequest</code> call.
@@ -7146,8 +7134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -7226,8 +7214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster's ARN.</p>
-        pub fn ecs_cluster_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ecs_cluster_arn(signature.into());
+        pub fn ecs_cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ecs_cluster_arn(input.into());
             self
         }
         /// <p>The cluster's ARN.</p>
@@ -7239,8 +7227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7316,8 +7304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Elastic IP address.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP address.</p>
@@ -7326,8 +7314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7414,8 +7402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the stack that the instance is to be registered with.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The ID of the stack that the instance is to be registered with.</p>
@@ -7424,8 +7412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's hostname.</p>
-        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(signature.into());
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance's hostname.</p>
@@ -7434,8 +7422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's public IP address.</p>
-        pub fn public_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_ip(signature.into());
+        pub fn public_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_ip(input.into());
             self
         }
         /// <p>The instance's public IP address.</p>
@@ -7444,8 +7432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's private IP address.</p>
-        pub fn private_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.private_ip(signature.into());
+        pub fn private_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.private_ip(input.into());
             self
         }
         /// <p>The instance's private IP address.</p>
@@ -7454,8 +7442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
-        pub fn rsa_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rsa_public_key(signature.into());
+        pub fn rsa_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rsa_public_key(input.into());
             self
         }
         /// <p>The instances public RSA key. This key is used to encrypt communication between the instance and the service.</p>
@@ -7467,11 +7455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instances public RSA key fingerprint.</p>
-        pub fn rsa_public_key_fingerprint(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.rsa_public_key_fingerprint(signature.into());
+        pub fn rsa_public_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rsa_public_key_fingerprint(input.into());
             self
         }
         /// <p>The instances public RSA key fingerprint.</p>
@@ -7483,8 +7468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An InstanceIdentity object that contains the instance's identity.</p>
-        pub fn instance_identity(mut self, signature: crate::model::InstanceIdentity) -> Self {
-            self.inner = self.inner.instance_identity(signature);
+        pub fn instance_identity(mut self, input: crate::model::InstanceIdentity) -> Self {
+            self.inner = self.inner.instance_identity(input);
             self
         }
         /// <p>An InstanceIdentity object that contains the instance's identity.</p>
@@ -7561,8 +7546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7571,8 +7556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(signature.into());
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -7584,8 +7569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database's master user name.</p>
-        pub fn db_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(signature.into());
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The database's master user name.</p>
@@ -7594,8 +7579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database password.</p>
-        pub fn db_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_password(signature.into());
+        pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_password(input.into());
             self
         }
         /// <p>The database password.</p>
@@ -7671,8 +7656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon EBS volume ID.</p>
-        pub fn ec2_volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_volume_id(signature.into());
+        pub fn ec2_volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_volume_id(input.into());
             self
         }
         /// <p>The Amazon EBS volume ID.</p>
@@ -7684,8 +7669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7764,8 +7749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -7774,8 +7759,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables load-based auto scaling for the layer.</p>
-        pub fn enable(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable(signature);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>Enables load-based auto scaling for the layer.</p>
@@ -7786,8 +7771,8 @@ pub mod fluent_builders {
         /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
         /// the load exceeds these thresholds for a specified amount of time, AWS OpsWorks Stacks starts a specified
         /// number of instances.</p>
-        pub fn up_scaling(mut self, signature: crate::model::AutoScalingThresholds) -> Self {
-            self.inner = self.inner.up_scaling(signature);
+        pub fn up_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
+            self.inner = self.inner.up_scaling(input);
             self
         }
         /// <p>An <code>AutoScalingThresholds</code> object with the upscaling threshold configuration. If
@@ -7803,8 +7788,8 @@ pub mod fluent_builders {
         /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
         /// the load falls below these thresholds for a specified amount of time, AWS OpsWorks Stacks stops a specified
         /// number of instances.</p>
-        pub fn down_scaling(mut self, signature: crate::model::AutoScalingThresholds) -> Self {
-            self.inner = self.inner.down_scaling(signature);
+        pub fn down_scaling(mut self, input: crate::model::AutoScalingThresholds) -> Self {
+            self.inner = self.inner.down_scaling(input);
             self
         }
         /// <p>An <code>AutoScalingThresholds</code> object with the downscaling threshold configuration. If
@@ -7884,8 +7869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -7894,8 +7879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
@@ -7904,8 +7889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user is allowed to use SSH to communicate with the instance.</p>
-        pub fn allow_ssh(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_ssh(signature);
+        pub fn allow_ssh(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_ssh(input);
             self
         }
         /// <p>The user is allowed to use SSH to communicate with the instance.</p>
@@ -7914,8 +7899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
-        pub fn allow_sudo(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_sudo(signature);
+        pub fn allow_sudo(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_sudo(input);
             self
         }
         /// <p>The user is allowed to use <b>sudo</b> to elevate privileges.</p>
@@ -7952,8 +7937,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For more information about the permissions associated with these levels, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
-        pub fn level(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.level(signature.into());
+        pub fn level(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.level(input.into());
             self
         }
         /// <p>The user's permission level, which must be set to one of the following strings. You cannot set your own permissions level.</p>
@@ -8057,8 +8042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8069,9 +8054,9 @@ pub mod fluent_builders {
         /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
         pub fn auto_scaling_schedule(
             mut self,
-            signature: crate::model::WeeklyAutoScalingSchedule,
+            input: crate::model::WeeklyAutoScalingSchedule,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_schedule(signature);
+            self.inner = self.inner.auto_scaling_schedule(input);
             self
         }
         /// <p>An <code>AutoScalingSchedule</code> with the instance schedule.</p>
@@ -8149,8 +8134,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8224,8 +8209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -8302,8 +8287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8314,8 +8299,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
         /// adding the <code>Force</code> parameter to the <code>StopInstances</code> API call disassociates the AWS OpsWorks Stacks instance from EC2, and forces deletion of <i>only</i> the OpsWorks Stacks instance.
         /// You must also delete the formerly-associated instance in EC2 after troubleshooting and replacing the AWS OpsWorks Stacks instance with a new one.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>Specifies whether to force an instance to stop. If the instance's root device type is <code>ebs</code>, or EBS-backed,
@@ -8391,8 +8376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -8461,8 +8446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -8600,8 +8585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -8677,8 +8662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(signature.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -8747,8 +8732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The stack or layer's Amazon Resource Number (ARN).</p>
@@ -8839,8 +8824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The app ID.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The app ID.</p>
@@ -8849,8 +8834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The app name.</p>
@@ -8859,8 +8844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the app.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the app.</p>
@@ -8886,8 +8871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The app type.</p>
-        pub fn r#type(mut self, signature: crate::model::AppType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The app type.</p>
@@ -8896,8 +8881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
-        pub fn app_source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.app_source(signature);
+        pub fn app_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.app_source(input);
             self
         }
         /// <p>A <code>Source</code> object that specifies the app repository.</p>
@@ -8927,8 +8912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether SSL is enabled for the app.</p>
-        pub fn enable_ssl(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_ssl(signature);
+        pub fn enable_ssl(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_ssl(input);
             self
         }
         /// <p>Whether SSL is enabled for the app.</p>
@@ -8937,8 +8922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
-        pub fn ssl_configuration(mut self, signature: crate::model::SslConfiguration) -> Self {
-            self.inner = self.inner.ssl_configuration(signature);
+        pub fn ssl_configuration(mut self, input: crate::model::SslConfiguration) -> Self {
+            self.inner = self.inner.ssl_configuration(input);
             self
         }
         /// <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -9067,8 +9052,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The IP address for which you want to update the name.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The IP address for which you want to update the name.</p>
@@ -9077,8 +9062,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name.</p>
@@ -9152,8 +9137,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The instance ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The instance ID.</p>
@@ -9183,8 +9168,8 @@ pub mod fluent_builders {
         /// The <b>Size</b> list contains the currently supported types. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>. The parameter values that you use to specify the various types are
         /// in the <b>API Name</b> column of the <b>Available Instance Types</b> table.</p>
-        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(signature.into());
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p>The instance type, such as <code>t2.micro</code>. For a list of supported instance types,
@@ -9200,8 +9185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
-        pub fn auto_scaling_type(mut self, signature: crate::model::AutoScalingType) -> Self {
-            self.inner = self.inner.auto_scaling_type(signature);
+        pub fn auto_scaling_type(mut self, input: crate::model::AutoScalingType) -> Self {
+            self.inner = self.inner.auto_scaling_type(input);
             self
         }
         /// <p>For load-based or time-based instances, the type. Windows stacks can use only time-based instances.</p>
@@ -9213,8 +9198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance host name.</p>
-        pub fn hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname(signature.into());
+        pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname(input.into());
             self
         }
         /// <p>The instance host name.</p>
@@ -9256,8 +9241,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can specify a different Linux operating system for the updated stack, but you cannot change from Linux to Windows or Windows to Linux.</p>
         /// </note>
-        pub fn os(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.os(signature.into());
+        pub fn os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os(input.into());
             self
         }
         /// <p>The instance's operating system, which must be set to one of the following. You cannot update an instance that is using a custom AMI.</p>
@@ -9301,8 +9286,8 @@ pub mod fluent_builders {
         /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
         /// You cannot apply a new AMI to an instance by running UpdateInstance. UpdateInstance does not work on instances that are using custom AMIs.
         /// </p>
-        pub fn ami_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_id(signature.into());
+        pub fn ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_id(input.into());
             self
         }
         /// <p>The ID of the AMI that was used to create the instance. The value of this parameter must be the same AMI ID that the instance is already using.
@@ -9313,8 +9298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance's Amazon EC2 key name.</p>
-        pub fn ssh_key_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_key_name(signature.into());
+        pub fn ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_key_name(input.into());
             self
         }
         /// <p>The instance's Amazon EC2 key name.</p>
@@ -9325,8 +9310,8 @@ pub mod fluent_builders {
         /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
         /// a list of the architectures that are supported by the different instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// Families and Types</a>.</p>
-        pub fn architecture(mut self, signature: crate::model::Architecture) -> Self {
-            self.inner = self.inner.architecture(signature);
+        pub fn architecture(mut self, input: crate::model::Architecture) -> Self {
+            self.inner = self.inner.architecture(input);
             self
         }
         /// <p>The instance architecture. Instance types do not necessarily support both architectures. For
@@ -9349,8 +9334,8 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
         /// instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(signature);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
         /// <p>Whether to install operating system and package updates when the instance boots. The default
@@ -9368,8 +9353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This property cannot be updated.</p>
-        pub fn ebs_optimized(mut self, signature: bool) -> Self {
-            self.inner = self.inner.ebs_optimized(signature);
+        pub fn ebs_optimized(mut self, input: bool) -> Self {
+            self.inner = self.inner.ebs_optimized(input);
             self
         }
         /// <p>This property cannot be updated.</p>
@@ -9396,8 +9381,8 @@ pub mod fluent_builders {
         /// you must use the complete version number, not the abbreviated number shown on the console.
         /// For a list of available agent version numbers, call <a>DescribeAgentVersions</a>.</p>
         /// <p>AgentVersion cannot be set to Chef 12.2.</p>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -9492,8 +9477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The layer ID.</p>
-        pub fn layer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.layer_id(signature.into());
+        pub fn layer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.layer_id(input.into());
             self
         }
         /// <p>The layer ID.</p>
@@ -9502,8 +9487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The layer name, which is used by the console.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The layer name, which is used by the console.</p>
@@ -9514,8 +9499,8 @@ pub mod fluent_builders {
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
         /// <p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a>
         /// </p>
-        pub fn shortname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shortname(signature.into());
+        pub fn shortname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shortname(input.into());
             self
         }
         /// <p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.</p>
@@ -9551,9 +9536,9 @@ pub mod fluent_builders {
         /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
         pub fn cloud_watch_logs_configuration(
             mut self,
-            signature: crate::model::CloudWatchLogsConfiguration,
+            input: crate::model::CloudWatchLogsConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_configuration(signature);
+            self.inner = self.inner.cloud_watch_logs_configuration(input);
             self
         }
         /// <p>Specifies CloudWatch Logs configuration options for the layer. For more information, see <a>CloudWatchLogsLogStream</a>.</p>
@@ -9569,9 +9554,9 @@ pub mod fluent_builders {
         /// Identifiers</a>.</p>
         pub fn custom_instance_profile_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_instance_profile_arn(signature.into());
+            self.inner = self.inner.custom_instance_profile_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more
@@ -9589,8 +9574,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
         /// Using Custom JSON</a>.
         /// </p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A JSON-formatted string containing custom stack configuration and deployment attributes
@@ -9654,8 +9639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
-        pub fn enable_auto_healing(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_healing(signature);
+        pub fn enable_auto_healing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_healing(input);
             self
         }
         /// <p>Whether to disable auto healing for the layer.</p>
@@ -9666,8 +9651,8 @@ pub mod fluent_builders {
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
         /// address</a> to the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
         /// a Layer</a>.</p>
-        pub fn auto_assign_elastic_ips(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_assign_elastic_ips(signature);
+        pub fn auto_assign_elastic_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_elastic_ips(input);
             self
         }
         /// <p>Whether to automatically assign an <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
@@ -9680,8 +9665,8 @@ pub mod fluent_builders {
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
         /// the layer's instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit
         /// a Layer</a>.</p>
-        pub fn auto_assign_public_ips(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_assign_public_ips(signature);
+        pub fn auto_assign_public_ips(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_assign_public_ips(input);
             self
         }
         /// <p>For stacks that are running in a VPC, whether to automatically assign a public IP address to
@@ -9692,8 +9677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
-        pub fn custom_recipes(mut self, signature: crate::model::Recipes) -> Self {
-            self.inner = self.inner.custom_recipes(signature);
+        pub fn custom_recipes(mut self, input: crate::model::Recipes) -> Self {
+            self.inner = self.inner.custom_recipes(input);
             self
         }
         /// <p>A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.</p>
@@ -9714,8 +9699,8 @@ pub mod fluent_builders {
         /// <p>We strongly recommend using the default value of <code>true</code>, to ensure that your
         /// instances have the latest security updates.</p>
         /// </note>
-        pub fn install_updates_on_boot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.install_updates_on_boot(signature);
+        pub fn install_updates_on_boot(mut self, input: bool) -> Self {
+            self.inner = self.inner.install_updates_on_boot(input);
             self
         }
         /// <p>Whether to install operating system and package updates when the instance boots. The default
@@ -9733,8 +9718,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
-        pub fn use_ebs_optimized_instances(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_ebs_optimized_instances(signature);
+        pub fn use_ebs_optimized_instances(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_ebs_optimized_instances(input);
             self
         }
         /// <p>Whether to use Amazon EBS-optimized instances.</p>
@@ -9745,9 +9730,9 @@ pub mod fluent_builders {
         /// <p></p>
         pub fn lifecycle_event_configuration(
             mut self,
-            signature: crate::model::LifecycleEventConfiguration,
+            input: crate::model::LifecycleEventConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_event_configuration(signature);
+            self.inner = self.inner.lifecycle_event_configuration(input);
             self
         }
         /// <p></p>
@@ -9824,8 +9809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user's SSH public key.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's SSH public key.</p>
@@ -9902,8 +9887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon RDS instance's ARN.</p>
-        pub fn rds_db_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rds_db_instance_arn(signature.into());
+        pub fn rds_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rds_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon RDS instance's ARN.</p>
@@ -9915,8 +9900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The master user name.</p>
-        pub fn db_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(signature.into());
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The master user name.</p>
@@ -9925,8 +9910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database password.</p>
-        pub fn db_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_password(signature.into());
+        pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_password(input.into());
             self
         }
         /// <p>The database password.</p>
@@ -10000,8 +9985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The stack ID.</p>
-        pub fn stack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_id(signature.into());
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_id(input.into());
             self
         }
         /// <p>The stack ID.</p>
@@ -10010,8 +9995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stack's new name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The stack's new name.</p>
@@ -10043,8 +10028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>Do not use this parameter. You cannot update a stack's service role.</p>
@@ -10060,9 +10045,9 @@ pub mod fluent_builders {
         /// Identifiers</a>.</p>
         pub fn default_instance_profile_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_instance_profile_arn(signature.into());
+            self.inner = self.inner.default_instance_profile_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM profile that is the default profile for all of the stack's EC2 instances.
@@ -10107,8 +10092,8 @@ pub mod fluent_builders {
         /// <p>The default option is the stack's current operating system.
         /// For more information about supported operating systems,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html">AWS OpsWorks Stacks Operating Systems</a>.</p>
-        pub fn default_os(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_os(signature.into());
+        pub fn default_os(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_os(input.into());
             self
         }
         /// <p>The stack's operating system, which must be set to one of the following:</p>
@@ -10210,8 +10195,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns a
         /// host name based on the current theme.</p>
-        pub fn hostname_theme(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hostname_theme(signature.into());
+        pub fn hostname_theme(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hostname_theme(input.into());
             self
         }
         /// <p>The stack's new host name theme, with spaces replaced by underscores.
@@ -10289,11 +10274,8 @@ pub mod fluent_builders {
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
         /// Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the subnet must
         /// be in the same zone. For more information, see <a>CreateStack</a>. </p>
-        pub fn default_availability_zone(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_availability_zone(signature.into());
+        pub fn default_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_availability_zone(input.into());
             self
         }
         /// <p>The stack's default Availability Zone, which must be in the
@@ -10314,8 +10296,8 @@ pub mod fluent_builders {
         /// <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information on
         /// default values and when this parameter is required, see the <code>VpcId</code> parameter
         /// description. </p>
-        pub fn default_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_subnet_id(signature.into());
+        pub fn default_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_subnet_id(input.into());
             self
         }
         /// <p>The stack's default VPC subnet ID. This parameter is required if you specify a value for the
@@ -10337,8 +10319,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>For more information about custom JSON, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">Use Custom JSON to
         /// Modify the Stack Configuration Attributes</a>.</p>
-        pub fn custom_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_json(signature.into());
+        pub fn custom_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_json(input.into());
             self
         }
         /// <p>A string that contains user-defined, custom JSON. It can be used to override the corresponding default stack configuration JSON values or to pass data to recipes. The string should be in the following format:</p>
@@ -10354,9 +10336,9 @@ pub mod fluent_builders {
         /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
         pub fn configuration_manager(
             mut self,
-            signature: crate::model::StackConfigurationManager,
+            input: crate::model::StackConfigurationManager,
         ) -> Self {
-            self.inner = self.inner.configuration_manager(signature);
+            self.inner = self.inner.configuration_manager(input);
             self
         }
         /// <p>The configuration manager. When you update a stack, we recommend that you use the configuration manager to specify the Chef version: 12, 11.10, or 11.4 for Linux stacks, or 12.2 for Windows stacks. The default value for Linux stacks is currently 12.</p>
@@ -10369,8 +10351,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
         /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New Stack</a>.</p>
-        pub fn chef_configuration(mut self, signature: crate::model::ChefConfiguration) -> Self {
-            self.inner = self.inner.chef_configuration(signature);
+        pub fn chef_configuration(mut self, input: crate::model::ChefConfiguration) -> Self {
+            self.inner = self.inner.chef_configuration(input);
             self
         }
         /// <p>A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf and the
@@ -10383,8 +10365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
-        pub fn use_custom_cookbooks(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_custom_cookbooks(signature);
+        pub fn use_custom_cookbooks(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_custom_cookbooks(input);
             self
         }
         /// <p>Whether the stack uses custom cookbooks.</p>
@@ -10394,8 +10376,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
         /// see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Adding Apps</a> or <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook.html">Cookbooks and Recipes</a>.</p>
-        pub fn custom_cookbooks_source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.custom_cookbooks_source(signature);
+        pub fn custom_cookbooks_source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.custom_cookbooks_source(input);
             self
         }
         /// <p>Contains the information required to retrieve an app or cookbook from a repository. For more information,
@@ -10415,8 +10397,8 @@ pub mod fluent_builders {
         /// Access</a>. You can override this setting by specifying a different key pair, or no key
         /// pair, when you <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
         /// create an instance</a>. </p>
-        pub fn default_ssh_key_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_ssh_key_name(signature.into());
+        pub fn default_ssh_key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_ssh_key_name(input.into());
             self
         }
         /// <p>A default Amazon EC2 key-pair name. The default value is
@@ -10436,8 +10418,8 @@ pub mod fluent_builders {
         }
         /// <p>The default root device type. This value is used by default for all instances in the stack,
         /// but you can override it when you create an instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage for the Root Device</a>.</p>
-        pub fn default_root_device_type(mut self, signature: crate::model::RootDeviceType) -> Self {
-            self.inner = self.inner.default_root_device_type(signature);
+        pub fn default_root_device_type(mut self, input: crate::model::RootDeviceType) -> Self {
+            self.inner = self.inner.default_root_device_type(input);
             self
         }
         /// <p>The default root device type. This value is used by default for all instances in the stack,
@@ -10465,8 +10447,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create a New
         /// Stack</a>.</p>
-        pub fn use_opsworks_security_groups(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_opsworks_security_groups(signature);
+        pub fn use_opsworks_security_groups(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_opsworks_security_groups(input);
             self
         }
         /// <p>Whether to associate the AWS OpsWorks Stacks built-in security groups with the stack's layers.</p>
@@ -10510,8 +10492,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can also specify an agent version when you create or update an instance, which overrides the stack's default setting.</p>
         /// </note>
-        pub fn agent_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_version(signature.into());
+        pub fn agent_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_version(input.into());
             self
         }
         /// <p>The default AWS OpsWorks Stacks agent version. You have the following options:</p>
@@ -10604,8 +10586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
@@ -10617,8 +10599,8 @@ pub mod fluent_builders {
         /// the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example,
         /// <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH
         /// user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-        pub fn ssh_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_username(signature.into());
+        pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_username(input.into());
             self
         }
         /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If
@@ -10630,8 +10612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's new SSH public key.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The user's new SSH public key.</p>
@@ -10645,8 +10627,8 @@ pub mod fluent_builders {
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
         /// information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User
         /// Permissions</a>.</p>
-        pub fn allow_self_management(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_self_management(signature);
+        pub fn allow_self_management(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_self_management(input);
             self
         }
         /// <p>Whether users can specify their own SSH public key through the My Settings page. For more
@@ -10722,8 +10704,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The volume ID.</p>
-        pub fn volume_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.volume_id(signature.into());
+        pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.volume_id(input.into());
             self
         }
         /// <p>The volume ID.</p>
@@ -10732,8 +10714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name.</p>
@@ -10742,8 +10724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new mount point.</p>
-        pub fn mount_point(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mount_point(signature.into());
+        pub fn mount_point(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mount_point(input.into());
             self
         }
         /// <p>The new mount point.</p>

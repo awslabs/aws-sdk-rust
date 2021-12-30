@@ -233,8 +233,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
-        pub fn capacity(mut self, signature: crate::model::Capacity) -> Self {
-            self.inner = self.inner.capacity(signature);
+        pub fn capacity(mut self, input: crate::model::Capacity) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
@@ -266,8 +266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the connector.</p>
-        pub fn connector_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_description(signature.into());
+        pub fn connector_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_description(input.into());
             self
         }
         /// <p>A summary description of the connector.</p>
@@ -279,8 +279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connector.</p>
-        pub fn connector_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_name(signature.into());
+        pub fn connector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_name(input.into());
             self
         }
         /// <p>The name of the connector.</p>
@@ -292,8 +292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which Apache Kafka cluster to connect to.</p>
-        pub fn kafka_cluster(mut self, signature: crate::model::KafkaCluster) -> Self {
-            self.inner = self.inner.kafka_cluster(signature);
+        pub fn kafka_cluster(mut self, input: crate::model::KafkaCluster) -> Self {
+            self.inner = self.inner.kafka_cluster(input);
             self
         }
         /// <p>Specifies which Apache Kafka cluster to connect to.</p>
@@ -307,9 +307,9 @@ pub mod fluent_builders {
         /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
         pub fn kafka_cluster_client_authentication(
             mut self,
-            signature: crate::model::KafkaClusterClientAuthentication,
+            input: crate::model::KafkaClusterClientAuthentication,
         ) -> Self {
-            self.inner = self.inner.kafka_cluster_client_authentication(signature);
+            self.inner = self.inner.kafka_cluster_client_authentication(input);
             self
         }
         /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
@@ -323,9 +323,9 @@ pub mod fluent_builders {
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
         pub fn kafka_cluster_encryption_in_transit(
             mut self,
-            signature: crate::model::KafkaClusterEncryptionInTransit,
+            input: crate::model::KafkaClusterEncryptionInTransit,
         ) -> Self {
-            self.inner = self.inner.kafka_cluster_encryption_in_transit(signature);
+            self.inner = self.inner.kafka_cluster_encryption_in_transit(input);
             self
         }
         /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
@@ -337,8 +337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-        pub fn kafka_connect_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kafka_connect_version(signature.into());
+        pub fn kafka_connect_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kafka_connect_version(input.into());
             self
         }
         /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
@@ -350,8 +350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details about log delivery.</p>
-        pub fn log_delivery(mut self, signature: crate::model::LogDelivery) -> Self {
-            self.inner = self.inner.log_delivery(signature);
+        pub fn log_delivery(mut self, input: crate::model::LogDelivery) -> Self {
+            self.inner = self.inner.log_delivery(input);
             self
         }
         /// <p>Details about log delivery.</p>
@@ -380,11 +380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-        pub fn service_execution_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.service_execution_role_arn(signature.into());
+        pub fn service_execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_execution_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
@@ -396,11 +393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which worker configuration to use with the connector.</p>
-        pub fn worker_configuration(
-            mut self,
-            signature: crate::model::WorkerConfiguration,
-        ) -> Self {
-            self.inner = self.inner.worker_configuration(signature);
+        pub fn worker_configuration(mut self, input: crate::model::WorkerConfiguration) -> Self {
+            self.inner = self.inner.worker_configuration(input);
             self
         }
         /// <p>Specifies which worker configuration to use with the connector.</p>
@@ -472,8 +466,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the plugin file.</p>
-        pub fn content_type(mut self, signature: crate::model::CustomPluginContentType) -> Self {
-            self.inner = self.inner.content_type(signature);
+        pub fn content_type(mut self, input: crate::model::CustomPluginContentType) -> Self {
+            self.inner = self.inner.content_type(input);
             self
         }
         /// <p>The type of the plugin file.</p>
@@ -485,8 +479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A summary description of the custom plugin.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A summary description of the custom plugin.</p>
@@ -495,8 +489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the location of a custom plugin.</p>
-        pub fn location(mut self, signature: crate::model::CustomPluginLocation) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::CustomPluginLocation) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Information about the location of a custom plugin.</p>
@@ -508,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the custom plugin.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom plugin.</p>
@@ -578,8 +572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A summary description of the worker configuration.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A summary description of the worker configuration.</p>
@@ -588,8 +582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the worker configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the worker configuration.</p>
@@ -598,11 +592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
-        pub fn properties_file_content(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.properties_file_content(signature.into());
+        pub fn properties_file_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.properties_file_content(input.into());
             self
         }
         /// <p>Base64 encoded contents of connect-distributed.properties file.</p>
@@ -674,8 +665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-        pub fn connector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(signature.into());
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
@@ -687,8 +678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the connector that you want to delete.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the connector that you want to delete.</p>
@@ -760,8 +751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
-        pub fn connector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(signature.into());
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to describe.</p>
@@ -833,8 +824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns information about a custom plugin.</p>
-        pub fn custom_plugin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_plugin_arn(signature.into());
+        pub fn custom_plugin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_plugin_arn(input.into());
             self
         }
         /// <p>Returns information about a custom plugin.</p>
@@ -906,11 +897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
-        pub fn worker_configuration_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.worker_configuration_arn(signature.into());
+        pub fn worker_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.worker_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the worker configuration that you want to get information about.</p>
@@ -982,8 +970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name prefix that you want to use to search for and list connectors.</p>
-        pub fn connector_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_name_prefix(signature.into());
+        pub fn connector_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_name_prefix(input.into());
             self
         }
         /// <p>The name prefix that you want to use to search for and list connectors.</p>
@@ -995,8 +983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connectors to list in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of connectors to list in one response.</p>
@@ -1005,8 +993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1075,8 +1063,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of custom plugins to list in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of custom plugins to list in one response.</p>
@@ -1085,8 +1073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1155,8 +1143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of worker configurations to list in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of worker configurations to list in one response.</p>
@@ -1165,8 +1153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -1235,8 +1223,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target capacity.</p>
-        pub fn capacity(mut self, signature: crate::model::CapacityUpdate) -> Self {
-            self.inner = self.inner.capacity(signature);
+        pub fn capacity(mut self, input: crate::model::CapacityUpdate) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>The target capacity.</p>
@@ -1248,8 +1236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
-        pub fn connector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_arn(signature.into());
+        pub fn connector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the connector that you want to update.</p>
@@ -1261,8 +1249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current version of the connector that you want to update.</p>
-        pub fn current_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.current_version(signature.into());
+        pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.current_version(input.into());
             self
         }
         /// <p>The current version of the connector that you want to update.</p>

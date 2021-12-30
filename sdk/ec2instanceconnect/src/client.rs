@@ -171,8 +171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the EC2 instance.</p>
@@ -182,8 +182,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
         /// <p>Default: 0</p>
-        pub fn serial_port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.serial_port(signature);
+        pub fn serial_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.serial_port(input);
             self
         }
         /// <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
@@ -195,8 +195,8 @@ pub mod fluent_builders {
         /// <p>The public key material. To use the public key, you must have the matching private
         /// key. For information about the supported key formats and lengths, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements for key pairs</a> in the <i>Amazon EC2 User
         /// Guide</i>.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The public key material. To use the public key, you must have the matching private
@@ -273,8 +273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the EC2 instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the EC2 instance.</p>
@@ -283,8 +283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
-        pub fn instance_os_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_os_user(signature.into());
+        pub fn instance_os_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_os_user(input.into());
             self
         }
         /// <p>The OS user on the EC2 instance for whom the key can be used to authenticate.</p>
@@ -296,8 +296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public key material. To use the public key, you must have the matching private key.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The public key material. To use the public key, you must have the matching private key.</p>
@@ -309,8 +309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone in which the EC2 instance was launched.</p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone in which the EC2 instance was launched.</p>

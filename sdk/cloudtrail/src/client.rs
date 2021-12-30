@@ -284,8 +284,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail to which one or more tags will be added. The format of a trail ARN is:</p>
@@ -393,8 +393,8 @@ pub mod fluent_builders {
         /// <p>Not be in IP address format (for example, 192.168.5.4)</p>
         /// </li>
         /// </ul>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name of the trail. The name must meet the following requirements:</p>
@@ -421,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
         /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
@@ -449,8 +449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-        pub fn sns_topic_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_name(signature.into());
+        pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
@@ -462,8 +462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-        pub fn include_global_service_events(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_global_service_events(signature);
+        pub fn include_global_service_events(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_global_service_events(input);
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
@@ -476,8 +476,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
         /// creating trails that log events in all regions.</p>
-        pub fn is_multi_region_trail(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_multi_region_trail(signature);
+        pub fn is_multi_region_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_multi_region_trail(input);
             self
         }
         /// <p>Specifies whether the trail is created in the current region or in all regions. The default is false, which creates a trail only in the region where you are signed in. As a best practice, consider
@@ -494,8 +494,8 @@ pub mod fluent_builders {
         /// it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on
         /// January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
-        pub fn enable_log_file_validation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_log_file_validation(signature);
+        pub fn enable_log_file_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_log_file_validation(input);
             self
         }
         /// <p>Specifies whether log file integrity validation is enabled. The default is false.</p>
@@ -514,9 +514,9 @@ pub mod fluent_builders {
         /// to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_log_group_arn(signature.into());
+            self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
             self
         }
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
@@ -529,11 +529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-        pub fn cloud_watch_logs_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_role_arn(signature.into());
+        pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
@@ -564,8 +561,8 @@ pub mod fluent_builders {
         /// <p>12345678-1234-1234-1234-123456789012</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
@@ -595,8 +592,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
         /// The default is false, and cannot be true unless the call is made on behalf of an Amazon Web Services account that is the management account for an organization in
         /// Organizations.</p>
-        pub fn is_organization_trail(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_organization_trail(signature);
+        pub fn is_organization_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_organization_trail(input);
             self
         }
         /// <p>Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the current Amazon Web Services account.
@@ -689,8 +686,8 @@ pub mod fluent_builders {
         /// trail ARN.
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name or the CloudTrail ARN of the trail to be deleted. The following is the format of a
@@ -815,8 +812,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
         /// or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account
         /// and region replication trails will not be returned. The default is true.</p>
-        pub fn include_shadow_trails(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_shadow_trails(signature);
+        pub fn include_shadow_trails(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shadow_trails(input);
             self
         }
         /// <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,
@@ -926,8 +923,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn trail_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(signature.into());
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
         /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
@@ -1048,8 +1045,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn trail_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(signature.into());
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
         /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
@@ -1141,8 +1138,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the trail for which you want to retrieve settings information.</p>
@@ -1215,8 +1212,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name or the CloudTrail ARN of the trail for which you are requesting status. To get the status of a
@@ -1295,8 +1292,8 @@ pub mod fluent_builders {
         }
         /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
         /// If not specified, the current time is used, and the current public key is returned.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>Optionally specifies, in UTC, the start of the time range to look up public keys for CloudTrail digest files.
@@ -1310,8 +1307,8 @@ pub mod fluent_builders {
         }
         /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
         /// specified, the current time is used.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>Optionally specifies, in UTC, the end of the time range to look up public keys for CloudTrail digest files. If not
@@ -1324,8 +1321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1419,8 +1416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1492,8 +1489,8 @@ pub mod fluent_builders {
         /// in with the same parameters that were specified in the the original call. For example, if the original
         /// call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should
         /// include those same parameters.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. This token must be passed
@@ -1629,8 +1626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>Specifies that only events that occur after or at the specified time are returned. If the specified start time is after the specified end time, an error is returned.</p>
@@ -1642,8 +1639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>Specifies that only events that occur before or at the specified time are returned. If the specified end time is before the specified start time, an error is returned.</p>
@@ -1656,8 +1653,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
         /// if you do not specify <code>insight</code> as the value of <code>EventCategory</code>, no Insights events are returned.</p>
-        pub fn event_category(mut self, signature: crate::model::EventCategory) -> Self {
-            self.inner = self.inner.event_category(signature);
+        pub fn event_category(mut self, input: crate::model::EventCategory) -> Self {
+            self.inner = self.inner.event_category(input);
             self
         }
         /// <p>Specifies the event category. If you do not specify an event category, events of the category are not returned in the response. For example,
@@ -1670,8 +1667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of events to return. Possible values are 1 through 50. The default is 50.</p>
@@ -1681,8 +1678,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
         /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the the original call.
@@ -1819,8 +1816,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn trail_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(signature.into());
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
         /// <p>Specifies the name of the trail or trail ARN. If you specify a trail name, the
@@ -1972,8 +1969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
-        pub fn trail_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trail_name(signature.into());
+        pub fn trail_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trail_name(input.into());
             self
         }
         /// <p>The name of the CloudTrail trail for which you want to change or add Insights selectors.</p>
@@ -2062,8 +2059,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Specifies the ARN of the trail from which tags should be removed. The format of a trail ARN is:</p>
@@ -2156,8 +2153,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail logs Amazon Web Services API calls.
@@ -2240,8 +2237,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name or the CloudTrail ARN of the trail for which CloudTrail will stop logging Amazon Web Services
@@ -2342,8 +2339,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the
@@ -2375,8 +2372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
@@ -2389,8 +2386,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
         /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>. The maximum length is 200 characters.</p>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
@@ -2403,8 +2400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
-        pub fn sns_topic_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_name(signature.into());
+        pub fn sns_topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_name(input.into());
             self
         }
         /// <p>Specifies the name of the Amazon SNS topic defined for notification of log file delivery. The maximum length is 256 characters.</p>
@@ -2416,8 +2413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
-        pub fn include_global_service_events(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_global_service_events(signature);
+        pub fn include_global_service_events(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_global_service_events(input);
             self
         }
         /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
@@ -2432,8 +2429,8 @@ pub mod fluent_builders {
         /// shadow trails (replications of the trail) will be created in the other regions. If the trail exists in all regions and this value is set to false, the trail will remain in the region
         /// where it was created, and its shadow trails in other regions will be deleted. As a best practice, consider
         /// using trails that log events in all regions.</p>
-        pub fn is_multi_region_trail(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_multi_region_trail(signature);
+        pub fn is_multi_region_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_multi_region_trail(input);
             self
         }
         /// <p>Specifies whether the trail applies only to the current region or to all regions. The default is false. If the trail exists only in the current region and this value is set to true,
@@ -2452,8 +2449,8 @@ pub mod fluent_builders {
         /// January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon
         /// on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
         /// </note>
-        pub fn enable_log_file_validation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_log_file_validation(signature);
+        pub fn enable_log_file_validation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_log_file_validation(input);
             self
         }
         /// <p>Specifies whether log file validation is enabled. The default is false.</p>
@@ -2471,9 +2468,9 @@ pub mod fluent_builders {
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
         pub fn cloud_watch_logs_log_group_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_log_group_arn(signature.into());
+            self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
             self
         }
         /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
@@ -2485,11 +2482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
-        pub fn cloud_watch_logs_role_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cloud_watch_logs_role_arn(signature.into());
+        pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_logs_role_arn(input.into());
             self
         }
         /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
@@ -2520,8 +2514,8 @@ pub mod fluent_builders {
         /// <p>12345678-1234-1234-1234-123456789012</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The
@@ -2553,8 +2547,8 @@ pub mod fluent_builders {
         /// Organizations. If the trail is not an organization trail and this is set to <code>true</code>, the trail will be created in all Amazon Web Services accounts that belong
         /// to the organization. If the trail is an organization trail and this is set to <code>false</code>, the trail will remain in the current Amazon Web Services account but be
         /// deleted from all member accounts in the organization.</p>
-        pub fn is_organization_trail(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_organization_trail(signature);
+        pub fn is_organization_trail(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_organization_trail(input);
             self
         }
         /// <p>Specifies whether the trail is applied to all accounts in an organization in Organizations, or only for the current Amazon Web Services account.

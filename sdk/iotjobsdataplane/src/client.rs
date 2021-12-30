@@ -182,8 +182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier assigned to this job when it was created.</p>
@@ -192,8 +192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The thing name associated with the device the job execution is running on.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The thing name associated with the device the job execution is running on.</p>
@@ -202,8 +202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn include_job_document(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_job_document(signature);
+        pub fn include_job_document(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_job_document(input);
             self
         }
         /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
@@ -213,8 +213,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
         /// the latest job execution is returned.</p>
-        pub fn execution_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.execution_number(signature);
+        pub fn execution_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.execution_number(input);
             self
         }
         /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified,
@@ -284,8 +284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing that is executing the job.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing that is executing the job.</p>
@@ -354,8 +354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing associated with the device.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing associated with the device.</p>
@@ -395,8 +395,8 @@ pub mod fluent_builders {
         /// the job execution status will be automatically set to <code>TIMED_OUT</code>.  Note that setting
         /// this timeout has no effect on that job execution timeout which may have been specified when
         /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn step_timeout_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.step_timeout_in_minutes(signature);
+        pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.step_timeout_in_minutes(input);
             self
         }
         /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
@@ -471,8 +471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier assigned to this job when it was created.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier assigned to this job when it was created.</p>
@@ -481,8 +481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the thing associated with the device.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing associated with the device.</p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
         }
         /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
         /// on every update.</p>
-        pub fn status(mut self, signature: crate::model::JobExecutionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::JobExecutionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified
@@ -537,8 +537,8 @@ pub mod fluent_builders {
         /// status will be automatically set to <code>TIMED_OUT</code>.  Note that setting or resetting
         /// this timeout has no effect on that job execution timeout which may have been specified when
         /// the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>
-        pub fn step_timeout_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.step_timeout_in_minutes(signature);
+        pub fn step_timeout_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.step_timeout_in_minutes(input);
             self
         }
         /// <p>Specifies the amount of time this device has to finish execution of this job. If the job
@@ -557,8 +557,8 @@ pub mod fluent_builders {
         /// rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data
         /// is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain
         /// the job execution status data.)</p>
-        pub fn expected_version(mut self, signature: i64) -> Self {
-            self.inner = self.inner.expected_version(signature);
+        pub fn expected_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.expected_version(input);
             self
         }
         /// <p>Optional. The expected current version of the job execution. Each time you update the job execution, its
@@ -572,8 +572,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
         /// false.</p>
-        pub fn include_job_execution_state(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_job_execution_state(signature);
+        pub fn include_job_execution_state(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_job_execution_state(input);
             self
         }
         /// <p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is
@@ -583,8 +583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
-        pub fn include_job_document(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_job_document(signature);
+        pub fn include_job_document(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_job_document(input);
             self
         }
         /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
@@ -593,8 +593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>
-        pub fn execution_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.execution_number(signature);
+        pub fn execution_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.execution_number(input);
             self
         }
         /// <p>Optional. A number that identifies a particular job execution on a particular device.</p>

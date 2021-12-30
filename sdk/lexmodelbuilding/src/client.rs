@@ -465,8 +465,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bot that you want to create a new version of. The
         /// name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot that you want to create a new version of. The
@@ -481,8 +481,8 @@ pub mod fluent_builders {
         /// <code>PreconditionFailedException</code> exception is returned and Amazon Lex
         /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
         /// publishes the <code>$LATEST</code> version.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Identifies a specific revision of the <code>$LATEST</code> version
@@ -570,8 +570,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the intent that you want to create a new version of.
         /// The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent that you want to create a new version of.
@@ -586,8 +586,8 @@ pub mod fluent_builders {
         /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
         /// doesn't publish a new version. If you don't specify a checksum, Amazon Lex
         /// publishes the <code>$LATEST</code> version.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Checksum of the <code>$LATEST</code> version of the intent that
@@ -677,8 +677,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the slot type that you want to create a new version
         /// for. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type that you want to create a new version
@@ -693,8 +693,8 @@ pub mod fluent_builders {
         /// Amazon Lex returns a <code>PreconditionFailedException</code> exception and
         /// doesn't publish the new version. If you don't specify a checksum, Amazon Lex
         /// publishes the <code>$LATEST</code> version.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Checksum for the <code>$LATEST</code> version of the slot type that
@@ -784,8 +784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot. The name is case sensitive. </p>
@@ -863,8 +863,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the alias to delete. The name is case sensitive.
         /// </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the alias to delete. The name is case sensitive.
@@ -874,8 +874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bot that the alias points to.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot that the alias points to.</p>
@@ -947,8 +947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the association. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the association. The name is case sensitive. </p>
@@ -957,8 +957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Lex bot.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex bot.</p>
@@ -968,8 +968,8 @@ pub mod fluent_builders {
         }
         /// <p>An alias that points to the specific version of the Amazon Lex bot to
         /// which this association is being made.</p>
-        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(signature.into());
+        pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(input.into());
             self
         }
         /// <p>An alias that points to the specific version of the Amazon Lex bot to
@@ -1042,8 +1042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot.</p>
@@ -1055,8 +1055,8 @@ pub mod fluent_builders {
         /// <code>$LATEST</code> version of the bot. To delete the
         /// <code>$LATEST</code> version, use the <a>DeleteBot</a>
         /// operation.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the bot to delete. You cannot delete the
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the intent. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent. The name is case sensitive. </p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the intent.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent.</p>
@@ -1231,8 +1231,8 @@ pub mod fluent_builders {
         /// <code>$LATEST</code> version of the intent. To delete the
         /// <code>$LATEST</code> version, use the <a>DeleteIntent</a>
         /// operation.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the intent to delete. You cannot delete the
@@ -1320,8 +1320,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the slot type. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type. The name is case sensitive. </p>
@@ -1393,8 +1393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the slot type.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type.</p>
@@ -1406,8 +1406,8 @@ pub mod fluent_builders {
         /// <code>$LATEST</code> version of the slot type. To delete the
         /// <code>$LATEST</code> version, use the <a>DeleteSlotType</a>
         /// operation.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the slot type to delete. You cannot delete the
@@ -1490,8 +1490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot that stored the utterances.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot that stored the utterances.</p>
@@ -1502,8 +1502,8 @@ pub mod fluent_builders {
         /// <p> The unique identifier for the user that made the utterances. This
         /// is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the
         /// utterance.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p> The unique identifier for the user that made the utterances. This
@@ -1577,8 +1577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot. The name is case sensitive. </p>
@@ -1587,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version or alias of the bot.</p>
-        pub fn version_or_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_or_alias(signature.into());
+        pub fn version_or_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_or_alias(input.into());
             self
         }
         /// <p>The version or alias of the bot.</p>
@@ -1663,8 +1663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot alias. The name is case sensitive.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot alias. The name is case sensitive.</p>
@@ -1673,8 +1673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bot.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot.</p>
@@ -1745,8 +1745,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot.</p>
@@ -1758,8 +1758,8 @@ pub mod fluent_builders {
         /// response to this call is truncated, Amazon Lex returns a pagination token in
         /// the response. To fetch the next page of aliases, specify the pagination
         /// token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token for fetching the next page of aliases. If the
@@ -1772,8 +1772,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of aliases to return in the response. The
         /// default is 50. . </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of aliases to return in the response. The
@@ -1785,8 +1785,8 @@ pub mod fluent_builders {
         /// <p>Substring to match in bot alias names. An alias will be returned if
         /// any part of its name matches the substring. For example, "xyz" matches
         /// both "xyzabc" and "abcxyz."</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Substring to match in bot alias names. An alias will be returned if
@@ -1864,8 +1864,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the association between the bot and the channel. The
         /// name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the association between the bot and the channel. The
@@ -1875,8 +1875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Lex bot.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex bot.</p>
@@ -1886,8 +1886,8 @@ pub mod fluent_builders {
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
         /// this association is being made.</p>
-        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(signature.into());
+        pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(input.into());
             self
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
@@ -1961,8 +1961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Lex bot in the association.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex bot in the association.</p>
@@ -1972,8 +1972,8 @@ pub mod fluent_builders {
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
         /// this association is being made.</p>
-        pub fn bot_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_alias(signature.into());
+        pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_alias(input.into());
             self
         }
         /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
@@ -1986,8 +1986,8 @@ pub mod fluent_builders {
         /// the response to this call is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch the next page of associations, specify the
         /// pagination token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token for fetching the next page of associations. If
@@ -2000,8 +2000,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of associations to return in the response. The
         /// default is 50. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of associations to return in the response. The
@@ -2015,8 +2015,8 @@ pub mod fluent_builders {
         /// example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot
         /// channel associations, use a hyphen ("-") as the <code>nameContains</code>
         /// parameter.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Substring to match in channel association names. An association
@@ -2109,8 +2109,8 @@ pub mod fluent_builders {
         /// response to this call is truncated, Amazon Lex returns a pagination token in
         /// the response. To fetch the next page of bots, specify the pagination token
         /// in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of bots. If the
@@ -2123,8 +2123,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of bots to return in the response that the
         /// request will return. The default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of bots to return in the response that the
@@ -2136,8 +2136,8 @@ pub mod fluent_builders {
         /// <p>Substring to match in bot names. A bot will be returned if any part
         /// of its name matches the substring. For example, "xyz" matches both
         /// "xyzabc" and "abcxyz."</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Substring to match in bot names. A bot will be returned if any part
@@ -2222,8 +2222,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bot for which versions should be
         /// returned.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot for which versions should be
@@ -2236,8 +2236,8 @@ pub mod fluent_builders {
         /// the response to this call is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch the next page of versions, specify the
         /// pagination token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token for fetching the next page of bot versions. If
@@ -2250,8 +2250,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of bot versions to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of bot versions to return in the response. The
@@ -2325,8 +2325,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for a built-in intent. To find the signature
         /// for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
         /// Kit</i>.</p>
-        pub fn signature(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signature(signature.into());
+        pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signature(input.into());
             self
         }
         /// <p>The unique identifier for a built-in intent. To find the signature
@@ -2400,8 +2400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of locales that the intent supports.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>A list of locales that the intent supports.</p>
@@ -2414,8 +2414,8 @@ pub mod fluent_builders {
         /// "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an
         /// intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
         /// Kit</i>.</p>
-        pub fn signature_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signature_contains(signature.into());
+        pub fn signature_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signature_contains(input.into());
             self
         }
         /// <p>Substring to match in built-in intent signatures. An intent will be
@@ -2434,8 +2434,8 @@ pub mod fluent_builders {
         /// API call is truncated, Amazon Lex returns a pagination token in the response.
         /// To fetch the next page of intents, use the pagination token in the next
         /// request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of intents. If this
@@ -2448,8 +2448,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of intents to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of intents to return in the response. The
@@ -2525,8 +2525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of locales that the slot type supports.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>A list of locales that the slot type supports.</p>
@@ -2537,8 +2537,8 @@ pub mod fluent_builders {
         /// <p>Substring to match in built-in slot type signatures. A slot type
         /// will be returned if any part of its signature matches the substring. For
         /// example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-        pub fn signature_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signature_contains(signature.into());
+        pub fn signature_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signature_contains(input.into());
             self
         }
         /// <p>Substring to match in built-in slot type signatures. A slot type
@@ -2555,8 +2555,8 @@ pub mod fluent_builders {
         /// response to this API call is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch the next page of slot types, specify the
         /// pagination token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of slot types. If the
@@ -2569,8 +2569,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of slot types to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of slot types to return in the response. The
@@ -2641,8 +2641,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bot to export.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot to export.</p>
@@ -2651,8 +2651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot to export.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the bot to export.</p>
@@ -2661,8 +2661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resource to export. </p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource to export. </p>
@@ -2674,8 +2674,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the exported data.</p>
-        pub fn export_type(mut self, signature: crate::model::ExportType) -> Self {
-            self.inner = self.inner.export_type(signature);
+        pub fn export_type(mut self, input: crate::model::ExportType) -> Self {
+            self.inner = self.inner.export_type(input);
             self
         }
         /// <p>The format of the exported data.</p>
@@ -2748,8 +2748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the import job information to return.</p>
-        pub fn import_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.import_id(signature.into());
+        pub fn import_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.import_id(input.into());
             self
         }
         /// <p>The identifier of the import job information to return.</p>
@@ -2821,8 +2821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the intent. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent. The name is case sensitive. </p>
@@ -2831,8 +2831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the intent.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the intent.</p>
@@ -2918,8 +2918,8 @@ pub mod fluent_builders {
         /// response to this API call is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch the next page of intents, specify the pagination
         /// token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of intents. If the
@@ -2932,8 +2932,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of intents to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of intents to return in the response. The
@@ -2945,8 +2945,8 @@ pub mod fluent_builders {
         /// <p>Substring to match in intent names. An intent will be returned if
         /// any part of its name matches the substring. For example, "xyz" matches
         /// both "xyzabc" and "abcxyz."</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Substring to match in intent names. An intent will be returned if
@@ -3031,8 +3031,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the intent for which versions should be
         /// returned.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent for which versions should be
@@ -3045,8 +3045,8 @@ pub mod fluent_builders {
         /// If the response to this call is truncated, Amazon Lex returns a pagination
         /// token in the response. To fetch the next page of versions, specify the
         /// pagination token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token for fetching the next page of intent versions.
@@ -3059,8 +3059,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of intent versions to return in the response.
         /// The default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of intent versions to return in the response.
@@ -3133,8 +3133,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the migration to view. The
         /// <code>migrationID</code> is returned by the  operation.</p>
-        pub fn migration_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.migration_id(signature.into());
+        pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_id(input.into());
             self
         }
         /// <p>The unique identifier of the migration to view. The
@@ -3206,11 +3206,8 @@ pub mod fluent_builders {
         /// <p>The field to sort the list of migrations by. You can sort by the
         /// Amazon Lex V1 bot name or the date and time that the migration was
         /// started.</p>
-        pub fn sort_by_attribute(
-            mut self,
-            signature: crate::model::MigrationSortAttribute,
-        ) -> Self {
-            self.inner = self.inner.sort_by_attribute(signature);
+        pub fn sort_by_attribute(mut self, input: crate::model::MigrationSortAttribute) -> Self {
+            self.inner = self.inner.sort_by_attribute(input);
             self
         }
         /// <p>The field to sort the list of migrations by. You can sort by the
@@ -3224,8 +3221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order so sort the list.</p>
-        pub fn sort_by_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_by_order(signature);
+        pub fn sort_by_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_by_order(input);
             self
         }
         /// <p>The order so sort the list.</p>
@@ -3238,8 +3235,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the list to contain only bots whose name contains the
         /// specified string. The string is matched anywhere in bot name.</p>
-        pub fn v1_bot_name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.v1_bot_name_contains(signature.into());
+        pub fn v1_bot_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_name_contains(input.into());
             self
         }
         /// <p>Filters the list to contain only bots whose name contains the
@@ -3252,8 +3249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list to contain only migrations in the specified state.</p>
-        pub fn migration_status_equals(mut self, signature: crate::model::MigrationStatus) -> Self {
-            self.inner = self.inner.migration_status_equals(signature);
+        pub fn migration_status_equals(mut self, input: crate::model::MigrationStatus) -> Self {
+            self.inner = self.inner.migration_status_equals(input);
             self
         }
         /// <p>Filters the list to contain only migrations in the specified state.</p>
@@ -3266,8 +3263,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of migrations to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of migrations to return in the response. The
@@ -3280,8 +3277,8 @@ pub mod fluent_builders {
         /// response to this operation is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch the next page of migrations, specify the
         /// pagination token in the request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of migrations. If the
@@ -3357,8 +3354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the slot type. The name is case sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type. The name is case sensitive. </p>
@@ -3367,8 +3364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the slot type. </p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the slot type. </p>
@@ -3454,8 +3451,8 @@ pub mod fluent_builders {
         /// response to this API call is truncated, Amazon Lex returns a pagination token
         /// in the response. To fetch next page of slot types, specify the pagination
         /// token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that fetches the next page of slot types. If the
@@ -3468,8 +3465,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of slot types to return in the response. The
         /// default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of slot types to return in the response. The
@@ -3481,8 +3478,8 @@ pub mod fluent_builders {
         /// <p>Substring to match in slot type names. A slot type will be returned
         /// if any part of its name matches the substring. For example, "xyz" matches
         /// both "xyzabc" and "abcxyz."</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Substring to match in slot type names. A slot type will be returned
@@ -3567,8 +3564,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the slot type for which versions should be
         /// returned.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type for which versions should be
@@ -3581,8 +3578,8 @@ pub mod fluent_builders {
         /// versions. If the response to this call is truncated, Amazon Lex returns a
         /// pagination token in the response. To fetch the next page of versions,
         /// specify the pagination token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token for fetching the next page of slot type
@@ -3595,8 +3592,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of slot type versions to return in the response.
         /// The default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of slot type versions to return in the response.
@@ -3690,8 +3687,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bot for which utterance information should be
         /// returned.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot for which utterance information should be
@@ -3722,8 +3719,8 @@ pub mod fluent_builders {
         /// <p>To return utterances that were recognized and handled, use
         /// <code>Detected</code>. To return utterances that were not recognized,
         /// use <code>Missed</code>.</p>
-        pub fn status_type(mut self, signature: crate::model::StatusType) -> Self {
-            self.inner = self.inner.status_type(signature);
+        pub fn status_type(mut self, input: crate::model::StatusType) -> Self {
+            self.inner = self.inner.status_type(input);
             self
         }
         /// <p>To return utterances that were recognized and handled, use
@@ -3799,8 +3796,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
         /// for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
@@ -3888,8 +3885,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bot. The name is <i>not</i> case
         /// sensitive. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the bot. The name is <i>not</i> case
@@ -3899,8 +3896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the bot.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the bot.</p>
@@ -3958,8 +3955,8 @@ pub mod fluent_builders {
         /// is set to <code>true</code> by default. In these Regions setting the
         /// parameter to <code>false</code> throws a <code>ValidationException</code>
         /// exception.</p>
-        pub fn enable_model_improvements(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_model_improvements(signature);
+        pub fn enable_model_improvements(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_model_improvements(input);
             self
         }
         /// <p>Set to <code>true</code> to enable access to natural language
@@ -4041,8 +4038,8 @@ pub mod fluent_builders {
         /// <p>IntentC</p>
         /// </li>
         /// </ul>
-        pub fn nlu_intent_confidence_threshold(mut self, signature: f64) -> Self {
-            self.inner = self.inner.nlu_intent_confidence_threshold(signature);
+        pub fn nlu_intent_confidence_threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.nlu_intent_confidence_threshold(input);
             self
         }
         /// <p>Determines the threshold where Amazon Lex will insert the
@@ -4135,8 +4132,8 @@ pub mod fluent_builders {
         /// user, it returns a 400 Bad Request exception.</p>
         /// </li>
         /// </ul>
-        pub fn clarification_prompt(mut self, signature: crate::model::Prompt) -> Self {
-            self.inner = self.inner.clarification_prompt(signature);
+        pub fn clarification_prompt(mut self, input: crate::model::Prompt) -> Self {
+            self.inner = self.inner.clarification_prompt(input);
             self
         }
         /// <p>When Amazon Lex doesn't understand the user's intent, it uses this
@@ -4201,8 +4198,8 @@ pub mod fluent_builders {
         /// sent to the user, the fallback intent is used instead. For more
         /// information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
         /// AMAZON.FallbackIntent</a>.</p>
-        pub fn abort_statement(mut self, signature: crate::model::Statement) -> Self {
-            self.inner = self.inner.abort_statement(signature);
+        pub fn abort_statement(mut self, input: crate::model::Statement) -> Self {
+            self.inner = self.inner.abort_statement(input);
             self
         }
         /// <p>When Amazon Lex can't understand the user's input in context, it tries
@@ -4244,8 +4241,8 @@ pub mod fluent_builders {
         /// value. This is also true if the request replaces an existing
         /// bot.</p>
         /// <p>The default is 300 seconds (5 minutes).</p>
-        pub fn idle_session_ttl_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.idle_session_ttl_in_seconds(signature);
+        pub fn idle_session_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_session_ttl_in_seconds(input);
             self
         }
         /// <p>The maximum time in seconds that Amazon Lex retains the data gathered in
@@ -4271,8 +4268,8 @@ pub mod fluent_builders {
         /// the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices
         /// in Amazon Polly</a> in the <i>Amazon Polly Developer
         /// Guide</i>.</p>
-        pub fn voice_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_id(signature.into());
+        pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_id(input.into());
             self
         }
         /// <p>The Amazon Polly voice ID that you want Amazon Lex to use for voice
@@ -4294,8 +4291,8 @@ pub mod fluent_builders {
         /// version. If you don't specify the <code> checksum</code> field, or if the
         /// checksum does not match the <code>$LATEST</code> version, you get a
         /// <code>PreconditionFailedException</code> exception.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Identifies a specific revision of the <code>$LATEST</code>
@@ -4318,8 +4315,8 @@ pub mod fluent_builders {
         /// build it. </p>
         /// <p>If you don't specify this value, the default value is
         /// <code>BUILD</code>.</p>
-        pub fn process_behavior(mut self, signature: crate::model::ProcessBehavior) -> Self {
-            self.inner = self.inner.process_behavior(signature);
+        pub fn process_behavior(mut self, input: crate::model::ProcessBehavior) -> Self {
+            self.inner = self.inner.process_behavior(input);
             self
         }
         /// <p>If you set the <code>processBehavior</code> element to
@@ -4339,8 +4336,8 @@ pub mod fluent_builders {
         /// bot must be compatible with the locale of the bot. </p>
         ///
         /// <p>The default is <code>en-US</code>.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p> Specifies the target locale for the bot. Any intent used in the
@@ -4377,8 +4374,8 @@ pub mod fluent_builders {
         /// programs, or other applications that are directed or targeted, in whole or
         /// in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a>
         /// </p>
-        pub fn child_directed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.child_directed(signature);
+        pub fn child_directed(mut self, input: bool) -> Self {
+            self.inner = self.inner.child_directed(input);
             self
         }
         /// <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service,
@@ -4414,8 +4411,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code> user utterances are sent to Amazon
         /// Comprehend for sentiment analysis. If you don't specify
         /// <code>detectSentiment</code>, the default is <code>false</code>.</p>
-        pub fn detect_sentiment(mut self, signature: bool) -> Self {
-            self.inner = self.inner.detect_sentiment(signature);
+        pub fn detect_sentiment(mut self, input: bool) -> Self {
+            self.inner = self.inner.detect_sentiment(input);
             self
         }
         /// <p>When set to <code>true</code> user utterances are sent to Amazon
@@ -4429,8 +4426,8 @@ pub mod fluent_builders {
         /// created. This is the same as calling the <code>CreateBotVersion</code>
         /// operation. If you don't specify <code>createVersion</code>, the default is
         /// <code>false</code>.</p>
-        pub fn create_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_version(signature);
+        pub fn create_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_version(input);
             self
         }
         /// <p>When set to <code>true</code> a new numbered version of the bot is
@@ -4531,8 +4528,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the alias. The name is <i>not</i> case
         /// sensitive.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the alias. The name is <i>not</i> case
@@ -4542,8 +4539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the alias.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the alias.</p>
@@ -4552,8 +4549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the bot.</p>
-        pub fn bot_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_version(signature.into());
+        pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_version(input.into());
             self
         }
         /// <p>The version of the bot.</p>
@@ -4562,8 +4559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bot.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the bot.</p>
@@ -4582,8 +4579,8 @@ pub mod fluent_builders {
         /// checksum</code> field, or if the checksum does not match the
         /// <code>$LATEST</code> version, you get a
         /// <code>PreconditionFailedException</code> exception.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Identifies a specific revision of the <code>$LATEST</code>
@@ -4602,11 +4599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings for conversation logs for the alias.</p>
-        pub fn conversation_logs(
-            mut self,
-            signature: crate::model::ConversationLogsRequest,
-        ) -> Self {
-            self.inner = self.inner.conversation_logs(signature);
+        pub fn conversation_logs(mut self, input: crate::model::ConversationLogsRequest) -> Self {
+            self.inner = self.inner.conversation_logs(input);
             self
         }
         /// <p>Settings for conversation logs for the alias.</p>
@@ -4765,8 +4759,8 @@ pub mod fluent_builders {
         /// intent called <code>HelpIntent</code>.</p>
         /// <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
         /// Kit</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the intent. The name is <i>not</i> case
@@ -4782,8 +4776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the intent.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the intent.</p>
@@ -4851,8 +4845,8 @@ pub mod fluent_builders {
         /// <p>You you must provide both the <code>rejectionStatement</code> and
         /// the <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
-        pub fn confirmation_prompt(mut self, signature: crate::model::Prompt) -> Self {
-            self.inner = self.inner.confirmation_prompt(signature);
+        pub fn confirmation_prompt(mut self, input: crate::model::Prompt) -> Self {
+            self.inner = self.inner.confirmation_prompt(input);
             self
         }
         /// <p>Prompts the user to confirm the intent. This question should have a
@@ -4881,8 +4875,8 @@ pub mod fluent_builders {
         /// <p>You must provide both the <code>rejectionStatement</code> and the
         /// <code>confirmationPrompt</code>, or neither.</p>
         /// </note>
-        pub fn rejection_statement(mut self, signature: crate::model::Statement) -> Self {
-            self.inner = self.inner.rejection_statement(signature);
+        pub fn rejection_statement(mut self, input: crate::model::Statement) -> Self {
+            self.inner = self.inner.rejection_statement(input);
             self
         }
         /// <p>When the user answers "no" to the question defined in
@@ -4926,8 +4920,8 @@ pub mod fluent_builders {
         /// <p>The <code>followUpPrompt</code> field and the
         /// <code>conclusionStatement</code> field are mutually exclusive. You can
         /// specify only one. </p>
-        pub fn follow_up_prompt(mut self, signature: crate::model::FollowUpPrompt) -> Self {
-            self.inner = self.inner.follow_up_prompt(signature);
+        pub fn follow_up_prompt(mut self, input: crate::model::FollowUpPrompt) -> Self {
+            self.inner = self.inner.follow_up_prompt(input);
             self
         }
         /// <p>Amazon Lex uses this prompt to solicit additional activity after
@@ -4974,8 +4968,8 @@ pub mod fluent_builders {
         /// <code>conclusionStatement</code> are mutually exclusive. You can
         /// specify only one.</p>
         /// </note>
-        pub fn conclusion_statement(mut self, signature: crate::model::Statement) -> Self {
-            self.inner = self.inner.conclusion_statement(signature);
+        pub fn conclusion_statement(mut self, input: crate::model::Statement) -> Self {
+            self.inner = self.inner.conclusion_statement(input);
             self
         }
         /// <p> The statement that you want Amazon Lex to convey to the user after the
@@ -5003,8 +4997,8 @@ pub mod fluent_builders {
         /// John is gluten intolerant, you might set the corresponding intent slot,
         /// <code>GlutenIntolerant</code>, to true. You might find John's phone
         /// number and set the corresponding session attribute. </p>
-        pub fn dialog_code_hook(mut self, signature: crate::model::CodeHook) -> Self {
-            self.inner = self.inner.dialog_code_hook(signature);
+        pub fn dialog_code_hook(mut self, input: crate::model::CodeHook) -> Self {
+            self.inner = self.inner.dialog_code_hook(input);
             self
         }
         /// <p> Specifies a Lambda function to invoke for each user input. You can
@@ -5030,11 +5024,8 @@ pub mod fluent_builders {
         /// to the client application, or direct it to invoke a Lambda function that
         /// can process the intent (for example, place an order with a pizzeria).
         /// </p>
-        pub fn fulfillment_activity(
-            mut self,
-            signature: crate::model::FulfillmentActivity,
-        ) -> Self {
-            self.inner = self.inner.fulfillment_activity(signature);
+        pub fn fulfillment_activity(mut self, input: crate::model::FulfillmentActivity) -> Self {
+            self.inner = self.inner.fulfillment_activity(input);
             self
         }
         /// <p>Required. Describes how the intent is fulfilled. For example, after
@@ -5055,11 +5046,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the built-in intent to base this intent on.
         /// To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
         /// Kit</i>.</p>
-        pub fn parent_intent_signature(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.parent_intent_signature(signature.into());
+        pub fn parent_intent_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_intent_signature(input.into());
             self
         }
         /// <p>A unique identifier for the built-in intent to base this intent on.
@@ -5083,8 +5071,8 @@ pub mod fluent_builders {
         /// checksum</code> field, or if the checksum does not match the
         /// <code>$LATEST</code> version, you get a
         /// <code>PreconditionFailedException</code> exception.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Identifies a specific revision of the <code>$LATEST</code>
@@ -5106,8 +5094,8 @@ pub mod fluent_builders {
         /// is created. This is the same as calling the
         /// <code>CreateIntentVersion</code> operation. If you do not specify
         /// <code>createVersion</code>, the default is <code>false</code>.</p>
-        pub fn create_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_version(signature);
+        pub fn create_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_version(input);
             self
         }
         /// <p>When set to <code>true</code> a new numbered version of the intent
@@ -5122,11 +5110,8 @@ pub mod fluent_builders {
         /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon
         /// Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
         /// AMAZON.KendraSearchIntent</a>.</p>
-        pub fn kendra_configuration(
-            mut self,
-            signature: crate::model::KendraConfiguration,
-        ) -> Self {
-            self.inner = self.inner.kendra_configuration(signature);
+        pub fn kendra_configuration(mut self, input: crate::model::KendraConfiguration) -> Self {
+            self.inner = self.inner.kendra_configuration(input);
             self
         }
         /// <p>Configuration information required to use the
@@ -5263,8 +5248,8 @@ pub mod fluent_builders {
         /// type called <code>DATE</code>.</p>
         /// <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
         /// Kit</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the slot type. The name is <i>not</i>
@@ -5280,8 +5265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the slot type.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the slot type.</p>
@@ -5341,8 +5326,8 @@ pub mod fluent_builders {
         /// checksum</code> field, or if the checksum does not match the
         /// <code>$LATEST</code> version, you get a
         /// <code>PreconditionFailedException</code> exception.</p>
-        pub fn checksum(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.checksum(signature.into());
+        pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.checksum(input.into());
             self
         }
         /// <p>Identifies a specific revision of the <code>$LATEST</code>
@@ -5381,9 +5366,9 @@ pub mod fluent_builders {
         /// default is <code>ORIGINAL_VALUE</code>.</p>
         pub fn value_selection_strategy(
             mut self,
-            signature: crate::model::SlotValueSelectionStrategy,
+            input: crate::model::SlotValueSelectionStrategy,
         ) -> Self {
-            self.inner = self.inner.value_selection_strategy(signature);
+            self.inner = self.inner.value_selection_strategy(input);
             self
         }
         /// <p>Determines the slot resolution strategy that Amazon Lex uses to return
@@ -5416,8 +5401,8 @@ pub mod fluent_builders {
         /// type is created. This is the same as calling the
         /// <code>CreateSlotTypeVersion</code> operation. If you do not specify
         /// <code>createVersion</code>, the default is <code>false</code>.</p>
-        pub fn create_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_version(signature);
+        pub fn create_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_version(input);
             self
         }
         /// <p>When set to <code>true</code> a new numbered version of the slot
@@ -5432,11 +5417,8 @@ pub mod fluent_builders {
         /// define a parent slot type, the new slot type has all of the same
         /// configuration as the parent.</p>
         /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-        pub fn parent_slot_type_signature(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.parent_slot_type_signature(signature.into());
+        pub fn parent_slot_type_signature(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_slot_type_signature(input.into());
             self
         }
         /// <p>The built-in slot type used as the parent of the slot type. When you
@@ -5537,8 +5519,8 @@ pub mod fluent_builders {
         /// <p>A zip archive in binary format. The archive should contain one file, a
         /// JSON file containing the resource to import. The resource should match the
         /// type specified in the <code>resourceType</code> field.</p>
-        pub fn payload(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(signature);
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payload(input);
             self
         }
         /// <p>A zip archive in binary format. The archive should contain one file, a
@@ -5558,8 +5540,8 @@ pub mod fluent_builders {
         /// <p>An intent exports dependent slot types.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>Specifies the type of resource to export. Each resource also
@@ -5595,8 +5577,8 @@ pub mod fluent_builders {
         /// file.</p>
         /// </li>
         /// </ul>
-        pub fn merge_strategy(mut self, signature: crate::model::MergeStrategy) -> Self {
-            self.inner = self.inner.merge_strategy(signature);
+        pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
+            self.inner = self.inner.merge_strategy(input);
             self
         }
         /// <p>Specifies the action that the <code>StartImport</code> operation
@@ -5705,8 +5687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
-        pub fn v1_bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.v1_bot_name(signature.into());
+        pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
@@ -5716,8 +5698,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the
         /// <code>$LATEST</code> version as well as any numbered version.</p>
-        pub fn v1_bot_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.v1_bot_version(signature.into());
+        pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_version(input.into());
             self
         }
         /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the
@@ -5741,8 +5723,8 @@ pub mod fluent_builders {
         /// contents of the Amazon Lex V2 bot.</p>
         /// </li>
         /// </ul>
-        pub fn v2_bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.v2_bot_name(signature.into());
+        pub fn v2_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v2_bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
@@ -5762,8 +5744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
-        pub fn v2_bot_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.v2_bot_role(signature.into());
+        pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v2_bot_role(input.into());
             self
         }
         /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
@@ -5786,8 +5768,8 @@ pub mod fluent_builders {
         /// is created in the Amazon Lex V2 bot.</p>
         /// </li>
         /// </ul>
-        pub fn migration_strategy(mut self, signature: crate::model::MigrationStrategy) -> Self {
-            self.inner = self.inner.migration_strategy(signature);
+        pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
+            self.inner = self.inner.migration_strategy(input);
             self
         }
         /// <p>The strategy used to conduct the migration.</p>
@@ -5875,8 +5857,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
         /// to tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
@@ -5966,8 +5948,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
         /// from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags

@@ -1610,8 +1610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -1640,8 +1640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
-        pub fn force_associate(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_associate(signature);
+        pub fn force_associate(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_associate(input);
             self
         }
         /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
@@ -1712,11 +1712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
-        pub fn voice_connector_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.voice_connector_group_id(signature.into());
+        pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_group_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -1745,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
-        pub fn force_associate(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_associate(signature);
+        pub fn force_associate(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_associate(input);
             self
         }
         /// <p>If true, associates the provided phone numbers with the provided Amazon Chime Voice Connector Group and removes any previously existing associations. If false, does not associate any phone numbers that have previously existing associations.</p>
@@ -1815,8 +1812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -1825,8 +1822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -1835,8 +1832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone number, in E.164 format.</p>
-        pub fn e164_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.e164_phone_number(signature.into());
+        pub fn e164_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.e164_phone_number(input.into());
             self
         }
         /// <p>The phone number, in E.164 format.</p>
@@ -1910,8 +1907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -2002,8 +1999,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -2089,8 +2086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -2103,8 +2100,8 @@ pub mod fluent_builders {
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
         /// by moderators.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -2137,8 +2134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2207,8 +2204,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -2217,8 +2214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -2405,8 +2402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -2504,8 +2501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -2673,8 +2670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -2765,8 +2762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Chime account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon Chime account.</p>
@@ -2836,8 +2833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstance</code>.</p>
@@ -2846,8 +2843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.</p>
@@ -2856,8 +2853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The <code>ClientRequestToken</code> of the <code>AppInstance</code>.</p>
@@ -2960,8 +2957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
-        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(signature.into());
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the administrator of the current <code>AppInstance</code>.</p>
@@ -2973,8 +2970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -3047,8 +3044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code> request.</p>
@@ -3060,8 +3057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
-        pub fn app_instance_user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_id(signature.into());
+        pub fn app_instance_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_id(input.into());
             self
         }
         /// <p>The user ID of the <code>AppInstance</code>.</p>
@@ -3073,8 +3070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The user's name.</p>
@@ -3083,8 +3080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The request's metadata. Limited to a 1KB string in UTF-8.</p>
@@ -3093,8 +3090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The token assigned to the user requesting an <code>AppInstance</code>.</p>
@@ -3188,8 +3185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -3198,8 +3195,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
-        pub fn external_user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_user_id(signature.into());
+        pub fn external_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_user_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p>
@@ -3288,8 +3285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -3298,8 +3295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot display name.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The bot display name.</p>
@@ -3308,8 +3305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain of the Amazon Chime Enterprise account.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain of the Amazon Chime Enterprise account.</p>
@@ -3388,8 +3385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel request.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the channel request.</p>
@@ -3401,8 +3398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -3413,8 +3410,8 @@ pub mod fluent_builders {
         /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
         /// moderators, and channel members can add themselves and other members to unrestricted
         /// channels. Only administrators and moderators can add members to restricted channels.</p>
-        pub fn mode(mut self, signature: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
@@ -3427,8 +3424,8 @@ pub mod fluent_builders {
         /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
         /// channels aren't discoverable by users outside the channel. Public channels are discoverable
         /// by anyone in the <code>AppInstance</code>.</p>
-        pub fn privacy(mut self, signature: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(signature);
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
         /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
@@ -3442,8 +3439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
@@ -3452,8 +3449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
@@ -3482,8 +3479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3563,8 +3560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the ban request.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the ban request.</p>
@@ -3573,8 +3570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the member being banned.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the member being banned.</p>
@@ -3583,8 +3580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3690,8 +3687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -3700,8 +3697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the member you want to add to the channel.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the member you want to add to the channel.</p>
@@ -3714,8 +3711,8 @@ pub mod fluent_builders {
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
         /// by moderators.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -3731,8 +3728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3825,8 +3822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3835,8 +3832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the moderator.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The ARN of the moderator.</p>
@@ -3848,8 +3845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3919,8 +3916,8 @@ pub mod fluent_builders {
         }
         /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
         /// is the only supported source.</p>
-        pub fn source_type(mut self, signature: crate::model::MediaPipelineSourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
@@ -3933,8 +3930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>ARN of the source from which the media artifacts are captured.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>ARN of the source from which the media artifacts are captured.</p>
@@ -3943,8 +3940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
-        pub fn sink_type(mut self, signature: crate::model::MediaPipelineSinkType) -> Self {
-            self.inner = self.inner.sink_type(signature);
+        pub fn sink_type(mut self, input: crate::model::MediaPipelineSinkType) -> Self {
+            self.inner = self.inner.sink_type(input);
             self
         }
         /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
@@ -3956,8 +3953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the sink type.</p>
-        pub fn sink_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sink_arn(signature.into());
+        pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sink_arn(input.into());
             self
         }
         /// <p>The ARN of the sink type.</p>
@@ -3966,8 +3963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token assigned to the client making the pipeline request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The token assigned to the client making the pipeline request.</p>
@@ -3981,9 +3978,9 @@ pub mod fluent_builders {
         /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
         pub fn chime_sdk_meeting_configuration(
             mut self,
-            signature: crate::model::ChimeSdkMeetingConfiguration,
+            input: crate::model::ChimeSdkMeetingConfiguration,
         ) -> Self {
-            self.inner = self.inner.chime_sdk_meeting_configuration(signature);
+            self.inner = self.inner.chime_sdk_meeting_configuration(input);
             self
         }
         /// <p>The configuration for a specified media capture pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.</p>
@@ -4065,8 +4062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -4078,8 +4075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(signature.into());
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -4091,8 +4088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(signature.into());
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -4146,8 +4143,8 @@ pub mod fluent_builders {
         /// <code>us-west-2</code>
         /// .
         /// </p>
-        pub fn media_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(signature.into());
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>
@@ -4217,9 +4214,9 @@ pub mod fluent_builders {
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
         pub fn notifications_configuration(
             mut self,
-            signature: crate::model::MeetingNotificationConfiguration,
+            input: crate::model::MeetingNotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(signature);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
@@ -4295,8 +4292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -4305,8 +4302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
-        pub fn from_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_phone_number(signature.into());
+        pub fn from_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_phone_number(input.into());
             self
         }
         /// <p>Phone number used as the caller ID when the remote party receives a call.</p>
@@ -4318,8 +4315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Phone number called when inviting someone to a meeting.</p>
-        pub fn to_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.to_phone_number(signature.into());
+        pub fn to_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.to_phone_number(input.into());
             self
         }
         /// <p>Phone number called when inviting someone to a meeting.</p>
@@ -4331,8 +4328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
-        pub fn join_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.join_token(signature.into());
+        pub fn join_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.join_token(input.into());
             self
         }
         /// <p>Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.</p>
@@ -4411,8 +4408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
@@ -4424,8 +4421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The external meeting ID.</p>
-        pub fn external_meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_meeting_id(signature.into());
+        pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_meeting_id(input.into());
             self
         }
         /// <p>The external meeting ID.</p>
@@ -4437,8 +4434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn meeting_host_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_host_id(signature.into());
+        pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_host_id(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -4493,8 +4490,8 @@ pub mod fluent_builders {
         /// <code>us-west-2</code>
         /// .
         /// </p>
-        pub fn media_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_region(signature.into());
+        pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_region(input.into());
             self
         }
         /// <p>
@@ -4567,9 +4564,9 @@ pub mod fluent_builders {
         /// Virginia) AWS Region (<code>us-east-1</code>). </p>
         pub fn notifications_configuration(
             mut self,
-            signature: crate::model::MeetingNotificationConfiguration,
+            input: crate::model::MeetingNotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notifications_configuration(signature);
+            self.inner = self.inner.notifications_configuration(input);
             self
         }
         /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event
@@ -4661,8 +4658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number product type.</p>
-        pub fn product_type(mut self, signature: crate::model::PhoneNumberProductType) -> Self {
-            self.inner = self.inner.product_type(signature);
+        pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The phone number product type.</p>
@@ -4751,8 +4748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -4781,8 +4778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the proxy session.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the proxy session.</p>
@@ -4791,8 +4788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes allowed for the proxy session.</p>
-        pub fn expiry_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.expiry_minutes(signature);
+        pub fn expiry_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.expiry_minutes(input);
             self
         }
         /// <p>The number of minutes allowed for the proxy session.</p>
@@ -4820,9 +4817,9 @@ pub mod fluent_builders {
         /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
         pub fn number_selection_behavior(
             mut self,
-            signature: crate::model::NumberSelectionBehavior,
+            input: crate::model::NumberSelectionBehavior,
         ) -> Self {
-            self.inner = self.inner.number_selection_behavior(signature);
+            self.inner = self.inner.number_selection_behavior(input);
             self
         }
         /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
@@ -4834,8 +4831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-        pub fn geo_match_level(mut self, signature: crate::model::GeoMatchLevel) -> Self {
-            self.inner = self.inner.geo_match_level(signature);
+        pub fn geo_match_level(mut self, input: crate::model::GeoMatchLevel) -> Self {
+            self.inner = self.inner.geo_match_level(input);
             self
         }
         /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
@@ -4847,8 +4844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The country and area code for the proxy phone number.</p>
-        pub fn geo_match_params(mut self, signature: crate::model::GeoMatchParams) -> Self {
-            self.inner = self.inner.geo_match_params(signature);
+        pub fn geo_match_params(mut self, input: crate::model::GeoMatchParams) -> Self {
+            self.inner = self.inner.geo_match_params(input);
             self
         }
         /// <p>The country and area code for the proxy phone number.</p>
@@ -4920,8 +4917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -4930,8 +4927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The room name.</p>
@@ -4940,8 +4937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -5013,8 +5010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -5023,8 +5020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -5033,8 +5030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The Amazon Chime member ID (user ID or bot ID).</p>
@@ -5043,8 +5040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The role of the member.</p>
-        pub fn role(mut self, signature: crate::model::RoomMembershipRole) -> Self {
-            self.inner = self.inner.role(signature);
+        pub fn role(mut self, input: crate::model::RoomMembershipRole) -> Self {
+            self.inner = self.inner.role(input);
             self
         }
         /// <p>The role of the member.</p>
@@ -5116,8 +5113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The AWS Region assigned to the SIP media application.</p>
-        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(signature.into());
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The AWS Region assigned to the SIP media application.</p>
@@ -5126,8 +5123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SIP media application name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The SIP media application name.</p>
@@ -5214,8 +5211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
-        pub fn from_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.from_phone_number(signature.into());
+        pub fn from_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.from_phone_number(input.into());
             self
         }
         /// <p>The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.</p>
@@ -5227,8 +5224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone number that the service should call.</p>
-        pub fn to_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.to_phone_number(signature.into());
+        pub fn to_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.to_phone_number(input.into());
             self
         }
         /// <p>The phone number that the service should call.</p>
@@ -5240,11 +5237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the SIP media application.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The ID of the SIP media application.</p>
@@ -5339,8 +5333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SIP rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SIP rule.</p>
@@ -5349,8 +5343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
-        pub fn trigger_type(mut self, signature: crate::model::SipRuleTriggerType) -> Self {
-            self.inner = self.inner.trigger_type(signature);
+        pub fn trigger_type(mut self, input: crate::model::SipRuleTriggerType) -> Self {
+            self.inner = self.inner.trigger_type(input);
             self
         }
         /// <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
@@ -5367,8 +5361,8 @@ pub mod fluent_builders {
         /// E164 format. The <code>SipMediaApplication</code> specified in the <code>SipRule</code> is triggered if the request URI in an incoming SIP
         /// request matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in the incoming SIP request matches the
         /// <code>ToPhoneNumber</code> value.</p>
-        pub fn trigger_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trigger_value(signature.into());
+        pub fn trigger_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trigger_value(input.into());
             self
         }
         /// <p>If <code>TriggerType</code> is <code>RequestUriHostname</code>, the value can be the outbound
@@ -5385,8 +5379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
-        pub fn disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disabled(signature);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.disabled(input);
             self
         }
         /// <p>Enables or disables a rule. You must disable rules before you can delete them.</p>
@@ -5475,8 +5469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -5485,8 +5479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name.</p>
@@ -5495,8 +5489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user's email address.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The user's email address.</p>
@@ -5505,8 +5499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user type.</p>
-        pub fn user_type(mut self, signature: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(signature);
+        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
+            self.inner = self.inner.user_type(input);
             self
         }
         /// <p>The user type.</p>
@@ -5581,8 +5575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Chime Voice Connector.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector.</p>
@@ -5595,8 +5589,8 @@ pub mod fluent_builders {
         /// <code>us-east-1</code>
         /// .
         /// </p>
-        pub fn aws_region(mut self, signature: crate::model::VoiceConnectorAwsRegion) -> Self {
-            self.inner = self.inner.aws_region(signature);
+        pub fn aws_region(mut self, input: crate::model::VoiceConnectorAwsRegion) -> Self {
+            self.inner = self.inner.aws_region(input);
             self
         }
         /// <p>
@@ -5612,8 +5606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
-        pub fn require_encryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_encryption(signature);
+        pub fn require_encryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_encryption(input);
             self
         }
         /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
@@ -5686,8 +5680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Chime Voice Connector group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector group.</p>
@@ -5786,8 +5780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -5856,8 +5850,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -5929,8 +5923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
-        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(signature.into());
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>'s administrator.</p>
@@ -5942,8 +5936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -6017,8 +6011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the streaming configurations being deleted.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the streaming configurations being deleted.</p>
@@ -6090,8 +6084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user request being deleted.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user request being deleted.</p>
@@ -6166,8 +6160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -6176,8 +6170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -6253,8 +6247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel being deleted.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel being deleted.</p>
@@ -6263,8 +6257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -6339,8 +6333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
@@ -6349,8 +6343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
@@ -6359,8 +6353,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -6435,8 +6429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
@@ -6445,8 +6439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the member that you're removing from the channel.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the member that you're removing from the channel.</p>
@@ -6455,8 +6449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -6533,8 +6527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -6543,8 +6537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being deleted.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being deleted.</p>
@@ -6553,8 +6547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -6629,8 +6623,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -6639,8 +6633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the moderator being deleted.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The ARN of the moderator being deleted.</p>
@@ -6652,8 +6646,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -6722,8 +6716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -6732,8 +6726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -6802,8 +6796,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the media capture pipeline being deleted. </p>
-        pub fn media_pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_pipeline_id(signature.into());
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_pipeline_id(input.into());
             self
         }
         /// <p>The ID of the media capture pipeline being deleted. </p>
@@ -6878,8 +6872,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -6954,8 +6948,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number ID.</p>
-        pub fn phone_number_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number_id(signature.into());
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
             self
         }
         /// <p>The phone number ID.</p>
@@ -7027,8 +7021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -7040,8 +7034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The proxy session ID.</p>
-        pub fn proxy_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proxy_session_id(signature.into());
+        pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proxy_session_id(input.into());
             self
         }
         /// <p>The proxy session ID.</p>
@@ -7113,8 +7107,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -7123,8 +7117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The chat room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The chat room ID.</p>
@@ -7193,8 +7187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -7203,8 +7197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -7213,8 +7207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member ID (user ID or bot ID).</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The member ID (user ID or bot ID).</p>
@@ -7283,11 +7277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -7359,8 +7350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP rule ID.</p>
-        pub fn sip_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sip_rule_id(signature.into());
+        pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_rule_id(input.into());
             self
         }
         /// <p>The SIP rule ID.</p>
@@ -7431,8 +7422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7497,8 +7488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7572,11 +7563,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
-        pub fn voice_connector_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.voice_connector_group_id(signature.into());
+        pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_group_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -7652,8 +7640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7725,8 +7713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7800,8 +7788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7877,8 +7865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -7952,8 +7940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -8042,8 +8030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -8115,8 +8103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
-        pub fn app_instance_admin_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_admin_arn(signature.into());
+        pub fn app_instance_admin_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_admin_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceAdmin</code>.</p>
@@ -8128,8 +8116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -8201,8 +8189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -8282,8 +8270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -8292,8 +8280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8369,8 +8357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
@@ -8379,8 +8367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the member being banned.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the member being banned.</p>
@@ -8389,8 +8377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8464,8 +8452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -8474,8 +8462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the member.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the member.</p>
@@ -8484,8 +8472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8563,8 +8551,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
@@ -8573,8 +8561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user in a channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in a channel.</p>
@@ -8586,8 +8574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8665,8 +8653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the moderated channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the moderated channel.</p>
@@ -8675,8 +8663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
@@ -8688,8 +8676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8763,8 +8751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -8773,8 +8761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel moderator.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The ARN of the channel moderator.</p>
@@ -8786,8 +8774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -8856,8 +8844,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -8866,8 +8854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -8938,8 +8926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -9021,11 +9009,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
-        pub fn voice_connector_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.voice_connector_group_id(signature.into());
+        pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_group_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -9116,8 +9101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -9204,8 +9189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -9277,8 +9262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -9347,8 +9332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -9422,8 +9407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -9501,8 +9486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -9511,8 +9496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -9581,8 +9566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -9591,8 +9576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -9667,8 +9652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -9677,8 +9662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message.</p>
@@ -9687,8 +9672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -9757,8 +9742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -9767,8 +9752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -9898,8 +9883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pipeline that you want to get.</p>
-        pub fn media_pipeline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.media_pipeline_id(signature.into());
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_pipeline_id(input.into());
             self
         }
         /// <p>The ID of the pipeline that you want to get.</p>
@@ -9977,8 +9962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -10107,8 +10092,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number ID.</p>
-        pub fn phone_number_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number_id(signature.into());
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
             self
         }
         /// <p>The phone number ID.</p>
@@ -10181,8 +10166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the phone number order.</p>
-        pub fn phone_number_order_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number_order_id(signature.into());
+        pub fn phone_number_order_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_order_id(input.into());
             self
         }
         /// <p>The ID for the phone number order.</p>
@@ -10314,8 +10299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -10327,8 +10312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The proxy session ID.</p>
-        pub fn proxy_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proxy_session_id(signature.into());
+        pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proxy_session_id(input.into());
             self
         }
         /// <p>The proxy session ID.</p>
@@ -10403,8 +10388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -10473,8 +10458,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -10483,8 +10468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -10553,11 +10538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -10631,11 +10613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -10707,8 +10686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP rule ID.</p>
-        pub fn sip_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sip_rule_id(signature.into());
+        pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_rule_id(input.into());
             self
         }
         /// <p>The SIP rule ID.</p>
@@ -10782,8 +10761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -10792,8 +10771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -10862,8 +10841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -10872,8 +10851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -10942,8 +10921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11008,8 +10987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11082,11 +11061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
-        pub fn voice_connector_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.voice_connector_group_id(signature.into());
+        pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_group_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -11160,8 +11136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11233,8 +11209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11306,8 +11282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -11383,8 +11359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11456,8 +11432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11532,8 +11508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -11607,8 +11583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -11634,8 +11610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user type.</p>
-        pub fn user_type(mut self, signature: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(signature);
+        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
+            self.inner = self.inner.user_type(input);
             self
         }
         /// <p>The user type.</p>
@@ -11706,8 +11682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Amazon Chime account name prefix with which to filter results.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Amazon Chime account name prefix with which to filter results.</p>
@@ -11716,8 +11692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User email address with which to filter results.</p>
-        pub fn user_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_email(signature.into());
+        pub fn user_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_email(input.into());
             self
         }
         /// <p>User email address with which to filter results.</p>
@@ -11726,8 +11702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -11736,8 +11712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -11806,8 +11782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -11819,8 +11795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of administrators that you want to return.</p>
@@ -11829,8 +11805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
@@ -11899,8 +11875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of <code>AppInstance</code>s that you want to return.</p>
@@ -11909,8 +11885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.</p>
@@ -11981,8 +11957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -11994,8 +11970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of requests that you want returned.</p>
@@ -12004,8 +11980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested users are returned.</p>
@@ -12078,8 +12054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -12088,8 +12064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -12098,8 +12074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -12168,8 +12144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -12178,8 +12154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -12248,8 +12224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -12258,8 +12234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call. The default is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default is 10.</p>
@@ -12268,8 +12244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -12345,8 +12321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -12355,8 +12331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
@@ -12365,8 +12341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
@@ -12375,8 +12351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -12452,8 +12428,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -12465,8 +12441,8 @@ pub mod fluent_builders {
         /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -12481,8 +12457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -12492,8 +12468,8 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API calls until all requested channel memberships are
         /// returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channel memberships are
@@ -12503,8 +12479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -12582,8 +12558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
@@ -12595,8 +12571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
@@ -12605,8 +12581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of channel memberships is reached.</p>
@@ -12615,8 +12591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -12695,8 +12671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -12706,8 +12682,8 @@ pub mod fluent_builders {
         }
         /// <p>The order in which you want messages sorted. Default is Descending, based on time
         /// created.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which you want messages sorted. Default is Descending, based on time
@@ -12720,8 +12696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
-        pub fn not_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_before(signature);
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_before(input);
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
@@ -12733,8 +12709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
-        pub fn not_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_after(signature);
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_after(input);
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
@@ -12746,8 +12722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
@@ -12756,8 +12732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
@@ -12766,8 +12742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -12841,8 +12817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -12851,8 +12827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
@@ -12862,8 +12838,8 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API calls until all requested moderators are
         /// returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested moderators are
@@ -12873,8 +12849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -12964,8 +12940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -12979,8 +12955,8 @@ pub mod fluent_builders {
         /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
         /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
         /// can retrieve private channels. </p>
-        pub fn privacy(mut self, signature: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(signature);
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
         /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
@@ -12994,8 +12970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
@@ -13004,8 +12980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -13014,8 +12990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -13092,8 +13068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in the moderated channel.</p>
@@ -13105,8 +13081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels in the request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels in the request.</p>
@@ -13116,8 +13092,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned from previous API requests until the number of channels moderated by
         /// the user is reached.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of channels moderated by
@@ -13127,8 +13103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -13197,8 +13173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token used to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token used to retrieve the next page of results.</p>
@@ -13207,8 +13183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
@@ -13280,8 +13256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13290,8 +13266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13360,8 +13336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -13430,8 +13406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13440,8 +13416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13510,8 +13486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number status.</p>
-        pub fn status(mut self, signature: crate::model::PhoneNumberStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::PhoneNumberStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The phone number status.</p>
@@ -13523,8 +13499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone number product type.</p>
-        pub fn product_type(mut self, signature: crate::model::PhoneNumberProductType) -> Self {
-            self.inner = self.inner.product_type(signature);
+        pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The phone number product type.</p>
@@ -13536,8 +13512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter to use to limit the number of results.</p>
-        pub fn filter_name(mut self, signature: crate::model::PhoneNumberAssociationName) -> Self {
-            self.inner = self.inner.filter_name(signature);
+        pub fn filter_name(mut self, input: crate::model::PhoneNumberAssociationName) -> Self {
+            self.inner = self.inner.filter_name(input);
             self
         }
         /// <p>The filter to use to limit the number of results.</p>
@@ -13549,8 +13525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value to use for the filter.</p>
-        pub fn filter_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_value(signature.into());
+        pub fn filter_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_value(input.into());
             self
         }
         /// <p>The value to use for the filter.</p>
@@ -13559,8 +13535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13569,8 +13545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13639,8 +13615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -13652,8 +13628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The proxy session status.</p>
-        pub fn status(mut self, signature: crate::model::ProxySessionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ProxySessionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The proxy session status.</p>
@@ -13665,8 +13641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13675,8 +13651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13746,8 +13722,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -13756,8 +13732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -13766,8 +13742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13776,8 +13752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13846,8 +13822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -13856,8 +13832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member ID (user ID or bot ID).</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The member ID (user ID or bot ID).</p>
@@ -13866,8 +13842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -13876,8 +13852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -13946,8 +13922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -13956,8 +13932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -14026,11 +14002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -14042,8 +14015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -14052,8 +14025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -14122,8 +14095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number product type.</p>
-        pub fn product_type(mut self, signature: crate::model::PhoneNumberProductType) -> Self {
-            self.inner = self.inner.product_type(signature);
+        pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The phone number product type.</p>
@@ -14195,8 +14168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -14266,8 +14239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -14276,8 +14249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
-        pub fn user_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_email(signature.into());
+        pub fn user_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_email(input.into());
             self
         }
         /// <p>Optional. The user email address used to filter results. Maximum 1.</p>
@@ -14286,8 +14259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user type.</p>
-        pub fn user_type(mut self, signature: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(signature);
+        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
+            self.inner = self.inner.user_type(input);
             self
         }
         /// <p>The user type.</p>
@@ -14296,8 +14269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. Defaults to 100.</p>
@@ -14306,8 +14279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -14376,8 +14349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -14386,8 +14359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -14456,8 +14429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -14466,8 +14439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -14538,8 +14511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -14611,8 +14584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -14621,8 +14594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -14691,8 +14664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -14706,9 +14679,9 @@ pub mod fluent_builders {
         /// <p>The time in days to retain data. Data type: number.</p>
         pub fn app_instance_retention_settings(
             mut self,
-            signature: crate::model::AppInstanceRetentionSettings,
+            input: crate::model::AppInstanceRetentionSettings,
         ) -> Self {
-            self.inner = self.inner.app_instance_retention_settings(signature);
+            self.inner = self.inner.app_instance_retention_settings(input);
             self
         }
         /// <p>The time in days to retain data. Data type: number.</p>
@@ -14782,8 +14755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -14879,8 +14852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -14889,8 +14862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -14901,9 +14874,9 @@ pub mod fluent_builders {
         /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
         pub fn outbound_events_https_endpoint(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.outbound_events_https_endpoint(signature.into());
+            self.inner = self.inner.outbound_events_https_endpoint(input.into());
             self
         }
         /// <p>HTTPS endpoint that allows the bot to receive outgoing events.</p>
@@ -14915,8 +14888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
-        pub fn lambda_function_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lambda_function_arn(signature.into());
+        pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lambda_function_arn(input.into());
             self
         }
         /// <p>Lambda function ARN that allows the bot to receive outgoing events.</p>
@@ -15000,8 +14973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -15010,8 +14983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention settings.</p>
-        pub fn retention_settings(mut self, signature: crate::model::RetentionSettings) -> Self {
-            self.inner = self.inner.retention_settings(signature);
+        pub fn retention_settings(mut self, input: crate::model::RetentionSettings) -> Self {
+            self.inner = self.inner.retention_settings(input);
             self
         }
         /// <p>The retention settings.</p>
@@ -15085,11 +15058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -15103,11 +15073,11 @@ pub mod fluent_builders {
         /// <p>The actual logging configuration.</p>
         pub fn sip_media_application_logging_configuration(
             mut self,
-            signature: crate::model::SipMediaApplicationLoggingConfiguration,
+            input: crate::model::SipMediaApplicationLoggingConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .sip_media_application_logging_configuration(signature);
+                .sip_media_application_logging_configuration(input);
             self
         }
         /// <p>The actual logging configuration.</p>
@@ -15175,8 +15145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15190,9 +15160,9 @@ pub mod fluent_builders {
         /// <p>The emergency calling configuration details.</p>
         pub fn emergency_calling_configuration(
             mut self,
-            signature: crate::model::EmergencyCallingConfiguration,
+            input: crate::model::EmergencyCallingConfiguration,
         ) -> Self {
-            self.inner = self.inner.emergency_calling_configuration(signature);
+            self.inner = self.inner.emergency_calling_configuration(input);
             self
         }
         /// <p>The emergency calling configuration details.</p>
@@ -15266,8 +15236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15279,11 +15249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The logging configuration details to add.</p>
-        pub fn logging_configuration(
-            mut self,
-            signature: crate::model::LoggingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.logging_configuration(signature);
+        pub fn logging_configuration(mut self, input: crate::model::LoggingConfiguration) -> Self {
+            self.inner = self.inner.logging_configuration(input);
             self
         }
         /// <p>The logging configuration details to add.</p>
@@ -15359,8 +15326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15372,8 +15339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The origination setting details to add.</p>
-        pub fn origination(mut self, signature: crate::model::Origination) -> Self {
-            self.inner = self.inner.origination(signature);
+        pub fn origination(mut self, input: crate::model::Origination) -> Self {
+            self.inner = self.inner.origination(input);
             self
         }
         /// <p>The origination setting details to add.</p>
@@ -15445,8 +15412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -15458,8 +15425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default number of minutes allowed for proxy sessions.</p>
-        pub fn default_session_expiry_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.default_session_expiry_minutes(signature);
+        pub fn default_session_expiry_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.default_session_expiry_minutes(input);
             self
         }
         /// <p>The default number of minutes allowed for proxy sessions.</p>
@@ -15491,8 +15458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone number to route calls to after a proxy session expires.</p>
-        pub fn fall_back_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fall_back_phone_number(signature.into());
+        pub fn fall_back_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fall_back_phone_number(input.into());
             self
         }
         /// <p>The phone number to route calls to after a proxy session expires.</p>
@@ -15504,8 +15471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
-        pub fn disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disabled(signature);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.disabled(input);
             self
         }
         /// <p>When true, stops proxy sessions from being created on the specified Amazon Chime Voice Connector.</p>
@@ -15578,8 +15545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15593,9 +15560,9 @@ pub mod fluent_builders {
         /// <p>The streaming configuration details to add.</p>
         pub fn streaming_configuration(
             mut self,
-            signature: crate::model::StreamingConfiguration,
+            input: crate::model::StreamingConfiguration,
         ) -> Self {
-            self.inner = self.inner.streaming_configuration(signature);
+            self.inner = self.inner.streaming_configuration(input);
             self
         }
         /// <p>The streaming configuration details to add.</p>
@@ -15671,8 +15638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15684,8 +15651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The termination setting details to add.</p>
-        pub fn termination(mut self, signature: crate::model::Termination) -> Self {
-            self.inner = self.inner.termination(signature);
+        pub fn termination(mut self, input: crate::model::Termination) -> Self {
+            self.inner = self.inner.termination(input);
             self
         }
         /// <p>The termination setting details to add.</p>
@@ -15759,8 +15726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -15856,8 +15823,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -15866,8 +15833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being redacted.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being redacted.</p>
@@ -15876,8 +15843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -15946,8 +15913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -15956,8 +15923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The conversation ID.</p>
-        pub fn conversation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conversation_id(signature.into());
+        pub fn conversation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conversation_id(input.into());
             self
         }
         /// <p>The conversation ID.</p>
@@ -15969,8 +15936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The message ID.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The message ID.</p>
@@ -16039,8 +16006,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -16049,8 +16016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -16059,8 +16026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The message ID.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The message ID.</p>
@@ -16129,8 +16096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -16139,8 +16106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -16210,8 +16177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -16220,8 +16187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -16291,8 +16258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number.</p>
-        pub fn phone_number_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number_id(signature.into());
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
             self
         }
         /// <p>The phone number.</p>
@@ -16368,8 +16335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The area code used to filter results. Only applies to the US.</p>
-        pub fn area_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.area_code(signature.into());
+        pub fn area_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.area_code(input.into());
             self
         }
         /// <p>The area code used to filter results. Only applies to the US.</p>
@@ -16378,8 +16345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The city used to filter results. Only applies to the US.</p>
-        pub fn city(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.city(signature.into());
+        pub fn city(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.city(input.into());
             self
         }
         /// <p>The city used to filter results. Only applies to the US.</p>
@@ -16388,8 +16355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p>
-        pub fn country(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.country(signature.into());
+        pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.country(input.into());
             self
         }
         /// <p>The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</p>
@@ -16398,8 +16365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</p>
-        pub fn state(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.state(signature.into());
+        pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.state(input.into());
             self
         }
         /// <p>The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</p>
@@ -16408,8 +16375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
-        pub fn toll_free_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.toll_free_prefix(signature.into());
+        pub fn toll_free_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.toll_free_prefix(input.into());
             self
         }
         /// <p>The toll-free prefix that you use to filter results. Only applies to the US.</p>
@@ -16421,8 +16388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
-        pub fn phone_number_type(mut self, signature: crate::model::PhoneNumberType) -> Self {
-            self.inner = self.inner.phone_number_type(signature);
+        pub fn phone_number_type(mut self, input: crate::model::PhoneNumberType) -> Self {
+            self.inner = self.inner.phone_number_type(input);
             self
         }
         /// <p>The phone number type used to filter results. Required for non-US numbers.</p>
@@ -16434,8 +16401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call.</p>
@@ -16444,8 +16411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token used to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token used to retrieve the next page of results.</p>
@@ -16523,8 +16490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -16533,8 +16500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message.</p>
@@ -16543,8 +16510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMessageType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMessageType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
@@ -16556,11 +16523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-        pub fn persistence(
-            mut self,
-            signature: crate::model::ChannelMessagePersistenceType,
-        ) -> Self {
-            self.inner = self.inner.persistence(signature);
+        pub fn persistence(mut self, input: crate::model::ChannelMessagePersistenceType) -> Self {
+            self.inner = self.inner.persistence(input);
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
@@ -16572,8 +16536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional metadata for each message.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The optional metadata for each message.</p>
@@ -16582,8 +16546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
@@ -16595,8 +16559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -16665,8 +16629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting being transcribed.</p>
@@ -16677,9 +16641,9 @@ pub mod fluent_builders {
         /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
         pub fn transcription_configuration(
             mut self,
-            signature: crate::model::TranscriptionConfiguration,
+            input: crate::model::TranscriptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.transcription_configuration(signature);
+            self.inner = self.inner.transcription_configuration(input);
             self
         }
         /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
@@ -16751,8 +16715,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The unique ID of the meeting for which you stop transcription.</p>
@@ -16821,8 +16785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -16831,8 +16795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -16918,8 +16882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -17005,8 +16969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -17092,8 +17056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -17102,8 +17066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
-        pub fn attendee_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attendee_id(signature.into());
+        pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attendee_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK attendee ID.</p>
@@ -17189,8 +17153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
-        pub fn meeting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.meeting_id(signature.into());
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input.into());
             self
         }
         /// <p>The Amazon Chime SDK meeting ID.</p>
@@ -17276,8 +17240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -17363,8 +17327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -17373,8 +17337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the specified Amazon Chime account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name for the specified Amazon Chime account.</p>
@@ -17383,8 +17347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default license applied when you add users to an Amazon Chime account.</p>
-        pub fn default_license(mut self, signature: crate::model::License) -> Self {
-            self.inner = self.inner.default_license(signature);
+        pub fn default_license(mut self, input: crate::model::License) -> Self {
+            self.inner = self.inner.default_license(input);
             self
         }
         /// <p>The default license applied when you add users to an Amazon Chime account.</p>
@@ -17460,8 +17424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -17470,8 +17434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime account settings to update.</p>
-        pub fn account_settings(mut self, signature: crate::model::AccountSettings) -> Self {
-            self.inner = self.inner.account_settings(signature);
+        pub fn account_settings(mut self, input: crate::model::AccountSettings) -> Self {
+            self.inner = self.inner.account_settings(input);
             self
         }
         /// <p>The Amazon Chime account settings to update.</p>
@@ -17543,8 +17507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -17556,8 +17520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you want to change.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to change.</p>
@@ -17566,8 +17530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata that you want to change.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata that you want to change.</p>
@@ -17636,8 +17600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -17649,8 +17613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
@@ -17659,8 +17623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the <code>AppInstanceUser</code>.</p>
@@ -17729,8 +17693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -17739,8 +17703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bot ID.</p>
-        pub fn bot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_id(signature.into());
+        pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_id(input.into());
             self
         }
         /// <p>The bot ID.</p>
@@ -17749,8 +17713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, stops the specified bot from running in your account.</p>
-        pub fn disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disabled(signature);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.disabled(input);
             self
         }
         /// <p>When true, stops the specified bot from running in your account.</p>
@@ -17826,8 +17790,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -17836,8 +17800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -17846,8 +17810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mode of the update request.</p>
-        pub fn mode(mut self, signature: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The mode of the update request.</p>
@@ -17856,8 +17820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata for the update request.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata for the update request.</p>
@@ -17866,8 +17830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -17942,8 +17906,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -17952,8 +17916,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID string of the message being updated.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID string of the message being updated.</p>
@@ -17962,8 +17926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message being updated.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message being updated.</p>
@@ -17972,8 +17936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the message being updated.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the message being updated.</p>
@@ -17982,8 +17946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -18058,8 +18022,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -18068,8 +18032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -18138,11 +18102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Business Calling settings.</p>
-        pub fn business_calling(
-            mut self,
-            signature: crate::model::BusinessCallingSettings,
-        ) -> Self {
-            self.inner = self.inner.business_calling(signature);
+        pub fn business_calling(mut self, input: crate::model::BusinessCallingSettings) -> Self {
+            self.inner = self.inner.business_calling(input);
             self
         }
         /// <p>The Amazon Chime Business Calling settings.</p>
@@ -18154,8 +18115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Chime Voice Connector settings.</p>
-        pub fn voice_connector(mut self, signature: crate::model::VoiceConnectorSettings) -> Self {
-            self.inner = self.inner.voice_connector(signature);
+        pub fn voice_connector(mut self, input: crate::model::VoiceConnectorSettings) -> Self {
+            self.inner = self.inner.voice_connector(input);
             self
         }
         /// <p>The Amazon Chime Voice Connector settings.</p>
@@ -18229,8 +18190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number ID.</p>
-        pub fn phone_number_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number_id(signature.into());
+        pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number_id(input.into());
             self
         }
         /// <p>The phone number ID.</p>
@@ -18242,8 +18203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product type.</p>
-        pub fn product_type(mut self, signature: crate::model::PhoneNumberProductType) -> Self {
-            self.inner = self.inner.product_type(signature);
+        pub fn product_type(mut self, input: crate::model::PhoneNumberProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The product type.</p>
@@ -18255,8 +18216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outbound calling name associated with the phone number.</p>
-        pub fn calling_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calling_name(signature.into());
+        pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calling_name(input.into());
             self
         }
         /// <p>The outbound calling name associated with the phone number.</p>
@@ -18327,8 +18288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The default outbound calling name for the account.</p>
-        pub fn calling_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calling_name(signature.into());
+        pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calling_name(input.into());
             self
         }
         /// <p>The default outbound calling name for the account.</p>
@@ -18397,8 +18358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime voice connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime voice connector ID.</p>
@@ -18410,8 +18371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The proxy session ID.</p>
-        pub fn proxy_session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proxy_session_id(signature.into());
+        pub fn proxy_session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proxy_session_id(input.into());
             self
         }
         /// <p>The proxy session ID.</p>
@@ -18440,8 +18401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes allowed for the proxy session.</p>
-        pub fn expiry_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.expiry_minutes(signature);
+        pub fn expiry_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.expiry_minutes(input);
             self
         }
         /// <p>The number of minutes allowed for the proxy session.</p>
@@ -18510,8 +18471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -18520,8 +18481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -18530,8 +18491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The room name.</p>
@@ -18603,8 +18564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -18613,8 +18574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The room ID.</p>
-        pub fn room_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.room_id(signature.into());
+        pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.room_id(input.into());
             self
         }
         /// <p>The room ID.</p>
@@ -18623,8 +18584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The member ID.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The member ID.</p>
@@ -18633,8 +18594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The role of the member.</p>
-        pub fn role(mut self, signature: crate::model::RoomMembershipRole) -> Self {
-            self.inner = self.inner.role(signature);
+        pub fn role(mut self, input: crate::model::RoomMembershipRole) -> Self {
+            self.inner = self.inner.role(input);
             self
         }
         /// <p>The role of the member.</p>
@@ -18706,11 +18667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP media application ID.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The SIP media application ID.</p>
@@ -18722,8 +18680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the specified SIP media application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name for the specified SIP media application.</p>
@@ -18809,11 +18767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the SIP media application handling the call.</p>
-        pub fn sip_media_application_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.sip_media_application_id(signature.into());
+        pub fn sip_media_application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_media_application_id(input.into());
             self
         }
         /// <p>The ID of the SIP media application handling the call.</p>
@@ -18825,8 +18780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the call transaction.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The ID of the call transaction.</p>
@@ -18921,8 +18876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SIP rule ID.</p>
-        pub fn sip_rule_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sip_rule_id(signature.into());
+        pub fn sip_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sip_rule_id(input.into());
             self
         }
         /// <p>The SIP rule ID.</p>
@@ -18931,8 +18886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the specified SIP rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name for the specified SIP rule.</p>
@@ -18941,8 +18896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new value specified to indicate whether the rule is disabled.</p>
-        pub fn disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disabled(signature);
+        pub fn disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.disabled(input);
             self
         }
         /// <p>The new value specified to indicate whether the rule is disabled.</p>
@@ -19031,8 +18986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -19041,8 +18996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -19052,8 +19007,8 @@ pub mod fluent_builders {
         }
         /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
         /// account that the user belongs to.</p>
-        pub fn license_type(mut self, signature: crate::model::License) -> Self {
-            self.inner = self.inner.license_type(signature);
+        pub fn license_type(mut self, input: crate::model::License) -> Self {
+            self.inner = self.inner.license_type(input);
             self
         }
         /// <p>The user license type to update. This must be a supported license type for the Amazon Chime
@@ -19066,8 +19021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user type.</p>
-        pub fn user_type(mut self, signature: crate::model::UserType) -> Self {
-            self.inner = self.inner.user_type(signature);
+        pub fn user_type(mut self, input: crate::model::UserType) -> Self {
+            self.inner = self.inner.user_type(input);
             self
         }
         /// <p>The user type.</p>
@@ -19078,9 +19033,9 @@ pub mod fluent_builders {
         /// <p>The Alexa for Business metadata.</p>
         pub fn alexa_for_business_metadata(
             mut self,
-            signature: crate::model::AlexaForBusinessMetadata,
+            input: crate::model::AlexaForBusinessMetadata,
         ) -> Self {
-            self.inner = self.inner.alexa_for_business_metadata(signature);
+            self.inner = self.inner.alexa_for_business_metadata(input);
             self
         }
         /// <p>The Alexa for Business metadata.</p>
@@ -19152,8 +19107,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Chime account ID.</p>
@@ -19162,8 +19117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user ID.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID.</p>
@@ -19172,8 +19127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user settings to update.</p>
-        pub fn user_settings(mut self, signature: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.user_settings(signature);
+        pub fn user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>The user settings to update.</p>
@@ -19245,8 +19200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
-        pub fn voice_connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voice_connector_id(signature.into());
+        pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector ID.</p>
@@ -19258,8 +19213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector.</p>
@@ -19268,8 +19223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
-        pub fn require_encryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_encryption(signature);
+        pub fn require_encryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_encryption(input);
             self
         }
         /// <p>When enabled, requires encryption for the Amazon Chime Voice Connector.</p>
@@ -19339,11 +19294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
-        pub fn voice_connector_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.voice_connector_group_id(signature.into());
+        pub fn voice_connector_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voice_connector_group_id(input.into());
             self
         }
         /// <p>The Amazon Chime Voice Connector group ID.</p>
@@ -19355,8 +19307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Amazon Chime Voice Connector group.</p>

@@ -283,8 +283,8 @@ pub mod fluent_builders {
         /// consist of letters, numbers, hyphens, periods, and underscores. The name cannot start
         /// with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name
         /// must be unique within each AWS Region in your AWS account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the group, which is the identifier of the group in other operations. You
@@ -298,8 +298,8 @@ pub mod fluent_builders {
         }
         /// <p>The description of the resource group. Descriptions can consist of letters, numbers,
         /// hyphens, underscores, periods, and spaces.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the resource group. Descriptions can consist of letters, numbers,
@@ -315,8 +315,8 @@ pub mod fluent_builders {
         /// <p>A resource group can contain either a <code>ResourceQuery</code> or a
         /// <code>Configuration</code>, but not both.</p>
         /// </note>
-        pub fn resource_query(mut self, signature: crate::model::ResourceQuery) -> Self {
-            self.inner = self.inner.resource_query(signature);
+        pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
+            self.inner = self.inner.resource_query(input);
             self
         }
         /// <p>The resource query that determines which AWS resources are members of this group.
@@ -462,8 +462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
@@ -472,8 +472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group to delete.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to delete.</p>
@@ -553,8 +553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Deprecated - don't use this parameter. Use <code>Group</code> instead.</p>
@@ -563,8 +563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group to retrieve.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to retrieve.</p>
@@ -646,8 +646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the ARN of the resource group.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group.</p>
@@ -729,8 +729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
@@ -739,8 +739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group to query.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to query.</p>
@@ -821,8 +821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the resource group whose tags you want to retrieve.</p>
@@ -902,8 +902,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the ARN of the resource group to add resources to.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to add resources to.</p>
@@ -1023,8 +1023,8 @@ pub mod fluent_builders {
         /// </i>
         /// </p>
         /// </important>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <important>
@@ -1040,8 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group</p>
@@ -1130,8 +1130,8 @@ pub mod fluent_builders {
         /// of the results. Note that the service might return fewer results than the maximum even when there
         /// are more results available. You should check <code>NextToken</code> after every operation to
         /// ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -1150,8 +1150,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
         /// indicates that more output is available. Set this parameter to the value provided by a previous
         /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -1318,8 +1318,8 @@ pub mod fluent_builders {
         /// of the results. Note that the service might return fewer results than the maximum even when there
         /// are more results available. You should check <code>NextToken</code> after every operation to
         /// ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -1338,8 +1338,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
         /// indicates that more output is available. Set this parameter to the value provided by a previous
         /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -1425,8 +1425,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the resource group with the configuration that you want to
         /// update.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or ARN of the resource group with the configuration that you want to
@@ -1558,8 +1558,8 @@ pub mod fluent_builders {
         }
         /// <p>The search query, using the same formats that are supported for resource group
         /// definition. For more information, see <a>CreateGroup</a>.</p>
-        pub fn resource_query(mut self, signature: crate::model::ResourceQuery) -> Self {
-            self.inner = self.inner.resource_query(signature);
+        pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
+            self.inner = self.inner.resource_query(input);
             self
         }
         /// <p>The search query, using the same formats that are supported for resource group
@@ -1579,8 +1579,8 @@ pub mod fluent_builders {
         /// of the results. Note that the service might return fewer results than the maximum even when there
         /// are more results available. You should check <code>NextToken</code> after every operation to
         /// ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -1599,8 +1599,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> response in a previous request. A <code>NextToken</code> response
         /// indicates that more output is available. Set this parameter to the value provided by a previous
         /// call's <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -1690,8 +1690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource group to which to add tags.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the resource group to which to add tags.</p>
@@ -1796,8 +1796,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group from which to remove the resources.</p>
@@ -1895,8 +1895,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the resource group from which to remove tags. The command removed both the
         /// specified keys and any values associated with those keys.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The ARN of the resource group from which to remove tags. The command removed both the
@@ -1995,8 +1995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
@@ -2005,8 +2005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group to modify.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to modify.</p>
@@ -2016,8 +2016,8 @@ pub mod fluent_builders {
         }
         /// <p>The new description that you want to update the resource group with. Descriptions can
         /// contain letters, numbers, hyphens, underscores, periods, and spaces.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description that you want to update the resource group with. Descriptions can
@@ -2099,8 +2099,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>Don't use this parameter. Use <code>Group</code> instead.</p>
@@ -2109,8 +2109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or the ARN of the resource group to query.</p>
-        pub fn group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group(signature.into());
+        pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group(input.into());
             self
         }
         /// <p>The name or the ARN of the resource group to query.</p>
@@ -2124,8 +2124,8 @@ pub mod fluent_builders {
         /// <p>A resource group can contain either a <code>Configuration</code> or a
         /// <code>ResourceQuery</code>, but not both.</p>
         /// </note>
-        pub fn resource_query(mut self, signature: crate::model::ResourceQuery) -> Self {
-            self.inner = self.inner.resource_query(signature);
+        pub fn resource_query(mut self, input: crate::model::ResourceQuery) -> Self {
+            self.inner = self.inner.resource_query(input);
             self
         }
         /// <p>The resource query to determine which AWS resources are members of this resource

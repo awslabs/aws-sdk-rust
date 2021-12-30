@@ -348,8 +348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
@@ -418,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Job ID of the job to be cancelled.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// The Job ID of the job to be cancelled.
@@ -488,11 +488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-        pub fn acceleration_settings(
-            mut self,
-            signature: crate::model::AccelerationSettings,
-        ) -> Self {
-            self.inner = self.inner.acceleration_settings(signature);
+        pub fn acceleration_settings(mut self, input: crate::model::AccelerationSettings) -> Self {
+            self.inner = self.inner.acceleration_settings(input);
             self
         }
         /// Optional. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
@@ -504,8 +501,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
-        pub fn billing_tags_source(mut self, signature: crate::model::BillingTagsSource) -> Self {
-            self.inner = self.inner.billing_tags_source(signature);
+        pub fn billing_tags_source(mut self, input: crate::model::BillingTagsSource) -> Self {
+            self.inner = self.inner.billing_tags_source(input);
             self
         }
         /// Optional. Choose a tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. Any transcoding outputs that don't have an associated tag will appear in your billing report unsorted. If you don't choose a valid value for this field, your job outputs will appear on the billing report unsorted.
@@ -517,8 +514,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Idempotency token for CreateJob operation.
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// Optional. Idempotency token for CreateJob operation.
@@ -547,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
-        pub fn job_template(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_template(signature.into());
+        pub fn job_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_template(input.into());
             self
         }
         /// Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually.
@@ -557,8 +554,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -567,8 +564,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
-        pub fn queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue(signature.into());
+        pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue(input.into());
             self
         }
         /// Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html.
@@ -577,8 +574,8 @@ pub mod fluent_builders {
             self
         }
         /// Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
@@ -587,8 +584,8 @@ pub mod fluent_builders {
             self
         }
         /// JobSettings contains all the transcode settings for a job.
-        pub fn settings(mut self, signature: crate::model::JobSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::JobSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// JobSettings contains all the transcode settings for a job.
@@ -602,9 +599,9 @@ pub mod fluent_builders {
         /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
         pub fn simulate_reserved_queue(
             mut self,
-            signature: crate::model::SimulateReservedQueue,
+            input: crate::model::SimulateReservedQueue,
         ) -> Self {
-            self.inner = self.inner.simulate_reserved_queue(signature);
+            self.inner = self.inner.simulate_reserved_queue(input);
             self
         }
         /// Optional. Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default.
@@ -616,11 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-        pub fn status_update_interval(
-            mut self,
-            signature: crate::model::StatusUpdateInterval,
-        ) -> Self {
-            self.inner = self.inner.status_update_interval(signature);
+        pub fn status_update_interval(mut self, input: crate::model::StatusUpdateInterval) -> Self {
+            self.inner = self.inner.status_update_interval(input);
             self
         }
         /// Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
@@ -738,11 +732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-        pub fn acceleration_settings(
-            mut self,
-            signature: crate::model::AccelerationSettings,
-        ) -> Self {
-            self.inner = self.inner.acceleration_settings(signature);
+        pub fn acceleration_settings(mut self, input: crate::model::AccelerationSettings) -> Self {
+            self.inner = self.inner.acceleration_settings(input);
             self
         }
         /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
@@ -754,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. A category for the job template you are creating
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// Optional. A category for the job template you are creating
@@ -764,8 +755,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. A description of the job template you are creating.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// Optional. A description of the job template you are creating.
@@ -791,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the job template you are creating.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the job template you are creating.
@@ -801,8 +792,8 @@ pub mod fluent_builders {
             self
         }
         /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -811,8 +802,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
-        pub fn queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue(signature.into());
+        pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue(input.into());
             self
         }
         /// Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue.
@@ -821,8 +812,8 @@ pub mod fluent_builders {
             self
         }
         /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-        pub fn settings(mut self, signature: crate::model::JobTemplateSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::JobTemplateSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
@@ -834,11 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-        pub fn status_update_interval(
-            mut self,
-            signature: crate::model::StatusUpdateInterval,
-        ) -> Self {
-            self.inner = self.inner.status_update_interval(signature);
+        pub fn status_update_interval(mut self, input: crate::model::StatusUpdateInterval) -> Self {
+            self.inner = self.inner.status_update_interval(input);
             self
         }
         /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
@@ -933,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. A category for the preset you are creating.
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// Optional. A category for the preset you are creating.
@@ -943,8 +931,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. A description of the preset you are creating.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// Optional. A description of the preset you are creating.
@@ -953,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the preset you are creating.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the preset you are creating.
@@ -963,8 +951,8 @@ pub mod fluent_builders {
             self
         }
         /// Settings for preset
-        pub fn settings(mut self, signature: crate::model::PresetSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::PresetSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// Settings for preset
@@ -1059,8 +1047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. A description of the queue that you are creating.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// Optional. A description of the queue that you are creating.
@@ -1069,8 +1057,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the queue that you are creating.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the queue that you are creating.
@@ -1079,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. When you use the API to create a queue, the default is on-demand.
@@ -1094,9 +1082,9 @@ pub mod fluent_builders {
         /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
         pub fn reservation_plan_settings(
             mut self,
-            signature: crate::model::ReservationPlanSettings,
+            input: crate::model::ReservationPlanSettings,
         ) -> Self {
-            self.inner = self.inner.reservation_plan_settings(signature);
+            self.inner = self.inner.reservation_plan_settings(input);
             self
         }
         /// Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues.
@@ -1108,8 +1096,8 @@ pub mod fluent_builders {
             self
         }
         /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
-        pub fn status(mut self, signature: crate::model::QueueStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// Initial state of the queue. If you create a paused queue, then jobs in that queue won't begin.
@@ -1201,8 +1189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the job template to be deleted.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the job template to be deleted.
@@ -1331,8 +1319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the preset to be deleted.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the preset to be deleted.
@@ -1401,8 +1389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the queue that you want to delete.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the queue that you want to delete.
@@ -1471,8 +1459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Optional. Max number of endpoints, up to twenty, that will be returned at one time.
@@ -1481,8 +1469,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
-        pub fn mode(mut self, signature: crate::model::DescribeEndpointsMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::DescribeEndpointsMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist.
@@ -1494,8 +1482,8 @@ pub mod fluent_builders {
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of endpoints.
@@ -1564,8 +1552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// The ARN of the ACM certificate that you want to disassociate from your MediaConvert resource.
@@ -1634,8 +1622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// the job ID of the job.
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// the job ID of the job.
@@ -1704,8 +1692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the job template.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the job template.
@@ -1834,8 +1822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the preset.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the preset.
@@ -1904,8 +1892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The name of the queue that you want information about.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the queue that you want information about.
@@ -1974,8 +1962,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. Number of jobs, up to twenty, that will be returned at one time.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Optional. Number of jobs, up to twenty, that will be returned at one time.
@@ -1984,8 +1972,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
@@ -1994,8 +1982,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-        pub fn order(mut self, signature: crate::model::Order) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::Order) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
@@ -2004,8 +1992,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Provide a queue name to get back only jobs from that queue.
-        pub fn queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue(signature.into());
+        pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue(input.into());
             self
         }
         /// Optional. Provide a queue name to get back only jobs from that queue.
@@ -2014,8 +2002,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-        pub fn status(mut self, signature: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
@@ -2084,8 +2072,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optionally, specify a job template category to limit responses to only job templates from that category.
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// Optionally, specify a job template category to limit responses to only job templates from that category.
@@ -2094,8 +2082,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-        pub fn list_by(mut self, signature: crate::model::JobTemplateListBy) -> Self {
-            self.inner = self.inner.list_by(signature);
+        pub fn list_by(mut self, input: crate::model::JobTemplateListBy) -> Self {
+            self.inner = self.inner.list_by(input);
             self
         }
         /// Optional. When you request a list of job templates, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
@@ -2107,8 +2095,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Number of job templates, up to twenty, that will be returned at one time.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Optional. Number of job templates, up to twenty, that will be returned at one time.
@@ -2117,8 +2105,8 @@ pub mod fluent_builders {
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of job templates.
@@ -2127,8 +2115,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-        pub fn order(mut self, signature: crate::model::Order) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::Order) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
@@ -2197,8 +2185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optionally, specify a preset category to limit responses to only presets from that category.
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// Optionally, specify a preset category to limit responses to only presets from that category.
@@ -2207,8 +2195,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
-        pub fn list_by(mut self, signature: crate::model::PresetListBy) -> Self {
-            self.inner = self.inner.list_by(signature);
+        pub fn list_by(mut self, input: crate::model::PresetListBy) -> Self {
+            self.inner = self.inner.list_by(input);
             self
         }
         /// Optional. When you request a list of presets, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by name.
@@ -2220,8 +2208,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Number of presets, up to twenty, that will be returned at one time
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Optional. Number of presets, up to twenty, that will be returned at one time
@@ -2230,8 +2218,8 @@ pub mod fluent_builders {
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of presets.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of presets.
@@ -2240,8 +2228,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-        pub fn order(mut self, signature: crate::model::Order) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::Order) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
@@ -2310,8 +2298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
-        pub fn list_by(mut self, signature: crate::model::QueueListBy) -> Self {
-            self.inner = self.inner.list_by(signature);
+        pub fn list_by(mut self, input: crate::model::QueueListBy) -> Self {
+            self.inner = self.inner.list_by(input);
             self
         }
         /// Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date.
@@ -2323,8 +2311,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. Number of queues, up to twenty, that will be returned at one time.
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Optional. Number of queues, up to twenty, that will be returned at one time.
@@ -2333,8 +2321,8 @@ pub mod fluent_builders {
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of queues.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Use this string, provided with the response to a previous request, to request the next batch of queues.
@@ -2343,8 +2331,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-        pub fn order(mut self, signature: crate::model::Order) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::Order) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
@@ -2413,8 +2401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to list tags for. To get the ARN, send a GET request with the resource name.
@@ -2483,8 +2471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-        pub fn policy(mut self, signature: crate::model::Policy) -> Self {
-            self.inner = self.inner.policy(signature);
+        pub fn policy(mut self, input: crate::model::Policy) -> Self {
+            self.inner = self.inner.policy(input);
             self
         }
         /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
@@ -2553,8 +2541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
@@ -2646,8 +2634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// The Amazon Resource Name (ARN) of the resource that you want to remove tags from. To get the ARN, send a GET request with the resource name.
@@ -2733,11 +2721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-        pub fn acceleration_settings(
-            mut self,
-            signature: crate::model::AccelerationSettings,
-        ) -> Self {
-            self.inner = self.inner.acceleration_settings(signature);
+        pub fn acceleration_settings(mut self, input: crate::model::AccelerationSettings) -> Self {
+            self.inner = self.inner.acceleration_settings(input);
             self
         }
         /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
@@ -2749,8 +2734,8 @@ pub mod fluent_builders {
             self
         }
         /// The new category for the job template, if you are changing it.
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// The new category for the job template, if you are changing it.
@@ -2759,8 +2744,8 @@ pub mod fluent_builders {
             self
         }
         /// The new description for the job template, if you are changing it.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// The new description for the job template, if you are changing it.
@@ -2786,8 +2771,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the job template you are modifying
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the job template you are modifying
@@ -2796,8 +2781,8 @@ pub mod fluent_builders {
             self
         }
         /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -2806,8 +2791,8 @@ pub mod fluent_builders {
             self
         }
         /// The new queue for the job template, if you are changing it.
-        pub fn queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue(signature.into());
+        pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue(input.into());
             self
         }
         /// The new queue for the job template, if you are changing it.
@@ -2816,8 +2801,8 @@ pub mod fluent_builders {
             self
         }
         /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-        pub fn settings(mut self, signature: crate::model::JobTemplateSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::JobTemplateSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
@@ -2829,11 +2814,8 @@ pub mod fluent_builders {
             self
         }
         /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-        pub fn status_update_interval(
-            mut self,
-            signature: crate::model::StatusUpdateInterval,
-        ) -> Self {
-            self.inner = self.inner.status_update_interval(signature);
+        pub fn status_update_interval(mut self, input: crate::model::StatusUpdateInterval) -> Self {
+            self.inner = self.inner.status_update_interval(input);
             self
         }
         /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
@@ -2905,8 +2887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The new category for the preset, if you are changing it.
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// The new category for the preset, if you are changing it.
@@ -2915,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// The new description for the preset, if you are changing it.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// The new description for the preset, if you are changing it.
@@ -2925,8 +2907,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the preset you are modifying.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the preset you are modifying.
@@ -2935,8 +2917,8 @@ pub mod fluent_builders {
             self
         }
         /// Settings for preset
-        pub fn settings(mut self, signature: crate::model::PresetSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::PresetSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// Settings for preset
@@ -3008,8 +2990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The new description for the queue, if you are changing it.
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// The new description for the queue, if you are changing it.
@@ -3018,8 +3000,8 @@ pub mod fluent_builders {
             self
         }
         /// The name of the queue that you are modifying.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The name of the queue that you are modifying.
@@ -3030,9 +3012,9 @@ pub mod fluent_builders {
         /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
         pub fn reservation_plan_settings(
             mut self,
-            signature: crate::model::ReservationPlanSettings,
+            input: crate::model::ReservationPlanSettings,
         ) -> Self {
-            self.inner = self.inner.reservation_plan_settings(signature);
+            self.inner = self.inner.reservation_plan_settings(input);
             self
         }
         /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
@@ -3044,8 +3026,8 @@ pub mod fluent_builders {
             self
         }
         /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.
-        pub fn status(mut self, signature: crate::model::QueueStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// Pause or activate a queue by changing its status between ACTIVE and PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause the queue continue to run until they finish or result in an error.

@@ -314,8 +314,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -327,8 +327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
-        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(signature.into());
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The unique identifier of the invitation that is sent to the member to join the network.</p>
@@ -340,8 +340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the network in which the member is created.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network in which the member is created.</p>
@@ -350,11 +350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Member configuration parameters.</p>
-        pub fn member_configuration(
-            mut self,
-            signature: crate::model::MemberConfiguration,
-        ) -> Self {
-            self.inner = self.inner.member_configuration(signature);
+        pub fn member_configuration(mut self, input: crate::model::MemberConfiguration) -> Self {
+            self.inner = self.inner.member_configuration(input);
             self
         }
         /// <p>Member configuration parameters.</p>
@@ -427,8 +424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -440,8 +437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the network.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the network.</p>
@@ -450,8 +447,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the network.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the network.</p>
@@ -460,8 +457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
-        pub fn framework(mut self, signature: crate::model::Framework) -> Self {
-            self.inner = self.inner.framework(signature);
+        pub fn framework(mut self, input: crate::model::Framework) -> Self {
+            self.inner = self.inner.framework(input);
             self
         }
         /// <p>The blockchain framework that the network uses.</p>
@@ -473,8 +470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
-        pub fn framework_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_version(signature.into());
+        pub fn framework_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_version(input.into());
             self
         }
         /// <p>The version of the blockchain framework that the network uses.</p>
@@ -490,9 +487,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn framework_configuration(
             mut self,
-            signature: crate::model::NetworkFrameworkConfiguration,
+            input: crate::model::NetworkFrameworkConfiguration,
         ) -> Self {
-            self.inner = self.inner.framework_configuration(signature);
+            self.inner = self.inner.framework_configuration(input);
             self
         }
         /// <p>
@@ -508,8 +505,8 @@ pub mod fluent_builders {
         /// <p>
         /// The voting rules used by the network to determine if a proposal is approved.
         /// </p>
-        pub fn voting_policy(mut self, signature: crate::model::VotingPolicy) -> Self {
-            self.inner = self.inner.voting_policy(signature);
+        pub fn voting_policy(mut self, input: crate::model::VotingPolicy) -> Self {
+            self.inner = self.inner.voting_policy(input);
             self
         }
         /// <p>
@@ -523,11 +520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration properties for the first member within the network.</p>
-        pub fn member_configuration(
-            mut self,
-            signature: crate::model::MemberConfiguration,
-        ) -> Self {
-            self.inner = self.inner.member_configuration(signature);
+        pub fn member_configuration(mut self, input: crate::model::MemberConfiguration) -> Self {
+            self.inner = self.inner.member_configuration(input);
             self
         }
         /// <p>Configuration properties for the first member within the network.</p>
@@ -627,8 +621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -658,8 +652,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for the node.</p>
@@ -687,8 +681,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns this node.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns this node.</p>
@@ -698,8 +692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The properties of a node configuration.</p>
-        pub fn node_configuration(mut self, signature: crate::model::NodeConfiguration) -> Self {
-            self.inner = self.inner.node_configuration(signature);
+        pub fn node_configuration(mut self, input: crate::model::NodeConfiguration) -> Self {
+            self.inner = self.inner.node_configuration(input);
             self
         }
         /// <p>The properties of a node configuration.</p>
@@ -799,8 +793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.</p>
@@ -813,8 +807,8 @@ pub mod fluent_builders {
         }
         /// <p>
         /// The unique identifier of the network for which the proposal is made.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>
@@ -824,8 +818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single AWS account.</p>
@@ -834,8 +828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
-        pub fn actions(mut self, signature: crate::model::ProposalActions) -> Self {
-            self.inner = self.inner.actions(signature);
+        pub fn actions(mut self, input: crate::model::ProposalActions) -> Self {
+            self.inner = self.inner.actions(input);
             self
         }
         /// <p>The type of actions proposed, such as inviting a member or removing a member. The types of <code>Actions</code> in a proposal are mutually exclusive. For example, a proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code> actions.</p>
@@ -847,8 +841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the proposal that is visible to voting members, for example, "Proposal to add Example Corp. as member."</p>
@@ -945,8 +939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network from which the member is removed.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network from which the member is removed.</p>
@@ -955,8 +949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member to remove.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member to remove.</p>
@@ -1044,8 +1038,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
@@ -1073,8 +1067,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns this node.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns this node.</p>
@@ -1084,8 +1078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(signature.into());
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -1155,8 +1149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network to which the member belongs.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network to which the member belongs.</p>
@@ -1165,8 +1159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member.</p>
@@ -1236,8 +1230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network to get information about.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network to get information about.</p>
@@ -1307,8 +1301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network that the node is on.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
@@ -1318,8 +1312,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns the node.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns the node.</p>
@@ -1329,8 +1323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(signature.into());
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -1400,8 +1394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which the proposal is made.</p>
@@ -1410,8 +1404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the proposal.</p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>The unique identifier of the proposal.</p>
@@ -1481,8 +1475,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of invitations to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of invitations to return.</p>
@@ -1491,8 +1485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1562,8 +1556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network for which to list members.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which to list members.</p>
@@ -1572,8 +1566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional name of the member to list.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The optional name of the member to list.</p>
@@ -1582,8 +1576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
-        pub fn status(mut self, signature: crate::model::MemberStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::MemberStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only members currently in this status are listed.</p>
@@ -1597,8 +1591,8 @@ pub mod fluent_builders {
         /// <p>An optional Boolean value. If provided, the request is limited either to
         /// members that the current AWS account owns (<code>true</code>) or that other AWS accounts
         /// own (<code>false</code>). If omitted, all members are listed.</p>
-        pub fn is_owned(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_owned(signature);
+        pub fn is_owned(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_owned(input);
             self
         }
         /// <p>An optional Boolean value. If provided, the request is limited either to
@@ -1609,8 +1603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of members to return in the request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of members to return in the request.</p>
@@ -1619,8 +1613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1690,8 +1684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the network.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the network.</p>
@@ -1700,8 +1694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
-        pub fn framework(mut self, signature: crate::model::Framework) -> Self {
-            self.inner = self.inner.framework(signature);
+        pub fn framework(mut self, input: crate::model::Framework) -> Self {
+            self.inner = self.inner.framework(input);
             self
         }
         /// <p>An optional framework specifier. If provided, only networks of this framework type are listed.</p>
@@ -1714,8 +1708,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn status(mut self, signature: crate::model::NetworkStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::NetworkStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
@@ -1728,8 +1722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of networks to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of networks to list.</p>
@@ -1738,8 +1732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1809,8 +1803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network for which to list nodes.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network for which to list nodes.</p>
@@ -1820,8 +1814,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member who owns the nodes to list.</p>
         /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member who owns the nodes to list.</p>
@@ -1831,8 +1825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
-        pub fn status(mut self, signature: crate::model::NodeStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::NodeStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An optional status specifier. If provided, only nodes currently in this status are listed.</p>
@@ -1841,8 +1835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of nodes to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of nodes to list.</p>
@@ -1851,8 +1845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -1924,8 +1918,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier of the network.
         /// </p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>
@@ -1938,8 +1932,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of proposals to return.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>
@@ -1952,8 +1946,8 @@ pub mod fluent_builders {
         /// <p>
         /// The pagination token that indicates the next set of results to retrieve.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -2027,8 +2021,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier of the network.
         /// </p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>
@@ -2041,8 +2035,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier of the proposal.
         /// </p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>
@@ -2055,8 +2049,8 @@ pub mod fluent_builders {
         /// <p>
         /// The maximum number of votes to return.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>
@@ -2069,8 +2063,8 @@ pub mod fluent_builders {
         /// <p>
         /// The pagination token that indicates the next set of results to retrieve.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -2142,8 +2136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2213,8 +2207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the invitation to reject.</p>
-        pub fn invitation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invitation_id(signature.into());
+        pub fn invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invitation_id(input.into());
             self
         }
         /// <p>The unique identifier of the invitation to reject.</p>
@@ -2289,8 +2283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2383,8 +2377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
@@ -2471,8 +2465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the Managed Blockchain network to which the member belongs.</p>
@@ -2481,8 +2475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the member.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member.</p>
@@ -2493,9 +2487,9 @@ pub mod fluent_builders {
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
         pub fn log_publishing_configuration(
             mut self,
-            signature: crate::model::MemberLogPublishingConfiguration,
+            input: crate::model::MemberLogPublishingConfiguration,
         ) -> Self {
-            self.inner = self.inner.log_publishing_configuration(signature);
+            self.inner = self.inner.log_publishing_configuration(input);
             self
         }
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
@@ -2568,8 +2562,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the network that the node is on.</p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>The unique identifier of the network that the node is on.</p>
@@ -2579,8 +2573,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member that owns the node.</p>
         /// <p>Applies only to Hyperledger Fabric.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member that owns the node.</p>
@@ -2590,8 +2584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the node.</p>
-        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(signature.into());
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The unique identifier of the node.</p>
@@ -2602,9 +2596,9 @@ pub mod fluent_builders {
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
         pub fn log_publishing_configuration(
             mut self,
-            signature: crate::model::NodeLogPublishingConfiguration,
+            input: crate::model::NodeLogPublishingConfiguration,
         ) -> Self {
-            self.inner = self.inner.log_publishing_configuration(signature);
+            self.inner = self.inner.log_publishing_configuration(input);
             self
         }
         /// <p>Configuration properties for publishing to Amazon CloudWatch Logs.</p>
@@ -2679,8 +2673,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier of the network.
         /// </p>
-        pub fn network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.network_id(signature.into());
+        pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.network_id(input.into());
             self
         }
         /// <p>
@@ -2693,8 +2687,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier of the proposal.
         /// </p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>
@@ -2706,8 +2700,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the member casting the vote.
         /// </p>
-        pub fn voter_member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.voter_member_id(signature.into());
+        pub fn voter_member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.voter_member_id(input.into());
             self
         }
         /// <p>The unique identifier of the member casting the vote.
@@ -2722,8 +2716,8 @@ pub mod fluent_builders {
         /// <p>
         /// The value of the vote.
         /// </p>
-        pub fn vote(mut self, signature: crate::model::VoteValue) -> Self {
-            self.inner = self.inner.vote(signature);
+        pub fn vote(mut self, input: crate::model::VoteValue) -> Self {
+            self.inner = self.inner.vote(input);
             self
         }
         /// <p>

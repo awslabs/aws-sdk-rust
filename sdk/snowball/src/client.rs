@@ -334,8 +334,8 @@ pub mod fluent_builders {
         }
         /// <p>The 39-character ID for the cluster that you want to cancel, for example
         /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The 39-character ID for the cluster that you want to cancel, for example
@@ -409,8 +409,8 @@ pub mod fluent_builders {
         }
         /// <p>The 39-character job ID for the job that you want to cancel, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The 39-character job ID for the job that you want to cancel, for example
@@ -483,8 +483,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The address that you want the Snow device shipped to.</p>
-        pub fn address(mut self, signature: crate::model::Address) -> Self {
-            self.inner = self.inner.address(signature);
+        pub fn address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.address(input);
             self
         }
         /// <p>The address that you want the Snow device shipped to.</p>
@@ -561,8 +561,8 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
         /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn job_type(mut self, signature: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(signature);
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
         /// <p>The type of job for this cluster. Currently, the only job type supported for clusters
@@ -580,8 +580,8 @@ pub mod fluent_builders {
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
         /// buckets and optional Lambda functions written in the Python language.
         /// </p>
-        pub fn resources(mut self, signature: crate::model::JobResource) -> Self {
-            self.inner = self.inner.resources(signature);
+        pub fn resources(mut self, input: crate::model::JobResource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// <p>The resources associated with the cluster job. These resources include Amazon S3
@@ -599,9 +599,9 @@ pub mod fluent_builders {
         /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
-            signature: crate::model::OnDeviceServiceConfiguration,
+            input: crate::model::OnDeviceServiceConfiguration,
         ) -> Self {
-            self.inner = self.inner.on_device_service_configuration(signature);
+            self.inner = self.inner.on_device_service_configuration(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data
@@ -616,8 +616,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional description of this specific cluster, for example <code>Environmental Data
         /// Cluster-01</code>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of this specific cluster, for example <code>Environmental Data
@@ -627,8 +627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the address that you want the cluster shipped to.</p>
-        pub fn address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_id(signature.into());
+        pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_id(input.into());
             self
         }
         /// <p>The ID for the address that you want the cluster shipped to.</p>
@@ -638,8 +638,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
         /// <code>KmsKeyARN</code> values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS). </p>
-        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(signature.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The <code>KmsKeyARN</code> value that you want to associate with this cluster.
@@ -650,8 +650,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
         /// <code>RoleArn</code> values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this cluster.
@@ -671,8 +671,8 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
         /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn snowball_type(mut self, signature: crate::model::SnowballType) -> Self {
-            self.inner = self.inner.snowball_type(signature);
+        pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
+            self.inner = self.inner.snowball_type(input);
             self
         }
         /// <p>The type of Snow Family Devices to use for this cluster. </p>
@@ -734,8 +734,8 @@ pub mod fluent_builders {
         /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
         /// </li>
         /// </ul>
-        pub fn shipping_option(mut self, signature: crate::model::ShippingOption) -> Self {
-            self.inner = self.inner.shipping_option(signature);
+        pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
+            self.inner = self.inner.shipping_option(input);
             self
         }
         /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon
@@ -788,8 +788,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
         /// cluster.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this
@@ -803,8 +803,8 @@ pub mod fluent_builders {
         }
         /// <p>The forwarding address ID for a cluster. This field is not supported in most
         /// regions.</p>
-        pub fn forwarding_address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forwarding_address_id(signature.into());
+        pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
         /// <p>The forwarding address ID for a cluster. This field is not supported in most
@@ -817,8 +817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
-        pub fn tax_documents(mut self, signature: crate::model::TaxDocuments) -> Self {
-            self.inner = self.inner.tax_documents(signature);
+        pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
+            self.inner = self.inner.tax_documents(input);
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
@@ -833,8 +833,8 @@ pub mod fluent_builders {
         /// of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
         /// automatically be available when the device arrives at your location. Otherwise, you need to
         /// use the Snowball Client to manage the device.</p>
-        pub fn remote_management(mut self, signature: crate::model::RemoteManagement) -> Self {
-            self.inner = self.inner.remote_management(signature);
+        pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
+            self.inner = self.inner.remote_management(input);
             self
         }
         /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside
@@ -1042,8 +1042,8 @@ pub mod fluent_builders {
         }
         /// <p>Defines the type of job that you're creating.
         /// </p>
-        pub fn job_type(mut self, signature: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(signature);
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
         /// <p>Defines the type of job that you're creating.
@@ -1062,8 +1062,8 @@ pub mod fluent_builders {
         /// you choose to export a range, you define the length of the range by providing either an
         /// inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code> value, or both.
         /// Ranges are UTF-8 binary sorted.</p>
-        pub fn resources(mut self, signature: crate::model::JobResource) -> Self {
-            self.inner = self.inner.resources(signature);
+        pub fn resources(mut self, input: crate::model::JobResource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// <p>Defines the Amazon S3 buckets associated with this job.</p>
@@ -1088,9 +1088,9 @@ pub mod fluent_builders {
         /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
-            signature: crate::model::OnDeviceServiceConfiguration,
+            input: crate::model::OnDeviceServiceConfiguration,
         ) -> Self {
-            self.inner = self.inner.on_device_service_configuration(signature);
+            self.inner = self.inner.on_device_service_configuration(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data
@@ -1105,8 +1105,8 @@ pub mod fluent_builders {
         }
         /// <p>Defines an optional description of this specific job, for example <code>Important
         /// Photos 2016-08-11</code>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Defines an optional description of this specific job, for example <code>Important
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
-        pub fn address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_id(signature.into());
+        pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_id(input.into());
             self
         }
         /// <p>The ID for the address that you want the Snow device shipped to.</p>
@@ -1128,8 +1128,8 @@ pub mod fluent_builders {
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
         /// <code>KmsKeyARN</code>s are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// Key Management Service (KMS) API action.</p>
-        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(signature.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The <code>KmsKeyARN</code> that you want to associate with this job.
@@ -1142,8 +1142,8 @@ pub mod fluent_builders {
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
         /// <code>RoleArn</code>s are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// Identity and Access Management (IAM) API action.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The <code>RoleARN</code> that you want to associate with this job.
@@ -1164,9 +1164,9 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
-            signature: crate::model::SnowballCapacity,
+            input: crate::model::SnowballCapacity,
         ) -> Self {
-            self.inner = self.inner.snowball_capacity_preference(signature);
+            self.inner = self.inner.snowball_capacity_preference(input);
             self
         }
         /// <p>If your job is being created in one of the US regions, you have the option of
@@ -1207,8 +1207,8 @@ pub mod fluent_builders {
         /// <p>In the US, you have access to one-day shipping and two-day shipping.</p>
         /// </li>
         /// </ul>
-        pub fn shipping_option(mut self, signature: crate::model::ShippingOption) -> Self {
-            self.inner = self.inner.shipping_option(signature);
+        pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
+            self.inner = self.inner.shipping_option(input);
             self
         }
         /// <p>The shipping speed for this job. This speed doesn't dictate how soon you'll get the
@@ -1242,8 +1242,8 @@ pub mod fluent_builders {
         }
         /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
         /// this job.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>Defines the Amazon Simple Notification Service (Amazon SNS) notification settings for
@@ -1258,8 +1258,8 @@ pub mod fluent_builders {
         /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
         /// provide only this <code>clusterId</code> value. The other job attributes are inherited from
         /// the cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The ID of a cluster. If you're creating a job for a node in a cluster, you need to
@@ -1285,8 +1285,8 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
         /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn snowball_type(mut self, signature: crate::model::SnowballType) -> Self {
-            self.inner = self.inner.snowball_type(signature);
+        pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
+            self.inner = self.inner.snowball_type(input);
             self
         }
         /// <p>The type of Snow Family Devices to use for this job.
@@ -1314,8 +1314,8 @@ pub mod fluent_builders {
         }
         /// <p>The forwarding address ID for a job. This field is not supported in most
         /// Regions.</p>
-        pub fn forwarding_address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forwarding_address_id(signature.into());
+        pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
         /// <p>The forwarding address ID for a job. This field is not supported in most
@@ -1328,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
-        pub fn tax_documents(mut self, signature: crate::model::TaxDocuments) -> Self {
-            self.inner = self.inner.tax_documents(signature);
+        pub fn tax_documents(mut self, input: crate::model::TaxDocuments) -> Self {
+            self.inner = self.inner.tax_documents(input);
             self
         }
         /// <p>The tax documents required in your Amazon Web Services Region.</p>
@@ -1347,11 +1347,8 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
         /// "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-        pub fn device_configuration(
-            mut self,
-            signature: crate::model::DeviceConfiguration,
-        ) -> Self {
-            self.inner = self.inner.device_configuration(signature);
+        pub fn device_configuration(mut self, input: crate::model::DeviceConfiguration) -> Self {
+            self.inner = self.inner.device_configuration(input);
             self
         }
         /// <p>Defines the device configuration for an Snowcone job.</p>
@@ -1372,8 +1369,8 @@ pub mod fluent_builders {
         /// internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will
         /// automatically be available when the device arrives at your location. Otherwise, you need to
         /// use the Snowball Client to manage the device.</p>
-        pub fn remote_management(mut self, signature: crate::model::RemoteManagement) -> Self {
-            self.inner = self.inner.remote_management(signature);
+        pub fn remote_management(mut self, input: crate::model::RemoteManagement) -> Self {
+            self.inner = self.inner.remote_management(input);
             self
         }
         /// <p>Allows you to securely operate and manage Snowcone devices remotely from outside of your
@@ -1388,8 +1385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn long_term_pricing_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.long_term_pricing_id(signature.into());
+        pub fn long_term_pricing_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.long_term_pricing_id(input.into());
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
@@ -1464,11 +1461,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
         /// long-term pricing.</p>
-        pub fn long_term_pricing_type(
-            mut self,
-            signature: crate::model::LongTermPricingType,
-        ) -> Self {
-            self.inner = self.inner.long_term_pricing_type(signature);
+        pub fn long_term_pricing_type(mut self, input: crate::model::LongTermPricingType) -> Self {
+            self.inner = self.inner.long_term_pricing_type(input);
             self
         }
         /// <p>The type of long-term pricing option you want for the device, either 1-year or 3-year
@@ -1482,8 +1476,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the current long-term pricing type for the device should be
         /// renewed.</p>
-        pub fn is_long_term_pricing_auto_renew(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_long_term_pricing_auto_renew(signature);
+        pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_long_term_pricing_auto_renew(input);
             self
         }
         /// <p>Specifies whether the current long-term pricing type for the device should be
@@ -1496,8 +1490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
-        pub fn snowball_type(mut self, signature: crate::model::SnowballType) -> Self {
-            self.inner = self.inner.snowball_type(signature);
+        pub fn snowball_type(mut self, input: crate::model::SnowballType) -> Self {
+            self.inner = self.inner.snowball_type(input);
             self
         }
         /// <p>The type of Snow Family Devices to use for the long-term pricing job.</p>
@@ -1570,8 +1564,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for a job that you want to create the return shipping label for; for example,
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for a job that you want to create the return shipping label for; for example,
@@ -1583,8 +1577,8 @@ pub mod fluent_builders {
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
         /// is returned to Amazon Web Services. This speed represents how quickly it moves to its
         /// destination while in transit. Regional shipping speeds are as follows:</p>
-        pub fn shipping_option(mut self, signature: crate::model::ShippingOption) -> Self {
-            self.inner = self.inner.shipping_option(signature);
+        pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
+            self.inner = self.inner.shipping_option(input);
             self
         }
         /// <p>The shipping speed for a particular job. This speed doesn't dictate how soon the device
@@ -1659,8 +1653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The automatically generated ID for a specific address.</p>
-        pub fn address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_id(signature.into());
+        pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_id(input.into());
             self
         }
         /// <p>The automatically generated ID for a specific address.</p>
@@ -1731,8 +1725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of <code>ADDRESS</code> objects to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of <code>ADDRESS</code> objects to return.</p>
@@ -1743,8 +1737,8 @@ pub mod fluent_builders {
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
         /// <code>ADDRESS</code> objects, you have the option of specifying a value for
         /// <code>NextToken</code> as the starting point for your list of returned addresses.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
@@ -1816,8 +1810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The automatically generated ID for a cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The automatically generated ID for a cluster.</p>
@@ -1888,8 +1882,8 @@ pub mod fluent_builders {
         }
         /// <p>The automatically generated ID for a job, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The automatically generated ID for a job, for example
@@ -1960,8 +1954,8 @@ pub mod fluent_builders {
         }
         /// <p>The automatically generated ID for a job, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The automatically generated ID for a job, for example
@@ -2050,8 +2044,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for a job that you want to get the manifest file for, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for a job that you want to get the manifest file for, for example
@@ -2134,8 +2128,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
         /// example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for
@@ -2271,8 +2265,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for a job that you want to get the software update file for, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for a job that you want to get the software update file for, for example
@@ -2345,8 +2339,8 @@ pub mod fluent_builders {
         }
         /// <p>The 39-character ID for the cluster that you want to list, for example
         /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The 39-character ID for the cluster that you want to list, for example
@@ -2356,8 +2350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
@@ -2368,8 +2362,8 @@ pub mod fluent_builders {
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
         /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
         /// as the starting point for your returned list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
@@ -2442,8 +2436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of <code>ClusterListEntry</code> objects to return.</p>
@@ -2454,8 +2448,8 @@ pub mod fluent_builders {
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
         /// <code>ClusterListEntry</code> objects, you have the option of specifying
         /// <code>NextToken</code> as the starting point for your returned list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
@@ -2531,8 +2525,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
         /// Edge device can store 10 AMIs.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results for the list of compatible images. Currently, a Snowball
@@ -2544,8 +2538,8 @@ pub mod fluent_builders {
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
         /// compatible images, you can specify a value for <code>NextToken</code> as the starting point
         /// for your list of returned images.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
@@ -2620,8 +2614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of <code>JobListEntry</code> objects to return.</p>
@@ -2632,8 +2626,8 @@ pub mod fluent_builders {
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
         /// <code>JobListEntry</code> objects, you have the option of specifying <code>NextToken</code>
         /// as the starting point for your returned list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>HTTP requests are stateless. To identify what object comes "next" in the list of
@@ -2704,8 +2698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
@@ -2715,8 +2709,8 @@ pub mod fluent_builders {
         }
         /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
         /// <code>ListLongTermPricing</code> to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Because HTTP requests are stateless, this is the starting point for your next list of
@@ -2790,8 +2784,8 @@ pub mod fluent_builders {
         }
         /// <p>The cluster ID of the cluster that you want to update, for example
         /// <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The cluster ID of the cluster that you want to update, for example
@@ -2802,8 +2796,8 @@ pub mod fluent_builders {
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
         /// To create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this cluster.
@@ -2813,8 +2807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of this cluster.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of this cluster.</p>
@@ -2824,8 +2818,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
         /// <a>S3Resource</a> objects or <a>LambdaResource</a> objects.</p>
-        pub fn resources(mut self, signature: crate::model::JobResource) -> Self {
-            self.inner = self.inner.resources(signature);
+        pub fn resources(mut self, input: crate::model::JobResource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// <p>The updated arrays of <a>JobResource</a> objects that can include updated
@@ -2842,9 +2836,9 @@ pub mod fluent_builders {
         /// (Network File System).</p>
         pub fn on_device_service_configuration(
             mut self,
-            signature: crate::model::OnDeviceServiceConfiguration,
+            input: crate::model::OnDeviceServiceConfiguration,
         ) -> Self {
-            self.inner = self.inner.on_device_service_configuration(signature);
+            self.inner = self.inner.on_device_service_configuration(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data
@@ -2858,8 +2852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the updated <a>Address</a> object.</p>
-        pub fn address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_id(signature.into());
+        pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_id(input.into());
             self
         }
         /// <p>The ID of the updated <a>Address</a> object.</p>
@@ -2869,8 +2863,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
         /// object.</p>
-        pub fn shipping_option(mut self, signature: crate::model::ShippingOption) -> Self {
-            self.inner = self.inner.shipping_option(signature);
+        pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
+            self.inner = self.inner.shipping_option(input);
             self
         }
         /// <p>The updated shipping option value of this cluster's <a>ShippingDetails</a>
@@ -2883,8 +2877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new or updated <a>Notification</a> object.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The new or updated <a>Notification</a> object.</p>
@@ -2897,8 +2891,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated ID for the forwarding address for a cluster. This field is not
         /// supported in most regions.</p>
-        pub fn forwarding_address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forwarding_address_id(signature.into());
+        pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
         /// <p>The updated ID for the forwarding address for a cluster. This field is not
@@ -2974,8 +2968,8 @@ pub mod fluent_builders {
         }
         /// <p>The job ID of the job that you want to update, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID of the job that you want to update, for example
@@ -2987,8 +2981,8 @@ pub mod fluent_builders {
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
         /// create a role ARN, use the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>Identity and Access Management
         /// (IAM) API action.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The new role Amazon Resource Name (ARN) that you want to associate with this job. To
@@ -2999,8 +2993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new or updated <a>Notification</a> object.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The new or updated <a>Notification</a> object.</p>
@@ -3012,8 +3006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
-        pub fn resources(mut self, signature: crate::model::JobResource) -> Self {
-            self.inner = self.inner.resources(signature);
+        pub fn resources(mut self, input: crate::model::JobResource) -> Self {
+            self.inner = self.inner.resources(input);
             self
         }
         /// <p>The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object. </p>
@@ -3029,9 +3023,9 @@ pub mod fluent_builders {
         /// System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
         pub fn on_device_service_configuration(
             mut self,
-            signature: crate::model::OnDeviceServiceConfiguration,
+            input: crate::model::OnDeviceServiceConfiguration,
         ) -> Self {
-            self.inner = self.inner.on_device_service_configuration(signature);
+            self.inner = self.inner.on_device_service_configuration(input);
             self
         }
         /// <p>Specifies the service or services on the Snow Family device that your transferred data
@@ -3045,8 +3039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the updated <a>Address</a> object.</p>
-        pub fn address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.address_id(signature.into());
+        pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.address_id(input.into());
             self
         }
         /// <p>The ID of the updated <a>Address</a> object.</p>
@@ -3056,8 +3050,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
         /// object.</p>
-        pub fn shipping_option(mut self, signature: crate::model::ShippingOption) -> Self {
-            self.inner = self.inner.shipping_option(signature);
+        pub fn shipping_option(mut self, input: crate::model::ShippingOption) -> Self {
+            self.inner = self.inner.shipping_option(input);
             self
         }
         /// <p>The updated shipping option value of this job's <a>ShippingDetails</a>
@@ -3070,8 +3064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of this job's <a>JobMetadata</a> object.</p>
@@ -3089,9 +3083,9 @@ pub mod fluent_builders {
         /// Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
         pub fn snowball_capacity_preference(
             mut self,
-            signature: crate::model::SnowballCapacity,
+            input: crate::model::SnowballCapacity,
         ) -> Self {
-            self.inner = self.inner.snowball_capacity_preference(signature);
+            self.inner = self.inner.snowball_capacity_preference(input);
             self
         }
         /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
@@ -3111,8 +3105,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated ID for the forwarding address for a job. This field is not
         /// supported in most regions.</p>
-        pub fn forwarding_address_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forwarding_address_id(signature.into());
+        pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forwarding_address_id(input.into());
             self
         }
         /// <p>The updated ID for the forwarding address for a job. This field is not
@@ -3186,8 +3180,8 @@ pub mod fluent_builders {
         }
         /// <p>The job ID of the job whose shipment date you want to update, for example
         /// <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID of the job whose shipment date you want to update, for example
@@ -3199,8 +3193,8 @@ pub mod fluent_builders {
         /// <p>The state of a device when it is being shipped. </p>
         /// <p>Set to <code>RECEIVED</code> when the device arrives at your location.</p>
         /// <p>Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.</p>
-        pub fn shipment_state(mut self, signature: crate::model::ShipmentState) -> Self {
-            self.inner = self.inner.shipment_state(signature);
+        pub fn shipment_state(mut self, input: crate::model::ShipmentState) -> Self {
+            self.inner = self.inner.shipment_state(input);
             self
         }
         /// <p>The state of a device when it is being shipped. </p>
@@ -3274,8 +3268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
-        pub fn long_term_pricing_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.long_term_pricing_id(signature.into());
+        pub fn long_term_pricing_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.long_term_pricing_id(input.into());
             self
         }
         /// <p>The ID of the long-term pricing type for the device.</p>
@@ -3288,8 +3282,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
         /// new device.</p>
-        pub fn replacement_job(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replacement_job(signature.into());
+        pub fn replacement_job(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replacement_job(input.into());
             self
         }
         /// <p>Specifies that a device that is ordered with long-term pricing should be replaced with a
@@ -3303,8 +3297,8 @@ pub mod fluent_builders {
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the
         /// device should be automatically renewed before the long-term pricing contract expires.</p>
-        pub fn is_long_term_pricing_auto_renew(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_long_term_pricing_auto_renew(signature);
+        pub fn is_long_term_pricing_auto_renew(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_long_term_pricing_auto_renew(input);
             self
         }
         /// <p>If set to <code>true</code>, specifies that the current long-term pricing type for the

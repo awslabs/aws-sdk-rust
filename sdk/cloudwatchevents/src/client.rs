@@ -518,8 +518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the partner event source to activate.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the partner event source to activate.</p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the replay to cancel.</p>
-        pub fn replay_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replay_name(signature.into());
+        pub fn replay_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replay_name(input.into());
             self
         }
         /// <p>The name of the replay to cancel.</p>
@@ -659,8 +659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the API destination to create.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the API destination to create.</p>
@@ -669,8 +669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the API destination to create.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the API destination to create.</p>
@@ -680,8 +680,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
         /// support the authorization type specified for the connection.</p>
-        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(signature.into());
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The ARN of the connection to use for the API destination. The destination endpoint must
@@ -694,8 +694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
-        pub fn invocation_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invocation_endpoint(signature.into());
+        pub fn invocation_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invocation_endpoint(input.into());
             self
         }
         /// <p>The URL to the HTTP invocation endpoint for the API destination.</p>
@@ -707,8 +707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
-        pub fn http_method(mut self, signature: crate::model::ApiDestinationHttpMethod) -> Self {
-            self.inner = self.inner.http_method(signature);
+        pub fn http_method(mut self, input: crate::model::ApiDestinationHttpMethod) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
         /// <p>The method to use for the request to the HTTP invocation endpoint.</p>
@@ -720,8 +720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
-        pub fn invocation_rate_limit_per_second(mut self, signature: i32) -> Self {
-            self.inner = self.inner.invocation_rate_limit_per_second(signature);
+        pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
+            self.inner = self.inner.invocation_rate_limit_per_second(input);
             self
         }
         /// <p>The maximum number of requests per second to send to the HTTP invocation endpoint.</p>
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the archive to create.</p>
-        pub fn archive_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_name(signature.into());
+        pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_name(input.into());
             self
         }
         /// <p>The name for the archive to create.</p>
@@ -807,8 +807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the event bus that sends events to the archive.</p>
-        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(signature.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input.into());
             self
         }
         /// <p>The ARN of the event bus that sends events to the archive.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the archive.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the archive.</p>
@@ -830,8 +830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An event pattern to use to filter events sent to the archive.</p>
-        pub fn event_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_pattern(signature.into());
+        pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_pattern(input.into());
             self
         }
         /// <p>An event pattern to use to filter events sent to the archive.</p>
@@ -844,8 +844,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
         /// retained indefinitely</p>
-        pub fn retention_days(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_days(signature);
+        pub fn retention_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_days(input);
             self
         }
         /// <p>The number of days to retain events for. Default value is 0. If set to 0, events are
@@ -916,8 +916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the connection to create.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the connection to create.</p>
@@ -926,8 +926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the connection to create.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the connection to create.</p>
@@ -938,9 +938,9 @@ pub mod fluent_builders {
         /// <p>The type of authorization to use for the connection.</p>
         pub fn authorization_type(
             mut self,
-            signature: crate::model::ConnectionAuthorizationType,
+            input: crate::model::ConnectionAuthorizationType,
         ) -> Self {
-            self.inner = self.inner.authorization_type(signature);
+            self.inner = self.inner.authorization_type(input);
             self
         }
         /// <p>The type of authorization to use for the connection.</p>
@@ -955,9 +955,9 @@ pub mod fluent_builders {
         /// authorization parameters to use to authorize with the endpoint. </p>
         pub fn auth_parameters(
             mut self,
-            signature: crate::model::CreateConnectionAuthRequestParameters,
+            input: crate::model::CreateConnectionAuthRequestParameters,
         ) -> Self {
-            self.inner = self.inner.auth_parameters(signature);
+            self.inner = self.inner.auth_parameters(input);
             self
         }
         /// <p>A <code>CreateConnectionAuthRequestParameters</code> object that contains the
@@ -1037,8 +1037,8 @@ pub mod fluent_builders {
         /// default event bus.</p>
         /// <p>If this is a partner event bus, the name must exactly match the name of the partner event
         /// source that this event bus is matched to.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new event bus. </p>
@@ -1053,8 +1053,8 @@ pub mod fluent_builders {
         }
         /// <p>If you are creating a partner event bus, this specifies the partner event source that the
         /// new event bus will be matched with.</p>
-        pub fn event_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_name(signature.into());
+        pub fn event_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_name(input.into());
             self
         }
         /// <p>If you are creating a partner event bus, this specifies the partner event source that the
@@ -1172,8 +1172,8 @@ pub mod fluent_builders {
         /// </code>.
         /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
         /// with a name that matches the name of the partner event source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the partner event source. This name must be unique and must be in the format
@@ -1188,8 +1188,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
         /// partner event source.</p>
-        pub fn account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(signature.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the partner event source to deactivate.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the partner event source to deactivate.</p>
@@ -1334,8 +1334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the connection to remove authorization from.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection to remove authorization from.</p>
@@ -1404,8 +1404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the destination to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the destination to delete.</p>
@@ -1474,8 +1474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the archive to delete.</p>
-        pub fn archive_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_name(signature.into());
+        pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_name(input.into());
             self
         }
         /// <p>The name of the archive to delete.</p>
@@ -1544,8 +1544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the connection to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection to delete.</p>
@@ -1615,8 +1615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event bus to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event bus to delete.</p>
@@ -1689,8 +1689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event source to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event source to delete.</p>
@@ -1699,8 +1699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
-        pub fn account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(signature.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
@@ -1782,8 +1782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -1793,8 +1793,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
         /// field of the response.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
@@ -1885,8 +1885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the API destination to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the API destination to retrieve.</p>
@@ -1955,8 +1955,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the archive to retrieve.</p>
-        pub fn archive_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_name(signature.into());
+        pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_name(input.into());
             self
         }
         /// <p>The name of the archive to retrieve.</p>
@@ -2025,8 +2025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the connection to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection to retrieve.</p>
@@ -2102,8 +2102,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
         /// bus is displayed.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus to show details for. If you omit this, the default event
@@ -2174,8 +2174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the partner event source to display the details of.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the partner event source to display the details of.</p>
@@ -2247,8 +2247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the event source to display.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the event source to display.</p>
@@ -2325,8 +2325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the replay to retrieve.</p>
-        pub fn replay_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replay_name(signature.into());
+        pub fn replay_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replay_name(input.into());
             self
         }
         /// <p>The name of the replay to retrieve.</p>
@@ -2397,8 +2397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -2408,8 +2408,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -2486,8 +2486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -2497,8 +2497,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -2574,8 +2574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -2585,8 +2585,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -2660,8 +2660,8 @@ pub mod fluent_builders {
         }
         /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
         /// with the prefix are returned.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>A name prefix to filter results returned. Only API destinations with a name that starts
@@ -2671,8 +2671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the connection specified for the API destination.</p>
-        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(signature.into());
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The ARN of the connection specified for the API destination.</p>
@@ -2684,8 +2684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -2694,8 +2694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of API destinations to include in the response.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of API destinations to include in the response.</p>
@@ -2766,8 +2766,8 @@ pub mod fluent_builders {
         }
         /// <p>A name prefix to filter the archives returned. Only archives with name that match the
         /// prefix are returned.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>A name prefix to filter the archives returned. Only archives with name that match the
@@ -2777,8 +2777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the event source associated with the archive.</p>
-        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(signature.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input.into());
             self
         }
         /// <p>The ARN of the event source associated with the archive.</p>
@@ -2790,8 +2790,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the archive.</p>
-        pub fn state(mut self, signature: crate::model::ArchiveState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::ArchiveState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the archive.</p>
@@ -2800,8 +2800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -2810,8 +2810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2881,8 +2881,8 @@ pub mod fluent_builders {
         }
         /// <p>A name prefix to filter results returned. Only connections with a name that starts with
         /// the prefix are returned.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>A name prefix to filter results returned. Only connections with a name that starts with
@@ -2892,8 +2892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the connection.</p>
-        pub fn connection_state(mut self, signature: crate::model::ConnectionState) -> Self {
-            self.inner = self.inner.connection_state(signature);
+        pub fn connection_state(mut self, input: crate::model::ConnectionState) -> Self {
+            self.inner = self.inner.connection_state(input);
             self
         }
         /// <p>The state of the connection.</p>
@@ -2905,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -2915,8 +2915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connections to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of connections to return.</p>
@@ -2987,8 +2987,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifying this limits the results to only those event buses with names that start with
         /// the specified prefix.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those event buses with names that start with
@@ -2998,8 +2998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3010,8 +3010,8 @@ pub mod fluent_builders {
         /// <p>Specifying this limits the number of results returned by this operation. The operation
         /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
         /// of results.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Specifying this limits the number of results returned by this operation. The operation
@@ -3084,8 +3084,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifying this limits the results to only those partner event sources with names that
         /// start with the specified prefix.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>Specifying this limits the results to only those partner event sources with names that
@@ -3095,8 +3095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3107,8 +3107,8 @@ pub mod fluent_builders {
         /// <p>Specifying this limits the number of results returned by this operation. The operation
         /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
         /// of results.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Specifying this limits the number of results returned by this operation. The operation
@@ -3181,8 +3181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the partner event source to display account information about.</p>
-        pub fn event_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_name(signature.into());
+        pub fn event_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_name(input.into());
             self
         }
         /// <p>The name of the partner event source to display account information about.</p>
@@ -3195,8 +3195,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
         /// next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
@@ -3208,8 +3208,8 @@ pub mod fluent_builders {
         /// <p>Specifying this limits the number of results returned by this operation. The operation
         /// also returns a NextToken which you can use in a subsequent operation to retrieve the next set
         /// of results.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Specifying this limits the number of results returned by this operation. The operation
@@ -3282,8 +3282,8 @@ pub mod fluent_builders {
         }
         /// <p>If you specify this, the results are limited to only those partner event sources that
         /// start with the string you specify.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>If you specify this, the results are limited to only those partner event sources that
@@ -3294,8 +3294,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
         /// next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to this operation. Specifying this retrieves the
@@ -3307,8 +3307,8 @@ pub mod fluent_builders {
         /// <p>pecifying this limits the number of results returned by this operation. The operation also
         /// returns a NextToken which you can use in a subsequent operation to retrieve the next set of
         /// results.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>pecifying this limits the number of results returned by this operation. The operation also
@@ -3381,8 +3381,8 @@ pub mod fluent_builders {
         }
         /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
         /// are returned.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>A name prefix to filter the replays returned. Only replays with name that match the prefix
@@ -3392,8 +3392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the replay.</p>
-        pub fn state(mut self, signature: crate::model::ReplayState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::ReplayState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the replay.</p>
@@ -3402,8 +3402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the archive from which the events are replayed.</p>
-        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(signature.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input.into());
             self
         }
         /// <p>The ARN of the archive from which the events are replayed.</p>
@@ -3415,8 +3415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3425,8 +3425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of replays to retrieve.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of replays to retrieve.</p>
@@ -3496,8 +3496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
-        pub fn target_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_arn(signature.into());
+        pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the target resource.</p>
@@ -3507,8 +3507,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
         /// bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus to list rules for. If you omit this, the default event
@@ -3521,8 +3521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3531,8 +3531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3605,8 +3605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix matching the rule name.</p>
-        pub fn name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_prefix(signature.into());
+        pub fn name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_prefix(input.into());
             self
         }
         /// <p>The prefix matching the rule name.</p>
@@ -3616,8 +3616,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus to list the rules for. If you omit this, the default
@@ -3630,8 +3630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3640,8 +3640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3711,8 +3711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the EventBridge resource for which you want to view tags.</p>
@@ -3781,8 +3781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn rule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule(signature.into());
+        pub fn rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -3792,8 +3792,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -3806,8 +3806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned by a previous call to retrieve the next set of results.</p>
@@ -3816,8 +3816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4065,8 +4065,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the event bus associated with the rule. If you omit this, the default event
         /// bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name of the event bus associated with the rule. If you omit this, the default event
@@ -4079,8 +4079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action that you are enabling the other account to perform.</p>
-        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(signature.into());
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
         /// <p>The action that you are enabling the other account to perform.</p>
@@ -4096,8 +4096,8 @@ pub mod fluent_builders {
         /// for each rule contains an <code>account</code> field with a specific account ID from which to
         /// receive events. Rules with an account field do not match any events sent from other
         /// accounts.</p>
-        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(signature.into());
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
         /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
@@ -4115,8 +4115,8 @@ pub mod fluent_builders {
         /// <p>An identifier string for the external account that you are granting permissions to. If you
         /// later want to revoke the permission for this external account, specify this
         /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
-        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(signature.into());
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>An identifier string for the external account that you are granting permissions to. If you
@@ -4136,8 +4136,8 @@ pub mod fluent_builders {
         ///
         /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
         /// <code>Key</code>, and <code>Value</code> fields.</p>
-        pub fn condition(mut self, signature: crate::model::Condition) -> Self {
-            self.inner = self.inner.condition(signature);
+        pub fn condition(mut self, input: crate::model::Condition) -> Self {
+            self.inner = self.inner.condition(input);
             self
         }
         /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
@@ -4160,8 +4160,8 @@ pub mod fluent_builders {
         /// <p>A JSON string that describes the permission policy statement. You can include a
         /// <code>Policy</code> parameter in the request instead of using the <code>StatementId</code>,
         /// <code>Action</code>, <code>Principal</code>, or <code>Condition</code> parameters.</p>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>A JSON string that describes the permission policy statement. You can include a
@@ -4278,8 +4278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule that you are creating or updating.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the rule that you are creating or updating.</p>
@@ -4288,8 +4288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
-        pub fn schedule_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_expression(signature.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_expression(input.into());
             self
         }
         /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)" or "rate(5 minutes)".</p>
@@ -4302,8 +4302,8 @@ pub mod fluent_builders {
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
         /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-        pub fn event_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_pattern(signature.into());
+        pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_pattern(input.into());
             self
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
@@ -4316,8 +4316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the rule is enabled or disabled.</p>
-        pub fn state(mut self, signature: crate::model::RuleState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::RuleState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>Indicates whether the rule is enabled or disabled.</p>
@@ -4326,8 +4326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the rule.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the rule.</p>
@@ -4340,8 +4340,8 @@ pub mod fluent_builders {
         /// permission to your account through an organization instead of directly by the account ID, you
         /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
         /// structure, instead of here in this parameter.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
@@ -4372,8 +4372,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
         /// default event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus to associate with this rule. If you omit this, the
@@ -4611,8 +4611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn rule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule(signature.into());
+        pub fn rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -4622,8 +4622,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -4717,8 +4717,8 @@ pub mod fluent_builders {
         }
         /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
         /// the default event bus.</p>
-        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(signature.into());
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>The statement ID corresponding to the account that is no longer allowed to put events to
@@ -4728,8 +4728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to remove all permissions.</p>
-        pub fn remove_all_permissions(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remove_all_permissions(signature);
+        pub fn remove_all_permissions(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_all_permissions(input);
             self
         }
         /// <p>Specifies whether to remove all permissions.</p>
@@ -4739,8 +4739,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
         /// bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name of the event bus to revoke permissions for. If you omit this, the default event
@@ -4821,8 +4821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the rule.</p>
-        pub fn rule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rule(signature.into());
+        pub fn rule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rule(input.into());
             self
         }
         /// <p>The name of the rule.</p>
@@ -4832,8 +4832,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
         /// event bus is used.</p>
-        pub fn event_bus_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_bus_name(signature.into());
+        pub fn event_bus_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_bus_name(input.into());
             self
         }
         /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -4867,8 +4867,8 @@ pub mod fluent_builders {
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
         /// field of the response.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
@@ -4949,8 +4949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the replay to start.</p>
-        pub fn replay_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replay_name(signature.into());
+        pub fn replay_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replay_name(input.into());
             self
         }
         /// <p>The name of the replay to start.</p>
@@ -4959,8 +4959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the replay to start.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the replay to start.</p>
@@ -4969,8 +4969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the archive to replay events from.</p>
-        pub fn event_source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_arn(signature.into());
+        pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_arn(input.into());
             self
         }
         /// <p>The ARN of the archive to replay events from.</p>
@@ -4983,8 +4983,8 @@ pub mod fluent_builders {
         }
         /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
         /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-        pub fn event_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.event_start_time(signature);
+        pub fn event_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.event_start_time(input);
             self
         }
         /// <p>A time stamp for the time to start replaying events. Only events that occurred between the
@@ -4998,8 +4998,8 @@ pub mod fluent_builders {
         }
         /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
         /// <code>EventStartTime</code> and <code>EventEndTime</code> are replayed.</p>
-        pub fn event_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.event_end_time(signature);
+        pub fn event_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.event_end_time(input);
             self
         }
         /// <p>A time stamp for the time to stop replaying events. Only events that occurred between the
@@ -5013,8 +5013,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
         /// the replay.</p>
-        pub fn destination(mut self, signature: crate::model::ReplayDestination) -> Self {
-            self.inner = self.inner.destination(signature);
+        pub fn destination(mut self, input: crate::model::ReplayDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>A <code>ReplayDestination</code> object that includes details about the destination for
@@ -5097,8 +5097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the EventBridge resource that you're adding tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the EventBridge resource that you're adding tags to.</p>
@@ -5189,8 +5189,8 @@ pub mod fluent_builders {
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
         /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-        pub fn event_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_pattern(signature.into());
+        pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_pattern(input.into());
             self
         }
         /// <p>The event pattern. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event
@@ -5242,8 +5242,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn event(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event(signature.into());
+        pub fn event(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event(input.into());
             self
         }
         /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
@@ -5352,8 +5352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the EventBridge resource from which you are removing tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the EventBridge resource from which you are removing tags.</p>
@@ -5439,8 +5439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the API destination to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the API destination to update.</p>
@@ -5449,8 +5449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API destination to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The name of the API destination to update.</p>
@@ -5459,8 +5459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the connection to use for the API destination.</p>
-        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(signature.into());
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The ARN of the connection to use for the API destination.</p>
@@ -5472,8 +5472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL to the endpoint to use for the API destination.</p>
-        pub fn invocation_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invocation_endpoint(signature.into());
+        pub fn invocation_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invocation_endpoint(input.into());
             self
         }
         /// <p>The URL to the endpoint to use for the API destination.</p>
@@ -5485,8 +5485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The method to use for the API destination.</p>
-        pub fn http_method(mut self, signature: crate::model::ApiDestinationHttpMethod) -> Self {
-            self.inner = self.inner.http_method(signature);
+        pub fn http_method(mut self, input: crate::model::ApiDestinationHttpMethod) -> Self {
+            self.inner = self.inner.http_method(input);
             self
         }
         /// <p>The method to use for the API destination.</p>
@@ -5498,8 +5498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of invocations per second to send to the API destination.</p>
-        pub fn invocation_rate_limit_per_second(mut self, signature: i32) -> Self {
-            self.inner = self.inner.invocation_rate_limit_per_second(signature);
+        pub fn invocation_rate_limit_per_second(mut self, input: i32) -> Self {
+            self.inner = self.inner.invocation_rate_limit_per_second(input);
             self
         }
         /// <p>The maximum number of invocations per second to send to the API destination.</p>
@@ -5571,8 +5571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the archive to update.</p>
-        pub fn archive_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.archive_name(signature.into());
+        pub fn archive_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.archive_name(input.into());
             self
         }
         /// <p>The name of the archive to update.</p>
@@ -5581,8 +5581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the archive.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the archive.</p>
@@ -5591,8 +5591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event pattern to use to filter events sent to the archive.</p>
-        pub fn event_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_pattern(signature.into());
+        pub fn event_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_pattern(input.into());
             self
         }
         /// <p>The event pattern to use to filter events sent to the archive.</p>
@@ -5604,8 +5604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days to retain events in the archive.</p>
-        pub fn retention_days(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_days(signature);
+        pub fn retention_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_days(input);
             self
         }
         /// <p>The number of days to retain events in the archive.</p>
@@ -5674,8 +5674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the connection to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection to update.</p>
@@ -5684,8 +5684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the connection.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the connection.</p>
@@ -5696,9 +5696,9 @@ pub mod fluent_builders {
         /// <p>The type of authorization to use for the connection.</p>
         pub fn authorization_type(
             mut self,
-            signature: crate::model::ConnectionAuthorizationType,
+            input: crate::model::ConnectionAuthorizationType,
         ) -> Self {
-            self.inner = self.inner.authorization_type(signature);
+            self.inner = self.inner.authorization_type(input);
             self
         }
         /// <p>The type of authorization to use for the connection.</p>
@@ -5712,9 +5712,9 @@ pub mod fluent_builders {
         /// <p>The authorization parameters to use for the connection.</p>
         pub fn auth_parameters(
             mut self,
-            signature: crate::model::UpdateConnectionAuthRequestParameters,
+            input: crate::model::UpdateConnectionAuthRequestParameters,
         ) -> Self {
-            self.inner = self.inner.auth_parameters(signature);
+            self.inner = self.inner.auth_parameters(input);
             self
         }
         /// <p>The authorization parameters to use for the connection.</p>

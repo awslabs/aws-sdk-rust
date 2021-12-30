@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the bucket for which you want to create an access point.</p>
@@ -649,8 +649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name you want to assign to this access point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name you want to assign to this access point.</p>
@@ -661,8 +661,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket that you want to associate this access point with.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The name of the bucket that you want to associate this access point with.</p>
@@ -677,8 +677,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is required for creating an access point for Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn vpc_configuration(mut self, signature: crate::model::VpcConfiguration) -> Self {
-            self.inner = self.inner.vpc_configuration(signature);
+        pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
+            self.inner = self.inner.vpc_configuration(input);
             self
         }
         /// <p>If you include this field, Amazon S3 restricts access to this access point to requests from the
@@ -698,9 +698,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn public_access_block_configuration(
             mut self,
-            signature: crate::model::PublicAccessBlockConfiguration,
+            input: crate::model::PublicAccessBlockConfiguration,
         ) -> Self {
-            self.inner = self.inner.public_access_block_configuration(signature);
+            self.inner = self.inner.public_access_block_configuration(input);
             self
         }
         /// <p>
@@ -793,8 +793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for owner of the specified Object Lambda Access Point.</p>
@@ -803,8 +803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name you want to assign to this Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name you want to assign to this Object Lambda Access Point.</p>
@@ -813,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object Lambda Access Point configuration as a JSON document.</p>
-        pub fn configuration(mut self, signature: crate::model::ObjectLambdaConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ObjectLambdaConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Object Lambda Access Point configuration as a JSON document.</p>
@@ -938,8 +938,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn acl(mut self, signature: crate::model::BucketCannedAcl) -> Self {
-            self.inner = self.inner.acl(signature);
+        pub fn acl(mut self, input: crate::model::BucketCannedAcl) -> Self {
+            self.inner = self.inner.acl(input);
             self
         }
         /// <p>The canned ACL to apply to the bucket.</p>
@@ -954,8 +954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bucket.</p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The name of the bucket.</p>
@@ -969,9 +969,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn create_bucket_configuration(
             mut self,
-            signature: crate::model::CreateBucketConfiguration,
+            input: crate::model::CreateBucketConfiguration,
         ) -> Self {
-            self.inner = self.inner.create_bucket_configuration(signature);
+            self.inner = self.inner.create_bucket_configuration(input);
             self
         }
         /// <p>The configuration information for the bucket.</p>
@@ -989,8 +989,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn grant_full_control(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_full_control(signature.into());
+        pub fn grant_full_control(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_full_control(input.into());
             self
         }
         /// <p>Allows grantee the read, write, read ACP, and write ACP permissions on the bucket.</p>
@@ -1008,8 +1008,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn grant_read(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read(signature.into());
+        pub fn grant_read(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read(input.into());
             self
         }
         /// <p>Allows grantee to list the objects in the bucket.</p>
@@ -1024,8 +1024,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn grant_read_acp(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_read_acp(signature.into());
+        pub fn grant_read_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_read_acp(input.into());
             self
         }
         /// <p>Allows grantee to read the bucket ACL.</p>
@@ -1043,8 +1043,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn grant_write(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write(signature.into());
+        pub fn grant_write(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write(input.into());
             self
         }
         /// <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
@@ -1059,8 +1059,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn grant_write_acp(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.grant_write_acp(signature.into());
+        pub fn grant_write_acp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.grant_write_acp(input.into());
             self
         }
         /// <p>Allows grantee to write the ACL for the applicable bucket.</p>
@@ -1078,8 +1078,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn object_lock_enabled_for_bucket(mut self, signature: bool) -> Self {
-            self.inner = self.inner.object_lock_enabled_for_bucket(signature);
+        pub fn object_lock_enabled_for_bucket(mut self, input: bool) -> Self {
+            self.inner = self.inner.object_lock_enabled_for_bucket(input);
             self
         }
         /// <p>Specifies whether you want S3 Object Lock to be enabled for the new bucket.</p>
@@ -1097,8 +1097,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(signature.into());
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>The ID of the Outposts where the bucket is being created.</p>
@@ -1203,8 +1203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID that creates the job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that creates the job.</p>
@@ -1213,8 +1213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
-        pub fn confirmation_required(mut self, signature: bool) -> Self {
-            self.inner = self.inner.confirmation_required(signature);
+        pub fn confirmation_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.confirmation_required(input);
             self
         }
         /// <p>Indicates whether confirmation is required before Amazon S3 runs the job. Confirmation is only required for jobs created through the Amazon S3 console.</p>
@@ -1225,8 +1225,8 @@ pub mod fluent_builders {
         /// <p>The action that you want this job to perform on every object listed in the manifest.
         /// For more information about the available actions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn operation(mut self, signature: crate::model::JobOperation) -> Self {
-            self.inner = self.inner.operation(signature);
+        pub fn operation(mut self, input: crate::model::JobOperation) -> Self {
+            self.inner = self.inner.operation(input);
             self
         }
         /// <p>The action that you want this job to perform on every object listed in the manifest.
@@ -1240,8 +1240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration parameters for the optional job-completion report.</p>
-        pub fn report(mut self, signature: crate::model::JobReport) -> Self {
-            self.inner = self.inner.report(signature);
+        pub fn report(mut self, input: crate::model::JobReport) -> Self {
+            self.inner = self.inner.report(input);
             self
         }
         /// <p>Configuration parameters for the optional job-completion report.</p>
@@ -1250,8 +1250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>An idempotency token to ensure that you don't accidentally submit the same request twice. You can use any string up to the maximum length.</p>
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration parameters for the manifest.</p>
-        pub fn manifest(mut self, signature: crate::model::JobManifest) -> Self {
-            self.inner = self.inner.manifest(signature);
+        pub fn manifest(mut self, input: crate::model::JobManifest) -> Self {
+            self.inner = self.inner.manifest(input);
             self
         }
         /// <p>Configuration parameters for the manifest.</p>
@@ -1276,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for this job. You can use any string within the permitted length. Descriptions don't need to be unique and can be used for multiple jobs.</p>
@@ -1286,8 +1286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The numerical priority for this job. Higher numbers indicate higher priority.</p>
@@ -1298,8 +1298,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
         /// that Batch Operations will use to run this job's action on every object in the
         /// manifest.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
@@ -1421,8 +1421,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
         /// the underlying buckets.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point. The owner of the Multi-Region Access Point also must own
@@ -1433,8 +1433,8 @@ pub mod fluent_builders {
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
         /// unique.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
@@ -1444,11 +1444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A container element containing details about the Multi-Region Access Point.</p>
-        pub fn details(
-            mut self,
-            signature: crate::model::CreateMultiRegionAccessPointInput,
-        ) -> Self {
-            self.inner = self.inner.details(signature);
+        pub fn details(mut self, input: crate::model::CreateMultiRegionAccessPointInput) -> Self {
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>A container element containing details about the Multi-Region Access Point.</p>
@@ -1540,8 +1537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
@@ -1552,8 +1549,8 @@ pub mod fluent_builders {
         /// <p>The name of the access point you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point you want to delete.</p>
@@ -1642,8 +1639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -1652,8 +1649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the access point you want to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point you want to delete.</p>
@@ -1737,8 +1734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
@@ -1749,8 +1746,8 @@ pub mod fluent_builders {
         /// <p>The name of the access point whose policy you want to delete.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point whose policy you want to delete.</p>
@@ -1836,8 +1833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -1846,8 +1843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
@@ -1944,8 +1941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID that owns the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID that owns the Outposts bucket.</p>
@@ -1956,8 +1953,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket being deleted.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket being deleted.</p>
@@ -2058,8 +2055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the lifecycle configuration to delete.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the lifecycle configuration to delete.</p>
@@ -2070,8 +2067,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -2182,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the Outposts bucket.</p>
@@ -2194,8 +2191,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -2292,8 +2289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket tag set to be removed.</p>
@@ -2304,8 +2301,8 @@ pub mod fluent_builders {
         /// <p>The bucket ARN that has the tag set to be removed.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The bucket ARN that has the tag set to be removed.</p>
@@ -2398,8 +2395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -2408,8 +2405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to delete.</p>
@@ -2510,8 +2507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -2521,8 +2518,8 @@ pub mod fluent_builders {
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
         /// unique.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
@@ -2532,11 +2529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A container element containing details about the Multi-Region Access Point.</p>
-        pub fn details(
-            mut self,
-            signature: crate::model::DeleteMultiRegionAccessPointInput,
-        ) -> Self {
-            self.inner = self.inner.details(signature);
+        pub fn details(mut self, input: crate::model::DeleteMultiRegionAccessPointInput) -> Self {
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>A container element containing details about the Multi-Region Access Point.</p>
@@ -2624,8 +2618,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to remove.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
@@ -2704,8 +2698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
@@ -2714,8 +2708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -2795,8 +2789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
@@ -2805,8 +2799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -2901,8 +2895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -2911,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job whose information you want to retrieve.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job whose information you want to retrieve.</p>
@@ -3009,8 +3003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -3021,8 +3015,8 @@ pub mod fluent_builders {
         /// <p>The request token associated with the request you want to know about. This request token
         /// is returned as part of the response when you make an asynchronous request. You provide
         /// this token to query about the status of the asynchronous action.</p>
-        pub fn request_token_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_token_arn(signature.into());
+        pub fn request_token_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_token_arn(input.into());
             self
         }
         /// <p>The request token associated with the request you want to know about. This request token
@@ -3117,8 +3111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
@@ -3129,8 +3123,8 @@ pub mod fluent_builders {
         /// <p>The name of the access point whose configuration information you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point whose configuration information you want to retrieve.</p>
@@ -3211,8 +3205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -3221,8 +3215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point you want to return the configuration for.</p>
@@ -3309,8 +3303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -3319,8 +3313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -3402,8 +3396,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
@@ -3414,8 +3408,8 @@ pub mod fluent_builders {
         /// <p>The name of the access point whose policy you want to retrieve.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point whose policy you want to retrieve.</p>
@@ -3501,8 +3495,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -3511,8 +3505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -3581,8 +3575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified access point.</p>
@@ -3591,8 +3585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the access point whose policy status you want to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point whose policy status you want to retrieve.</p>
@@ -3663,8 +3657,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -3673,8 +3667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -3773,8 +3767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -3785,8 +3779,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -3905,8 +3899,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -3917,8 +3911,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
@@ -4029,8 +4023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -4041,8 +4035,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -4151,8 +4145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -4163,8 +4157,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -4258,8 +4252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -4268,8 +4262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to retrieve.</p>
@@ -4365,8 +4359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -4378,8 +4372,8 @@ pub mod fluent_builders {
         /// the Multi-Region Access Point is different from the alias. For more information about the distinction
         /// between the name and the alias of an Multi-Region Access Point, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Multi-Region Access Point whose configuration information you want to receive. The name of
@@ -4468,8 +4462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -4481,8 +4475,8 @@ pub mod fluent_builders {
         /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
@@ -4574,8 +4568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -4587,8 +4581,8 @@ pub mod fluent_builders {
         /// information about the distinction between the name and the alias of an Multi-Region Access Point, see
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CreatingMultiRegionAccessPoints.html#multi-region-access-point-naming">Managing Multi-Region Access Points</a> in the
         /// <i>Amazon S3 User Guide</i>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the Multi-Region Access Point. The name of the Multi-Region Access Point is different from the alias. For more
@@ -4676,8 +4670,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to retrieve.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
@@ -4756,8 +4750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
@@ -4766,8 +4760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -4846,8 +4840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the Amazon S3 Storage Lens configuration.</p>
@@ -4856,8 +4850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -4949,8 +4943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for owner of the bucket whose access points you want to list.</p>
@@ -4961,8 +4955,8 @@ pub mod fluent_builders {
         /// <p>The name of the bucket whose associated access points you want to list.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The name of the bucket whose associated access points you want to list.</p>
@@ -4973,8 +4967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.</p>
@@ -4986,8 +4980,8 @@ pub mod fluent_builders {
         /// bucket has more than this number of access points, then the response will include a
         /// continuation token in the <code>NextToken</code> field that you can use to retrieve the
         /// next page of access points.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of access points that you want to include in the list. If the specified
@@ -5080,8 +5074,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -5092,8 +5086,8 @@ pub mod fluent_builders {
         /// <p>If the list has more access points than can be returned in one call to this
         /// API, this field contains a continuation token that you can provide in subsequent calls to
         /// this API to retrieve additional access points.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the list has more access points than can be returned in one call to this
@@ -5104,8 +5098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of access points that you want to include in the list. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.</p>
@@ -5200,8 +5194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -5227,8 +5221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.</p>
@@ -5237,8 +5231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.</p>
@@ -5336,8 +5330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -5346,8 +5340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not currently used. Do not use this parameter.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Not currently used. Do not use this parameter.</p>
@@ -5356,8 +5350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Not currently used. Do not use this parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Not currently used. Do not use this parameter.</p>
@@ -5430,8 +5424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -5440,8 +5434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p></p>
@@ -5450,8 +5444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p></p>
@@ -5463,8 +5457,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is required by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(signature.into());
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>The ID of the Outposts.</p>
@@ -5545,8 +5539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -5555,8 +5549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token to request the next page of results.</p>
@@ -5635,8 +5629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -5645,8 +5639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -5655,8 +5649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object Lambda Access Point configuration document.</p>
-        pub fn configuration(mut self, signature: crate::model::ObjectLambdaConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ObjectLambdaConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Object Lambda Access Point configuration document.</p>
@@ -5744,8 +5738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
@@ -5756,8 +5750,8 @@ pub mod fluent_builders {
         /// <p>The name of the access point that you want to associate with the specified policy.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/accesspoint/<my-accesspoint-name></code>. For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the access point that you want to associate with the specified policy.</p>
@@ -5768,8 +5762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -5854,8 +5848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
@@ -5864,8 +5858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Object Lambda Access Point.</p>
@@ -5874,8 +5868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Object Lambda Access Point resource policy document.</p>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>Object Lambda Access Point resource policy document.</p>
@@ -5966,8 +5960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -5976,8 +5970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the bucket for which to set the configuration.</p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The name of the bucket for which to set the configuration.</p>
@@ -5988,9 +5982,9 @@ pub mod fluent_builders {
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
         pub fn lifecycle_configuration(
             mut self,
-            signature: crate::model::LifecycleConfiguration,
+            input: crate::model::LifecycleConfiguration,
         ) -> Self {
-            self.inner = self.inner.lifecycle_configuration(signature);
+            self.inner = self.inner.lifecycle_configuration(input);
             self
         }
         /// <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
@@ -6100,8 +6094,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -6112,8 +6106,8 @@ pub mod fluent_builders {
         /// <p>Specifies the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>Specifies the bucket.</p>
@@ -6127,8 +6121,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This is not supported by Amazon S3 on Outposts buckets.</p>
         /// </note>
-        pub fn confirm_remove_self_bucket_access(mut self, signature: bool) -> Self {
-            self.inner = self.inner.confirm_remove_self_bucket_access(signature);
+        pub fn confirm_remove_self_bucket_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.confirm_remove_self_bucket_access(input);
             self
         }
         /// <p>Set this parameter to true to confirm that you want to remove your permissions to change this bucket policy in the future.</p>
@@ -6143,8 +6137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bucket policy as a JSON document.</p>
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// <p>The bucket policy as a JSON document.</p>
@@ -6296,8 +6290,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Outposts bucket.</p>
@@ -6308,8 +6302,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
         /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
-        pub fn bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket(signature.into());
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
@@ -6320,8 +6314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn tagging(mut self, signature: crate::model::Tagging) -> Self {
-            self.inner = self.inner.tagging(signature);
+        pub fn tagging(mut self, input: crate::model::Tagging) -> Self {
+            self.inner = self.inner.tagging(input);
             self
         }
         /// <p></p>
@@ -6452,8 +6446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -6462,8 +6456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the S3 Batch Operations job whose tags you want to replace.</p>
@@ -6568,8 +6562,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -6579,8 +6573,8 @@ pub mod fluent_builders {
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
         /// unique.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>An idempotency token used to identify the request and guarantee that requests are
@@ -6592,9 +6586,9 @@ pub mod fluent_builders {
         /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
         pub fn details(
             mut self,
-            signature: crate::model::PutMultiRegionAccessPointPolicyInput,
+            input: crate::model::PutMultiRegionAccessPointPolicyInput,
         ) -> Self {
-            self.inner = self.inner.details(signature);
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>A container element containing the details of the policy for the Multi-Region Access Point.</p>
@@ -6683,9 +6677,9 @@ pub mod fluent_builders {
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
         pub fn public_access_block_configuration(
             mut self,
-            signature: crate::model::PublicAccessBlockConfiguration,
+            input: crate::model::PublicAccessBlockConfiguration,
         ) -> Self {
-            self.inner = self.inner.public_access_block_configuration(signature);
+            self.inner = self.inner.public_access_block_configuration(input);
             self
         }
         /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to the specified Amazon Web Services account.</p>
@@ -6698,8 +6692,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
         /// to set.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want
@@ -6776,8 +6770,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
@@ -6786,8 +6780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -6798,9 +6792,9 @@ pub mod fluent_builders {
         /// <p>The S3 Storage Lens configuration.</p>
         pub fn storage_lens_configuration(
             mut self,
-            signature: crate::model::StorageLensConfiguration,
+            input: crate::model::StorageLensConfiguration,
         ) -> Self {
-            self.inner = self.inner.storage_lens_configuration(signature);
+            self.inner = self.inner.storage_lens_configuration(input);
             self
         }
         /// <p>The S3 Storage Lens configuration.</p>
@@ -6906,8 +6900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
-        pub fn config_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_id(signature.into());
+        pub fn config_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_id(input.into());
             self
         }
         /// <p>The ID of the S3 Storage Lens configuration.</p>
@@ -6916,8 +6910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account ID of the requester.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the requester.</p>
@@ -7034,8 +7028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -7044,8 +7038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the job whose priority you want to update.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID for the job whose priority you want to update.</p>
@@ -7054,8 +7048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The priority you want to assign to this job.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The priority you want to assign to this job.</p>
@@ -7150,8 +7144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID associated with the S3 Batch Operations job.</p>
@@ -7160,8 +7154,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the job whose status you want to update.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the job whose status you want to update.</p>
@@ -7170,8 +7164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status that you want to move the specified job to.</p>
-        pub fn requested_job_status(mut self, signature: crate::model::RequestedJobStatus) -> Self {
-            self.inner = self.inner.requested_job_status(signature);
+        pub fn requested_job_status(mut self, input: crate::model::RequestedJobStatus) -> Self {
+            self.inner = self.inner.requested_job_status(input);
             self
         }
         /// <p>The status that you want to move the specified job to.</p>
@@ -7183,8 +7177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>
-        pub fn status_update_reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_update_reason(signature.into());
+        pub fn status_update_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_update_reason(input.into());
             self
         }
         /// <p>A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.</p>

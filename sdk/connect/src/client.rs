@@ -1127,8 +1127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1137,8 +1137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain to add to your allow list.</p>
-        pub fn origin(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(signature.into());
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>The domain to add to your allow list.</p>
@@ -1208,8 +1208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
-        pub fn lex_bot(mut self, signature: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(signature);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
-        pub fn lex_v2_bot(mut self, signature: crate::model::LexV2Bot) -> Self {
-            self.inner = self.inner.lex_v2_bot(signature);
+        pub fn lex_v2_bot(mut self, input: crate::model::LexV2Bot) -> Self {
+            self.inner = self.inner.lex_v2_bot(input);
             self
         }
         /// <p>The Amazon Lex V2 bot to associate with the instance.</p>
@@ -1307,8 +1307,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1317,11 +1317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::InstanceStorageResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -1333,8 +1330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid storage type.</p>
-        pub fn storage_config(mut self, signature: crate::model::InstanceStorageConfig) -> Self {
-            self.inner = self.inner.storage_config(signature);
+        pub fn storage_config(mut self, input: crate::model::InstanceStorageConfig) -> Self {
+            self.inner = self.inner.storage_config(input);
             self
         }
         /// <p>A valid storage type.</p>
@@ -1407,8 +1404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1418,8 +1415,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
         /// 140.</p>
-        pub fn function_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_arn(signature.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is
@@ -1490,8 +1487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1500,8 +1497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex bot to associate with the instance.</p>
-        pub fn lex_bot(mut self, signature: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(signature);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>The Amazon Lex bot to associate with the instance.</p>
@@ -1571,8 +1568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1581,8 +1578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -1668,8 +1665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1678,8 +1675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -1769,8 +1766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1779,8 +1776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid security key in PEM format.</p>
-        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(signature.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
         /// <p>A valid security key in PEM format.</p>
@@ -1850,8 +1847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -1860,8 +1857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the status.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the status.</p>
@@ -1870,8 +1867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the status.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the status.</p>
@@ -1880,8 +1877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the status.</p>
-        pub fn state(mut self, signature: crate::model::AgentStatusState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the status.</p>
@@ -1893,8 +1890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display order of the status.</p>
-        pub fn display_order(mut self, signature: i32) -> Self {
-            self.inner = self.inner.display_order(signature);
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
             self
         }
         /// <p>The display order of the status.</p>
@@ -1988,8 +1985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -1998,8 +1995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow.</p>
@@ -2009,8 +2006,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.</p>
-        pub fn r#type(mut self, signature: crate::model::ContactFlowType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ContactFlowType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the contact flow. For descriptions of the available types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-contact-flow.html#contact-flow-types">Choose a Contact Flow Type</a> in the <i>Amazon Connect Administrator
@@ -2023,8 +2020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow. </p>
@@ -2033,8 +2030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow. </p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow. </p>
@@ -2126,8 +2123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2136,8 +2133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow module.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow module.</p>
@@ -2146,8 +2143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow module. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow module. </p>
@@ -2156,8 +2153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow module.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow module.</p>
@@ -2190,8 +2187,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -2262,8 +2259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2272,8 +2269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the hours of operation.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hours of operation.</p>
@@ -2282,8 +2279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the hours of operation.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the hours of operation.</p>
@@ -2292,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone of the hours of operation.</p>
-        pub fn time_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(signature.into());
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
         /// <p>The time zone of the hours of operation.</p>
@@ -2408,8 +2405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token.</p>
@@ -2418,8 +2415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identity management for your Amazon Connect users.</p>
-        pub fn identity_management_type(mut self, signature: crate::model::DirectoryType) -> Self {
-            self.inner = self.inner.identity_management_type(signature);
+        pub fn identity_management_type(mut self, input: crate::model::DirectoryType) -> Self {
+            self.inner = self.inner.identity_management_type(input);
             self
         }
         /// <p>The type of identity management for your Amazon Connect users.</p>
@@ -2431,8 +2428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for your instance.</p>
-        pub fn instance_alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_alias(signature.into());
+        pub fn instance_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_alias(input.into());
             self
         }
         /// <p>The name for your instance.</p>
@@ -2444,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier for the directory.</p>
@@ -2454,8 +2451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your contact center handles incoming contacts.</p>
-        pub fn inbound_calls_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.inbound_calls_enabled(signature);
+        pub fn inbound_calls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.inbound_calls_enabled(input);
             self
         }
         /// <p>Your contact center handles incoming contacts.</p>
@@ -2464,8 +2461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Your contact center allows outbound calls.</p>
-        pub fn outbound_calls_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.outbound_calls_enabled(signature);
+        pub fn outbound_calls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.outbound_calls_enabled(input);
             self
         }
         /// <p>Your contact center allows outbound calls.</p>
@@ -2534,8 +2531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2544,8 +2541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of information to be ingested.</p>
-        pub fn integration_type(mut self, signature: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(signature);
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
         /// <p>The type of information to be ingested.</p>
@@ -2557,8 +2554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the integration.</p>
-        pub fn integration_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.integration_arn(signature.into());
+        pub fn integration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the integration.</p>
@@ -2570,8 +2567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
-        pub fn source_application_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_application_url(signature.into());
+        pub fn source_application_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_application_url(input.into());
             self
         }
         /// <p>The URL for the external application. This field is only required for the EVENT integration type.</p>
@@ -2583,11 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
-        pub fn source_application_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_application_name(signature.into());
+        pub fn source_application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_application_name(input.into());
             self
         }
         /// <p>The name of the external application. This field is only required for the EVENT integration type.</p>
@@ -2599,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
-        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The type of the data source. This field is only required for the EVENT integration type.</p>
@@ -2696,8 +2690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2706,8 +2700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the queue.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the queue.</p>
@@ -2716,8 +2710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the queue.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the queue.</p>
@@ -2726,11 +2720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn outbound_caller_config(
-            mut self,
-            signature: crate::model::OutboundCallerConfig,
-        ) -> Self {
-            self.inner = self.inner.outbound_caller_config(signature);
+        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
+            self.inner = self.inner.outbound_caller_config(input);
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
@@ -2742,8 +2733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(signature.into());
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -2755,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn max_contacts(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_contacts(signature);
+        pub fn max_contacts(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_contacts(input);
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -2865,8 +2856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -2875,8 +2866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the quick connect.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the quick connect.</p>
@@ -2885,8 +2876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the quick connect.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the quick connect.</p>
@@ -2895,8 +2886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration settings for the quick connect.</p>
-        pub fn quick_connect_config(mut self, signature: crate::model::QuickConnectConfig) -> Self {
-            self.inner = self.inner.quick_connect_config(signature);
+        pub fn quick_connect_config(mut self, input: crate::model::QuickConnectConfig) -> Self {
+            self.inner = self.inner.quick_connect_config(input);
             self
         }
         /// <p>Configuration settings for the quick connect.</p>
@@ -2991,8 +2982,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3001,8 +2992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
@@ -3011,8 +3002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the routing profile. Must not be more than 250 characters.</p>
@@ -3021,11 +3012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The default outbound queue for the routing profile.</p>
-        pub fn default_outbound_queue_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_outbound_queue_id(signature.into());
+        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_outbound_queue_id(input.into());
             self
         }
         /// <p>The default outbound queue for the routing profile.</p>
@@ -3159,8 +3147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security profile.</p>
-        pub fn security_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_name(signature.into());
+        pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_name(input.into());
             self
         }
         /// <p>The name of the security profile.</p>
@@ -3172,8 +3160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the security profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the security profile.</p>
@@ -3199,8 +3187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3292,8 +3280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3302,11 +3290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.integration_association_id(signature.into());
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -3319,8 +3304,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of use case to associate to the integration association. Each integration
         /// association can have only one of each use case type.</p>
-        pub fn use_case_type(mut self, signature: crate::model::UseCaseType) -> Self {
-            self.inner = self.inner.use_case_type(signature);
+        pub fn use_case_type(mut self, input: crate::model::UseCaseType) -> Self {
+            self.inner = self.inner.use_case_type(input);
             self
         }
         /// <p>The type of use case to associate to the integration association. Each integration
@@ -3420,8 +3405,8 @@ pub mod fluent_builders {
         /// <p>The user name for the account. For instances not using SAML for identity management, the
         /// user name can include up to 20 characters. If you are using SAML for identity management, the
         /// user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The user name for the account. For instances not using SAML for identity management, the
@@ -3433,8 +3418,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the user account. A password is required if you are using Amazon Connect for
         /// identity management. Otherwise, it is an error to include a password.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the user account. A password is required if you are using Amazon Connect for
@@ -3444,8 +3429,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The information about the identity of the user.</p>
-        pub fn identity_info(mut self, signature: crate::model::UserIdentityInfo) -> Self {
-            self.inner = self.inner.identity_info(signature);
+        pub fn identity_info(mut self, input: crate::model::UserIdentityInfo) -> Self {
+            self.inner = self.inner.identity_info(input);
             self
         }
         /// <p>The information about the identity of the user.</p>
@@ -3457,8 +3442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The phone settings for the user.</p>
-        pub fn phone_config(mut self, signature: crate::model::UserPhoneConfig) -> Self {
-            self.inner = self.inner.phone_config(signature);
+        pub fn phone_config(mut self, input: crate::model::UserPhoneConfig) -> Self {
+            self.inner = self.inner.phone_config(input);
             self
         }
         /// <p>The phone settings for the user.</p>
@@ -3476,8 +3461,8 @@ pub mod fluent_builders {
         /// <p>This parameter is required if you are using an existing directory for identity management in
         /// Amazon Connect when Amazon Connect cannot access your directory to authenticate users. If you are using SAML for
         /// identity management and include this parameter, an error is returned.</p>
-        pub fn directory_user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_user_id(signature.into());
+        pub fn directory_user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_user_id(input.into());
             self
         }
         /// <p>The identifier of the user account in the directory used for identity management. If Amazon Connect
@@ -3512,8 +3497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
@@ -3525,8 +3510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hierarchy group for the user.</p>
-        pub fn hierarchy_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(signature.into());
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group for the user.</p>
@@ -3538,8 +3523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3631,8 +3616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the user hierarchy group. Must not be more than 100 characters.</p>
@@ -3642,8 +3627,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
         /// the parent group ID is null.</p>
-        pub fn parent_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_group_id(signature.into());
+        pub fn parent_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_group_id(input.into());
             self
         }
         /// <p>The identifier for the parent hierarchy group. The user hierarchy is created at level one if
@@ -3656,8 +3641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3726,8 +3711,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3736,8 +3721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -3809,8 +3794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3819,8 +3804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(signature.into());
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -3893,8 +3878,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -3903,8 +3888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(signature.into());
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -3980,8 +3965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4051,8 +4036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4061,11 +4046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.integration_association_id(signature.into());
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -4137,8 +4119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4147,8 +4129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(signature.into());
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -4221,8 +4203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4231,8 +4213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(signature.into());
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -4304,8 +4286,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4314,11 +4296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.integration_association_id(signature.into());
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -4330,8 +4309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the use case.</p>
-        pub fn use_case_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.use_case_id(signature.into());
+        pub fn use_case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.use_case_id(input.into());
             self
         }
         /// <p>The identifier for the use case.</p>
@@ -4403,8 +4382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4413,8 +4392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user.</p>
@@ -4484,8 +4463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(signature.into());
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -4497,8 +4476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4568,8 +4547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4578,8 +4557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the agent status.</p>
-        pub fn agent_status_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_status_id(signature.into());
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input.into());
             self
         }
         /// <p>The identifier for the agent status.</p>
@@ -4656,8 +4635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4666,8 +4645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -4738,8 +4717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -4748,8 +4727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -4821,8 +4800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4831,8 +4810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(signature.into());
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -4905,8 +4884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -4915,8 +4894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(signature.into());
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -4993,8 +4972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5064,8 +5043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5074,8 +5053,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of attribute.</p>
-        pub fn attribute_type(mut self, signature: crate::model::InstanceAttributeType) -> Self {
-            self.inner = self.inner.attribute_type(signature);
+        pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
+            self.inner = self.inner.attribute_type(input);
             self
         }
         /// <p>The type of attribute.</p>
@@ -5149,8 +5128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5159,8 +5138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -5172,11 +5151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::InstanceStorageResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -5249,8 +5225,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5259,8 +5235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -5329,8 +5305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5339,8 +5315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(signature.into());
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -5412,8 +5388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5422,8 +5398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -5496,8 +5472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(signature.into());
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -5509,8 +5485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5581,8 +5557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -5591,8 +5567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5661,8 +5637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(signature.into());
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -5674,8 +5650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5744,8 +5720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5815,8 +5791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5825,8 +5801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain URL of the integrated application.</p>
-        pub fn origin(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(signature.into());
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>The domain URL of the integrated application.</p>
@@ -5897,8 +5873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -5907,8 +5883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
-        pub fn lex_bot(mut self, signature: crate::model::LexBot) -> Self {
-            self.inner = self.inner.lex_bot(signature);
+        pub fn lex_bot(mut self, input: crate::model::LexBot) -> Self {
+            self.inner = self.inner.lex_bot(input);
             self
         }
         /// <p>Configuration information of an Amazon Lex bot.</p>
@@ -5917,8 +5893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
-        pub fn lex_v2_bot(mut self, signature: crate::model::LexV2Bot) -> Self {
-            self.inner = self.inner.lex_v2_bot(signature);
+        pub fn lex_v2_bot(mut self, input: crate::model::LexV2Bot) -> Self {
+            self.inner = self.inner.lex_v2_bot(input);
             self
         }
         /// <p>The Amazon Lex V2 bot to disassociate from the instance.</p>
@@ -5992,8 +5968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6002,8 +5978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -6015,11 +5991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::InstanceStorageResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -6093,8 +6066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance..</p>
@@ -6103,8 +6076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
-        pub fn function_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_arn(signature.into());
+        pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Lambda function being disassociated.</p>
@@ -6174,8 +6147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6184,8 +6157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
-        pub fn bot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bot_name(signature.into());
+        pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bot_name(input.into());
             self
         }
         /// <p>The name of the Amazon Lex bot. Maximum character limit of 50.</p>
@@ -6194,8 +6167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Region in which the Amazon Lex bot has been created.</p>
-        pub fn lex_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lex_region(signature.into());
+        pub fn lex_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lex_region(input.into());
             self
         }
         /// <p>The Region in which the Amazon Lex bot has been created.</p>
@@ -6265,8 +6238,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6275,8 +6248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -6362,8 +6335,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6372,8 +6345,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -6466,8 +6439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6476,8 +6449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -6549,8 +6522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -6559,8 +6532,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the initial contact.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the initial contact.</p>
@@ -6634,8 +6607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -6646,8 +6619,8 @@ pub mod fluent_builders {
         /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
         /// retrieved only for the resources associated with the queues or channels included in the filter.
         /// You can include both queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p>
-        pub fn filters(mut self, signature: crate::model::Filters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::Filters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
@@ -6893,8 +6866,8 @@ pub mod fluent_builders {
         /// response in the next request to retrieve the next set of results.</p>
         /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
         /// the token must use the same request parameters as the request that generated the token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -6906,8 +6879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -6984,8 +6957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7057,8 +7030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7071,8 +7044,8 @@ pub mod fluent_builders {
         /// such as 10:05, 10:10, 10:15.</p>
         /// <p>The start time cannot be earlier than 24 hours before the time of the request. Historical
         /// metrics are available only for 24 hours.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the
@@ -7091,8 +7064,8 @@ pub mod fluent_builders {
         /// retrieval of historical metrics data. The time must be specified using an interval of 5 minutes,
         /// such as 11:00, 11:05, 11:10, and must be later than the start time timestamp.</p>
         /// <p>The time range between the start and end time must be less than 24 hours.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the
@@ -7113,8 +7086,8 @@ pub mod fluent_builders {
         /// <p>To filter by <code>Queues</code>, enter the queue
         /// ID/ARN, not the name of the queue.</p>
         /// </note>
-        pub fn filters(mut self, signature: crate::model::Filters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::Filters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is
@@ -7448,8 +7421,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7459,8 +7432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7530,8 +7503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7541,8 +7514,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7552,8 +7525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7640,8 +7613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7651,8 +7624,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7662,8 +7635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7734,8 +7707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7745,8 +7718,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7756,8 +7729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7766,8 +7739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
-        pub fn lex_version(mut self, signature: crate::model::LexVersion) -> Self {
-            self.inner = self.inner.lex_version(signature);
+        pub fn lex_version(mut self, input: crate::model::LexVersion) -> Self {
+            self.inner = self.inner.lex_version(input);
             self
         }
         /// <p>The version of Amazon Lex or Amazon Lex V2.</p>
@@ -7839,8 +7812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7850,8 +7823,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7861,8 +7834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -7873,9 +7846,9 @@ pub mod fluent_builders {
         /// <p>The state of the contact flow module.</p>
         pub fn contact_flow_module_state(
             mut self,
-            signature: crate::model::ContactFlowModuleState,
+            input: crate::model::ContactFlowModuleState,
         ) -> Self {
-            self.inner = self.inner.contact_flow_module_state(signature);
+            self.inner = self.inner.contact_flow_module_state(input);
             self
         }
         /// <p>The state of the contact flow module.</p>
@@ -7951,8 +7924,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -7979,8 +7952,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -7990,8 +7963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8062,8 +8035,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8072,8 +8045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the initial contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the initial contact.</p>
@@ -8104,8 +8077,8 @@ pub mod fluent_builders {
         /// <p>This is not expected to be set, because the value returned in the previous response is
         /// always null.</p>
         /// </important>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8181,8 +8154,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8192,8 +8165,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8203,8 +8176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8274,8 +8247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8285,8 +8258,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8296,8 +8269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8370,8 +8343,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8381,8 +8354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8454,8 +8427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8464,11 +8437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::InstanceStorageResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -8481,8 +8451,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8492,8 +8462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8563,8 +8533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8573,8 +8543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The integration type.</p>
-        pub fn integration_type(mut self, signature: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.integration_type(signature);
+        pub fn integration_type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.integration_type(input);
             self
         }
         /// <p>The integration type.</p>
@@ -8587,8 +8557,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8598,8 +8568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8670,8 +8640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8681,8 +8651,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8692,8 +8662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8764,8 +8734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8775,8 +8745,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8786,8 +8756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page. If no value is specified, the default is 10. </p>
@@ -8858,8 +8828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -8906,8 +8876,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -8917,8 +8887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -8987,8 +8957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -8998,8 +8968,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous response in
         /// the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous response in
@@ -9009,8 +8979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9080,8 +9050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9090,8 +9060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -9101,8 +9071,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9112,8 +9082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9188,8 +9158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9216,8 +9186,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9227,8 +9197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9297,8 +9267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9308,8 +9278,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9319,8 +9289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9408,8 +9378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9418,8 +9388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -9432,8 +9402,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9443,8 +9413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9516,8 +9486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9527,8 +9497,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9538,8 +9508,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9609,8 +9579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9620,8 +9590,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9631,8 +9601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9702,8 +9672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(signature.into());
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -9715,8 +9685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9726,8 +9696,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9737,8 +9707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9810,8 +9780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9821,8 +9791,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -9832,8 +9802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -9904,8 +9874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -9974,8 +9944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -9984,11 +9954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the integration association.</p>
-        pub fn integration_association_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.integration_association_id(signature.into());
+        pub fn integration_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_association_id(input.into());
             self
         }
         /// <p>The identifier for the integration association.</p>
@@ -10001,8 +9968,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -10012,8 +9979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10085,8 +10052,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10096,8 +10063,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -10107,8 +10074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10177,8 +10144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10188,8 +10155,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
         /// response in the next request to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. Use the value returned in the previous
@@ -10199,8 +10166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per page.</p>
@@ -10272,8 +10239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10282,8 +10249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -10293,8 +10260,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -10387,8 +10354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10403,8 +10370,8 @@ pub mod fluent_builders {
         /// the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
         /// </p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow for initiating the chat.
@@ -10451,8 +10418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information identifying the participant.</p>
-        pub fn participant_details(mut self, signature: crate::model::ParticipantDetails) -> Self {
-            self.inner = self.inner.participant_details(signature);
+        pub fn participant_details(mut self, input: crate::model::ParticipantDetails) -> Self {
+            self.inner = self.inner.participant_details(input);
             self
         }
         /// <p>Information identifying the participant.</p>
@@ -10464,8 +10431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The initial message to be sent to the newly created chat.</p>
-        pub fn initial_message(mut self, signature: crate::model::ChatMessage) -> Self {
-            self.inner = self.inner.initial_message(signature);
+        pub fn initial_message(mut self, input: crate::model::ChatMessage) -> Self {
+            self.inner = self.inner.initial_message(input);
             self
         }
         /// <p>The initial message to be sent to the newly created chat.</p>
@@ -10478,8 +10445,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -10556,8 +10523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10566,8 +10533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -10577,8 +10544,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -10593,9 +10560,9 @@ pub mod fluent_builders {
         /// <p>The person being recorded.</p>
         pub fn voice_recording_configuration(
             mut self,
-            signature: crate::model::VoiceRecordingConfiguration,
+            input: crate::model::VoiceRecordingConfiguration,
         ) -> Self {
-            self.inner = self.inner.voice_recording_configuration(signature);
+            self.inner = self.inner.voice_recording_configuration(input);
             self
         }
         /// <p>The person being recorded.</p>
@@ -10669,8 +10636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10680,8 +10647,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -10693,9 +10660,9 @@ pub mod fluent_builders {
         /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
         pub fn chat_streaming_configuration(
             mut self,
-            signature: crate::model::ChatStreamingConfiguration,
+            input: crate::model::ChatStreamingConfiguration,
         ) -> Self {
-            self.inner = self.inner.chat_streaming_configuration(signature);
+            self.inner = self.inner.chat_streaming_configuration(input);
             self
         }
         /// <p>The streaming configuration, such as the Amazon SNS streaming endpoint.</p>
@@ -10708,8 +10675,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -10797,11 +10764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The phone number of the customer, in E.164 format.</p>
-        pub fn destination_phone_number(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.destination_phone_number(signature.into());
+        pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_phone_number(input.into());
             self
         }
         /// <p>The phone number of the customer, in E.164 format.</p>
@@ -10820,8 +10784,8 @@ pub mod fluent_builders {
         /// information</b>. The ContactFlowId is the last part of the ARN, shown here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
         /// </p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The
@@ -10840,8 +10804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -10853,8 +10817,8 @@ pub mod fluent_builders {
         /// request. The token is valid for 7 days after creation. If a contact is already started, the
         /// contact ID is returned.
         /// </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -10867,8 +10831,8 @@ pub mod fluent_builders {
         }
         /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
         /// a source phone number, you must specify a queue.</p>
-        pub fn source_phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_phone_number(signature.into());
+        pub fn source_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_phone_number(input.into());
             self
         }
         /// <p>The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify
@@ -10884,8 +10848,8 @@ pub mod fluent_builders {
         /// phone number specified in the queue. If you do not specify a queue, the queue defined in the
         /// contact flow is used. If you do not specify a queue, you must specify a source phone
         /// number.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The queue for the call. If you specify a queue, the phone displayed for caller ID is the
@@ -10928,9 +10892,9 @@ pub mod fluent_builders {
         /// <p>Configuration of the answering machine detection for this outbound call. </p>
         pub fn answer_machine_detection_config(
             mut self,
-            signature: crate::model::AnswerMachineDetectionConfig,
+            input: crate::model::AnswerMachineDetectionConfig,
         ) -> Self {
-            self.inner = self.inner.answer_machine_detection_config(signature);
+            self.inner = self.inner.answer_machine_detection_config(input);
             self
         }
         /// <p>Configuration of the answering machine detection for this outbound call. </p>
@@ -10942,8 +10906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The campaign identifier of the outbound communication.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The campaign identifier of the outbound communication.</p>
@@ -10955,8 +10919,8 @@ pub mod fluent_builders {
         /// Amazon Connect. The default value is <code>GENERAL</code>. Use <code>CAMPAIGN</code> if
         /// <code>EnableAnswerMachineDetection</code> is set to <code>true</code>. For all other cases, use
         /// <code>GENERAL</code>. </p>
-        pub fn traffic_type(mut self, signature: crate::model::TrafficType) -> Self {
-            self.inner = self.inner.traffic_type(signature);
+        pub fn traffic_type(mut self, input: crate::model::TrafficType) -> Self {
+            self.inner = self.inner.traffic_type(input);
             self
         }
         /// <p>Denotes the class of traffic. Calls with different traffic types are handled differently by
@@ -11031,8 +10995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11041,8 +11005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the previous chat, voice, or task contact. </p>
-        pub fn previous_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.previous_contact_id(signature.into());
+        pub fn previous_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.previous_contact_id(input.into());
             self
         }
         /// <p>The identifier of the previous chat, voice, or task contact. </p>
@@ -11060,8 +11024,8 @@ pub mod fluent_builders {
         /// here in bold: </p>
         /// <p>arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
         /// </p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow for initiating the tasks. To see the ContactFlowId in the
@@ -11108,8 +11072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a task that is shown to an agent in the Contact Control Panel (CCP).</p>
@@ -11142,8 +11106,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the task that is shown to an agent in the Contact Control Panel
         /// (CCP).</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the task that is shown to an agent in the Contact Control Panel
@@ -11154,8 +11118,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -11165,8 +11129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-        pub fn scheduled_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time(signature);
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(input);
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
@@ -11238,8 +11202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The ID of the contact.</p>
@@ -11248,8 +11212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11324,8 +11288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11334,8 +11298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -11345,8 +11309,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -11421,8 +11385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11432,8 +11396,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
         /// the first interaction with the contact center.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact that is associated with
@@ -11443,8 +11407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the streaming configuration enabled. </p>
-        pub fn streaming_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.streaming_id(signature.into());
+        pub fn streaming_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.streaming_id(input.into());
             self
         }
         /// <p>The identifier of the streaming configuration enabled. </p>
@@ -11518,8 +11482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11528,8 +11492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -11539,8 +11503,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -11617,8 +11581,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -11710,8 +11674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -11798,8 +11762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11808,8 +11772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the agent status.</p>
-        pub fn agent_status_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_status_id(signature.into());
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input.into());
             self
         }
         /// <p>The identifier of the agent status.</p>
@@ -11821,8 +11785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the agent status.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the agent status.</p>
@@ -11831,8 +11795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the agent status.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the agent status.</p>
@@ -11841,8 +11805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the agent status.</p>
-        pub fn state(mut self, signature: crate::model::AgentStatusState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the agent status.</p>
@@ -11854,8 +11818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display order of the agent status.</p>
-        pub fn display_order(mut self, signature: i32) -> Self {
-            self.inner = self.inner.display_order(signature);
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
             self
         }
         /// <p>The display order of the agent status.</p>
@@ -11864,8 +11828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A number indicating the reset order of the agent status.</p>
-        pub fn reset_order_number(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reset_order_number(signature);
+        pub fn reset_order_number(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_order_number(input);
             self
         }
         /// <p>A number indicating the reset order of the agent status.</p>
@@ -11940,8 +11904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -11951,8 +11915,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with your contact center.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -11962,8 +11926,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact.</p>
@@ -11972,8 +11936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact.</p>
@@ -12085,8 +12049,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
         /// first interaction with the contact center.</p>
-        pub fn initial_contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.initial_contact_id(signature.into());
+        pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.initial_contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact. This is the identifier of the contact associated with the
@@ -12099,8 +12063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12200,8 +12164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -12210,8 +12174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12225,8 +12189,8 @@ pub mod fluent_builders {
         /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
         /// flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
         /// </p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The JSON string that represents contact flow’s content. For an example, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
@@ -12297,8 +12261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12307,8 +12271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12320,8 +12284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>TThe name of the contact flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>TThe name of the contact flow.</p>
@@ -12330,8 +12294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow.</p>
@@ -12340,8 +12304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of contact flow.</p>
-        pub fn contact_flow_state(mut self, signature: crate::model::ContactFlowState) -> Self {
-            self.inner = self.inner.contact_flow_state(signature);
+        pub fn contact_flow_state(mut self, input: crate::model::ContactFlowState) -> Self {
+            self.inner = self.inner.contact_flow_state(input);
             self
         }
         /// <p>The state of contact flow.</p>
@@ -12413,8 +12377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12423,8 +12387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(signature.into());
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -12436,8 +12400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the contact flow module.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the contact flow module.</p>
@@ -12506,8 +12470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12516,8 +12480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow module.</p>
-        pub fn contact_flow_module_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_module_id(signature.into());
+        pub fn contact_flow_module_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_module_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow module.</p>
@@ -12529,8 +12493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow module.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow module.</p>
@@ -12539,8 +12503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow module.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow module.</p>
@@ -12549,8 +12513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of contact flow module.</p>
-        pub fn state(mut self, signature: crate::model::ContactFlowModuleState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::ContactFlowModuleState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of contact flow module.</p>
@@ -12624,8 +12588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance.</p>
@@ -12634,8 +12598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact flow.</p>
-        pub fn contact_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_flow_id(signature.into());
+        pub fn contact_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_flow_id(input.into());
             self
         }
         /// <p>The identifier of the contact flow.</p>
@@ -12647,8 +12611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the contact flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the contact flow.</p>
@@ -12657,8 +12621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the contact flow.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the contact flow.</p>
@@ -12727,8 +12691,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12737,8 +12701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the contact.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The identifier of the contact.</p>
@@ -12747,8 +12711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
-        pub fn scheduled_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time(signature);
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(input);
             self
         }
         /// <p>The timestamp, in Unix Epoch seconds format, at which to start running the inbound contact flow. The scheduled time cannot be in the past. It must be within up to 6 days in future. </p>
@@ -12821,8 +12785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12831,8 +12795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(signature.into());
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier of the hours of operation.</p>
@@ -12844,8 +12808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the hours of operation.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hours of operation.</p>
@@ -12854,8 +12818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the hours of operation.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the hours of operation.</p>
@@ -12864,8 +12828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone of the hours of operation.</p>
-        pub fn time_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(signature.into());
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
         /// <p>The time zone of the hours of operation.</p>
@@ -12952,8 +12916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -12965,8 +12929,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact AWS Support for allowlisting.</p>
         /// </note>
-        pub fn attribute_type(mut self, signature: crate::model::InstanceAttributeType) -> Self {
-            self.inner = self.inner.attribute_type(signature);
+        pub fn attribute_type(mut self, input: crate::model::InstanceAttributeType) -> Self {
+            self.inner = self.inner.attribute_type(input);
             self
         }
         /// <p>The type of attribute.</p>
@@ -12981,8 +12945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value for the attribute. Maximum character limit is 100. </p>
-        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(signature.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>The value for the attribute. Maximum character limit is 100. </p>
@@ -13052,8 +13016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13062,8 +13026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
@@ -13075,11 +13039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid resource type.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::InstanceStorageResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::InstanceStorageResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>A valid resource type.</p>
@@ -13091,8 +13052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The storage configuration for the instance.</p>
-        pub fn storage_config(mut self, signature: crate::model::InstanceStorageConfig) -> Self {
-            self.inner = self.inner.storage_config(signature);
+        pub fn storage_config(mut self, input: crate::model::InstanceStorageConfig) -> Self {
+            self.inner = self.inner.storage_config(input);
             self
         }
         /// <p>The storage configuration for the instance.</p>
@@ -13165,8 +13126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13175,8 +13136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13185,8 +13146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the hours of operation.</p>
-        pub fn hours_of_operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hours_of_operation_id(signature.into());
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input.into());
             self
         }
         /// <p>The identifier for the hours of operation.</p>
@@ -13260,8 +13221,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13270,8 +13231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13280,8 +13241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
-        pub fn max_contacts(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_contacts(signature);
+        pub fn max_contacts(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_contacts(input);
             self
         }
         /// <p>The maximum number of contacts that can be in the queue before it is considered full.</p>
@@ -13351,8 +13312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13361,8 +13322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13371,8 +13332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the queue.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the queue.</p>
@@ -13381,8 +13342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the queue.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the queue.</p>
@@ -13453,8 +13414,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13463,8 +13424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13473,11 +13434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
-        pub fn outbound_caller_config(
-            mut self,
-            signature: crate::model::OutboundCallerConfig,
-        ) -> Self {
-            self.inner = self.inner.outbound_caller_config(signature);
+        pub fn outbound_caller_config(mut self, input: crate::model::OutboundCallerConfig) -> Self {
+            self.inner = self.inner.outbound_caller_config(input);
             self
         }
         /// <p>The outbound caller ID name, number, and outbound whisper flow.</p>
@@ -13550,8 +13508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13560,8 +13518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the queue.</p>
-        pub fn queue_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_id(signature.into());
+        pub fn queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_id(input.into());
             self
         }
         /// <p>The identifier for the queue.</p>
@@ -13570,8 +13528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the queue.</p>
-        pub fn status(mut self, signature: crate::model::QueueStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::QueueStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the queue.</p>
@@ -13640,8 +13598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13650,8 +13608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(signature.into());
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -13663,8 +13621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the configuration settings for the quick connect.</p>
-        pub fn quick_connect_config(mut self, signature: crate::model::QuickConnectConfig) -> Self {
-            self.inner = self.inner.quick_connect_config(signature);
+        pub fn quick_connect_config(mut self, input: crate::model::QuickConnectConfig) -> Self {
+            self.inner = self.inner.quick_connect_config(input);
             self
         }
         /// <p>Information about the configuration settings for the quick connect.</p>
@@ -13736,8 +13694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13746,8 +13704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the quick connect.</p>
-        pub fn quick_connect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.quick_connect_id(signature.into());
+        pub fn quick_connect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.quick_connect_id(input.into());
             self
         }
         /// <p>The identifier for the quick connect.</p>
@@ -13759,8 +13717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the quick connect.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the quick connect.</p>
@@ -13769,8 +13727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the quick connect.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the quick connect.</p>
@@ -13840,8 +13798,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13850,8 +13808,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -13942,8 +13900,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -13952,8 +13910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -13965,11 +13923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the default outbound queue.</p>
-        pub fn default_outbound_queue_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_outbound_queue_id(signature.into());
+        pub fn default_outbound_queue_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_outbound_queue_id(input.into());
             self
         }
         /// <p>The identifier for the default outbound queue.</p>
@@ -14042,8 +13997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14052,8 +14007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -14065,8 +14020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the routing profile. Must not be more than 127 characters.</p>
@@ -14075,8 +14030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the routing profile. Must not be more than 250 characters.</p>
@@ -14145,8 +14100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14155,8 +14110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the routing profile.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile.</p>
@@ -14250,8 +14205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the security profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the security profile.</p>
@@ -14277,8 +14232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the security profle.</p>
-        pub fn security_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_profile_id(signature.into());
+        pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_profile_id(input.into());
             self
         }
         /// <p>The identifier for the security profle.</p>
@@ -14290,8 +14245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14360,8 +14315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(signature.into());
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -14373,8 +14328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14383,8 +14338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14453,8 +14408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the hierarchy group. Must not be more than 100 characters.</p>
@@ -14463,8 +14418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
-        pub fn hierarchy_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hierarchy_group_id(signature.into());
+        pub fn hierarchy_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hierarchy_group_id(input.into());
             self
         }
         /// <p>The identifier of the hierarchy group.</p>
@@ -14476,8 +14431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14548,9 +14503,9 @@ pub mod fluent_builders {
         /// <p>The hierarchy levels to update.</p>
         pub fn hierarchy_structure(
             mut self,
-            signature: crate::model::HierarchyStructureUpdate,
+            input: crate::model::HierarchyStructureUpdate,
         ) -> Self {
-            self.inner = self.inner.hierarchy_structure(signature);
+            self.inner = self.inner.hierarchy_structure(input);
             self
         }
         /// <p>The hierarchy levels to update.</p>
@@ -14562,8 +14517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14640,8 +14595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identity information for the user.</p>
-        pub fn identity_info(mut self, signature: crate::model::UserIdentityInfo) -> Self {
-            self.inner = self.inner.identity_info(signature);
+        pub fn identity_info(mut self, input: crate::model::UserIdentityInfo) -> Self {
+            self.inner = self.inner.identity_info(input);
             self
         }
         /// <p>The identity information for the user.</p>
@@ -14653,8 +14608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14663,8 +14618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14733,8 +14688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about phone configuration settings for the user.</p>
-        pub fn phone_config(mut self, signature: crate::model::UserPhoneConfig) -> Self {
-            self.inner = self.inner.phone_config(signature);
+        pub fn phone_config(mut self, input: crate::model::UserPhoneConfig) -> Self {
+            self.inner = self.inner.phone_config(input);
             self
         }
         /// <p>Information about phone configuration settings for the user.</p>
@@ -14746,8 +14701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14756,8 +14711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14826,8 +14781,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the routing profile for the user.</p>
-        pub fn routing_profile_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_profile_id(signature.into());
+        pub fn routing_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_profile_id(input.into());
             self
         }
         /// <p>The identifier of the routing profile for the user.</p>
@@ -14839,8 +14794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14849,8 +14804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
@@ -14936,8 +14891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the user account.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The identifier of the user account.</p>
@@ -14946,8 +14901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>

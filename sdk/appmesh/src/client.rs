@@ -422,8 +422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the gateway route.</p>
-        pub fn gateway_route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_route_name(signature.into());
+        pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_route_name(input.into());
             self
         }
         /// <p>The name to use for the gateway route.</p>
@@ -435,8 +435,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the gateway route in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the gateway route in.</p>
@@ -447,8 +447,8 @@ pub mod fluent_builders {
         /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
         /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
         /// resource.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
@@ -462,8 +462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The gateway route specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::GatewayRouteSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::GatewayRouteSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The gateway route specification to apply.</p>
@@ -499,8 +499,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -512,8 +512,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -589,8 +589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the service mesh.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name to use for the service mesh.</p>
@@ -599,8 +599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service mesh specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::MeshSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::MeshSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The service mesh specification to apply.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -707,8 +707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the route.</p>
-        pub fn route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_name(signature.into());
+        pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_name(input.into());
             self
         }
         /// <p>The name to use for the route.</p>
@@ -717,8 +717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the route in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the route in.</p>
@@ -728,8 +728,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the virtual router in which to create the route. If the virtual router is in
         /// a shared mesh, then you must be the owner of the virtual router resource.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router in which to create the route. If the virtual router is in
@@ -742,8 +742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The route specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::RouteSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::RouteSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The route specification to apply.</p>
@@ -776,8 +776,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -789,8 +789,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -867,8 +867,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the virtual gateway.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name to use for the virtual gateway.</p>
@@ -880,8 +880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the virtual gateway in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the virtual gateway in.</p>
@@ -890,8 +890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual gateway specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualGatewaySpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualGatewaySpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The virtual gateway specification to apply.</p>
@@ -927,8 +927,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -940,8 +940,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -1034,8 +1034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the virtual node.</p>
-        pub fn virtual_node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_node_name(signature.into());
+        pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_node_name(input.into());
             self
         }
         /// <p>The name to use for the virtual node.</p>
@@ -1047,8 +1047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the virtual node in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the virtual node in.</p>
@@ -1057,8 +1057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual node specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualNodeSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualNodeSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The virtual node specification to apply.</p>
@@ -1094,8 +1094,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -1185,8 +1185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the virtual router.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name to use for the virtual router.</p>
@@ -1198,8 +1198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the virtual router in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the virtual router in.</p>
@@ -1208,8 +1208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual router specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualRouterSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualRouterSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The virtual router specification to apply.</p>
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1258,8 +1258,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -1336,8 +1336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to use for the virtual service.</p>
-        pub fn virtual_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_service_name(signature.into());
+        pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_service_name(input.into());
             self
         }
         /// <p>The name to use for the virtual service.</p>
@@ -1349,8 +1349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to create the virtual service in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to create the virtual service in.</p>
@@ -1359,8 +1359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual service specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualServiceSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualServiceSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The virtual service specification to apply.</p>
@@ -1396,8 +1396,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -1409,8 +1409,8 @@ pub mod fluent_builders {
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
         /// the account that you specify must share the mesh with your account before you can create
         /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
@@ -1481,8 +1481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the gateway route to delete.</p>
-        pub fn gateway_route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_route_name(signature.into());
+        pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_route_name(input.into());
             self
         }
         /// <p>The name of the gateway route to delete.</p>
@@ -1494,8 +1494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the gateway route from.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the gateway route from.</p>
@@ -1504,8 +1504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual gateway to delete the route from.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to delete the route from.</p>
@@ -1518,8 +1518,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -1591,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to delete.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete.</p>
@@ -1661,8 +1661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route to delete.</p>
-        pub fn route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_name(signature.into());
+        pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_name(input.into());
             self
         }
         /// <p>The name of the route to delete.</p>
@@ -1671,8 +1671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the route in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the route in.</p>
@@ -1681,8 +1681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual router to delete the route in.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router to delete the route in.</p>
@@ -1695,8 +1695,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -1767,8 +1767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual gateway to delete.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to delete.</p>
@@ -1780,8 +1780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the virtual gateway from.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the virtual gateway from.</p>
@@ -1791,8 +1791,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -1864,8 +1864,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual node to delete.</p>
-        pub fn virtual_node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_node_name(signature.into());
+        pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_node_name(input.into());
             self
         }
         /// <p>The name of the virtual node to delete.</p>
@@ -1877,8 +1877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the virtual node in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the virtual node in.</p>
@@ -1888,8 +1888,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -1961,8 +1961,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual router to delete.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router to delete.</p>
@@ -1974,8 +1974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the virtual router in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the virtual router in.</p>
@@ -1985,8 +1985,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2056,8 +2056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual service to delete.</p>
-        pub fn virtual_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_service_name(signature.into());
+        pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_service_name(input.into());
             self
         }
         /// <p>The name of the virtual service to delete.</p>
@@ -2069,8 +2069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh to delete the virtual service in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to delete the virtual service in.</p>
@@ -2080,8 +2080,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2151,8 +2151,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the gateway route to describe.</p>
-        pub fn gateway_route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_route_name(signature.into());
+        pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_route_name(input.into());
             self
         }
         /// <p>The name of the gateway route to describe.</p>
@@ -2164,8 +2164,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
@@ -2174,8 +2174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
@@ -2188,8 +2188,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2259,8 +2259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to describe.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to describe.</p>
@@ -2270,8 +2270,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2341,8 +2341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route to describe.</p>
-        pub fn route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_name(signature.into());
+        pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_name(input.into());
             self
         }
         /// <p>The name of the route to describe.</p>
@@ -2351,8 +2351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the route resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the route resides in.</p>
@@ -2362,8 +2362,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2373,8 +2373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual router that the route is associated with.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router that the route is associated with.</p>
@@ -2446,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual gateway to describe.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to describe.</p>
@@ -2459,8 +2459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
@@ -2470,8 +2470,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2541,8 +2541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual node to describe.</p>
-        pub fn virtual_node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_node_name(signature.into());
+        pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_node_name(input.into());
             self
         }
         /// <p>The name of the virtual node to describe.</p>
@@ -2554,8 +2554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2636,8 +2636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual router to describe.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router to describe.</p>
@@ -2649,8 +2649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
@@ -2660,8 +2660,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2731,8 +2731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual service to describe.</p>
-        pub fn virtual_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_service_name(signature.into());
+        pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_service_name(input.into());
             self
         }
         /// <p>The name of the virtual service to describe.</p>
@@ -2744,8 +2744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
@@ -2755,8 +2755,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2827,8 +2827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list gateway routes in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list gateway routes in.</p>
@@ -2837,8 +2837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual gateway to list gateway routes in.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to list gateway routes in.</p>
@@ -2853,8 +2853,8 @@ pub mod fluent_builders {
         /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
         /// exceeded the value of that parameter. Pagination continues from the end of the previous
         /// results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2873,8 +2873,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
@@ -2891,8 +2891,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -2969,8 +2969,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that is used only to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -2993,8 +2993,8 @@ pub mod fluent_builders {
         /// 1 and 100. If you don't use this parameter,
         /// <code>ListMeshes</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
@@ -3070,8 +3070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list routes in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list routes in.</p>
@@ -3080,8 +3080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual router to list routes in.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router to list routes in.</p>
@@ -3096,8 +3096,8 @@ pub mod fluent_builders {
         /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
         /// exceeded the value of that parameter. Pagination continues from the end of the previous
         /// results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3116,8 +3116,8 @@ pub mod fluent_builders {
         /// 1 and 100. If you don't use this parameter,
         /// <code>ListRoutes</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
@@ -3134,8 +3134,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -3205,8 +3205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
@@ -3218,8 +3218,8 @@ pub mod fluent_builders {
         /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3238,8 +3238,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If you don't use
         /// this parameter, <code>ListTagsForResource</code> returns up to 100
         /// results and a <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
@@ -3315,8 +3315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list virtual gateways in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list virtual gateways in.</p>
@@ -3328,8 +3328,8 @@ pub mod fluent_builders {
         /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3348,8 +3348,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
         /// a <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
@@ -3366,8 +3366,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -3437,8 +3437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list virtual nodes in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list virtual nodes in.</p>
@@ -3450,8 +3450,8 @@ pub mod fluent_builders {
         /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
         /// exceeded the value of that parameter. Pagination continues from the end of the previous
         /// results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3470,8 +3470,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
         /// <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
@@ -3488,8 +3488,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -3559,8 +3559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list virtual routers in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list virtual routers in.</p>
@@ -3572,8 +3572,8 @@ pub mod fluent_builders {
         /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3592,8 +3592,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
         /// a <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
@@ -3610,8 +3610,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -3681,8 +3681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to list virtual services in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to list virtual services in.</p>
@@ -3694,8 +3694,8 @@ pub mod fluent_builders {
         /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
         /// results exceeded the value of that parameter. Pagination continues from the end of the
         /// previous results that returned the <code>nextToken</code> value.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated
@@ -3714,8 +3714,8 @@ pub mod fluent_builders {
         /// This value can be between 1 and 100. If you don't use this
         /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
         /// a <code>nextToken</code> value if applicable.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
@@ -3732,8 +3732,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -3806,8 +3806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
@@ -3897,8 +3897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
@@ -3985,8 +3985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the gateway route to update.</p>
-        pub fn gateway_route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_route_name(signature.into());
+        pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_route_name(input.into());
             self
         }
         /// <p>The name of the gateway route to update.</p>
@@ -3998,8 +3998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the gateway route resides in.</p>
@@ -4008,8 +4008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
@@ -4021,8 +4021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
-        pub fn spec(mut self, signature: crate::model::GatewayRouteSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::GatewayRouteSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
@@ -4035,8 +4035,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4047,8 +4047,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -4118,8 +4118,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the service mesh to update.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh to update.</p>
@@ -4128,8 +4128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The service mesh specification to apply.</p>
-        pub fn spec(mut self, signature: crate::model::MeshSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::MeshSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The service mesh specification to apply.</p>
@@ -4139,8 +4139,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4210,8 +4210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route to update.</p>
-        pub fn route_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_name(signature.into());
+        pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_name(input.into());
             self
         }
         /// <p>The name of the route to update.</p>
@@ -4220,8 +4220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the route resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the route resides in.</p>
@@ -4230,8 +4230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual router that the route is associated with.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router that the route is associated with.</p>
@@ -4243,8 +4243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new route specification to apply. This overwrites the existing data.</p>
-        pub fn spec(mut self, signature: crate::model::RouteSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::RouteSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new route specification to apply. This overwrites the existing data.</p>
@@ -4254,8 +4254,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4266,8 +4266,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -4337,8 +4337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual gateway to update.</p>
-        pub fn virtual_gateway_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_name(signature.into());
+        pub fn virtual_gateway_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_name(input.into());
             self
         }
         /// <p>The name of the virtual gateway to update.</p>
@@ -4350,8 +4350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual gateway resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual gateway resides in.</p>
@@ -4361,8 +4361,8 @@ pub mod fluent_builders {
         }
         /// <p>The new virtual gateway specification to apply. This overwrites the existing
         /// data.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualGatewaySpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualGatewaySpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new virtual gateway specification to apply. This overwrites the existing
@@ -4376,8 +4376,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4388,8 +4388,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -4459,8 +4459,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual node to update.</p>
-        pub fn virtual_node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_node_name(signature.into());
+        pub fn virtual_node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_node_name(input.into());
             self
         }
         /// <p>The name of the virtual node to update.</p>
@@ -4472,8 +4472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual node resides in.</p>
@@ -4482,8 +4482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualNodeSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualNodeSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
@@ -4496,8 +4496,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4508,8 +4508,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -4579,8 +4579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual router to update.</p>
-        pub fn virtual_router_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_router_name(signature.into());
+        pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_router_name(input.into());
             self
         }
         /// <p>The name of the virtual router to update.</p>
@@ -4592,8 +4592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual router resides in.</p>
@@ -4602,8 +4602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualRouterSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualRouterSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
@@ -4616,8 +4616,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4628,8 +4628,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
@@ -4699,8 +4699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the virtual service to update.</p>
-        pub fn virtual_service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_service_name(signature.into());
+        pub fn virtual_service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_service_name(input.into());
             self
         }
         /// <p>The name of the virtual service to update.</p>
@@ -4712,8 +4712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
-        pub fn mesh_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_name(signature.into());
+        pub fn mesh_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_name(input.into());
             self
         }
         /// <p>The name of the service mesh that the virtual service resides in.</p>
@@ -4723,8 +4723,8 @@ pub mod fluent_builders {
         }
         /// <p>The new virtual service specification to apply. This overwrites the existing
         /// data.</p>
-        pub fn spec(mut self, signature: crate::model::VirtualServiceSpec) -> Self {
-            self.inner = self.inner.spec(signature);
+        pub fn spec(mut self, input: crate::model::VirtualServiceSpec) -> Self {
+            self.inner = self.inner.spec(input);
             self
         }
         /// <p>The new virtual service specification to apply. This overwrites the existing
@@ -4738,8 +4738,8 @@ pub mod fluent_builders {
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -4750,8 +4750,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
         /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
-        pub fn mesh_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.mesh_owner(signature.into());
+        pub fn mesh_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.mesh_owner(input.into());
             self
         }
         /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's

@@ -280,8 +280,8 @@ pub mod fluent_builders {
         /// new attachment set is created, and the ID of the set is returned in the response. If an
         /// <code>attachmentSetId</code> is specified, the attachments are added to the
         /// specified set, if it exists.</p>
-        pub fn attachment_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_set_id(signature.into());
+        pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_set_id(input.into());
             self
         }
         /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a
@@ -407,8 +407,8 @@ pub mod fluent_builders {
         /// alphanumeric string formatted as shown in this example:
         /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         /// </p>
-        pub fn case_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.case_id(signature.into());
+        pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.case_id(input.into());
             self
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an
@@ -420,8 +420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The body of an email communication to add to the support case.</p>
-        pub fn communication_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.communication_body(signature.into());
+        pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.communication_body(input.into());
             self
         }
         /// <p>The body of an email communication to add to the support case.</p>
@@ -452,8 +452,8 @@ pub mod fluent_builders {
         /// <p>The ID of a set of one or more attachments for the communication to add to the case.
         /// Create the set by calling <a>AddAttachmentsToSet</a>
         /// </p>
-        pub fn attachment_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_set_id(signature.into());
+        pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_set_id(input.into());
             self
         }
         /// <p>The ID of a set of one or more attachments for the communication to add to the case.
@@ -559,8 +559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-        pub fn subject(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subject(signature.into());
+        pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subject(input.into());
             self
         }
         /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
@@ -570,8 +570,8 @@ pub mod fluent_builders {
         }
         /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
         /// operation to get the possible <code>serviceCode</code> values.</p>
-        pub fn service_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_code(signature.into());
+        pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_code(input.into());
             self
         }
         /// <p>The code for the AWS service. You can use the <a>DescribeServices</a>
@@ -589,8 +589,8 @@ pub mod fluent_builders {
         /// <p>The availability of severity levels depends on the support plan for the AWS
         /// account.</p>
         /// </note>
-        pub fn severity_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.severity_code(signature.into());
+        pub fn severity_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.severity_code(input.into());
             self
         }
         /// <p>A value that indicates the urgency of the case. This value determines the response
@@ -611,8 +611,8 @@ pub mod fluent_builders {
         }
         /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
         /// AWS service defines its own set of category codes.</p>
-        pub fn category_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category_code(signature.into());
+        pub fn category_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_code(input.into());
             self
         }
         /// <p>The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the category code for a service. Each
@@ -626,8 +626,8 @@ pub mod fluent_builders {
         }
         /// <p>The communication body text that describes the issue. This text appears in the
         /// <b>Description</b> field on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
-        pub fn communication_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.communication_body(signature.into());
+        pub fn communication_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.communication_body(input.into());
             self
         }
         /// <p>The communication body text that describes the issue. This text appears in the
@@ -665,8 +665,8 @@ pub mod fluent_builders {
         /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
         /// code for the <code>language</code> parameter if you want support in that language.
         /// Currently, English ("en") and Japanese ("ja") are supported.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The language in which AWS Support handles the case. You must specify the ISO 639-1
@@ -679,8 +679,8 @@ pub mod fluent_builders {
         /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
         /// <code>technical</code>. If you don't specify a value, the default is
         /// <code>technical</code>.</p>
-        pub fn issue_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.issue_type(signature.into());
+        pub fn issue_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.issue_type(input.into());
             self
         }
         /// <p>The type of issue for the case. You can specify <code>customer-service</code> or
@@ -692,8 +692,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
         /// <a>AddAttachmentsToSet</a> operation.</p>
-        pub fn attachment_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_set_id(signature.into());
+        pub fn attachment_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_set_id(input.into());
             self
         }
         /// <p>The ID of a set of one or more attachments for the case. Create the set by using the
@@ -784,8 +784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
-        pub fn attachment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_id(signature.into());
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
             self
         }
         /// <p>The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a> operation.</p>
@@ -906,8 +906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
-        pub fn display_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_id(signature.into());
+        pub fn display_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_id(input.into());
             self
         }
         /// <p>The ID displayed for a case in the AWS Support Center user interface.</p>
@@ -917,8 +917,8 @@ pub mod fluent_builders {
         }
         /// <p>The start date for a filtered date search on support case communications. Case
         /// communications are available for 12 months after creation.</p>
-        pub fn after_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_time(signature.into());
+        pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_time(input.into());
             self
         }
         /// <p>The start date for a filtered date search on support case communications. Case
@@ -929,8 +929,8 @@ pub mod fluent_builders {
         }
         /// <p>The end date for a filtered date search on support case communications. Case
         /// communications are available for 12 months after creation.</p>
-        pub fn before_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_time(signature.into());
+        pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_time(input.into());
             self
         }
         /// <p>The end date for a filtered date search on support case communications. Case
@@ -941,8 +941,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
         /// response. By default, resolved cases aren't included.</p>
-        pub fn include_resolved_cases(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_resolved_cases(signature);
+        pub fn include_resolved_cases(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_resolved_cases(input);
             self
         }
         /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code>
@@ -952,8 +952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A resumption point for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A resumption point for pagination.</p>
@@ -962,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return before paginating.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return before paginating.</p>
@@ -974,8 +974,8 @@ pub mod fluent_builders {
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
         /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
         /// passed explicitly for operations that take them.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
@@ -987,8 +987,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
         /// response. By default, communications are included.</p>
-        pub fn include_communications(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_communications(signature);
+        pub fn include_communications(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_communications(input);
             self
         }
         /// <p>Specifies whether to include communications in the <code>DescribeCases</code>
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
         /// alphanumeric string formatted as shown in this example:
         /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         /// </p>
-        pub fn case_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.case_id(signature.into());
+        pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.case_id(input.into());
             self
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
         }
         /// <p>The end date for a filtered date search on support case communications. Case
         /// communications are available for 12 months after creation.</p>
-        pub fn before_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_time(signature.into());
+        pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_time(input.into());
             self
         }
         /// <p>The end date for a filtered date search on support case communications. Case
@@ -1110,8 +1110,8 @@ pub mod fluent_builders {
         }
         /// <p>The start date for a filtered date search on support case communications. Case
         /// communications are available for 12 months after creation.</p>
-        pub fn after_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_time(signature.into());
+        pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_time(input.into());
             self
         }
         /// <p>The start date for a filtered date search on support case communications. Case
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A resumption point for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A resumption point for pagination.</p>
@@ -1131,8 +1131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return before paginating.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return before paginating.</p>
@@ -1242,8 +1242,8 @@ pub mod fluent_builders {
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
         /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
         /// passed explicitly for operations that take them.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
@@ -1332,8 +1332,8 @@ pub mod fluent_builders {
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
         /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
         /// passed explicitly for operations that take them.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
@@ -1565,8 +1565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the Trusted Advisor check.</p>
-        pub fn check_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.check_id(signature.into());
+        pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.check_id(input.into());
             self
         }
         /// <p>The unique identifier for the Trusted Advisor check.</p>
@@ -1577,8 +1577,8 @@ pub mod fluent_builders {
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
         /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
         /// passed explicitly for operations that take them.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
@@ -1674,8 +1674,8 @@ pub mod fluent_builders {
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
         /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
         /// passed explicitly for operations that take them.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
         /// <p>Specifying the check ID of a check that is automatically refreshed
         /// causes an <code>InvalidParameterValue</code> error.</p>
         /// </note>
-        pub fn check_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.check_id(signature.into());
+        pub fn check_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.check_id(input.into());
             self
         }
         /// <p>The unique identifier for the Trusted Advisor check to refresh.</p>     
@@ -1961,8 +1961,8 @@ pub mod fluent_builders {
         /// alphanumeric string formatted as shown in this example:
         /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
         /// </p>
-        pub fn case_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.case_id(signature.into());
+        pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.case_id(input.into());
             self
         }
         /// <p>The support case ID requested or returned in the call. The case ID is an

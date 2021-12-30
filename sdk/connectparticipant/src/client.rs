@@ -231,8 +231,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -242,8 +242,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -362,8 +362,8 @@ pub mod fluent_builders {
         /// <p>This is a header parameter.</p>
         /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
         /// API response.</p>
-        pub fn participant_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.participant_token(signature.into());
+        pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.participant_token(input.into());
             self
         }
         /// <p>This is a header parameter.</p>
@@ -378,8 +378,8 @@ pub mod fluent_builders {
         }
         /// <p>Amazon Connect Participant is used to mark the participant as connected for message
         /// streaming.</p>
-        pub fn connect_participant(mut self, signature: bool) -> Self {
-            self.inner = self.inner.connect_participant(signature);
+        pub fn connect_participant(mut self, input: bool) -> Self {
+            self.inner = self.inner.connect_participant(input);
             self
         }
         /// <p>Amazon Connect Participant is used to mark the participant as connected for message
@@ -453,8 +453,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -464,8 +464,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -540,8 +540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the attachment.</p>
-        pub fn attachment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_id(signature.into());
+        pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_id(input.into());
             self
         }
         /// <p>A unique identifier for the attachment.</p>
@@ -553,8 +553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -629,8 +629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The contactId from the current contact chain for which transcript is needed.</p>
-        pub fn contact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.contact_id(signature.into());
+        pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.contact_id(input.into());
             self
         }
         /// <p>The contactId from the current contact chain for which transcript is needed.</p>
@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the page. Default: 10. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the page. Default: 10. </p>
@@ -650,8 +650,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token. Use the value returned previously in the next subsequent request
         /// to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token. Use the value returned previously in the next subsequent request
@@ -662,8 +662,8 @@ pub mod fluent_builders {
         }
         /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
         /// when no StartPosition is provided, FORWARD with StartPosition. </p>
-        pub fn scan_direction(mut self, signature: crate::model::ScanDirection) -> Self {
-            self.inner = self.inner.scan_direction(signature);
+        pub fn scan_direction(mut self, input: crate::model::ScanDirection) -> Self {
+            self.inner = self.inner.scan_direction(input);
             self
         }
         /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
@@ -676,8 +676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the records. Default: DESCENDING.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortKey) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the records. Default: DESCENDING.</p>
@@ -686,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filtering option for where to start.</p>
-        pub fn start_position(mut self, signature: crate::model::StartPosition) -> Self {
-            self.inner = self.inner.start_position(signature);
+        pub fn start_position(mut self, input: crate::model::StartPosition) -> Self {
+            self.inner = self.inner.start_position(input);
             self
         }
         /// <p>A filtering option for where to start.</p>
@@ -699,8 +699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -784,8 +784,8 @@ pub mod fluent_builders {
         /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
         /// </li>
         /// </ul>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The content type of the request. Supported types are:</p>
@@ -804,8 +804,8 @@ pub mod fluent_builders {
         }
         /// <p>The content of the event to be sent (for example, message text). This is not yet
         /// supported.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the event to be sent (for example, message text). This is not yet
@@ -816,8 +816,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -827,8 +827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
@@ -903,8 +903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the content. Supported types are text/plain.</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>The type of the content. Supported types are text/plain.</p>
@@ -913,8 +913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message.</p>
@@ -924,8 +924,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -935,8 +935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the connection.</p>
@@ -1011,8 +1011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
@@ -1021,8 +1021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the attachment in bytes.</p>
-        pub fn attachment_size_in_bytes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.attachment_size_in_bytes(signature);
+        pub fn attachment_size_in_bytes(mut self, input: i64) -> Self {
+            self.inner = self.inner.attachment_size_in_bytes(input);
             self
         }
         /// <p>The size of the attachment in bytes.</p>
@@ -1031,8 +1031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A case-sensitive name of the attachment being uploaded.</p>
-        pub fn attachment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attachment_name(signature.into());
+        pub fn attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attachment_name(input.into());
             self
         }
         /// <p>A case-sensitive name of the attachment being uploaded.</p>
@@ -1044,8 +1044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique case sensitive identifier to support idempotency of request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case sensitive identifier to support idempotency of request.</p>
@@ -1054,8 +1054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>
-        pub fn connection_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_token(signature.into());
+        pub fn connection_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_token(input.into());
             self
         }
         /// <p>The authentication token associated with the participant's connection.</p>

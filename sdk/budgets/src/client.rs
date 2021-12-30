@@ -321,8 +321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget.</p>
@@ -331,8 +331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The budget object that you want to create.</p>
-        pub fn budget(mut self, signature: crate::model::Budget) -> Self {
-            self.inner = self.inner.budget(signature);
+        pub fn budget(mut self, input: crate::model::Budget) -> Self {
+            self.inner = self.inner.budget(input);
             self
         }
         /// <p>The budget object that you want to create.</p>
@@ -423,8 +423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -433,8 +433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -443,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn notification_type(mut self, signature: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(signature);
+        pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(input);
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
@@ -458,8 +458,8 @@ pub mod fluent_builders {
         /// <p>
         /// The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.
         /// </p>
-        pub fn action_type(mut self, signature: crate::model::ActionType) -> Self {
-            self.inner = self.inner.action_type(signature);
+        pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
         /// <p>
@@ -475,8 +475,8 @@ pub mod fluent_builders {
         /// <p>
         /// The trigger threshold of the action.
         /// </p>
-        pub fn action_threshold(mut self, signature: crate::model::ActionThreshold) -> Self {
-            self.inner = self.inner.action_threshold(signature);
+        pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
+            self.inner = self.inner.action_threshold(input);
             self
         }
         /// <p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
         /// <p>
         /// Specifies all of the type-specific parameters.
         /// </p>
-        pub fn definition(mut self, signature: crate::model::Definition) -> Self {
-            self.inner = self.inner.definition(signature);
+        pub fn definition(mut self, input: crate::model::Definition) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         /// <p>
         /// The role passed for action execution and reversion. Roles and actions must be in the same account.
         /// </p>
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>
@@ -526,8 +526,8 @@ pub mod fluent_builders {
         /// <p>
         /// This specifies if the action needs manual or automatic approval.
         /// </p>
-        pub fn approval_model(mut self, signature: crate::model::ApprovalModel) -> Self {
-            self.inner = self.inner.approval_model(signature);
+        pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
+            self.inner = self.inner.approval_model(input);
             self
         }
         /// <p>
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a notification for.</p>
@@ -628,8 +628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want AWS to notify you about. Budget names must be unique within an account.</p>
@@ -638,8 +638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to create.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to create.</p>
@@ -728,8 +728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to create a subscriber for.</p>
@@ -738,8 +738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want to subscribe to. Budget names must be unique within an account.</p>
@@ -748,8 +748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to create a subscriber for.</p>
@@ -761,8 +761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
-        pub fn subscriber(mut self, signature: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.subscriber(signature);
+        pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscriber(input);
             self
         }
         /// <p>The subscriber that you want to associate with a budget notification.</p>
@@ -837,8 +837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to delete.</p>
@@ -847,8 +847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want to delete.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want to delete.</p>
@@ -919,8 +919,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -929,8 +929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
         /// <p>
         /// A system-generated universally unique identifier (UUID) for the action.
         /// </p>
-        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(signature.into());
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
         /// <p>
@@ -1016,8 +1016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to delete.</p>
@@ -1026,8 +1026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notification you want to delete.</p>
@@ -1036,8 +1036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification that you want to delete.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification that you want to delete.</p>
@@ -1112,8 +1112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to delete.</p>
@@ -1122,8 +1122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscriber you want to delete.</p>
@@ -1132,8 +1132,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscriber you want to delete.</p>
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subscriber that you want to delete.</p>
-        pub fn subscriber(mut self, signature: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.subscriber(signature);
+        pub fn subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.subscriber(input);
             self
         }
         /// <p>The subscriber that you want to delete.</p>
@@ -1221,8 +1221,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want a description of.</p>
@@ -1231,8 +1231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget that you want a description of.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget that you want a description of.</p>
@@ -1303,8 +1303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1313,8 +1313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1325,8 +1325,8 @@ pub mod fluent_builders {
         /// <p>
         /// A system-generated universally unique identifier (UUID) for the action.
         /// </p>
-        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(signature.into());
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
         /// <p>
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1409,8 +1409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1421,8 +1421,8 @@ pub mod fluent_builders {
         /// <p>
         /// A system-generated universally unique identifier (UUID) for the action.
         /// </p>
-        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(signature.into());
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
         /// <p>
@@ -1433,8 +1433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
-        pub fn time_period(mut self, signature: crate::model::TimePeriod) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date. </p>
@@ -1446,8 +1446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1456,8 +1456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1528,8 +1528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1538,8 +1538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1548,8 +1548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1620,8 +1620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1630,8 +1630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1640,8 +1640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1650,8 +1650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1720,8 +1720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -1730,8 +1730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -1740,8 +1740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
-        pub fn time_period(mut self, signature: crate::model::TimePeriod) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::TimePeriod) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>Retrieves how often the budget went into an <code>ALARM</code> state for the specified time period.</p>
@@ -1753,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> An integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1763,8 +1763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A generic string.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A generic string.</p>
@@ -1836,8 +1836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budgets that you want descriptions of.</p>
@@ -1846,8 +1846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1856,8 +1856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -1926,8 +1926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notifications you want descriptions of.</p>
@@ -1936,8 +1936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notifications you want descriptions of.</p>
@@ -1946,8 +1946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -1956,8 +1956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -2028,8 +2028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscribers you want descriptions of.</p>
@@ -2038,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscribers you want descriptions of.</p>
@@ -2048,8 +2048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscribers you want to list.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscribers you want to list.</p>
@@ -2061,8 +2061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional integer that represents how many entries a paginated response contains. The maximum is 100.</p>
@@ -2071,8 +2071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that you include in your request to indicate the next set of results that you want to retrieve.</p>
@@ -2143,8 +2143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -2153,8 +2153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -2165,8 +2165,8 @@ pub mod fluent_builders {
         /// <p>
         /// A system-generated universally unique identifier (UUID) for the action.
         /// </p>
-        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(signature.into());
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
         /// <p>
@@ -2179,8 +2179,8 @@ pub mod fluent_builders {
         /// <p>
         /// The type of execution.
         /// </p>
-        pub fn execution_type(mut self, signature: crate::model::ExecutionType) -> Self {
-            self.inner = self.inner.execution_type(signature);
+        pub fn execution_type(mut self, input: crate::model::ExecutionType) -> Self {
+            self.inner = self.inner.execution_type(input);
             self
         }
         /// <p>
@@ -2257,8 +2257,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget that you want to update.</p>
@@ -2267,8 +2267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The budget that you want to update your budget to.</p>
-        pub fn new_budget(mut self, signature: crate::model::Budget) -> Self {
-            self.inner = self.inner.new_budget(signature);
+        pub fn new_budget(mut self, input: crate::model::Budget) -> Self {
+            self.inner = self.inner.new_budget(input);
             self
         }
         /// <p>The budget that you want to update your budget to.</p>
@@ -2339,8 +2339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID of the user. It should be a 12-digit number.</p>
@@ -2349,8 +2349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
@@ -2361,8 +2361,8 @@ pub mod fluent_builders {
         /// <p>
         /// A system-generated universally unique identifier (UUID) for the action.
         /// </p>
-        pub fn action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_id(signature.into());
+        pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_id(input.into());
             self
         }
         /// <p>
@@ -2373,8 +2373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-        pub fn notification_type(mut self, signature: crate::model::NotificationType) -> Self {
-            self.inner = self.inner.notification_type(signature);
+        pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
+            self.inner = self.inner.notification_type(input);
             self
         }
         /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
@@ -2388,8 +2388,8 @@ pub mod fluent_builders {
         /// <p>
         /// The trigger threshold of the action.
         /// </p>
-        pub fn action_threshold(mut self, signature: crate::model::ActionThreshold) -> Self {
-            self.inner = self.inner.action_threshold(signature);
+        pub fn action_threshold(mut self, input: crate::model::ActionThreshold) -> Self {
+            self.inner = self.inner.action_threshold(input);
             self
         }
         /// <p>
@@ -2405,8 +2405,8 @@ pub mod fluent_builders {
         /// <p>
         /// Specifies all of the type-specific parameters.
         /// </p>
-        pub fn definition(mut self, signature: crate::model::Definition) -> Self {
-            self.inner = self.inner.definition(signature);
+        pub fn definition(mut self, input: crate::model::Definition) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>
@@ -2422,8 +2422,8 @@ pub mod fluent_builders {
         /// <p>
         /// The role passed for action execution and reversion. Roles and actions must be in the same account.
         /// </p>
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>
@@ -2439,8 +2439,8 @@ pub mod fluent_builders {
         /// <p>
         /// This specifies if the action needs manual or automatic approval.
         /// </p>
-        pub fn approval_model(mut self, signature: crate::model::ApprovalModel) -> Self {
-            self.inner = self.inner.approval_model(signature);
+        pub fn approval_model(mut self, input: crate::model::ApprovalModel) -> Self {
+            self.inner = self.inner.approval_model(input);
             self
         }
         /// <p>
@@ -2531,8 +2531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose notification you want to update.</p>
@@ -2541,8 +2541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose notification you want to update.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose notification you want to update.</p>
@@ -2551,8 +2551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The previous notification that is associated with a budget.</p>
-        pub fn old_notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.old_notification(signature);
+        pub fn old_notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.old_notification(input);
             self
         }
         /// <p>The previous notification that is associated with a budget.</p>
@@ -2564,8 +2564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated notification to be associated with a budget.</p>
-        pub fn new_notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.new_notification(signature);
+        pub fn new_notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.new_notification(input);
             self
         }
         /// <p>The updated notification to be associated with a budget.</p>
@@ -2637,8 +2637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The <code>accountId</code> that is associated with the budget whose subscriber you want to update.</p>
@@ -2647,8 +2647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
-        pub fn budget_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.budget_name(signature.into());
+        pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.budget_name(input.into());
             self
         }
         /// <p>The name of the budget whose subscriber you want to update.</p>
@@ -2657,8 +2657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification whose subscriber you want to update.</p>
-        pub fn notification(mut self, signature: crate::model::Notification) -> Self {
-            self.inner = self.inner.notification(signature);
+        pub fn notification(mut self, input: crate::model::Notification) -> Self {
+            self.inner = self.inner.notification(input);
             self
         }
         /// <p>The notification whose subscriber you want to update.</p>
@@ -2670,8 +2670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
-        pub fn old_subscriber(mut self, signature: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.old_subscriber(signature);
+        pub fn old_subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.old_subscriber(input);
             self
         }
         /// <p>The previous subscriber that is associated with a budget notification.</p>
@@ -2683,8 +2683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>
-        pub fn new_subscriber(mut self, signature: crate::model::Subscriber) -> Self {
-            self.inner = self.inner.new_subscriber(signature);
+        pub fn new_subscriber(mut self, input: crate::model::Subscriber) -> Self {
+            self.inner = self.inner.new_subscriber(input);
             self
         }
         /// <p>The updated subscriber that is associated with a budget notification.</p>

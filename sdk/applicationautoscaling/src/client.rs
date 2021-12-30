@@ -229,8 +229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling policy.</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the scaling policy.</p>
@@ -240,8 +240,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -319,8 +319,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scalable target.
@@ -476,8 +476,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -647,8 +647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the scheduled action.</p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action.</p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scheduled action.
@@ -882,8 +882,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -1043,8 +1043,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -1122,8 +1122,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scalable target.
@@ -1280,8 +1280,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension associated with the scalable target.
@@ -1439,8 +1439,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -1683,8 +1683,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension associated with the scalable target.
@@ -1785,8 +1785,8 @@ pub mod fluent_builders {
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
         /// used, the operation returns up to 50 results and a
         /// <code>NextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of scalable targets. This value can be between 1 and
@@ -1801,8 +1801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -1875,8 +1875,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -1954,8 +1954,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scaling activity.
@@ -2112,8 +2112,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -2214,8 +2214,8 @@ pub mod fluent_builders {
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
         /// used, the operation returns up to 50 results and a
         /// <code>NextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of scalable targets. This value can be between 1 and
@@ -2230,8 +2230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2321,8 +2321,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -2400,8 +2400,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scaling policy.
@@ -2558,8 +2558,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -2660,8 +2660,8 @@ pub mod fluent_builders {
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
         /// used, the operation returns up to 10 results and a <code>NextToken</code> value, if
         /// applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of scalable targets. This value can be between 1 and 10. The default
@@ -2676,8 +2676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2768,8 +2768,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -2847,8 +2847,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scheduled action.
@@ -3005,8 +3005,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.
@@ -3107,8 +3107,8 @@ pub mod fluent_builders {
         /// include the <code>NextToken</code> value in a subsequent call. If this parameter is not
         /// used, the operation returns up to 50 results and a
         /// <code>NextToken</code> value, if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of scheduled action results. This value can be between
@@ -3123,8 +3123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -3217,8 +3217,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scaling policy.</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the scaling policy.</p>
@@ -3228,8 +3228,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -3307,8 +3307,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scaling policy.
@@ -3464,8 +3464,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -3567,8 +3567,8 @@ pub mod fluent_builders {
         /// Neptune.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
         /// tracking scaling policies</a> and <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-        pub fn policy_type(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(signature);
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
         /// <p>The policy type. This parameter is required if you are creating a scaling policy.</p>
@@ -3592,9 +3592,9 @@ pub mod fluent_builders {
         /// <code>StepScaling</code>.</p>
         pub fn step_scaling_policy_configuration(
             mut self,
-            signature: crate::model::StepScalingPolicyConfiguration,
+            input: crate::model::StepScalingPolicyConfiguration,
         ) -> Self {
-            self.inner = self.inner.step_scaling_policy_configuration(signature);
+            self.inner = self.inner.step_scaling_policy_configuration(input);
             self
         }
         /// <p>A step scaling policy.</p>
@@ -3613,11 +3613,11 @@ pub mod fluent_builders {
         /// <code>TargetTrackingScaling</code>.</p>
         pub fn target_tracking_scaling_policy_configuration(
             mut self,
-            signature: crate::model::TargetTrackingScalingPolicyConfiguration,
+            input: crate::model::TargetTrackingScalingPolicyConfiguration,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_tracking_scaling_policy_configuration(signature);
+                .target_tracking_scaling_policy_configuration(input);
             self
         }
         /// <p>A target tracking scaling policy. Includes support for predefined or customized
@@ -3709,8 +3709,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -3744,8 +3744,8 @@ pub mod fluent_builders {
         /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is
         /// <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
         /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The schedule for this action. The following formats are supported:</p>
@@ -3778,8 +3778,8 @@ pub mod fluent_builders {
         /// expression. If a time zone is not provided, UTC is used by default.</p>
         /// <p>Valid values are the canonical names of the IANA time zones supported by Joda-Time (such
         /// as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a href="https://www.joda.org/joda-time/timezones.html">https://www.joda.org/joda-time/timezones.html</a>.</p>
-        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(signature.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>Specifies the time zone used when setting a scheduled action by using an at or cron
@@ -3792,8 +3792,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the scheduled action. This name must be unique among all other scheduled
         /// actions on the specified scalable target. </p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action. This name must be unique among all other scheduled
@@ -3871,8 +3871,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource associated with the scheduled action.
@@ -4028,8 +4028,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
@@ -4123,8 +4123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time for this scheduled action to start, in UTC.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The date and time for this scheduled action to start, in UTC.</p>
@@ -4136,8 +4136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
@@ -4152,11 +4152,8 @@ pub mod fluent_builders {
         /// scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out
         /// to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling
         /// scales in to the maximum capacity.</p>
-        pub fn scalable_target_action(
-            mut self,
-            signature: crate::model::ScalableTargetAction,
-        ) -> Self {
-            self.inner = self.inner.scalable_target_action(signature);
+        pub fn scalable_target_action(mut self, input: crate::model::ScalableTargetAction) -> Self {
+            self.inner = self.inner.scalable_target_action(input);
             self
         }
         /// <p>The new minimum and maximum capacity. You can set both values or just one. At the
@@ -4253,8 +4250,8 @@ pub mod fluent_builders {
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
         /// by your own application or service, use <code>custom-resource</code> instead.</p>
-        pub fn service_namespace(mut self, signature: crate::model::ServiceNamespace) -> Self {
-            self.inner = self.inner.service_namespace(signature);
+        pub fn service_namespace(mut self, input: crate::model::ServiceNamespace) -> Self {
+            self.inner = self.inner.service_namespace(input);
             self
         }
         /// <p>The namespace of the Amazon Web Services service that provides the resource. For a resource provided
@@ -4332,8 +4329,8 @@ pub mod fluent_builders {
         /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the resource that is associated with the scalable target.
@@ -4490,8 +4487,8 @@ pub mod fluent_builders {
         /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn scalable_dimension(mut self, signature: crate::model::ScalableDimension) -> Self {
-            self.inner = self.inner.scalable_dimension(signature);
+        pub fn scalable_dimension(mut self, input: crate::model::ScalableDimension) -> Self {
+            self.inner = self.inner.scalable_dimension(input);
             self
         }
         /// <p>The scalable dimension associated with the scalable target.
@@ -4591,8 +4588,8 @@ pub mod fluent_builders {
         /// <p>For certain resources, the minimum value allowed is 0. This includes Lambda provisioned
         /// concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources.
         /// For all other resources, the minimum value allowed is 1.</p>
-        pub fn min_capacity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.min_capacity(signature);
+        pub fn min_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_capacity(input);
             self
         }
         /// <p>The minimum value that you plan to scale in to. When a scaling policy is in effect,
@@ -4614,8 +4611,8 @@ pub mod fluent_builders {
         /// information, consult the documentation for that service. For information about the default
         /// quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
         /// Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
-        pub fn max_capacity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_capacity(signature);
+        pub fn max_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>The maximum value that you plan to scale out to. When a scaling policy is in effect,
@@ -4636,8 +4633,8 @@ pub mod fluent_builders {
         /// target on your behalf. </p>
         /// <p>If the service supports service-linked roles, Application Auto Scaling uses a service-linked role, which
         /// it creates if it does not yet exist. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-roles">Application Auto Scaling IAM roles</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>This parameter is required for services that do not support service-linked roles (such as
@@ -4672,8 +4669,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending and resuming scaling</a> in the <i>Application Auto Scaling User
         /// Guide</i>.</p>
-        pub fn suspended_state(mut self, signature: crate::model::SuspendedState) -> Self {
-            self.inner = self.inner.suspended_state(signature);
+        pub fn suspended_state(mut self, input: crate::model::SuspendedState) -> Self {
+            self.inner = self.inner.suspended_state(input);
             self
         }
         /// <p>An embedded object that contains attributes and attribute values that are used to

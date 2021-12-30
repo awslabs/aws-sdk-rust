@@ -463,8 +463,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -571,8 +571,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the application.</p>
@@ -581,8 +581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description for an app.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for an app.</p>
@@ -595,8 +595,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
@@ -635,8 +635,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -733,8 +733,8 @@ pub mod fluent_builders {
         /// <p>The template is CloudFormation YAML.</p>
         /// </dd>
         /// </dl>
-        pub fn format(mut self, signature: crate::model::TemplateFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::TemplateFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The format for the recommendation template.</p>
@@ -808,8 +808,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -825,8 +825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the recommendation template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the recommendation template.</p>
@@ -836,8 +836,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -872,8 +872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
-        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(signature.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that will contain the recommendation template.</p>
@@ -942,8 +942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -952,8 +952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the policy.</p>
-        pub fn policy_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_description(signature.into());
+        pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_description(input.into());
             self
         }
         /// <p>The description for the policy.</p>
@@ -968,9 +968,9 @@ pub mod fluent_builders {
         /// data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
-            signature: crate::model::DataLocationConstraint,
+            input: crate::model::DataLocationConstraint,
         ) -> Self {
-            self.inner = self.inner.data_location_constraint(signature);
+            self.inner = self.inner.data_location_constraint(input);
             self
         }
         /// <p>Specifies a high-level geographical location constraint for where your resilience policy
@@ -984,8 +984,8 @@ pub mod fluent_builders {
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity
         /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-        pub fn tier(mut self, signature: crate::model::ResiliencyPolicyTier) -> Self {
-            self.inner = self.inner.tier(signature);
+        pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -1128,8 +1128,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -1142,8 +1142,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
-        pub fn force_delete(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_delete(signature);
+        pub fn force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete(input);
             self
         }
         /// <p>A boolean option to force the deletion of a Resilience Hub application. </p>
@@ -1153,8 +1153,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -1229,8 +1229,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -1247,8 +1247,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -1321,9 +1321,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
         pub fn recommendation_template_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.recommendation_template_arn(signature.into());
+            self.inner = self.inner.recommendation_template_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -1336,8 +1336,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -1411,8 +1411,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
@@ -1426,8 +1426,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -1501,8 +1501,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -1579,8 +1579,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -1664,8 +1664,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -1678,8 +1678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -1688,8 +1688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(signature.into());
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -1765,8 +1765,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -1779,8 +1779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -1855,8 +1855,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -1935,8 +1935,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
@@ -2014,8 +2014,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2109,8 +2109,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -2126,8 +2126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2137,8 +2137,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2213,8 +2213,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2227,8 +2227,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the assessment.</p>
-        pub fn assessment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(signature.into());
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p>The name for the assessment.</p>
@@ -2257,8 +2257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
-        pub fn compliance_status(mut self, signature: crate::model::ComplianceStatus) -> Self {
-            self.inner = self.inner.compliance_status(signature);
+        pub fn compliance_status(mut self, input: crate::model::ComplianceStatus) -> Self {
+            self.inner = self.inner.compliance_status(input);
             self
         }
         /// <p>The current status of compliance for the resiliency policy.</p>
@@ -2271,8 +2271,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
         /// <code>System</code>.</p>
-        pub fn invoker(mut self, signature: crate::model::AssessmentInvoker) -> Self {
-            self.inner = self.inner.invoker(signature);
+        pub fn invoker(mut self, input: crate::model::AssessmentInvoker) -> Self {
+            self.inner = self.inner.invoker(input);
             self
         }
         /// <p>Specifies the entity that invoked a specific assessment, either a <code>User</code> or the
@@ -2286,8 +2286,8 @@ pub mod fluent_builders {
         }
         /// <p>The default is to sort by ascending <b>startTime</b>.
         /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>The default is to sort by ascending <b>startTime</b>.
@@ -2297,8 +2297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2308,8 +2308,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2379,8 +2379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2390,8 +2390,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2405,8 +2405,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -2486,8 +2486,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -2503,8 +2503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2514,8 +2514,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2585,8 +2585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2596,8 +2596,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2607,8 +2607,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the one of the listed applications.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the one of the listed applications.</p>
@@ -2621,8 +2621,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2701,8 +2701,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2715,8 +2715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -2725,8 +2725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2736,8 +2736,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2811,8 +2811,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2825,8 +2825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -2835,8 +2835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(signature.into());
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -2848,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2859,8 +2859,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -2934,8 +2934,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -2948,8 +2948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -2959,8 +2959,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3034,8 +3034,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -3052,8 +3052,8 @@ pub mod fluent_builders {
         }
         /// <p>The default is to sort by ascending <b>startTime</b>.
         /// To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>The default is to sort by ascending <b>startTime</b>.
@@ -3082,9 +3082,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
         pub fn recommendation_template_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.recommendation_template_arn(signature.into());
+            self.inner = self.inner.recommendation_template_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
@@ -3096,8 +3096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for one of the listed recommendation templates.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for one of the listed recommendation templates.</p>
@@ -3106,8 +3106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3117,8 +3117,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3188,8 +3188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -3198,8 +3198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3209,8 +3209,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3281,8 +3281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3292,8 +3292,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3307,8 +3307,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -3384,8 +3384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3395,8 +3395,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3467,8 +3467,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
         /// application.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for a specific resource in your Resilience Hub
@@ -3538,8 +3538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3549,8 +3549,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3564,8 +3564,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn assessment_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_arn(signature.into());
+        pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is:
@@ -3649,8 +3649,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -3663,8 +3663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -3673,8 +3673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for a specific resolution.</p>
-        pub fn resolution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resolution_id(signature.into());
+        pub fn resolution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resolution_id(input.into());
             self
         }
         /// <p>The identifier for a specific resolution.</p>
@@ -3686,8 +3686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -3697,8 +3697,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
         /// <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist than the specified
@@ -3772,8 +3772,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -3850,8 +3850,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -3864,8 +3864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON string that contains the body of the app template.</p>
-        pub fn app_template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_template_body(signature.into());
+        pub fn app_template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_template_body(input.into());
             self
         }
         /// <p>A JSON string that contains the body of the app template.</p>
@@ -3943,8 +3943,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -4089,8 +4089,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -4103,8 +4103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -4177,8 +4177,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -4191,8 +4191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the application.</p>
-        pub fn app_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_version(signature.into());
+        pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_version(input.into());
             self
         }
         /// <p>The version of the application.</p>
@@ -4201,8 +4201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the assessment.</p>
-        pub fn assessment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(signature.into());
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p>The name for the assessment.</p>
@@ -4215,8 +4215,8 @@ pub mod fluent_builders {
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
         /// You should not reuse the same client token for other API requests.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters.
@@ -4311,8 +4311,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -4404,8 +4404,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource. </p>
@@ -4495,8 +4495,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn app_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_arn(signature.into());
+        pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application. The format for this ARN is:
@@ -4509,8 +4509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description for an app.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for an app.</p>
@@ -4523,8 +4523,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
@@ -4537,8 +4537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
-        pub fn clear_resiliency_policy_arn(mut self, signature: bool) -> Self {
-            self.inner = self.inner.clear_resiliency_policy_arn(signature);
+        pub fn clear_resiliency_policy_arn(mut self, input: bool) -> Self {
+            self.inner = self.inner.clear_resiliency_policy_arn(input);
             self
         }
         /// <p>Specifies if the resiliency policy ARN should be cleared.</p>
@@ -4611,8 +4611,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the
         /// <i>AWS General Reference</i>.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
@@ -4625,8 +4625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the policy</p>
-        pub fn policy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_name(signature.into());
+        pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_name(input.into());
             self
         }
         /// <p>The name of the policy</p>
@@ -4635,8 +4635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the policy.</p>
-        pub fn policy_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_description(signature.into());
+        pub fn policy_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_description(input.into());
             self
         }
         /// <p>The description for the policy.</p>
@@ -4651,9 +4651,9 @@ pub mod fluent_builders {
         /// data can be stored.</p>
         pub fn data_location_constraint(
             mut self,
-            signature: crate::model::DataLocationConstraint,
+            input: crate::model::DataLocationConstraint,
         ) -> Self {
-            self.inner = self.inner.data_location_constraint(signature);
+            self.inner = self.inner.data_location_constraint(input);
             self
         }
         /// <p>Specifies a high-level geographical location constraint for where your resilience policy
@@ -4667,8 +4667,8 @@ pub mod fluent_builders {
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity
         /// (<code>MissionCritical</code>) to lowest (<code>NonCritical</code>).</p>
-        pub fn tier(mut self, signature: crate::model::ResiliencyPolicyTier) -> Self {
-            self.inner = self.inner.tier(signature);
+        pub fn tier(mut self, input: crate::model::ResiliencyPolicyTier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
         /// <p>The tier for this resiliency policy, ranging from the highest severity

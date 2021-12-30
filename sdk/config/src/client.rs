@@ -886,9 +886,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -1081,8 +1081,8 @@ pub mod fluent_builders {
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate
         /// data.</p>
-        pub fn authorized_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_account_id(signature.into());
+        pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate
@@ -1095,8 +1095,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
-        pub fn authorized_aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_aws_region(signature.into());
+        pub fn authorized_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_aws_region(input.into());
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
@@ -1177,8 +1177,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Config rule that you want to
         /// delete.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule that you want to
@@ -1254,9 +1254,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -1341,9 +1341,9 @@ pub mod fluent_builders {
         /// <code>DescribeConfigurationRecorders</code> action.</p>
         pub fn configuration_recorder_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_recorder_name(signature.into());
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
         /// <p>The name of the configuration recorder to be deleted. You can
@@ -1420,8 +1420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack you want to delete.</p>
-        pub fn conformance_pack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(signature.into());
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack you want to delete.</p>
@@ -1495,8 +1495,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the delivery channel to delete.</p>
-        pub fn delivery_channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_name(signature.into());
+        pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_name(input.into());
             self
         }
         /// <p>The name of the delivery channel to delete.</p>
@@ -1572,8 +1572,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Config rule for which you want to delete
         /// the evaluation results.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to delete
@@ -1653,9 +1653,9 @@ pub mod fluent_builders {
         /// <p>The name of organization config rule that you want to delete.</p>
         pub fn organization_config_rule_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(signature.into());
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name of organization config rule that you want to delete.</p>
@@ -1735,11 +1735,9 @@ pub mod fluent_builders {
         /// <p>The name of organization conformance pack that you want to delete.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .organization_conformance_pack_name(signature.into());
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>The name of organization conformance pack that you want to delete.</p>
@@ -1813,8 +1811,8 @@ pub mod fluent_builders {
         }
         /// <p>The 12-digit account ID of the account requesting to aggregate
         /// data.</p>
-        pub fn requester_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_account_id(signature.into());
+        pub fn requester_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the account requesting to aggregate
@@ -1827,8 +1825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region requesting to aggregate data.</p>
-        pub fn requester_aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requester_aws_region(signature.into());
+        pub fn requester_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requester_aws_region(input.into());
             self
         }
         /// <p>The region requesting to aggregate data.</p>
@@ -1900,8 +1898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
@@ -1913,8 +1911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of a resource.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of a resource.</p>
@@ -1990,8 +1988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to delete remediation exception configuration.</p>
@@ -2086,8 +2084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the resource.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource.</p>
@@ -2099,8 +2097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique identifier of the resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Unique identifier of the resource.</p>
@@ -2171,9 +2169,9 @@ pub mod fluent_builders {
         /// <p>The name of the retention configuration to delete.</p>
         pub fn retention_configuration_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.retention_configuration_name(signature.into());
+            self.inner = self.inner.retention_configuration_name(input.into());
             self
         }
         /// <p>The name of the retention configuration to delete.</p>
@@ -2245,8 +2243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the query that you want to delete.</p>
-        pub fn query_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_name(signature.into());
+        pub fn query_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_name(input.into());
             self
         }
         /// <p>The name of the query that you want to delete.</p>
@@ -2332,8 +2330,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the delivery channel through which the snapshot is
         /// delivered.</p>
-        pub fn delivery_channel_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_channel_name(signature.into());
+        pub fn delivery_channel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_channel_name(input.into());
             self
         }
         /// <p>The name of the delivery channel through which the snapshot is
@@ -2417,9 +2415,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -2432,8 +2430,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the results by ConfigRuleComplianceFilters object.
         /// </p>
-        pub fn filters(mut self, signature: crate::model::ConfigRuleComplianceFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ConfigRuleComplianceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results by ConfigRuleComplianceFilters object.
@@ -2449,8 +2447,8 @@ pub mod fluent_builders {
         /// The default is
         /// maximum.
         /// If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -2463,8 +2461,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -2533,9 +2531,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -2549,9 +2547,9 @@ pub mod fluent_builders {
         /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
         pub fn filters(
             mut self,
-            signature: crate::model::AggregateConformancePackComplianceFilters,
+            input: crate::model::AggregateConformancePackComplianceFilters,
         ) -> Self {
-            self.inner = self.inner.filters(signature);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the result by <code>AggregateConformancePackComplianceFilters</code> object.</p>
@@ -2563,8 +2561,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs compliance details returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
@@ -2573,8 +2571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -2646,8 +2644,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of AggregationAuthorizations returned on
         /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of AggregationAuthorizations returned on
@@ -2659,8 +2657,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -2802,8 +2800,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -2909,8 +2907,8 @@ pub mod fluent_builders {
         /// information (for example, <code>AWS::EC2::Instance</code>). For this
         /// action, you can specify that the resource type is an Amazon Web Services account by
         /// specifying <code>AWS::::Account</code>.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The types of Amazon Web Services resources for which you want compliance
@@ -2928,8 +2926,8 @@ pub mod fluent_builders {
         /// information. You can specify only one resource ID. If you specify a
         /// resource ID, you must also specify a type for
         /// <code>ResourceType</code>.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services resource for which you want compliance
@@ -2962,8 +2960,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
         /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -2976,8 +2974,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -3076,8 +3074,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -3095,8 +3093,8 @@ pub mod fluent_builders {
         /// <p>For information about requesting a rule limit increase, see
         /// <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">Config Limits</a> in the <i>Amazon Web Services General
         /// Reference Guide</i>.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of rule evaluation results that you want
@@ -3195,8 +3193,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -3291,8 +3289,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -3304,8 +3302,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of configuration aggregators returned on
         /// each page. The default is maximum. If you specify 0, Config uses
         /// the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of configuration aggregators returned on
@@ -3381,9 +3379,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -3441,8 +3439,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -3454,8 +3452,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of AggregatorSourceStatus returned on each
         /// page. The default is maximum. If you specify 0, Config uses the
         /// default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of AggregatorSourceStatus returned on each
@@ -3709,8 +3707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack.</p>
-        pub fn conformance_pack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(signature.into());
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack.</p>
@@ -3722,11 +3720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::ConformancePackComplianceFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ConformancePackComplianceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>ConformancePackComplianceFilters</code> object.</p>
@@ -3738,8 +3733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of Config rules within a conformance pack are returned on each page.</p>
@@ -3748,8 +3743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -3835,8 +3830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -3845,8 +3840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -3935,8 +3930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs status returned on each page.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs status returned on each page.</p>
@@ -3945,8 +3940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -4208,8 +4203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of organization config rules returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -4218,8 +4213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4318,8 +4313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -4328,8 +4323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4426,8 +4421,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
         /// number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of organization config packs returned on each page. If you do no specify a
@@ -4438,8 +4433,8 @@ pub mod fluent_builders {
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
         /// paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a
@@ -4541,8 +4536,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
         /// If you do no specify a number, Config uses the default. The default is 100. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of OrganizationConformancePackStatuses returned on each page.
@@ -4552,8 +4547,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -4626,8 +4621,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is maximum. If you specify 0, Config uses the
         /// default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -4639,8 +4634,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -4794,8 +4789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule.</p>
@@ -4829,8 +4824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of RemediationExceptionResourceKey returned on each page. The default is 25. If you specify 0, Config uses the default.</p>
@@ -4839,8 +4834,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -4912,8 +4907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of Config rule names.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>A list of Config rule names.</p>
@@ -4942,8 +4937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of RemediationExecutionStatuses returned on each page. The default is maximum. If you specify 0, Config uses the default. </p>
@@ -4952,8 +4947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -5063,8 +5058,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -5147,9 +5142,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5162,8 +5157,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want compliance
@@ -5176,8 +5171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The 12-digit account ID of the source account.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the source account.</p>
@@ -5186,8 +5181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source region from where the data is aggregated.</p>
-        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(signature.into());
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The source region from where the data is aggregated.</p>
@@ -5204,8 +5199,8 @@ pub mod fluent_builders {
         /// <code>NOT_APPLICABLE</code> and
         /// <code>INSUFFICIENT_DATA</code> values.</p>
         /// </note>
-        pub fn compliance_type(mut self, signature: crate::model::ComplianceType) -> Self {
-            self.inner = self.inner.compliance_type(signature);
+        pub fn compliance_type(mut self, input: crate::model::ComplianceType) -> Self {
+            self.inner = self.inner.compliance_type(input);
             self
         }
         /// <p>The resource compliance status.</p>
@@ -5227,8 +5222,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 50. You cannot specify a number greater than 100. If
         /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -5240,8 +5235,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -5321,9 +5316,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5336,11 +5331,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the results based on the
         /// ConfigRuleComplianceSummaryFilters object.</p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::ConfigRuleComplianceSummaryFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ConfigRuleComplianceSummaryFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the
@@ -5355,9 +5347,9 @@ pub mod fluent_builders {
         /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
         pub fn group_by_key(
             mut self,
-            signature: crate::model::ConfigRuleComplianceSummaryGroupKey,
+            input: crate::model::ConfigRuleComplianceSummaryGroupKey,
         ) -> Self {
-            self.inner = self.inner.group_by_key(signature);
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
@@ -5371,8 +5363,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 1000. You cannot specify a number greater than 1000.
         /// If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -5384,8 +5376,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
         /// to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use
@@ -5462,9 +5454,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5478,9 +5470,9 @@ pub mod fluent_builders {
         /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
         pub fn filters(
             mut self,
-            signature: crate::model::AggregateConformancePackComplianceSummaryFilters,
+            input: crate::model::AggregateConformancePackComplianceSummaryFilters,
         ) -> Self {
-            self.inner = self.inner.filters(signature);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
@@ -5496,9 +5488,9 @@ pub mod fluent_builders {
         /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
         pub fn group_by_key(
             mut self,
-            signature: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
+            input: crate::model::AggregateConformancePackComplianceSummaryGroupKey,
         ) -> Self {
-            self.inner = self.inner.group_by_key(signature);
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
@@ -5512,8 +5504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -5522,8 +5514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -5598,9 +5590,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5612,8 +5604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
-        pub fn filters(mut self, signature: crate::model::ResourceCountFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ResourceCountFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>ResourceCountFilters</code> object.</p>
@@ -5625,8 +5617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key to group the resource counts.</p>
-        pub fn group_by_key(mut self, signature: crate::model::ResourceCountGroupKey) -> Self {
-            self.inner = self.inner.group_by_key(signature);
+        pub fn group_by_key(mut self, input: crate::model::ResourceCountGroupKey) -> Self {
+            self.inner = self.inner.group_by_key(input);
             self
         }
         /// <p>The key to group the resource counts.</p>
@@ -5638,8 +5630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <a>GroupedResourceCount</a> objects returned on each page. The default is 1000. You cannot specify a number greater than 1000. If you specify 0, Config uses the default.</p>
@@ -5648,8 +5640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -5720,9 +5712,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -5736,9 +5728,9 @@ pub mod fluent_builders {
         /// <p>An object that identifies aggregate resource.</p>
         pub fn resource_identifier(
             mut self,
-            signature: crate::model::AggregateResourceIdentifier,
+            input: crate::model::AggregateResourceIdentifier,
         ) -> Self {
-            self.inner = self.inner.resource_identifier(signature);
+            self.inner = self.inner.resource_identifier(input);
             self
         }
         /// <p>An object that identifies aggregate resource.</p>
@@ -5814,8 +5806,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Config rule for which you want compliance
         /// information.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want compliance
@@ -5853,8 +5845,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of evaluation results returned on each page.
         /// The default is 10. You cannot specify a number greater than 100. If
         /// you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page.
@@ -5867,8 +5859,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -5943,8 +5935,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the Amazon Web Services resource for which you want compliance
         /// information.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the Amazon Web Services resource for which you want compliance
@@ -5958,8 +5950,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services resource for which you want compliance
         /// information.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services resource for which you want compliance
@@ -5994,8 +5986,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -6223,8 +6215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack.</p>
-        pub fn conformance_pack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(signature.into());
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack.</p>
@@ -6236,11 +6228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::ConformancePackEvaluationFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ConformancePackEvaluationFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
@@ -6252,8 +6241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of evaluation results returned on each page. If you do no specify a number, Config uses the default. The default is 100.</p>
@@ -6262,8 +6251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -6351,8 +6340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -6361,8 +6350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -6540,8 +6529,8 @@ pub mod fluent_builders {
         /// returned on each page. The default is 100. You cannot specify a
         /// number greater than 100. If you specify 0, Config uses the
         /// default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <a>ResourceCount</a> objects
@@ -6555,8 +6544,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -6631,9 +6620,9 @@ pub mod fluent_builders {
         /// <p>The name of organization config rule for which you want status details for member accounts.</p>
         pub fn organization_config_rule_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(signature.into());
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name of organization config rule for which you want status details for member accounts.</p>
@@ -6645,8 +6634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>StatusDetailFilters</code> object.</p>
-        pub fn filters(mut self, signature: crate::model::StatusDetailFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::StatusDetailFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A <code>StatusDetailFilters</code> object.</p>
@@ -6658,8 +6647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not specify a number, Config uses the default. The default is 100.</p>
@@ -6668,8 +6657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -6742,11 +6731,9 @@ pub mod fluent_builders {
         /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .organization_conformance_pack_name(signature.into());
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>The name of organization conformance pack for which you want status details for member accounts.</p>
@@ -6760,9 +6747,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
         pub fn filters(
             mut self,
-            signature: crate::model::OrganizationResourceDetailedStatusFilters,
+            input: crate::model::OrganizationResourceDetailedStatusFilters,
         ) -> Self {
-            self.inner = self.inner.filters(signature);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>An <code>OrganizationResourceDetailedStatusFilters</code> object.</p>
@@ -6775,8 +6762,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
         /// If you do not specify a number, Config uses the default. The default is 100. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned on each page.
@@ -6786,8 +6773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -6875,8 +6862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource type.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type.</p>
@@ -6889,8 +6876,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the resource (for example.,
         /// <code>sg-xxxxxx</code>).</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource (for example.,
@@ -6901,8 +6888,8 @@ pub mod fluent_builders {
         }
         /// <p>The time stamp that indicates a later time. If not specified,
         /// current time is taken.</p>
-        pub fn later_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.later_time(signature);
+        pub fn later_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.later_time(input);
             self
         }
         /// <p>The time stamp that indicates a later time. If not specified,
@@ -6918,8 +6905,8 @@ pub mod fluent_builders {
         /// specified, the action returns paginated results that contain
         /// configuration items that start when the first configuration item was
         /// recorded.</p>
-        pub fn earlier_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.earlier_time(signature);
+        pub fn earlier_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.earlier_time(input);
             self
         }
         /// <p>The time stamp that indicates an earlier time. If not
@@ -6936,8 +6923,8 @@ pub mod fluent_builders {
         /// <p>The chronological order for configuration items listed. By
         /// default, the results are listed in reverse chronological
         /// order.</p>
-        pub fn chronological_order(mut self, signature: crate::model::ChronologicalOrder) -> Self {
-            self.inner = self.inner.chronological_order(signature);
+        pub fn chronological_order(mut self, input: crate::model::ChronologicalOrder) -> Self {
+            self.inner = self.inner.chronological_order(input);
             self
         }
         /// <p>The chronological order for configuration items listed. By
@@ -6953,8 +6940,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of configuration items returned on each
         /// page. The default is 10. You cannot specify a number greater than
         /// 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of configuration items returned on each
@@ -6967,8 +6954,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -7039,8 +7026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the query.</p>
-        pub fn query_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_name(signature.into());
+        pub fn query_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_name(input.into());
             self
         }
         /// <p>The name of the query.</p>
@@ -7114,9 +7101,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator. </p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator. </p>
@@ -7128,8 +7115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resources that you want Config to list in the response.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resources that you want Config to list in the response.</p>
@@ -7141,8 +7128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
-        pub fn filters(mut self, signature: crate::model::ResourceFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ResourceFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results based on the <code>ResourceFilters</code> object.</p>
@@ -7154,8 +7141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -7164,8 +7151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
@@ -7251,8 +7238,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resources that you want Config to list in the
         /// response.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resources that you want Config to list in the
@@ -7288,8 +7275,8 @@ pub mod fluent_builders {
         /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
         /// parameter, Config lists all resources of the specified type that
         /// it has discovered.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The custom name of only those resources that you want Config to list in the response. If you do not specify this
@@ -7305,8 +7292,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of resource identifiers returned on each
         /// page. The default is 100. You cannot specify a number greater than
         /// 100. If you specify 0, Config uses the default.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of resource identifiers returned on each
@@ -7318,8 +7305,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether Config includes deleted resources in the
         /// results. By default, deleted resources are not included.</p>
-        pub fn include_deleted_resources(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_deleted_resources(signature);
+        pub fn include_deleted_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_deleted_resources(input);
             self
         }
         /// <p>Specifies whether Config includes deleted resources in the
@@ -7331,8 +7318,8 @@ pub mod fluent_builders {
         /// <p>The <code>nextToken</code> string returned on a previous page
         /// that you use to get the next page of results in a paginated
         /// response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page
@@ -7403,8 +7390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -7413,8 +7400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned with a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned with a single call.</p>
@@ -7483,8 +7470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
@@ -7493,8 +7480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of tags returned on each page. The limit maximum is 50. You cannot specify a number greater than 50. If you specify 0, Config uses the default. </p>
@@ -7503,8 +7490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
@@ -7574,8 +7561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
-        pub fn authorized_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_account_id(signature.into());
+        pub fn authorized_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_account_id(input.into());
             self
         }
         /// <p>The 12-digit account ID of the account authorized to aggregate data.</p>
@@ -7587,8 +7574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
-        pub fn authorized_aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorized_aws_region(signature.into());
+        pub fn authorized_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorized_aws_region(input.into());
             self
         }
         /// <p>The region authorized to collect aggregated data.</p>
@@ -7711,8 +7698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The rule that you want to add to your account.</p>
-        pub fn config_rule(mut self, signature: crate::model::ConfigRule) -> Self {
-            self.inner = self.inner.config_rule(signature);
+        pub fn config_rule(mut self, input: crate::model::ConfigRule) -> Self {
+            self.inner = self.inner.config_rule(input);
             self
         }
         /// <p>The rule that you want to add to your account.</p>
@@ -7818,9 +7805,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -7858,9 +7845,9 @@ pub mod fluent_builders {
         /// <p>An OrganizationAggregationSource object.</p>
         pub fn organization_aggregation_source(
             mut self,
-            signature: crate::model::OrganizationAggregationSource,
+            input: crate::model::OrganizationAggregationSource,
         ) -> Self {
-            self.inner = self.inner.organization_aggregation_source(signature);
+            self.inner = self.inner.organization_aggregation_source(input);
             self
         }
         /// <p>An OrganizationAggregationSource object.</p>
@@ -7965,9 +7952,9 @@ pub mod fluent_builders {
         /// configuration change made to the resources.</p>
         pub fn configuration_recorder(
             mut self,
-            signature: crate::model::ConfigurationRecorder,
+            input: crate::model::ConfigurationRecorder,
         ) -> Self {
-            self.inner = self.inner.configuration_recorder(signature);
+            self.inner = self.inner.configuration_recorder(input);
             self
         }
         /// <p>The configuration recorder object that records each
@@ -8046,8 +8033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the conformance pack you want to create.</p>
-        pub fn conformance_pack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.conformance_pack_name(signature.into());
+        pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the conformance pack you want to create.</p>
@@ -8062,8 +8049,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
-        pub fn template_s3_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_s3_uri(signature.into());
+        pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_s3_uri(input.into());
             self
         }
         /// <p>Location of file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point to the conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as the conformance pack. </p>
@@ -8081,8 +8068,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can only use a YAML template with one resource type, that is, config rule and a remediation action. </p>
         /// </note>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
@@ -8100,8 +8087,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_bucket(signature.into());
+        pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_bucket(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
@@ -8119,8 +8106,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_key_prefix(signature.into());
+        pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_key_prefix(input.into());
             self
         }
         /// <p>The prefix for the Amazon S3 bucket. </p>
@@ -8233,8 +8220,8 @@ pub mod fluent_builders {
         /// <p>The configuration delivery channel object that delivers the
         /// configuration information to an Amazon S3 bucket and to an Amazon
         /// SNS topic.</p>
-        pub fn delivery_channel(mut self, signature: crate::model::DeliveryChannel) -> Self {
-            self.inner = self.inner.delivery_channel(signature);
+        pub fn delivery_channel(mut self, input: crate::model::DeliveryChannel) -> Self {
+            self.inner = self.inner.delivery_channel(input);
             self
         }
         /// <p>The configuration delivery channel object that delivers the
@@ -8334,8 +8321,8 @@ pub mod fluent_builders {
         }
         /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
         /// evaluation.</p>
-        pub fn result_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result_token(signature.into());
+        pub fn result_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result_token(input.into());
             self
         }
         /// <p>An encrypted token that associates an evaluation with an Config rule. Identifies the rule and the event that triggered the
@@ -8355,8 +8342,8 @@ pub mod fluent_builders {
         /// for the <code>ResultToken</code> parameter, but the value cannot
         /// be null.</p>
         /// </note>
-        pub fn test_mode(mut self, signature: bool) -> Self {
-            self.inner = self.inner.test_mode(signature);
+        pub fn test_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.test_mode(input);
             self
         }
         /// <p>Use this parameter to specify a test run for
@@ -8436,8 +8423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule.</p>
@@ -8449,8 +8436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
-        pub fn external_evaluation(mut self, signature: crate::model::ExternalEvaluation) -> Self {
-            self.inner = self.inner.external_evaluation(signature);
+        pub fn external_evaluation(mut self, input: crate::model::ExternalEvaluation) -> Self {
+            self.inner = self.inner.external_evaluation(input);
             self
         }
         /// <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
@@ -8545,9 +8532,9 @@ pub mod fluent_builders {
         /// <p>The name that you assign to an organization config rule.</p>
         pub fn organization_config_rule_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.organization_config_rule_name(signature.into());
+            self.inner = self.inner.organization_config_rule_name(input.into());
             self
         }
         /// <p>The name that you assign to an organization config rule.</p>
@@ -8561,9 +8548,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
         pub fn organization_managed_rule_metadata(
             mut self,
-            signature: crate::model::OrganizationManagedRuleMetadata,
+            input: crate::model::OrganizationManagedRuleMetadata,
         ) -> Self {
-            self.inner = self.inner.organization_managed_rule_metadata(signature);
+            self.inner = self.inner.organization_managed_rule_metadata(input);
             self
         }
         /// <p>An <code>OrganizationManagedRuleMetadata</code> object. </p>
@@ -8577,9 +8564,9 @@ pub mod fluent_builders {
         /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
         pub fn organization_custom_rule_metadata(
             mut self,
-            signature: crate::model::OrganizationCustomRuleMetadata,
+            input: crate::model::OrganizationCustomRuleMetadata,
         ) -> Self {
-            self.inner = self.inner.organization_custom_rule_metadata(signature);
+            self.inner = self.inner.organization_custom_rule_metadata(input);
             self
         }
         /// <p>An <code>OrganizationCustomRuleMetadata</code> object.</p>
@@ -8690,11 +8677,9 @@ pub mod fluent_builders {
         /// <p>Name of the organization conformance pack you want to create.</p>
         pub fn organization_conformance_pack_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .organization_conformance_pack_name(signature.into());
+            self.inner = self.inner.organization_conformance_pack_name(input.into());
             self
         }
         /// <p>Name of the organization conformance pack you want to create.</p>
@@ -8710,8 +8695,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must have access to read Amazon S3 bucket.</p>
         /// </note>
-        pub fn template_s3_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_s3_uri(signature.into());
+        pub fn template_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_s3_uri(input.into());
             self
         }
         /// <p>Location of file containing the template body. The uri must point to the conformance pack template
@@ -8728,8 +8713,8 @@ pub mod fluent_builders {
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body
         /// with a minimum length of 1 byte and a maximum length of 51,200 bytes.</p>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>A string containing full conformance pack template body. Structure containing the template body
@@ -8745,8 +8730,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.</p>
         /// </note>
-        pub fn delivery_s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_bucket(signature.into());
+        pub fn delivery_s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_bucket(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket where Config stores conformance pack templates.</p>
@@ -8764,8 +8749,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This field is optional.</p>
         /// </note>
-        pub fn delivery_s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.delivery_s3_key_prefix(signature.into());
+        pub fn delivery_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delivery_s3_key_prefix(input.into());
             self
         }
         /// <p>The prefix for the Amazon S3 bucket.</p>
@@ -8972,8 +8957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Config rule for which you want to create remediation exception.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The name of the Config rule for which you want to create remediation exception.</p>
@@ -9007,8 +8992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The message contains an explanation of the exception.</p>
-        pub fn message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message(signature.into());
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message(input.into());
             self
         }
         /// <p>The message contains an explanation of the exception.</p>
@@ -9017,8 +9002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The exception is automatically deleted after the expiration date.</p>
-        pub fn expiration_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expiration_time(signature);
+        pub fn expiration_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiration_time(input);
             self
         }
         /// <p>The exception is automatically deleted after the expiration date.</p>
@@ -9102,8 +9087,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You cannot use the organization names “amzn”, “amazon”, “alexa”, “custom” with custom resource types. It is the first part of the ResourceType up to the first ::.</p>
         /// </note>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of the resource. The custom resource type must be registered with CloudFormation. </p>
@@ -9118,8 +9103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
-        pub fn schema_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(signature.into());
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>Version of the schema registered for the ResourceType in CloudFormation.</p>
@@ -9131,8 +9116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique identifier of the resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Unique identifier of the resource.</p>
@@ -9141,8 +9126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the resource.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>Name of the resource.</p>
@@ -9157,8 +9142,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The configuration JSON must not exceed 64 KB.</p>
         /// </note>
-        pub fn configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(signature.into());
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
             self
         }
         /// <p>The configuration object of the resource in valid JSON format. It must match the schema registered with CloudFormation.</p>
@@ -9271,8 +9256,8 @@ pub mod fluent_builders {
         /// <p>Currently, only applicable to the configuration item
         /// history.</p>
         /// </note>
-        pub fn retention_period_in_days(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_period_in_days(signature);
+        pub fn retention_period_in_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_in_days(input);
             self
         }
         /// <p>Number of days Config stores your historical
@@ -9352,8 +9337,8 @@ pub mod fluent_builders {
         /// <p>When you are creating a query, you must provide a query name and an expression.
         /// When you are updating a query, you must provide a query name but updating the description is optional.</p>
         /// </note>
-        pub fn stored_query(mut self, signature: crate::model::StoredQuery) -> Self {
-            self.inner = self.inner.stored_query(signature);
+        pub fn stored_query(mut self, input: crate::model::StoredQuery) -> Self {
+            self.inner = self.inner.stored_query(input);
             self
         }
         /// <p>A list of <code>StoredQuery</code> objects.
@@ -9460,8 +9445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SQL query SELECT command. </p>
-        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(signature.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The SQL query SELECT command. </p>
@@ -9472,9 +9457,9 @@ pub mod fluent_builders {
         /// <p>The name of the configuration aggregator.</p>
         pub fn configuration_aggregator_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_aggregator_name(signature.into());
+            self.inner = self.inner.configuration_aggregator_name(input.into());
             self
         }
         /// <p>The name of the configuration aggregator.</p>
@@ -9486,8 +9471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
@@ -9496,8 +9481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. Config also allows the Limit request parameter.</p>
@@ -9506,8 +9491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The nextToken string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -9580,8 +9565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SQL query <code>SELECT</code> command.</p>
-        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(signature.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>The SQL query <code>SELECT</code> command.</p>
@@ -9590,8 +9575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of query results returned on each page. </p>
@@ -9600,8 +9585,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response. </p>
@@ -9802,9 +9787,9 @@ pub mod fluent_builders {
         /// change made to the resources.</p>
         pub fn configuration_recorder_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_recorder_name(signature.into());
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
         /// <p>The name of the recorder object that records each configuration
@@ -9878,8 +9863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
-        pub fn config_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.config_rule_name(signature.into());
+        pub fn config_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.config_rule_name(input.into());
             self
         }
         /// <p>The list of names of Config rules that you want to run remediation execution for.</p>
@@ -9970,9 +9955,9 @@ pub mod fluent_builders {
         /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
         pub fn configuration_recorder_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.configuration_recorder_name(signature.into());
+            self.inner = self.inner.configuration_recorder_name(input.into());
             self
         }
         /// <p>The name of the recorder object that records each configuration change made to the resources.</p>
@@ -10045,8 +10030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
@@ -10132,8 +10117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code> and <code>AggregatorAuthorization</code>.</p>

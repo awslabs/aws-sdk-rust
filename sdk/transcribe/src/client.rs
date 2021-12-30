@@ -447,8 +447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you choose for your category when you create it. </p>
-        pub fn category_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category_name(signature.into());
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input.into());
             self
         }
         /// <p>The name that you choose for your category when you create it. </p>
@@ -543,8 +543,8 @@ pub mod fluent_builders {
         }
         /// <p>The language of the input text you're using to train your custom language
         /// model.</p>
-        pub fn language_code(mut self, signature: crate::model::ClmLanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::ClmLanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language of the input text you're using to train your custom language
@@ -561,8 +561,8 @@ pub mod fluent_builders {
         /// choose <code>Wideband</code>.</p>
         /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than
         /// 16,000 Hz, choose <code>Narrowband</code>.</p>
-        pub fn base_model_name(mut self, signature: crate::model::BaseModelName) -> Self {
-            self.inner = self.inner.base_model_name(signature);
+        pub fn base_model_name(mut self, input: crate::model::BaseModelName) -> Self {
+            self.inner = self.inner.base_model_name(input);
             self
         }
         /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
@@ -578,8 +578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name you choose for your custom language model when you create it.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name you choose for your custom language model when you create it.</p>
@@ -589,8 +589,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom
         /// language model.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom
@@ -684,8 +684,8 @@ pub mod fluent_builders {
         /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services
         /// account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a
         /// <code>ConflictException</code> error.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services
@@ -701,8 +701,8 @@ pub mod fluent_builders {
         /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your
         /// custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language
         /// code available for Amazon Transcribe Medical.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your
@@ -730,8 +730,8 @@ pub mod fluent_builders {
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
         /// Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
-        pub fn vocabulary_file_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_file_uri(signature.into());
+        pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same
@@ -839,8 +839,8 @@ pub mod fluent_builders {
         /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name
         /// is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a
         /// <code>ConflictException</code> error.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name
@@ -855,8 +855,8 @@ pub mod fluent_builders {
         }
         /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language
         /// codes, see <a>transcribe-whatis</a>.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language
@@ -893,8 +893,8 @@ pub mod fluent_builders {
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
         /// <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
-        pub fn vocabulary_file_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_file_uri(signature.into());
+        pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
@@ -995,8 +995,8 @@ pub mod fluent_builders {
         /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a
         /// vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code>
         /// error.</p>
-        pub fn vocabulary_filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_filter_name(signature.into());
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
         /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a
@@ -1011,8 +1011,8 @@ pub mod fluent_builders {
         }
         /// <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
         /// The vocabulary filter can only be used with transcription jobs in the specified language.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
@@ -1052,11 +1052,8 @@ pub mod fluent_builders {
         /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
         /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
         /// use the <code>Words</code> parameter.</p>
-        pub fn vocabulary_filter_file_uri(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.vocabulary_filter_file_uri(signature.into());
+        pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
         /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from
@@ -1152,8 +1149,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the call analytics category that you're choosing to delete. The value is case
         /// sensitive. </p>
-        pub fn category_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category_name(signature.into());
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input.into());
             self
         }
         /// <p>The name of the call analytics category that you're choosing to delete. The value is case
@@ -1226,11 +1223,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the call analytics job you want to delete.</p>
-        pub fn call_analytics_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.call_analytics_job_name(signature.into());
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input.into());
             self
         }
         /// <p>The name of the call analytics job you want to delete.</p>
@@ -1302,8 +1296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model you're choosing to delete.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the model you're choosing to delete.</p>
@@ -1375,9 +1369,9 @@ pub mod fluent_builders {
         /// delete a transcription job.</p>
         pub fn medical_transcription_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.medical_transcription_job_name(signature.into());
+            self.inner = self.inner.medical_transcription_job_name(input.into());
             self
         }
         /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to
@@ -1450,8 +1444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vocabulary that you want to delete.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary that you want to delete.</p>
@@ -1524,8 +1518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the transcription job to be deleted.</p>
-        pub fn transcription_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transcription_job_name(signature.into());
+        pub fn transcription_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transcription_job_name(input.into());
             self
         }
         /// <p>The name of the transcription job to be deleted.</p>
@@ -1597,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vocabulary to delete. </p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary to delete. </p>
@@ -1670,8 +1664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vocabulary filter to remove.</p>
-        pub fn vocabulary_filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_filter_name(signature.into());
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
         /// <p>The name of the vocabulary filter to remove.</p>
@@ -1747,8 +1741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom language model you submit to get more information.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the custom language model you submit to get more information.</p>
@@ -1817,8 +1811,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the category you want information about. This value is case sensitive.</p>
-        pub fn category_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category_name(signature.into());
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input.into());
             self
         }
         /// <p>The name of the category you want information about. This value is case sensitive.</p>
@@ -1895,11 +1889,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the analytics job you want information about. This value is case
         /// sensitive. </p>
-        pub fn call_analytics_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.call_analytics_job_name(signature.into());
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input.into());
             self
         }
         /// <p>The name of the analytics job you want information about. This value is case
@@ -1976,9 +1967,9 @@ pub mod fluent_builders {
         /// <p>The name of the medical transcription job.</p>
         pub fn medical_transcription_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.medical_transcription_job_name(signature.into());
+            self.inner = self.inner.medical_transcription_job_name(input.into());
             self
         }
         /// <p>The name of the medical transcription job.</p>
@@ -2050,8 +2041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
@@ -2126,8 +2117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job.</p>
-        pub fn transcription_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transcription_job_name(signature.into());
+        pub fn transcription_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transcription_job_name(input.into());
             self
         }
         /// <p>The name of the job.</p>
@@ -2200,8 +2191,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the vocabulary to return information about. The name is case
         /// sensitive.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary to return information about. The name is case
@@ -2274,8 +2265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the vocabulary filter for which to return information.</p>
-        pub fn vocabulary_filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_filter_name(signature.into());
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
         /// <p>The name of the vocabulary filter for which to return information.</p>
@@ -2350,8 +2341,8 @@ pub mod fluent_builders {
         }
         /// <p>When included, <code>NextToken</code>fetches the next set of categories if the result
         /// of the previous request was truncated.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When included, <code>NextToken</code>fetches the next set of categories if the result
@@ -2363,8 +2354,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of categories to return in each page of results. If there are fewer
         /// results than the value you specify, only the actual results are returned. If you do not specify a
         /// value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of categories to return in each page of results. If there are fewer
@@ -2437,8 +2428,8 @@ pub mod fluent_builders {
         /// <p>When specified, returns only call analytics jobs with the specified status. Jobs are ordered
         /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
         /// returns all analytics jobs ordered by creation date.</p>
-        pub fn status(mut self, signature: crate::model::CallAnalyticsJobStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::CallAnalyticsJobStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>When specified, returns only call analytics jobs with the specified status. Jobs are ordered
@@ -2453,8 +2444,8 @@ pub mod fluent_builders {
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the
         /// specified string.</p>
-        pub fn job_name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name_contains(signature.into());
+        pub fn job_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name_contains(input.into());
             self
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the
@@ -2469,8 +2460,8 @@ pub mod fluent_builders {
         /// <p>If you receive a truncated result in the previous request of
         /// ,
         /// include <code>NextToken</code> to fetch the next set of jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you receive a truncated result in the previous request of
@@ -2483,8 +2474,8 @@ pub mod fluent_builders {
         /// <p>  The maximum number of call analytics jobs to return in each page of results. If there are
         /// fewer results than the value you specify, only the actual results are returned. If you do not
         /// specify a value, the default of 5 is used. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>  The maximum number of call analytics jobs to return in each page of results. If there are
@@ -2559,8 +2550,8 @@ pub mod fluent_builders {
         /// <p>When specified, returns only custom language models with the specified status. Language models are ordered
         /// by creation date, with the newest models first. If you don't specify a status, Amazon Transcribe returns all custom language
         /// models ordered by date.</p>
-        pub fn status_equals(mut self, signature: crate::model::ModelStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::ModelStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>When specified, returns only custom language models with the specified status. Language models are ordered
@@ -2574,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When specified, the custom language model names returned contain the substring you've specified.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>When specified, the custom language model names returned contain the substring you've specified.</p>
@@ -2587,8 +2578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When included, fetches the next set of jobs if the result of the previous request was truncated.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When included, fetches the next set of jobs if the result of the previous request was truncated.</p>
@@ -2598,8 +2589,8 @@ pub mod fluent_builders {
         }
         /// <p> The maximum number of language models to return in each page of results. If there are fewer results than the
         /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of language models to return in each page of results. If there are fewer results than the
@@ -2671,8 +2662,8 @@ pub mod fluent_builders {
         /// <p>When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
         /// date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all transcription jobs ordered
         /// by creation date.</p>
-        pub fn status(mut self, signature: crate::model::TranscriptionJobStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TranscriptionJobStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
@@ -2686,8 +2677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
-        pub fn job_name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name_contains(signature.into());
+        pub fn job_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name_contains(input.into());
             self
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
@@ -2700,8 +2691,8 @@ pub mod fluent_builders {
         }
         /// <p>If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
         /// include <code>NextToken</code> to fetch the next set of jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
@@ -2713,8 +2704,8 @@ pub mod fluent_builders {
         /// <p> The maximum number of medical transcription jobs to return in each page of results. If there are fewer
         /// results than the value you specify, only the actual results are returned. If you do not specify a value, the default of
         /// 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of medical transcription jobs to return in each page of results. If there are fewer
@@ -2787,8 +2778,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
         /// <code>NextToken</code> to fetch the next set of vocabularies.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
@@ -2799,8 +2790,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
         /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
@@ -2811,8 +2802,8 @@ pub mod fluent_builders {
         }
         /// <p>When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
         /// vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.</p>
-        pub fn state_equals(mut self, signature: crate::model::VocabularyState) -> Self {
-            self.inner = self.inner.state_equals(signature);
+        pub fn state_equals(mut self, input: crate::model::VocabularyState) -> Self {
+            self.inner = self.inner.state_equals(input);
             self
         }
         /// <p>When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
@@ -2827,8 +2818,8 @@ pub mod fluent_builders {
         /// <p>Returns vocabularies whose names contain the specified string. The search is not case sensitive.
         /// <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and
         /// "<code>VocabularyName</code>".</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Returns vocabularies whose names contain the specified string. The search is not case sensitive.
@@ -2908,8 +2899,8 @@ pub mod fluent_builders {
         /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
         /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
         /// <code>language-model</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Lists all tags associated with a given Amazon Resource Name (ARN). ARNs have the format
@@ -2986,8 +2977,8 @@ pub mod fluent_builders {
         /// <p>When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date, with
         /// the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription jobs ordered by creation
         /// date.</p>
-        pub fn status(mut self, signature: crate::model::TranscriptionJobStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TranscriptionJobStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date, with
@@ -3001,8 +2992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
-        pub fn job_name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name_contains(signature.into());
+        pub fn job_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name_contains(input.into());
             self
         }
         /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
@@ -3015,8 +3006,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
         /// <code>NextToken</code> to fetch the next set of jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
@@ -3027,8 +3018,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of jobs to return in each page of results. If there are fewer results than the value you
         /// specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of jobs to return in each page of results. If there are fewer results than the value you
@@ -3100,8 +3091,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the
         /// <code>NextToken</code> to fetch the next set of jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the
@@ -3112,8 +3103,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
         /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
@@ -3124,8 +3115,8 @@ pub mod fluent_builders {
         }
         /// <p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the
         /// specified state.</p>
-        pub fn state_equals(mut self, signature: crate::model::VocabularyState) -> Self {
-            self.inner = self.inner.state_equals(signature);
+        pub fn state_equals(mut self, input: crate::model::VocabularyState) -> Self {
+            self.inner = self.inner.state_equals(input);
             self
         }
         /// <p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the
@@ -3140,8 +3131,8 @@ pub mod fluent_builders {
         /// <p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
         /// specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
         /// and "VocabularyName" in the response list.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
@@ -3216,8 +3207,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous request to <code>ListVocabularyFilters</code> was truncated, include the
         /// <code>NextToken</code> to fetch the next set of collections.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request to <code>ListVocabularyFilters</code> was truncated, include the
@@ -3228,8 +3219,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of filters to return in each page of results. If there are fewer results than the value you
         /// specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of filters to return in each page of results. If there are fewer results than the value you
@@ -3239,8 +3230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the response so that it only contains vocabulary filters whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filters the response so that it only contains vocabulary filters whose name contains the specified string.</p>
@@ -3318,11 +3309,8 @@ pub mod fluent_builders {
         /// <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
         /// must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the same
         /// name as a previous call analytics job, you get a <code>ConflictException</code> error.</p>
-        pub fn call_analytics_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.call_analytics_job_name(signature.into());
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input.into());
             self
         }
         /// <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
@@ -3336,8 +3324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the input media file in a transcription request.</p>
-        pub fn media(mut self, signature: crate::model::Media) -> Self {
-            self.inner = self.inner.media(signature);
+        pub fn media(mut self, input: crate::model::Media) -> Self {
+            self.inner = self.inner.media(input);
             self
         }
         /// <p>Describes the input media file in a transcription request.</p>
@@ -3369,8 +3357,8 @@ pub mod fluent_builders {
         /// analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
         /// Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your
         /// S3 bucket.</p>
-        pub fn output_location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_location(signature.into());
+        pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_location(input.into());
             self
         }
         /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
@@ -3432,9 +3420,9 @@ pub mod fluent_builders {
         /// <code>OutputLocation</code> parameter. </p>
         pub fn output_encryption_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.output_encryption_kms_key_id(signature.into());
+            self.inner = self.inner.output_encryption_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt
@@ -3473,8 +3461,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
         /// Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your transcription
         /// results, this role should have access to the output bucket as well.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
@@ -3488,8 +3476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
-        pub fn settings(mut self, signature: crate::model::CallAnalyticsJobSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
@@ -3587,9 +3575,9 @@ pub mod fluent_builders {
         /// <code>ConflictException</code> error.</p>
         pub fn medical_transcription_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.medical_transcription_job_name(signature.into());
+            self.inner = self.inner.medical_transcription_job_name(input.into());
             self
         }
         /// <p>The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
@@ -3606,8 +3594,8 @@ pub mod fluent_builders {
         /// <p>The language code for the language spoken in the input media file. US English (en-US) is the valid value for
         /// medical transcription jobs. Any other value you enter for language code results in a
         /// <code>BadRequestException</code> error.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code for the language spoken in the input media file. US English (en-US) is the valid value for
@@ -3624,8 +3612,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify the sample rate,
         /// it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave the
         /// <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.</p>
-        pub fn media_sample_rate_hertz(mut self, signature: i32) -> Self {
-            self.inner = self.inner.media_sample_rate_hertz(signature);
+        pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
+            self.inner = self.inner.media_sample_rate_hertz(input);
             self
         }
         /// <p>The sample rate, in Hertz, of the audio track in the input media file.</p>
@@ -3637,8 +3625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The audio format of the input media file.</p>
-        pub fn media_format(mut self, signature: crate::model::MediaFormat) -> Self {
-            self.inner = self.inner.media_format(signature);
+        pub fn media_format(mut self, input: crate::model::MediaFormat) -> Self {
+            self.inner = self.inner.media_format(input);
             self
         }
         /// <p>The audio format of the input media file.</p>
@@ -3650,8 +3638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the input media file in a transcription request.</p>
-        pub fn media(mut self, signature: crate::model::Media) -> Self {
-            self.inner = self.inner.media(signature);
+        pub fn media(mut self, input: crate::model::Media) -> Self {
+            self.inner = self.inner.media(input);
             self
         }
         /// <p>Describes the input media file in a transcription request.</p>
@@ -3668,8 +3656,8 @@ pub mod fluent_builders {
         /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
         /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe Medical
         /// uses the default Amazon S3 key for server-side encryption of transcripts that are placed in your S3 bucket.</p>
-        pub fn output_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket_name(signature.into());
+        pub fn output_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket_name(input.into());
             self
         }
         /// <p>The Amazon S3 location where the transcription is stored.</p>
@@ -3698,8 +3686,8 @@ pub mod fluent_builders {
         /// example "folder/my-other-job-name.json".</p>
         /// <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
         /// parameter.</p>
-        pub fn output_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_key(signature.into());
+        pub fn output_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_key(input.into());
             self
         }
         /// <p>You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.</p>
@@ -3744,9 +3732,9 @@ pub mod fluent_builders {
         /// <code>OutputBucketName</code> parameter.</p>
         pub fn output_encryption_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.output_encryption_kms_key_id(signature.into());
+            self.inner = self.inner.output_encryption_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to
@@ -3808,8 +3796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional settings for the medical transcription job.</p>
-        pub fn settings(mut self, signature: crate::model::MedicalTranscriptionSetting) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::MedicalTranscriptionSetting) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>Optional settings for the medical transcription job.</p>
@@ -3824,9 +3812,9 @@ pub mod fluent_builders {
         /// Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in the transcription output.</p>
         pub fn content_identification_type(
             mut self,
-            signature: crate::model::MedicalContentIdentificationType,
+            input: crate::model::MedicalContentIdentificationType,
         ) -> Self {
-            self.inner = self.inner.content_identification_type(signature);
+            self.inner = self.inner.content_identification_type(input);
             self
         }
         /// <p>You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify <code>PHI</code>,
@@ -3839,8 +3827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The medical specialty of any clinician speaking in the input media.</p>
-        pub fn specialty(mut self, signature: crate::model::Specialty) -> Self {
-            self.inner = self.inner.specialty(signature);
+        pub fn specialty(mut self, input: crate::model::Specialty) -> Self {
+            self.inner = self.inner.specialty(input);
             self
         }
         /// <p>The medical specialty of any clinician speaking in the input media.</p>
@@ -3854,8 +3842,8 @@ pub mod fluent_builders {
         /// <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
         /// more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
         /// single-speaker dictated speech, such as clinical notes.</p>
-        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
@@ -3945,8 +3933,8 @@ pub mod fluent_builders {
         /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
         /// job name. The name must also be unique within an Amazon Web Services account. If you try to create a transcription
         /// job with the same name as a previous transcription job, you get a <code>ConflictException</code> error.</p>
-        pub fn transcription_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transcription_job_name(signature.into());
+        pub fn transcription_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transcription_job_name(input.into());
             self
         }
         /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
@@ -3962,8 +3950,8 @@ pub mod fluent_builders {
         /// <p>The language code for the language used in the input media file.</p>
         /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample
         /// rate of 16,000 Hz or higher.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code for the language used in the input media file.</p>
@@ -3980,8 +3968,8 @@ pub mod fluent_builders {
         /// <p>If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the sample rate, it
         /// must match the sample rate detected by Amazon Transcribe. In most cases, you should leave the
         /// <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.</p>
-        pub fn media_sample_rate_hertz(mut self, signature: i32) -> Self {
-            self.inner = self.inner.media_sample_rate_hertz(signature);
+        pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
+            self.inner = self.inner.media_sample_rate_hertz(input);
             self
         }
         /// <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
@@ -3993,8 +3981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format of the input media file.</p>
-        pub fn media_format(mut self, signature: crate::model::MediaFormat) -> Self {
-            self.inner = self.inner.media_format(signature);
+        pub fn media_format(mut self, input: crate::model::MediaFormat) -> Self {
+            self.inner = self.inner.media_format(input);
             self
         }
         /// <p>The format of the input media file.</p>
@@ -4006,8 +3994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that describes the input media for a transcription job.</p>
-        pub fn media(mut self, signature: crate::model::Media) -> Self {
-            self.inner = self.inner.media(signature);
+        pub fn media(mut self, input: crate::model::Media) -> Self {
+            self.inner = self.inner.media(input);
             self
         }
         /// <p>An object that describes the input media for a transcription job.</p>
@@ -4029,8 +4017,8 @@ pub mod fluent_builders {
         /// <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that
         /// provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL
         /// to download the transcription.</p>
-        pub fn output_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_bucket_name(signature.into());
+        pub fn output_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_bucket_name(input.into());
             self
         }
         /// <p>The location where the transcription is stored.</p>
@@ -4064,8 +4052,8 @@ pub mod fluent_builders {
         /// name, for example "folder/my-other-job-name.json".</p>
         /// <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
         /// parameter.</p>
-        pub fn output_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_key(signature.into());
+        pub fn output_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_key(input.into());
             self
         }
         /// <p>You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
@@ -4110,9 +4098,9 @@ pub mod fluent_builders {
         /// <code>OutputBucketName</code> parameter.</p>
         pub fn output_encryption_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.output_encryption_kms_key_id(signature.into());
+            self.inner = self.inner.output_encryption_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to
@@ -4174,8 +4162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
-        pub fn settings(mut self, signature: crate::model::Settings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::Settings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
@@ -4184,8 +4172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Choose the custom language model you use for your transcription job in this parameter.</p>
-        pub fn model_settings(mut self, signature: crate::model::ModelSettings) -> Self {
-            self.inner = self.inner.model_settings(signature);
+        pub fn model_settings(mut self, input: crate::model::ModelSettings) -> Self {
+            self.inner = self.inner.model_settings(input);
             self
         }
         /// <p>Choose the custom language model you use for your transcription job in this parameter.</p>
@@ -4199,11 +4187,8 @@ pub mod fluent_builders {
         /// <p>Provides information about how a transcription job is executed. Use this field to indicate that the job can be
         /// queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately run
         /// the job.</p>
-        pub fn job_execution_settings(
-            mut self,
-            signature: crate::model::JobExecutionSettings,
-        ) -> Self {
-            self.inner = self.inner.job_execution_settings(signature);
+        pub fn job_execution_settings(mut self, input: crate::model::JobExecutionSettings) -> Self {
+            self.inner = self.inner.job_execution_settings(input);
             self
         }
         /// <p>Provides information about how a transcription job is executed. Use this field to indicate that the job can be
@@ -4217,8 +4202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains the request parameters for content redaction.</p>
-        pub fn content_redaction(mut self, signature: crate::model::ContentRedaction) -> Self {
-            self.inner = self.inner.content_redaction(signature);
+        pub fn content_redaction(mut self, input: crate::model::ContentRedaction) -> Self {
+            self.inner = self.inner.content_redaction(input);
             self
         }
         /// <p>An object that contains the request parameters for content redaction.</p>
@@ -4232,8 +4217,8 @@ pub mod fluent_builders {
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification
         /// is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a
         /// <code>LanguageCode</code>.</p>
-        pub fn identify_language(mut self, signature: bool) -> Self {
-            self.inner = self.inner.identify_language(signature);
+        pub fn identify_language(mut self, input: bool) -> Self {
+            self.inner = self.inner.identify_language(input);
             self
         }
         /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification
@@ -4267,8 +4252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Add subtitles to your batch transcription job.</p>
-        pub fn subtitles(mut self, signature: crate::model::Subtitles) -> Self {
-            self.inner = self.inner.subtitles(signature);
+        pub fn subtitles(mut self, input: crate::model::Subtitles) -> Self {
+            self.inner = self.inner.subtitles(input);
             self
         }
         /// <p>Add subtitles to your batch transcription job.</p>
@@ -4393,8 +4378,8 @@ pub mod fluent_builders {
         /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
         /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
         /// <code>language-model</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag. ARNs have the format
@@ -4493,8 +4478,8 @@ pub mod fluent_builders {
         /// <code>medical-transcription-job</code>, <code>vocabulary</code>,
         /// <code>medical-vocabulary</code>, <code>vocabulary-filter</code>, and
         /// <code>language-model</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.
@@ -4589,8 +4574,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
         /// category with the same name as a previous category you will receive a <code>ConflictException</code> error.</p>
-        pub fn category_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category_name(signature.into());
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input.into());
             self
         }
         /// <p>The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
@@ -4685,8 +4670,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
         /// same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
@@ -4700,8 +4685,8 @@ pub mod fluent_builders {
         }
         /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the
         /// only valid language code in Amazon Transcribe Medical.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the
@@ -4727,8 +4712,8 @@ pub mod fluent_builders {
         /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
         /// Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
-        pub fn vocabulary_file_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_file_uri(signature.into());
+        pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
@@ -4815,8 +4800,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
         /// same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
-        pub fn vocabulary_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_name(signature.into());
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_name(input.into());
             self
         }
         /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
@@ -4830,8 +4815,8 @@ pub mod fluent_builders {
         }
         /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes,
         /// see <a>transcribe-whatis</a>.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes,
@@ -4868,8 +4853,8 @@ pub mod fluent_builders {
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
         /// Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
-        pub fn vocabulary_file_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_file_uri(signature.into());
+        pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_file_uri(input.into());
             self
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
@@ -4949,8 +4934,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
         /// another vocabulary filter, you get a <code>ConflictException</code> error.</p>
-        pub fn vocabulary_filter_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vocabulary_filter_name(signature.into());
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_name(input.into());
             self
         }
         /// <p>The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
@@ -4991,11 +4976,8 @@ pub mod fluent_builders {
         /// <p>If you provide the location of a list of words in the
         /// <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code>
         /// parameter.</p>
-        pub fn vocabulary_filter_file_uri(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.vocabulary_filter_file_uri(signature.into());
+        pub fn vocabulary_filter_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vocabulary_filter_file_uri(input.into());
             self
         }
         /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from

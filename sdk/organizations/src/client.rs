@@ -564,8 +564,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
         /// followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn handshake_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handshake_id(signature.into());
+        pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handshake_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the handshake that you want to accept.</p>
@@ -665,8 +665,8 @@ pub mod fluent_builders {
         /// operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy that you want to attach to the target. You
@@ -700,8 +700,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(signature.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root, OU, or account that you want to attach the
@@ -799,8 +799,8 @@ pub mod fluent_builders {
         /// ID from the <a>ListHandshakesForOrganization</a> operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
         /// followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn handshake_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handshake_id(signature.into());
+        pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handshake_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the handshake that you want to cancel. You can get the
@@ -952,8 +952,8 @@ pub mod fluent_builders {
         /// must not already be associated with another AWS account. You must use a valid email
         /// address to complete account creation. You can't access the root user of the account or
         /// remove an account that was created with an invalid email address.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the owner to assign to the new member account. This email address
@@ -965,8 +965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The friendly name of the member account.</p>
-        pub fn account_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_name(signature.into());
+        pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_name(input.into());
             self
         }
         /// <p>The friendly name of the member account.</p>
@@ -1000,8 +1000,8 @@ pub mod fluent_builders {
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
         /// is used to validate this parameter. The pattern can include uppercase
         /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>(Optional)</p>
@@ -1045,9 +1045,9 @@ pub mod fluent_builders {
         /// the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
-            signature: crate::model::IamUserAccessToBilling,
+            input: crate::model::IamUserAccessToBilling,
         ) -> Self {
-            self.inner = self.inner.iam_user_access_to_billing(signature);
+            self.inner = self.inner.iam_user_access_to_billing(input);
             self
         }
         /// <p>If set to <code>ALLOW</code>, the new account enables IAM users to access account
@@ -1299,8 +1299,8 @@ pub mod fluent_builders {
         /// address. Like all request parameters for <code>CreateGovCloudAccount</code>, the request
         /// for the email address for the AWS GovCloud (US) account originates from the commercial
         /// Region, not from the AWS GovCloud (US) Region.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the owner to assign to the new member account in the commercial
@@ -1315,8 +1315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The friendly name of the member account.</p>
-        pub fn account_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_name(signature.into());
+        pub fn account_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_name(input.into());
             self
         }
         /// <p>The friendly name of the member account.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that
         /// is used to validate this parameter. The pattern can include uppercase
         /// letters, lowercase letters, digits with no spaces, and any of the following characters: =,.@-</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>(Optional)</p>
@@ -1376,9 +1376,9 @@ pub mod fluent_builders {
         /// the new account.</p>
         pub fn iam_user_access_to_billing(
             mut self,
-            signature: crate::model::IamUserAccessToBilling,
+            input: crate::model::IamUserAccessToBilling,
         ) -> Self {
-            self.inner = self.inner.iam_user_access_to_billing(signature);
+            self.inner = self.inner.iam_user_access_to_billing(input);
             self
         }
         /// <p>If set to <code>ALLOW</code>, the new linked account in the commercial Region enables
@@ -1530,8 +1530,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn feature_set(mut self, signature: crate::model::OrganizationFeatureSet) -> Self {
-            self.inner = self.inner.feature_set(signature);
+        pub fn feature_set(mut self, input: crate::model::OrganizationFeatureSet) -> Self {
+            self.inner = self.inner.feature_set(input);
             self
         }
         /// <p>Specifies the feature set supported by the new organization. Each feature set supports
@@ -1651,8 +1651,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(signature.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the parent root or OU that you want to create the new OU
@@ -1677,8 +1677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The friendly name to assign to the new OU.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The friendly name to assign to the new OU.</p>
@@ -1787,8 +1787,8 @@ pub mod fluent_builders {
         }
         /// <p>The policy text content to add to the new policy. The text that you supply must adhere
         /// to the rules of the policy type you specify in the <code>Type</code> parameter.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The policy text content to add to the new policy. The text that you supply must adhere
@@ -1798,8 +1798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description to assign to the policy.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description to assign to the policy.</p>
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// that is used to validate this parameter is a string of any of the characters in the ASCII
         /// character range.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The friendly name to assign to the policy.</p>
@@ -1846,8 +1846,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of policy to create. You can specify one of the following values:</p>
@@ -1980,8 +1980,8 @@ pub mod fluent_builders {
         /// ID from the <a>ListHandshakesForAccount</a> operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
         /// followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn handshake_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handshake_id(signature.into());
+        pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handshake_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the handshake that you want to decline. You can get the
@@ -2121,8 +2121,8 @@ pub mod fluent_builders {
         /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
         /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
         /// or digits.</p>
-        pub fn organizational_unit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_id(signature.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the organizational unit that you want to delete. You can
@@ -2206,8 +2206,8 @@ pub mod fluent_builders {
         /// operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy that you want to delete. You can get the ID
@@ -2294,8 +2294,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID number of the member account in the organization that you want to
         /// deregister as a delegated administrator.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID number of the member account in the organization that you want to
@@ -2310,8 +2310,8 @@ pub mod fluent_builders {
         /// from the member account. If the specified service is the only service for which the
         /// member account is a delegated administrator, the operation also revokes Organizations read action
         /// permissions.</p>
-        pub fn service_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_principal(signature.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_principal(input.into());
             self
         }
         /// <p>The service principal name of an AWS service for which the account is a delegated
@@ -2393,8 +2393,8 @@ pub mod fluent_builders {
         /// can get the ID from the <a>ListAccounts</a> or <a>ListAccountsForParent</a> operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
         /// digits.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the AWS account that you want information about. You
@@ -2472,11 +2472,8 @@ pub mod fluent_builders {
         /// <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
         /// requires "car-" followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn create_account_request_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.create_account_request_id(signature.into());
+        pub fn create_account_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.create_account_request_id(input.into());
             self
         }
         /// <p>Specifies the <code>Id</code> value that uniquely identifies the
@@ -2579,8 +2576,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn policy_type(mut self, signature: crate::model::EffectivePolicyType) -> Self {
-            self.inner = self.inner.policy_type(signature);
+        pub fn policy_type(mut self, input: crate::model::EffectivePolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
         /// <p>The type of policy that you want information about. You can specify one of the
@@ -2612,8 +2609,8 @@ pub mod fluent_builders {
         /// <p>When you're signed in as the management account, specify the ID of the account that
         /// you want details about. Specifying an organization root or organizational unit (OU) as
         /// the target is not supported.</p>
-        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(signature.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>When you're signed in as the management account, specify the ID of the account that
@@ -2694,8 +2691,8 @@ pub mod fluent_builders {
         /// from a call to <a>ListHandshakesForAccount</a> or <a>ListHandshakesForOrganization</a>.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for  handshake ID string requires "h-"
         /// followed by from 8 to 32 lowercase letters or digits.</p>
-        pub fn handshake_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.handshake_id(signature.into());
+        pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.handshake_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the handshake that you want information about. You can
@@ -2843,8 +2840,8 @@ pub mod fluent_builders {
         /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
         /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
         /// or digits.</p>
-        pub fn organizational_unit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_id(signature.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the organizational unit that you want details about. You
@@ -2928,8 +2925,8 @@ pub mod fluent_builders {
         /// operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy that you want details about. You can get the
@@ -3020,8 +3017,8 @@ pub mod fluent_builders {
         /// operations.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy you want to detach. You can get the ID from
@@ -3055,8 +3052,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(signature.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root, OU, or account that you want to detach the
@@ -3204,8 +3201,8 @@ pub mod fluent_builders {
         /// integration with your organization. This is typically in the form of a URL, such as
         /// <code>
         /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-        pub fn service_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_principal(signature.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_principal(input.into());
             self
         }
         /// <p>The service principal name of the AWS service for which you want to disable
@@ -3293,8 +3290,8 @@ pub mod fluent_builders {
         /// can get the ID from the <a>ListRoots</a> operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
         /// from 4 to 32 lowercase letters or digits.</p>
-        pub fn root_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.root_id(signature.into());
+        pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.root_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root in which you want to disable a policy type. You
@@ -3329,8 +3326,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn policy_type(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(signature);
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
         /// <p>The policy type that you want to disable in this root. You can specify one of the
@@ -3531,8 +3528,8 @@ pub mod fluent_builders {
         /// integration with your organization. This is typically in the form of a URL, such as
         /// <code>
         /// <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-        pub fn service_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_principal(signature.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_principal(input.into());
             self
         }
         /// <p>The service principal name of the AWS service for which you want to enable
@@ -3620,8 +3617,8 @@ pub mod fluent_builders {
         /// can get the ID from the <a>ListRoots</a> operation.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
         /// from 4 to 32 lowercase letters or digits.</p>
-        pub fn root_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.root_id(signature.into());
+        pub fn root_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.root_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root in which you want to enable a policy type. You
@@ -3656,8 +3653,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn policy_type(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.policy_type(signature);
+        pub fn policy_type(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.policy_type(input);
             self
         }
         /// <p>The policy type that you want to enable. You can specify one of the following
@@ -3795,8 +3792,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>--target Id=diego@example.com,Type=EMAIL</code>
         /// </p>
-        pub fn target(mut self, signature: crate::model::HandshakeParty) -> Self {
-            self.inner = self.inner.target(signature);
+        pub fn target(mut self, input: crate::model::HandshakeParty) -> Self {
+            self.inner = self.inner.target(input);
             self
         }
         /// <p>The identifier (ID) of the AWS account that you want to invite to join your
@@ -3827,8 +3824,8 @@ pub mod fluent_builders {
         }
         /// <p>Additional information that you want to include in the generated email to the
         /// recipient account owner.</p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>Additional information that you want to include in the generated email to the
@@ -4092,8 +4089,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4113,8 +4110,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4205,8 +4202,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
         /// accounts you want to list.</p>
-        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(signature.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the parent root or organization unit (OU) whose
@@ -4220,8 +4217,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4241,8 +4238,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4332,8 +4329,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4353,8 +4350,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4458,8 +4455,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(signature.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the parent root or OU whose children you want to
@@ -4484,8 +4481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the output to include only the specified child type.</p>
-        pub fn child_type(mut self, signature: crate::model::ChildType) -> Self {
-            self.inner = self.inner.child_type(signature);
+        pub fn child_type(mut self, input: crate::model::ChildType) -> Self {
+            self.inner = self.inner.child_type(input);
             self
         }
         /// <p>Filters the output to include only the specified child type.</p>
@@ -4501,8 +4498,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4522,8 +4519,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4633,8 +4630,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4654,8 +4651,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4737,8 +4734,8 @@ pub mod fluent_builders {
         /// delegated administrators only for the specified service.</p>
         /// <p>If you don't specify a service principal, the operation lists all delegated
         /// administrators for all services in your organization.</p>
-        pub fn service_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_principal(signature.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_principal(input.into());
             self
         }
         /// <p>Specifies a service principal name. If specified, then the operation lists the
@@ -4757,8 +4754,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4778,8 +4775,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4858,8 +4855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID number of a delegated administrator account in the organization.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID number of a delegated administrator account in the organization.</p>
@@ -4872,8 +4869,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -4893,8 +4890,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -4989,8 +4986,8 @@ pub mod fluent_builders {
         /// <code>ENABLE_ALL_FEATURES</code> handshake that generates a separate child handshake
         /// for each member account, you can specify <code>ParentHandshakeId</code> to see only the
         /// handshakes that were generated by that parent request.</p>
-        pub fn filter(mut self, signature: crate::model::HandshakeFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::HandshakeFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters the handshakes that you want included in the response. The default is all
@@ -5012,8 +5009,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5033,8 +5030,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5132,8 +5129,8 @@ pub mod fluent_builders {
         /// <code>ENABLE-ALL-FEATURES</code> handshake that generates a separate child handshake
         /// for each member account, you can specify the <code>ParentHandshakeId</code> to see only
         /// the handshakes that were generated by that parent request.</p>
-        pub fn filter(mut self, signature: crate::model::HandshakeFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::HandshakeFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A filter of the handshakes that you want included in the response. The default is all
@@ -5155,8 +5152,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5176,8 +5173,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5278,8 +5275,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(signature.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root or OU whose child OUs you want to list.</p>
@@ -5307,8 +5304,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5328,8 +5325,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5436,8 +5433,8 @@ pub mod fluent_builders {
         /// lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn child_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.child_id(signature.into());
+        pub fn child_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.child_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the OU or account whose parent containers you want to
@@ -5466,8 +5463,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5487,8 +5484,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5597,8 +5594,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filter(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Specifies the type of policy that you want to include in the response. You must
@@ -5634,8 +5631,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5655,8 +5652,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5764,8 +5761,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(signature.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root, organizational unit, or account whose policies
@@ -5817,8 +5814,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filter(mut self, signature: crate::model::PolicyType) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::PolicyType) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The type of policy that you want to include in the returned list. You must specify one
@@ -5854,8 +5851,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5875,8 +5872,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -5973,8 +5970,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -5994,8 +5991,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -6112,8 +6109,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource with the tags to list.</p>
@@ -6150,8 +6147,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -6237,8 +6234,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy whose attachments you want to know.</p>
@@ -6253,8 +6250,8 @@ pub mod fluent_builders {
         /// indicates that more output is available. Set this parameter to the value of the previous
         /// call's <code>NextToken</code> response to indicate where the output should continue
         /// from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The parameter for receiving additional results if you receive a
@@ -6274,8 +6271,8 @@ pub mod fluent_builders {
         /// of the results. Note that Organizations might return fewer results than the maximum even when there are
         /// more results available. You should check <code>NextToken</code> after every operation to ensure
         /// that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of results that you want included on each page of the
@@ -6355,8 +6352,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier (ID) of the account that you want to move.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
         /// digits.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the account that you want to move.</p>
@@ -6383,8 +6380,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn source_parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_parent_id(signature.into());
+        pub fn source_parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
@@ -6428,8 +6425,8 @@ pub mod fluent_builders {
         /// "-" dash and from 8 to 32 additional lowercase letters or digits.</p>
         /// </li>
         /// </ul>
-        pub fn destination_parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_parent_id(signature.into());
+        pub fn destination_parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_parent_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the root or organizational unit that you want to move
@@ -6526,8 +6523,8 @@ pub mod fluent_builders {
         }
         /// <p>The account ID number of the member account in the organization to register as a
         /// delegated administrator.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID number of the member account in the organization to register as a
@@ -6538,8 +6535,8 @@ pub mod fluent_builders {
         }
         /// <p>The service principal of the AWS service for which you want to make the member
         /// account a delegated administrator.</p>
-        pub fn service_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_principal(signature.into());
+        pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_principal(input.into());
             self
         }
         /// <p>The service principal of the AWS service for which you want to make the member
@@ -6652,8 +6649,8 @@ pub mod fluent_builders {
         /// organization.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
         /// digits.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the member account that you want to remove from the
@@ -6741,8 +6738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the resource to add a tag to.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource to add a tag to.</p>
@@ -6930,8 +6927,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource to remove a tag from.</p>
@@ -7049,8 +7046,8 @@ pub mod fluent_builders {
         /// "ou-" followed by from 4 to 32 lowercase letters or digits (the ID of the root that contains the
         /// OU). This string is followed by a second "-" dash and from 8 to 32 additional lowercase letters
         /// or digits.</p>
-        pub fn organizational_unit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organizational_unit_id(signature.into());
+        pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organizational_unit_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the OU that you want to rename. You can get the ID from
@@ -7070,8 +7067,8 @@ pub mod fluent_builders {
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// that is used to validate this parameter is a string of any of the characters in the ASCII
         /// character range.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name that you want to assign to the OU.</p>
@@ -7148,8 +7145,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier (ID) of the policy that you want to update.</p>
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed
         /// by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
-        pub fn policy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_id(signature.into());
+        pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) of the policy that you want to update.</p>
@@ -7163,8 +7160,8 @@ pub mod fluent_builders {
         /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
         /// that is used to validate this parameter is a string of any of the characters in the ASCII
         /// character range.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>If provided, the new name for the policy.</p>
@@ -7176,8 +7173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If provided, the new description for the policy.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>If provided, the new description for the policy.</p>
@@ -7189,8 +7186,8 @@ pub mod fluent_builders {
         /// that complies with the syntax for the policy's type. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
         /// Control Policy Syntax</a> in the <i>AWS Organizations User Guide.</i>
         /// </p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>If provided, the new content for the policy. The text must be correctly formatted JSON

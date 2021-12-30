@@ -1363,8 +1363,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
         /// the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog in which the partition is to be created. Currently, this should be
@@ -1375,8 +1375,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the metadata database in which the partition is
         /// to be created.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the metadata database in which the partition is
@@ -1389,8 +1389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
@@ -1479,8 +1479,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
@@ -1568,8 +1568,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
@@ -1580,8 +1580,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the table in question
         /// resides.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the table in question
@@ -1594,8 +1594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table that contains the partitions to be deleted.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table that contains the partitions to be deleted.</p>
@@ -1694,8 +1694,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -1706,8 +1706,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the tables to delete reside. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the tables to delete reside. For Hive
@@ -1737,8 +1737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -1823,8 +1823,8 @@ pub mod fluent_builders {
         }
         /// <p>The database in the catalog in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database in the catalog in which the table resides. For Hive
@@ -1838,8 +1838,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table. For Hive compatibility,
         /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table. For Hive compatibility,
@@ -1943,8 +1943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
-        pub fn include_blueprint(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_blueprint(signature);
+        pub fn include_blueprint(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_blueprint(input);
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -1953,8 +1953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
-        pub fn include_parameter_spec(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_parameter_spec(signature);
+        pub fn include_parameter_spec(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_parameter_spec(input);
             self
         }
         /// <p>Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.</p>
@@ -2265,8 +2265,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -2276,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -2289,8 +2289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -2470,8 +2470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-        pub fn include_graph(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_graph(signature);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -2540,8 +2540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition for which to stop job runs.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition for which to stop job runs.</p>
@@ -2630,8 +2630,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
         /// the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog in which the partition is to be updated. Currently, this should be
@@ -2642,8 +2642,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the metadata database in which the partition is
         /// to be updated.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the metadata database in which the partition is
@@ -2656,8 +2656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be updated.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be updated.</p>
@@ -2747,8 +2747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -2757,8 +2757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the task run.</p>
-        pub fn task_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_run_id(signature.into());
+        pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_run_id(input.into());
             self
         }
         /// <p>A unique identifier for the task run.</p>
@@ -2827,8 +2827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
-        pub fn data_format(mut self, signature: crate::model::DataFormat) -> Self {
-            self.inner = self.inner.data_format(signature);
+        pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
+            self.inner = self.inner.data_format(input);
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
@@ -2840,8 +2840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the schema that has to be validated.</p>
-        pub fn schema_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(signature.into());
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The definition of the schema that has to be validated.</p>
@@ -2913,8 +2913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -2923,8 +2923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the blueprint.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the blueprint.</p>
@@ -2933,8 +2933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-        pub fn blueprint_location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_location(signature.into());
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_location(input.into());
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
@@ -3032,11 +3032,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>GrokClassifier</code> object specifying the classifier
         /// to create.</p>
-        pub fn grok_classifier(
-            mut self,
-            signature: crate::model::CreateGrokClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.grok_classifier(signature);
+        pub fn grok_classifier(mut self, input: crate::model::CreateGrokClassifierRequest) -> Self {
+            self.inner = self.inner.grok_classifier(input);
             self
         }
         /// <p>A <code>GrokClassifier</code> object specifying the classifier
@@ -3050,11 +3047,8 @@ pub mod fluent_builders {
         }
         /// <p>An <code>XMLClassifier</code> object specifying the classifier
         /// to create.</p>
-        pub fn xml_classifier(
-            mut self,
-            signature: crate::model::CreateXmlClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.xml_classifier(signature);
+        pub fn xml_classifier(mut self, input: crate::model::CreateXmlClassifierRequest) -> Self {
+            self.inner = self.inner.xml_classifier(input);
             self
         }
         /// <p>An <code>XMLClassifier</code> object specifying the classifier
@@ -3068,11 +3062,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>JsonClassifier</code> object specifying the classifier
         /// to create.</p>
-        pub fn json_classifier(
-            mut self,
-            signature: crate::model::CreateJsonClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.json_classifier(signature);
+        pub fn json_classifier(mut self, input: crate::model::CreateJsonClassifierRequest) -> Self {
+            self.inner = self.inner.json_classifier(input);
             self
         }
         /// <p>A <code>JsonClassifier</code> object specifying the classifier
@@ -3086,11 +3077,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>CsvClassifier</code> object specifying the classifier
         /// to create.</p>
-        pub fn csv_classifier(
-            mut self,
-            signature: crate::model::CreateCsvClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.csv_classifier(signature);
+        pub fn csv_classifier(mut self, input: crate::model::CreateCsvClassifierRequest) -> Self {
+            self.inner = self.inner.csv_classifier(input);
             self
         }
         /// <p>A <code>CsvClassifier</code> object specifying the classifier
@@ -3164,8 +3152,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which to create the connection. If none is provided, the Amazon Web Services
@@ -3176,8 +3164,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ConnectionInput</code> object defining the connection
         /// to create.</p>
-        pub fn connection_input(mut self, signature: crate::model::ConnectionInput) -> Self {
-            self.inner = self.inner.connection_input(signature);
+        pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
+            self.inner = self.inner.connection_input(input);
             self
         }
         /// <p>A <code>ConnectionInput</code> object defining the connection
@@ -3275,8 +3263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the new crawler.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the new crawler.</p>
@@ -3286,8 +3274,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
         /// access customer resources.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role used by the new crawler to
@@ -3298,8 +3286,8 @@ pub mod fluent_builders {
         }
         /// <p>The Glue database where results are written, such as:
         /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The Glue database where results are written, such as:
@@ -3312,8 +3300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new crawler.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new crawler.</p>
@@ -3322,8 +3310,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of collection of targets to crawl.</p>
-        pub fn targets(mut self, signature: crate::model::CrawlerTargets) -> Self {
-            self.inner = self.inner.targets(signature);
+        pub fn targets(mut self, input: crate::model::CrawlerTargets) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>A list of collection of targets to crawl.</p>
@@ -3337,8 +3325,8 @@ pub mod fluent_builders {
         /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
         /// something every day at 12:15 UTC, you would specify:
         /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
@@ -3370,8 +3358,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
-        pub fn table_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_prefix(signature.into());
+        pub fn table_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_prefix(input.into());
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
@@ -3380,8 +3368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
-        pub fn schema_change_policy(mut self, signature: crate::model::SchemaChangePolicy) -> Self {
-            self.inner = self.inner.schema_change_policy(signature);
+        pub fn schema_change_policy(mut self, input: crate::model::SchemaChangePolicy) -> Self {
+            self.inner = self.inner.schema_change_policy(input);
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
@@ -3393,8 +3381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-        pub fn recrawl_policy(mut self, signature: crate::model::RecrawlPolicy) -> Self {
-            self.inner = self.inner.recrawl_policy(signature);
+        pub fn recrawl_policy(mut self, input: crate::model::RecrawlPolicy) -> Self {
+            self.inner = self.inner.recrawl_policy(input);
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -3406,11 +3394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
-        pub fn lineage_configuration(
-            mut self,
-            signature: crate::model::LineageConfiguration,
-        ) -> Self {
-            self.inner = self.inner.lineage_configuration(signature);
+        pub fn lineage_configuration(mut self, input: crate::model::LineageConfiguration) -> Self {
+            self.inner = self.inner.lineage_configuration(input);
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
@@ -3424,8 +3409,8 @@ pub mod fluent_builders {
         /// <p>Crawler configuration information. This versioned JSON
         /// string allows users to specify aspects of a crawler's behavior.
         /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
-        pub fn configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(signature.into());
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
             self
         }
         /// <p>Crawler configuration information. This versioned JSON
@@ -3442,9 +3427,9 @@ pub mod fluent_builders {
         /// crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.crawler_security_configuration(signature.into());
+            self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
@@ -3545,8 +3530,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which to create the database. If none is provided, the Amazon Web Services
@@ -3556,8 +3541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata for the database.</p>
-        pub fn database_input(mut self, signature: crate::model::DatabaseInput) -> Self {
-            self.inner = self.inner.database_input(signature);
+        pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
+            self.inner = self.inner.database_input(input);
             self
         }
         /// <p>The metadata for the database.</p>
@@ -3629,8 +3614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
@@ -3642,8 +3627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The IAM role for the <code>DevEndpoint</code>.</p>
@@ -3671,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
-        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(signature.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
@@ -3683,8 +3668,8 @@ pub mod fluent_builders {
         /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
         /// attribute is provided for backward compatibility because the recommended attribute to use is
         /// public keys.</p>
-        pub fn public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key(signature.into());
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key(input.into());
             self
         }
         /// <p>The public key to be used by this <code>DevEndpoint</code> for authentication. This
@@ -3731,8 +3716,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
         /// <code>DevEndpoint</code>.</p>
-        pub fn number_of_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(signature);
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
         /// <p>The number of Glue Data Processing Units (DPUs) to allocate to this
@@ -3755,8 +3740,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Known issue: when a development endpoint is created with the <code>G.2X</code>
         /// <code>WorkerType</code> configuration, the Spark drivers for the development endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
-        pub fn worker_type(mut self, signature: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(signature);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated to the development endpoint. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -3787,8 +3772,8 @@ pub mod fluent_builders {
         /// <p>Development endpoints that are created without specifying a Glue version default to Glue 0.9.</p>  
         ///
         /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-        pub fn glue_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(signature.into());
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for running your ETL scripts on development endpoints. </p>
@@ -3805,8 +3790,8 @@ pub mod fluent_builders {
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
         ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_workers(signature);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated to the development endpoint.</p>
@@ -3824,11 +3809,8 @@ pub mod fluent_builders {
         /// C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data
         /// analysis library, are not yet supported.</p>
         /// </note>
-        pub fn extra_python_libs_s3_path(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.extra_python_libs_s3_path(signature.into());
+        pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extra_python_libs_s3_path(input.into());
             self
         }
         /// <p>The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded in
@@ -3848,8 +3830,8 @@ pub mod fluent_builders {
         }
         /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
         /// in your <code>DevEndpoint</code>.</p>
-        pub fn extra_jars_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.extra_jars_s3_path(signature.into());
+        pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.extra_jars_s3_path(input.into());
             self
         }
         /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded
@@ -3863,8 +3845,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
         /// <code>DevEndpoint</code>.</p>
-        pub fn security_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(signature.into());
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
@@ -3983,8 +3965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name you assign to this job definition. It must be unique in your account.</p>
@@ -3993,8 +3975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the job being defined.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the job being defined.</p>
@@ -4003,8 +3985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This field is reserved for future use.</p>
-        pub fn log_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_uri(signature.into());
+        pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_uri(input.into());
             self
         }
         /// <p>This field is reserved for future use.</p>
@@ -4013,8 +3995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role associated with this job.</p>
@@ -4024,8 +4006,8 @@ pub mod fluent_builders {
         }
         /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
         /// for this job.</p>
-        pub fn execution_property(mut self, signature: crate::model::ExecutionProperty) -> Self {
-            self.inner = self.inner.execution_property(signature);
+        pub fn execution_property(mut self, input: crate::model::ExecutionProperty) -> Self {
+            self.inner = self.inner.execution_property(input);
             self
         }
         /// <p>An <code>ExecutionProperty</code> specifying the maximum number of concurrent runs allowed
@@ -4038,8 +4020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>JobCommand</code> that runs this job.</p>
-        pub fn command(mut self, signature: crate::model::JobCommand) -> Self {
-            self.inner = self.inner.command(signature);
+        pub fn command(mut self, input: crate::model::JobCommand) -> Self {
+            self.inner = self.inner.command(input);
             self
         }
         /// <p>The <code>JobCommand</code> that runs this job.</p>
@@ -4102,8 +4084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The connections used for this job.</p>
-        pub fn connections(mut self, signature: crate::model::ConnectionsList) -> Self {
-            self.inner = self.inner.connections(signature);
+        pub fn connections(mut self, input: crate::model::ConnectionsList) -> Self {
+            self.inner = self.inner.connections(input);
             self
         }
         /// <p>The connections used for this job.</p>
@@ -4115,8 +4097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry this job if it fails.</p>
-        pub fn max_retries(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_retries(signature);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry this job if it fails.</p>
@@ -4131,8 +4113,8 @@ pub mod fluent_builders {
         /// power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information,
         /// see the <a href="https://aws.amazon.com/glue/pricing/">Glue pricing
         /// page</a>.</p>
-        pub fn allocated_capacity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_capacity(signature);
+        pub fn allocated_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This parameter is deprecated. Use <code>MaxCapacity</code> instead.</p>
@@ -4149,8 +4131,8 @@ pub mod fluent_builders {
         /// <p>The job timeout in minutes.  This is the maximum time that a job run
         /// can consume resources before it is terminated and enters <code>TIMEOUT</code>
         /// status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The job timeout in minutes.  This is the maximum time that a job run
@@ -4181,8 +4163,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
-        pub fn max_capacity(mut self, signature: f64) -> Self {
-            self.inner = self.inner.max_capacity(signature);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
@@ -4212,8 +4194,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
         /// job.</p>
-        pub fn security_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(signature.into());
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this
@@ -4249,11 +4231,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies configuration properties of a job notification.</p>
-        pub fn notification_property(
-            mut self,
-            signature: crate::model::NotificationProperty,
-        ) -> Self {
-            self.inner = self.inner.notification_property(signature);
+        pub fn notification_property(mut self, input: crate::model::NotificationProperty) -> Self {
+            self.inner = self.inner.notification_property(input);
             self
         }
         /// <p>Specifies configuration properties of a job notification.</p>
@@ -4269,8 +4248,8 @@ pub mod fluent_builders {
         /// <p>For more information about the available Glue versions and corresponding Spark and Python versions, see <a href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a> in the developer guide.</p>
         ///
         /// <p>Jobs that are created without specifying a Glue version default to Glue 0.9.</p>
-        pub fn glue_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(signature.into());
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>Glue version determines the versions of Apache Spark and Python that Glue supports. The Python version indicates the version supported for jobs of type Spark. </p>
@@ -4285,8 +4264,8 @@ pub mod fluent_builders {
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
         ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_workers(signature);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
@@ -4308,8 +4287,8 @@ pub mod fluent_builders {
         /// <p>For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.</p>
         /// </li>
         /// </ul>
-        pub fn worker_type(mut self, signature: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(signature);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -4404,8 +4383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name that you give the transform when you create it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name that you give the transform when you create it.</p>
@@ -4415,8 +4394,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the machine learning transform that is being defined. The default is an
         /// empty string.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the machine learning transform that is being defined. The default is an
@@ -4444,8 +4423,8 @@ pub mod fluent_builders {
         }
         /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
         /// dependent on the transform type.</p>
-        pub fn parameters(mut self, signature: crate::model::TransformParameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The algorithmic parameters that are specific to the transform type used. Conditionally
@@ -4467,8 +4446,8 @@ pub mod fluent_builders {
         /// <p>This role needs permission to your Amazon Simple Storage Service (Amazon S3) sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.</p>
         /// </li>
         /// </ul>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required permissions. The required permissions include both Glue service role permissions to Glue resources, and Amazon S3 permissions required by the transform. </p>
@@ -4486,8 +4465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-        pub fn glue_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(signature.into());
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
@@ -4522,8 +4501,8 @@ pub mod fluent_builders {
         ///
         ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-        pub fn max_capacity(mut self, signature: f64) -> Self {
-            self.inner = self.inner.max_capacity(signature);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
@@ -4587,8 +4566,8 @@ pub mod fluent_builders {
         /// <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.</p>
         /// </li>
         /// </ul>
-        pub fn worker_type(mut self, signature: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(signature);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -4631,8 +4610,8 @@ pub mod fluent_builders {
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
         ///
         /// <p>If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
-        pub fn number_of_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_workers(signature);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -4643,8 +4622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout of the task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -4653,8 +4632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-        pub fn max_retries(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_retries(signature);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
@@ -4686,11 +4665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
-        pub fn transform_encryption(
-            mut self,
-            signature: crate::model::TransformEncryption,
-        ) -> Self {
-            self.inner = self.inner.transform_encryption(signature);
+        pub fn transform_encryption(mut self, input: crate::model::TransformEncryption) -> Self {
+            self.inner = self.inner.transform_encryption(input);
             self
         }
         /// <p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>
@@ -4762,8 +4738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the catalog in which the partition is to be created.</p>
@@ -4773,8 +4749,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the metadata database in which the partition is
         /// to be created.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the metadata database in which the partition is
@@ -4787,8 +4763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the metadata table in which the partition is to be created.</p>
@@ -4798,8 +4774,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>PartitionInput</code> structure defining the partition
         /// to be created.</p>
-        pub fn partition_input(mut self, signature: crate::model::PartitionInput) -> Self {
-            self.inner = self.inner.partition_input(signature);
+        pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
+            self.inner = self.inner.partition_input(input);
             self
         }
         /// <p>A <code>PartitionInput</code> structure defining the partition
@@ -4872,8 +4848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -4882,8 +4858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database in which you want to create a partition index.</p>
@@ -4895,8 +4871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table in which you want to create a partition index.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table in which you want to create a partition index.</p>
@@ -4905,8 +4881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-        pub fn partition_index(mut self, signature: crate::model::PartitionIndex) -> Self {
-            self.inner = self.inner.partition_index(signature);
+        pub fn partition_index(mut self, input: crate::model::PartitionIndex) -> Self {
+            self.inner = self.inner.partition_index(input);
             self
         }
         /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
@@ -4978,8 +4954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
-        pub fn registry_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registry_name(signature.into());
+        pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registry_name(input.into());
             self
         }
         /// <p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark.  No whitespace.</p>
@@ -4991,8 +4967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the registry. If description is not provided, there will not be any default value for this.</p>
@@ -5086,8 +5062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
-        pub fn registry_id(mut self, signature: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(signature);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:<customer id>:registry/default-registry:random-5-letter-id</code>.</p>
@@ -5099,8 +5075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
-        pub fn schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_name(signature.into());
+        pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_name(input.into());
             self
         }
         /// <p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>
@@ -5109,8 +5085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
-        pub fn data_format(mut self, signature: crate::model::DataFormat) -> Self {
-            self.inner = self.inner.data_format(signature);
+        pub fn data_format(mut self, input: crate::model::DataFormat) -> Self {
+            self.inner = self.inner.data_format(input);
             self
         }
         /// <p>The data format of the schema definition. Currently <code>AVRO</code> and <code>JSON</code> are supported.</p>
@@ -5157,8 +5133,8 @@ pub mod fluent_builders {
         /// <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p>
         /// </li>
         /// </ul>
-        pub fn compatibility(mut self, signature: crate::model::Compatibility) -> Self {
-            self.inner = self.inner.compatibility(signature);
+        pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.compatibility(input);
             self
         }
         /// <p>The compatibility mode of the schema. The possible values are:</p>
@@ -5205,8 +5181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>
@@ -5238,8 +5214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
-        pub fn schema_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(signature.into());
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>
@@ -5345,8 +5321,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The programming language of the resulting code from the DAG.</p>
-        pub fn language(mut self, signature: crate::model::Language) -> Self {
-            self.inner = self.inner.language(signature);
+        pub fn language(mut self, input: crate::model::Language) -> Self {
+            self.inner = self.inner.language(input);
             self
         }
         /// <p>The programming language of the resulting code from the DAG.</p>
@@ -5415,8 +5391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the new security configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new security configuration.</p>
@@ -5427,9 +5403,9 @@ pub mod fluent_builders {
         /// <p>The encryption configuration for the new security configuration.</p>
         pub fn encryption_configuration(
             mut self,
-            signature: crate::model::EncryptionConfiguration,
+            input: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.encryption_configuration(signature);
+            self.inner = self.inner.encryption_configuration(input);
             self
         }
         /// <p>The encryption configuration for the new security configuration.</p>
@@ -5502,8 +5478,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which to create the <code>Table</code>.
@@ -5514,8 +5490,8 @@ pub mod fluent_builders {
         }
         /// <p>The catalog database in which to create the new table. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The catalog database in which to create the new table. For Hive
@@ -5529,8 +5505,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>TableInput</code> object that defines the metadata table
         /// to create in the catalog.</p>
-        pub fn table_input(mut self, signature: crate::model::TableInput) -> Self {
-            self.inner = self.inner.table_input(signature);
+        pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
+            self.inner = self.inner.table_input(input);
             self
         }
         /// <p>The <code>TableInput</code> object that defines the metadata table
@@ -5560,8 +5536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the transaction.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The ID of the transaction.</p>
@@ -5633,8 +5609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger.</p>
@@ -5643,8 +5619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workflow associated with the trigger.</p>
-        pub fn workflow_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_name(signature.into());
+        pub fn workflow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_name(input.into());
             self
         }
         /// <p>The name of the workflow associated with the trigger.</p>
@@ -5656,8 +5632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the new trigger.</p>
-        pub fn r#type(mut self, signature: crate::model::TriggerType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::TriggerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the new trigger.</p>
@@ -5669,8 +5645,8 @@ pub mod fluent_builders {
         /// something every day at 12:15 UTC, you would specify:
         /// <code>cron(15 12 * * ? *)</code>.</p>
         /// <p>This field is required when the trigger type is SCHEDULED.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
@@ -5683,8 +5659,8 @@ pub mod fluent_builders {
         }
         /// <p>A predicate to specify when the new trigger should fire.</p>
         /// <p>This field is required when the trigger type is <code>CONDITIONAL</code>.</p>
-        pub fn predicate(mut self, signature: crate::model::Predicate) -> Self {
-            self.inner = self.inner.predicate(signature);
+        pub fn predicate(mut self, input: crate::model::Predicate) -> Self {
+            self.inner = self.inner.predicate(input);
             self
         }
         /// <p>A predicate to specify when the new trigger should fire.</p>
@@ -5714,8 +5690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new trigger.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new trigger.</p>
@@ -5725,8 +5701,8 @@ pub mod fluent_builders {
         }
         /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
         /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.</p>
-        pub fn start_on_creation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.start_on_creation(signature);
+        pub fn start_on_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.start_on_creation(input);
             self
         }
         /// <p>Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
@@ -5766,9 +5742,9 @@ pub mod fluent_builders {
         /// before EventBridge event trigger fires.</p>
         pub fn event_batching_condition(
             mut self,
-            signature: crate::model::EventBatchingCondition,
+            input: crate::model::EventBatchingCondition,
         ) -> Self {
-            self.inner = self.inner.event_batching_condition(signature);
+            self.inner = self.inner.event_batching_condition(input);
             self
         }
         /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
@@ -5842,8 +5818,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services
@@ -5853,8 +5829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database in which to create the function.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which to create the function.</p>
@@ -5867,8 +5843,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>FunctionInput</code> object that defines the function
         /// to create in the Data Catalog.</p>
-        pub fn function_input(mut self, signature: crate::model::UserDefinedFunctionInput) -> Self {
-            self.inner = self.inner.function_input(signature);
+        pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
+            self.inner = self.inner.function_input(input);
             self
         }
         /// <p>A <code>FunctionInput</code> object that defines the function
@@ -5941,8 +5917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name to be assigned to the workflow. It should be unique within your account.</p>
@@ -5951,8 +5927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the workflow.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the workflow.</p>
@@ -6007,8 +5983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
-        pub fn max_concurrent_runs(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_concurrent_runs(signature);
+        pub fn max_concurrent_runs(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_runs(input);
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
@@ -6077,8 +6053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint to delete.</p>
@@ -6147,8 +6123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the classifier to remove.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the classifier to remove.</p>
@@ -6222,8 +6198,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -6233,8 +6209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -6246,8 +6222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -6273,8 +6249,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of the column.</p>
-        pub fn column_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_name(signature.into());
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_name(input.into());
             self
         }
         /// <p>Name of the column.</p>
@@ -6346,8 +6322,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -6357,8 +6333,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -6370,8 +6346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -6380,8 +6356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the column.</p>
-        pub fn column_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.column_name(signature.into());
+        pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.column_name(input.into());
             self
         }
         /// <p>The name of the column.</p>
@@ -6451,8 +6427,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
@@ -6462,8 +6438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connection to delete.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the connection to delete.</p>
@@ -6536,8 +6512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler to remove.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the crawler to remove.</p>
@@ -6619,8 +6595,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
@@ -6631,8 +6607,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the database to delete. For Hive compatibility, this must be all
         /// lowercase.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the database to delete. For Hive compatibility, this must be all
@@ -6702,8 +6678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>DevEndpoint</code>.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the <code>DevEndpoint</code>.</p>
@@ -6776,8 +6752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to delete.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to delete.</p>
@@ -6851,8 +6827,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the transform to delete.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the transform to delete.</p>
@@ -6922,8 +6898,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided,
@@ -6934,8 +6910,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the table in question
         /// resides.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the table in question
@@ -6948,8 +6924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table that contains the partition to be deleted.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table that contains the partition to be deleted.</p>
@@ -7035,8 +7011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -7045,8 +7021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database from which you want to delete a partition index.</p>
@@ -7058,8 +7034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table from which you want to delete a partition index.</p>
@@ -7068,8 +7044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partition index to be deleted.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the partition index to be deleted.</p>
@@ -7138,8 +7114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, signature: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(signature);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -7211,8 +7187,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The hash value returned when this policy was set.</p>
-        pub fn policy_hash_condition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_hash_condition(signature.into());
+        pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash_condition(input.into());
             self
         }
         /// <p>The hash value returned when this policy was set.</p>
@@ -7224,8 +7200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Glue resource for the resource policy to be deleted.</p>
@@ -7294,8 +7270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -7367,8 +7343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -7385,8 +7361,8 @@ pub mod fluent_builders {
         /// <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p>
         /// </li>
         /// </ul>
-        pub fn versions(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.versions(signature.into());
+        pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versions(input.into());
             self
         }
         /// <p>A version range may be supplied which may be of the format:</p>
@@ -7463,8 +7439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration to delete.</p>
@@ -7544,8 +7520,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -7556,8 +7532,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the table resides. For Hive
@@ -7571,8 +7547,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table to be deleted. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the table to be deleted. For Hive
@@ -7582,8 +7558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to delete the table contents.</p>
@@ -7656,8 +7632,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -7668,8 +7644,8 @@ pub mod fluent_builders {
         }
         /// <p>The database in the catalog in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database in the catalog in which the table resides. For Hive
@@ -7683,8 +7659,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table. For Hive compatibility,
         /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table. For Hive compatibility,
@@ -7694,8 +7670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The ID of the table version to be deleted. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
@@ -7765,8 +7741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to delete.</p>
@@ -7836,8 +7812,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the function to be deleted is
         /// located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the function to be deleted is
@@ -7847,8 +7823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
@@ -7860,8 +7836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function definition to be deleted.</p>
-        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(signature.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function definition to be deleted.</p>
@@ -7933,8 +7909,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow to be deleted.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow to be deleted.</p>
@@ -8003,8 +7979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8013,8 +7989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
-        pub fn include_blueprint(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_blueprint(signature);
+        pub fn include_blueprint(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_blueprint(input);
             self
         }
         /// <p>Specifies whether or not to include the blueprint in the response.</p>
@@ -8023,8 +7999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether or not to include the parameter specification.</p>
-        pub fn include_parameter_spec(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_parameter_spec(signature);
+        pub fn include_parameter_spec(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_parameter_spec(input);
             self
         }
         /// <p>Specifies whether or not to include the parameter specification.</p>
@@ -8093,8 +8069,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(signature.into());
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8106,8 +8082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The run ID for the blueprint run you want to retrieve.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The run ID for the blueprint run you want to retrieve.</p>
@@ -8176,8 +8152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(signature.into());
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -8189,8 +8165,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -8199,8 +8175,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -8269,8 +8245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog to migrate. Currently, this should be the Amazon Web Services account ID.</p>
@@ -8339,8 +8315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the classifier to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the classifier to retrieve.</p>
@@ -8409,8 +8385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The size of the list to return (optional).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The size of the list to return (optional).</p>
@@ -8419,8 +8395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional continuation token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional continuation token.</p>
@@ -8492,8 +8468,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -8503,8 +8479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -8516,8 +8492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -8623,8 +8599,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -8634,8 +8610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -8647,8 +8623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -8735,8 +8711,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
@@ -8746,8 +8722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connection definition to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection definition to retrieve.</p>
@@ -8760,8 +8736,8 @@ pub mod fluent_builders {
         /// the password. Set this parameter when the caller might not have permission to use the KMS
         /// key to decrypt the password, but it does have permission to access the rest of the connection
         /// properties.</p>
-        pub fn hide_password(mut self, signature: bool) -> Self {
-            self.inner = self.inner.hide_password(signature);
+        pub fn hide_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.hide_password(input);
             self
         }
         /// <p>Allows you to retrieve the connection metadata without returning the password. For
@@ -8835,8 +8811,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services
@@ -8846,8 +8822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that controls which connections are returned.</p>
-        pub fn filter(mut self, signature: crate::model::GetConnectionsFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::GetConnectionsFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A filter that controls which connections are returned.</p>
@@ -8863,8 +8839,8 @@ pub mod fluent_builders {
         /// the password. Set this parameter when the caller might not have permission to use the KMS
         /// key to decrypt the password, but it does have permission to access the rest of the connection
         /// properties.</p>
-        pub fn hide_password(mut self, signature: bool) -> Self {
-            self.inner = self.inner.hide_password(signature);
+        pub fn hide_password(mut self, input: bool) -> Self {
+            self.inner = self.inner.hide_password(input);
             self
         }
         /// <p>Allows you to retrieve the connection metadata without returning the password. For
@@ -8877,8 +8853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -8887,8 +8863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connections to return in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of connections to return in one response.</p>
@@ -8957,8 +8933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler to retrieve metadata for.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the crawler to retrieve metadata for.</p>
@@ -9044,8 +9020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -9054,8 +9030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9125,8 +9101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The number of crawlers to return on each call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of crawlers to return on each call.</p>
@@ -9135,8 +9111,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -9206,8 +9182,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services
@@ -9218,8 +9194,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the database to retrieve. For Hive compatibility, this
         /// should be all lowercase.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the database to retrieve. For Hive compatibility, this
@@ -9290,8 +9266,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
         /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog from which to retrieve <code>Databases</code>. If none is
@@ -9301,8 +9277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9311,8 +9287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of databases to return in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of databases to return in one response.</p>
@@ -9330,8 +9306,8 @@ pub mod fluent_builders {
         /// <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p>
         /// </li>
         /// </ul>
-        pub fn resource_share_type(mut self, signature: crate::model::ResourceShareType) -> Self {
-            self.inner = self.inner.resource_share_type(signature);
+        pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
+            self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
@@ -9413,8 +9389,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
         /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is
@@ -9484,8 +9460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Python script to transform.</p>
-        pub fn python_script(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.python_script(signature.into());
+        pub fn python_script(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.python_script(input.into());
             self
         }
         /// <p>The Python script to transform.</p>
@@ -9562,8 +9538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of the <code>DevEndpoint</code> to retrieve information for.</p>
@@ -9640,8 +9616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum size of information to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of information to return.</p>
@@ -9650,8 +9626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9720,8 +9696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to retrieve.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to retrieve.</p>
@@ -9790,8 +9766,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job in question.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job in question.</p>
@@ -9800,8 +9776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
@@ -9870,8 +9846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the job definition being run.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>Name of the job definition being run.</p>
@@ -9880,8 +9856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the job run.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the job run.</p>
@@ -9890,8 +9866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>True if a list of predecessor runs should be returned.</p>
-        pub fn predecessors_included(mut self, signature: bool) -> Self {
-            self.inner = self.inner.predecessors_included(signature);
+        pub fn predecessors_included(mut self, input: bool) -> Self {
+            self.inner = self.inner.predecessors_included(input);
             self
         }
         /// <p>True if a list of predecessor runs should be returned.</p>
@@ -9960,8 +9936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition for which to retrieve all job runs.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition for which to retrieve all job runs.</p>
@@ -9970,8 +9946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -9980,8 +9956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -10050,8 +10026,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -10060,8 +10036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -10130,8 +10106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the source table.</p>
-        pub fn source(mut self, signature: crate::model::CatalogEntry) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>Specifies the source table.</p>
@@ -10160,8 +10136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Parameters for the mapping.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Parameters for the mapping.</p>
@@ -10234,8 +10210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -10244,8 +10220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the task run.</p>
-        pub fn task_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_run_id(signature.into());
+        pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_run_id(input.into());
             self
         }
         /// <p>The unique identifier of the task run.</p>
@@ -10320,8 +10296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -10330,8 +10306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token for pagination of the results. The default is empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token for pagination of the results. The default is empty.</p>
@@ -10340,8 +10316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return. </p>
@@ -10350,8 +10326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
-        pub fn filter(mut self, signature: crate::model::TaskRunFilterCriteria) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::TaskRunFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter criteria, in the <code>TaskRunFilterCriteria</code> structure, for the task run.</p>
@@ -10363,8 +10339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
-        pub fn sort(mut self, signature: crate::model::TaskRunSortCriteria) -> Self {
-            self.inner = self.inner.sort(signature);
+        pub fn sort(mut self, input: crate::model::TaskRunSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>The sorting criteria, in the <code>TaskRunSortCriteria</code> structure, for the task run.</p>
@@ -10441,8 +10417,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the transform, generated at the time that the transform was
         /// created.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the transform, generated at the time that the transform was
@@ -10516,8 +10492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A paginated token to offset the results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A paginated token to offset the results.</p>
@@ -10526,8 +10502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -10536,8 +10512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The filter transformation criteria.</p>
-        pub fn filter(mut self, signature: crate::model::TransformFilterCriteria) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::TransformFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filter transformation criteria.</p>
@@ -10549,8 +10525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorting criteria.</p>
-        pub fn sort(mut self, signature: crate::model::TransformSortCriteria) -> Self {
-            self.inner = self.inner.sort(signature);
+        pub fn sort(mut self, input: crate::model::TransformSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>The sorting criteria.</p>
@@ -10623,8 +10599,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partition in question resides. If none is provided,
@@ -10634,8 +10610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partition resides.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partition resides.</p>
@@ -10647,8 +10623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partition's table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partition's table.</p>
@@ -10734,8 +10710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The catalog ID where the table resides.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The catalog ID where the table resides.</p>
@@ -10744,8 +10720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>Specifies the name of a database from which you want to retrieve partition indexes.</p>
@@ -10757,8 +10733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>
@@ -10767,8 +10743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -10838,8 +10814,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided,
@@ -10849,8 +10825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -10862,8 +10838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -10977,8 +10953,8 @@ pub mod fluent_builders {
         ///
         /// <p>
         /// <i>Sample API Call</i>: </p>
-        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(signature.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>An expression that filters the partitions to be returned.</p>
@@ -11093,8 +11069,8 @@ pub mod fluent_builders {
         }
         /// <p>A continuation token, if this is not the first call to retrieve
         /// these partitions.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is not the first call to retrieve
@@ -11104,8 +11080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The segment of the table's partitions to scan in this request.</p>
-        pub fn segment(mut self, signature: crate::model::Segment) -> Self {
-            self.inner = self.inner.segment(signature);
+        pub fn segment(mut self, input: crate::model::Segment) -> Self {
+            self.inner = self.inner.segment(input);
             self
         }
         /// <p>The segment of the table's partitions to scan in this request.</p>
@@ -11114,8 +11090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of partitions to return in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of partitions to return in a single response.</p>
@@ -11124,8 +11100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
-        pub fn exclude_column_schema(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_column_schema(signature);
+        pub fn exclude_column_schema(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_column_schema(input);
             self
         }
         /// <p>When true, specifies not returning the partition column schema. Useful when you are interested only in other partition attributes such as partition values or location. This approach avoids the problem of a large response by not returning duplicate data.</p>
@@ -11134,8 +11110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the partition contents.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the partition contents.</p>
@@ -11147,8 +11123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(signature);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the partition contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -11237,8 +11213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source table.</p>
-        pub fn source(mut self, signature: crate::model::CatalogEntry) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::CatalogEntry) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source table.</p>
@@ -11267,8 +11243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters for the mapping.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The parameters for the mapping.</p>
@@ -11277,8 +11253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The programming language of the code to perform the mapping.</p>
-        pub fn language(mut self, signature: crate::model::Language) -> Self {
-            self.inner = self.inner.language(signature);
+        pub fn language(mut self, input: crate::model::Language) -> Self {
+            self.inner = self.inner.language(input);
             self
         }
         /// <p>The programming language of the code to perform the mapping.</p>
@@ -11394,8 +11370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, signature: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(signature);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -11472,8 +11448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -11482,8 +11458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -11555,8 +11531,8 @@ pub mod fluent_builders {
         /// supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code>
         /// to view all existing resource policies. For more information see <a href="https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html">Specifying Glue Resource ARNs</a>.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Glue resource for which to retrieve the resource policy. If not
@@ -11636,8 +11612,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -11722,8 +11698,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -11740,8 +11716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The definition of the schema for which schema details are required.</p>
-        pub fn schema_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(signature.into());
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The definition of the schema for which schema details are required.</p>
@@ -11821,8 +11797,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -11839,8 +11815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
-        pub fn schema_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(signature.into());
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>
@@ -11852,11 +11828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(
-            mut self,
-            signature: crate::model::SchemaVersionNumber,
-        ) -> Self {
-            self.inner = self.inner.schema_version_number(signature);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -11937,8 +11910,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -11957,9 +11930,9 @@ pub mod fluent_builders {
         /// <p>The first of the two schema versions to be compared.</p>
         pub fn first_schema_version_number(
             mut self,
-            signature: crate::model::SchemaVersionNumber,
+            input: crate::model::SchemaVersionNumber,
         ) -> Self {
-            self.inner = self.inner.first_schema_version_number(signature);
+            self.inner = self.inner.first_schema_version_number(input);
             self
         }
         /// <p>The first of the two schema versions to be compared.</p>
@@ -11973,9 +11946,9 @@ pub mod fluent_builders {
         /// <p>The second of the two schema versions to be compared.</p>
         pub fn second_schema_version_number(
             mut self,
-            signature: crate::model::SchemaVersionNumber,
+            input: crate::model::SchemaVersionNumber,
         ) -> Self {
-            self.inner = self.inner.second_schema_version_number(signature);
+            self.inner = self.inner.second_schema_version_number(input);
             self
         }
         /// <p>The second of the two schema versions to be compared.</p>
@@ -11987,8 +11960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-        pub fn schema_diff_type(mut self, signature: crate::model::SchemaDiffType) -> Self {
-            self.inner = self.inner.schema_diff_type(signature);
+        pub fn schema_diff_type(mut self, input: crate::model::SchemaDiffType) -> Self {
+            self.inner = self.inner.schema_diff_type(input);
             self
         }
         /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
@@ -12060,8 +12033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration to retrieve.</p>
@@ -12130,8 +12103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -12140,8 +12113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -12212,8 +12185,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -12224,8 +12197,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the database in the catalog in which the table resides.
         /// For Hive compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database in the catalog in which the table resides.
@@ -12239,8 +12212,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table for which to retrieve the definition. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the table for which to retrieve the definition. For Hive
@@ -12250,8 +12223,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the table contents. </p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the table contents. </p>
@@ -12263,8 +12236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(signature);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -12338,8 +12311,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -12350,8 +12323,8 @@ pub mod fluent_builders {
         }
         /// <p>The database in the catalog whose tables to list. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database in the catalog whose tables to list. For Hive
@@ -12365,8 +12338,8 @@ pub mod fluent_builders {
         }
         /// <p>A regular expression pattern. If present, only those tables
         /// whose names match the pattern are returned.</p>
-        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(signature.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>A regular expression pattern. If present, only those tables
@@ -12376,8 +12349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -12386,8 +12359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
@@ -12396,8 +12369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to read the table contents.</p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to read the table contents.</p>
@@ -12409,8 +12382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
-        pub fn query_as_of_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.query_as_of_time(signature);
+        pub fn query_as_of_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.query_as_of_time(input);
             self
         }
         /// <p>The time as of when to read the table contents. If not set, the most recent transaction commit time will be used. Cannot be specified along with <code>TransactionId</code>.</p>
@@ -12483,8 +12456,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -12495,8 +12468,8 @@ pub mod fluent_builders {
         }
         /// <p>The database in the catalog in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database in the catalog in which the table resides. For Hive
@@ -12510,8 +12483,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table. For Hive compatibility,
         /// this name is entirely lowercase.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table. For Hive compatibility,
@@ -12521,8 +12494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>The ID value of the table version to be retrieved. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1. </p>
@@ -12593,8 +12566,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the tables reside. If none is provided, the Amazon Web Services account
@@ -12605,8 +12578,8 @@ pub mod fluent_builders {
         }
         /// <p>The database in the catalog in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database in the catalog in which the table resides. For Hive
@@ -12620,8 +12593,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the table. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table. For Hive
@@ -12631,8 +12604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is not the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is not the first call.</p>
@@ -12641,8 +12614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of table versions to return in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of table versions to return in one response.</p>
@@ -12711,8 +12684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to retrieve tags.</p>
@@ -12781,8 +12754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to retrieve.</p>
@@ -12851,8 +12824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -12862,8 +12835,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
         /// returned, and if there is no such trigger, all triggers are returned.</p>
-        pub fn dependent_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dependent_job_name(signature.into());
+        pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dependent_job_name(input.into());
             self
         }
         /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is
@@ -12876,8 +12849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -12947,8 +12920,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
         /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the function to be retrieved is located. If none is
@@ -12958,8 +12931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the function is located.</p>
@@ -12971,8 +12944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(signature.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function.</p>
@@ -13045,8 +13018,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
         /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the functions to be retrieved are located. If none is
@@ -13057,8 +13030,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
         /// databases across the catalog will be returned.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the functions are located. If none is provided, functions from all the
@@ -13072,8 +13045,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional function-name pattern string that filters the function
         /// definitions returned.</p>
-        pub fn pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pattern(signature.into());
+        pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pattern(input.into());
             self
         }
         /// <p>An optional function-name pattern string that filters the function
@@ -13083,8 +13056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -13093,8 +13066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of functions to return in one response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of functions to return in one response.</p>
@@ -13163,8 +13136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to retrieve.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to retrieve.</p>
@@ -13173,8 +13146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
-        pub fn include_graph(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_graph(signature);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include a graph when returning the workflow resource metadata.</p>
@@ -13243,8 +13216,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow being run.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow being run.</p>
@@ -13253,8 +13226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run.</p>
@@ -13263,8 +13236,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
-        pub fn include_graph(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_graph(signature);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -13333,8 +13306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow which was run.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow which was run.</p>
@@ -13343,8 +13316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run whose run properties should be returned.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run whose run properties should be returned.</p>
@@ -13413,8 +13386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow whose metadata of runs should be returned.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow whose metadata of runs should be returned.</p>
@@ -13423,8 +13396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
-        pub fn include_graph(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_graph(signature);
+        pub fn include_graph(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_graph(input);
             self
         }
         /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -13433,8 +13406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of the response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The maximum size of the response.</p>
@@ -13443,8 +13416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workflow runs to be included in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workflow runs to be included in the response.</p>
@@ -13513,8 +13486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.</p>
@@ -13583,8 +13556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13593,8 +13566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13692,8 +13665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13702,8 +13675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13801,8 +13774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13811,8 +13784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -13908,8 +13881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -13918,8 +13891,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14015,8 +13988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14025,8 +13998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14035,8 +14008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-        pub fn filter(mut self, signature: crate::model::TransformFilterCriteria) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::TransformFilterCriteria) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
@@ -14048,8 +14021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-        pub fn sort(mut self, signature: crate::model::TransformSortCriteria) -> Self {
-            self.inner = self.inner.sort(signature);
+        pub fn sort(mut self, input: crate::model::TransformSortCriteria) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
@@ -14144,8 +14117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14154,8 +14127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14225,8 +14198,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, signature: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(signature);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -14238,8 +14211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14248,8 +14221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14326,8 +14299,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -14344,8 +14317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -14354,8 +14327,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -14428,8 +14401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14439,8 +14412,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
         /// is returned. If there is no such trigger, all triggers are returned.</p>
-        pub fn dependent_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dependent_job_name(signature.into());
+        pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dependent_job_name(input.into());
             self
         }
         /// <p> The name of the job for which to retrieve triggers. The trigger that can start this job
@@ -14453,8 +14426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14546,8 +14519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A continuation token, if this is a continuation request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation request.</p>
@@ -14556,8 +14529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum size of a list to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum size of a list to return.</p>
@@ -14628,8 +14601,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
         /// Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog to set the security configuration for. If none is provided, the
@@ -14641,9 +14614,9 @@ pub mod fluent_builders {
         /// <p>The security configuration to set.</p>
         pub fn data_catalog_encryption_settings(
             mut self,
-            signature: crate::model::DataCatalogEncryptionSettings,
+            input: crate::model::DataCatalogEncryptionSettings,
         ) -> Self {
-            self.inner = self.inner.data_catalog_encryption_settings(signature);
+            self.inner = self.inner.data_catalog_encryption_settings(input);
             self
         }
         /// <p>The security configuration to set.</p>
@@ -14715,8 +14688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Contains the policy document to set, in JSON format.</p>
-        pub fn policy_in_json(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_in_json(signature.into());
+        pub fn policy_in_json(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_in_json(input.into());
             self
         }
         /// <p>Contains the policy document to set, in JSON format.</p>
@@ -14728,8 +14701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Do not use. For internal use only.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Do not use. For internal use only.</p>
@@ -14740,8 +14713,8 @@ pub mod fluent_builders {
         /// <p>The hash value returned when the previous policy was set using
         /// <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a
         /// policy. Do not use this parameter if no previous policy has been set.</p>
-        pub fn policy_hash_condition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_hash_condition(signature.into());
+        pub fn policy_hash_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_hash_condition(input.into());
             self
         }
         /// <p>The hash value returned when the previous policy was set using
@@ -14757,8 +14730,8 @@ pub mod fluent_builders {
         /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
         /// <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a
         /// null value is used, the call does not depend on the existence of a policy.</p>
-        pub fn policy_exists_condition(mut self, signature: crate::model::ExistCondition) -> Self {
-            self.inner = self.inner.policy_exists_condition(signature);
+        pub fn policy_exists_condition(mut self, input: crate::model::ExistCondition) -> Self {
+            self.inner = self.inner.policy_exists_condition(input);
             self
         }
         /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of
@@ -14784,8 +14757,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to
         /// grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-        pub fn enable_hybrid(mut self, signature: crate::model::EnableHybridValues) -> Self {
-            self.inner = self.inner.enable_hybrid(signature);
+        pub fn enable_hybrid(mut self, input: crate::model::EnableHybridValues) -> Self {
+            self.inner = self.inner.enable_hybrid(input);
             self
         }
         /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
@@ -14869,8 +14842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID for the schema.</p>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>The unique ID for the schema.</p>
@@ -14879,11 +14852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(
-            mut self,
-            signature: crate::model::SchemaVersionNumber,
-        ) -> Self {
-            self.inner = self.inner.schema_version_number(signature);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -14895,8 +14865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(signature.into());
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -14908,8 +14878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata key's corresponding value.</p>
-        pub fn metadata_key_value(mut self, signature: crate::model::MetadataKeyValuePair) -> Self {
-            self.inner = self.inner.metadata_key_value(signature);
+        pub fn metadata_key_value(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
+            self.inner = self.inner.metadata_key_value(input);
             self
         }
         /// <p>The metadata key's corresponding value.</p>
@@ -14981,8 +14951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow which was run.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow which was run.</p>
@@ -14991,8 +14961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run for which the run properties should be updated.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run for which the run properties should be updated.</p>
@@ -15084,8 +15054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -15094,11 +15064,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(
-            mut self,
-            signature: crate::model::SchemaVersionNumber,
-        ) -> Self {
-            self.inner = self.inner.schema_version_number(signature);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -15110,8 +15077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(signature.into());
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -15140,8 +15107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>
@@ -15150,8 +15117,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, if this is a continuation call.</p>
@@ -15230,8 +15197,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -15248,8 +15215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
-        pub fn schema_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_definition(signature.into());
+        pub fn schema_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_definition(input.into());
             self
         }
         /// <p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>
@@ -15321,8 +15288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>
@@ -15331,11 +15298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the schema.</p>
-        pub fn schema_version_number(
-            mut self,
-            signature: crate::model::SchemaVersionNumber,
-        ) -> Self {
-            self.inner = self.inner.schema_version_number(signature);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>The version number of the schema.</p>
@@ -15347,8 +15311,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version ID of the schema version.</p>
-        pub fn schema_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_version_id(signature.into());
+        pub fn schema_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_version_id(input.into());
             self
         }
         /// <p>The unique version ID of the schema version.</p>
@@ -15360,8 +15324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the metadata key.</p>
-        pub fn metadata_key_value(mut self, signature: crate::model::MetadataKeyValuePair) -> Self {
-            self.inner = self.inner.metadata_key_value(signature);
+        pub fn metadata_key_value(mut self, input: crate::model::MetadataKeyValuePair) -> Self {
+            self.inner = self.inner.metadata_key_value(input);
             self
         }
         /// <p>The value of the metadata key.</p>
@@ -15433,8 +15397,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job in question.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job in question.</p>
@@ -15443,8 +15407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The unique run identifier associated with this job run.</p>
@@ -15513,8 +15477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to resume.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to resume.</p>
@@ -15523,8 +15487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run to resume.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run to resume.</p>
@@ -15613,8 +15577,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier, consisting of <code>
         /// <i>account_id</i>
         /// </code>.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>A unique identifier, consisting of <code>
@@ -15625,8 +15589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A continuation token, included if this is a continuation call.</p>
@@ -15657,8 +15621,8 @@ pub mod fluent_builders {
         }
         /// <p>A string used for a text search.</p>
         /// <p>Specifying a value in quotes filters based on an exact match to the value.</p>
-        pub fn search_text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_text(signature.into());
+        pub fn search_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_text(input.into());
             self
         }
         /// <p>A string used for a text search.</p>
@@ -15685,8 +15649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tables to return in a single response.</p>
@@ -15704,8 +15668,8 @@ pub mod fluent_builders {
         /// <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p>
         /// </li>
         /// </ul>
-        pub fn resource_share_type(mut self, signature: crate::model::ResourceShareType) -> Self {
-            self.inner = self.inner.resource_share_type(signature);
+        pub fn resource_share_type(mut self, input: crate::model::ResourceShareType) -> Self {
+            self.inner = self.inner.resource_share_type(input);
             self
         }
         /// <p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
@@ -15786,8 +15750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn blueprint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_name(signature.into());
+        pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -15799,8 +15763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
-        pub fn parameters(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameters(signature.into());
+        pub fn parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameters(input.into());
             self
         }
         /// <p>Specifies the parameters as a <code>BlueprintParameters</code> object.</p>
@@ -15809,8 +15773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the IAM role used to create the workflow.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>Specifies the IAM role used to create the workflow.</p>
@@ -15881,8 +15845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to start.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the crawler to start.</p>
@@ -15953,8 +15917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to schedule.</p>
-        pub fn crawler_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(signature.into());
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>Name of the crawler to schedule.</p>
@@ -16031,8 +15995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16041,8 +16005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 path where you export the labels.</p>
-        pub fn output_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_path(signature.into());
+        pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_path(input.into());
             self
         }
         /// <p>The Amazon S3 path where you export the labels.</p>
@@ -16138,8 +16102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16149,8 +16113,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
         /// labels.</p>
-        pub fn input_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input_s3_path(signature.into());
+        pub fn input_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input_s3_path(input.into());
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path from where you import the
@@ -16163,8 +16127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to overwrite your existing labels.</p>
-        pub fn replace_all_labels(mut self, signature: bool) -> Self {
-            self.inner = self.inner.replace_all_labels(signature);
+        pub fn replace_all_labels(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace_all_labels(input);
             self
         }
         /// <p>Indicates whether to overwrite your existing labels.</p>
@@ -16233,8 +16197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to use.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to use.</p>
@@ -16243,8 +16207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
-        pub fn job_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_run_id(signature.into());
+        pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_run_id(input.into());
             self
         }
         /// <p>The ID of a previous <code>JobRun</code> to retry.</p>
@@ -16290,8 +16254,8 @@ pub mod fluent_builders {
         /// of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
         /// For more information, see the <a href="https://aws.amazon.com/glue/pricing/">Glue
         /// pricing page</a>.</p>
-        pub fn allocated_capacity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_capacity(signature);
+        pub fn allocated_capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_capacity(input);
             self
         }
         /// <p>This field is deprecated. Use <code>MaxCapacity</code> instead.</p>
@@ -16308,8 +16272,8 @@ pub mod fluent_builders {
         /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
         /// consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default
         /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-        pub fn timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can
@@ -16337,8 +16301,8 @@ pub mod fluent_builders {
         /// <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p>
         /// </li>
         /// </ul>
-        pub fn max_capacity(mut self, signature: f64) -> Self {
-            self.inner = self.inner.max_capacity(signature);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>The number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure
@@ -16365,8 +16329,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
         /// run.</p>
-        pub fn security_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(signature.into());
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this job
@@ -16379,11 +16343,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies configuration properties of a job run notification.</p>
-        pub fn notification_property(
-            mut self,
-            signature: crate::model::NotificationProperty,
-        ) -> Self {
-            self.inner = self.inner.notification_property(signature);
+        pub fn notification_property(mut self, input: crate::model::NotificationProperty) -> Self {
+            self.inner = self.inner.notification_property(input);
             self
         }
         /// <p>Specifies configuration properties of a job run notification.</p>
@@ -16406,8 +16367,8 @@ pub mod fluent_builders {
         /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
         /// </li>
         /// </ul>
-        pub fn worker_type(mut self, signature: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(signature);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -16432,8 +16393,8 @@ pub mod fluent_builders {
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
         ///
         /// <p>The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
-        pub fn number_of_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_workers(signature);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when a job runs.</p>
@@ -16511,8 +16472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16596,8 +16557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the machine learning transform.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>The unique identifier of the machine learning transform.</p>
@@ -16607,8 +16568,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
         /// set.</p>
-        pub fn output_s3_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_path(signature.into());
+        pub fn output_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_path(input.into());
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path where you generate the labeling
@@ -16683,8 +16644,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to start.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to start.</p>
@@ -16753,8 +16714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to start.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to start.</p>
@@ -16823,8 +16784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler to stop.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the crawler to stop.</p>
@@ -16895,8 +16856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the crawler whose schedule state to set.</p>
-        pub fn crawler_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(signature.into());
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>Name of the crawler whose schedule state to set.</p>
@@ -16965,8 +16926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to stop.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to stop.</p>
@@ -17035,8 +16996,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workflow to stop.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow to stop.</p>
@@ -17045,8 +17006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the workflow run to stop.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The ID of the workflow run to stop.</p>
@@ -17118,8 +17079,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Glue resource to which to add the tags. For more
         /// information about Glue resource ARNs, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">Glue ARN string pattern</a>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the Glue resource to which to add the tags. For more
@@ -17212,8 +17173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to remove the tags.</p>
@@ -17299,8 +17260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the blueprint.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the blueprint.</p>
@@ -17309,8 +17270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the blueprint.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the blueprint.</p>
@@ -17319,8 +17280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-        pub fn blueprint_location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blueprint_location(signature.into());
+        pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blueprint_location(input.into());
             self
         }
         /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
@@ -17394,11 +17355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
-        pub fn grok_classifier(
-            mut self,
-            signature: crate::model::UpdateGrokClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.grok_classifier(signature);
+        pub fn grok_classifier(mut self, input: crate::model::UpdateGrokClassifierRequest) -> Self {
+            self.inner = self.inner.grok_classifier(input);
             self
         }
         /// <p>A <code>GrokClassifier</code> object with updated fields.</p>
@@ -17410,11 +17368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
-        pub fn xml_classifier(
-            mut self,
-            signature: crate::model::UpdateXmlClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.xml_classifier(signature);
+        pub fn xml_classifier(mut self, input: crate::model::UpdateXmlClassifierRequest) -> Self {
+            self.inner = self.inner.xml_classifier(input);
             self
         }
         /// <p>An <code>XMLClassifier</code> object with updated fields.</p>
@@ -17426,11 +17381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
-        pub fn json_classifier(
-            mut self,
-            signature: crate::model::UpdateJsonClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.json_classifier(signature);
+        pub fn json_classifier(mut self, input: crate::model::UpdateJsonClassifierRequest) -> Self {
+            self.inner = self.inner.json_classifier(input);
             self
         }
         /// <p>A <code>JsonClassifier</code> object with updated fields.</p>
@@ -17442,11 +17394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
-        pub fn csv_classifier(
-            mut self,
-            signature: crate::model::UpdateCsvClassifierRequest,
-        ) -> Self {
-            self.inner = self.inner.csv_classifier(signature);
+        pub fn csv_classifier(mut self, input: crate::model::UpdateCsvClassifierRequest) -> Self {
+            self.inner = self.inner.csv_classifier(input);
             self
         }
         /// <p>A <code>CsvClassifier</code> object with updated fields.</p>
@@ -17523,8 +17472,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -17534,8 +17483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -17547,8 +17496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -17654,8 +17603,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
         /// If none is supplied, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partitions in question reside.
@@ -17665,8 +17614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the partitions reside.</p>
@@ -17678,8 +17627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partitions' table.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the partitions' table.</p>
@@ -17766,8 +17715,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
         /// account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services
@@ -17777,8 +17726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connection definition to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the connection definition to update.</p>
@@ -17788,8 +17737,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>ConnectionInput</code> object that redefines the connection
         /// in question.</p>
-        pub fn connection_input(mut self, signature: crate::model::ConnectionInput) -> Self {
-            self.inner = self.inner.connection_input(signature);
+        pub fn connection_input(mut self, input: crate::model::ConnectionInput) -> Self {
+            self.inner = self.inner.connection_input(input);
             self
         }
         /// <p>A <code>ConnectionInput</code> object that redefines the connection
@@ -17864,8 +17813,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the new crawler.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the new crawler.</p>
@@ -17875,8 +17824,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
         /// to access customer resources.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The IAM role or Amazon Resource Name (ARN) of an IAM role that is used by the new crawler
@@ -17887,8 +17836,8 @@ pub mod fluent_builders {
         }
         /// <p>The Glue database where results are stored, such as:
         /// <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The Glue database where results are stored, such as:
@@ -17901,8 +17850,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the new crawler.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the new crawler.</p>
@@ -17911,8 +17860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of targets to crawl.</p>
-        pub fn targets(mut self, signature: crate::model::CrawlerTargets) -> Self {
-            self.inner = self.inner.targets(signature);
+        pub fn targets(mut self, input: crate::model::CrawlerTargets) -> Self {
+            self.inner = self.inner.targets(input);
             self
         }
         /// <p>A list of targets to crawl.</p>
@@ -17926,8 +17875,8 @@ pub mod fluent_builders {
         /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
         /// something every day at 12:15 UTC, you would specify:
         /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
@@ -17961,8 +17910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
-        pub fn table_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_prefix(signature.into());
+        pub fn table_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_prefix(input.into());
             self
         }
         /// <p>The table prefix used for catalog tables that are created.</p>
@@ -17971,8 +17920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
-        pub fn schema_change_policy(mut self, signature: crate::model::SchemaChangePolicy) -> Self {
-            self.inner = self.inner.schema_change_policy(signature);
+        pub fn schema_change_policy(mut self, input: crate::model::SchemaChangePolicy) -> Self {
+            self.inner = self.inner.schema_change_policy(input);
             self
         }
         /// <p>The policy for the crawler's update and deletion behavior.</p>
@@ -17984,8 +17933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-        pub fn recrawl_policy(mut self, signature: crate::model::RecrawlPolicy) -> Self {
-            self.inner = self.inner.recrawl_policy(signature);
+        pub fn recrawl_policy(mut self, input: crate::model::RecrawlPolicy) -> Self {
+            self.inner = self.inner.recrawl_policy(input);
             self
         }
         /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
@@ -17997,11 +17946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
-        pub fn lineage_configuration(
-            mut self,
-            signature: crate::model::LineageConfiguration,
-        ) -> Self {
-            self.inner = self.inner.lineage_configuration(signature);
+        pub fn lineage_configuration(mut self, input: crate::model::LineageConfiguration) -> Self {
+            self.inner = self.inner.lineage_configuration(input);
             self
         }
         /// <p>Specifies data lineage configuration settings for the crawler.</p>
@@ -18015,8 +17961,8 @@ pub mod fluent_builders {
         /// <p>Crawler configuration information. This versioned JSON string allows users
         /// to specify aspects of a crawler's behavior.
         /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring a Crawler</a>.</p>
-        pub fn configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(signature.into());
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
             self
         }
         /// <p>Crawler configuration information. This versioned JSON string allows users
@@ -18033,9 +17979,9 @@ pub mod fluent_builders {
         /// crawler.</p>
         pub fn crawler_security_configuration(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.crawler_security_configuration(signature.into());
+            self.inner = self.inner.crawler_security_configuration(input.into());
             self
         }
         /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this
@@ -18108,8 +18054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the crawler whose schedule to update.</p>
-        pub fn crawler_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.crawler_name(signature.into());
+        pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.crawler_name(input.into());
             self
         }
         /// <p>The name of the crawler whose schedule to update.</p>
@@ -18120,8 +18066,8 @@ pub mod fluent_builders {
         /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
         /// something every day at 12:15 UTC, you would specify:
         /// <code>cron(15 12 * * ? *)</code>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The updated <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run
@@ -18193,8 +18139,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog in which the metadata database resides. If none is provided,
@@ -18205,8 +18151,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the database to update in the catalog. For Hive
         /// compatibility, this is folded to lowercase.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the database to update in the catalog. For Hive
@@ -18217,8 +18163,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>DatabaseInput</code> object specifying the new definition
         /// of the metadata database in the catalog.</p>
-        pub fn database_input(mut self, signature: crate::model::DatabaseInput) -> Self {
-            self.inner = self.inner.database_input(signature);
+        pub fn database_input(mut self, input: crate::model::DatabaseInput) -> Self {
+            self.inner = self.inner.database_input(input);
             self
         }
         /// <p>A <code>DatabaseInput</code> object specifying the new definition
@@ -18291,8 +18237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
@@ -18304,8 +18250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
-        pub fn public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.public_key(signature.into());
+        pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.public_key(input.into());
             self
         }
         /// <p>The public key for the <code>DevEndpoint</code> to use.</p>
@@ -18348,11 +18294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
-        pub fn custom_libraries(
-            mut self,
-            signature: crate::model::DevEndpointCustomLibraries,
-        ) -> Self {
-            self.inner = self.inner.custom_libraries(signature);
+        pub fn custom_libraries(mut self, input: crate::model::DevEndpointCustomLibraries) -> Self {
+            self.inner = self.inner.custom_libraries(input);
             self
         }
         /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
@@ -18366,8 +18309,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>True</code> if the list of custom libraries to be loaded in the development endpoint
         /// needs to be updated, or <code>False</code> if otherwise.</p>
-        pub fn update_etl_libraries(mut self, signature: bool) -> Self {
-            self.inner = self.inner.update_etl_libraries(signature);
+        pub fn update_etl_libraries(mut self, input: bool) -> Self {
+            self.inner = self.inner.update_etl_libraries(input);
             self
         }
         /// <p>
@@ -18504,8 +18447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job definition to update.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job definition to update.</p>
@@ -18514,8 +18457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the values with which to update the job definition.</p>
-        pub fn job_update(mut self, signature: crate::model::JobUpdate) -> Self {
-            self.inner = self.inner.job_update(signature);
+        pub fn job_update(mut self, input: crate::model::JobUpdate) -> Self {
+            self.inner = self.inner.job_update(input);
             self
         }
         /// <p>Specifies the values with which to update the job definition.</p>
@@ -18591,8 +18534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier that was generated when the transform was created.</p>
-        pub fn transform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_id(signature.into());
+        pub fn transform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_id(input.into());
             self
         }
         /// <p>A unique identifier that was generated when the transform was created.</p>
@@ -18601,8 +18544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name that you gave the transform when you created it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name that you gave the transform when you created it.</p>
@@ -18611,8 +18554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the transform. The default is an empty string.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the transform. The default is an empty string.</p>
@@ -18622,8 +18565,8 @@ pub mod fluent_builders {
         }
         /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
         /// Conditionally dependent on the transform type.</p>
-        pub fn parameters(mut self, signature: crate::model::TransformParameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::TransformParameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The configuration parameters that are specific to the transform type (algorithm) used.
@@ -18637,8 +18580,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
         /// permissions.</p>
-        pub fn role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role(signature.into());
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
@@ -18648,8 +18591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
-        pub fn glue_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.glue_version(signature.into());
+        pub fn glue_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.glue_version(input.into());
             self
         }
         /// <p>This value determines which version of Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9.  For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">Glue Versions</a> in the developer guide.</p>
@@ -18663,8 +18606,8 @@ pub mod fluent_builders {
         /// page</a>. </p>
         ///
         /// <p>When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically and becomes read-only.</p>
-        pub fn max_capacity(mut self, signature: f64) -> Self {
-            self.inner = self.inner.max_capacity(signature);
+        pub fn max_capacity(mut self, input: f64) -> Self {
+            self.inner = self.inner.max_capacity(input);
             self
         }
         /// <p>The number of Glue data processing units (DPUs) that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of
@@ -18689,8 +18632,8 @@ pub mod fluent_builders {
         /// <p>For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.</p>
         /// </li>
         /// </ul>
-        pub fn worker_type(mut self, signature: crate::model::WorkerType) -> Self {
-            self.inner = self.inner.worker_type(signature);
+        pub fn worker_type(mut self, input: crate::model::WorkerType) -> Self {
+            self.inner = self.inner.worker_type(input);
             self
         }
         /// <p>The type of predefined worker that is allocated when this task runs. Accepts a value of Standard, G.1X, or G.2X.</p>
@@ -18713,8 +18656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
-        pub fn number_of_workers(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_workers(signature);
+        pub fn number_of_workers(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_workers(input);
             self
         }
         /// <p>The number of workers of a defined <code>workerType</code> that are allocated when this task runs.</p>
@@ -18723,8 +18666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
-        pub fn timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout for a task run for this transform in minutes. This is the maximum time that a task run for this transform can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).</p>
@@ -18733,8 +18676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
-        pub fn max_retries(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_retries(signature);
+        pub fn max_retries(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_retries(input);
             self
         }
         /// <p>The maximum number of times to retry a task for this transform after a task run fails.</p>
@@ -18804,8 +18747,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
         /// the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the partition to be updated resides. If none is provided,
@@ -18816,8 +18759,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the table in question
         /// resides.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the table in question
@@ -18830,8 +18773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table in which the partition to be updated is located.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table in which the partition to be updated is located.</p>
@@ -18859,8 +18802,8 @@ pub mod fluent_builders {
         /// <p>The new partition object to update the partition to.</p>
         ///
         /// <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>
-        pub fn partition_input(mut self, signature: crate::model::PartitionInput) -> Self {
-            self.inner = self.inner.partition_input(signature);
+        pub fn partition_input(mut self, input: crate::model::PartitionInput) -> Self {
+            self.inner = self.inner.partition_input(input);
             self
         }
         /// <p>The new partition object to update the partition to.</p>
@@ -18934,8 +18877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
-        pub fn registry_id(mut self, signature: crate::model::RegistryId) -> Self {
-            self.inner = self.inner.registry_id(signature);
+        pub fn registry_id(mut self, input: crate::model::RegistryId) -> Self {
+            self.inner = self.inner.registry_id(input);
             self
         }
         /// <p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>
@@ -18947,8 +18890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the registry. If description is not provided, this field will not be updated.</p>
@@ -19028,8 +18971,8 @@ pub mod fluent_builders {
         /// <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
         /// </li>
         /// </ul>
-        pub fn schema_id(mut self, signature: crate::model::SchemaId) -> Self {
-            self.inner = self.inner.schema_id(signature);
+        pub fn schema_id(mut self, input: crate::model::SchemaId) -> Self {
+            self.inner = self.inner.schema_id(input);
             self
         }
         /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
@@ -19046,11 +18989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
-        pub fn schema_version_number(
-            mut self,
-            signature: crate::model::SchemaVersionNumber,
-        ) -> Self {
-            self.inner = self.inner.schema_version_number(signature);
+        pub fn schema_version_number(mut self, input: crate::model::SchemaVersionNumber) -> Self {
+            self.inner = self.inner.schema_version_number(input);
             self
         }
         /// <p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>
@@ -19062,8 +19002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new compatibility setting for the schema.</p>
-        pub fn compatibility(mut self, signature: crate::model::Compatibility) -> Self {
-            self.inner = self.inner.compatibility(signature);
+        pub fn compatibility(mut self, input: crate::model::Compatibility) -> Self {
+            self.inner = self.inner.compatibility(input);
             self
         }
         /// <p>The new compatibility setting for the schema.</p>
@@ -19075,8 +19015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the schema.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the schema.</p>
@@ -19146,8 +19086,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
         /// ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the table resides. If none is provided, the Amazon Web Services account
@@ -19158,8 +19098,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database in which the table resides. For Hive
         /// compatibility, this name is entirely lowercase.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database in which the table resides. For Hive
@@ -19173,8 +19113,8 @@ pub mod fluent_builders {
         }
         /// <p>An updated <code>TableInput</code> object to define the metadata table
         /// in the catalog.</p>
-        pub fn table_input(mut self, signature: crate::model::TableInput) -> Self {
-            self.inner = self.inner.table_input(signature);
+        pub fn table_input(mut self, input: crate::model::TableInput) -> Self {
+            self.inner = self.inner.table_input(input);
             self
         }
         /// <p>An updated <code>TableInput</code> object to define the metadata table
@@ -19189,8 +19129,8 @@ pub mod fluent_builders {
         /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
         /// before updating it. However, if <code>skipArchive</code> is set to true,
         /// <code>UpdateTable</code> does not create the archived version.</p>
-        pub fn skip_archive(mut self, signature: bool) -> Self {
-            self.inner = self.inner.skip_archive(signature);
+        pub fn skip_archive(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_archive(input);
             self
         }
         /// <p>By default, <code>UpdateTable</code> always creates an archived version of the table
@@ -19201,8 +19141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The transaction ID at which to update the table contents. </p>
-        pub fn transaction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transaction_id(signature.into());
+        pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transaction_id(input.into());
             self
         }
         /// <p>The transaction ID at which to update the table contents. </p>
@@ -19274,8 +19214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trigger to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the trigger to update.</p>
@@ -19284,8 +19224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new values with which to update the trigger.</p>
-        pub fn trigger_update(mut self, signature: crate::model::TriggerUpdate) -> Self {
-            self.inner = self.inner.trigger_update(signature);
+        pub fn trigger_update(mut self, input: crate::model::TriggerUpdate) -> Self {
+            self.inner = self.inner.trigger_update(input);
             self
         }
         /// <p>The new values with which to update the trigger.</p>
@@ -19358,8 +19298,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
         /// provided, the Amazon Web Services account ID is used by default.</p>
-        pub fn catalog_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_id(signature.into());
+        pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_id(input.into());
             self
         }
         /// <p>The ID of the Data Catalog where the function to be updated is located. If none is
@@ -19370,8 +19310,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the catalog database where the function to be updated is
         /// located.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the catalog database where the function to be updated is
@@ -19384,8 +19324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the function.</p>
-        pub fn function_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_name(signature.into());
+        pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_name(input.into());
             self
         }
         /// <p>The name of the function.</p>
@@ -19398,8 +19338,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
         /// Catalog.</p>
-        pub fn function_input(mut self, signature: crate::model::UserDefinedFunctionInput) -> Self {
-            self.inner = self.inner.function_input(signature);
+        pub fn function_input(mut self, input: crate::model::UserDefinedFunctionInput) -> Self {
+            self.inner = self.inner.function_input(input);
             self
         }
         /// <p>A <code>FunctionInput</code> object that redefines the function in the Data
@@ -19472,8 +19412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the workflow to be updated.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the workflow to be updated.</p>
@@ -19482,8 +19422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the workflow.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the workflow.</p>
@@ -19515,8 +19455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>
-        pub fn max_concurrent_runs(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_concurrent_runs(signature);
+        pub fn max_concurrent_runs(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_runs(input);
             self
         }
         /// <p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>

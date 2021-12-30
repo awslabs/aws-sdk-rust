@@ -436,8 +436,8 @@ pub mod fluent_builders {
         /// query can return fewer than this maximum, even if there are more results still to return. You
         /// should always check the <code>PaginationToken</code> response value to see if there are more
         /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to be returned in each page. A
@@ -451,8 +451,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -551,8 +551,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -696,8 +696,8 @@ pub mod fluent_builders {
         /// query can return fewer than this maximum, even if there are more results still to return. You
         /// should always check the <code>PaginationToken</code> response value to see if there are more
         /// results. You can specify a minimum of 1 and a maximum value of 100.</p>
-        pub fn resources_per_page(mut self, signature: i32) -> Self {
-            self.inner = self.inner.resources_per_page(signature);
+        pub fn resources_per_page(mut self, input: i32) -> Self {
+            self.inner = self.inner.resources_per_page(input);
             self
         }
         /// <p>Specifies the maximum number of results to be returned in each page. A
@@ -724,8 +724,8 @@ pub mod fluent_builders {
         /// third page displays the remaining 2 resources, each with its 10 tags.</p>
         /// <p>You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of 500
         /// items.</p>
-        pub fn tags_per_page(mut self, signature: i32) -> Self {
-            self.inner = self.inner.tags_per_page(signature);
+        pub fn tags_per_page(mut self, input: i32) -> Self {
+            self.inner = self.inner.tags_per_page(input);
             self
         }
         /// <p>Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this parameter.</p>
@@ -796,8 +796,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether to include details regarding the compliance with the effective tag
         /// policy. Set this to <code>true</code> to determine whether resources are compliant with
         /// the tag policy and to get details.</p>
-        pub fn include_compliance_details(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_compliance_details(signature);
+        pub fn include_compliance_details(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_compliance_details(input);
             self
         }
         /// <p>Specifies whether to include details regarding the compliance with the effective tag
@@ -812,8 +812,8 @@ pub mod fluent_builders {
         /// noncompliant resources only.</p>
         /// <p>You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
         /// is also set to <code>true</code>.</p>
-        pub fn exclude_compliant_resources(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_compliant_resources(signature);
+        pub fn exclude_compliant_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_compliant_resources(input);
             self
         }
         /// <p>Specifies whether to exclude resources that are compliant with the tag policy. Set
@@ -932,8 +932,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -1016,8 +1016,8 @@ pub mod fluent_builders {
         /// <p>Specifies a <code>PaginationToken</code> response value from a
         /// previous request to indicate that you want the next page of results. Leave this parameter empty
         /// in your initial request.</p>
-        pub fn pagination_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pagination_token(signature.into());
+        pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pagination_token(input.into());
             self
         }
         /// <p>Specifies a <code>PaginationToken</code> response value from a
@@ -1032,8 +1032,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
         /// currently used in the specified Amazon Web Services Region for the calling account.</p>
-        pub fn key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key(signature.into());
+        pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key(input.into());
             self
         }
         /// <p>Specifies the tag key for which you want to list all existing values that are
@@ -1116,8 +1116,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>For more information on S3 bucket requirements, including an example bucket policy,
         /// see the example S3 bucket policy on this page.</p>
-        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(signature.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket where the report will be stored; for example:</p>

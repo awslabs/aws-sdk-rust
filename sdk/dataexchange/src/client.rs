@@ -348,8 +348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -418,8 +418,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of asset that is added to a data set.</p>
-        pub fn asset_type(mut self, signature: crate::model::AssetType) -> Self {
-            self.inner = self.inner.asset_type(signature);
+        pub fn asset_type(mut self, input: crate::model::AssetType) -> Self {
+            self.inner = self.inner.asset_type(input);
             self
         }
         /// <p>The type of asset that is added to a data set.</p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the data set. This value can be up to 16,348 characters long.</p>
@@ -441,8 +441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data set.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data set.</p>
@@ -534,8 +534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>What occurs after a certain event.</p>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>What occurs after a certain event.</p>
@@ -544,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>What occurs to start an action.</p>
-        pub fn event(mut self, signature: crate::model::Event) -> Self {
-            self.inner = self.inner.event(signature);
+        pub fn event(mut self, input: crate::model::Event) -> Self {
+            self.inner = self.inner.event(input);
             self
         }
         /// <p>What occurs to start an action.</p>
@@ -614,8 +614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The details for the CreateJob request.</p>
-        pub fn details(mut self, signature: crate::model::RequestDetails) -> Self {
-            self.inner = self.inner.details(signature);
+        pub fn details(mut self, input: crate::model::RequestDetails) -> Self {
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>The details for the CreateJob request.</p>
@@ -627,8 +627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of job to be created.</p>
-        pub fn r#type(mut self, signature: crate::model::Type) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::Type) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of job to be created.</p>
@@ -697,8 +697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An optional comment about the revision.</p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>An optional comment about the revision.</p>
@@ -707,8 +707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -800,8 +800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -810,8 +810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -820,8 +820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -890,8 +890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -960,8 +960,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(signature.into());
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -1033,8 +1033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1043,8 +1043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1113,8 +1113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -1123,8 +1123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1133,8 +1133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1203,8 +1203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1273,8 +1273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(signature.into());
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -1346,8 +1346,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1426,8 +1426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1496,8 +1496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1506,8 +1506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1516,8 +1516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1586,8 +1586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1596,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1606,8 +1606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-        pub fn origin(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.origin(signature.into());
+        pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.origin(input.into());
             self
         }
         /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
@@ -1676,8 +1676,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the event source.</p>
-        pub fn event_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_source_id(signature.into());
+        pub fn event_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_source_id(input.into());
             self
         }
         /// <p>The unique identifier for the event source.</p>
@@ -1689,8 +1689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1699,8 +1699,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1769,8 +1769,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1779,8 +1779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1789,8 +1789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1799,8 +1799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -1879,8 +1879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call.</p>
@@ -1889,8 +1889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -1899,8 +1899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -1969,8 +1969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -2039,8 +2039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The request body.</p>
-        pub fn body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(signature.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>The request body.</p>
@@ -2072,8 +2072,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Asset ID value for the API request.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>Asset ID value for the API request.</p>
@@ -2082,8 +2082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Data set ID value for the API request.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>Data set ID value for the API request.</p>
@@ -2115,8 +2115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
-        pub fn method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.method(signature.into());
+        pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.method(input.into());
             self
         }
         /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
@@ -2125,8 +2125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}</p>
@@ -2135,8 +2135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Revision ID value for the API request.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>Revision ID value for the API request.</p>
@@ -2205,8 +2205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for a job.</p>
@@ -2275,8 +2275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies an AWS resource.</p>
@@ -2455,8 +2455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for an asset.</p>
-        pub fn asset_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.asset_id(signature.into());
+        pub fn asset_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.asset_id(input.into());
             self
         }
         /// <p>The unique identifier for an asset.</p>
@@ -2465,8 +2465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2475,8 +2475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name. When exporting to Amazon S3, the asset name is used as default target S3 object key. When importing from Amazon API Gateway API, the API name is used as the asset name. When importing from Amazon Redshift, the datashare name is used as the asset name.</p>
@@ -2485,8 +2485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>
@@ -2555,8 +2555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the data set.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the data set.</p>
@@ -2575,8 +2575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data set.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data set.</p>
@@ -2645,8 +2645,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>What occurs after a certain event.</p>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>What occurs after a certain event.</p>
@@ -2655,8 +2655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the event action.</p>
-        pub fn event_action_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.event_action_id(signature.into());
+        pub fn event_action_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_action_id(input.into());
             self
         }
         /// <p>The unique identifier for the event action.</p>
@@ -2728,8 +2728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An optional comment about the revision.</p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>An optional comment about the revision.</p>
@@ -2738,8 +2738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a data set.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The unique identifier for a data set.</p>
@@ -2748,8 +2748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
-        pub fn finalized(mut self, signature: bool) -> Self {
-            self.inner = self.inner.finalized(signature);
+        pub fn finalized(mut self, input: bool) -> Self {
+            self.inner = self.inner.finalized(input);
             self
         }
         /// <p>Finalizing a revision tells AWS Data Exchange that your changes to the assets in the revision are complete. After it's in this read-only state, you can publish the revision to your products.</p>
@@ -2758,8 +2758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for a revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The unique identifier for a revision.</p>

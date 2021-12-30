@@ -573,8 +573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias.</p>
-        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(signature.into());
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias.</p>
@@ -583,8 +583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the directory to associate the connection alias with.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory to associate the connection alias with.</p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -742,8 +742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -842,8 +842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the image.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the image.</p>
@@ -862,8 +862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source image.</p>
-        pub fn source_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_id(signature.into());
+        pub fn source_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_id(input.into());
             self
         }
         /// <p>The identifier of the source image.</p>
@@ -875,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source Region.</p>
-        pub fn source_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_region(signature.into());
+        pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_region(input.into());
             self
         }
         /// <p>The identifier of the source Region.</p>
@@ -973,8 +973,8 @@ pub mod fluent_builders {
         /// connection string with a different account, even if you delete all instances of it from the original account. The
         /// connection string is globally reserved for your account.</p>
         /// </important>
-        pub fn connection_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_string(signature.into());
+        pub fn connection_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_string(input.into());
             self
         }
         /// <p>A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
@@ -1078,8 +1078,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group.</p>
@@ -1088,8 +1088,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the group.</p>
-        pub fn group_desc(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_desc(signature.into());
+        pub fn group_desc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_desc(input.into());
             self
         }
         /// <p>The description of the group.</p>
@@ -1193,8 +1193,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
         /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
@@ -1304,8 +1304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new updated WorkSpace image.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new updated WorkSpace image.</p>
@@ -1314,8 +1314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of whether updates for the WorkSpace image are available.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of whether updates for the WorkSpace image are available.</p>
@@ -1324,8 +1324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the source WorkSpace image.</p>
-        pub fn source_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_image_id(signature.into());
+        pub fn source_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_image_id(input.into());
             self
         }
         /// <p>The identifier of the source WorkSpace image.</p>
@@ -1426,8 +1426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the bundle.</p>
-        pub fn bundle_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_name(signature.into());
+        pub fn bundle_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_name(input.into());
             self
         }
         /// <p>The name of the bundle.</p>
@@ -1436,8 +1436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the bundle.</p>
-        pub fn bundle_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_description(signature.into());
+        pub fn bundle_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_description(input.into());
             self
         }
         /// <p>The description of the bundle.</p>
@@ -1449,8 +1449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the image that is used to create the bundle.</p>
-        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(signature.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image that is used to create the bundle.</p>
@@ -1459,8 +1459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the compute type of the bundle.</p>
-        pub fn compute_type(mut self, signature: crate::model::ComputeType) -> Self {
-            self.inner = self.inner.compute_type(signature);
+        pub fn compute_type(mut self, input: crate::model::ComputeType) -> Self {
+            self.inner = self.inner.compute_type(input);
             self
         }
         /// <p>Describes the compute type of the bundle.</p>
@@ -1472,8 +1472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the user volume for a WorkSpace bundle.</p>
-        pub fn user_storage(mut self, signature: crate::model::UserStorage) -> Self {
-            self.inner = self.inner.user_storage(signature);
+        pub fn user_storage(mut self, input: crate::model::UserStorage) -> Self {
+            self.inner = self.inner.user_storage(input);
             self
         }
         /// <p>Describes the user volume for a WorkSpace bundle.</p>
@@ -1485,8 +1485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the root volume for a WorkSpace bundle.</p>
-        pub fn root_storage(mut self, signature: crate::model::RootStorage) -> Self {
-            self.inner = self.inner.root_storage(signature);
+        pub fn root_storage(mut self, input: crate::model::RootStorage) -> Self {
+            self.inner = self.inner.root_storage(input);
             self
         }
         /// <p>Describes the root volume for a WorkSpace bundle.</p>
@@ -1680,8 +1680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias to delete.</p>
-        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(signature.into());
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias to delete.</p>
@@ -1751,8 +1751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the IP access control group.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the IP access control group.</p>
@@ -1822,8 +1822,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
         /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
@@ -1912,8 +1912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bundle.</p>
-        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(signature.into());
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the bundle.</p>
@@ -1984,8 +1984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(signature.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -2072,8 +2072,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
         /// remove them before you deregister the directory, or you will receive an OperationNotSupportedException
         /// error.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory. If any WorkSpaces are registered to this directory, you must
@@ -2207,8 +2207,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -2374,8 +2374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the directory associated with the connection alias.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory associated with the connection alias.</p>
@@ -2384,8 +2384,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of connection aliases to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of connection aliases to return.</p>
@@ -2395,8 +2395,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
         /// next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
@@ -2470,8 +2470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias.</p>
-        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(signature.into());
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias.</p>
@@ -2481,8 +2481,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
         /// next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the
@@ -2492,8 +2492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2580,8 +2580,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -2591,8 +2591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -2662,8 +2662,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
         /// registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces,
@@ -2753,8 +2753,8 @@ pub mod fluent_builders {
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
         /// <p>To describe the bundles provided by Amazon Web Services, specify <code>AMAZON</code>.
         /// To describe the bundles that belong to your account, don't specify a value.</p>
-        pub fn owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner(signature.into());
+        pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner(input.into());
             self
         }
         /// <p>The owner of the bundles. You cannot combine this parameter with any other filter.</p>
@@ -2765,8 +2765,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results. (You received this token from a previous call.)</p>
@@ -2855,8 +2855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of directories to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of directories to return.</p>
@@ -2866,8 +2866,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -2938,8 +2938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(signature.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -2949,8 +2949,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -2960,8 +2960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3048,8 +3048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type (owned or shared) of the image.</p>
-        pub fn image_type(mut self, signature: crate::model::ImageType) -> Self {
-            self.inner = self.inner.image_type(signature);
+        pub fn image_type(mut self, input: crate::model::ImageType) -> Self {
+            self.inner = self.inner.image_type(input);
             self
         }
         /// <p>The type (owned or shared) of the image.</p>
@@ -3062,8 +3062,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -3073,8 +3073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3170,8 +3170,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the directory. In addition, you can optionally specify a specific
         /// directory user (see <code>UserName</code>). You cannot combine this parameter with any
         /// other filter.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory. In addition, you can optionally specify a specific
@@ -3183,8 +3183,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the directory user. You must specify this parameter with
         /// <code>DirectoryId</code>.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the directory user. You must specify this parameter with
@@ -3195,8 +3195,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
         /// retrieved. You cannot combine this parameter with any other filter.</p>
-        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(signature.into());
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the bundle. All WorkSpaces that are created from this bundle are
@@ -3206,8 +3206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3217,8 +3217,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -3308,8 +3308,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -3379,8 +3379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -3457,8 +3457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias to disassociate.</p>
-        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(signature.into());
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias to disassociate.</p>
@@ -3527,8 +3527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -3618,8 +3618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the EC2 image.</p>
-        pub fn ec2_image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_image_id(signature.into());
+        pub fn ec2_image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_image_id(input.into());
             self
         }
         /// <p>The identifier of the EC2 image.</p>
@@ -3636,9 +3636,9 @@ pub mod fluent_builders {
         /// <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.</p>
         pub fn ingestion_process(
             mut self,
-            signature: crate::model::WorkspaceImageIngestionProcess,
+            input: crate::model::WorkspaceImageIngestionProcess,
         ) -> Self {
-            self.inner = self.inner.ingestion_process(signature);
+            self.inner = self.inner.ingestion_process(input);
             self
         }
         /// <p>The ingestion process to be used when importing the image, depending on which protocol
@@ -3656,8 +3656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the WorkSpace image.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the WorkSpace image.</p>
@@ -3666,8 +3666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the WorkSpace image.</p>
-        pub fn image_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_description(signature.into());
+        pub fn image_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_description(input.into());
             self
         }
         /// <p>The description of the WorkSpace image.</p>
@@ -3798,11 +3798,9 @@ pub mod fluent_builders {
         /// network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).</p>
         pub fn management_cidr_range_constraint(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .management_cidr_range_constraint(signature.into());
+            self.inner = self.inner.management_cidr_range_constraint(input.into());
             self
         }
         /// <p>The IP address range to search. Specify an IP address range that is compatible with your
@@ -3815,8 +3813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3826,8 +3824,8 @@ pub mod fluent_builders {
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
         /// provide this token to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If you received a <code>NextToken</code> from a previous call that was paginated,
@@ -3905,8 +3903,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace to migrate from.</p>
-        pub fn source_workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_workspace_id(signature.into());
+        pub fn source_workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace to migrate from.</p>
@@ -3918,8 +3916,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(signature.into());
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
@@ -3991,9 +3989,9 @@ pub mod fluent_builders {
         /// <p>The status of BYOL.</p>
         pub fn dedicated_tenancy_support(
             mut self,
-            signature: crate::model::DedicatedTenancySupportEnum,
+            input: crate::model::DedicatedTenancySupportEnum,
         ) -> Self {
-            self.inner = self.inner.dedicated_tenancy_support(signature);
+            self.inner = self.inner.dedicated_tenancy_support(input);
             self
         }
         /// <p>The status of BYOL.</p>
@@ -4011,11 +4009,11 @@ pub mod fluent_builders {
         /// <code>ListAvailableManagementCidrRanges</code> operation.</p>
         pub fn dedicated_tenancy_management_cidr_range(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .dedicated_tenancy_management_cidr_range(signature.into());
+                .dedicated_tenancy_management_cidr_range(input.into());
             self
         }
         /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
@@ -4093,8 +4091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource identifiers, in the form of directory IDs.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource identifiers, in the form of directory IDs.</p>
@@ -4103,8 +4101,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the Amazon WorkSpaces client.</p>
-        pub fn client_properties(mut self, signature: crate::model::ClientProperties) -> Self {
-            self.inner = self.inner.client_properties(signature);
+        pub fn client_properties(mut self, input: crate::model::ClientProperties) -> Self {
+            self.inner = self.inner.client_properties(input);
             self
         }
         /// <p>Information about the Amazon WorkSpaces client.</p>
@@ -4177,8 +4175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4189,9 +4187,9 @@ pub mod fluent_builders {
         /// <p>The permissions to enable or disable self-service capabilities.</p>
         pub fn selfservice_permissions(
             mut self,
-            signature: crate::model::SelfservicePermissions,
+            input: crate::model::SelfservicePermissions,
         ) -> Self {
-            self.inner = self.inner.selfservice_permissions(signature);
+            self.inner = self.inner.selfservice_permissions(input);
             self
         }
         /// <p>The permissions to enable or disable self-service capabilities.</p>
@@ -4265,8 +4263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4277,9 +4275,9 @@ pub mod fluent_builders {
         /// <p>The device types and operating systems to enable or disable for access.</p>
         pub fn workspace_access_properties(
             mut self,
-            signature: crate::model::WorkspaceAccessProperties,
+            input: crate::model::WorkspaceAccessProperties,
         ) -> Self {
-            self.inner = self.inner.workspace_access_properties(signature);
+            self.inner = self.inner.workspace_access_properties(input);
             self
         }
         /// <p>The device types and operating systems to enable or disable for access.</p>
@@ -4351,8 +4349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4363,9 +4361,9 @@ pub mod fluent_builders {
         /// <p>The default properties for creating WorkSpaces.</p>
         pub fn workspace_creation_properties(
             mut self,
-            signature: crate::model::WorkspaceCreationProperties,
+            input: crate::model::WorkspaceCreationProperties,
         ) -> Self {
-            self.inner = self.inner.workspace_creation_properties(signature);
+            self.inner = self.inner.workspace_creation_properties(input);
             self
         }
         /// <p>The default properties for creating WorkSpaces.</p>
@@ -4441,8 +4439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -4451,11 +4449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The properties of the WorkSpace.</p>
-        pub fn workspace_properties(
-            mut self,
-            signature: crate::model::WorkspaceProperties,
-        ) -> Self {
-            self.inner = self.inner.workspace_properties(signature);
+        pub fn workspace_properties(mut self, input: crate::model::WorkspaceProperties) -> Self {
+            self.inner = self.inner.workspace_properties(input);
             self
         }
         /// <p>The properties of the WorkSpace.</p>
@@ -4532,8 +4527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -4542,8 +4537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The WorkSpace state.</p>
-        pub fn workspace_state(mut self, signature: crate::model::TargetWorkspaceState) -> Self {
-            self.inner = self.inner.workspace_state(signature);
+        pub fn workspace_state(mut self, input: crate::model::TargetWorkspaceState) -> Self {
+            self.inner = self.inner.workspace_state(input);
             self
         }
         /// <p>The WorkSpace state.</p>
@@ -4787,8 +4782,8 @@ pub mod fluent_builders {
         /// InvalidResourceStateException error. If you have already registered the maximum number of directories
         /// that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error.
         /// Deregister directories that you are not using for WorkSpaces, and try again.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory. You cannot register a directory if it does not have a status
@@ -4824,8 +4819,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
         /// WorkDocs is not available in the Region, you will receive an OperationNotSupportedException error. Set
         /// <code>EnableWorkDocs</code> to disabled, and try again.</p>
-        pub fn enable_work_docs(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_work_docs(signature);
+        pub fn enable_work_docs(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_work_docs(input);
             self
         }
         /// <p>Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this parameter and
@@ -4836,8 +4831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
-        pub fn enable_self_service(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_self_service(signature);
+        pub fn enable_self_service(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_self_service(input);
             self
         }
         /// <p>Indicates whether self-service capabilities are enabled or disabled.</p>
@@ -4850,8 +4845,8 @@ pub mod fluent_builders {
         /// enabled for BYOL. If your account has not been enabled for BYOL, you will receive an
         /// InvalidParameterValuesException error. For more information about BYOL images, see
         /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
-        pub fn tenancy(mut self, signature: crate::model::Tenancy) -> Self {
-            self.inner = self.inner.tenancy(signature);
+        pub fn tenancy(mut self, input: crate::model::Tenancy) -> Self {
+            self.inner = self.inner.tenancy(input);
             self
         }
         /// <p>Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own
@@ -4948,8 +4943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the WorkSpace.</p>
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// <p>The identifier of the WorkSpace.</p>
@@ -5018,8 +5013,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -5392,8 +5387,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the connection alias that you want to update permissions for.</p>
-        pub fn alias_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_id(signature.into());
+        pub fn alias_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_id(input.into());
             self
         }
         /// <p>The identifier of the connection alias that you want to update permissions for.</p>
@@ -5404,9 +5399,9 @@ pub mod fluent_builders {
         /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
         pub fn connection_alias_permission(
             mut self,
-            signature: crate::model::ConnectionAliasPermission,
+            input: crate::model::ConnectionAliasPermission,
         ) -> Self {
-            self.inner = self.inner.connection_alias_permission(signature);
+            self.inner = self.inner.connection_alias_permission(input);
             self
         }
         /// <p>Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.</p>
@@ -5479,8 +5474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the group.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group.</p>
@@ -5574,8 +5569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the bundle.</p>
-        pub fn bundle_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bundle_id(signature.into());
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input.into());
             self
         }
         /// <p>The identifier of the bundle.</p>
@@ -5584,8 +5579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(signature.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -5679,8 +5674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the image.</p>
-        pub fn image_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_id(signature.into());
+        pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_id(input.into());
             self
         }
         /// <p>The identifier of the image.</p>
@@ -5690,8 +5685,8 @@ pub mod fluent_builders {
         }
         /// <p>The permission to copy the image. This permission can be revoked only after an image
         /// has been shared.</p>
-        pub fn allow_copy_image(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_copy_image(signature);
+        pub fn allow_copy_image(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_copy_image(input);
             self
         }
         /// <p>The permission to copy the image. This permission can be revoked only after an image
@@ -5705,8 +5700,8 @@ pub mod fluent_builders {
         /// <important>
         /// <p>Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.</p>
         /// </important>
-        pub fn shared_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_account_id(signature.into());
+        pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_account_id(input.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account to share or unshare the image with.</p>

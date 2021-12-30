@@ -178,8 +178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
-        pub fn configuration_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_token(signature.into());
+        pub fn configuration_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_token(input.into());
             self
         }
         /// <p>Token describing the current state of the configuration session. To obtain a token, first call the StartConfigurationSession API. Note that every call to GetLatestConfiguration will return a new ConfigurationToken (NextPollConfigurationToken in the response) and MUST be provided to subsequent GetLatestConfiguration API calls.</p>
@@ -251,8 +251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID or the application name.</p>
-        pub fn application_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_identifier(signature.into());
+        pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_identifier(input.into());
             self
         }
         /// <p>The application ID or the application name.</p>
@@ -264,8 +264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID or the environment name.</p>
-        pub fn environment_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_identifier(signature.into());
+        pub fn environment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_identifier(input.into());
             self
         }
         /// <p>The environment ID or the environment name.</p>
@@ -279,11 +279,9 @@ pub mod fluent_builders {
         /// <p>The configuration profile ID or the configuration profile name.</p>
         pub fn configuration_profile_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .configuration_profile_identifier(signature.into());
+            self.inner = self.inner.configuration_profile_identifier(input.into());
             self
         }
         /// <p>The configuration profile ID or the configuration profile name.</p>
@@ -297,10 +295,8 @@ pub mod fluent_builders {
         /// <p>The interval at which your client will poll for configuration. If provided, the service
         /// will throw a BadRequestException if the client polls before the specified poll interval. By default,
         /// client poll intervals are not enforced.</p>
-        pub fn required_minimum_poll_interval_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self
-                .inner
-                .required_minimum_poll_interval_in_seconds(signature);
+        pub fn required_minimum_poll_interval_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.required_minimum_poll_interval_in_seconds(input);
             self
         }
         /// <p>The interval at which your client will poll for configuration. If provided, the service

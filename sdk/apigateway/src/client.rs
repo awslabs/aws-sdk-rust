@@ -1007,8 +1007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <a>ApiKey</a>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the <a>ApiKey</a>.</p>
@@ -1017,8 +1017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>ApiKey</a>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the <a>ApiKey</a>.</p>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
@@ -1037,8 +1037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
-        pub fn generate_distinct_id(mut self, signature: bool) -> Self {
-            self.inner = self.inner.generate_distinct_id(signature);
+        pub fn generate_distinct_id(mut self, input: bool) -> Self {
+            self.inner = self.inner.generate_distinct_id(input);
             self
         }
         /// <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier is distinct from the created API key value. This parameter is deprecated and should not be used.</p>
@@ -1047,8 +1047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
-        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(signature.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>Specifies a value of the API key.</p> <!-- Why is this declared as the input to create an API key? As a form of copying an existing key value into a new API key? -->
@@ -1074,8 +1074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-        pub fn customer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_id(signature.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_id(input.into());
             self
         }
         /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
@@ -1168,8 +1168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1178,8 +1178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>[Required] The name of the authorizer.</p>
@@ -1188,8 +1188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
-        pub fn r#type(mut self, signature: crate::model::AuthorizerType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::AuthorizerType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>[Required] The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
@@ -1218,8 +1218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
-        pub fn auth_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auth_type(signature.into());
+        pub fn auth_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auth_type(input.into());
             self
         }
         /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
-        pub fn authorizer_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_uri(signature.into());
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_uri(input.into());
             self
         }
         /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
@@ -1241,8 +1241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
-        pub fn authorizer_credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_credentials(signature.into());
+        pub fn authorizer_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_credentials(input.into());
             self
         }
         /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
@@ -1254,8 +1254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
-        pub fn identity_source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_source(signature.into());
+        pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_source(input.into());
             self
         }
         /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
@@ -1269,9 +1269,9 @@ pub mod fluent_builders {
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn identity_validation_expression(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_validation_expression(signature.into());
+            self.inner = self.inner.identity_validation_expression(input.into());
             self
         }
         /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
@@ -1283,8 +1283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
-        pub fn authorizer_result_ttl_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.authorizer_result_ttl_in_seconds(signature);
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.authorizer_result_ttl_in_seconds(input);
             self
         }
         /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
@@ -1356,8 +1356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to create.</p>
@@ -1366,8 +1366,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
-        pub fn base_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(signature.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input.into());
             self
         }
         /// <p>The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify a base path name after the domain name.</p>
@@ -1376,8 +1376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1386,8 +1386,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
-        pub fn stage(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage(signature.into());
+        pub fn stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage(input.into());
             self
         }
         /// <p>The name of the API's stage that you want to use for this mapping. Specify '(none)' if you want callers to explicitly specify the stage name after any base path name.</p>
@@ -1456,8 +1456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1466,8 +1466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
@@ -1476,8 +1476,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
-        pub fn stage_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_description(signature.into());
+        pub fn stage_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_description(input.into());
             self
         }
         /// <p>The description of the <a>Stage</a> resource for the <a>Deployment</a> resource to create.</p>
@@ -1489,8 +1489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the <a>Deployment</a> resource to create.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the <a>Deployment</a> resource to create.</p>
@@ -1499,8 +1499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables a cache cluster for the <a>Stage</a> resource specified in the input.</p>
-        pub fn cache_cluster_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cache_cluster_enabled(signature);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cache_cluster_enabled(input);
             self
         }
         /// <p>Enables a cache cluster for the <a>Stage</a> resource specified in the input.</p>
@@ -1509,8 +1509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is enabled.</p>
-        pub fn cache_cluster_size(mut self, signature: crate::model::CacheClusterSize) -> Self {
-            self.inner = self.inner.cache_cluster_size(signature);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.inner = self.inner.cache_cluster_size(input);
             self
         }
         /// <p>Specifies the cache cluster size for the <a>Stage</a> resource specified in the input, if a cache cluster is enabled.</p>
@@ -1549,11 +1549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
-        pub fn canary_settings(
-            mut self,
-            signature: crate::model::DeploymentCanarySettings,
-        ) -> Self {
-            self.inner = self.inner.canary_settings(signature);
+        pub fn canary_settings(mut self, input: crate::model::DeploymentCanarySettings) -> Self {
+            self.inner = self.inner.canary_settings(input);
             self
         }
         /// <p>The input configuration for the canary deployment when the deployment is a canary release deployment. </p>
@@ -1565,8 +1562,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.tracing_enabled(signature);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tracing_enabled(input);
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
@@ -1634,8 +1631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1644,8 +1641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
-        pub fn location(mut self, signature: crate::model::DocumentationPartLocation) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::DocumentationPartLocation) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>[Required] The location of the targeted API entity of the to-be-created documentation part.</p>
@@ -1657,8 +1654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
-        pub fn properties(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.properties(signature.into());
+        pub fn properties(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.properties(input.into());
             self
         }
         /// <p>[Required] The new documentation content map of the targeted API entity. Enclosed key-value pairs are API-specific, but only OpenAPI-compliant key-value pairs can be exported and, hence, published.</p>
@@ -1726,8 +1723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -1736,8 +1733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The version identifier of the new snapshot.</p>
-        pub fn documentation_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(signature.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input.into());
             self
         }
         /// <p>[Required] The version identifier of the new snapshot.</p>
@@ -1749,8 +1746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage name to be associated with the new documentation snapshot.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The stage name to be associated with the new documentation snapshot.</p>
@@ -1759,8 +1756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description about the new documentation snapshot.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description about the new documentation snapshot.</p>
@@ -1829,8 +1826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
@@ -1839,8 +1836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
-        pub fn certificate_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_name(signature.into());
+        pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_name(input.into());
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
@@ -1852,8 +1849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
-        pub fn certificate_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_body(signature.into());
+        pub fn certificate_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_body(input.into());
             self
         }
         /// <p>[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint for this domain name provided by your certificate authority.</p>
@@ -1865,11 +1862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
-        pub fn certificate_private_key(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.certificate_private_key(signature.into());
+        pub fn certificate_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_private_key(input.into());
             self
         }
         /// <p>[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.</p>
@@ -1881,8 +1875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
-        pub fn certificate_chain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_chain(signature.into());
+        pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_chain(input.into());
             self
         }
         /// <p>[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.</p>
@@ -1894,8 +1888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(signature.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
@@ -1907,11 +1901,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
-        pub fn regional_certificate_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.regional_certificate_name(signature.into());
+        pub fn regional_certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regional_certificate_name(input.into());
             self
         }
         /// <p>The user-friendly name of the certificate that will be used by regional endpoint for this domain name.</p>
@@ -1923,11 +1914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
-        pub fn regional_certificate_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.regional_certificate_arn(signature.into());
+        pub fn regional_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.regional_certificate_arn(input.into());
             self
         }
         /// <p>The reference to an AWS-managed certificate that will be used by regional endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
@@ -1941,9 +1929,9 @@ pub mod fluent_builders {
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
         pub fn endpoint_configuration(
             mut self,
-            signature: crate::model::EndpointConfiguration,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configuration(signature);
+            self.inner = self.inner.endpoint_configuration(input);
             self
         }
         /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
@@ -1978,8 +1966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
-        pub fn security_policy(mut self, signature: crate::model::SecurityPolicy) -> Self {
-            self.inner = self.inner.security_policy(signature);
+        pub fn security_policy(mut self, input: crate::model::SecurityPolicy) -> Self {
+            self.inner = self.inner.security_policy(input);
             self
         }
         /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
@@ -1993,9 +1981,9 @@ pub mod fluent_builders {
         /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
         pub fn mutual_tls_authentication(
             mut self,
-            signature: crate::model::MutualTlsAuthenticationInput,
+            input: crate::model::MutualTlsAuthenticationInput,
         ) -> Self {
-            self.inner = self.inner.mutual_tls_authentication(signature);
+            self.inner = self.inner.mutual_tls_authentication(input);
             self
         }
         /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
@@ -2009,11 +1997,11 @@ pub mod fluent_builders {
         /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
         pub fn ownership_verification_certificate_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .ownership_verification_certificate_arn(signature.into());
+                .ownership_verification_certificate_arn(input.into());
             self
         }
         /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
@@ -2085,8 +2073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> will be created.</p>
@@ -2095,8 +2083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the model. Must be alphanumeric.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>[Required] The name of the model. Must be alphanumeric.</p>
@@ -2105,8 +2093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the model.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the model.</p>
@@ -2115,8 +2103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
-        pub fn schema(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema(signature.into());
+        pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema(input.into());
             self
         }
         /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model.</p>
@@ -2125,8 +2113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The content-type for the model.</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>[Required] The content-type for the model.</p>
@@ -2195,8 +2183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -2205,8 +2193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the to-be-created <a>RequestValidator</a>.</p>
@@ -2215,8 +2203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
-        pub fn validate_request_body(mut self, signature: bool) -> Self {
-            self.inner = self.inner.validate_request_body(signature);
+        pub fn validate_request_body(mut self, input: bool) -> Self {
+            self.inner = self.inner.validate_request_body(input);
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request body according to the configured model schema for the method (<code>true</code>) or not (<code>false</code>).</p>
@@ -2225,8 +2213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
-        pub fn validate_request_parameters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.validate_request_parameters(signature);
+        pub fn validate_request_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.validate_request_parameters(input);
             self
         }
         /// <p>A Boolean flag to indicate whether to validate request parameters, <code>true</code>, or not <code>false</code>.</p>
@@ -2295,8 +2283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -2305,8 +2293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The parent resource's identifier.</p>
-        pub fn parent_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_id(signature.into());
+        pub fn parent_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_id(input.into());
             self
         }
         /// <p>[Required] The parent resource's identifier.</p>
@@ -2315,8 +2303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last path segment for this resource.</p>
-        pub fn path_part(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_part(signature.into());
+        pub fn path_part(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_part(input.into());
             self
         }
         /// <p>The last path segment for this resource.</p>
@@ -2385,8 +2373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>RestApi</a>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>RestApi</a>.</p>
@@ -2395,8 +2383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>RestApi</a>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the <a>RestApi</a>.</p>
@@ -2405,8 +2393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A version identifier for the API.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>A version identifier for the API.</p>
@@ -2415,8 +2403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
-        pub fn clone_from(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.clone_from(signature.into());
+        pub fn clone_from(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.clone_from(input.into());
             self
         }
         /// <p>The ID of the <a>RestApi</a> that you want to clone from.</p>
@@ -2442,8 +2430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
-        pub fn minimum_compression_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.minimum_compression_size(signature);
+        pub fn minimum_compression_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_compression_size(input);
             self
         }
         /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
@@ -2452,8 +2440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
-        pub fn api_key_source(mut self, signature: crate::model::ApiKeySourceType) -> Self {
-            self.inner = self.inner.api_key_source(signature);
+        pub fn api_key_source(mut self, input: crate::model::ApiKeySourceType) -> Self {
+            self.inner = self.inner.api_key_source(input);
             self
         }
         /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
@@ -2467,9 +2455,9 @@ pub mod fluent_builders {
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn endpoint_configuration(
             mut self,
-            signature: crate::model::EndpointConfiguration,
+            input: crate::model::EndpointConfiguration,
         ) -> Self {
-            self.inner = self.inner.endpoint_configuration(signature);
+            self.inner = self.inner.endpoint_configuration(input);
             self
         }
         /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
@@ -2481,8 +2469,8 @@ pub mod fluent_builders {
             self
         }
         /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.
-        pub fn policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy(signature.into());
+        pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy(input.into());
             self
         }
         /// A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.
@@ -2514,8 +2502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
-        pub fn disable_execute_api_endpoint(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disable_execute_api_endpoint(signature);
+        pub fn disable_execute_api_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_execute_api_endpoint(input);
             self
         }
         /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
@@ -2588,8 +2576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -2598,8 +2586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name for the <a>Stage</a> resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
@@ -2608,8 +2596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource for the <a>Stage</a> resource.</p>
@@ -2621,8 +2609,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the <a>Stage</a> resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the <a>Stage</a> resource.</p>
@@ -2631,8 +2619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether cache clustering is enabled for the stage.</p>
-        pub fn cache_cluster_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cache_cluster_enabled(signature);
+        pub fn cache_cluster_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.cache_cluster_enabled(input);
             self
         }
         /// <p>Whether cache clustering is enabled for the stage.</p>
@@ -2641,8 +2629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stage's cache cluster size.</p>
-        pub fn cache_cluster_size(mut self, signature: crate::model::CacheClusterSize) -> Self {
-            self.inner = self.inner.cache_cluster_size(signature);
+        pub fn cache_cluster_size(mut self, input: crate::model::CacheClusterSize) -> Self {
+            self.inner = self.inner.cache_cluster_size(input);
             self
         }
         /// <p>The stage's cache cluster size.</p>
@@ -2681,8 +2669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the associated API documentation.</p>
-        pub fn documentation_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(signature.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input.into());
             self
         }
         /// <p>The version of the associated API documentation.</p>
@@ -2694,8 +2682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The canary deployment settings of this stage.</p>
-        pub fn canary_settings(mut self, signature: crate::model::CanarySettings) -> Self {
-            self.inner = self.inner.canary_settings(signature);
+        pub fn canary_settings(mut self, input: crate::model::CanarySettings) -> Self {
+            self.inner = self.inner.canary_settings(input);
             self
         }
         /// <p>The canary deployment settings of this stage.</p>
@@ -2707,8 +2695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
-        pub fn tracing_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.tracing_enabled(signature);
+        pub fn tracing_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tracing_enabled(input);
             self
         }
         /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
@@ -2800,8 +2788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the usage plan.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>[Required] The name of the usage plan.</p>
@@ -2810,8 +2798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the usage plan.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the usage plan.</p>
@@ -2837,8 +2825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The throttling limits of the usage plan.</p>
-        pub fn throttle(mut self, signature: crate::model::ThrottleSettings) -> Self {
-            self.inner = self.inner.throttle(signature);
+        pub fn throttle(mut self, input: crate::model::ThrottleSettings) -> Self {
+            self.inner = self.inner.throttle(input);
             self
         }
         /// <p>The throttling limits of the usage plan.</p>
@@ -2850,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The quota of the usage plan.</p>
-        pub fn quota(mut self, signature: crate::model::QuotaSettings) -> Self {
-            self.inner = self.inner.quota(signature);
+        pub fn quota(mut self, input: crate::model::QuotaSettings) -> Self {
+            self.inner = self.inner.quota(input);
             self
         }
         /// <p>The quota of the usage plan.</p>
@@ -2946,8 +2934,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-created <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -2959,8 +2947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>[Required] The identifier of a <a>UsagePlanKey</a> resource for a plan customer.</p>
@@ -2969,8 +2957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
-        pub fn key_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_type(signature.into());
+        pub fn key_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_type(input.into());
             self
         }
         /// <p>[Required] The type of a <a>UsagePlanKey</a> resource for a plan customer.</p>
@@ -3039,8 +3027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name used to label and identify the VPC link.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>[Required] The name used to label and identify the VPC link.</p>
@@ -3049,8 +3037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the VPC link.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the VPC link.</p>
@@ -3159,8 +3147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
-        pub fn api_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(signature.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be deleted.</p>
@@ -3230,8 +3218,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3240,8 +3228,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(signature.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
@@ -3313,8 +3301,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -3324,8 +3312,8 @@ pub mod fluent_builders {
         }
         /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(signature.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input.into());
             self
         }
         /// <p>[Required] The base path name of the <a>BasePathMapping</a> resource to delete.</p>
@@ -3395,8 +3383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
-        pub fn client_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(signature.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be deleted.</p>
@@ -3468,8 +3456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3478,8 +3466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to delete.</p>
@@ -3550,8 +3538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3560,8 +3548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
-        pub fn documentation_part_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(signature.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the to-be-deleted documentation part.</p>
@@ -3632,8 +3620,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3642,8 +3630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
-        pub fn documentation_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(signature.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input.into());
             self
         }
         /// <p>[Required] The version identifier of a to-be-deleted documentation snapshot.</p>
@@ -3715,8 +3703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be deleted.</p>
@@ -3785,8 +3773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3795,8 +3783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
-        pub fn response_type(mut self, signature: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(signature);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
@@ -3868,8 +3856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3878,8 +3866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a delete integration request's resource identifier.</p>
@@ -3888,8 +3876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a delete integration request's HTTP method.</p>
@@ -3958,8 +3946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -3968,8 +3956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a delete integration response request's resource identifier.</p>
@@ -3978,8 +3966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a delete integration response request's HTTP method.</p>
@@ -3988,8 +3976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a delete integration response request's status code.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] Specifies a delete integration response request's status code.</p>
@@ -4058,8 +4046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4068,8 +4056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -4078,8 +4066,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -4148,8 +4136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4158,8 +4146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -4168,8 +4156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -4178,8 +4166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] The status code identifier for the <a>MethodResponse</a> resource.</p>
@@ -4248,8 +4236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4258,8 +4246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the model to delete.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>[Required] The name of the model to delete.</p>
@@ -4328,8 +4316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4338,8 +4326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
-        pub fn request_validator_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(signature.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be deleted.</p>
@@ -4411,8 +4399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4421,8 +4409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
@@ -4491,8 +4479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4561,8 +4549,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4571,8 +4559,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to delete.</p>
@@ -4641,8 +4629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the to-be-deleted usage plan.</p>
@@ -4714,8 +4702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-deleted <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -4727,8 +4715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlanKey</a> resource to be deleted.</p>
@@ -4797,8 +4785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(signature.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
@@ -4867,8 +4855,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>The string identifier of the associated <a>RestApi</a>.</p>
@@ -4877,8 +4865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the stage to flush.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>The name of the stage to flush.</p>
@@ -4947,8 +4935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -4957,8 +4945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the stage to flush its cache.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the stage to flush its cache.</p>
@@ -5027,8 +5015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the <a>ClientCertificate</a>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the <a>ClientCertificate</a>.</p>
@@ -5180,8 +5168,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
-        pub fn api_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(signature.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource.</p>
@@ -5190,8 +5178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
-        pub fn include_value(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_value(signature);
+        pub fn include_value(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_value(input);
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains the key value.</p>
@@ -5260,8 +5248,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -5270,8 +5258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -5280,8 +5268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of queried API keys.</p>
-        pub fn name_query(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(signature.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input.into());
             self
         }
         /// <p>The name of queried API keys.</p>
@@ -5290,8 +5278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
-        pub fn customer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_id(signature.into());
+        pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_id(input.into());
             self
         }
         /// <p>The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.</p>
@@ -5300,8 +5288,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
-        pub fn include_values(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_values(signature);
+        pub fn include_values(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_values(input);
             self
         }
         /// <p>A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.</p>
@@ -5371,8 +5359,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5381,8 +5369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(signature.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
@@ -5455,8 +5443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5465,8 +5453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -5475,8 +5463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -5545,8 +5533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to be described.</p>
@@ -5555,8 +5543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
-        pub fn base_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(signature.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input.into());
             self
         }
         /// <p>[Required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.</p>
@@ -5625,8 +5613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
@@ -5635,8 +5623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -5645,8 +5633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -5715,8 +5703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
-        pub fn client_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(signature.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be described.</p>
@@ -5788,8 +5776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -5798,8 +5786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -5868,8 +5856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5878,8 +5866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Deployment</a> resource to get information about.</p>
@@ -5968,8 +5956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -5978,8 +5966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -5988,8 +5976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -6057,8 +6045,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6067,8 +6055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn documentation_part_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(signature.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6139,8 +6127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6149,8 +6137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-        pub fn r#type(mut self, signature: crate::model::DocumentationPartType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DocumentationPartType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
@@ -6162,8 +6150,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn name_query(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(signature.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input.into());
             self
         }
         /// <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -6172,8 +6160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>The path of API entities of the to-be-retrieved documentation parts.</p>
@@ -6182,8 +6170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -6192,8 +6180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -6202,8 +6190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
-        pub fn location_status(mut self, signature: crate::model::LocationStatusType) -> Self {
-            self.inner = self.inner.location_status(signature);
+        pub fn location_status(mut self, input: crate::model::LocationStatusType) -> Self {
+            self.inner = self.inner.location_status(input);
             self
         }
         /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources without content.</p>
@@ -6274,8 +6262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6284,8 +6272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
-        pub fn documentation_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(signature.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input.into());
             self
         }
         /// <p>[Required] The version identifier of the to-be-retrieved documentation snapshot.</p>
@@ -6356,8 +6344,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6366,8 +6354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -6376,8 +6364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -6446,8 +6434,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
@@ -6516,8 +6504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -6526,8 +6514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -6596,8 +6584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6606,8 +6594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that will be exported.</p>
@@ -6616,8 +6604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
-        pub fn export_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_type(signature.into());
+        pub fn export_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_type(input.into());
             self
         }
         /// <p>[Required] The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and 'swagger' for Swagger/OpenAPI 2.0.</p>
@@ -6649,8 +6637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
-        pub fn accepts(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.accepts(signature.into());
+        pub fn accepts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.accepts(input.into());
             self
         }
         /// <p>The content-type of the export, for example <code>application/json</code>. Currently <code>application/json</code> and <code>application/yaml</code> are supported for <code>exportType</code> of<code>oas30</code> and <code>swagger</code>. This should be specified in the <code>Accept</code> header for direct API requests.</p>
@@ -6719,8 +6707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6729,8 +6717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
-        pub fn response_type(mut self, signature: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(signature);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
@@ -6802,8 +6790,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6812,8 +6800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
@@ -6822,8 +6810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The <a>GatewayResponses</a> collection does not support pagination and the limit does not apply here.</p>
@@ -6892,8 +6880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6902,8 +6890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a get integration request's resource identifier</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a get integration request's resource identifier</p>
@@ -6912,8 +6900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a get integration request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a get integration request's HTTP method.</p>
@@ -6982,8 +6970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -6992,8 +6980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a get integration response request's resource identifier.</p>
@@ -7002,8 +6990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a get integration response request's HTTP method.</p>
@@ -7012,8 +7000,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a get integration response request's status code.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] Specifies a get integration response request's status code.</p>
@@ -7082,8 +7070,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7092,8 +7080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -7102,8 +7090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
@@ -7172,8 +7160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7182,8 +7170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -7192,8 +7180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -7202,8 +7190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
@@ -7272,8 +7260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The <a>RestApi</a> identifier under which the <a>Model</a> exists.</p>
@@ -7282,8 +7270,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the model as an identifier.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>[Required] The name of the model as an identifier.</p>
@@ -7292,8 +7280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
-        pub fn flatten(mut self, signature: bool) -> Self {
-            self.inner = self.inner.flatten(signature);
+        pub fn flatten(mut self, input: bool) -> Self {
+            self.inner = self.inner.flatten(input);
             self
         }
         /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
@@ -7362,8 +7350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7372,8 +7360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -7382,8 +7370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -7452,8 +7440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7462,8 +7450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the model for which to generate a template.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>[Required] The name of the model for which to generate a template.</p>
@@ -7532,8 +7520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7542,8 +7530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
-        pub fn request_validator_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(signature.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>RequestValidator</a> to be retrieved.</p>
@@ -7615,8 +7603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7625,8 +7613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -7635,8 +7623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -7705,8 +7693,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7715,8 +7703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The identifier for the <a>Resource</a> resource.</p>
@@ -7802,8 +7790,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7812,8 +7800,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -7822,8 +7810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -7909,8 +7897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -7979,8 +7967,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -7989,8 +7977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -8059,8 +8047,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8069,8 +8057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> that the SDK will use.</p>
@@ -8079,8 +8067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
-        pub fn sdk_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sdk_type(signature.into());
+        pub fn sdk_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sdk_type(input.into());
             self
         }
         /// <p>[Required] The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>, <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS), and <code>ruby</code>  are supported.</p>
@@ -8171,8 +8159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
@@ -8240,8 +8228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -8250,8 +8238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -8320,8 +8308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8330,8 +8318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to get information about.</p>
@@ -8400,8 +8388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -8410,8 +8398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stages' deployment identifiers.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The stages' deployment identifiers.</p>
@@ -8483,8 +8471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
@@ -8493,8 +8481,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>(Not currently supported) The current pagination position in the paged result set.</p>
@@ -8503,8 +8491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -8573,8 +8561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
@@ -8586,8 +8574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Id of the API key associated with the resultant usage data.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>The Id of the API key associated with the resultant usage data.</p>
@@ -8596,8 +8584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
-        pub fn start_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(signature.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(input.into());
             self
         }
         /// <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
@@ -8606,8 +8594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
-        pub fn end_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(signature.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(input.into());
             self
         }
         /// <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
@@ -8616,8 +8604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -8626,8 +8614,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -8696,8 +8684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>UsagePlan</a> resource to be retrieved.</p>
@@ -8769,8 +8757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -8782,8 +8770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>[Required] The key Id of the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -8852,8 +8840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the <a>UsagePlan</a> resource representing the usage plan containing the to-be-retrieved <a>UsagePlanKey</a> resource representing a plan customer.</p>
@@ -8865,8 +8853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -8875,8 +8863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -8885,8 +8873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
-        pub fn name_query(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_query(signature.into());
+        pub fn name_query(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_query(input.into());
             self
         }
         /// <p>A query parameter specifying the name of the to-be-returned usage plan keys.</p>
@@ -8955,8 +8943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -8965,8 +8953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the API key associated with the usage plans.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>The identifier of the API key associated with the usage plans.</p>
@@ -8975,8 +8963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -9045,8 +9033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(signature.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
@@ -9115,8 +9103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current pagination position in the paged result set.</p>
-        pub fn position(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.position(signature.into());
+        pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.position(input.into());
             self
         }
         /// <p>The current pagination position in the paged result set.</p>
@@ -9125,8 +9113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -9195,8 +9183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
-        pub fn body(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(signature);
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
         /// <p>The payload of the POST request to import API keys. For the payload format, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-key-file-format.html">API Key File Format</a>.</p>
@@ -9205,8 +9193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
-        pub fn format(mut self, signature: crate::model::ApiKeysFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::ApiKeysFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>A query parameter to specify the input format to imported API keys. Currently, only the <code>csv</code> format is supported.</p>
@@ -9218,8 +9206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
-        pub fn fail_on_warnings(mut self, signature: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(signature);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>A query parameter to indicate whether to rollback <a>ApiKey</a> importation (<code>true</code>) or not (<code>false</code>) when error is encountered.</p>
@@ -9287,8 +9275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9297,8 +9285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
-        pub fn mode(mut self, signature: crate::model::PutMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>A query parameter to indicate whether to overwrite (<code>OVERWRITE</code>) any existing <a>DocumentationParts</a> definition or to merge (<code>MERGE</code>) the new definition into the existing one. The default value is <code>MERGE</code>.</p>
@@ -9307,8 +9295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, signature: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(signature);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>A query parameter to specify whether to rollback the documentation importation (<code>true</code>) or not (<code>false</code>) when a warning is encountered. The default value is <code>false</code>.</p>
@@ -9317,8 +9305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
-        pub fn body(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(signature);
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
         /// <p>[Required] Raw byte array representing the to-be-imported documentation parts. To import from an OpenAPI file, this is a JSON object.</p>
@@ -9388,8 +9376,8 @@ pub mod fluent_builders {
         }
         /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, signature: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(signature);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>A query parameter to indicate whether to rollback the API creation (<code>true</code>) or not (<code>false</code>)
@@ -9436,8 +9424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(signature);
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
         /// <p>[Required] The POST request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -9506,8 +9494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9516,8 +9504,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
-        pub fn response_type(mut self, signature: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(signature);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
@@ -9529,8 +9517,8 @@ pub mod fluent_builders {
             self
         }
         /// The HTTP status code of the <a>GatewayResponse</a>.
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// The HTTP status code of the <a>GatewayResponse</a>.
@@ -9645,8 +9633,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9655,8 +9643,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a put integration request's resource ID.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a put integration request's resource ID.</p>
@@ -9665,8 +9653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a put integration request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a put integration request's HTTP method.</p>
@@ -9675,8 +9663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a put integration input's type.</p>
-        pub fn r#type(mut self, signature: crate::model::IntegrationType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::IntegrationType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>[Required] Specifies a put integration input's type.</p>
@@ -9688,11 +9676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
-        pub fn integration_http_method(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.integration_http_method(signature.into());
+        pub fn integration_http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.integration_http_method(input.into());
             self
         }
         /// <p>Specifies a put integration HTTP method. When the integration type is HTTP or AWS, this field is required.</p>
@@ -9709,8 +9694,8 @@ pub mod fluent_builders {
         /// </li>
         /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
         /// </li></ul>
-        pub fn uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.uri(signature.into());
+        pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.uri(input.into());
             self
         }
         /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
@@ -9724,8 +9709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
-        pub fn connection_type(mut self, signature: crate::model::ConnectionType) -> Self {
-            self.inner = self.inner.connection_type(signature);
+        pub fn connection_type(mut self, input: crate::model::ConnectionType) -> Self {
+            self.inner = self.inner.connection_type(input);
             self
         }
         /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
@@ -9737,8 +9722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
@@ -9750,8 +9735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether credentials are required for a put integration.</p>
-        pub fn credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.credentials(signature.into());
+        pub fn credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.credentials(input.into());
             self
         }
         /// <p>Specifies whether credentials are required for a put integration.</p>
@@ -9812,8 +9797,8 @@ pub mod fluent_builders {
         /// <li><p><code>NEVER</code> rejects unmapped content types with an HTTP 415 'Unsupported Media Type' response.</p></li>
         /// <li><p><code>WHEN_NO_TEMPLATES</code> allows pass-through when the integration has NO content types mapped to templates. However if there is at least one content type defined, unmapped content types will be rejected with the same 415 response.</p></li>
         /// </ul>
-        pub fn passthrough_behavior(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.passthrough_behavior(signature.into());
+        pub fn passthrough_behavior(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.passthrough_behavior(input.into());
             self
         }
         /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the <code>requestTemplates</code> property on the Integration resource. There are three valid values:  <code>WHEN_NO_MATCH</code>, <code>WHEN_NO_TEMPLATES</code>, and <code>NEVER</code>.
@@ -9831,8 +9816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
-        pub fn cache_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cache_namespace(signature.into());
+        pub fn cache_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cache_namespace(input.into());
             self
         }
         /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
@@ -9866,11 +9851,8 @@ pub mod fluent_builders {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
-        pub fn content_handling(
-            mut self,
-            signature: crate::model::ContentHandlingStrategy,
-        ) -> Self {
-            self.inner = self.inner.content_handling(signature);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.inner = self.inner.content_handling(input);
             self
         }
         /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -9887,8 +9869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
-        pub fn timeout_in_millis(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout_in_millis(signature);
+        pub fn timeout_in_millis(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_in_millis(input);
             self
         }
         /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
@@ -9897,8 +9879,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn tls_config(mut self, signature: crate::model::TlsConfig) -> Self {
-            self.inner = self.inner.tls_config(signature);
+        pub fn tls_config(mut self, input: crate::model::TlsConfig) -> Self {
+            self.inner = self.inner.tls_config(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -9970,8 +9952,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -9980,8 +9962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a put integration response request's resource identifier.</p>
@@ -9990,8 +9972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a put integration response request's HTTP method.</p>
@@ -10000,8 +9982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
@@ -10010,8 +9992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the selection pattern of a put integration response.</p>
-        pub fn selection_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.selection_pattern(signature.into());
+        pub fn selection_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.selection_pattern(input.into());
             self
         }
         /// <p>Specifies the selection pattern of a put integration response.</p>
@@ -10076,11 +10058,8 @@ pub mod fluent_builders {
         /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
         /// </ul>
         /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
-        pub fn content_handling(
-            mut self,
-            signature: crate::model::ContentHandlingStrategy,
-        ) -> Self {
-            self.inner = self.inner.content_handling(signature);
+        pub fn content_handling(mut self, input: crate::model::ContentHandlingStrategy) -> Self {
+            self.inner = self.inner.content_handling(input);
             self
         }
         /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
@@ -10157,8 +10136,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10167,8 +10146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the new <a>Method</a> resource.</p>
@@ -10177,8 +10156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies the method request's HTTP method type.</p>
@@ -10187,8 +10166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-        pub fn authorization_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorization_type(signature.into());
+        pub fn authorization_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_type(input.into());
             self
         }
         /// <p>[Required] The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
@@ -10200,8 +10179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
-        pub fn authorizer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(signature.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>Specifies the identifier of an <a>Authorizer</a> to use on this Method, if the type is CUSTOM or COGNITO_USER_POOLS. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
@@ -10213,8 +10192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
-        pub fn api_key_required(mut self, signature: bool) -> Self {
-            self.inner = self.inner.api_key_required(signature);
+        pub fn api_key_required(mut self, input: bool) -> Self {
+            self.inner = self.inner.api_key_required(input);
             self
         }
         /// <p>Specifies whether the method required a valid <a>ApiKey</a>.</p>
@@ -10223,8 +10202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
-        pub fn operation_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_name(signature.into());
+        pub fn operation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_name(input.into());
             self
         }
         /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
@@ -10276,8 +10255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for validating the method request.</p>
-        pub fn request_validator_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(signature.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input.into());
             self
         }
         /// <p>The identifier of a <a>RequestValidator</a> for validating the method request.</p>
@@ -10366,8 +10345,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10376,8 +10355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -10386,8 +10365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -10396,8 +10375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The method response's status code.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] The method response's status code.</p>
@@ -10507,8 +10486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10518,8 +10497,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
         /// the update mode is "merge".</p>
-        pub fn mode(mut self, signature: crate::model::PutMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::PutMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The <code>mode</code> query parameter to specify the update mode. Valid values are "merge" and "overwrite". By default,
@@ -10530,8 +10509,8 @@ pub mod fluent_builders {
         }
         /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>)
         /// when a warning is encountered. The default value is <code>false</code>.</p>
-        pub fn fail_on_warnings(mut self, signature: bool) -> Self {
-            self.inner = self.inner.fail_on_warnings(signature);
+        pub fn fail_on_warnings(mut self, input: bool) -> Self {
+            self.inner = self.inner.fail_on_warnings(input);
             self
         }
         /// <p>A query parameter to indicate whether to rollback the API update (<code>true</code>) or not (<code>false</code>)
@@ -10564,8 +10543,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
-        pub fn body(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.body(signature);
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.body(input);
             self
         }
         /// <p>[Required] The PUT request body containing external API definitions. Currently, only OpenAPI definition JSON/YAML files are supported. The maximum size of the API definition file is 6MB.</p>
@@ -10634,8 +10613,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
@@ -10731,8 +10710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10741,8 +10720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
-        pub fn authorizer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(signature.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a> ID.</p>
@@ -10800,8 +10779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_with_query_string(signature.into());
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_with_query_string(input.into());
             self
         }
         /// <p>[Optional] The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
@@ -10813,8 +10792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(signature.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>[Optional] The simulated request body of an incoming invocation request.</p>
@@ -10929,8 +10908,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -10939,8 +10918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies a test invoke method request's resource ID.</p>
@@ -10949,8 +10928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies a test invoke method request's HTTP method.</p>
@@ -10959,8 +10938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
-        pub fn path_with_query_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path_with_query_string(signature.into());
+        pub fn path_with_query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path_with_query_string(input.into());
             self
         }
         /// <p>The URI path, including query string, of the simulated invocation request. Use this to specify path parameters and query string parameters.</p>
@@ -10972,8 +10951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The simulated request body of an incoming invocation request.</p>
-        pub fn body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.body(signature.into());
+        pub fn body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.body(input.into());
             self
         }
         /// <p>The simulated request body of an incoming invocation request.</p>
@@ -11028,8 +11007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
-        pub fn client_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(signature.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API Gateway will use the certificate when making the HTTPS request to the defined back-end endpoint.</p>
@@ -11124,8 +11103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>[Required] The ARN of a resource that can be tagged.</p>
@@ -11288,8 +11267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
-        pub fn api_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_key(signature.into());
+        pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_key(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ApiKey</a> resource to be updated.</p>
@@ -11376,8 +11355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11386,8 +11365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
-        pub fn authorizer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.authorizer_id(signature.into());
+        pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorizer_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Authorizer</a> resource.</p>
@@ -11476,8 +11455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The domain name of the <a>BasePathMapping</a> resource to change.</p>
@@ -11487,8 +11466,8 @@ pub mod fluent_builders {
         }
         /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
         /// <p>To specify an empty base path, set this parameter to <code>'(none)'</code>.</p>
-        pub fn base_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_path(signature.into());
+        pub fn base_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_path(input.into());
             self
         }
         /// <p>[Required] The base path of the <a>BasePathMapping</a> resource to change.</p>
@@ -11575,8 +11554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
-        pub fn client_certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_certificate_id(signature.into());
+        pub fn client_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_certificate_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>ClientCertificate</a> resource to be updated.</p>
@@ -11665,8 +11644,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11675,8 +11654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p>The replacement identifier for the <a>Deployment</a> resource to change information about.</p>
@@ -11764,8 +11743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -11774,8 +11753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
-        pub fn documentation_part_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_part_id(signature.into());
+        pub fn documentation_part_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_part_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the to-be-updated documentation part.</p>
@@ -11863,8 +11842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>..</p>
@@ -11873,8 +11852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
-        pub fn documentation_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.documentation_version(signature.into());
+        pub fn documentation_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.documentation_version(input.into());
             self
         }
         /// <p>[Required] The version identifier of the to-be-updated documentation version.</p>
@@ -11963,8 +11942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>DomainName</a> resource to be changed.</p>
@@ -12050,8 +12029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12060,8 +12039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
-        pub fn response_type(mut self, signature: crate::model::GatewayResponseType) -> Self {
-            self.inner = self.inner.response_type(signature);
+        pub fn response_type(mut self, input: crate::model::GatewayResponseType) -> Self {
+            self.inner = self.inner.response_type(input);
             self
         }
         /// <p>[Required] <p>The response type of the associated <a>GatewayResponse</a>.</p></p>
@@ -12150,8 +12129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12160,8 +12139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Represents an update integration request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Represents an update integration request's resource identifier.</p>
@@ -12170,8 +12149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Represents an update integration request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Represents an update integration request's HTTP method.</p>
@@ -12257,8 +12236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12267,8 +12246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] Specifies an update integration response request's resource identifier.</p>
@@ -12277,8 +12256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] Specifies an update integration response request's HTTP method.</p>
@@ -12287,8 +12266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] Specifies an update integration response request's status code.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] Specifies an update integration response request's status code.</p>
@@ -12374,8 +12353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12384,8 +12363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>Method</a> resource.</p>
@@ -12394,8 +12373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -12481,8 +12460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12491,8 +12470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The <a>Resource</a> identifier for the <a>MethodResponse</a> resource.</p>
@@ -12501,8 +12480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
-        pub fn http_method(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.http_method(signature.into());
+        pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.http_method(input.into());
             self
         }
         /// <p>[Required] The HTTP verb of the <a>Method</a> resource.</p>
@@ -12511,8 +12490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
-        pub fn status_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_code(signature.into());
+        pub fn status_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_code(input.into());
             self
         }
         /// <p>[Required] The status code for the <a>MethodResponse</a> resource.</p>
@@ -12598,8 +12577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12608,8 +12587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the model to update.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>[Required] The name of the model to update.</p>
@@ -12695,8 +12674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12705,8 +12684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
-        pub fn request_validator_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_validator_id(signature.into());
+        pub fn request_validator_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_validator_id(input.into());
             self
         }
         /// <p>[Required] The identifier of <a>RequestValidator</a> to be updated.</p>
@@ -12795,8 +12774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12805,8 +12784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the <a>Resource</a> resource.</p>
@@ -12892,8 +12871,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12979,8 +12958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
-        pub fn rest_api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rest_api_id(signature.into());
+        pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rest_api_id(input.into());
             self
         }
         /// <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
@@ -12989,8 +12968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
-        pub fn stage_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stage_name(signature.into());
+        pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stage_name(input.into());
             self
         }
         /// <p>[Required] The name of the <a>Stage</a> resource to change information about.</p>
@@ -13076,8 +13055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the usage plan associated with the usage data.</p>
@@ -13089,8 +13068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.</p>
@@ -13176,8 +13155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The Id of the to-be-updated usage plan.</p>
-        pub fn usage_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_plan_id(signature.into());
+        pub fn usage_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_plan_id(input.into());
             self
         }
         /// <p>[Required] The Id of the to-be-updated usage plan.</p>
@@ -13266,8 +13245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
-        pub fn vpc_link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_link_id(signature.into());
+        pub fn vpc_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_link_id(input.into());
             self
         }
         /// <p>[Required] The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>

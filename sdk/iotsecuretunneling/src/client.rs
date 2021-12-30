@@ -203,8 +203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the tunnel to close.</p>
-        pub fn tunnel_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(signature.into());
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tunnel_id(input.into());
             self
         }
         /// <p>The ID of the tunnel to close.</p>
@@ -214,8 +214,8 @@ pub mod fluent_builders {
         }
         /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
         /// immediately.</p>
-        pub fn delete(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete(signature);
+        pub fn delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete(input);
             self
         }
         /// <p>When set to true, AWS IoT Secure Tunneling deletes the tunnel data
@@ -285,8 +285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tunnel to describe.</p>
-        pub fn tunnel_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tunnel_id(signature.into());
+        pub fn tunnel_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tunnel_id(input.into());
             self
         }
         /// <p>The tunnel to describe.</p>
@@ -355,8 +355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -426,8 +426,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the IoT thing associated with the destination device.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the IoT thing associated with the destination device.</p>
@@ -436,8 +436,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -446,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A short text description of the tunnel. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A short text description of the tunnel. </p>
@@ -544,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The destination configuration for the OpenTunnel request.</p>
-        pub fn destination_config(mut self, signature: crate::model::DestinationConfig) -> Self {
-            self.inner = self.inner.destination_config(signature);
+        pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
+            self.inner = self.inner.destination_config(input);
             self
         }
         /// <p>The destination configuration for the OpenTunnel request.</p>
@@ -557,8 +557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Timeout configuration for a tunnel.</p>
-        pub fn timeout_config(mut self, signature: crate::model::TimeoutConfig) -> Self {
-            self.inner = self.inner.timeout_config(signature);
+        pub fn timeout_config(mut self, input: crate::model::TimeoutConfig) -> Self {
+            self.inner = self.inner.timeout_config(input);
             self
         }
         /// <p>Timeout configuration for a tunnel.</p>
@@ -630,8 +630,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -717,8 +717,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>

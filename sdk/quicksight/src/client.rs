@@ -1007,8 +1007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -1020,8 +1020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
@@ -1030,8 +1030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the ingestion.</p>
-        pub fn ingestion_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ingestion_id(signature.into());
+        pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingestion_id(input.into());
             self
         }
         /// <p>An ID for the ingestion.</p>
@@ -1123,8 +1123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.</p>
@@ -1136,8 +1136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The Amazon QuickSight namespace that you want to add customizations to.</p>
@@ -1153,11 +1153,8 @@ pub mod fluent_builders {
         /// specifying <code>"AccountCustomization": { "DefaultTheme":
         /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
         /// }</code>. </p>
-        pub fn account_customization(
-            mut self,
-            signature: crate::model::AccountCustomization,
-        ) -> Self {
-            self.inner = self.inner.account_customization(signature);
+        pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
+            self.inner = self.inner.account_customization(input);
             self
         }
         /// <p>The Amazon QuickSight customizations you're adding in the current Amazon Web Services Region. You can add
@@ -1253,8 +1250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account where you are creating an analysis.</p>
@@ -1267,8 +1264,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
         /// analysis.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID for the analysis that you're creating. This ID displays in the URL of the
@@ -1279,8 +1276,8 @@ pub mod fluent_builders {
         }
         /// <p>A descriptive name for the analysis that you're creating. This name displays for the
         /// analysis in the Amazon QuickSight console. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the analysis that you're creating. This name displays for the
@@ -1291,8 +1288,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter names and override values that you want to use. An analysis can have
         /// any parameter type, and some parameters might accept multiple values. </p>
-        pub fn parameters(mut self, signature: crate::model::Parameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The parameter names and override values that you want to use. An analysis can have
@@ -1333,8 +1330,8 @@ pub mod fluent_builders {
         }
         /// <p>A source entity to use for the analysis that you're creating. This metadata structure
         /// contains details that describe a source template and one or more datasets.</p>
-        pub fn source_entity(mut self, signature: crate::model::AnalysisSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::AnalysisSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>A source entity to use for the analysis that you're creating. This metadata structure
@@ -1348,8 +1345,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
         /// in the Amazon QuickSight console, make sure that you have access to it.</p>
-        pub fn theme_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_arn(signature.into());
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_arn(input.into());
             self
         }
         /// <p>The ARN for the theme to apply to the analysis that you're creating. To see the theme
@@ -1446,8 +1443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
@@ -1459,8 +1456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard, also added to the IAM policy.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard, also added to the IAM policy.</p>
@@ -1469,8 +1466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the dashboard.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name of the dashboard.</p>
@@ -1481,8 +1478,8 @@ pub mod fluent_builders {
         /// <p>The parameters for the creation of the dashboard, which you want to use to override
         /// the default settings. A dashboard can have any type of parameters, and some parameters
         /// might accept multiple values. </p>
-        pub fn parameters(mut self, signature: crate::model::Parameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The parameters for the creation of the dashboard, which you want to use to override
@@ -1534,8 +1531,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
-        pub fn source_entity(mut self, signature: crate::model::DashboardSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::DashboardSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>The entity that you are using as a source when you create the dashboard. In
@@ -1579,8 +1576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the first version of the dashboard being created.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description for the first version of the dashboard being created.</p>
@@ -1617,9 +1614,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn dashboard_publish_options(
             mut self,
-            signature: crate::model::DashboardPublishOptions,
+            input: crate::model::DashboardPublishOptions,
         ) -> Self {
-            self.inner = self.inner.dashboard_publish_options(signature);
+            self.inner = self.inner.dashboard_publish_options(input);
             self
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
@@ -1657,8 +1654,8 @@ pub mod fluent_builders {
         /// you add a value for this field, it overrides the value that is used in the source
         /// entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
-        pub fn theme_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_arn(signature.into());
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
@@ -1730,8 +1727,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -1743,8 +1740,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -1753,8 +1750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name for the dataset.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name for the dataset.</p>
@@ -1809,8 +1806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want to import the data into SPICE.</p>
-        pub fn import_mode(mut self, signature: crate::model::DataSetImportMode) -> Self {
-            self.inner = self.inner.import_mode(signature);
+        pub fn import_mode(mut self, input: crate::model::DataSetImportMode) -> Self {
+            self.inner = self.inner.import_mode(input);
             self
         }
         /// <p>Indicates whether you want to import the data into SPICE.</p>
@@ -1881,9 +1878,9 @@ pub mod fluent_builders {
         /// <p>The row-level security configuration for the data that you want to create.</p>
         pub fn row_level_permission_data_set(
             mut self,
-            signature: crate::model::RowLevelPermissionDataSet,
+            input: crate::model::RowLevelPermissionDataSet,
         ) -> Self {
-            self.inner = self.inner.row_level_permission_data_set(signature);
+            self.inner = self.inner.row_level_permission_data_set(input);
             self
         }
         /// <p>The row-level security configuration for the data that you want to create.</p>
@@ -1897,9 +1894,9 @@ pub mod fluent_builders {
         /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
         pub fn row_level_permission_tag_configuration(
             mut self,
-            signature: crate::model::RowLevelPermissionTagConfiguration,
+            input: crate::model::RowLevelPermissionTagConfiguration,
         ) -> Self {
-            self.inner = self.inner.row_level_permission_tag_configuration(signature);
+            self.inner = self.inner.row_level_permission_tag_configuration(input);
             self
         }
         /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
@@ -1954,9 +1951,9 @@ pub mod fluent_builders {
         /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
         pub fn data_set_usage_configuration(
             mut self,
-            signature: crate::model::DataSetUsageConfiguration,
+            input: crate::model::DataSetUsageConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_set_usage_configuration(signature);
+            self.inner = self.inner.data_set_usage_configuration(input);
             self
         }
         /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -2028,8 +2025,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -2041,8 +2038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
@@ -2054,8 +2051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display name for the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A display name for the data source.</p>
@@ -2066,8 +2063,8 @@ pub mod fluent_builders {
         /// <p>The type of the data source. To return a
         /// list of all data sources, use <code>ListDataSources</code>.</p>
         /// <p>Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.</p>
-        pub fn r#type(mut self, signature: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the data source. To return a
@@ -2081,11 +2078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-        pub fn data_source_parameters(
-            mut self,
-            signature: crate::model::DataSourceParameters,
-        ) -> Self {
-            self.inner = self.inner.data_source_parameters(signature);
+        pub fn data_source_parameters(mut self, input: crate::model::DataSourceParameters) -> Self {
+            self.inner = self.inner.data_source_parameters(input);
             self
         }
         /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
@@ -2098,8 +2092,8 @@ pub mod fluent_builders {
         }
         /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
         /// credentials based on user name and password are supported.</p>
-        pub fn credentials(mut self, signature: crate::model::DataSourceCredentials) -> Self {
-            self.inner = self.inner.credentials(signature);
+        pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
+            self.inner = self.inner.credentials(input);
             self
         }
         /// <p>The credentials Amazon QuickSight that uses to connect to your underlying source. Currently, only
@@ -2132,9 +2126,9 @@ pub mod fluent_builders {
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
-            signature: crate::model::VpcConnectionProperties,
+            input: crate::model::VpcConnectionProperties,
         ) -> Self {
-            self.inner = self.inner.vpc_connection_properties(signature);
+            self.inner = self.inner.vpc_connection_properties(input);
             self
         }
         /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
@@ -2147,8 +2141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
-        pub fn ssl_properties(mut self, signature: crate::model::SslProperties) -> Self {
-            self.inner = self.inner.ssl_properties(signature);
+        pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
+            self.inner = self.inner.ssl_properties(input);
             self
         }
         /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying source.</p>
@@ -2237,8 +2231,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
@@ -2250,8 +2244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -2260,8 +2254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the folder.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the folder.</p>
@@ -2270,8 +2264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
-        pub fn folder_type(mut self, signature: crate::model::FolderType) -> Self {
-            self.inner = self.inner.folder_type(signature);
+        pub fn folder_type(mut self, input: crate::model::FolderType) -> Self {
+            self.inner = self.inner.folder_type(input);
             self
         }
         /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
@@ -2285,8 +2279,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
         /// <p>
         /// <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-        pub fn parent_folder_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_folder_arn(signature.into());
+        pub fn parent_folder_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_folder_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
@@ -2396,8 +2390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -2409,8 +2403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -2419,8 +2413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The ID of the asset (the dashboard, analysis, or dataset).</p>
@@ -2429,8 +2423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
-        pub fn member_type(mut self, signature: crate::model::MemberType) -> Self {
-            self.inner = self.inner.member_type(signature);
+        pub fn member_type(mut self, input: crate::model::MemberType) -> Self {
+            self.inner = self.inner.member_type(input);
             self
         }
         /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</p>
@@ -2506,8 +2500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the group that you want to create.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>A name for the group that you want to create.</p>
@@ -2516,8 +2510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the group that you want to create.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the group that you want to create.</p>
@@ -2527,8 +2521,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -2541,8 +2535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -2611,8 +2605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user that you want to add to the group membership.</p>
-        pub fn member_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_name(signature.into());
+        pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_name(input.into());
             self
         }
         /// <p>The name of the user that you want to add to the group membership.</p>
@@ -2621,8 +2615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group that you want to add the user to.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to add the user to.</p>
@@ -2632,8 +2626,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -2646,8 +2640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -2720,8 +2714,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
         /// groups.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or
@@ -2734,8 +2728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
-        pub fn assignment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_name(signature.into());
+        pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_name(input.into());
             self
         }
         /// <p>The name of the assignment, also called a rule. It must be unique within an Amazon Web Services account.</p>
@@ -2763,8 +2757,8 @@ pub mod fluent_builders {
         /// data source.</p>
         /// </li>
         /// </ul>
-        pub fn assignment_status(mut self, signature: crate::model::AssignmentStatus) -> Self {
-            self.inner = self.inner.assignment_status(signature);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
+            self.inner = self.inner.assignment_status(input);
             self
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
@@ -2793,8 +2787,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
@@ -2827,8 +2821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that contains the assignment.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that contains the assignment.</p>
@@ -2901,8 +2895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
@@ -2911,8 +2905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the ingestion.</p>
-        pub fn ingestion_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ingestion_id(signature.into());
+        pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingestion_id(input.into());
             self
         }
         /// <p>An ID for the ingestion.</p>
@@ -2921,8 +2915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -2934,8 +2928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of ingestion that you want to create.</p>
-        pub fn ingestion_type(mut self, signature: crate::model::IngestionType) -> Self {
-            self.inner = self.inner.ingestion_type(signature);
+        pub fn ingestion_type(mut self, input: crate::model::IngestionType) -> Self {
+            self.inner = self.inner.ingestion_type(input);
             self
         }
         /// <p>The type of ingestion that you want to create.</p>
@@ -3014,8 +3008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.</p>
@@ -3027,8 +3021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you want to use to describe the new namespace.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The name that you want to use to describe the new namespace.</p>
@@ -3038,8 +3032,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the type of your user identity directory. Currently, this supports users
         /// with an identity type of <code>QUICKSIGHT</code>.</p>
-        pub fn identity_store(mut self, signature: crate::model::IdentityStore) -> Self {
-            self.inner = self.inner.identity_store(signature);
+        pub fn identity_store(mut self, input: crate::model::IdentityStore) -> Self {
+            self.inner = self.inner.identity_store(input);
             self
         }
         /// <p>Specifies the type of your user identity directory. Currently, this supports users
@@ -3136,8 +3130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.</p>
@@ -3150,8 +3144,8 @@ pub mod fluent_builders {
         }
         /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
         /// each Amazon Web Services account.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
@@ -3161,8 +3155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display name for the template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A display name for the template.</p>
@@ -3197,8 +3191,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
-        pub fn source_entity(mut self, signature: crate::model::TemplateSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::TemplateSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>The entity that you are using as a source when you create the template. In
@@ -3239,8 +3233,8 @@ pub mod fluent_builders {
         /// first version of the template. Every time <code>UpdateTemplate</code> is called, a new
         /// version is created. Each version of the template maintains a description of the version
         /// in the <code>VersionDescription</code> field.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description of the current template version being created. This API operation creates the
@@ -3315,8 +3309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you creating an alias for.</p>
@@ -3328,8 +3322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>An ID for the template.</p>
@@ -3340,8 +3334,8 @@ pub mod fluent_builders {
         /// <p>The name that you want to give to the template alias that you're creating. Don't start the
         /// alias name with the <code>$</code> character. Alias names that start with <code>$</code>
         /// are reserved by Amazon QuickSight. </p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name that you want to give to the template alias that you're creating. Don't start the
@@ -3352,8 +3346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the template.</p>
-        pub fn template_version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.template_version_number(signature);
+        pub fn template_version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.template_version_number(input);
             self
         }
         /// <p>The version number of the template.</p>
@@ -3425,8 +3419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account where you want to store the new theme. </p>
@@ -3439,8 +3433,8 @@ pub mod fluent_builders {
         }
         /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
         /// each Amazon Web Services account.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in
@@ -3450,8 +3444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display name for the theme.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A display name for the theme.</p>
@@ -3463,8 +3457,8 @@ pub mod fluent_builders {
         /// the starting themes defined by Amazon QuickSight. For a list of the starting themes, use
         /// <code>ListThemes</code> or choose <b>Themes</b> from
         /// within an analysis. </p>
-        pub fn base_theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_theme_id(signature.into());
+        pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_theme_id(input.into());
             self
         }
         /// <p>The ID of the theme that a custom theme will inherit from. All themes inherit from one of
@@ -3482,8 +3476,8 @@ pub mod fluent_builders {
         /// <code>UpdateTheme</code> is called, a new version is created. Each version of the
         /// theme has a description of the version in the <code>VersionDescription</code>
         /// field.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description of the first version of the theme that you're creating. Every time
@@ -3498,8 +3492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The theme configuration, which contains the theme display properties.</p>
-        pub fn configuration(mut self, signature: crate::model::ThemeConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ThemeConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The theme configuration, which contains the theme display properties.</p>
@@ -3609,8 +3603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme for the new theme alias.</p>
@@ -3622,8 +3616,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the theme alias.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>An ID for the theme alias.</p>
@@ -3634,8 +3628,8 @@ pub mod fluent_builders {
         /// <p>The name that you want to give to the theme alias that you are creating. The
         /// alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
         /// are reserved by Amazon QuickSight. </p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name that you want to give to the theme alias that you are creating. The
@@ -3646,8 +3640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the theme.</p>
-        pub fn theme_version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.theme_version_number(signature);
+        pub fn theme_version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.theme_version_number(input);
             self
         }
         /// <p>The version number of the theme.</p>
@@ -3718,8 +3712,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
         /// this Amazon Web Services Region.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in
@@ -3732,8 +3726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The Amazon QuickSight namespace that you're deleting the customizations from.</p>
@@ -3813,8 +3807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account where you want to delete an analysis.</p>
@@ -3826,8 +3820,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the analysis that you're deleting.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis that you're deleting.</p>
@@ -3838,8 +3832,8 @@ pub mod fluent_builders {
         /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
         /// analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code>
         /// option in the same API call. The default value is 30.</p>
-        pub fn recovery_window_in_days(mut self, signature: i64) -> Self {
-            self.inner = self.inner.recovery_window_in_days(signature);
+        pub fn recovery_window_in_days(mut self, input: i64) -> Self {
+            self.inner = self.inner.recovery_window_in_days(input);
             self
         }
         /// <p>A value that specifies the number of days that Amazon QuickSight waits before it deletes the
@@ -3852,8 +3846,8 @@ pub mod fluent_builders {
         /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
         /// immediately delete the analysis, add the <code>ForceDeleteWithoutRecovery</code> option.
         /// You can't restore an analysis after it's deleted. </p>
-        pub fn force_delete_without_recovery(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_delete_without_recovery(signature);
+        pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete_without_recovery(input);
             self
         }
         /// <p>This option defaults to the value <code>NoForceDeleteWithoutRecovery</code>. To
@@ -3928,8 +3922,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// deleting.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
@@ -3942,8 +3936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -3953,8 +3947,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number of the dashboard. If the version number property is provided, only
         /// the specified version of the dashboard is deleted.</p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version number of the dashboard. If the version number property is provided, only
@@ -4024,8 +4018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -4037,8 +4031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -4108,8 +4102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -4121,8 +4115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -4194,8 +4188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -4207,8 +4201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -4277,8 +4271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -4290,8 +4284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Folder ID.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The Folder ID.</p>
@@ -4300,8 +4294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
-        pub fn member_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_id(signature.into());
+        pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_id(input.into());
             self
         }
         /// <p>The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.</p>
@@ -4311,8 +4305,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
         /// </p>
-        pub fn member_type(mut self, signature: crate::model::MemberType) -> Self {
-            self.inner = self.inner.member_type(signature);
+        pub fn member_type(mut self, input: crate::model::MemberType) -> Self {
+            self.inner = self.inner.member_type(input);
             self
         }
         /// <p>The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
@@ -4385,8 +4379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group that you want to delete.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to delete.</p>
@@ -4396,8 +4390,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -4410,8 +4404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -4480,8 +4474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user that you want to delete from the group membership.</p>
-        pub fn member_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_name(signature.into());
+        pub fn member_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_name(input.into());
             self
         }
         /// <p>The name of the user that you want to delete from the group membership.</p>
@@ -4490,8 +4484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the group that you want to delete the user from.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to delete the user from.</p>
@@ -4501,8 +4495,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -4515,8 +4509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -4585,8 +4579,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
@@ -4598,8 +4592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assignment. </p>
-        pub fn assignment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_name(signature.into());
+        pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_name(input.into());
             self
         }
         /// <p>The name of the assignment. </p>
@@ -4611,8 +4605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that contains the assignment.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that contains the assignment.</p>
@@ -4683,8 +4677,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.</p>
@@ -4696,8 +4690,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that you want to delete.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that you want to delete.</p>
@@ -4766,8 +4760,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're deleting.</p>
@@ -4779,8 +4773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the template you want to delete.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>An ID for the template you want to delete.</p>
@@ -4791,8 +4785,8 @@ pub mod fluent_builders {
         /// <p>Specifies the version of the template that you want to delete.
         /// If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template.
         /// </p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>Specifies the version of the template that you want to delete.
@@ -4864,8 +4858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the item to delete.</p>
@@ -4877,8 +4871,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template that the specified alias is for.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template that the specified alias is for.</p>
@@ -4890,8 +4884,8 @@ pub mod fluent_builders {
         /// alias points to. You can specify the alias name, or specify the latest version of the
         /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. </p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name for the template alias. To delete a specific alias, you delete the version that the
@@ -4963,8 +4957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're deleting.</p>
@@ -4976,8 +4970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the theme that you want to delete.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>An ID for the theme that you want to delete.</p>
@@ -4989,8 +4983,8 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Note:</b> If you don't provide a version number, you're
         /// using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version of the theme that you want to delete. </p>
@@ -5064,8 +5058,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias to delete.</p>
@@ -5077,8 +5071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme that the specified alias is for.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme that the specified alias is for.</p>
@@ -5087,8 +5081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name for the theme alias to delete.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The unique name for the theme alias to delete.</p>
@@ -5159,8 +5153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user that you want to delete.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user that you want to delete.</p>
@@ -5170,8 +5164,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -5184,8 +5178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -5254,8 +5248,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The principal ID of the user.</p>
-        pub fn principal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal_id(signature.into());
+        pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal_id(input.into());
             self
         }
         /// <p>The principal ID of the user.</p>
@@ -5265,8 +5259,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -5279,8 +5273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -5406,8 +5400,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
         /// for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations
@@ -5421,8 +5415,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
         /// for.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations
@@ -5436,8 +5430,8 @@ pub mod fluent_builders {
         /// the same view that Amazon QuickSight uses to identify which customizations to apply to the
         /// console. Omit this flag, or set it to <code>no-resolved</code>, to reveal customizations
         /// that are configured at different levels. </p>
-        pub fn resolved(mut self, signature: bool) -> Self {
-            self.inner = self.inner.resolved(signature);
+        pub fn resolved(mut self, input: bool) -> Self {
+            self.inner = self.inner.resolved(input);
             self
         }
         /// <p>The <code>Resolved</code> flag works with the other parameters to determine which view
@@ -5511,8 +5505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the settings that you want to list.</p>
@@ -5585,8 +5579,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
         /// Amazon Web Services account that the analysis is in.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis. You must be using the
@@ -5600,8 +5594,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
         /// analysis.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis that you're describing. The ID is part of the URL of the
@@ -5672,8 +5666,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
         /// describing. You must be using the Amazon Web Services account that the analysis is in.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
@@ -5687,8 +5681,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
         /// analysis URL.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis whose permissions you're describing. The ID is part of the
@@ -5759,8 +5753,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
@@ -5773,8 +5767,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -5784,8 +5778,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number for the dashboard. If a version number isn't passed, the
         /// latest published dashboard version is described. </p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version number for the dashboard. If a version number isn't passed, the
@@ -5795,8 +5789,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The alias name.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The alias name.</p>
@@ -5866,8 +5860,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
         /// permissions for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're describing
@@ -5880,8 +5874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard, also added to the IAM policy.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard, also added to the IAM policy.</p>
@@ -5950,8 +5944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -5963,8 +5957,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -6034,8 +6028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -6047,8 +6041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -6117,8 +6111,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -6130,8 +6124,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -6203,8 +6197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -6216,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</p>
@@ -6289,8 +6283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -6302,8 +6296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -6372,8 +6366,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -6385,8 +6379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -6455,8 +6449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -6468,8 +6462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -6538,8 +6532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group that you want to describe.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to describe.</p>
@@ -6549,8 +6543,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -6563,8 +6557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -6633,8 +6627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the assignment that you want to describe.</p>
@@ -6646,8 +6640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assignment, also called a rule.</p>
-        pub fn assignment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_name(signature.into());
+        pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_name(input.into());
             self
         }
         /// <p>The name of the assignment, also called a rule.</p>
@@ -6659,8 +6653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that contains the assignment.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that contains the assignment.</p>
@@ -6729,8 +6723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -6742,8 +6736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
@@ -6752,8 +6746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID for the ingestion.</p>
-        pub fn ingestion_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ingestion_id(signature.into());
+        pub fn ingestion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ingestion_id(input.into());
             self
         }
         /// <p>An ID for the ingestion.</p>
@@ -6822,8 +6816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
@@ -6895,8 +6889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.</p>
@@ -6908,8 +6902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that you want to describe.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that you want to describe.</p>
@@ -6978,8 +6972,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
@@ -6991,8 +6985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -7002,8 +6996,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
         /// value isn't provided, the latest version of the template is described.</p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter
@@ -7016,8 +7010,8 @@ pub mod fluent_builders {
         /// describe the version that the alias points to. You can specify the latest version of the
         /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The alias of the template that you want to describe. If you name a specific alias, you
@@ -7090,8 +7084,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
         /// describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template alias that you're
@@ -7104,8 +7098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -7117,8 +7111,8 @@ pub mod fluent_builders {
         /// describe the version that the alias points to. You can specify the latest version of the
         /// template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name of the template alias that you want to describe. If you name a specific alias, you
@@ -7190,8 +7184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're describing.</p>
@@ -7203,8 +7197,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -7273,8 +7267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
@@ -7286,8 +7280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -7297,8 +7291,8 @@ pub mod fluent_builders {
         }
         /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
         /// value isn't provided, the latest version of the theme is described.</p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter
@@ -7311,8 +7305,8 @@ pub mod fluent_builders {
         /// describe the version that the alias points to. You can specify the latest version of the
         /// theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
         /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The alias of the theme that you want to describe. If you name a specific alias, you
@@ -7385,8 +7379,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
         /// describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're
@@ -7399,8 +7393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -7409,8 +7403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the theme alias that you want to describe.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name of the theme alias that you want to describe.</p>
@@ -7479,8 +7473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
@@ -7492,8 +7486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme that you want to describe permissions for.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme that you want to describe permissions for.</p>
@@ -7562,8 +7556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user that you want to describe.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user that you want to describe.</p>
@@ -7573,8 +7567,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -7587,8 +7581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -7676,8 +7670,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
@@ -7689,8 +7683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
-        pub fn session_lifetime_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.session_lifetime_in_minutes(signature);
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.session_lifetime_in_minutes(input);
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
@@ -7699,8 +7693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The Amazon QuickSight namespace that the anonymous user virtually belongs to. If you are not using an Amazon QuickSight custom namespace, set this to <code>default</code>.</p>
@@ -7749,9 +7743,9 @@ pub mod fluent_builders {
         /// <p>The configuration of the experience you are embedding.</p>
         pub fn experience_configuration(
             mut self,
-            signature: crate::model::AnonymousUserEmbeddingExperienceConfiguration,
+            input: crate::model::AnonymousUserEmbeddingExperienceConfiguration,
         ) -> Self {
-            self.inner = self.inner.experience_configuration(signature);
+            self.inner = self.inner.experience_configuration(input);
             self
         }
         /// <p>The configuration of the experience you are embedding.</p>
@@ -7842,8 +7836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
@@ -7855,8 +7849,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
-        pub fn session_lifetime_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.session_lifetime_in_minutes(signature);
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.session_lifetime_in_minutes(input);
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be in [15-600] minutes range.</p>
@@ -7865,8 +7859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name for the registered user.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name for the registered user.</p>
@@ -7877,9 +7871,9 @@ pub mod fluent_builders {
         /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
         pub fn experience_configuration(
             mut self,
-            signature: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
+            input: crate::model::RegisteredUserEmbeddingExperienceConfiguration,
         ) -> Self {
-            self.inner = self.inner.experience_configuration(signature);
+            self.inner = self.inner.experience_configuration(input);
             self
         }
         /// <p>The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards or the entire Amazon QuickSight console.</p>
@@ -7975,8 +7969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the dashboard that you're embedding.</p>
@@ -7989,8 +7983,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
         /// policy.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard, also added to the Identity and Access Management (IAM)
@@ -8000,8 +7994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication method that the user uses to sign in.</p>
-        pub fn identity_type(mut self, signature: crate::model::EmbeddingIdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::EmbeddingIdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>The authentication method that the user uses to sign in.</p>
@@ -8013,8 +8007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-        pub fn session_lifetime_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.session_lifetime_in_minutes(signature);
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.session_lifetime_in_minutes(input);
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
@@ -8024,8 +8018,8 @@ pub mod fluent_builders {
         }
         /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
         /// the undo/redo button.</p>
-        pub fn undo_redo_disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.undo_redo_disabled(signature);
+        pub fn undo_redo_disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.undo_redo_disabled(input);
             self
         }
         /// <p>Remove the undo/redo button on the embedded dashboard. The default is FALSE, which enables
@@ -8036,8 +8030,8 @@ pub mod fluent_builders {
         }
         /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
         /// reset button.</p>
-        pub fn reset_disabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reset_disabled(signature);
+        pub fn reset_disabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_disabled(input);
             self
         }
         /// <p>Remove the reset button on the embedded dashboard. The default is FALSE, which enables the
@@ -8053,8 +8047,8 @@ pub mod fluent_builders {
         /// dashboard URL. The state is stored in Amazon QuickSight, not in a browser cookie. If this is
         /// set to FALSE, the state of the user session is not persisted. The default is
         /// <code>FALSE</code>.</p>
-        pub fn state_persistence_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.state_persistence_enabled(signature);
+        pub fn state_persistence_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.state_persistence_enabled(input);
             self
         }
         /// <p>Adds persistence of state for the user session in an embedded dashboard. Persistence
@@ -8085,8 +8079,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Omit this parameter for users in the third group – IAM users and IAM
         /// role-based sessions.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
@@ -8112,8 +8106,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
         /// If you're not using a custom namespace, set <code>Namespace = default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The Amazon QuickSight namespace that contains the dashboard IDs in this request.
@@ -8235,8 +8229,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.</p>
@@ -8281,8 +8275,8 @@ pub mod fluent_builders {
         /// </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p>
         /// </li>
         /// </ul>
-        pub fn entry_point(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entry_point(signature.into());
+        pub fn entry_point(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entry_point(input.into());
             self
         }
         /// <p>The URL you use to access the embedded session. The entry point URL is constrained to
@@ -8324,8 +8318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
-        pub fn session_lifetime_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.session_lifetime_in_minutes(signature);
+        pub fn session_lifetime_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.session_lifetime_in_minutes(input);
             self
         }
         /// <p>How many minutes the session is valid. The session lifetime must be 15-600 minutes.</p>
@@ -8351,8 +8345,8 @@ pub mod fluent_builders {
         /// </ol>
         /// <p>Omit this parameter for users in the third group, IAM users and IAM role-based
         /// sessions.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type.
@@ -8438,8 +8432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analyses.</p>
@@ -8451,8 +8445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -8461,8 +8455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -8532,8 +8526,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
         /// listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboards that you're
@@ -8546,8 +8540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -8556,8 +8550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -8627,8 +8621,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
         /// for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions
@@ -8641,8 +8635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -8651,8 +8645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -8661,8 +8655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -8732,8 +8726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -8745,8 +8739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -8755,8 +8749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -8825,8 +8819,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -8838,8 +8832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -8848,8 +8842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -8918,8 +8912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -8931,8 +8925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -8941,8 +8935,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -8951,8 +8945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9021,8 +9015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -9034,8 +9028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9044,8 +9038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9114,8 +9108,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group that you want to see a membership list of.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to see a membership list of.</p>
@@ -9124,8 +9118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -9134,8 +9128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
@@ -9145,8 +9139,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -9159,8 +9153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -9230,8 +9224,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -9244,8 +9238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -9254,8 +9248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -9264,8 +9258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -9334,8 +9328,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains these IAM policy assignments.</p>
@@ -9347,8 +9341,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the assignments.</p>
-        pub fn assignment_status(mut self, signature: crate::model::AssignmentStatus) -> Self {
-            self.inner = self.inner.assignment_status(signature);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
+            self.inner = self.inner.assignment_status(input);
             self
         }
         /// <p>The status of the assignments.</p>
@@ -9360,8 +9354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace for the assignments.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace for the assignments.</p>
@@ -9370,8 +9364,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9380,8 +9374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9452,8 +9446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the assignments.</p>
@@ -9465,8 +9459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user.</p>
@@ -9475,8 +9469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9485,8 +9479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9495,8 +9489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace of the assignment.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the assignment.</p>
@@ -9565,8 +9559,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID of the dataset used in the ingestion.</p>
@@ -9575,8 +9569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9585,8 +9579,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -9598,8 +9592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9668,8 +9662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.</p>
@@ -9681,8 +9675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -9691,8 +9685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -9761,8 +9755,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags for.</p>
@@ -9831,8 +9825,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template aliases that you're listing.</p>
@@ -9844,8 +9838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -9854,8 +9848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9864,8 +9858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -9934,8 +9928,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
@@ -9947,8 +9941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -9957,8 +9951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -10027,8 +10021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the templates that you're listing.</p>
@@ -10040,8 +10034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -10050,8 +10044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -10060,8 +10054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -10130,8 +10124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme aliases that you're listing.</p>
@@ -10143,8 +10137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -10153,8 +10147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -10163,8 +10157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -10233,8 +10227,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
@@ -10246,8 +10240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -10256,8 +10250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -10280,8 +10274,8 @@ pub mod fluent_builders {
         /// <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::ThemeType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ThemeType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of themes that you want to list. Valid options include the following:</p>
@@ -10364,8 +10358,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the themes that you're listing.</p>
@@ -10377,8 +10371,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -10387,8 +10381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -10397,8 +10391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -10467,8 +10461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The Amazon QuickSight user name that you want to list group memberships for.</p>
@@ -10478,8 +10472,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
         /// that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account
@@ -10492,8 +10486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -10502,8 +10496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -10512,8 +10506,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
@@ -10583,8 +10577,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -10597,8 +10591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -10607,8 +10601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return from this request.</p>
@@ -10617,8 +10611,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -10700,8 +10694,8 @@ pub mod fluent_builders {
         /// Amazon QuickSight. </p>
         /// </li>
         /// </ul>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Amazon QuickSight supports several ways of managing the identity of users. This
@@ -10726,8 +10720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address of the user that you want to register.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the user that you want to register.</p>
@@ -10763,8 +10757,8 @@ pub mod fluent_builders {
         /// use.</p>
         /// </li>
         /// </ul>
-        pub fn user_role(mut self, signature: crate::model::UserRole) -> Self {
-            self.inner = self.inner.user_role(signature);
+        pub fn user_role(mut self, input: crate::model::UserRole) -> Self {
+            self.inner = self.inner.user_role(input);
             self
         }
         /// <p>The Amazon QuickSight role for the user. The user role can be one of the
@@ -10800,8 +10794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
-        pub fn iam_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_arn(signature.into());
+        pub fn iam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user or role that you are registering with Amazon QuickSight. </p>
@@ -10817,8 +10811,8 @@ pub mod fluent_builders {
         /// <code>assume-role</code>
         /// </a> in the <i>CLI Reference.</i>
         /// </p>
-        pub fn session_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_name(signature.into());
+        pub fn session_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_name(input.into());
             self
         }
         /// <p>You need to use this parameter only when you register one or more users using an assumed
@@ -10835,8 +10829,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -10849,8 +10843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -10860,8 +10854,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon QuickSight user name that you want to create for the user you are
         /// registering.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The Amazon QuickSight user name that you want to create for the user you are
@@ -10898,11 +10892,8 @@ pub mod fluent_builders {
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-        pub fn custom_permissions_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_permissions_name(signature.into());
+        pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_permissions_name(input.into());
             self
         }
         /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
@@ -10953,11 +10944,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn external_login_federation_provider_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .external_login_federation_provider_type(signature.into());
+                .external_login_federation_provider_type(input.into());
             self
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
@@ -10985,9 +10976,9 @@ pub mod fluent_builders {
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_federation_provider_url(signature.into());
+            self.inner = self.inner.custom_federation_provider_url(input.into());
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
@@ -11001,8 +10992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity ID for a user in the external login provider.</p>
-        pub fn external_login_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_login_id(signature.into());
+        pub fn external_login_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_login_id(input.into());
             self
         }
         /// <p>The identity ID for a user in the external login provider.</p>
@@ -11074,8 +11065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis.</p>
@@ -11087,8 +11078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the analysis that you're restoring.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis that you're restoring.</p>
@@ -11161,8 +11152,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
         /// for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analyses that you're searching
@@ -11192,8 +11183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A pagination token that can be used in a subsequent request.</p>
@@ -11202,8 +11193,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -11276,8 +11267,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
         /// for. </p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the user whose dashboards you're searching
@@ -11313,8 +11304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -11323,8 +11314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -11393,8 +11384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
@@ -11423,8 +11414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no more results.</p>
@@ -11433,8 +11424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request.</p>
@@ -11525,8 +11516,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
@@ -11612,8 +11603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to untag.</p>
@@ -11705,8 +11696,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
         /// for.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations
@@ -11719,8 +11710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace that you want to update Amazon QuickSight customizations for.</p>
@@ -11729,11 +11720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
-        pub fn account_customization(
-            mut self,
-            signature: crate::model::AccountCustomization,
-        ) -> Self {
-            self.inner = self.inner.account_customization(signature);
+        pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
+            self.inner = self.inner.account_customization(input);
             self
         }
         /// <p>The Amazon QuickSight customizations you're updating in the current Amazon Web Services Region. </p>
@@ -11806,8 +11794,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
         /// list.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to
@@ -11823,8 +11811,8 @@ pub mod fluent_builders {
         /// <code>default</code>. Identity and Access Management (IAM) users that register
         /// for the first time with Amazon QuickSight provide an email that becomes associated with the
         /// default namespace.</p>
-        pub fn default_namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_namespace(signature.into());
+        pub fn default_namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_namespace(input.into());
             self
         }
         /// <p>The default namespace for this Amazon Web Services account. Currently, the default is
@@ -11840,8 +11828,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
         /// Amazon Web Services account or Amazon QuickSight subscription.</p>
-        pub fn notification_email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_email(signature.into());
+        pub fn notification_email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_email(input.into());
             self
         }
         /// <p>The email address that you want Amazon QuickSight to send notifications to regarding your
@@ -11914,8 +11902,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis that you're updating.</p>
@@ -11928,8 +11916,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
         /// analysis.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID for the analysis that you're updating. This ID displays in the URL of the
@@ -11940,8 +11928,8 @@ pub mod fluent_builders {
         }
         /// <p>A descriptive name for the analysis that you're updating. This name displays for the
         /// analysis in the Amazon QuickSight console.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the analysis that you're updating. This name displays for the
@@ -11952,8 +11940,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter names and override values that you want to use. An analysis can have
         /// any parameter type, and some parameters might accept multiple values. </p>
-        pub fn parameters(mut self, signature: crate::model::Parameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>The parameter names and override values that you want to use. An analysis can have
@@ -11967,8 +11955,8 @@ pub mod fluent_builders {
         }
         /// <p>A source entity to use for the analysis that you're updating. This metadata structure
         /// contains details that describe a source template and one or more datasets.</p>
-        pub fn source_entity(mut self, signature: crate::model::AnalysisSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::AnalysisSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>A source entity to use for the analysis that you're updating. This metadata structure
@@ -11983,8 +11971,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
         /// creating. To see the theme in the Amazon QuickSight console, make sure that you have access to
         /// it.</p>
-        pub fn theme_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_arn(signature.into());
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're
@@ -12056,8 +12044,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
         /// updating. You must be using the Amazon Web Services account that the analysis is in.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the analysis whose permissions you're
@@ -12071,8 +12059,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
         /// analysis URL.</p>
-        pub fn analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.analysis_id(signature.into());
+        pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.analysis_id(input.into());
             self
         }
         /// <p>The ID of the analysis whose permissions you're updating. The ID is part of the
@@ -12188,8 +12176,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
@@ -12202,8 +12190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -12212,8 +12200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the dashboard.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name of the dashboard.</p>
@@ -12234,8 +12222,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
-        pub fn source_entity(mut self, signature: crate::model::DashboardSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::DashboardSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>The entity that you are using as a source when you update the dashboard. In
@@ -12261,8 +12249,8 @@ pub mod fluent_builders {
         /// <p>A structure that contains the parameters of the dashboard. These are parameter
         /// overrides for a dashboard. A dashboard can have any type of parameters, and some
         /// parameters might accept multiple values.</p>
-        pub fn parameters(mut self, signature: crate::model::Parameters) -> Self {
-            self.inner = self.inner.parameters(signature);
+        pub fn parameters(mut self, input: crate::model::Parameters) -> Self {
+            self.inner = self.inner.parameters(input);
             self
         }
         /// <p>A structure that contains the parameters of the dashboard. These are parameter
@@ -12276,8 +12264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the first version of the dashboard being created.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description for the first version of the dashboard being created.</p>
@@ -12314,9 +12302,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn dashboard_publish_options(
             mut self,
-            signature: crate::model::DashboardPublishOptions,
+            input: crate::model::DashboardPublishOptions,
         ) -> Self {
-            self.inner = self.inner.dashboard_publish_options(signature);
+            self.inner = self.inner.dashboard_publish_options(input);
             self
         }
         /// <p>Options for publishing the dashboard when you create it:</p>
@@ -12354,8 +12342,8 @@ pub mod fluent_builders {
         /// you add a value for this field, it overrides the value that was originally associated
         /// with the entity. The theme ARN must exist in the same Amazon Web Services account where you create the
         /// dashboard.</p>
-        pub fn theme_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_arn(signature.into());
+        pub fn theme_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If
@@ -12428,8 +12416,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
         /// updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard whose permissions you're
@@ -12442,8 +12430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -12581,8 +12569,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
         /// updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're
@@ -12595,8 +12583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dashboard.</p>
-        pub fn dashboard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dashboard_id(signature.into());
+        pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dashboard_id(input.into());
             self
         }
         /// <p>The ID for the dashboard.</p>
@@ -12605,8 +12593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the dashboard.</p>
-        pub fn version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version number of the dashboard.</p>
@@ -12675,8 +12663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -12689,8 +12677,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
         /// Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each
@@ -12700,8 +12688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name for the dataset.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name for the dataset.</p>
@@ -12756,8 +12744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether you want to import the data into SPICE.</p>
-        pub fn import_mode(mut self, signature: crate::model::DataSetImportMode) -> Self {
-            self.inner = self.inner.import_mode(signature);
+        pub fn import_mode(mut self, input: crate::model::DataSetImportMode) -> Self {
+            self.inner = self.inner.import_mode(input);
             self
         }
         /// <p>Indicates whether you want to import the data into SPICE.</p>
@@ -12811,9 +12799,9 @@ pub mod fluent_builders {
         /// <p>The row-level security configuration for the data you want to create.</p>
         pub fn row_level_permission_data_set(
             mut self,
-            signature: crate::model::RowLevelPermissionDataSet,
+            input: crate::model::RowLevelPermissionDataSet,
         ) -> Self {
-            self.inner = self.inner.row_level_permission_data_set(signature);
+            self.inner = self.inner.row_level_permission_data_set(input);
             self
         }
         /// <p>The row-level security configuration for the data you want to create.</p>
@@ -12827,9 +12815,9 @@ pub mod fluent_builders {
         /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
         pub fn row_level_permission_tag_configuration(
             mut self,
-            signature: crate::model::RowLevelPermissionTagConfiguration,
+            input: crate::model::RowLevelPermissionTagConfiguration,
         ) -> Self {
-            self.inner = self.inner.row_level_permission_tag_configuration(signature);
+            self.inner = self.inner.row_level_permission_tag_configuration(input);
             self
         }
         /// <p>The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only.</p>
@@ -12867,9 +12855,9 @@ pub mod fluent_builders {
         /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
         pub fn data_set_usage_configuration(
             mut self,
-            signature: crate::model::DataSetUsageConfiguration,
+            input: crate::model::DataSetUsageConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_set_usage_configuration(signature);
+            self.inner = self.inner.data_set_usage_configuration(input);
             self
         }
         /// <p>The usage configuration to apply to child datasets that reference this dataset as a source.</p>
@@ -12942,8 +12930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -12956,8 +12944,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
         /// Amazon Web Services Region for each Amazon Web Services account.</p>
-        pub fn data_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_set_id(signature.into());
+        pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_set_id(input.into());
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
@@ -13061,8 +13049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -13074,8 +13062,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
@@ -13087,8 +13075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A display name for the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A display name for the data source.</p>
@@ -13097,11 +13085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
-        pub fn data_source_parameters(
-            mut self,
-            signature: crate::model::DataSourceParameters,
-        ) -> Self {
-            self.inner = self.inner.data_source_parameters(signature);
+        pub fn data_source_parameters(mut self, input: crate::model::DataSourceParameters) -> Self {
+            self.inner = self.inner.data_source_parameters(input);
             self
         }
         /// <p>The parameters that Amazon QuickSight uses to connect to your underlying source.</p>
@@ -13114,8 +13099,8 @@ pub mod fluent_builders {
         }
         /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
         /// only credentials based on user name and password are supported.</p>
-        pub fn credentials(mut self, signature: crate::model::DataSourceCredentials) -> Self {
-            self.inner = self.inner.credentials(signature);
+        pub fn credentials(mut self, input: crate::model::DataSourceCredentials) -> Self {
+            self.inner = self.inner.credentials(input);
             self
         }
         /// <p>The credentials that Amazon QuickSight that uses to connect to your underlying source. Currently,
@@ -13131,9 +13116,9 @@ pub mod fluent_builders {
         /// your underlying source.</p>
         pub fn vpc_connection_properties(
             mut self,
-            signature: crate::model::VpcConnectionProperties,
+            input: crate::model::VpcConnectionProperties,
         ) -> Self {
-            self.inner = self.inner.vpc_connection_properties(signature);
+            self.inner = self.inner.vpc_connection_properties(input);
             self
         }
         /// <p>Use this parameter only when you want Amazon QuickSight to use a VPC connection when connecting to
@@ -13147,8 +13132,8 @@ pub mod fluent_builders {
         }
         /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
         /// source.</p>
-        pub fn ssl_properties(mut self, signature: crate::model::SslProperties) -> Self {
-            self.inner = self.inner.ssl_properties(signature);
+        pub fn ssl_properties(mut self, input: crate::model::SslProperties) -> Self {
+            self.inner = self.inner.ssl_properties(input);
             self
         }
         /// <p>Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying
@@ -13221,8 +13206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -13234,8 +13219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </p>
@@ -13341,8 +13326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
@@ -13354,8 +13339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -13364,8 +13349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the folder.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the folder.</p>
@@ -13434,8 +13419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
@@ -13447,8 +13432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the folder.</p>
-        pub fn folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_id(signature.into());
+        pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_id(input.into());
             self
         }
         /// <p>The ID of the folder.</p>
@@ -13551,8 +13536,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the group that you want to update.</p>
-        pub fn group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_name(signature.into());
+        pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_name(input.into());
             self
         }
         /// <p>The name of the group that you want to update.</p>
@@ -13561,8 +13546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the group that you want to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the group that you want to update.</p>
@@ -13572,8 +13557,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the
@@ -13586,8 +13571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -13659,8 +13644,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the IAM policy assignment. </p>
@@ -13672,8 +13657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
-        pub fn assignment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assignment_name(signature.into());
+        pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assignment_name(input.into());
             self
         }
         /// <p>The name of the assignment, also called a rule. This name must be unique within an Amazon Web Services account.</p>
@@ -13685,8 +13670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace of the assignment.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace of the assignment.</p>
@@ -13711,8 +13696,8 @@ pub mod fluent_builders {
         /// data source.</p>
         /// </li>
         /// </ul>
-        pub fn assignment_status(mut self, signature: crate::model::AssignmentStatus) -> Self {
-            self.inner = self.inner.assignment_status(signature);
+        pub fn assignment_status(mut self, input: crate::model::AssignmentStatus) -> Self {
+            self.inner = self.inner.assignment_status(input);
             self
         }
         /// <p>The status of the assignment. Possible values are as follows:</p>
@@ -13741,8 +13726,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
         /// specified in this assignment.</p>
-        pub fn policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policy_arn(signature.into());
+        pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policy_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM policy to apply to the Amazon QuickSight users and groups
@@ -13835,8 +13820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the IP rules.</p>
@@ -13871,8 +13856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that specifies whether IP rules are turned on.</p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>A value that specifies whether IP rules are turned on.</p>
@@ -13941,8 +13926,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template that you're updating.</p>
@@ -13954,8 +13939,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -13973,8 +13958,8 @@ pub mod fluent_builders {
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
-        pub fn source_entity(mut self, signature: crate::model::TemplateSourceEntity) -> Self {
-            self.inner = self.inner.source_entity(signature);
+        pub fn source_entity(mut self, input: crate::model::TemplateSourceEntity) -> Self {
+            self.inner = self.inner.source_entity(input);
             self
         }
         /// <p>The entity that you are using as a source when you update the template. In
@@ -13998,8 +13983,8 @@ pub mod fluent_builders {
         /// <code>UpdateTemplate</code>, you create a new version of the template. Each version
         /// of the template maintains a description of the version in the
         /// <code>VersionDescription</code> field.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description of the current template version that is being updated. Every time you call
@@ -14014,8 +13999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the template.</p>
@@ -14084,8 +14069,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template alias that you're updating.</p>
@@ -14097,8 +14082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -14110,8 +14095,8 @@ pub mod fluent_builders {
         /// the version that the alias points to. You can specify the latest version of the template
         /// by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter.
         /// The keyword <code>$PUBLISHED</code> doesn't apply to templates.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The alias of the template that you want to update. If you name a specific alias, you update
@@ -14123,8 +14108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the template.</p>
-        pub fn template_version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.template_version_number(signature);
+        pub fn template_version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.template_version_number(input);
             self
         }
         /// <p>The version number of the template.</p>
@@ -14193,8 +14178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the template.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the template.</p>
@@ -14206,8 +14191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the template.</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The ID for the template.</p>
@@ -14310,8 +14295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme that you're updating.</p>
@@ -14323,8 +14308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -14333,8 +14318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the theme.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the theme.</p>
@@ -14344,8 +14329,8 @@ pub mod fluent_builders {
         }
         /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
         /// All themes initially inherit from a default Amazon QuickSight theme.</p>
-        pub fn base_theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_theme_id(signature.into());
+        pub fn base_theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_theme_id(input.into());
             self
         }
         /// <p>The theme ID, defined by Amazon QuickSight, that a custom theme inherits from.
@@ -14360,8 +14345,8 @@ pub mod fluent_builders {
         /// <p>A description of the theme version that you're updating Every time that you call
         /// <code>UpdateTheme</code>, you create a new version of the theme. Each version of the
         /// theme maintains a description of the version in <code>VersionDescription</code>.</p>
-        pub fn version_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_description(signature.into());
+        pub fn version_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_description(input.into());
             self
         }
         /// <p>A description of the theme version that you're updating Every time that you call
@@ -14375,8 +14360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The theme configuration, which contains the theme display properties.</p>
-        pub fn configuration(mut self, signature: crate::model::ThemeConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ThemeConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The theme configuration, which contains the theme display properties.</p>
@@ -14448,8 +14433,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme alias that you're updating.</p>
@@ -14461,8 +14446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -14471,8 +14456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the theme alias that you want to update.</p>
-        pub fn alias_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias_name(signature.into());
+        pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias_name(input.into());
             self
         }
         /// <p>The name of the theme alias that you want to update.</p>
@@ -14481,8 +14466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the theme that the alias should reference.</p>
-        pub fn theme_version_number(mut self, signature: i64) -> Self {
-            self.inner = self.inner.theme_version_number(signature);
+        pub fn theme_version_number(mut self, input: i64) -> Self {
+            self.inner = self.inner.theme_version_number(input);
             self
         }
         /// <p>The version number of the theme that the alias should reference.</p>
@@ -14644,8 +14629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that contains the theme.</p>
@@ -14657,8 +14642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the theme.</p>
-        pub fn theme_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.theme_id(signature.into());
+        pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.theme_id(input.into());
             self
         }
         /// <p>The ID for the theme.</p>
@@ -14761,8 +14746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon QuickSight user name that you want to update.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The Amazon QuickSight user name that you want to update.</p>
@@ -14772,8 +14757,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
         /// Amazon Web Services account that contains your Amazon QuickSight account.</p>
-        pub fn aws_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_account_id(signature.into());
+        pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_account_id(input.into());
             self
         }
         /// <p>The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the
@@ -14786,8 +14771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-        pub fn namespace(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace(signature.into());
+        pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace(input.into());
             self
         }
         /// <p>The namespace. Currently, you should set this to <code>default</code>.</p>
@@ -14796,8 +14781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address of the user that you want to update.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the user that you want to update.</p>
@@ -14825,8 +14810,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>The name of the Amazon QuickSight role is invisible to the user except for the console
         /// screens dealing with permissions.</p>
-        pub fn role(mut self, signature: crate::model::UserRole) -> Self {
-            self.inner = self.inner.role(signature);
+        pub fn role(mut self, input: crate::model::UserRole) -> Self {
+            self.inner = self.inner.role(input);
             self
         }
         /// <p>The Amazon QuickSight role of the user. The role can be one of the
@@ -14878,11 +14863,8 @@ pub mod fluent_builders {
         /// override the permissions typically granted by assigning Amazon QuickSight users to one of the
         /// default security cohorts in Amazon QuickSight (admin, author, reader).</p>
         /// <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-        pub fn custom_permissions_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.custom_permissions_name(signature.into());
+        pub fn custom_permissions_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_permissions_name(input.into());
             self
         }
         /// <p>(Enterprise edition only) The name of the custom permissions profile that you want to
@@ -14921,8 +14903,8 @@ pub mod fluent_builders {
         /// from this user. Using this parameter resets the user to the state
         /// it was in before a custom permissions profile was applied. This parameter defaults to
         /// NULL and it doesn't accept any other value.</p>
-        pub fn unapply_custom_permissions(mut self, signature: bool) -> Self {
-            self.inner = self.inner.unapply_custom_permissions(signature);
+        pub fn unapply_custom_permissions(mut self, input: bool) -> Self {
+            self.inner = self.inner.unapply_custom_permissions(input);
             self
         }
         /// <p>A flag that you use to indicate that you want to remove all custom permissions
@@ -14954,11 +14936,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn external_login_federation_provider_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .external_login_federation_provider_type(signature.into());
+                .external_login_federation_provider_type(input.into());
             self
         }
         /// <p>The type of supported external login provider that provides identity to let a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM) role. The type of supported external login provider can be one of the following.</p>
@@ -14994,9 +14976,9 @@ pub mod fluent_builders {
         /// only be used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.</p>
         pub fn custom_federation_provider_url(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_federation_provider_url(signature.into());
+            self.inner = self.inner.custom_federation_provider_url(input.into());
             self
         }
         /// <p>The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate
@@ -15010,8 +14992,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identity ID for a user in the external login provider.</p>
-        pub fn external_login_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_login_id(signature.into());
+        pub fn external_login_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_login_id(input.into());
             self
         }
         /// <p>The identity ID for a user in the external login provider.</p>

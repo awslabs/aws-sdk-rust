@@ -1236,8 +1236,8 @@ pub mod fluent_builders {
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
-        pub fn resource_type(mut self, signature: crate::model::ResourceTypeForTagging) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>Specifies the type of resource you are tagging.</p>
@@ -1283,8 +1283,8 @@ pub mod fluent_builders {
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource ID you want to tag.</p>
@@ -1405,8 +1405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
-        pub fn ops_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_id(signature.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_id(input.into());
             self
         }
         /// <p>The ID of the OpsItem to which you want to associate a resource as a related item.</p>
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter
         /// supports <code>IsParentOf</code> and <code>RelatesTo</code> association types.</p>
-        pub fn association_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_type(signature.into());
+        pub fn association_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_type(input.into());
             self
         }
         /// <p>The type of association that you want to create between an OpsItem and a resource. OpsCenter
@@ -1435,8 +1435,8 @@ pub mod fluent_builders {
         /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. </p>
         /// <p>
         /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
@@ -1454,8 +1454,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
         /// OpsItem.</p>
-        pub fn resource_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_uri(signature.into());
+        pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_uri(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
@@ -1526,8 +1526,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the command you want to cancel.</p>
-        pub fn command_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command_id(signature.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command_id(input.into());
             self
         }
         /// <p>The ID of the command you want to cancel.</p>
@@ -1617,8 +1617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution to stop.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution to stop.</p>
@@ -1702,8 +1702,8 @@ pub mod fluent_builders {
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
@@ -1719,8 +1719,8 @@ pub mod fluent_builders {
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
-        pub fn default_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_instance_name(signature.into());
+        pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_instance_name(input.into());
             self
         }
         /// <p>The name of the registered, managed node as it will appear in the Amazon Web Services Systems Manager console or when
@@ -1740,8 +1740,8 @@ pub mod fluent_builders {
         /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
         /// IAM service role for a hybrid environment</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
@@ -1755,8 +1755,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the maximum number of managed nodes you want to register. The default value is
         /// <code>1</code>.</p>
-        pub fn registration_limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.registration_limit(signature);
+        pub fn registration_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.registration_limit(input);
             self
         }
         /// <p>Specify the maximum number of managed nodes you want to register. The default value is
@@ -1768,8 +1768,8 @@ pub mod fluent_builders {
         /// <p>The date by which this activation request should expire, in timestamp format, such as
         /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
         /// expiration date, the activation code expires in 24 hours.</p>
-        pub fn expiration_date(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.expiration_date(signature);
+        pub fn expiration_date(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.expiration_date(input);
             self
         }
         /// <p>The date by which this activation request should expire, in timestamp format, such as
@@ -1955,8 +1955,8 @@ pub mod fluent_builders {
         /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
         /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
@@ -1982,8 +1982,8 @@ pub mod fluent_builders {
         }
         /// <p>The document version you want to associate with the target(s). Can be a specific version or
         /// the default version.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The document version you want to associate with the target(s). Can be a specific version or
@@ -2007,8 +2007,8 @@ pub mod fluent_builders {
         /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
         /// must use the <code>Targets</code> parameter.</p>
         /// </note>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID.</p>
@@ -2076,8 +2076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A cron expression when the association will be applied to the target(s).</p>
-        pub fn schedule_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_expression(signature.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_expression(input.into());
             self
         }
         /// <p>A cron expression when the association will be applied to the target(s).</p>
@@ -2092,9 +2092,9 @@ pub mod fluent_builders {
         /// details of the request.</p>
         pub fn output_location(
             mut self,
-            signature: crate::model::InstanceAssociationOutputLocation,
+            input: crate::model::InstanceAssociationOutputLocation,
         ) -> Self {
-            self.inner = self.inner.output_location(signature);
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
@@ -2107,8 +2107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a descriptive name for the association.</p>
-        pub fn association_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_name(signature.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_name(input.into());
             self
         }
         /// <p>Specify a descriptive name for the association.</p>
@@ -2124,11 +2124,9 @@ pub mod fluent_builders {
         /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .automation_target_parameter_name(signature.into());
+            self.inner = self.inner.automation_target_parameter_name(input.into());
             self
         }
         /// <p>Choose the parameter that will define how your automation will branch out. This target is
@@ -2152,8 +2150,8 @@ pub mod fluent_builders {
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
         /// so that executions proceed one at a time.</p>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The number of errors that are allowed before the system stops sending requests to run the
@@ -2178,8 +2176,8 @@ pub mod fluent_builders {
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
         /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
@@ -2199,9 +2197,9 @@ pub mod fluent_builders {
         /// <p>The severity level to assign to the association.</p>
         pub fn compliance_severity(
             mut self,
-            signature: crate::model::AssociationComplianceSeverity,
+            input: crate::model::AssociationComplianceSeverity,
         ) -> Self {
-            self.inner = self.inner.compliance_severity(signature);
+            self.inner = self.inner.compliance_severity(input);
             self
         }
         /// <p>The severity level to assign to the association.</p>
@@ -2221,11 +2219,8 @@ pub mod fluent_builders {
         /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
         /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-        pub fn sync_compliance(
-            mut self,
-            signature: crate::model::AssociationSyncCompliance,
-        ) -> Self {
-            self.inner = self.inner.sync_compliance(signature);
+        pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
+            self.inner = self.inner.sync_compliance(input);
             self
         }
         /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
@@ -2248,8 +2243,8 @@ pub mod fluent_builders {
         /// created and then according to the schedule you specified. Specify this option if you don't want
         /// an association to run immediately after you create it. This parameter isn't supported for rate
         /// expressions.</p>
-        pub fn apply_only_at_cron_interval(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_only_at_cron_interval(signature);
+        pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_only_at_cron_interval(input);
             self
         }
         /// <p>By default, when you create a new association, the system runs it immediately after it is
@@ -2473,8 +2468,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
@@ -2570,8 +2565,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// </important>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the SSM document.</p>
@@ -2603,8 +2598,8 @@ pub mod fluent_builders {
         /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
         /// differ for each version of the document. You can update this value at a later time using the
         /// <a>UpdateDocument</a> operation.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
@@ -2617,8 +2612,8 @@ pub mod fluent_builders {
         /// <p>An optional field specifying the version of the artifact you are creating with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
         /// can't be changed.</p>
-        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(signature.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
         /// <p>An optional field specifying the version of the artifact you are creating with the document.
@@ -2629,8 +2624,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of document to create.</p>
-        pub fn document_type(mut self, signature: crate::model::DocumentType) -> Self {
-            self.inner = self.inner.document_type(signature);
+        pub fn document_type(mut self, input: crate::model::DocumentType) -> Self {
+            self.inner = self.inner.document_type(input);
             self
         }
         /// <p>The type of document to create.</p>
@@ -2643,8 +2638,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT.
         /// JSON is the default format.</p>
-        pub fn document_format(mut self, signature: crate::model::DocumentFormat) -> Self {
-            self.inner = self.inner.document_format(signature);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.inner = self.inner.document_format(input);
             self
         }
         /// <p>Specify the document format for the request. The document format can be JSON, YAML, or TEXT.
@@ -2662,8 +2657,8 @@ pub mod fluent_builders {
         /// of resources. If you don't specify a value, the document can't run on any resources. For a list
         /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
         /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
-        pub fn target_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_type(signature.into());
+        pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_type(input.into());
             self
         }
         /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
@@ -2800,8 +2795,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the maintenance window.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the maintenance window.</p>
@@ -2811,8 +2806,8 @@ pub mod fluent_builders {
         }
         /// <p>An optional description for the maintenance window. We recommend specifying a description to
         /// help you organize your maintenance windows. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the maintenance window. We recommend specifying a description to
@@ -2824,8 +2819,8 @@ pub mod fluent_builders {
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
         /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
         /// until the specified future date.</p>
-        pub fn start_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(signature.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(input.into());
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
@@ -2838,8 +2833,8 @@ pub mod fluent_builders {
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
         /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
         /// maintenance window will no longer run.</p>
-        pub fn end_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(signature.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(input.into());
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
@@ -2850,8 +2845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
@@ -2863,8 +2858,8 @@ pub mod fluent_builders {
         /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
         /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.</p>
-        pub fn schedule_timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_timezone(signature.into());
+        pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_timezone(input.into());
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
@@ -2887,8 +2882,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
         /// later.</p>
-        pub fn schedule_offset(mut self, signature: i32) -> Self {
-            self.inner = self.inner.schedule_offset(signature);
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.schedule_offset(input);
             self
         }
         /// <p>The number of days to wait after the date and time specified by a cron expression before
@@ -2905,8 +2900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the maintenance window in hours.</p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The duration of the maintenance window in hours.</p>
@@ -2916,8 +2911,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
         /// new tasks for execution.</p>
-        pub fn cutoff(mut self, signature: i32) -> Self {
-            self.inner = self.inner.cutoff(signature);
+        pub fn cutoff(mut self, input: i32) -> Self {
+            self.inner = self.inner.cutoff(input);
             self
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
@@ -2931,8 +2926,8 @@ pub mod fluent_builders {
         /// node ID) when you register a task with the maintenance window.</p>
         /// <p>If you don't enable this option, then you must specify previously-registered targets when
         /// you register a task with the maintenance window.</p>
-        pub fn allow_unassociated_targets(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_unassociated_targets(signature);
+        pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_unassociated_targets(input);
             self
         }
         /// <p>Enables a maintenance window task to run on managed nodes, even if you haven't registered
@@ -2945,8 +2940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User-provided idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token.</p>
@@ -3085,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the OpsItem. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Information about the OpsItem. </p>
@@ -3096,8 +3091,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of OpsItem to create. Currently, the only valid values are
         /// <code>/aws/changerequest</code> and <code>/aws/issue</code>.</p>
-        pub fn ops_item_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_type(signature.into());
+        pub fn ops_item_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_type(input.into());
             self
         }
         /// <p>The type of OpsItem to create. Currently, the only valid values are
@@ -3186,8 +3181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -3221,8 +3216,8 @@ pub mod fluent_builders {
         /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
         /// and <code>amzn</code>. </p>
         /// </note>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
@@ -3235,8 +3230,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(signature.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
@@ -3284,8 +3279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a category to assign to an OpsItem. </p>
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// <p>Specify a category to assign to an OpsItem. </p>
@@ -3294,8 +3289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a severity to assign to an OpsItem.</p>
-        pub fn severity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.severity(signature.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.severity(input.into());
             self
         }
         /// <p>Specify a severity to assign to an OpsItem.</p>
@@ -3305,8 +3300,8 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.actual_start_time(signature);
+        pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.actual_start_time(input);
             self
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
@@ -3320,8 +3315,8 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.actual_end_time(signature);
+        pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.actual_end_time(input);
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
@@ -3335,8 +3330,8 @@ pub mod fluent_builders {
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.planned_start_time(signature);
+        pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.planned_start_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
@@ -3350,8 +3345,8 @@ pub mod fluent_builders {
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.planned_end_time(signature);
+        pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.planned_end_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
@@ -3425,8 +3420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A resource ID for a new Application Manager application.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>A resource ID for a new Application Manager application.</p>
@@ -3572,8 +3567,8 @@ pub mod fluent_builders {
         }
         /// <p>Defines the operating system the patch baseline applies to. The default value is
         /// <code>WINDOWS</code>.</p>
-        pub fn operating_system(mut self, signature: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(signature);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(input);
             self
         }
         /// <p>Defines the operating system the patch baseline applies to. The default value is
@@ -3586,8 +3581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the patch baseline.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the patch baseline.</p>
@@ -3596,8 +3591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of global filters used to include patches in the baseline.</p>
-        pub fn global_filters(mut self, signature: crate::model::PatchFilterGroup) -> Self {
-            self.inner = self.inner.global_filters(signature);
+        pub fn global_filters(mut self, input: crate::model::PatchFilterGroup) -> Self {
+            self.inner = self.inner.global_filters(input);
             self
         }
         /// <p>A set of global filters used to include patches in the baseline.</p>
@@ -3609,8 +3604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
-        pub fn approval_rules(mut self, signature: crate::model::PatchRuleGroup) -> Self {
-            self.inner = self.inner.approval_rules(signature);
+        pub fn approval_rules(mut self, input: crate::model::PatchRuleGroup) -> Self {
+            self.inner = self.inner.approval_rules(input);
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
@@ -3649,9 +3644,9 @@ pub mod fluent_builders {
         /// <code>UNSPECIFIED</code>.</p>
         pub fn approved_patches_compliance_level(
             mut self,
-            signature: crate::model::PatchComplianceLevel,
+            input: crate::model::PatchComplianceLevel,
         ) -> Self {
-            self.inner = self.inner.approved_patches_compliance_level(signature);
+            self.inner = self.inner.approved_patches_compliance_level(input);
             self
         }
         /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
@@ -3667,8 +3662,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
         /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
         /// nodes only.</p>
-        pub fn approved_patches_enable_non_security(mut self, signature: bool) -> Self {
-            self.inner = self.inner.approved_patches_enable_non_security(signature);
+        pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
+            self.inner = self.inner.approved_patches_enable_non_security(input);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
@@ -3727,8 +3722,8 @@ pub mod fluent_builders {
         /// is reported as <code>InstalledRejected</code>.</p>
         /// </li>
         /// </ul>
-        pub fn rejected_patches_action(mut self, signature: crate::model::PatchAction) -> Self {
-            self.inner = self.inner.rejected_patches_action(signature);
+        pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
+            self.inner = self.inner.rejected_patches_action(input);
             self
         }
         /// <p>The action for Patch Manager to take on patches included in the
@@ -3762,8 +3757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the patch baseline.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the patch baseline.</p>
@@ -3791,8 +3786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User-provided idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token.</p>
@@ -3936,8 +3931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the configuration.</p>
-        pub fn sync_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_name(signature.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_name(input.into());
             self
         }
         /// <p>A name for the configuration.</p>
@@ -3949,9 +3944,9 @@ pub mod fluent_builders {
         /// <code>SyncType</code> value is SyncToDestination.</p>
         pub fn s3_destination(
             mut self,
-            signature: crate::model::ResourceDataSyncS3Destination,
+            input: crate::model::ResourceDataSyncS3Destination,
         ) -> Self {
-            self.inner = self.inner.s3_destination(signature);
+            self.inner = self.inner.s3_destination(input);
             self
         }
         /// <p>Amazon S3 configuration details for the sync. This parameter is required if the
@@ -3969,8 +3964,8 @@ pub mod fluent_builders {
         /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
         /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
         /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
-        pub fn sync_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_type(signature.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_type(input.into());
             self
         }
         /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
@@ -3985,8 +3980,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify information about the data sources to synchronize. This parameter is required if the
         /// <code>SyncType</code> value is SyncFromSource.</p>
-        pub fn sync_source(mut self, signature: crate::model::ResourceDataSyncSource) -> Self {
-            self.inner = self.inner.sync_source(signature);
+        pub fn sync_source(mut self, input: crate::model::ResourceDataSyncSource) -> Self {
+            self.inner = self.inner.sync_source(input);
             self
         }
         /// <p>Specify information about the data sources to synchronize. This parameter is required if the
@@ -4061,8 +4056,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the activation that you want to delete.</p>
-        pub fn activation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_id(signature.into());
+        pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_id(input.into());
             self
         }
         /// <p>The ID of the activation that you want to delete.</p>
@@ -4140,8 +4135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document.</p>
@@ -4161,8 +4156,8 @@ pub mod fluent_builders {
         /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
         /// must use the <code>Targets</code> parameter.</p>
         /// </note>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID.</p>
@@ -4182,8 +4177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The association ID that you want to delete.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The association ID that you want to delete.</p>
@@ -4257,8 +4252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the document.</p>
@@ -4268,8 +4263,8 @@ pub mod fluent_builders {
         }
         /// <p>The version of the document that you want to delete. If not provided, all versions of the
         /// document are deleted.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of the document that you want to delete. If not provided, all versions of the
@@ -4283,8 +4278,8 @@ pub mod fluent_builders {
         }
         /// <p>The version name of the document that you want to delete. If not provided, all versions of
         /// the document are deleted.</p>
-        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(signature.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
         /// <p>The version name of the document that you want to delete. If not provided, all versions of
@@ -4297,8 +4292,8 @@ pub mod fluent_builders {
         /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
         /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
         /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
@@ -4372,8 +4367,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the custom inventory type for which you want to delete either all previously
         /// collected data or the inventory type itself. </p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The name of the custom inventory type for which you want to delete either all previously
@@ -4392,9 +4387,9 @@ pub mod fluent_builders {
         /// can recreate the schema later, if you want.</p>
         pub fn schema_delete_option(
             mut self,
-            signature: crate::model::InventorySchemaDeleteOption,
+            input: crate::model::InventorySchemaDeleteOption,
         ) -> Self {
-            self.inner = self.inner.schema_delete_option(signature);
+            self.inner = self.inner.schema_delete_option(input);
             self
         }
         /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you
@@ -4416,8 +4411,8 @@ pub mod fluent_builders {
         /// data type. This option is useful when you only want to understand what will be deleted. Once you
         /// validate that the data to be deleted is what you intend to delete, you can run the same command
         /// without specifying the <code>DryRun</code> option.</p>
-        pub fn dry_run(mut self, signature: bool) -> Self {
-            self.inner = self.inner.dry_run(signature);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Use this option to view a summary of the deletion request without deleting any data or the
@@ -4429,8 +4424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User-provided idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token.</p>
@@ -4499,8 +4494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window to delete.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window to delete.</p>
@@ -4569,8 +4564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-        pub fn ops_metadata_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_metadata_arn(signature.into());
+        pub fn ops_metadata_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_metadata_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
@@ -4643,8 +4638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parameter to delete.</p>
@@ -4793,8 +4788,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline to delete.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to delete.</p>
@@ -4865,8 +4860,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the configuration to delete.</p>
-        pub fn sync_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_name(signature.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_name(input.into());
             self
         }
         /// <p>The name of the configuration to delete.</p>
@@ -4875,8 +4870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the type of resource data sync to delete.</p>
-        pub fn sync_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_type(signature.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_type(input.into());
             self
         }
         /// <p>Specify the type of resource data sync to delete.</p>
@@ -4948,8 +4943,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID assigned to the managed node when you registered it using the activation process.
         /// </p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID assigned to the managed node when you registered it using the activation process.
@@ -5021,8 +5016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline to deregister the patch group from.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to deregister the patch group from.</p>
@@ -5031,8 +5026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
-        pub fn patch_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_group(signature.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_group(input.into());
             self
         }
         /// <p>The name of the patch group that should be deregistered from the patch baseline.</p>
@@ -5103,8 +5098,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window the target should be removed from.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window the target should be removed from.</p>
@@ -5113,8 +5108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the target definition to remove.</p>
-        pub fn window_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_target_id(signature.into());
+        pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_target_id(input.into());
             self
         }
         /// <p>The ID of the target definition to remove.</p>
@@ -5128,8 +5123,8 @@ pub mod fluent_builders {
         /// <p>The system checks if the target is being referenced by a task. If the target is being
         /// referenced, the system returns an error and doesn't deregister the target from the maintenance
         /// window.</p>
-        pub fn safe(mut self, signature: bool) -> Self {
-            self.inner = self.inner.safe(signature);
+        pub fn safe(mut self, input: bool) -> Self {
+            self.inner = self.inner.safe(input);
             self
         }
         /// <p>The system checks if the target is being referenced by a task. If the target is being
@@ -5202,8 +5197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window the task should be removed from.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window the task should be removed from.</p>
@@ -5212,8 +5207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the task to remove from the maintenance window.</p>
-        pub fn window_task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_task_id(signature.into());
+        pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_task_id(input.into());
             self
         }
         /// <p>The ID of the task to remove from the maintenance window.</p>
@@ -5306,8 +5301,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -5317,8 +5312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -5389,8 +5384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document.</p>
@@ -5399,8 +5394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The managed node ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID.</p>
@@ -5409,8 +5404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The association ID for which you want information.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The association ID for which you want information.</p>
@@ -5425,8 +5420,8 @@ pub mod fluent_builders {
         /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all
         /// associations for a managed node, use <a>ListAssociations</a>. To get a list of versions
         /// for a specific association, use <a>ListAssociationVersions</a>. </p>
-        pub fn association_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_version(signature.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_version(input.into());
             self
         }
         /// <p>Specify the association version to retrieve. To view the latest version, either specify
@@ -5501,8 +5496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The association ID for which you want to view execution history details.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The association ID for which you want to view execution history details.</p>
@@ -5538,8 +5533,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -5549,8 +5544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -5621,8 +5616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The association ID that includes the execution for which you want to view details.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The association ID that includes the execution for which you want to view details.</p>
@@ -5634,8 +5629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The execution ID for which you want to view details.</p>
-        pub fn execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_id(signature.into());
+        pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_id(input.into());
             self
         }
         /// <p>The execution ID for which you want to view details.</p>
@@ -5670,8 +5665,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -5681,8 +5676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -5769,8 +5764,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -5781,8 +5776,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -5853,11 +5848,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Automation execution ID for which you want step execution descriptions.</p>
-        pub fn automation_execution_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.automation_execution_id(signature.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.automation_execution_id(input.into());
             self
         }
         /// <p>The Automation execution ID for which you want step execution descriptions.</p>
@@ -5887,8 +5879,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -5899,8 +5891,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -5911,8 +5903,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to list step executions in reverse order by start time. The default value
         /// is 'false'.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>Indicates whether to list step executions in reverse order by start time. The default value
@@ -6363,8 +6355,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
@@ -6374,8 +6366,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -6445,8 +6437,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document.</p>
@@ -6456,8 +6448,8 @@ pub mod fluent_builders {
         }
         /// <p>The document version for which you want information. Can be a specific version or the
         /// default version.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The document version for which you want information. Can be a specific version or the
@@ -6472,8 +6464,8 @@ pub mod fluent_builders {
         /// <p>An optional field specifying the version of the artifact associated with the document. For
         /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
         /// can't be changed.</p>
-        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(signature.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
         /// <p>An optional field specifying the version of the artifact associated with the document. For
@@ -6546,8 +6538,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the document for which you are the owner.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the document for which you are the owner.</p>
@@ -6557,8 +6549,8 @@ pub mod fluent_builders {
         }
         /// <p>The permission type for the document. The permission type can be
         /// <i>Share</i>.</p>
-        pub fn permission_type(mut self, signature: crate::model::DocumentPermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::DocumentPermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>The permission type for the document. The permission type can be
@@ -6572,8 +6564,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -6584,8 +6576,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -6657,8 +6649,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The managed node ID for which you want to view all associations.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID for which you want to view all associations.</p>
@@ -6668,8 +6660,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -6680,8 +6672,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -6754,8 +6746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to retrieve the effective patches for.</p>
@@ -6764,8 +6756,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
@@ -6775,8 +6767,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -6848,8 +6840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The managed node IDs for which you want association status information.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node IDs for which you want association status information.</p>
@@ -6859,8 +6851,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -6871,8 +6863,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7008,8 +7000,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -7020,8 +7012,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7092,8 +7084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the managed node whose patch state information should be retrieved.</p>
@@ -7200,8 +7192,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7211,8 +7203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
@@ -7299,8 +7291,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7310,8 +7302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of managed nodes to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of managed nodes to return (per page).</p>
@@ -7383,8 +7375,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the patch group for which the patch state information should be
         /// retrieved.</p>
-        pub fn patch_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_group(signature.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_group(input.into());
             self
         }
         /// <p>The name of the patch group for which the patch state information should be
@@ -7434,8 +7426,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7445,8 +7437,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patches to return (per page).</p>
@@ -7516,8 +7508,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
         /// <code>DeleteInventory</code> operation.</p>
-        pub fn deletion_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deletion_id(signature.into());
+        pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deletion_id(input.into());
             self
         }
         /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
@@ -7527,8 +7519,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -7538,8 +7530,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -7613,8 +7605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
@@ -7663,8 +7655,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -7675,8 +7667,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7740,8 +7732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution the task is part of.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution the task is part of.</p>
@@ -7753,8 +7745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
-        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(signature.into());
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
@@ -7787,8 +7779,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -7799,8 +7791,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -7872,8 +7864,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
@@ -7909,8 +7901,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -7921,8 +7913,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8014,8 +8006,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8026,8 +8018,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8097,8 +8089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window to retrieve information about.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window to retrieve information about.</p>
@@ -8125,11 +8117,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resource you want to retrieve information about. For example,
         /// <code>INSTANCE</code>.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::MaintenanceWindowResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource you want to retrieve information about. For example,
@@ -8162,8 +8151,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8174,8 +8163,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8266,11 +8255,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resource you want to retrieve information about. For example,
         /// <code>INSTANCE</code>.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::MaintenanceWindowResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource you want to retrieve information about. For example,
@@ -8284,8 +8270,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8296,8 +8282,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8367,8 +8353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
@@ -8399,8 +8385,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8411,8 +8397,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8488,8 +8474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
@@ -8520,8 +8506,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8532,8 +8518,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -8744,8 +8730,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8755,8 +8741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -8872,8 +8858,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -8884,8 +8870,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -9032,8 +9018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of patch baselines to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patch baselines to return (per page).</p>
@@ -9043,8 +9029,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -9114,8 +9100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of patch groups to return (per page).</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of patch groups to return (per page).</p>
@@ -9182,8 +9168,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -9253,8 +9239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
-        pub fn patch_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_group(signature.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_group(input.into());
             self
         }
         /// <p>The name of the patch group whose patch snapshot should be retrieved.</p>
@@ -9386,8 +9372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The operating system type for which to list patches.</p>
-        pub fn operating_system(mut self, signature: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(signature);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(input);
             self
         }
         /// <p>The operating system type for which to list patches.</p>
@@ -9399,8 +9385,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The patch property for which you want to view patch details. </p>
-        pub fn property(mut self, signature: crate::model::PatchProperty) -> Self {
-            self.inner = self.inner.property(signature);
+        pub fn property(mut self, input: crate::model::PatchProperty) -> Self {
+            self.inner = self.inner.property(input);
             self
         }
         /// <p>The patch property for which you want to view patch details. </p>
@@ -9413,8 +9399,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to list patches for the Windows operating system or for applications
         /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
-        pub fn patch_set(mut self, signature: crate::model::PatchSet) -> Self {
-            self.inner = self.inner.patch_set(signature);
+        pub fn patch_set(mut self, input: crate::model::PatchSet) -> Self {
+            self.inner = self.inner.patch_set(input);
             self
         }
         /// <p>Indicates whether to list patches for the Windows operating system or for applications
@@ -9425,8 +9411,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -9437,8 +9423,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -9509,8 +9495,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
-        pub fn state(mut self, signature: crate::model::SessionState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::SessionState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The session status to retrieve a list of sessions for. For example, "Active".</p>
@@ -9520,8 +9506,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -9532,8 +9518,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -9623,8 +9609,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
         /// related item.</p>
-        pub fn ops_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_id(signature.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_id(input.into());
             self
         }
         /// <p>The ID of the OpsItem for which you want to delete an association between the OpsItem and a
@@ -9635,8 +9621,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the association for which you want to delete an association between the OpsItem
         /// and a related item.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the association for which you want to delete an association between the OpsItem
@@ -9711,11 +9697,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
         /// returned by StartAutomationExecution when the execution of an Automation runbook is
         /// initiated.</p>
-        pub fn automation_execution_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.automation_execution_id(signature.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.automation_execution_id(input.into());
             self
         }
         /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
@@ -9817,8 +9800,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
         /// value or <code>AtTime</code>, the current time is used.</p>
-        pub fn at_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.at_time(signature.into());
+        pub fn at_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.at_time(input.into());
             self
         }
         /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
@@ -9892,8 +9875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Required) The parent command ID of the invocation plugin.</p>
-        pub fn command_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command_id(signature.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command_id(input.into());
             self
         }
         /// <p>(Required) The parent command ID of the invocation plugin.</p>
@@ -9903,8 +9886,8 @@ pub mod fluent_builders {
         }
         /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
         /// Amazon Elastic Compute Cloud (Amazon EC2) instance, edge device, and on-premises server or VM in your hybrid environment that is configured for Amazon Web Services Systems Manager.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>(Required) The ID of the managed node targeted by the command. A <i>managed node</i> can be an
@@ -9923,8 +9906,8 @@ pub mod fluent_builders {
         /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
         /// <code>Name</code> attribute of the <code>CommandPlugin</code> object in the
         /// <code>CommandPlugins</code> list.</p>
-        pub fn plugin_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.plugin_name(signature.into());
+        pub fn plugin_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.plugin_name(input.into());
             self
         }
         /// <p>The name of the plugin for which you want detailed results. If the document contains only
@@ -10003,8 +9986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The managed node ID.</p>
-        pub fn target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(signature.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The managed node ID.</p>
@@ -10076,8 +10059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns the default patch baseline for the specified operating system.</p>
-        pub fn operating_system(mut self, signature: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(signature);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(input);
             self
         }
         /// <p>Returns the default patch baseline for the specified operating system.</p>
@@ -10159,8 +10142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the managed node for which the appropriate patch snapshot should be retrieved.</p>
@@ -10169,8 +10152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
-        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(signature.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
@@ -10179,8 +10162,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the basic information about a patch baseline override.</p>
-        pub fn baseline_override(mut self, signature: crate::model::BaselineOverride) -> Self {
-            self.inner = self.inner.baseline_override(signature);
+        pub fn baseline_override(mut self, input: crate::model::BaselineOverride) -> Self {
+            self.inner = self.inner.baseline_override(input);
             self
         }
         /// <p>Defines the basic information about a patch baseline override.</p>
@@ -10252,8 +10235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document.</p>
@@ -10264,8 +10247,8 @@ pub mod fluent_builders {
         /// <p>An optional field specifying the version of the artifact associated with the document. For
         /// example, "Release 12, Update 6". This value is unique across all versions of a document and can't
         /// be changed.</p>
-        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(signature.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
         /// <p>An optional field specifying the version of the artifact associated with the document. For
@@ -10276,8 +10259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The document version for which you want information.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The document version for which you want information.</p>
@@ -10290,8 +10273,8 @@ pub mod fluent_builders {
         }
         /// <p>Returns the document in the specified format. The document format can be either JSON or
         /// YAML. JSON is the default format.</p>
-        pub fn document_format(mut self, signature: crate::model::DocumentFormat) -> Self {
-            self.inner = self.inner.document_format(signature);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.inner = self.inner.document_format(input);
             self
         }
         /// <p>Returns the document in the specified format. The document format can be either JSON or
@@ -10423,8 +10406,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -10435,8 +10418,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -10507,8 +10490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of inventory item to return.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The type of inventory item to return.</p>
@@ -10518,8 +10501,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -10530,8 +10513,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -10544,8 +10527,8 @@ pub mod fluent_builders {
         /// <code>AWS:InstanceInformation</code> type, because it supports aggregation based on the
         /// <code>PlatformName</code>, <code>PlatformType</code>, and <code>PlatformVersion</code>
         /// attributes.</p>
-        pub fn aggregator(mut self, signature: bool) -> Self {
-            self.inner = self.inner.aggregator(signature);
+        pub fn aggregator(mut self, input: bool) -> Self {
+            self.inner = self.inner.aggregator(input);
             self
         }
         /// <p>Returns inventory schemas that support aggregation. For example, this call returns the
@@ -10557,8 +10540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns the sub-type schema for a specified inventory type.</p>
-        pub fn sub_type(mut self, signature: bool) -> Self {
-            self.inner = self.inner.sub_type(signature);
+        pub fn sub_type(mut self, input: bool) -> Self {
+            self.inner = self.inner.sub_type(input);
             self
         }
         /// <p>Returns the sub-type schema for a specified inventory type.</p>
@@ -10627,8 +10610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window for which you want to retrieve information.</p>
@@ -10697,8 +10680,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution that includes the task.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -10771,8 +10754,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution that includes the task.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution that includes the task.</p>
@@ -10785,8 +10768,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the specific task execution in the maintenance window task that should be
         /// retrieved.</p>
-        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(signature.into());
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the specific task execution in the maintenance window task that should be
@@ -10858,8 +10841,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window execution for which the task is a part.</p>
-        pub fn window_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_execution_id(signature.into());
+        pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_execution_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window execution for which the task is a part.</p>
@@ -10871,8 +10854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
-        pub fn task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_id(signature.into());
+        pub fn task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_id(input.into());
             self
         }
         /// <p>The ID of the specific task in the maintenance window task that should be retrieved. </p>
@@ -10881,8 +10864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The invocation ID to retrieve.</p>
-        pub fn invocation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.invocation_id(signature.into());
+        pub fn invocation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.invocation_id(input.into());
             self
         }
         /// <p>The invocation ID to retrieve.</p>
@@ -10960,8 +10943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maintenance window ID that includes the task to retrieve.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The maintenance window ID that includes the task to retrieve.</p>
@@ -10970,8 +10953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maintenance window task ID to retrieve.</p>
-        pub fn window_task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_task_id(signature.into());
+        pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_task_id(input.into());
             self
         }
         /// <p>The maintenance window task ID to retrieve.</p>
@@ -11049,8 +11032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the OpsItem that you want to get.</p>
-        pub fn ops_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_id(signature.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_id(input.into());
             self
         }
         /// <p>The ID of the OpsItem that you want to get.</p>
@@ -11119,8 +11102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
-        pub fn ops_metadata_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_metadata_arn(signature.into());
+        pub fn ops_metadata_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_metadata_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to view.</p>
@@ -11133,8 +11116,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -11144,8 +11127,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -11217,8 +11200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify the name of a resource data sync to get.</p>
-        pub fn sync_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_name(signature.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_name(input.into());
             self
         }
         /// <p>Specify the name of a resource data sync to get.</p>
@@ -11278,8 +11261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -11289,8 +11272,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -11365,8 +11348,8 @@ pub mod fluent_builders {
         /// <p>The name of the parameter you want to query.</p>
         /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
         /// version, use <code>"Name": "name:version"</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parameter you want to query.</p>
@@ -11378,8 +11361,8 @@ pub mod fluent_builders {
         }
         /// <p>Return decrypted values for secure string parameters. This flag is ignored for
         /// <code>String</code> and <code>StringList</code> parameter types.</p>
-        pub fn with_decryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.with_decryption(signature);
+        pub fn with_decryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_decryption(input);
             self
         }
         /// <p>Return decrypted values for secure string parameters. This flag is ignored for
@@ -11455,8 +11438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter for which you want to review history.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parameter for which you want to review history.</p>
@@ -11466,8 +11449,8 @@ pub mod fluent_builders {
         }
         /// <p>Return decrypted values for secure string parameters. This flag is ignored for
         /// <code>String</code> and <code>StringList</code> parameter types.</p>
-        pub fn with_decryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.with_decryption(signature);
+        pub fn with_decryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_decryption(input);
             self
         }
         /// <p>Return decrypted values for secure string parameters. This flag is ignored for
@@ -11478,8 +11461,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -11490,8 +11473,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -11587,8 +11570,8 @@ pub mod fluent_builders {
         }
         /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
         /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
-        pub fn with_decryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.with_decryption(signature);
+        pub fn with_decryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_decryption(input);
             self
         }
         /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
@@ -11669,8 +11652,8 @@ pub mod fluent_builders {
         /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
         /// </code>
         /// </p>
-        pub fn path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.path(signature.into());
+        pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.path(input.into());
             self
         }
         /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
@@ -11691,8 +11674,8 @@ pub mod fluent_builders {
         /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
         /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
         /// </important>
-        pub fn recursive(mut self, signature: bool) -> Self {
-            self.inner = self.inner.recursive(signature);
+        pub fn recursive(mut self, input: bool) -> Self {
+            self.inner = self.inner.recursive(input);
             self
         }
         /// <p>Retrieve all parameters within a hierarchy.</p>
@@ -11739,8 +11722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
-        pub fn with_decryption(mut self, signature: bool) -> Self {
-            self.inner = self.inner.with_decryption(signature);
+        pub fn with_decryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.with_decryption(input);
             self
         }
         /// <p>Retrieve all parameters in a hierarchy with their value decrypted.</p>
@@ -11750,8 +11733,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -11761,8 +11744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -11838,8 +11821,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
         /// <code>pb-0e392de35e7c563b7</code>.</p>
         /// </note>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to retrieve.</p>
@@ -11915,8 +11898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
-        pub fn patch_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_group(signature.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_group(input.into());
             self
         }
         /// <p>The name of the patch group whose patch baseline should be retrieved.</p>
@@ -11925,8 +11908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
-        pub fn operating_system(mut self, signature: crate::model::OperatingSystem) -> Self {
-            self.inner = self.inner.operating_system(signature);
+        pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
+            self.inner = self.inner.operating_system(input);
             self
         }
         /// <p>Returns he operating system rule specified for patch groups using the patch baseline.</p>
@@ -12043,8 +12026,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn setting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.setting_id(signature.into());
+        pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.setting_id(input.into());
             self
         }
         /// <p>The ID of the service setting to get. The setting ID can be one of the following.</p>
@@ -12181,8 +12164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The parameter name on which you want to attach one or more labels.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The parameter name on which you want to attach one or more labels.</p>
@@ -12192,8 +12175,8 @@ pub mod fluent_builders {
         }
         /// <p>The specific version of the parameter on which you want to attach one or more labels. If no
         /// version is specified, the system attaches the label to the latest version.</p>
-        pub fn parameter_version(mut self, signature: i64) -> Self {
-            self.inner = self.inner.parameter_version(signature);
+        pub fn parameter_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.parameter_version(input);
             self
         }
         /// <p>The specific version of the parameter on which you want to attach one or more labels. If no
@@ -12312,8 +12295,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -12324,8 +12307,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -12395,8 +12378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The association ID for which you want to view all versions.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The association ID for which you want to view all versions.</p>
@@ -12409,8 +12392,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -12420,8 +12403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -12494,8 +12477,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) The invocations for a specific command ID.</p>
-        pub fn command_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command_id(signature.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command_id(input.into());
             self
         }
         /// <p>(Optional) The invocations for a specific command ID.</p>
@@ -12504,8 +12487,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The command execution details for a specific managed node ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>(Optional) The command execution details for a specific managed node ID.</p>
@@ -12515,8 +12498,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
         /// token that you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
@@ -12527,8 +12510,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a
@@ -12558,8 +12541,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) If set this returns the response of the command executions and any command
         /// output. The default value is <code>false</code>. </p>
-        pub fn details(mut self, signature: bool) -> Self {
-            self.inner = self.inner.details(signature);
+        pub fn details(mut self, input: bool) -> Self {
+            self.inner = self.inner.details(input);
             self
         }
         /// <p>(Optional) If set this returns the response of the command executions and any command
@@ -12629,8 +12612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) If provided, lists only the specified command.</p>
-        pub fn command_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.command_id(signature.into());
+        pub fn command_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.command_id(input.into());
             self
         }
         /// <p>(Optional) If provided, lists only the specified command.</p>
@@ -12643,8 +12626,8 @@ pub mod fluent_builders {
         /// <p>You can't specify a managed node ID in the same command that you specify <code>Status</code> =
         /// <code>Pending</code>. This is because the command hasn't reached the managed node yet.</p>
         /// </note>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>(Optional) Lists commands issued against this managed node ID.</p>
@@ -12658,8 +12641,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
         /// token that you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
@@ -12670,8 +12653,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a
         /// previous call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) The token for the next set of items to return. (You received this token from a
@@ -12819,8 +12802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -12830,8 +12813,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -12922,8 +12905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -12934,8 +12917,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50.
         /// The call also returns a token that you can specify in a subsequent call to get the next set of
         /// results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. Currently, you can specify null or 50.
@@ -13006,8 +12989,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the change template.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the change template.</p>
@@ -13016,8 +12999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the change template.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of the change template.</p>
@@ -13030,8 +13013,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of data for which details are being requested. Currently, the only supported value
         /// is <code>DocumentReviews</code>.</p>
-        pub fn metadata(mut self, signature: crate::model::DocumentMetadataEnum) -> Self {
-            self.inner = self.inner.metadata(signature);
+        pub fn metadata(mut self, input: crate::model::DocumentMetadataEnum) -> Self {
+            self.inner = self.inner.metadata(input);
             self
         }
         /// <p>The type of data for which details are being requested. Currently, the only supported value
@@ -13045,8 +13028,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -13057,8 +13040,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13184,8 +13167,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13196,8 +13179,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -13267,8 +13250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the document. You can specify an Amazon Resource Name (ARN).</p>
@@ -13278,8 +13261,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13290,8 +13273,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -13361,8 +13344,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The managed node ID for which you want inventory information.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID for which you want inventory information.</p>
@@ -13371,8 +13354,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of inventory item for which you want information.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The type of inventory item for which you want information.</p>
@@ -13399,8 +13382,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -13411,8 +13394,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13501,8 +13484,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13512,8 +13495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -13583,8 +13566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
-        pub fn ops_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_id(signature.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_id(input.into());
             self
         }
         /// <p>The ID of the OpsItem for which you want to list all related-item resources.</p>
@@ -13611,8 +13594,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13623,8 +13606,8 @@ pub mod fluent_builders {
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
         /// call.)</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return. (You received this token from a previous
@@ -13713,8 +13696,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13724,8 +13707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -13813,8 +13796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -13824,8 +13807,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -13905,8 +13888,8 @@ pub mod fluent_builders {
         /// <p>View a list of resource data syncs according to the sync type. Specify
         /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
         /// or from multiple Amazon Web Services Regions.</p>
-        pub fn sync_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_type(signature.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_type(input.into());
             self
         }
         /// <p>View a list of resource data syncs according to the sync type. Specify
@@ -13917,8 +13900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -13928,8 +13911,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
         /// can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -14000,8 +13983,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns a list of tags for a specific resource type.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceTypeForTagging) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>Returns a list of tags for a specific resource type.</p>
@@ -14013,8 +13996,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource ID for which you want to see a list of tags.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The resource ID for which you want to see a list of tags.</p>
@@ -14086,8 +14069,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the document that you want to share.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the document that you want to share.</p>
@@ -14097,8 +14080,8 @@ pub mod fluent_builders {
         }
         /// <p>The permission type for the document. The permission type can be
         /// <i>Share</i>.</p>
-        pub fn permission_type(mut self, signature: crate::model::DocumentPermissionType) -> Self {
-            self.inner = self.inner.permission_type(signature);
+        pub fn permission_type(mut self, input: crate::model::DocumentPermissionType) -> Self {
+            self.inner = self.inner.permission_type(input);
             self
         }
         /// <p>The permission type for the document. The permission type can be
@@ -14154,11 +14137,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
         /// the <code>Default</code> version to share.</p>
-        pub fn shared_document_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.shared_document_version(signature.into());
+        pub fn shared_document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_document_version(input.into());
             self
         }
         /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
@@ -14286,8 +14266,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Specify an ID for this resource. For a managed node, this is the node ID.</p>
@@ -14297,8 +14277,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
         /// resource type.</p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
@@ -14312,8 +14292,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the compliance type. For example, specify Association (for a State Manager
         /// association), Patch, or Custom:<code>string</code>.</p>
-        pub fn compliance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compliance_type(signature.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compliance_type(input.into());
             self
         }
         /// <p>Specify the compliance type. For example, specify Association (for a State Manager
@@ -14330,9 +14310,9 @@ pub mod fluent_builders {
         /// is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
         pub fn execution_summary(
             mut self,
-            signature: crate::model::ComplianceExecutionSummary,
+            input: crate::model::ComplianceExecutionSummary,
         ) -> Self {
-            self.inner = self.inner.execution_summary(signature);
+            self.inner = self.inner.execution_summary(input);
             self
         }
         /// <p>A summary of the call execution that includes an execution ID, the type of execution (for
@@ -14369,8 +14349,8 @@ pub mod fluent_builders {
         /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information
         /// should be overwritten or ignored. If the content hashes match, the request to put compliance
         /// information is ignored.</p>
-        pub fn item_content_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.item_content_hash(signature.into());
+        pub fn item_content_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.item_content_hash(input.into());
             self
         }
         /// <p>MD5 or SHA-256 content hash. The content hash is used to determine if existing information
@@ -14393,8 +14373,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This attribute is only valid for association compliance.</p>
         /// </note>
-        pub fn upload_type(mut self, signature: crate::model::ComplianceUploadType) -> Self {
-            self.inner = self.inner.upload_type(signature);
+        pub fn upload_type(mut self, input: crate::model::ComplianceUploadType) -> Self {
+            self.inner = self.inner.upload_type(input);
             self
         }
         /// <p>The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
@@ -14476,8 +14456,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An managed node ID where you want to add or update inventory items.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>An managed node ID where you want to add or update inventory items.</p>
@@ -14604,8 +14584,8 @@ pub mod fluent_builders {
         /// <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
         /// </p>
         /// </note>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The fully qualified name of the parameter that you want to add to the system. The fully
@@ -14659,8 +14639,8 @@ pub mod fluent_builders {
         /// <important>
         /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Information about the parameter that you want to add to the system. Optional but
@@ -14679,8 +14659,8 @@ pub mod fluent_builders {
         /// include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a
         /// parameter value.</p>
         /// </note>
-        pub fn value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.value(signature.into());
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.value(input.into());
             self
         }
         /// <p>The parameter value that you want to add to the system. Standard parameters have a value
@@ -14706,8 +14686,8 @@ pub mod fluent_builders {
         /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
         /// parameter type when creating a parameter.</p>
         /// </important>
-        pub fn r#type(mut self, signature: crate::model::ParameterType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of parameter that you want to add to the system.</p>
@@ -14742,8 +14722,8 @@ pub mod fluent_builders {
         /// data type with the <code>Key ID</code> parameter.</p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
@@ -14767,8 +14747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
-        pub fn overwrite(mut self, signature: bool) -> Self {
-            self.inner = self.inner.overwrite(signature);
+        pub fn overwrite(mut self, input: bool) -> Self {
+            self.inner = self.inner.overwrite(input);
             self
         }
         /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
@@ -14778,8 +14758,8 @@ pub mod fluent_builders {
         }
         /// <p>A regular expression used to validate the parameter value. For example, for String types
         /// with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
-        pub fn allowed_pattern(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.allowed_pattern(signature.into());
+        pub fn allowed_pattern(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.allowed_pattern(input.into());
             self
         }
         /// <p>A regular expression used to validate the parameter value. For example, for String types
@@ -14916,8 +14896,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
         /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn tier(mut self, signature: crate::model::ParameterTier) -> Self {
-            self.inner = self.inner.tier(signature);
+        pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
+            self.inner = self.inner.tier(input);
             self
         }
         /// <p>The parameter tier to assign to a parameter.</p>
@@ -14997,8 +14977,8 @@ pub mod fluent_builders {
         /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
         /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
         /// policies</a>. </p>
-        pub fn policies(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.policies(signature.into());
+        pub fn policies(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.policies(input.into());
             self
         }
         /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
@@ -15042,8 +15022,8 @@ pub mod fluent_builders {
         /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
         /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
         /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn data_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_type(signature.into());
+        pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_type(input.into());
             self
         }
         /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
@@ -15137,8 +15117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline that should be the default patch baseline.</p>
@@ -15209,8 +15189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline to register with the patch group.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to register with the patch group.</p>
@@ -15219,8 +15199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the patch group to be registered with the patch baseline.</p>
-        pub fn patch_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.patch_group(signature.into());
+        pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.patch_group(input.into());
             self
         }
         /// <p>The name of the patch group to be registered with the patch baseline.</p>
@@ -15291,8 +15271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window the target should be registered with.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window the target should be registered with.</p>
@@ -15301,11 +15281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of target being registered with the maintenance window.</p>
-        pub fn resource_type(
-            mut self,
-            signature: crate::model::MaintenanceWindowResourceType,
-        ) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of target being registered with the maintenance window.</p>
@@ -15429,8 +15406,8 @@ pub mod fluent_builders {
         }
         /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
         /// running tasks for these targets in this maintenance window.</p>
-        pub fn owner_information(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_information(signature.into());
+        pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_information(input.into());
             self
         }
         /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
@@ -15443,8 +15420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional name for the target.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>An optional name for the target.</p>
@@ -15453,8 +15430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the target.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the target.</p>
@@ -15463,8 +15440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User-provided idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token.</p>
@@ -15533,8 +15510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window the task should be added to.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window the task should be added to.</p>
@@ -15592,8 +15569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the task to run.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The ARN of the task to run.</p>
@@ -15620,8 +15597,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
@@ -15651,8 +15628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of task being registered.</p>
-        pub fn task_type(mut self, signature: crate::model::MaintenanceWindowTaskType) -> Self {
-            self.inner = self.inner.task_type(signature);
+        pub fn task_type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
+            self.inner = self.inner.task_type(input);
             self
         }
         /// <p>The type of task being registered.</p>
@@ -15707,9 +15684,9 @@ pub mod fluent_builders {
         /// match the task type. All other fields should be empty. </p>
         pub fn task_invocation_parameters(
             mut self,
-            signature: crate::model::MaintenanceWindowTaskInvocationParameters,
+            input: crate::model::MaintenanceWindowTaskInvocationParameters,
         ) -> Self {
-            self.inner = self.inner.task_invocation_parameters(signature);
+            self.inner = self.inner.task_invocation_parameters(input);
             self
         }
         /// <p>The parameters that the task should use during execution. Populate only the fields that
@@ -15724,8 +15701,8 @@ pub mod fluent_builders {
         /// <p>The priority of the task in the maintenance window, the lower the number the higher the
         /// priority. Tasks in a maintenance window are scheduled in priority order with tasks that have the
         /// same priority scheduled in parallel.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The priority of the task in the maintenance window, the lower the number the higher the
@@ -15741,8 +15718,8 @@ pub mod fluent_builders {
         /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
         /// affect the running of your task.</p>
         /// </note>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>The maximum number of targets this task can be run for in parallel.</p>
@@ -15764,8 +15741,8 @@ pub mod fluent_builders {
         /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
         /// affect the running of your task.</p>
         /// </note>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
@@ -15787,8 +15764,8 @@ pub mod fluent_builders {
         /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
-        pub fn logging_info(mut self, signature: crate::model::LoggingInfo) -> Self {
-            self.inner = self.inner.logging_info(signature);
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.inner = self.inner.logging_info(input);
             self
         }
         /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
@@ -15808,8 +15785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional name for the task.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>An optional name for the task.</p>
@@ -15818,8 +15795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the task.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the task.</p>
@@ -15828,8 +15805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User-provided idempotency token.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token.</p>
@@ -15865,9 +15842,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cutoff_behavior(
             mut self,
-            signature: crate::model::MaintenanceWindowTaskCutoffBehavior,
+            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
         ) -> Self {
-            self.inner = self.inner.cutoff_behavior(signature);
+            self.inner = self.inner.cutoff_behavior(input);
             self
         }
         /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
@@ -15971,8 +15948,8 @@ pub mod fluent_builders {
         /// </code>. For example,
         /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
-        pub fn resource_type(mut self, signature: crate::model::ResourceTypeForTagging) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource from which you want to remove a tag.</p>
@@ -16006,8 +15983,8 @@ pub mod fluent_builders {
         /// managed nodes. Specify the name of the managed node in the following format: mi-ID_number. For
         /// example, mi-1a2b3c4d5e6f.</p>
         /// </note>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the resource from which you want to remove tags. For example:</p>
@@ -16155,8 +16132,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn setting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.setting_id(signature.into());
+        pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.setting_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
@@ -16263,8 +16240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the disconnected session to resume.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The ID of the disconnected session to resume.</p>
@@ -16335,11 +16312,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for an existing Automation execution that you want to send the signal
         /// to.</p>
-        pub fn automation_execution_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.automation_execution_id(signature.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.automation_execution_id(input.into());
             self
         }
         /// <p>The unique identifier for an existing Automation execution that you want to send the signal
@@ -16352,8 +16326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of signal to send to an Automation execution. </p>
-        pub fn signal_type(mut self, signature: crate::model::SignalType) -> Self {
-            self.inner = self.inner.signal_type(signature);
+        pub fn signal_type(mut self, input: crate::model::SignalType) -> Self {
+            self.inner = self.inner.signal_type(input);
             self
         }
         /// <p>The type of signal to send to an Automation execution. </p>
@@ -16555,8 +16529,8 @@ pub mod fluent_builders {
         /// <p>If you specify a document name or ARN that hasn't been shared with your account, you
         /// receive an <code>InvalidDocument</code> error. </p>
         /// </note>
-        pub fn document_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_name(signature.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_name(input.into());
             self
         }
         /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
@@ -16581,8 +16555,8 @@ pub mod fluent_builders {
         /// <p>--document-version "\$DEFAULT"</p>
         /// <p>--document-version "\$LATEST"</p>
         /// <p>--document-version "3"</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
@@ -16603,8 +16577,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
-        pub fn document_hash(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_hash(signature.into());
+        pub fn document_hash(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_hash(input.into());
             self
         }
         /// <p>The Sha256 or Sha1 hash created by the system when the document was created. </p>
@@ -16622,8 +16596,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Sha1 hashes have been deprecated.</p>
         /// </note>
-        pub fn document_hash_type(mut self, signature: crate::model::DocumentHashType) -> Self {
-            self.inner = self.inner.document_hash_type(signature);
+        pub fn document_hash_type(mut self, input: crate::model::DocumentHashType) -> Self {
+            self.inner = self.inner.document_hash_type(input);
             self
         }
         /// <p>Sha256 or Sha1.</p>
@@ -16638,8 +16612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
-        pub fn timeout_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.timeout_seconds(signature);
+        pub fn timeout_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.timeout_seconds(input);
             self
         }
         /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
@@ -16649,8 +16623,8 @@ pub mod fluent_builders {
         }
         /// <p>User-specified information about the command, such as a brief description of what the
         /// command should do.</p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p>User-specified information about the command, such as a brief description of what the
@@ -16684,8 +16658,8 @@ pub mod fluent_builders {
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
         /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
-        pub fn output_s3_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_region(signature.into());
+        pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_region(input.into());
             self
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
@@ -16698,8 +16672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
-        pub fn output_s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_bucket_name(signature.into());
+        pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_bucket_name(input.into());
             self
         }
         /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
@@ -16711,8 +16685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
-        pub fn output_s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_s3_key_prefix(signature.into());
+        pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_s3_key_prefix(input.into());
             self
         }
         /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
@@ -16727,8 +16701,8 @@ pub mod fluent_builders {
         /// same time. You can specify a number such as 10 or a percentage such as 10%. The default value is
         /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
         /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>(Optional) The maximum number of managed nodes that are allowed to run the command at the
@@ -16747,8 +16721,8 @@ pub mod fluent_builders {
         /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
         /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
         /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The maximum number of errors allowed without the command failing. When the command fails one
@@ -16762,8 +16736,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
         /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
@@ -16776,8 +16750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configurations for sending notifications.</p>
-        pub fn notification_config(mut self, signature: crate::model::NotificationConfig) -> Self {
-            self.inner = self.inner.notification_config(signature);
+        pub fn notification_config(mut self, input: crate::model::NotificationConfig) -> Self {
+            self.inner = self.inner.notification_config(input);
             self
         }
         /// <p>Configurations for sending notifications.</p>
@@ -16792,9 +16766,9 @@ pub mod fluent_builders {
         /// capability of Amazon Web Services Systems Manager.</p>
         pub fn cloud_watch_output_config(
             mut self,
-            signature: crate::model::CloudWatchOutputConfig,
+            input: crate::model::CloudWatchOutputConfig,
         ) -> Self {
-            self.inner = self.inner.cloud_watch_output_config(signature);
+            self.inner = self.inner.cloud_watch_output_config(input);
             self
         }
         /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
@@ -16948,8 +16922,8 @@ pub mod fluent_builders {
         /// run a shared document belonging to another account, specify the document ARN. For more
         /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
         /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn document_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_name(signature.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_name(input.into());
             self
         }
         /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
@@ -16964,8 +16938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the Automation runbook to use for this execution.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of the Automation runbook to use for this execution.</p>
@@ -17003,8 +16977,8 @@ pub mod fluent_builders {
         }
         /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the
         /// UUID format, and can't be reused.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>User-provided idempotency token. The token must be unique, is case insensitive, enforces the
@@ -17015,8 +16989,8 @@ pub mod fluent_builders {
         }
         /// <p>The execution mode of the automation. Valid modes include the following: Auto and
         /// Interactive. The default mode is Auto.</p>
-        pub fn mode(mut self, signature: crate::model::ExecutionMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ExecutionMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The execution mode of the automation. Valid modes include the following: Auto and
@@ -17027,8 +17001,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the parameter used as the target resource for the rate-controlled execution.
         /// Required if you specify targets.</p>
-        pub fn target_parameter_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_parameter_name(signature.into());
+        pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_parameter_name(input.into());
             self
         }
         /// <p>The name of the parameter used as the target resource for the rate-controlled execution.
@@ -17091,8 +17065,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
         /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
@@ -17115,8 +17089,8 @@ pub mod fluent_builders {
         /// complete, but some of these executions may fail as well. If you need to ensure that there won't
         /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
         /// at a time.</p>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The number of errors that are allowed before the system stops running the automation on
@@ -17281,8 +17255,8 @@ pub mod fluent_builders {
         /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
         /// approvals for the change request have been received.</p>
         /// </note>
-        pub fn scheduled_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time(signature);
+        pub fn scheduled_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time(input);
             self
         }
         /// <p>The date and time specified in the change request to run the Automation runbooks.</p>
@@ -17298,8 +17272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the change template document to run during the runbook workflow.</p>
-        pub fn document_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_name(signature.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_name(input.into());
             self
         }
         /// <p>The name of the change template document to run during the runbook workflow.</p>
@@ -17311,8 +17285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the change template document to run during the runbook workflow.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of the change template document to run during the runbook workflow.</p>
@@ -17349,8 +17323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the change request associated with the runbook workflow to be run.</p>
-        pub fn change_request_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_request_name(signature.into());
+        pub fn change_request_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_request_name(input.into());
             self
         }
         /// <p>The name of the change request associated with the runbook workflow to be run.</p>
@@ -17363,8 +17337,8 @@ pub mod fluent_builders {
         }
         /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
         /// the UUID format, and can't be reused.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
@@ -17384,8 +17358,8 @@ pub mod fluent_builders {
         /// for this change request to run. If they don't, the change won't be processed until the calendar
         /// state is again <code>OPEN</code>. </p>
         /// </note>
-        pub fn auto_approve(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_approve(signature);
+        pub fn auto_approve(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_approve(input);
             self
         }
         /// <p>Indicates whether the change request can be approved automatically without the need for
@@ -17479,8 +17453,8 @@ pub mod fluent_builders {
         }
         /// <p>The time that the requester expects the runbook workflow related to the change request to
         /// complete. The time is an estimate only that the requester provides for reviewers.</p>
-        pub fn scheduled_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_end_time(signature);
+        pub fn scheduled_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_end_time(input);
             self
         }
         /// <p>The time that the requester expects the runbook workflow related to the change request to
@@ -17495,8 +17469,8 @@ pub mod fluent_builders {
         /// <p>User-provided details about the change. If no details are provided, content specified in the
         /// <b>Template information</b> section of the associated change template
         /// is added.</p>
-        pub fn change_details(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_details(signature.into());
+        pub fn change_details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_details(input.into());
             self
         }
         /// <p>User-provided details about the change. If no details are provided, content specified in the
@@ -17579,8 +17553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The managed node to connect to for the session.</p>
-        pub fn target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(signature.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The managed node to connect to for the session.</p>
@@ -17591,8 +17565,8 @@ pub mod fluent_builders {
         /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
         /// For example, <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists before attempting to start a session.
         /// If no document name is provided, a shell to the managed node is launched by default.</p>
-        pub fn document_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_name(signature.into());
+        pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_name(input.into());
             self
         }
         /// <p>The name of the SSM document to define the parameters and plugin settings for the session.
@@ -17607,8 +17581,8 @@ pub mod fluent_builders {
         }
         /// <p>The reason for connecting to the instance. This value is included in the details for the
         /// Amazon CloudWatch Events event created when you start the session.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for connecting to the instance. This value is included in the details for the
@@ -17701,11 +17675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The execution ID of the Automation to stop.</p>
-        pub fn automation_execution_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.automation_execution_id(signature.into());
+        pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.automation_execution_id(input.into());
             self
         }
         /// <p>The execution ID of the Automation to stop.</p>
@@ -17718,8 +17689,8 @@ pub mod fluent_builders {
         }
         /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
         /// type is Cancel.</p>
-        pub fn r#type(mut self, signature: crate::model::StopType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::StopType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The stop request type. Valid types include the following: Cancel and Complete. The default
@@ -17790,8 +17761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the session to terminate.</p>
-        pub fn session_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_id(signature.into());
+        pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_id(input.into());
             self
         }
         /// <p>The ID of the session to terminate.</p>
@@ -17860,8 +17831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter from which you want to delete one or more labels.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parameter from which you want to delete one or more labels.</p>
@@ -17871,8 +17842,8 @@ pub mod fluent_builders {
         }
         /// <p>The specific version of the parameter which you want to delete one or more labels from. If
         /// it isn't present, the call will fail.</p>
-        pub fn parameter_version(mut self, signature: i64) -> Self {
-            self.inner = self.inner.parameter_version(signature);
+        pub fn parameter_version(mut self, input: i64) -> Self {
+            self.inner = self.inner.parameter_version(input);
             self
         }
         /// <p>The specific version of the parameter which you want to delete one or more labels from. If
@@ -17971,8 +17942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the association you want to update. </p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the association you want to update. </p>
@@ -18011,8 +17982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The document version you want update for the association. </p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The document version you want update for the association. </p>
@@ -18024,8 +17995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cron expression used to schedule the association that you want to update.</p>
-        pub fn schedule_expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_expression(signature.into());
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_expression(input.into());
             self
         }
         /// <p>The cron expression used to schedule the association that you want to update.</p>
@@ -18039,9 +18010,9 @@ pub mod fluent_builders {
         /// <p>An S3 bucket where you want to store the results of this request.</p>
         pub fn output_location(
             mut self,
-            signature: crate::model::InstanceAssociationOutputLocation,
+            input: crate::model::InstanceAssociationOutputLocation,
         ) -> Self {
-            self.inner = self.inner.output_location(signature);
+            self.inner = self.inner.output_location(input);
             self
         }
         /// <p>An S3 bucket where you want to store the results of this request.</p>
@@ -18069,8 +18040,8 @@ pub mod fluent_builders {
         /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
         /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
@@ -18112,8 +18083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the association that you want to update.</p>
-        pub fn association_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_name(signature.into());
+        pub fn association_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_name(input.into());
             self
         }
         /// <p>The name of the association that you want to update.</p>
@@ -18127,8 +18098,8 @@ pub mod fluent_builders {
         /// <p>This parameter is provided for concurrency control purposes. You must specify the latest
         /// association version in the service. If you want to ensure that this request succeeds, either
         /// specify <code>$LATEST</code>, or omit this parameter.</p>
-        pub fn association_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_version(signature.into());
+        pub fn association_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_version(input.into());
             self
         }
         /// <p>This parameter is provided for concurrency control purposes. You must specify the latest
@@ -18146,11 +18117,9 @@ pub mod fluent_builders {
         /// controls. Automation is a capability of Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .automation_target_parameter_name(signature.into());
+            self.inner = self.inner.automation_target_parameter_name(input.into());
             self
         }
         /// <p>Choose the parameter that will define how your automation will branch out. This target is
@@ -18174,8 +18143,8 @@ pub mod fluent_builders {
         /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
         /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
         /// so that executions proceed one at a time.</p>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The number of errors that are allowed before the system stops sending requests to run the
@@ -18200,8 +18169,8 @@ pub mod fluent_builders {
         /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
         /// association interval, the new managed node will process its association within the limit specified
         /// for <code>MaxConcurrency</code>.</p>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>The maximum number of targets allowed to run the association at the same time. You can
@@ -18221,9 +18190,9 @@ pub mod fluent_builders {
         /// <p>The severity level to assign to the association.</p>
         pub fn compliance_severity(
             mut self,
-            signature: crate::model::AssociationComplianceSeverity,
+            input: crate::model::AssociationComplianceSeverity,
         ) -> Self {
-            self.inner = self.inner.compliance_severity(signature);
+            self.inner = self.inner.compliance_severity(input);
             self
         }
         /// <p>The severity level to assign to the association.</p>
@@ -18244,11 +18213,8 @@ pub mod fluent_builders {
         /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
         /// <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
-        pub fn sync_compliance(
-            mut self,
-            signature: crate::model::AssociationSyncCompliance,
-        ) -> Self {
-            self.inner = self.inner.sync_compliance(signature);
+        pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
+            self.inner = self.inner.sync_compliance(input);
             self
         }
         /// <p>The mode for generating association compliance. You can specify <code>AUTO</code> or
@@ -18276,8 +18242,8 @@ pub mod fluent_builders {
         /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
         /// association from the command line. This parameter forces the association to run immediately after
         /// updating it and according to the interval specified.</p>
-        pub fn apply_only_at_cron_interval(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_only_at_cron_interval(signature);
+        pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_only_at_cron_interval(input);
             self
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is
@@ -18402,8 +18368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the SSM document.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document.</p>
@@ -18412,8 +18378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The managed node ID.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The managed node ID.</p>
@@ -18422,8 +18388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The association status.</p>
-        pub fn association_status(mut self, signature: crate::model::AssociationStatus) -> Self {
-            self.inner = self.inner.association_status(signature);
+        pub fn association_status(mut self, input: crate::model::AssociationStatus) -> Self {
+            self.inner = self.inner.association_status(input);
             self
         }
         /// <p>The association status.</p>
@@ -18495,8 +18461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A valid JSON or YAML string.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>A valid JSON or YAML string.</p>
@@ -18522,8 +18488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SSM document that you want to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the SSM document that you want to update.</p>
@@ -18534,8 +18500,8 @@ pub mod fluent_builders {
         /// <p>The friendly name of the SSM document that you want to update. This value can differ for
         /// each version of the document. If you don't specify a value for this parameter in your request,
         /// the existing value is applied to the new document version.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The friendly name of the SSM document that you want to update. This value can differ for
@@ -18548,8 +18514,8 @@ pub mod fluent_builders {
         /// <p>An optional field specifying the version of the artifact you are updating with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
         /// can't be changed.</p>
-        pub fn version_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_name(signature.into());
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input.into());
             self
         }
         /// <p>An optional field specifying the version of the artifact you are updating with the document.
@@ -18562,8 +18528,8 @@ pub mod fluent_builders {
         /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
         /// the latest version of the document. You can specify the version number of the latest version or
         /// use the <code>$LATEST</code> variable.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
@@ -18578,8 +18544,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML
         /// documents. JSON is the default format.</p>
-        pub fn document_format(mut self, signature: crate::model::DocumentFormat) -> Self {
-            self.inner = self.inner.document_format(signature);
+        pub fn document_format(mut self, input: crate::model::DocumentFormat) -> Self {
+            self.inner = self.inner.document_format(input);
             self
         }
         /// <p>Specify the document format for the new document version. Systems Manager supports JSON and YAML
@@ -18592,8 +18558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a new target type for the document.</p>
-        pub fn target_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_type(signature.into());
+        pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_type(input.into());
             self
         }
         /// <p>Specify a new target type for the document.</p>
@@ -18662,8 +18628,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a custom document that you want to set as the default version.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a custom document that you want to set as the default version.</p>
@@ -18672,8 +18638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of a custom document that you want to set as the default version.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of a custom document that you want to set as the default version.</p>
@@ -18746,8 +18712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the change template for which a version's metadata is to be updated.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the change template for which a version's metadata is to be updated.</p>
@@ -18756,8 +18722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of a change template in which to update approval metadata.</p>
-        pub fn document_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.document_version(signature.into());
+        pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.document_version(input.into());
             self
         }
         /// <p>The version of a change template in which to update approval metadata.</p>
@@ -18769,8 +18735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The change template review details to update.</p>
-        pub fn document_reviews(mut self, signature: crate::model::DocumentReviews) -> Self {
-            self.inner = self.inner.document_reviews(signature);
+        pub fn document_reviews(mut self, input: crate::model::DocumentReviews) -> Self {
+            self.inner = self.inner.document_reviews(input);
             self
         }
         /// <p>The change template review details to update.</p>
@@ -18850,8 +18816,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the maintenance window to update.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The ID of the maintenance window to update.</p>
@@ -18860,8 +18826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the maintenance window.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the maintenance window.</p>
@@ -18870,8 +18836,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the update request.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the update request.</p>
@@ -18883,8 +18849,8 @@ pub mod fluent_builders {
         /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
         /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.</p>
-        pub fn start_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date(signature.into());
+        pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date(input.into());
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
@@ -18898,8 +18864,8 @@ pub mod fluent_builders {
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
         /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
         /// maintenance window will no longer run.</p>
-        pub fn end_date(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date(signature.into());
+        pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date(input.into());
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
@@ -18910,8 +18876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
@@ -18923,8 +18889,8 @@ pub mod fluent_builders {
         /// Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or
         /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
         /// Zone Database</a> on the IANA website.</p>
-        pub fn schedule_timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_timezone(signature.into());
+        pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_timezone(input.into());
             self
         }
         /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
@@ -18947,8 +18913,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>If the schedule offset is <code>2</code>, the maintenance window won't run until two days
         /// later.</p>
-        pub fn schedule_offset(mut self, signature: i32) -> Self {
-            self.inner = self.inner.schedule_offset(signature);
+        pub fn schedule_offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.schedule_offset(input);
             self
         }
         /// <p>The number of days to wait after the date and time specified by a cron expression before
@@ -18965,8 +18931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the maintenance window in hours.</p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The duration of the maintenance window in hours.</p>
@@ -18976,8 +18942,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
         /// new tasks for execution.</p>
-        pub fn cutoff(mut self, signature: i32) -> Self {
-            self.inner = self.inner.cutoff(signature);
+        pub fn cutoff(mut self, input: i32) -> Self {
+            self.inner = self.inner.cutoff(input);
             self
         }
         /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
@@ -18988,8 +18954,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
         /// for those targets.</p>
-        pub fn allow_unassociated_targets(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_unassociated_targets(signature);
+        pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_unassociated_targets(input);
             self
         }
         /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
@@ -18999,8 +18965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether the maintenance window is enabled.</p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>Whether the maintenance window is enabled.</p>
@@ -19010,8 +18976,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
         /// fields that aren't specified are set to null. </p>
-        pub fn replace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.replace(signature);
+        pub fn replace(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace(input);
             self
         }
         /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
@@ -19107,8 +19073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maintenance window ID with which to modify the target.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The maintenance window ID with which to modify the target.</p>
@@ -19117,8 +19083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The target ID to modify.</p>
-        pub fn window_target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_target_id(signature.into());
+        pub fn window_target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_target_id(input.into());
             self
         }
         /// <p>The target ID to modify.</p>
@@ -19148,8 +19114,8 @@ pub mod fluent_builders {
         }
         /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
         /// running tasks for these targets in this maintenance window.</p>
-        pub fn owner_information(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_information(signature.into());
+        pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_information(input.into());
             self
         }
         /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
@@ -19162,8 +19128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the update.</p>
@@ -19172,8 +19138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the update.</p>
@@ -19183,8 +19149,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
         /// request. Optional fields that aren't specified are set to null.</p>
-        pub fn replace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.replace(signature);
+        pub fn replace(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace(input);
             self
         }
         /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
@@ -19309,8 +19275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maintenance window ID that contains the task to modify.</p>
-        pub fn window_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_id(signature.into());
+        pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_id(input.into());
             self
         }
         /// <p>The maintenance window ID that contains the task to modify.</p>
@@ -19319,8 +19285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ID to modify.</p>
-        pub fn window_task_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.window_task_id(signature.into());
+        pub fn window_task_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.window_task_id(input.into());
             self
         }
         /// <p>The task ID to modify.</p>
@@ -19369,8 +19335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The task ARN to modify.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The task ARN to modify.</p>
@@ -19397,8 +19363,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
@@ -19487,9 +19453,9 @@ pub mod fluent_builders {
         /// </important>
         pub fn task_invocation_parameters(
             mut self,
-            signature: crate::model::MaintenanceWindowTaskInvocationParameters,
+            input: crate::model::MaintenanceWindowTaskInvocationParameters,
         ) -> Self {
-            self.inner = self.inner.task_invocation_parameters(signature);
+            self.inner = self.inner.task_invocation_parameters(input);
             self
         }
         /// <p>The parameters that the task should use during execution. Populate only the fields that
@@ -19513,8 +19479,8 @@ pub mod fluent_builders {
         }
         /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that
         /// have the same priority are scheduled in parallel.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The new task priority to specify. The lower the number, the higher the priority. Tasks that
@@ -19531,8 +19497,8 @@ pub mod fluent_builders {
         /// in the response to this command. This value doesn't affect the running of your task and can be
         /// ignored.</p>
         /// </note>
-        pub fn max_concurrency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_concurrency(signature.into());
+        pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_concurrency(input.into());
             self
         }
         /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
@@ -19558,8 +19524,8 @@ pub mod fluent_builders {
         /// in the response to this command. This value doesn't affect the running of your task and can be
         /// ignored.</p>
         /// </note>
-        pub fn max_errors(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.max_errors(signature.into());
+        pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.max_errors(input.into());
             self
         }
         /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
@@ -19582,8 +19548,8 @@ pub mod fluent_builders {
         /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
-        pub fn logging_info(mut self, signature: crate::model::LoggingInfo) -> Self {
-            self.inner = self.inner.logging_info(signature);
+        pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
+            self.inner = self.inner.logging_info(input);
             self
         }
         /// <p>The new logging location in Amazon S3 to specify.</p>
@@ -19602,8 +19568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new task name to specify.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new task name to specify.</p>
@@ -19612,8 +19578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new task description to specify.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new task description to specify.</p>
@@ -19623,8 +19589,8 @@ pub mod fluent_builders {
         }
         /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
         /// Optional fields that aren't specified are set to null.</p>
-        pub fn replace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.replace(signature);
+        pub fn replace(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace(input);
             self
         }
         /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
@@ -19661,9 +19627,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cutoff_behavior(
             mut self,
-            signature: crate::model::MaintenanceWindowTaskCutoffBehavior,
+            input: crate::model::MaintenanceWindowTaskCutoffBehavior,
         ) -> Self {
-            self.inner = self.inner.cutoff_behavior(signature);
+            self.inner = self.inner.cutoff_behavior(input);
             self
         }
         /// <p>Indicates whether tasks should continue to run after the cutoff time specified in the
@@ -19762,8 +19728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the managed node where you want to update the role.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the managed node where you want to update the role.</p>
@@ -19772,8 +19738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM role you want to assign or change.</p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>The IAM role you want to assign or change.</p>
@@ -19848,8 +19814,8 @@ pub mod fluent_builders {
         }
         /// <p>Update the information about the OpsItem. Provide enough information so that users reading
         /// this OpsItem for the first time understand the issue. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Update the information about the OpsItem. Provide enough information so that users reading
@@ -19956,8 +19922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
@@ -19988,8 +19954,8 @@ pub mod fluent_builders {
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
         /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
-        pub fn status(mut self, signature: crate::model::OpsItemStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
@@ -20002,8 +19968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the OpsItem.</p>
-        pub fn ops_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_item_id(signature.into());
+        pub fn ops_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_item_id(input.into());
             self
         }
         /// <p>The ID of the OpsItem.</p>
@@ -20012,8 +19978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
-        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(signature.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
@@ -20022,8 +19988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a new category for an OpsItem.</p>
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// <p>Specify a new category for an OpsItem.</p>
@@ -20032,8 +19998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify a new severity for an OpsItem.</p>
-        pub fn severity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.severity(signature.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.severity(input.into());
             self
         }
         /// <p>Specify a new severity for an OpsItem.</p>
@@ -20043,8 +20009,8 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.actual_start_time(signature);
+        pub fn actual_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.actual_start_time(input);
             self
         }
         /// <p>The time a runbook workflow started. Currently reported only for the OpsItem type
@@ -20058,8 +20024,8 @@ pub mod fluent_builders {
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
         /// <code>/aws/changerequest</code>.</p>
-        pub fn actual_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.actual_end_time(signature);
+        pub fn actual_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.actual_end_time(input);
             self
         }
         /// <p>The time a runbook workflow ended. Currently reported only for the OpsItem type
@@ -20073,8 +20039,8 @@ pub mod fluent_builders {
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.planned_start_time(signature);
+        pub fn planned_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.planned_start_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to start. Currently supported
@@ -20088,8 +20054,8 @@ pub mod fluent_builders {
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
         /// only for the OpsItem type <code>/aws/changerequest</code>.</p>
-        pub fn planned_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.planned_end_time(signature);
+        pub fn planned_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.planned_end_time(input);
             self
         }
         /// <p>The time specified in a change request for a runbook workflow to end. Currently supported
@@ -20162,8 +20128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
-        pub fn ops_metadata_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ops_metadata_arn(signature.into());
+        pub fn ops_metadata_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ops_metadata_arn(input.into());
             self
         }
         /// <p>The Amazon Resoure Name (ARN) of the OpsMetadata Object to update.</p>
@@ -20280,8 +20246,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the patch baseline to update.</p>
-        pub fn baseline_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.baseline_id(signature.into());
+        pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.baseline_id(input.into());
             self
         }
         /// <p>The ID of the patch baseline to update.</p>
@@ -20290,8 +20256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the patch baseline.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the patch baseline.</p>
@@ -20300,8 +20266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of global filters used to include patches in the baseline.</p>
-        pub fn global_filters(mut self, signature: crate::model::PatchFilterGroup) -> Self {
-            self.inner = self.inner.global_filters(signature);
+        pub fn global_filters(mut self, input: crate::model::PatchFilterGroup) -> Self {
+            self.inner = self.inner.global_filters(input);
             self
         }
         /// <p>A set of global filters used to include patches in the baseline.</p>
@@ -20313,8 +20279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
-        pub fn approval_rules(mut self, signature: crate::model::PatchRuleGroup) -> Self {
-            self.inner = self.inner.approval_rules(signature);
+        pub fn approval_rules(mut self, input: crate::model::PatchRuleGroup) -> Self {
+            self.inner = self.inner.approval_rules(input);
             self
         }
         /// <p>A set of rules used to include patches in the baseline.</p>
@@ -20351,9 +20317,9 @@ pub mod fluent_builders {
         /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
         pub fn approved_patches_compliance_level(
             mut self,
-            signature: crate::model::PatchComplianceLevel,
+            input: crate::model::PatchComplianceLevel,
         ) -> Self {
-            self.inner = self.inner.approved_patches_compliance_level(signature);
+            self.inner = self.inner.approved_patches_compliance_level(input);
             self
         }
         /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
@@ -20367,8 +20333,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
         /// applied to the managed nodes. The default value is <code>false</code>. Applies to Linux managed
         /// nodes only.</p>
-        pub fn approved_patches_enable_non_security(mut self, signature: bool) -> Self {
-            self.inner = self.inner.approved_patches_enable_non_security(signature);
+        pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
+            self.inner = self.inner.approved_patches_enable_non_security(input);
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
@@ -20427,8 +20393,8 @@ pub mod fluent_builders {
         /// and its status is reported as <code>InstalledRejected</code>.</p>
         /// </li>
         /// </ul>
-        pub fn rejected_patches_action(mut self, signature: crate::model::PatchAction) -> Self {
-            self.inner = self.inner.rejected_patches_action(signature);
+        pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
+            self.inner = self.inner.rejected_patches_action(input);
             self
         }
         /// <p>The action for Patch Manager to take on patches included in the
@@ -20462,8 +20428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the patch baseline.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the patch baseline.</p>
@@ -20493,8 +20459,8 @@ pub mod fluent_builders {
         /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
         /// operation are also required for this API request. Optional fields that aren't specified are set
         /// to null.</p>
-        pub fn replace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.replace(signature);
+        pub fn replace(mut self, input: bool) -> Self {
+            self.inner = self.inner.replace(input);
             self
         }
         /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
@@ -20574,8 +20540,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the resource data sync you want to update.</p>
-        pub fn sync_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_name(signature.into());
+        pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_name(input.into());
             self
         }
         /// <p>The name of the resource data sync you want to update.</p>
@@ -20585,8 +20551,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of resource data sync. The supported <code>SyncType</code> is
         /// SyncFromSource.</p>
-        pub fn sync_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sync_type(signature.into());
+        pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sync_type(input.into());
             self
         }
         /// <p>The type of resource data sync. The supported <code>SyncType</code> is
@@ -20596,8 +20562,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify information about the data sources to synchronize.</p>
-        pub fn sync_source(mut self, signature: crate::model::ResourceDataSyncSource) -> Self {
-            self.inner = self.inner.sync_source(signature);
+        pub fn sync_source(mut self, input: crate::model::ResourceDataSyncSource) -> Self {
+            self.inner = self.inner.sync_source(input);
             self
         }
         /// <p>Specify information about the data sources to synchronize.</p>
@@ -20716,8 +20682,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn setting_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.setting_id(signature.into());
+        pub fn setting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.setting_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the service setting to reset. For example,
@@ -20802,8 +20768,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn setting_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.setting_value(signature.into());
+        pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.setting_value(input.into());
             self
         }
         /// <p>The new value to specify for the service setting. The following list specifies the available

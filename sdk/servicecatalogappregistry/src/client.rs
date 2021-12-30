@@ -305,8 +305,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -315,8 +315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-        pub fn attribute_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_group(signature.into());
+        pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_group(input.into());
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
@@ -388,8 +388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -398,8 +398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resource of which the application will be associated.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource of which the application will be associated.</p>
@@ -411,8 +411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ID of the resource of which the application will be associated.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The name or ID of the resource of which the application will be associated.</p>
@@ -481,8 +481,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
@@ -491,8 +491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the application.</p>
@@ -527,8 +527,8 @@ pub mod fluent_builders {
         /// completed successfully using the same client token and the same parameters, the retry succeeds
         /// without performing any further actions. If you retry a successful request using the same
         /// client token, but one or more of the parameters are different, the retry fails.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
@@ -603,8 +603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the attribute group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the attribute group.</p>
@@ -613,8 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the attribute group that the user provides.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the attribute group that the user provides.</p>
@@ -623,8 +623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-        pub fn attributes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes(signature.into());
+        pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes(input.into());
             self
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
@@ -659,8 +659,8 @@ pub mod fluent_builders {
         /// completed successfully using the same client token and the same parameters, the retry succeeds
         /// without performing any further actions. If you retry a successful request using the same
         /// client token, but one or more of the parameters are different, the retry fails.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier that you provide to ensure idempotency. If you retry a request that
@@ -732,8 +732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -802,8 +802,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-        pub fn attribute_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_group(signature.into());
+        pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_group(input.into());
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
@@ -875,8 +875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -885,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-        pub fn attribute_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_group(signature.into());
+        pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_group(input.into());
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -968,8 +968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the resource that is being disassociated.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the resource that is being disassociated.</p>
@@ -981,8 +981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ID of the resource.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The name or ID of the resource.</p>
@@ -1051,8 +1051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -1131,8 +1131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of resource associated with the application.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource associated with the application.</p>
@@ -1144,8 +1144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name or ID of the resource associated with the application.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>The name or ID of the resource associated with the application.</p>
@@ -1214,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-        pub fn attribute_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_group(signature.into());
+        pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_group(input.into());
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
@@ -1287,8 +1287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -1297,8 +1297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -1367,8 +1367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -1377,8 +1377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -1387,8 +1387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -1457,8 +1457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application.</p>
@@ -1467,8 +1467,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -1477,8 +1477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -1547,8 +1547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to get the next page of results after a previous API call. </p>
@@ -1557,8 +1557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</p>
@@ -1627,8 +1627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -1698,8 +1698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of resource of which the application will be associated.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of resource of which the application will be associated.</p>
@@ -1711,8 +1711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
-        pub fn resource(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource(signature.into());
+        pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource(input.into());
             self
         }
         /// <p>An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</p>
@@ -1783,8 +1783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -1877,8 +1877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon resource name (ARN) that specifies the resource.</p>
@@ -1964,8 +1964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the application that will be updated.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The name or ID of the application that will be updated.</p>
@@ -1974,8 +1974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the application. The name must be unique in the region in which you are updating the application.</p>
@@ -1984,8 +1984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the application.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the application.</p>
@@ -2054,8 +2054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
-        pub fn attribute_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_group(signature.into());
+        pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_group(input.into());
             self
         }
         /// <p>The name or ID of the attribute group that holds the attributes to describe the application.</p>
@@ -2068,8 +2068,8 @@ pub mod fluent_builders {
         }
         /// <p>The new name of the attribute group. The name must be unique in the region in which you are
         /// updating the attribute group.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the attribute group. The name must be unique in the region in which you are
@@ -2079,8 +2079,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the attribute group that the user provides.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the attribute group that the user provides.</p>
@@ -2089,8 +2089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>
-        pub fn attributes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attributes(signature.into());
+        pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attributes(input.into());
             self
         }
         /// <p>A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.</p>

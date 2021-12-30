@@ -172,8 +172,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized
         /// ranking.</p>
-        pub fn campaign_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_arn(signature.into());
+        pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized
@@ -202,8 +202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
@@ -241,8 +241,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user.
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
-        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(signature.into());
+        pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user.
@@ -371,8 +371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
-        pub fn campaign_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_arn(signature.into());
+        pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
@@ -382,8 +382,8 @@ pub mod fluent_builders {
         }
         /// <p>The item ID to provide recommendations for.</p>
         /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
-        pub fn item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.item_id(signature.into());
+        pub fn item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.item_id(input.into());
             self
         }
         /// <p>The item ID to provide recommendations for.</p>
@@ -394,8 +394,8 @@ pub mod fluent_builders {
         }
         /// <p>The user ID to provide recommendations for.</p>
         /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The user ID to provide recommendations for.</p>
@@ -405,8 +405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
-        pub fn num_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.num_results(signature);
+        pub fn num_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_results(input);
             self
         }
         /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
@@ -444,8 +444,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see
         /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
-        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(signature.into());
+        pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(input.into());
             self
         }
         /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see
@@ -498,8 +498,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you
         /// created a Domain dataset group with a recommender for a domain use case.</p>
-        pub fn recommender_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_arn(signature.into());
+        pub fn recommender_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recommender to use to get recommendations. Provide a recommender ARN if you

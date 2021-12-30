@@ -487,8 +487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -503,8 +503,8 @@ pub mod fluent_builders {
         /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
         /// must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn start_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(signature);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
         /// <p>If specified, only workflow executions that meet the start time criteria of the filter
@@ -528,8 +528,8 @@ pub mod fluent_builders {
         /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
         /// must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn close_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.close_time_filter(signature);
+        pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.close_time_filter(input);
             self
         }
         /// <p>If specified, only workflow executions that meet the close time criteria of the filter
@@ -554,11 +554,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn execution_filter(
-            mut self,
-            signature: crate::model::WorkflowExecutionFilter,
-        ) -> Self {
-            self.inner = self.inner.execution_filter(signature);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
         /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
@@ -583,8 +580,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn type_filter(mut self, signature: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(signature);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
         /// <p>If specified, indicates the type of the workflow executions to be counted.</p>
@@ -609,8 +606,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn tag_filter(mut self, signature: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(signature);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
         /// <p>If specified, only executions that have a tag that matches the filter are
@@ -637,8 +634,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn close_status_filter(mut self, signature: crate::model::CloseStatusFilter) -> Self {
-            self.inner = self.inner.close_status_filter(signature);
+        pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
+            self.inner = self.inner.close_status_filter(input);
             self
         }
         /// <p>If specified, only workflow executions that match this close status are counted. This
@@ -764,8 +761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow executions to count.</p>
@@ -775,8 +772,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the start time criteria that workflow executions must meet in order to be
         /// counted.</p>
-        pub fn start_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(signature);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
         /// <p>Specifies the start time criteria that workflow executions must meet in order to be
@@ -794,8 +791,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, signature: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(signature);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
         /// <p>Specifies the type of the workflow executions to be counted.</p>
@@ -818,8 +815,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, signature: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(signature);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
         /// <p>If specified, only executions that have a tag that matches the filter are
@@ -843,11 +840,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(
-            mut self,
-            signature: crate::model::WorkflowExecutionFilter,
-        ) -> Self {
-            self.inner = self.inner.execution_filter(signature);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
         /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the
@@ -952,8 +946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -962,8 +956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task list.</p>
-        pub fn task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(signature);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>The name of the task list.</p>
@@ -1059,8 +1053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task list.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task list.</p>
@@ -1069,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task list.</p>
-        pub fn task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(signature);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>The name of the task list.</p>
@@ -1181,8 +1175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1191,8 +1185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The activity type to deprecate.</p>
-        pub fn activity_type(mut self, signature: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(signature);
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
         /// <p>The activity type to deprecate.</p>
@@ -1295,8 +1289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to deprecate.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain to deprecate.</p>
@@ -1408,8 +1402,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow type is registered.</p>
@@ -1418,8 +1412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow type to deprecate.</p>
-        pub fn workflow_type(mut self, signature: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(signature);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The workflow type to deprecate.</p>
@@ -1529,8 +1523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity type is registered.</p>
@@ -1541,8 +1535,8 @@ pub mod fluent_builders {
         /// <p>The activity type to get information about. Activity types are identified by the
         /// <code>name</code> and <code>version</code> that were supplied when the activity was
         /// registered.</p>
-        pub fn activity_type(mut self, signature: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(signature);
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
         /// <p>The activity type to get information about. Activity types are identified by the
@@ -1640,8 +1634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain to describe.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain to describe.</p>
@@ -1738,8 +1732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -1748,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow execution to describe.</p>
-        pub fn execution(mut self, signature: crate::model::WorkflowExecution) -> Self {
-            self.inner = self.inner.execution(signature);
+        pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
+            self.inner = self.inner.execution(input);
             self
         }
         /// <p>The workflow execution to describe.</p>
@@ -1859,8 +1853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which this workflow type is registered.</p>
@@ -1869,8 +1863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflow type to describe.</p>
-        pub fn workflow_type(mut self, signature: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(signature);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The workflow type to describe.</p>
@@ -1971,8 +1965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution.</p>
@@ -1981,8 +1975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
-        pub fn execution(mut self, signature: crate::model::WorkflowExecution) -> Self {
-            self.inner = self.inner.execution(signature);
+        pub fn execution(mut self, input: crate::model::WorkflowExecution) -> Self {
+            self.inner = self.inner.execution(input);
             self
         }
         /// <p>Specifies the workflow execution for which to return the history.</p>
@@ -2001,8 +1995,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2022,8 +2016,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -2035,8 +2029,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
         /// results are returned in ascending order of the <code>eventTimeStamp</code> of the
         /// events.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
@@ -2134,8 +2128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the activity types have been registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the activity types have been registered.</p>
@@ -2144,8 +2138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>If specified, only lists the activity types that have this name.</p>
@@ -2154,8 +2148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
-        pub fn registration_status(mut self, signature: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(signature);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the activity types to list.</p>
@@ -2174,8 +2168,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2195,8 +2189,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -2208,8 +2202,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
         /// results are returned in ascending alphabetical order by <code>name</code> of the activity
         /// types.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
@@ -2327,8 +2321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2344,8 +2338,8 @@ pub mod fluent_builders {
         /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
         /// must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn start_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(signature);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
         /// <p>If specified, the workflow executions are included in the returned results based on
@@ -2371,8 +2365,8 @@ pub mod fluent_builders {
         /// <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive. You
         /// must specify one of these in a request but not both.</p>
         /// </note>
-        pub fn close_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.close_time_filter(signature);
+        pub fn close_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.close_time_filter(input);
             self
         }
         /// <p>If specified, the workflow executions are included in the returned results based on
@@ -2398,11 +2392,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn execution_filter(
-            mut self,
-            signature: crate::model::WorkflowExecutionFilter,
-        ) -> Self {
-            self.inner = self.inner.execution_filter(signature);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
         /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
@@ -2429,8 +2420,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn close_status_filter(mut self, signature: crate::model::CloseStatusFilter) -> Self {
-            self.inner = self.inner.close_status_filter(signature);
+        pub fn close_status_filter(mut self, input: crate::model::CloseStatusFilter) -> Self {
+            self.inner = self.inner.close_status_filter(input);
             self
         }
         /// <p>If specified, only workflow executions that match this <i>close
@@ -2457,8 +2448,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn type_filter(mut self, signature: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(signature);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
         /// <p>If specified, only executions of the type specified in the filter are
@@ -2483,8 +2474,8 @@ pub mod fluent_builders {
         /// <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a
         /// request.</p>
         /// </note>
-        pub fn tag_filter(mut self, signature: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(signature);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
         /// <p>If specified, only executions that have the matching tag are listed.</p>
@@ -2509,8 +2500,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2530,8 +2521,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -2543,8 +2534,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
         /// results are returned in descending order of the start or the close time of the
         /// executions.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
@@ -2653,8 +2644,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2673,8 +2664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
-        pub fn registration_status(mut self, signature: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(signature);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the domains to list.</p>
@@ -2687,8 +2678,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -2700,8 +2691,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
         /// results are returned in ascending alphabetical order by <code>name</code> of the
         /// domains.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default, the
@@ -2819,8 +2810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the workflow executions to list.</p>
@@ -2830,8 +2821,8 @@ pub mod fluent_builders {
         }
         /// <p>Workflow executions are included in the returned results based on whether their start
         /// times are within the range specified by this filter.</p>
-        pub fn start_time_filter(mut self, signature: crate::model::ExecutionTimeFilter) -> Self {
-            self.inner = self.inner.start_time_filter(signature);
+        pub fn start_time_filter(mut self, input: crate::model::ExecutionTimeFilter) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
         /// <p>Workflow executions are included in the returned results based on whether their start
@@ -2850,8 +2841,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn type_filter(mut self, signature: crate::model::WorkflowTypeFilter) -> Self {
-            self.inner = self.inner.type_filter(signature);
+        pub fn type_filter(mut self, input: crate::model::WorkflowTypeFilter) -> Self {
+            self.inner = self.inner.type_filter(input);
             self
         }
         /// <p>If specified, only executions of the type specified in the filter are
@@ -2874,8 +2865,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn tag_filter(mut self, signature: crate::model::TagFilter) -> Self {
-            self.inner = self.inner.tag_filter(signature);
+        pub fn tag_filter(mut self, input: crate::model::TagFilter) -> Self {
+            self.inner = self.inner.tag_filter(input);
             self
         }
         /// <p>If specified, only executions that have the matching tag are listed.</p>
@@ -2899,8 +2890,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -2920,8 +2911,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -2932,8 +2923,8 @@ pub mod fluent_builders {
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
         /// results are returned in descending order of the start time of the executions.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
@@ -2949,11 +2940,8 @@ pub mod fluent_builders {
         /// <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are
         /// mutually exclusive. You can specify at most one of these in a request.</p>
         /// </note>
-        pub fn execution_filter(
-            mut self,
-            signature: crate::model::WorkflowExecutionFilter,
-        ) -> Self {
-            self.inner = self.inner.execution_filter(signature);
+        pub fn execution_filter(mut self, input: crate::model::WorkflowExecutionFilter) -> Self {
+            self.inner = self.inner.execution_filter(input);
             self
         }
         /// <p>If specified, only workflow executions matching the workflow ID specified in the filter
@@ -3031,8 +3019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -3125,8 +3113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow types have been registered.</p>
@@ -3135,8 +3123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, lists the workflow type with this name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>If specified, lists the workflow type with this name.</p>
@@ -3145,8 +3133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
-        pub fn registration_status(mut self, signature: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(signature);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>Specifies the registration status of the workflow types to list.</p>
@@ -3165,8 +3153,8 @@ pub mod fluent_builders {
         ///
         /// <p>The configured <code>maximumPageSize</code> determines how many results can be returned
         /// in a single call. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -3186,8 +3174,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that are returned per call.
         /// Use <code>nextPageToken</code> to obtain further pages of results. </p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -3199,8 +3187,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
         /// results are returned in ascending alphabetical order of the <code>name</code> of the workflow
         /// types.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the results in reverse order. By default the
@@ -3306,8 +3294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain that contains the task lists being polled.</p>
@@ -3321,8 +3309,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(signature);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>Specifies the task list to poll for activity tasks.</p>
@@ -3338,8 +3326,8 @@ pub mod fluent_builders {
         /// <p>Identity of the worker making the request, recorded in the
         /// <code>ActivityTaskStarted</code> event in the workflow history. This enables diagnostic
         /// tracing when problems arise. The form of this identity is user defined.</p>
-        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(signature.into());
+        pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(input.into());
             self
         }
         /// <p>Identity of the worker making the request, recorded in the
@@ -3457,8 +3445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the task lists to poll.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the task lists to poll.</p>
@@ -3472,8 +3460,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(signature);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>Specifies the task list to poll for decision tasks.</p>
@@ -3489,8 +3477,8 @@ pub mod fluent_builders {
         /// <p>Identity of the decider making the request, which is recorded in the
         /// DecisionTaskStarted event in the workflow history. This enables diagnostic tracing when
         /// problems arise. The form of this identity is user defined.</p>
-        pub fn identity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity(signature.into());
+        pub fn identity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity(input.into());
             self
         }
         /// <p>Identity of the decider making the request, which is recorded in the
@@ -3513,8 +3501,8 @@ pub mod fluent_builders {
         /// the next page of history records. Calling <a>PollForDecisionTask</a> with a
         /// <code>nextPageToken</code> doesn't return a new decision task.</p>
         /// </note>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If <code>NextPageToken</code> is returned there are more results
@@ -3542,8 +3530,8 @@ pub mod fluent_builders {
         /// <p>This
         /// is an upper limit only; the actual number of results returned per call may be fewer than the
         /// specified maximum.</p>
-        pub fn maximum_page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.maximum_page_size(signature);
+        pub fn maximum_page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.maximum_page_size(input);
             self
         }
         /// <p>The maximum number of results that are returned per call.
@@ -3558,8 +3546,8 @@ pub mod fluent_builders {
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
         /// results are returned in ascending order of the <code>eventTimestamp</code> of the
         /// events.</p>
-        pub fn reverse_order(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reverse_order(signature);
+        pub fn reverse_order(mut self, input: bool) -> Self {
+            self.inner = self.inner.reverse_order(input);
             self
         }
         /// <p>When set to <code>true</code>, returns the events in reverse order. By default the
@@ -3683,8 +3671,8 @@ pub mod fluent_builders {
         /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
         /// This enables it to provide its progress and respond with results. </p>
         /// </important>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -3699,8 +3687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, contains details about the progress of the task.</p>
-        pub fn details(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(signature.into());
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p>If specified, contains details about the progress of the task.</p>
@@ -3815,8 +3803,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which this activity is to be registered.</p>
@@ -3830,8 +3818,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the activity type within the domain.</p>
@@ -3854,8 +3842,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the activity type.</p>
@@ -3873,8 +3861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A textual description of the activity type.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A textual description of the activity type.</p>
@@ -3890,11 +3878,9 @@ pub mod fluent_builders {
         /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .default_task_start_to_close_timeout(signature.into());
+            self.inner = self.inner.default_task_start_to_close_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum duration that a worker can take to process tasks
@@ -3922,9 +3908,9 @@ pub mod fluent_builders {
         /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_heartbeat_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.default_task_heartbeat_timeout(signature.into());
+            self.inner = self.inner.default_task_heartbeat_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum time before which a worker processing a task of
@@ -3948,8 +3934,8 @@ pub mod fluent_builders {
         /// type. This default task list is used if a task list isn't provided when a task is scheduled
         /// through the <code>ScheduleActivityTask</code>
         /// <a>Decision</a>.</p>
-        pub fn default_task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.default_task_list(signature);
+        pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.default_task_list(input);
             self
         }
         /// <p>If set, specifies the default task list to use for scheduling tasks of this activity
@@ -3970,8 +3956,8 @@ pub mod fluent_builders {
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
         /// Priority</a> in the <i>in the
         /// <i>Amazon SWF Developer Guide</i>.</i>.</p>
-        pub fn default_task_priority(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_task_priority(signature.into());
+        pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_task_priority(input.into());
             self
         }
         /// <p>The default task priority to assign to the activity type. If not assigned, then
@@ -3996,11 +3982,11 @@ pub mod fluent_builders {
         /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_start_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .default_task_schedule_to_start_timeout(signature.into());
+                .default_task_schedule_to_start_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum duration that a task of this activity type can
@@ -4024,11 +4010,11 @@ pub mod fluent_builders {
         /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_schedule_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .default_task_schedule_to_close_timeout(signature.into());
+                .default_task_schedule_to_close_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum duration for a task of this activity type. This
@@ -4134,8 +4120,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Name of the domain to register. The name must be unique in the region that the domain
@@ -4150,8 +4136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text description of the domain.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A text description of the domain.</p>
@@ -4170,11 +4156,11 @@ pub mod fluent_builders {
         /// <i>Amazon SWF Developer Guide</i>.</p>
         pub fn workflow_execution_retention_period_in_days(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .workflow_execution_retention_period_in_days(signature.into());
+                .workflow_execution_retention_period_in_days(input.into());
             self
         }
         /// <p>The duration (in days) that records and histories of workflow executions on the domain
@@ -4322,8 +4308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which to register the workflow type.</p>
@@ -4337,8 +4323,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the workflow type.</p>
@@ -4362,8 +4348,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The version of the workflow type.</p>
@@ -4382,8 +4368,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Textual description of the workflow type.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Textual description of the workflow type.</p>
@@ -4398,11 +4384,9 @@ pub mod fluent_builders {
         /// <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn default_task_start_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .default_task_start_to_close_timeout(signature.into());
+            self.inner = self.inner.default_task_start_to_close_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum duration of decision tasks for this workflow
@@ -4428,11 +4412,11 @@ pub mod fluent_builders {
         /// to time out.</p>
         pub fn default_execution_start_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .default_execution_start_to_close_timeout(signature.into());
+                .default_execution_start_to_close_timeout(input.into());
             self
         }
         /// <p>If set, specifies the default maximum duration for executions of this workflow type.
@@ -4458,8 +4442,8 @@ pub mod fluent_builders {
         /// starting the execution through the <a>StartWorkflowExecution</a> Action or
         /// <code>StartChildWorkflowExecution</code>
         /// <a>Decision</a>.</p>
-        pub fn default_task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.default_task_list(signature);
+        pub fn default_task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.default_task_list(input);
             self
         }
         /// <p>If set, specifies the default task list to use for scheduling decision tasks for
@@ -4480,8 +4464,8 @@ pub mod fluent_builders {
         /// Higher numbers indicate higher priority.</p>
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
         /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn default_task_priority(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_task_priority(signature.into());
+        pub fn default_task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_task_priority(input.into());
             self
         }
         /// <p>The default task priority to assign to the workflow type. If not assigned, then
@@ -4520,8 +4504,8 @@ pub mod fluent_builders {
         /// run.</p>
         /// </li>
         /// </ul>
-        pub fn default_child_policy(mut self, signature: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.default_child_policy(signature);
+        pub fn default_child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.default_child_policy(input);
             self
         }
         /// <p>If set, specifies the default policy to use for the child workflow executions when a
@@ -4561,8 +4545,8 @@ pub mod fluent_builders {
         /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
         /// <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
-        pub fn default_lambda_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_lambda_role(signature.into());
+        pub fn default_lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_lambda_role(input.into());
             self
         }
         /// <p>The default IAM role attached to this workflow type.</p>
@@ -4678,8 +4662,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution to cancel.</p>
@@ -4688,8 +4672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to cancel.</p>
@@ -4698,8 +4682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to cancel.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to cancel.</p>
@@ -4815,8 +4799,8 @@ pub mod fluent_builders {
         /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
         /// This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -4831,8 +4815,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Information about the cancellation.</p>
-        pub fn details(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(signature.into());
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Information about the cancellation.</p>
@@ -4946,8 +4930,8 @@ pub mod fluent_builders {
         /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
         /// This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -4963,8 +4947,8 @@ pub mod fluent_builders {
         }
         /// <p>The result of the activity task. It is a free form string that is implementation
         /// specific.</p>
-        pub fn result(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.result(signature.into());
+        pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.result(input.into());
             self
         }
         /// <p>The result of the activity task. It is a free form string that is implementation
@@ -5073,8 +5057,8 @@ pub mod fluent_builders {
         /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
         /// This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The <code>taskToken</code> of the <a>ActivityTask</a>.</p>
@@ -5090,8 +5074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>Description of the error that may assist in diagnostics.</p>
@@ -5100,8 +5084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Detailed information about the failure.</p>
-        pub fn details(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(signature.into());
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Detailed information about the failure.</p>
@@ -5195,8 +5179,8 @@ pub mod fluent_builders {
         /// If the task is passed to another process, its <code>taskToken</code> must also be passed.
         /// This enables it to provide its progress and respond with results.</p>
         /// </important>
-        pub fn task_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_token(signature.into());
+        pub fn task_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_token(input.into());
             self
         }
         /// <p>The <code>taskToken</code> from the <a>DecisionTask</a>.</p>
@@ -5232,8 +5216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>User defined context to add to workflow execution.</p>
-        pub fn execution_context(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_context(signature.into());
+        pub fn execution_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_context(input.into());
             self
         }
         /// <p>User defined context to add to workflow execution.</p>
@@ -5343,8 +5327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain containing the workflow execution to signal.</p>
@@ -5353,8 +5337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to signal.</p>
@@ -5363,8 +5347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to signal.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to signal.</p>
@@ -5373,8 +5357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
-        pub fn signal_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.signal_name(signature.into());
+        pub fn signal_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.signal_name(input.into());
             self
         }
         /// <p>The name of the signal. This name must be meaningful to the target workflow.</p>
@@ -5384,8 +5368,8 @@ pub mod fluent_builders {
         }
         /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
         /// workflow execution's history.</p>
-        pub fn input(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(signature.into());
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target
@@ -5520,8 +5504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain in which the workflow execution is created.</p>
@@ -5539,8 +5523,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The user defined identifier associated with the workflow execution. You can use this to
@@ -5558,8 +5542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the workflow to start.</p>
-        pub fn workflow_type(mut self, signature: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(signature);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The type of the workflow to start.</p>
@@ -5583,8 +5567,8 @@ pub mod fluent_builders {
         /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any
         /// control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
         /// not <i>be</i> the literal string <code>arn</code>.</p>
-        pub fn task_list(mut self, signature: crate::model::TaskList) -> Self {
-            self.inner = self.inner.task_list(signature);
+        pub fn task_list(mut self, input: crate::model::TaskList) -> Self {
+            self.inner = self.inner.task_list(input);
             self
         }
         /// <p>The task list to use for the decision tasks generated for this workflow execution. This
@@ -5611,8 +5595,8 @@ pub mod fluent_builders {
         /// Higher numbers indicate higher priority.</p>
         /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task
         /// Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
-        pub fn task_priority(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_priority(signature.into());
+        pub fn task_priority(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_priority(input.into());
             self
         }
         /// <p>The task priority to use for this workflow execution. This overrides any default
@@ -5632,8 +5616,8 @@ pub mod fluent_builders {
         /// <p>The input for the workflow execution. This is a free form string which should be
         /// meaningful to the workflow you are starting. This <code>input</code> is made available to the
         /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.</p>
-        pub fn input(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.input(signature.into());
+        pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.input(input.into());
             self
         }
         /// <p>The input for the workflow execution. This is a free form string which should be
@@ -5659,11 +5643,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn execution_start_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .execution_start_to_close_timeout(signature.into());
+            self.inner = self.inner.execution_start_to_close_timeout(input.into());
             self
         }
         /// <p>The total duration for this workflow execution. This overrides the
@@ -5721,9 +5703,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn task_start_to_close_timeout(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.task_start_to_close_timeout(signature.into());
+            self.inner = self.inner.task_start_to_close_timeout(input.into());
             self
         }
         /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This
@@ -5772,8 +5754,8 @@ pub mod fluent_builders {
         /// the workflow type or through this parameter. If neither this parameter is set nor a default
         /// child policy was specified at registration time then a fault is returned.</p>
         /// </note>
-        pub fn child_policy(mut self, signature: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.child_policy(signature);
+        pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.child_policy(input);
             self
         }
         /// <p>If set, specifies the policy to use for the child workflow executions of this workflow
@@ -5818,8 +5800,8 @@ pub mod fluent_builders {
         /// <code>ScheduleLambdaFunctionFailed</code> history event. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
         /// <i>Amazon SWF Developer Guide</i>.</p>
         /// </note>
-        pub fn lambda_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lambda_role(signature.into());
+        pub fn lambda_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lambda_role(input.into());
             self
         }
         /// <p>The IAM role to attach to this workflow execution.</p>
@@ -5897,8 +5879,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
@@ -6029,8 +6011,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain of the workflow execution to terminate.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The domain of the workflow execution to terminate.</p>
@@ -6039,8 +6021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
-        pub fn workflow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workflow_id(signature.into());
+        pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workflow_id(input.into());
             self
         }
         /// <p>The workflowId of the workflow execution to terminate.</p>
@@ -6049,8 +6031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The runId of the workflow execution to terminate.</p>
-        pub fn run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.run_id(signature.into());
+        pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.run_id(input.into());
             self
         }
         /// <p>The runId of the workflow execution to terminate.</p>
@@ -6059,8 +6041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p> A descriptive reason for terminating the workflow execution.</p>
@@ -6069,8 +6051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Details for terminating the workflow execution.</p>
-        pub fn details(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.details(signature.into());
+        pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.details(input.into());
             self
         }
         /// <p> Details for terminating the workflow execution.</p>
@@ -6105,8 +6087,8 @@ pub mod fluent_builders {
         /// the workflow type or through this parameter. If neither this parameter is set nor a default
         /// child policy was specified at registration time then a fault is returned.</p>
         /// </note>
-        pub fn child_policy(mut self, signature: crate::model::ChildPolicy) -> Self {
-            self.inner = self.inner.child_policy(signature);
+        pub fn child_policy(mut self, input: crate::model::ChildPolicy) -> Self {
+            self.inner = self.inner.child_policy(input);
             self
         }
         /// <p>If set, specifies the policy to use for the child workflow executions of the workflow
@@ -6245,8 +6227,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated activity type.</p>
@@ -6255,8 +6237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The activity type to undeprecate.</p>
-        pub fn activity_type(mut self, signature: crate::model::ActivityType) -> Self {
-            self.inner = self.inner.activity_type(signature);
+        pub fn activity_type(mut self, input: crate::model::ActivityType) -> Self {
+            self.inner = self.inner.activity_type(input);
             self
         }
         /// <p>The activity type to undeprecate.</p>
@@ -6356,8 +6338,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6467,8 +6449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6477,8 +6459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
-        pub fn workflow_type(mut self, signature: crate::model::WorkflowType) -> Self {
-            self.inner = self.inner.workflow_type(signature);
+        pub fn workflow_type(mut self, input: crate::model::WorkflowType) -> Self {
+            self.inner = self.inner.workflow_type(input);
             self
         }
         /// <p>The name of the domain of the deprecated workflow type.</p>
@@ -6550,8 +6532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>

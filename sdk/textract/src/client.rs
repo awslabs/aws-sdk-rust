@@ -260,8 +260,8 @@ pub mod fluent_builders {
         /// in JPEG or PNG format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
         /// image bytes that are passed using the <code>Bytes</code> field. </p>
-        pub fn document(mut self, signature: crate::model::Document) -> Self {
-            self.inner = self.inner.document(signature);
+        pub fn document(mut self, input: crate::model::Document) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
         /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -299,8 +299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
-        pub fn human_loop_config(mut self, signature: crate::model::HumanLoopConfig) -> Self {
-            self.inner = self.inner.human_loop_config(signature);
+        pub fn human_loop_config(mut self, input: crate::model::HumanLoopConfig) -> Self {
+            self.inner = self.inner.human_loop_config(input);
             self
         }
         /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
@@ -402,8 +402,8 @@ pub mod fluent_builders {
         ///
         /// <p>For Amazon Textract to process an S3 object, the user must have permission
         /// to access the S3 object. </p>
-        pub fn document(mut self, signature: crate::model::Document) -> Self {
-            self.inner = self.inner.document(signature);
+        pub fn document(mut self, input: crate::model::Document) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
         /// <p>The input document, either as bytes or as an S3 object.</p>
@@ -581,8 +581,8 @@ pub mod fluent_builders {
         /// in JPEG or PNG format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
         /// image bytes that are passed using the <code>Bytes</code> field. </p>
-        pub fn document(mut self, signature: crate::model::Document) -> Self {
-            self.inner = self.inner.document(signature);
+        pub fn document(mut self, input: crate::model::Document) -> Self {
+            self.inner = self.inner.document(input);
             self
         }
         /// <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI
@@ -700,8 +700,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from
         /// <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>A unique identifier for the text-detection job. The <code>JobId</code> is returned from
@@ -713,8 +713,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value that you
         /// can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results
         /// is returned. The default value is 1,000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value that you
@@ -726,8 +726,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
@@ -822,8 +822,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
         /// <code>StartDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
@@ -835,8 +835,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can
         /// specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is
         /// returned. The default value is 1,000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can
@@ -848,8 +848,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
@@ -936,8 +936,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
         /// <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from
@@ -949,8 +949,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return per paginated call. The largest value you can
         /// specify is 20. If you specify a value greater than 20, a maximum of 20 results is
         /// returned. The default value is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per paginated call. The largest value you can
@@ -962,8 +962,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
         /// token in the response. You can use this pagination token to retrieve the next set of blocks.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination
@@ -1050,8 +1050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn document_location(mut self, signature: crate::model::DocumentLocation) -> Self {
-            self.inner = self.inner.document_location(signature);
+        pub fn document_location(mut self, input: crate::model::DocumentLocation) -> Self {
+            self.inner = self.inner.document_location(input);
             self
         }
         /// <p>The location of the document to be processed.</p>
@@ -1094,8 +1094,8 @@ pub mod fluent_builders {
         /// <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same
         /// job from being accidentally started more than once. For more information, see
         /// <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The idempotent token that you use to identify the start request. If you use the same
@@ -1114,8 +1114,8 @@ pub mod fluent_builders {
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of
         /// document that the completion notification corresponds to (such as a tax form or a
         /// receipt).</p>
-        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(signature.into());
+        pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(input.into());
             self
         }
         /// <p>An identifier that you specify that's included in the completion notification published
@@ -1128,11 +1128,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
         /// operation to. </p>
-        pub fn notification_channel(
-            mut self,
-            signature: crate::model::NotificationChannel,
-        ) -> Self {
-            self.inner = self.inner.notification_channel(signature);
+        pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
+            self.inner = self.inner.notification_channel(input);
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
@@ -1146,8 +1143,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save
         /// the results internally to be accessed by the GetDocumentAnalysis operation.</p>
-        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save
@@ -1164,8 +1161,8 @@ pub mod fluent_builders {
         /// KMS key will be used for server-side encryption of the objects in the
         /// customer bucket. When this parameter is not enabled, the result will
         /// be encrypted server side,using SSE-S3.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be
@@ -1254,8 +1251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn document_location(mut self, signature: crate::model::DocumentLocation) -> Self {
-            self.inner = self.inner.document_location(signature);
+        pub fn document_location(mut self, input: crate::model::DocumentLocation) -> Self {
+            self.inner = self.inner.document_location(input);
             self
         }
         /// <p>The location of the document to be processed.</p>
@@ -1271,8 +1268,8 @@ pub mod fluent_builders {
         /// <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent the same
         /// job from being accidentally started more than once. For more information, see
         /// <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same
@@ -1291,8 +1288,8 @@ pub mod fluent_builders {
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of
         /// document that the completion notification corresponds to (such as a tax form or a
         /// receipt).</p>
-        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(signature.into());
+        pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(input.into());
             self
         }
         /// <p>An identifier that you specify that's included in the completion notification published
@@ -1305,11 +1302,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
         /// operation to. </p>
-        pub fn notification_channel(
-            mut self,
-            signature: crate::model::NotificationChannel,
-        ) -> Self {
-            self.inner = self.inner.notification_channel(signature);
+        pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
+            self.inner = self.inner.notification_channel(input);
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
@@ -1323,8 +1317,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will
         /// save the results internally to be accessed with the GetDocumentTextDetection operation.</p>
-        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will
@@ -1341,8 +1335,8 @@ pub mod fluent_builders {
         /// KMS key will be used for server-side encryption of the objects in the
         /// customer bucket. When this parameter is not enabled, the result will
         /// be encrypted server side,using SSE-S3.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be
@@ -1430,8 +1424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The location of the document to be processed.</p>
-        pub fn document_location(mut self, signature: crate::model::DocumentLocation) -> Self {
-            self.inner = self.inner.document_location(signature);
+        pub fn document_location(mut self, input: crate::model::DocumentLocation) -> Self {
+            self.inner = self.inner.document_location(input);
             self
         }
         /// <p>The location of the document to be processed.</p>
@@ -1446,8 +1440,8 @@ pub mod fluent_builders {
         /// Use <code>ClientRequestToken</code> to prevent the same job from being accidentally started more than once.
         /// For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling Amazon Textract Asynchronous Operations</a>
         /// </p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The idempotent token that's used to identify the start request. If you use the same token with multiple <code>StartDocumentTextDetection</code> requests, the same <code>JobId</code> is returned.
@@ -1465,8 +1459,8 @@ pub mod fluent_builders {
         /// to the Amazon SNS topic. For example, you can use <code>JobTag</code> to identify the type of
         /// document that the completion notification corresponds to (such as a tax form or a
         /// receipt).</p>
-        pub fn job_tag(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_tag(signature.into());
+        pub fn job_tag(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_tag(input.into());
             self
         }
         /// <p>An identifier you specify that's included in the completion notification published
@@ -1479,11 +1473,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
         /// operation to. </p>
-        pub fn notification_channel(
-            mut self,
-            signature: crate::model::NotificationChannel,
-        ) -> Self {
-            self.inner = self.inner.notification_channel(signature);
+        pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
+            self.inner = self.inner.notification_channel(input);
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the
@@ -1498,8 +1489,8 @@ pub mod fluent_builders {
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will
         /// save the results internally to be accessed by the <code>GetExpenseAnalysis</code>
         /// operation.</p>
-        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will
@@ -1517,8 +1508,8 @@ pub mod fluent_builders {
         /// KMS key will be used for server-side encryption of the objects in the
         /// customer bucket. When this parameter is not enabled, the result will
         /// be encrypted server side,using SSE-S3.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The KMS key used to encrypt the inference results. This can be

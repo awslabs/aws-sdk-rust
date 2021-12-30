@@ -327,8 +327,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Batch job ID of the job to cancel.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The Batch job ID of the job to cancel.</p>
@@ -339,8 +339,8 @@ pub mod fluent_builders {
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
         /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
         /// logs.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
@@ -450,11 +450,8 @@ pub mod fluent_builders {
         }
         /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
         /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-        pub fn compute_environment_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.compute_environment_name(signature.into());
+        pub fn compute_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment_name(input.into());
             self
         }
         /// <p>The name for your compute environment. It can be up to 128 letters long. It can contain uppercase and
@@ -469,8 +466,8 @@ pub mod fluent_builders {
         /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
         /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the
         /// <i>Batch User Guide</i>.</p>
-        pub fn r#type(mut self, signature: crate::model::CeType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::CeType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>. For more information, see
@@ -489,8 +486,8 @@ pub mod fluent_builders {
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
-        pub fn state(mut self, signature: crate::model::CeState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::CeState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the compute environment. If the state is <code>ENABLED</code>, then the compute environment accepts
@@ -512,8 +509,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>/</p>
         /// </note>
-        pub fn unmanagedv_cpus(mut self, signature: i32) -> Self {
-            self.inner = self.inner.unmanagedv_cpus(signature);
+        pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
+            self.inner = self.inner.unmanagedv_cpus(input);
             self
         }
         /// <p>The maximum number of vCPUs for an unmanaged compute environment. This parameter is only used for fair share
@@ -528,8 +525,8 @@ pub mod fluent_builders {
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
         /// compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute Environments</a> in the <i>Batch User Guide</i>.</p>
-        pub fn compute_resources(mut self, signature: crate::model::ComputeResource) -> Self {
-            self.inner = self.inner.compute_resources(signature);
+        pub fn compute_resources(mut self, input: crate::model::ComputeResource) -> Self {
+            self.inner = self.inner.compute_resources(input);
             self
         }
         /// <p>Details about the compute resources managed by the compute environment. This parameter is required for managed
@@ -560,8 +557,8 @@ pub mod fluent_builders {
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
-        pub fn service_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(signature.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
         /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf. For
@@ -685,8 +682,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
         /// numbers, hyphens (-), and underscores (_).</p>
-        pub fn job_queue_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue_name(signature.into());
+        pub fn job_queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue_name(input.into());
             self
         }
         /// <p>The name of the job queue. It can be up to 128 letters long. It can contain uppercase and lowercase letters,
@@ -701,8 +698,8 @@ pub mod fluent_builders {
         /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
         /// job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the queue can
         /// finish.</p>
-        pub fn state(mut self, signature: crate::model::JqState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::JqState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the job queue. If the job queue state is <code>ENABLED</code>, it is able to accept jobs. If the
@@ -720,8 +717,8 @@ pub mod fluent_builders {
         /// </code>.
         /// An example is
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
-        pub fn scheduling_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduling_policy_arn(signature.into());
+        pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduling_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fair share scheduling policy. If this parameter is specified, the job queue uses a fair
@@ -745,8 +742,8 @@ pub mod fluent_builders {
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and
         /// Fargate compute environments can't be mixed.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -884,8 +881,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
         /// letters, numbers, hyphens (-), and underscores (_).</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the scheduling policy. It can be up to 128 letters long. It can contain uppercase and lowercase
@@ -895,8 +892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fair share policy of the scheduling policy.</p>
-        pub fn fairshare_policy(mut self, signature: crate::model::FairsharePolicy) -> Self {
-            self.inner = self.inner.fairshare_policy(signature);
+        pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
+            self.inner = self.inner.fairshare_policy(input);
             self
         }
         /// <p>The fair share policy of the scheduling policy.</p>
@@ -1000,8 +997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
-        pub fn compute_environment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compute_environment(signature.into());
+        pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.</p>
@@ -1076,8 +1073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
-        pub fn job_queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(signature.into());
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input.into());
             self
         }
         /// <p>The short name or full Amazon Resource Name (ARN) of the queue to delete.</p>
@@ -1147,8 +1144,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the scheduling policy to delete.</p>
@@ -1217,8 +1214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
-        pub fn job_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition(signature.into());
+        pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition(input.into());
             self
         }
         /// <p>The name and revision (<code>name:revision</code>) or full Amazon Resource Name (ARN) of the job definition to deregister.</p>
@@ -1316,8 +1313,8 @@ pub mod fluent_builders {
         /// value. This value can be between 1 and 100. If this parameter isn't used, then
         /// <code>DescribeComputeEnvironments</code> returns up to 100 results and a <code>nextToken</code>
         /// value if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code> in paginated output.
@@ -1339,8 +1336,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
@@ -1444,8 +1441,8 @@ pub mod fluent_builders {
         /// between 1 and 100. If this parameter isn't used, then
         /// <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
@@ -1460,8 +1457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the job definition to describe.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the job definition to describe.</p>
@@ -1473,8 +1470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status used to filter job definitions.</p>
-        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(signature.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>The status used to filter job definitions.</p>
@@ -1490,8 +1487,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code> request
@@ -1589,8 +1586,8 @@ pub mod fluent_builders {
         /// <code>DescribeJobQueues</code> request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>DescribeJobQueues</code> returns up
         /// to 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by <code>DescribeJobQueues</code> in paginated output. When this
@@ -1611,8 +1608,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobQueues</code> request where
@@ -1856,8 +1853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
-        pub fn job_queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(signature.into());
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input.into());
             self
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the job queue used to list jobs.</p>
@@ -1867,8 +1864,8 @@ pub mod fluent_builders {
         }
         /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
         /// specified array.</p>
-        pub fn array_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.array_job_id(signature.into());
+        pub fn array_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.array_job_id(input.into());
             self
         }
         /// <p>The job ID for an array job. Specifying an array job ID with this parameter lists all child jobs from within the
@@ -1879,8 +1876,8 @@ pub mod fluent_builders {
         }
         /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
         /// nodes that are associated with the specified job.</p>
-        pub fn multi_node_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.multi_node_job_id(signature.into());
+        pub fn multi_node_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.multi_node_job_id(input.into());
             self
         }
         /// <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID with this parameter lists all
@@ -1895,8 +1892,8 @@ pub mod fluent_builders {
         /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
         /// the <code>jobStatus</code> parameter is ignored and jobs with any status are returned. If you don't specify a status,
         /// only <code>RUNNING</code> jobs are returned.</p>
-        pub fn job_status(mut self, signature: crate::model::JobStatus) -> Self {
-            self.inner = self.inner.job_status(signature);
+        pub fn job_status(mut self, input: crate::model::JobStatus) -> Self {
+            self.inner = self.inner.job_status(input);
             self
         }
         /// <p>The job status used to filter jobs in the specified queue. If the <code>filters</code> parameter is specified,
@@ -1915,8 +1912,8 @@ pub mod fluent_builders {
         /// <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between
         /// 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to
         /// 100 results and a <code>nextToken</code> value if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is
@@ -1937,8 +1934,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListJobs</code> request where
@@ -2111,8 +2108,8 @@ pub mod fluent_builders {
         /// value can be between 1 and 100. If this parameter isn't used,
         /// <code>ListSchedulingPolicies</code> returns up to 100 results and a <code>nextToken</code> value
         /// if applicable.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that's returned by <code>ListSchedulingPolicies</code> in paginated output. When
@@ -2135,8 +2132,8 @@ pub mod fluent_builders {
         /// <p>This token should be treated as an opaque identifier that's only used to
         /// retrieve the next items in a list and not for other programmatic purposes.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>nextToken</code> value that's returned from a previous paginated <code>ListSchedulingPolicies</code>
@@ -2215,8 +2212,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
         /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
@@ -2287,8 +2284,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
         /// lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the job definition to register. It can be up to 128 letters long. It can contain uppercase and
@@ -2305,8 +2302,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>If the job is run on Fargate resources, then <code>multinode</code> isn't supported.</p>
         /// </note>
-        pub fn r#type(mut self, signature: crate::model::JobDefinitionType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::JobDefinitionType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of job definition. For more information about multi-node parallel jobs, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel job definition</a> in the
@@ -2352,8 +2349,8 @@ pub mod fluent_builders {
         /// queues with a fair share policy. Jobs with a higher scheduling priority will be scheduled before jobs with a lower
         /// scheduling priority.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
-        pub fn scheduling_priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.scheduling_priority(signature);
+        pub fn scheduling_priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.scheduling_priority(input);
             self
         }
         /// <p>The scheduling priority for jobs that are submitted with this job definition. This will only affect jobs in job
@@ -2371,11 +2368,8 @@ pub mod fluent_builders {
         /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
         /// <code>containerProperties</code>.</p>
         /// </note>
-        pub fn container_properties(
-            mut self,
-            signature: crate::model::ContainerProperties,
-        ) -> Self {
-            self.inner = self.inner.container_properties(signature);
+        pub fn container_properties(mut self, input: crate::model::ContainerProperties) -> Self {
+            self.inner = self.inner.container_properties(input);
             self
         }
         /// <p>An object with various properties specific to single-node container-based jobs. If the job definition's
@@ -2401,8 +2395,8 @@ pub mod fluent_builders {
         /// <p>If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
         /// <code>containerProperties</code> instead.</p>
         /// </note>
-        pub fn node_properties(mut self, signature: crate::model::NodeProperties) -> Self {
-            self.inner = self.inner.node_properties(signature);
+        pub fn node_properties(mut self, input: crate::model::NodeProperties) -> Self {
+            self.inner = self.inner.node_properties(input);
             self
         }
         /// <p>An object with various properties specific to multi-node parallel jobs. If you specify node properties for a
@@ -2424,8 +2418,8 @@ pub mod fluent_builders {
         /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
         /// specified during a <a>SubmitJob</a> operation overrides the retry strategy defined here. If a job is
         /// terminated due to a timeout, it isn't retried.</p>
-        pub fn retry_strategy(mut self, signature: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(signature);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         /// <p>The retry strategy to use for failed jobs that are submitted with this job definition. Any retry strategy that's
@@ -2442,8 +2436,8 @@ pub mod fluent_builders {
         /// value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task creation. For
         /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
         /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
-        pub fn propagate_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.propagate_tags(signature);
+        pub fn propagate_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
@@ -2458,8 +2452,8 @@ pub mod fluent_builders {
         /// your jobs if they have not finished. If a job is terminated due to a timeout, it isn't retried. The minimum value for
         /// the timeout is 60 seconds. Any timeout configuration that's specified during a <a>SubmitJob</a> operation
         /// overrides the timeout configuration defined here. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_timeouts.html">Job Timeouts</a> in the <i>Batch User Guide</i>.</p>
-        pub fn timeout(mut self, signature: crate::model::JobTimeout) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout configuration for jobs that are submitted with this job definition, after which Batch terminates
@@ -2588,8 +2582,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
         /// uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job. It can be up to 128 letters long. The first character must be alphanumeric, can contain
@@ -2599,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
-        pub fn job_queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(signature.into());
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input.into());
             self
         }
         /// <p>The job queue where the job is submitted. You can specify either the name or the Amazon Resource Name (ARN) of the queue.</p>
@@ -2609,8 +2603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The share identifier for the job.</p>
-        pub fn share_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_identifier(signature.into());
+        pub fn share_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_identifier(input.into());
             self
         }
         /// <p>The share identifier for the job.</p>
@@ -2625,8 +2619,8 @@ pub mod fluent_builders {
         /// with a higher scheduling priority will be scheduled before jobs with a lower scheduling priority. This will override
         /// any scheduling priority in the job definition.</p>
         /// <p>The minimum supported value is 0 and the maximum supported value is 9999.</p>
-        pub fn scheduling_priority_override(mut self, signature: i32) -> Self {
-            self.inner = self.inner.scheduling_priority_override(signature);
+        pub fn scheduling_priority_override(mut self, input: i32) -> Self {
+            self.inner = self.inner.scheduling_priority_override(input);
             self
         }
         /// <p>The scheduling priority for the job. This will only affect jobs in job queues with a fair share policy. Jobs
@@ -2640,8 +2634,8 @@ pub mod fluent_builders {
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
         /// 10,000. If you specify array properties for a job, it becomes an array job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/array_jobs.html">Array Jobs</a> in the
         /// <i>Batch User Guide</i>.</p>
-        pub fn array_properties(mut self, signature: crate::model::ArrayProperties) -> Self {
-            self.inner = self.inner.array_properties(signature);
+        pub fn array_properties(mut self, input: crate::model::ArrayProperties) -> Self {
+            self.inner = self.inner.array_properties(input);
             self
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size can be between 2 and
@@ -2682,8 +2676,8 @@ pub mod fluent_builders {
         /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
         /// the Amazon Resource Name (ARN) for the job definition. If <code>name</code> is specified without a revision then the latest active
         /// revision is used.</p>
-        pub fn job_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition(signature.into());
+        pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition(input.into());
             self
         }
         /// <p>The job definition used by this job. This value can be one of <code>name</code>, <code>name:revision</code>, or
@@ -2728,8 +2722,8 @@ pub mod fluent_builders {
         /// specified in the job definition or the Docker image, with a <code>command</code> override. You can also override
         /// existing environment variables on a container or add new environment variables to it with an <code>environment</code>
         /// override.</p>
-        pub fn container_overrides(mut self, signature: crate::model::ContainerOverrides) -> Self {
-            self.inner = self.inner.container_overrides(signature);
+        pub fn container_overrides(mut self, input: crate::model::ContainerOverrides) -> Self {
+            self.inner = self.inner.container_overrides(input);
             self
         }
         /// <p>A list of container overrides in the JSON format that specify the name of a container in the specified job
@@ -2750,8 +2744,8 @@ pub mod fluent_builders {
         /// <p>This parameter isn't applicable to jobs that are running on Fargate resources; use
         /// <code>containerOverrides</code> instead.</p>
         /// </note>
-        pub fn node_overrides(mut self, signature: crate::model::NodeOverrides) -> Self {
-            self.inner = self.inner.node_overrides(signature);
+        pub fn node_overrides(mut self, input: crate::model::NodeOverrides) -> Self {
+            self.inner = self.inner.node_overrides(input);
             self
         }
         /// <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for
@@ -2769,8 +2763,8 @@ pub mod fluent_builders {
         }
         /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
         /// is specified here, it overrides the retry strategy defined in the job definition.</p>
-        pub fn retry_strategy(mut self, signature: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(signature);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         /// <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a> operation. When a retry strategy
@@ -2787,8 +2781,8 @@ pub mod fluent_builders {
         /// tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags
         /// from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state. When specified, this
         /// overrides the tag propagation setting in the job definition.</p>
-        pub fn propagate_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.propagate_tags(signature);
+        pub fn propagate_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.propagate_tags(input);
             self
         }
         /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no
@@ -2806,8 +2800,8 @@ pub mod fluent_builders {
         /// specified in the job definition. For array jobs, child jobs have the same timeout configuration as the parent job.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/job_timeouts.html">Job
         /// Timeouts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-        pub fn timeout(mut self, signature: crate::model::JobTimeout) -> Self {
-            self.inner = self.inner.timeout(signature);
+        pub fn timeout(mut self, input: crate::model::JobTimeout) -> Self {
+            self.inner = self.inner.timeout(input);
             self
         }
         /// <p>The timeout configuration for this <a>SubmitJob</a> operation. You can specify a timeout duration
@@ -2912,8 +2906,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
         /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
@@ -3012,8 +3006,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Batch job ID of the job to terminate.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The Batch job ID of the job to terminate.</p>
@@ -3024,8 +3018,8 @@ pub mod fluent_builders {
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
         /// <a>DescribeJobs</a> operations on the job. This message is also recorded in the Batch activity
         /// logs.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>A message to attach to the job that explains the reason for canceling it. This message is returned by future
@@ -3097,8 +3091,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
         /// and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to delete tags. Batch resources that support tags are compute environments, jobs, job definitions, job queues,
@@ -3185,8 +3179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
-        pub fn compute_environment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compute_environment(signature.into());
+        pub fn compute_environment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compute_environment(input.into());
             self
         }
         /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -3206,8 +3200,8 @@ pub mod fluent_builders {
         /// environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code> state continue to progress normally. Managed
         /// compute environments in the <code>DISABLED</code> state don't scale out. However, they scale in to
         /// <code>minvCpus</code> value after instances become idle.</p>
-        pub fn state(mut self, signature: crate::model::CeState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::CeState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The state of the compute environment. Compute environments in the <code>ENABLED</code> state can accept jobs
@@ -3227,8 +3221,8 @@ pub mod fluent_builders {
         /// be specified for a managed compute environment. This parameter is only used for fair share scheduling to reserve vCPU
         /// capacity for new share identifiers. If this parameter is not provided for a fair share job queue, no vCPU capacity
         /// will be reserved.</p>
-        pub fn unmanagedv_cpus(mut self, signature: i32) -> Self {
-            self.inner = self.inner.unmanagedv_cpus(signature);
+        pub fn unmanagedv_cpus(mut self, input: i32) -> Self {
+            self.inner = self.inner.unmanagedv_cpus(input);
             self
         }
         /// <p>The maximum number of vCPUs expected to be used for an unmanaged compute environment. This parameter should not
@@ -3242,8 +3236,8 @@ pub mod fluent_builders {
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
         /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// Environments</a> in the <i>Batch User Guide</i>.</p>
-        pub fn compute_resources(mut self, signature: crate::model::ComputeResourceUpdate) -> Self {
-            self.inner = self.inner.compute_resources(signature);
+        pub fn compute_resources(mut self, input: crate::model::ComputeResourceUpdate) -> Self {
+            self.inner = self.inner.compute_resources(input);
             self
         }
         /// <p>Details of the compute resources managed by the compute environment. Required for a managed compute environment.
@@ -3272,8 +3266,8 @@ pub mod fluent_builders {
         /// <code>service-role</code> path prefix. Because of this, we recommend that you specify the full ARN of your service
         /// role when you create compute environments.</p>
         /// </note>
-        pub fn service_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(signature.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
         /// <p>The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls to other Amazon Web Services services on your behalf.
@@ -3357,8 +3351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
-        pub fn job_queue(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_queue(signature.into());
+        pub fn job_queue(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_queue(input.into());
             self
         }
         /// <p>The name or the Amazon Resource Name (ARN) of the job queue.</p>
@@ -3369,8 +3363,8 @@ pub mod fluent_builders {
         /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
         /// jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in the
         /// queue can finish.</p>
-        pub fn state(mut self, signature: crate::model::JqState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::JqState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
@@ -3386,8 +3380,8 @@ pub mod fluent_builders {
         /// </code>.
         /// For example,
         /// <code>aws:aws:batch:us-west-2:012345678910:scheduling-policy/MySchedulingPolicy</code>.</p>
-        pub fn scheduling_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduling_policy_arn(signature.into());
+        pub fn scheduling_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduling_policy_arn(input.into());
             self
         }
         /// <p>Amazon Resource Name (ARN) of the fair share scheduling policy. Once a job queue is created, the fair share scheduling policy can
@@ -3409,8 +3403,8 @@ pub mod fluent_builders {
         /// preference over a job queue with a priority value of <code>1</code>. All of the compute environments must be either
         /// EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and
         /// Fargate compute environments can't be mixed.</p>
-        pub fn priority(mut self, signature: i32) -> Self {
-            self.inner = self.inner.priority(signature);
+        pub fn priority(mut self, input: i32) -> Self {
+            self.inner = self.inner.priority(input);
             self
         }
         /// <p>The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -3520,8 +3514,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
@@ -3530,8 +3524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fair share policy.</p>
-        pub fn fairshare_policy(mut self, signature: crate::model::FairsharePolicy) -> Self {
-            self.inner = self.inner.fairshare_policy(signature);
+        pub fn fairshare_policy(mut self, input: crate::model::FairsharePolicy) -> Self {
+            self.inner = self.inner.fairshare_policy(input);
             self
         }
         /// <p>The fair share policy.</p>

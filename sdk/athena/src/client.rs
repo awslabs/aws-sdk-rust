@@ -560,8 +560,8 @@ pub mod fluent_builders {
         /// <p>The name of the data catalog to create. The catalog name must be unique for the
         /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
         /// sign, or hyphen characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to create. The catalog name must be unique for the
@@ -574,8 +574,8 @@ pub mod fluent_builders {
         /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
         /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
         /// Glue Data Catalog.</p>
-        pub fn r#type(mut self, signature: crate::model::DataCatalogType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
@@ -589,8 +589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the data catalog to be created.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the data catalog to be created.</p>
@@ -837,8 +837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The query name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The query name.</p>
@@ -847,8 +847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The query description.</p>
@@ -857,8 +857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database to which the query belongs.</p>
-        pub fn database(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database(signature.into());
+        pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database(input.into());
             self
         }
         /// <p>The database to which the query belongs.</p>
@@ -867,8 +867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of the query with all query statements.</p>
-        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(signature.into());
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>The contents of the query with all query statements.</p>
@@ -886,8 +886,8 @@ pub mod fluent_builders {
         /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
         /// this token or the action will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure the request to create the query is
@@ -908,8 +908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup in which the named query is being created.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup in which the named query is being created.</p>
@@ -978,8 +978,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement.</p>
-        pub fn statement_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(signature.into());
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement.</p>
@@ -991,8 +991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup to which the prepared statement belongs.</p>
@@ -1001,8 +1001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query string for the prepared statement.</p>
-        pub fn query_statement(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_statement(signature.into());
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
             self
         }
         /// <p>The query string for the prepared statement.</p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the prepared statement.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the prepared statement.</p>
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The workgroup name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The workgroup name.</p>
@@ -1100,8 +1100,8 @@ pub mod fluent_builders {
         /// specified, and whether workgroup's settings (specified with
         /// <code>EnforceWorkGroupConfiguration</code>) in the
         /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
-        pub fn configuration(mut self, signature: crate::model::WorkGroupConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The configuration for the workgroup, which includes the location in Amazon S3
@@ -1119,8 +1119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The workgroup description.</p>
@@ -1206,8 +1206,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog to delete.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to delete.</p>
@@ -1280,8 +1280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query to delete.</p>
-        pub fn named_query_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.named_query_id(signature.into());
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_id(input.into());
             self
         }
         /// <p>The unique ID of the query to delete.</p>
@@ -1354,8 +1354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement to delete.</p>
-        pub fn statement_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(signature.into());
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement to delete.</p>
@@ -1367,8 +1367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup to which the statement to be deleted belongs.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to which the statement to be deleted belongs.</p>
@@ -1438,8 +1438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the workgroup to delete.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The unique name of the workgroup to delete.</p>
@@ -1449,8 +1449,8 @@ pub mod fluent_builders {
         }
         /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
         /// named queries or query executions.</p>
-        pub fn recursive_delete_option(mut self, signature: bool) -> Self {
-            self.inner = self.inner.recursive_delete_option(signature);
+        pub fn recursive_delete_option(mut self, input: bool) -> Self {
+            self.inner = self.inner.recursive_delete_option(input);
             self
         }
         /// <p>The option to delete the workgroup and its contents even if the workgroup contains any
@@ -1520,8 +1520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog that contains the database to return.</p>
-        pub fn catalog_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(signature.into());
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog that contains the database to return.</p>
@@ -1530,8 +1530,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database to return.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database to return.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog to return.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to return.</p>
@@ -1675,8 +1675,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
         /// IDs.</p>
-        pub fn named_query_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.named_query_id(signature.into());
+        pub fn named_query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.named_query_id(input.into());
             self
         }
         /// <p>The unique ID of the query. Use <a>ListNamedQueries</a> to get query
@@ -1750,8 +1750,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement to retrieve.</p>
-        pub fn statement_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(signature.into());
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement to retrieve.</p>
@@ -1763,8 +1763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup to which the statement to be retrieved belongs.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to which the statement to be retrieved belongs.</p>
@@ -1835,8 +1835,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query execution.</p>
-        pub fn query_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(signature.into());
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution.</p>
@@ -1922,8 +1922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query execution.</p>
-        pub fn query_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(signature.into());
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution.</p>
@@ -1937,8 +1937,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -1949,8 +1949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results (rows) to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results (rows) to return in this request.</p>
@@ -2020,8 +2020,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the data catalog that contains the database and table metadata to
         /// return.</p>
-        pub fn catalog_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(signature.into());
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog that contains the database and table metadata to
@@ -2031,8 +2031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database that contains the table metadata to return.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database that contains the table metadata to return.</p>
@@ -2044,8 +2044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table for which metadata is returned.</p>
-        pub fn table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.table_name(signature.into());
+        pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_name(input.into());
             self
         }
         /// <p>The name of the table for which metadata is returned.</p>
@@ -2114,8 +2114,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workgroup.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup.</p>
@@ -2184,8 +2184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog that contains the databases to return.</p>
-        pub fn catalog_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(signature.into());
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -2196,8 +2196,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2208,8 +2208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
@@ -2280,8 +2280,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the NextToken from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2292,8 +2292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of data catalogs to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of data catalogs to return.</p>
@@ -2365,8 +2365,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2377,8 +2377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of engine versions to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of engine versions to return in this request.</p>
@@ -2454,8 +2454,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2466,8 +2466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of queries to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of queries to return in this request.</p>
@@ -2478,8 +2478,8 @@ pub mod fluent_builders {
         /// <p>The name of the workgroup from which the named queries are being returned. If a
         /// workgroup is not specified, the saved queries for the primary workgroup are
         /// returned.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup from which the named queries are being returned. If a
@@ -2550,8 +2550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The workgroup to list the prepared statements for.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup to list the prepared statements for.</p>
@@ -2562,8 +2562,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2574,8 +2574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in this request.</p>
@@ -2652,8 +2652,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2664,8 +2664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of query executions to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of query executions to return in this request.</p>
@@ -2676,8 +2676,8 @@ pub mod fluent_builders {
         /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
         /// specified, a list of available query execution IDs for the queries in the primary
         /// workgroup is returned.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup from which queries are being returned. If a workgroup is not
@@ -2748,8 +2748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data catalog for which table metadata should be returned.</p>
-        pub fn catalog_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_name(signature.into());
+        pub fn catalog_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_name(input.into());
             self
         }
         /// <p>The name of the data catalog for which table metadata should be returned.</p>
@@ -2758,8 +2758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database for which table metadata should be returned.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database for which table metadata should be returned.</p>
@@ -2772,8 +2772,8 @@ pub mod fluent_builders {
         }
         /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
         /// metadata for all tables are listed.</p>
-        pub fn expression(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.expression(signature.into());
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.expression(input.into());
             self
         }
         /// <p>A regex filter that pattern-matches table names. If no expression is supplied,
@@ -2785,8 +2785,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the NextToken from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2797,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of results to return.</p>
@@ -2868,8 +2868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Lists the tags for the resource with the specified ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Lists the tags for the resource with the specified ARN.</p>
@@ -2880,8 +2880,8 @@ pub mod fluent_builders {
         /// <p>The token for the next set of results, or null if there are no additional results for
         /// this request, where the request lists the tags for the resource with the specified
         /// ARN.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results, or null if there are no additional results for
@@ -2893,8 +2893,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to be returned per request that lists the tags for the
         /// resource.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned per request that lists the tags for the
@@ -2966,8 +2966,8 @@ pub mod fluent_builders {
         /// <p>A token generated by the Athena service that specifies where to continue
         /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
         /// the <code>NextToken</code> from the response object of the previous page call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token generated by the Athena service that specifies where to continue
@@ -2978,8 +2978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workgroups to return in this request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workgroups to return in this request.</p>
@@ -3053,8 +3053,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The SQL query statements to be executed.</p>
-        pub fn query_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_string(signature.into());
+        pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_string(input.into());
             self
         }
         /// <p>The SQL query statements to be executed.</p>
@@ -3072,8 +3072,8 @@ pub mod fluent_builders {
         /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
         /// this token or the action will fail.</p>
         /// </important>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique case-sensitive string used to ensure the request to create the query is
@@ -3096,9 +3096,9 @@ pub mod fluent_builders {
         /// <p>The database within which the query executes.</p>
         pub fn query_execution_context(
             mut self,
-            signature: crate::model::QueryExecutionContext,
+            input: crate::model::QueryExecutionContext,
         ) -> Self {
-            self.inner = self.inner.query_execution_context(signature);
+            self.inner = self.inner.query_execution_context(input);
             self
         }
         /// <p>The database within which the query executes.</p>
@@ -3113,11 +3113,8 @@ pub mod fluent_builders {
         /// If the query runs in a workgroup, then workgroup's settings may override query settings.
         /// This affects the query results location. The workgroup settings override is specified in
         /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
-        pub fn result_configuration(
-            mut self,
-            signature: crate::model::ResultConfiguration,
-        ) -> Self {
-            self.inner = self.inner.result_configuration(signature);
+        pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
+            self.inner = self.inner.result_configuration(input);
             self
         }
         /// <p>Specifies information about where and how to save the results of the query execution.
@@ -3132,8 +3129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workgroup in which the query is being started.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The name of the workgroup in which the query is being started.</p>
@@ -3206,8 +3203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the query execution to stop.</p>
-        pub fn query_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_execution_id(signature.into());
+        pub fn query_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_execution_id(input.into());
             self
         }
         /// <p>The unique ID of the query execution to stop.</p>
@@ -3290,8 +3287,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
         /// which tags are to be added.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
@@ -3378,8 +3375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>Specifies the ARN of the resource from which tags are to be removed.</p>
@@ -3469,8 +3466,8 @@ pub mod fluent_builders {
         /// <p>The name of the data catalog to update. The catalog name must be unique for the
         /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
         /// sign, or hyphen characters.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data catalog to update. The catalog name must be unique for the
@@ -3483,8 +3480,8 @@ pub mod fluent_builders {
         /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
         /// federated catalog, <code>HIVE</code> for an external hive metastore, or
         /// <code>GLUE</code> for an Glue Data Catalog.</p>
-        pub fn r#type(mut self, signature: crate::model::DataCatalogType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
@@ -3498,8 +3495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>New or modified text that describes the data catalog.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>New or modified text that describes the data catalog.</p>
@@ -3667,8 +3664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the prepared statement.</p>
-        pub fn statement_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_name(signature.into());
+        pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_name(input.into());
             self
         }
         /// <p>The name of the prepared statement.</p>
@@ -3680,8 +3677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup for the prepared statement.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The workgroup for the prepared statement.</p>
@@ -3690,8 +3687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The query string for the prepared statement.</p>
-        pub fn query_statement(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_statement(signature.into());
+        pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_statement(input.into());
             self
         }
         /// <p>The query string for the prepared statement.</p>
@@ -3703,8 +3700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the prepared statement.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the prepared statement.</p>
@@ -3774,8 +3771,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The specified workgroup that will be updated.</p>
-        pub fn work_group(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.work_group(signature.into());
+        pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.work_group(input.into());
             self
         }
         /// <p>The specified workgroup that will be updated.</p>
@@ -3784,8 +3781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The workgroup description.</p>
@@ -3796,9 +3793,9 @@ pub mod fluent_builders {
         /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
         pub fn configuration_updates(
             mut self,
-            signature: crate::model::WorkGroupConfigurationUpdates,
+            input: crate::model::WorkGroupConfigurationUpdates,
         ) -> Self {
-            self.inner = self.inner.configuration_updates(signature);
+            self.inner = self.inner.configuration_updates(input);
             self
         }
         /// <p>The workgroup configuration that will be updated for the given workgroup.</p>
@@ -3810,8 +3807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The workgroup state that will be updated for the given workgroup.</p>
-        pub fn state(mut self, signature: crate::model::WorkGroupState) -> Self {
-            self.inner = self.inner.state(signature);
+        pub fn state(mut self, input: crate::model::WorkGroupState) -> Self {
+            self.inner = self.inner.state(input);
             self
         }
         /// <p>The workgroup state that will be updated for the given workgroup.</p>

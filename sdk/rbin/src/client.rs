@@ -209,8 +209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(signature);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -222,8 +222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A brief description for the retention rule.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A brief description for the retention rule.</p>
@@ -250,8 +250,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
         /// supported.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are
@@ -352,8 +352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule to delete.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule to delete.</p>
@@ -422,8 +422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule.</p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.</p>
@@ -502,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to use to retrieve the next page of results.</p>
@@ -513,8 +513,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
         /// are listed.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type retained by the retention rule. Only retention rules that retain the specified resource type
@@ -604,8 +604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which to list the tags.</p>
@@ -674,8 +674,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which to assign the tags.</p>
@@ -761,8 +761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which to unassign the tags.</p>
@@ -849,8 +849,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the retention rule to update.</p>
-        pub fn identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identifier(signature.into());
+        pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identifier(input.into());
             self
         }
         /// <p>The unique ID of the retention rule to update.</p>
@@ -859,8 +859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
-        pub fn retention_period(mut self, signature: crate::model::RetentionPeriod) -> Self {
-            self.inner = self.inner.retention_period(signature);
+        pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>Information about the retention period for which the retention rule is to retain resources.</p>
@@ -872,8 +872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention rule description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The retention rule description.</p>
@@ -882,8 +882,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>
-        pub fn resource_type(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots are supported.</p>

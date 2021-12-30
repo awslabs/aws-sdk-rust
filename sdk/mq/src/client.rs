@@ -316,9 +316,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            signature: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(signature);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -330,8 +330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot. Set to true by default, if no value is specified.</p>
@@ -340,8 +340,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
-        pub fn broker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_name(signature.into());
+        pub fn broker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_name(input.into());
             self
         }
         /// <p>Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or special characters.</p>
@@ -350,8 +350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of information about the configuration.</p>
-        pub fn configuration(mut self, signature: crate::model::ConfigurationId) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>A list of information about the configuration.</p>
@@ -363,8 +363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the creatorRequestId if your application doesn't require idempotency.</p>
@@ -376,8 +376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's deployment mode.</p>
-        pub fn deployment_mode(mut self, signature: crate::model::DeploymentMode) -> Self {
-            self.inner = self.inner.deployment_mode(signature);
+        pub fn deployment_mode(mut self, input: crate::model::DeploymentMode) -> Self {
+            self.inner = self.inner.deployment_mode(input);
             self
         }
         /// <p>Required. The broker's deployment mode.</p>
@@ -389,8 +389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
-        pub fn encryption_options(mut self, signature: crate::model::EncryptionOptions) -> Self {
-            self.inner = self.inner.encryption_options(signature);
+        pub fn encryption_options(mut self, input: crate::model::EncryptionOptions) -> Self {
+            self.inner = self.inner.encryption_options(input);
             self
         }
         /// <p>Encryption options for the broker. Does not apply to RabbitMQ brokers.</p>
@@ -402,8 +402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-        pub fn engine_type(mut self, signature: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(signature);
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(input);
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -415,8 +415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -428,8 +428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker's instance type.</p>
-        pub fn host_instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(signature.into());
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>Required. The broker's instance type.</p>
@@ -443,9 +443,9 @@ pub mod fluent_builders {
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ldap_server_metadata(
             mut self,
-            signature: crate::model::LdapServerMetadataInput,
+            input: crate::model::LdapServerMetadataInput,
         ) -> Self {
-            self.inner = self.inner.ldap_server_metadata(signature);
+            self.inner = self.inner.ldap_server_metadata(input);
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
@@ -457,8 +457,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-        pub fn logs(mut self, signature: crate::model::Logs) -> Self {
-            self.inner = self.inner.logs(signature);
+        pub fn logs(mut self, input: crate::model::Logs) -> Self {
+            self.inner = self.inner.logs(input);
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
@@ -469,9 +469,9 @@ pub mod fluent_builders {
         /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn maintenance_window_start_time(
             mut self,
-            signature: crate::model::WeeklyStartTime,
+            input: crate::model::WeeklyStartTime,
         ) -> Self {
-            self.inner = self.inner.maintenance_window_start_time(signature);
+            self.inner = self.inner.maintenance_window_start_time(input);
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
@@ -483,8 +483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>Enables connections from applications outside of the VPC that hosts the broker's subnets. Set to false by default, if no value is provided.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker's storage type.</p>
-        pub fn storage_type(mut self, signature: crate::model::BrokerStorageType) -> Self {
-            self.inner = self.inner.storage_type(signature);
+        pub fn storage_type(mut self, input: crate::model::BrokerStorageType) -> Self {
+            self.inner = self.inner.storage_type(input);
             self
         }
         /// <p>The broker's storage type.</p>
@@ -642,9 +642,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            signature: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(signature);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy associated with the configuration. The default is SIMPLE.</p>
@@ -656,8 +656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
-        pub fn engine_type(mut self, signature: crate::model::EngineType) -> Self {
-            self.inner = self.inner.engine_type(signature);
+        pub fn engine_type(mut self, input: crate::model::EngineType) -> Self {
+            self.inner = self.inner.engine_type(input);
             self
         }
         /// <p>Required. The type of broker engine. Currently, Amazon MQ supports ACTIVEMQ and RABBITMQ.</p>
@@ -669,8 +669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>Required. The broker engine's version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -682,8 +682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Required. The name of the configuration. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 1-150 characters long.</p>
@@ -775,8 +775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -868,8 +868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -878,8 +878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
-        pub fn console_access(mut self, signature: bool) -> Self {
-            self.inner = self.inner.console_access(signature);
+        pub fn console_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.console_access(input);
             self
         }
         /// <p>Enables access to the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -905,8 +905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>Required. The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
@@ -915,8 +915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -985,8 +985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1055,8 +1055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -1142,8 +1142,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1152,8 +1152,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -1222,8 +1222,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter response by engine type.</p>
-        pub fn engine_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_type(signature.into());
+        pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_type(input.into());
             self
         }
         /// <p>Filter response by engine type.</p>
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1312,8 +1312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1382,8 +1382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter response by engine type.</p>
-        pub fn engine_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_type(signature.into());
+        pub fn engine_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_type(input.into());
             self
         }
         /// <p>Filter response by engine type.</p>
@@ -1392,8 +1392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter response by host instance type.</p>
-        pub fn host_instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(signature.into());
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>Filter response by host instance type.</p>
@@ -1405,8 +1405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1415,8 +1415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1425,8 +1425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter response by storage type.</p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Filter response by storage type.</p>
@@ -1495,8 +1495,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(signature.into());
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1568,8 +1568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(signature.into());
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1581,8 +1581,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The revision of the configuration.</p>
-        pub fn configuration_revision(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_revision(signature.into());
+        pub fn configuration_revision(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_revision(input.into());
             self
         }
         /// <p>The revision of the configuration.</p>
@@ -1654,8 +1654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -1664,8 +1664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
@@ -1734,8 +1734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1744,8 +1744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1814,8 +1814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(signature.into());
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -1827,8 +1827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1837,8 +1837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1907,8 +1907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -1917,8 +1917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -1987,8 +1987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource tag.</p>
@@ -2057,8 +2057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2067,8 +2067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of brokers that Amazon MQ can return per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -2077,8 +2077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
@@ -2147,8 +2147,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2219,9 +2219,9 @@ pub mod fluent_builders {
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
         pub fn authentication_strategy(
             mut self,
-            signature: crate::model::AuthenticationStrategy,
+            input: crate::model::AuthenticationStrategy,
         ) -> Self {
-            self.inner = self.inner.authentication_strategy(signature);
+            self.inner = self.inner.authentication_strategy(input);
             self
         }
         /// <p>Optional. The authentication strategy used to secure the broker. The default is SIMPLE.</p>
@@ -2233,8 +2233,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>Enables automatic upgrades to new minor versions for brokers, as new versions are released and supported by Amazon MQ. Automatic upgrades occur during the scheduled maintenance window of the broker or after a manual broker reboot.</p>
@@ -2243,8 +2243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2253,8 +2253,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of information about the configuration.</p>
-        pub fn configuration(mut self, signature: crate::model::ConfigurationId) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ConfigurationId) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>A list of information about the configuration.</p>
@@ -2266,8 +2266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The broker engine version. For a list of supported engine versions, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker-engine.html">Supported engines</a>.</p>
@@ -2279,8 +2279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
-        pub fn host_instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.host_instance_type(signature.into());
+        pub fn host_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.host_instance_type(input.into());
             self
         }
         /// <p>The broker's host instance type to upgrade to. For a list of supported instance types, see <a href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker instance types</a>.</p>
@@ -2294,9 +2294,9 @@ pub mod fluent_builders {
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
         pub fn ldap_server_metadata(
             mut self,
-            signature: crate::model::LdapServerMetadataInput,
+            input: crate::model::LdapServerMetadataInput,
         ) -> Self {
-            self.inner = self.inner.ldap_server_metadata(signature);
+            self.inner = self.inner.ldap_server_metadata(input);
             self
         }
         /// <p>Optional. The metadata of the LDAP server used to authenticate and authorize connections to the broker. Does not apply to RabbitMQ brokers.</p>
@@ -2308,8 +2308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
-        pub fn logs(mut self, signature: crate::model::Logs) -> Self {
-            self.inner = self.inner.logs(signature);
+        pub fn logs(mut self, input: crate::model::Logs) -> Self {
+            self.inner = self.inner.logs(input);
             self
         }
         /// <p>Enables Amazon CloudWatch logging for brokers.</p>
@@ -2320,9 +2320,9 @@ pub mod fluent_builders {
         /// <p>The parameters that determine the WeeklyStartTime.</p>
         pub fn maintenance_window_start_time(
             mut self,
-            signature: crate::model::WeeklyStartTime,
+            input: crate::model::WeeklyStartTime,
         ) -> Self {
-            self.inner = self.inner.maintenance_window_start_time(signature);
+            self.inner = self.inner.maintenance_window_start_time(input);
             self
         }
         /// <p>The parameters that determine the WeeklyStartTime.</p>
@@ -2411,8 +2411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
-        pub fn configuration_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_id(signature.into());
+        pub fn configuration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the configuration.</p>
@@ -2424,8 +2424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The base64-encoded XML configuration.</p>
-        pub fn data(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data(signature.into());
+        pub fn data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data(input.into());
             self
         }
         /// <p>Required. The base64-encoded XML configuration.</p>
@@ -2434,8 +2434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the configuration.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the configuration.</p>
@@ -2504,8 +2504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-        pub fn broker_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.broker_id(signature.into());
+        pub fn broker_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.broker_id(input.into());
             self
         }
         /// <p>The unique ID that Amazon MQ generates for the broker.</p>
@@ -2514,8 +2514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
-        pub fn console_access(mut self, signature: bool) -> Self {
-            self.inner = self.inner.console_access(signature);
+        pub fn console_access(mut self, input: bool) -> Self {
+            self.inner = self.inner.console_access(input);
             self
         }
         /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -2541,8 +2541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
@@ -2551,8 +2551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>

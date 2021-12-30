@@ -253,9 +253,9 @@ pub mod fluent_builders {
         /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
         pub fn suite_definition_configuration(
             mut self,
-            signature: crate::model::SuiteDefinitionConfiguration,
+            input: crate::model::SuiteDefinitionConfiguration,
         ) -> Self {
-            self.inner = self.inner.suite_definition_configuration(signature);
+            self.inner = self.inner.suite_definition_configuration(input);
             self
         }
         /// <p>Creates a Device Advisor test suite with suite definition configuration.</p>
@@ -351,8 +351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to be deleted.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to be deleted.</p>
@@ -424,8 +424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The thing ARN of the device. This is an optional parameter.</p>
-        pub fn thing_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_arn(signature.into());
+        pub fn thing_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_arn(input.into());
             self
         }
         /// <p>The thing ARN of the device. This is an optional parameter.</p>
@@ -434,8 +434,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate ARN of the device. This is an optional parameter.</p>
-        pub fn certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_arn(signature.into());
+        pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_arn(input.into());
             self
         }
         /// <p>The certificate ARN of the device. This is an optional parameter.</p>
@@ -508,8 +508,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to get.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to get.</p>
@@ -521,11 +521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite definition version of the test suite to get.</p>
-        pub fn suite_definition_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.suite_definition_version(signature.into());
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
         /// <p>Suite definition version of the test suite to get.</p>
@@ -598,8 +595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID for the test suite run.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID for the test suite run.</p>
@@ -611,8 +608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID for the test suite run.</p>
-        pub fn suite_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(signature.into());
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID for the test suite run.</p>
@@ -682,8 +679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite.</p>
@@ -695,8 +692,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID of the test suite run.</p>
-        pub fn suite_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(signature.into());
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID of the test suite run.</p>
@@ -766,8 +763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -776,8 +773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token used to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used to get the next set of results.</p>
@@ -849,8 +846,8 @@ pub mod fluent_builders {
         }
         /// <p>Lists the test suite runs of the specified test suite based on suite definition
         /// ID.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Lists the test suite runs of the specified test suite based on suite definition
@@ -864,11 +861,8 @@ pub mod fluent_builders {
         }
         /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
         /// the specified test suite based on suite definition version.</p>
-        pub fn suite_definition_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.suite_definition_version(signature.into());
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
         /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of
@@ -881,8 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return at once.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at once.</p>
@@ -891,8 +885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to retrieve the next set of results.</p>
@@ -962,8 +956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the IoT Device Advisor resource.</p>
@@ -1033,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite.</p>
@@ -1046,11 +1040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite definition version of the test suite.</p>
-        pub fn suite_definition_version(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.suite_definition_version(signature.into());
+        pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_version(input.into());
             self
         }
         /// <p>Suite definition version of the test suite.</p>
@@ -1064,9 +1055,9 @@ pub mod fluent_builders {
         /// <p>Suite run configuration.</p>
         pub fn suite_run_configuration(
             mut self,
-            signature: crate::model::SuiteRunConfiguration,
+            input: crate::model::SuiteRunConfiguration,
         ) -> Self {
-            self.inner = self.inner.suite_run_configuration(signature);
+            self.inner = self.inner.suite_run_configuration(input);
             self
         }
         /// <p>Suite run configuration.</p>
@@ -1162,8 +1153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite run to be stopped.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite run to be stopped.</p>
@@ -1175,8 +1166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Suite run ID of the test suite run to be stopped.</p>
-        pub fn suite_run_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_run_id(signature.into());
+        pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_run_id(input.into());
             self
         }
         /// <p>Suite run ID of the test suite run to be stopped.</p>
@@ -1246,8 +1237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
@@ -1340,8 +1331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN of an IoT Device Advisor resource.</p>
@@ -1428,8 +1419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Suite definition ID of the test suite to be updated.</p>
-        pub fn suite_definition_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.suite_definition_id(signature.into());
+        pub fn suite_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.suite_definition_id(input.into());
             self
         }
         /// <p>Suite definition ID of the test suite to be updated.</p>
@@ -1443,9 +1434,9 @@ pub mod fluent_builders {
         /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>
         pub fn suite_definition_configuration(
             mut self,
-            signature: crate::model::SuiteDefinitionConfiguration,
+            input: crate::model::SuiteDefinitionConfiguration,
         ) -> Self {
-            self.inner = self.inner.suite_definition_configuration(signature);
+            self.inner = self.inner.suite_definition_configuration(input);
             self
         }
         /// <p>Updates a Device Advisor test suite with suite definition configuration.</p>

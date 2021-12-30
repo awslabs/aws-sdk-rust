@@ -413,8 +413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -423,8 +423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fully qualified domain name (FQDN).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN).</p>
@@ -433,8 +433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to display.</p>
@@ -443,8 +443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
-        pub fn acm_certificate_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acm_certificate_arn(signature.into());
+        pub fn acm_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acm_certificate_arn(input.into());
             self
         }
         /// <p>The ARN of an issued ACM certificate that is valid for the domain being associated.</p>
@@ -518,8 +518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -530,9 +530,9 @@ pub mod fluent_builders {
         /// <p>The authorization provider type.</p>
         pub fn authorization_provider_type(
             mut self,
-            signature: crate::model::AuthorizationProviderType,
+            input: crate::model::AuthorizationProviderType,
         ) -> Self {
-            self.inner = self.inner.authorization_provider_type(signature);
+            self.inner = self.inner.authorization_provider_type(input);
             self
         }
         /// <p>The authorization provider type.</p>
@@ -545,8 +545,8 @@ pub mod fluent_builders {
         }
         /// <p>The domain name of the authorization provider. This applies only to SAML-based
         /// authorization providers.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name of the authorization provider. This applies only to SAML-based
@@ -619,8 +619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -629,8 +629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The root certificate of the CA.</p>
-        pub fn certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate(signature.into());
+        pub fn certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate(input.into());
             self
         }
         /// <p>The root certificate of the CA.</p>
@@ -639,8 +639,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate name to display.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The certificate name to display.</p>
@@ -710,8 +710,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the fleet.</p>
-        pub fn fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_name(signature.into());
+        pub fn fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_name(input.into());
             self
         }
         /// <p>A unique name for the fleet.</p>
@@ -720,8 +720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display.</p>
@@ -731,8 +731,8 @@ pub mod fluent_builders {
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest
         /// AWS Region to users, which may be outside of your home Region.</p>
-        pub fn optimize_for_end_user_location(mut self, signature: bool) -> Self {
-            self.inner = self.inner.optimize_for_end_user_location(signature);
+        pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
+            self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest
@@ -828,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -898,8 +898,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -971,8 +971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1041,8 +1041,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1051,8 +1051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a registered user's device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>A unique identifier for a registered user's device.</p>
@@ -1121,8 +1121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1191,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1201,8 +1201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -1272,8 +1272,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -1344,8 +1344,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1416,8 +1416,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1426,8 +1426,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the certificate authority.</p>
-        pub fn website_ca_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_ca_id(signature.into());
+        pub fn website_ca_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_ca_id(input.into());
             self
         }
         /// <p>A unique identifier for the certificate authority.</p>
@@ -1499,8 +1499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1509,8 +1509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -1583,8 +1583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1593,11 +1593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
-        pub fn authorization_provider_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.authorization_provider_id(signature.into());
+        pub fn authorization_provider_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.authorization_provider_id(input.into());
             self
         }
         /// <p>A unique identifier for the authorization provider.</p>
@@ -1671,8 +1668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1681,8 +1678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the CA.</p>
-        pub fn website_ca_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.website_ca_id(signature.into());
+        pub fn website_ca_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.website_ca_id(input.into());
             self
         }
         /// <p>A unique identifier for the CA.</p>
@@ -1754,8 +1751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1765,8 +1762,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
         /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
@@ -1776,8 +1773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -1846,8 +1843,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -1857,8 +1854,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
         /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
@@ -1868,8 +1865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -1939,8 +1936,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
         /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
@@ -1950,8 +1947,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -2020,8 +2017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2090,8 +2087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2100,8 +2097,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
@@ -2110,8 +2107,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -2181,8 +2178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2191,8 +2188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be included in the next page.</p>
@@ -2202,8 +2199,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
         /// this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token used to retrieve the next page of results for this operation. If
@@ -2273,8 +2270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2283,8 +2280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2353,8 +2350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2363,8 +2360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2434,8 +2431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2444,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>The name of the user.</p>
@@ -2514,8 +2511,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2607,8 +2604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the fleet.</p>
@@ -2694,8 +2691,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2704,8 +2701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
-        pub fn audit_stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.audit_stream_arn(signature.into());
+        pub fn audit_stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.audit_stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon Kinesis data stream that receives the audit events.</p>
@@ -2777,8 +2774,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2787,8 +2784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The VPC with connectivity to associated websites.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The VPC with connectivity to associated websites.</p>
@@ -2891,8 +2888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2901,8 +2898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
-        pub fn device_ca_certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_ca_certificate(signature.into());
+        pub fn device_ca_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_ca_certificate(input.into());
             self
         }
         /// <p>The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.</p>
@@ -2974,8 +2971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -2984,8 +2981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The name of the domain.</p>
@@ -2994,8 +2991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name to display.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name to display.</p>
@@ -3064,8 +3061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -3074,8 +3071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The fleet name to display. The existing DisplayName is unset if null is passed.</p>
@@ -3085,8 +3082,8 @@ pub mod fluent_builders {
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest
         /// AWS Region to users, which may be outside of your home Region.</p>
-        pub fn optimize_for_end_user_location(mut self, signature: bool) -> Self {
-            self.inner = self.inner.optimize_for_end_user_location(signature);
+        pub fn optimize_for_end_user_location(mut self, input: bool) -> Self {
+            self.inner = self.inner.optimize_for_end_user_location(input);
             self
         }
         /// <p>The option to optimize for better performance by routing traffic through the closest
@@ -3161,8 +3158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the fleet.</p>
-        pub fn fleet_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fleet_arn(signature.into());
+        pub fn fleet_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fleet_arn(input.into());
             self
         }
         /// <p>The ARN of the fleet.</p>
@@ -3171,11 +3168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of identity provider.</p>
-        pub fn identity_provider_type(
-            mut self,
-            signature: crate::model::IdentityProviderType,
-        ) -> Self {
-            self.inner = self.inner.identity_provider_type(signature);
+        pub fn identity_provider_type(mut self, input: crate::model::IdentityProviderType) -> Self {
+            self.inner = self.inner.identity_provider_type(input);
             self
         }
         /// <p>The type of identity provider.</p>
@@ -3190,9 +3184,9 @@ pub mod fluent_builders {
         /// IdentityProviderSamlMetadata is unset if null is passed.</p>
         pub fn identity_provider_saml_metadata(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.identity_provider_saml_metadata(signature.into());
+            self.inner = self.inner.identity_provider_saml_metadata(input.into());
             self
         }
         /// <p>The SAML metadata document provided by the customer’s identity provider. The existing

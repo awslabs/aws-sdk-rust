@@ -2027,8 +2027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the source.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>The ARN of the source.</p>
@@ -2037,8 +2037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-        pub fn destination_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(signature.into());
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -2070,8 +2070,8 @@ pub mod fluent_builders {
         /// produced a model artifact.</p>
         /// </li>
         /// </ul>
-        pub fn association_type(mut self, signature: crate::model::AssociationEdgeType) -> Self {
-            self.inner = self.inner.association_type(signature);
+        pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
         /// <p>The type of association. The following are suggested uses for each type. Amazon SageMaker
@@ -2188,8 +2188,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
@@ -2282,8 +2282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to associated with the trial.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the component to associated with the trial.</p>
@@ -2295,8 +2295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the trial to associate with.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial to associate with.</p>
@@ -2446,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action. Must be unique to your account in an Amazon Web Services Region.</p>
@@ -2456,8 +2456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source type, ID, and URI.</p>
-        pub fn source(mut self, signature: crate::model::ActionSource) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::ActionSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source type, ID, and URI.</p>
@@ -2469,8 +2469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action type.</p>
-        pub fn action_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_type(signature.into());
+        pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_type(input.into());
             self
         }
         /// <p>The action type.</p>
@@ -2479,8 +2479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the action.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the action.</p>
@@ -2489,8 +2489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the action.</p>
-        pub fn status(mut self, signature: crate::model::ActionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the action.</p>
@@ -2525,8 +2525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, signature: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(signature);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -2616,8 +2616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm.</p>
-        pub fn algorithm_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(signature.into());
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input.into());
             self
         }
         /// <p>The name of the algorithm.</p>
@@ -2629,8 +2629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the algorithm.</p>
-        pub fn algorithm_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_description(signature.into());
+        pub fn algorithm_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_description(input.into());
             self
         }
         /// <p>A description of the algorithm.</p>
@@ -2672,9 +2672,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn training_specification(
             mut self,
-            signature: crate::model::TrainingSpecification,
+            input: crate::model::TrainingSpecification,
         ) -> Self {
-            self.inner = self.inner.training_specification(signature);
+            self.inner = self.inner.training_specification(input);
             self
         }
         /// <p>Specifies details about training jobs run by this algorithm, including the
@@ -2731,9 +2731,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn inference_specification(
             mut self,
-            signature: crate::model::InferenceSpecification,
+            input: crate::model::InferenceSpecification,
         ) -> Self {
-            self.inner = self.inner.inference_specification(signature);
+            self.inner = self.inner.inference_specification(input);
             self
         }
         /// <p>Specifies details about inference jobs that the algorithm runs, including the
@@ -2764,9 +2764,9 @@ pub mod fluent_builders {
         /// runs to test the algorithm's inference code.</p>
         pub fn validation_specification(
             mut self,
-            signature: crate::model::AlgorithmValidationSpecification,
+            input: crate::model::AlgorithmValidationSpecification,
         ) -> Self {
-            self.inner = self.inner.validation_specification(signature);
+            self.inner = self.inner.validation_specification(input);
             self
         }
         /// <p>Specifies configurations for one or more training jobs and that Amazon SageMaker runs to test the
@@ -2780,8 +2780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
-        pub fn certify_for_marketplace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.certify_for_marketplace(signature);
+        pub fn certify_for_marketplace(mut self, input: bool) -> Self {
+            self.inner = self.inner.certify_for_marketplace(input);
             self
         }
         /// <p>Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.</p>
@@ -2876,8 +2876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -2886,8 +2886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name.</p>
@@ -2900,8 +2900,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
         /// <code>KernelGateway</code>. <code>TensorBoard</code> is not supported.</p>
-        pub fn app_type(mut self, signature: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(signature);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
         /// <p>The type of app. Supported apps are <code>JupyterServer</code> and
@@ -2911,8 +2911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(signature.into());
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input.into());
             self
         }
         /// <p>The name of the app.</p>
@@ -2940,8 +2940,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
-        pub fn resource_spec(mut self, signature: crate::model::ResourceSpec) -> Self {
-            self.inner = self.inner.resource_spec(signature);
+        pub fn resource_spec(mut self, input: crate::model::ResourceSpec) -> Self {
+            self.inner = self.inner.resource_spec(input);
             self
         }
         /// <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.</p>
@@ -3015,8 +3015,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
-        pub fn app_image_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(signature.into());
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input.into());
             self
         }
         /// <p>The name of the AppImageConfig. Must be unique to your account.</p>
@@ -3047,9 +3047,9 @@ pub mod fluent_builders {
         /// <p>The KernelGatewayImageConfig.</p>
         pub fn kernel_gateway_image_config(
             mut self,
-            signature: crate::model::KernelGatewayImageConfig,
+            input: crate::model::KernelGatewayImageConfig,
         ) -> Self {
-            self.inner = self.inner.kernel_gateway_image_config(signature);
+            self.inner = self.inner.kernel_gateway_image_config(input);
             self
         }
         /// <p>The KernelGatewayImageConfig.</p>
@@ -3125,8 +3125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
-        pub fn artifact_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_name(signature.into());
+        pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_name(input.into());
             self
         }
         /// <p>The name of the artifact. Must be unique to your account in an Amazon Web Services Region.</p>
@@ -3138,8 +3138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID, ID type, and URI of the source.</p>
-        pub fn source(mut self, signature: crate::model::ArtifactSource) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::ArtifactSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The ID, ID type, and URI of the source.</p>
@@ -3151,8 +3151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The artifact type.</p>
-        pub fn artifact_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_type(signature.into());
+        pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_type(input.into());
             self
         }
         /// <p>The artifact type.</p>
@@ -3187,8 +3187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, signature: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(signature);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -3281,8 +3281,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies an Autopilot job. The name must be unique to your account and is
         /// case-insensitive.</p>
-        pub fn auto_ml_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(signature.into());
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input.into());
             self
         }
         /// <p>Identifies an Autopilot job. The name must be unique to your account and is
@@ -3317,11 +3317,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
         /// from an AutoML job. Format(s) supported: CSV.</p>
-        pub fn output_data_config(
-            mut self,
-            signature: crate::model::AutoMlOutputDataConfig,
-        ) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
@@ -3337,8 +3334,8 @@ pub mod fluent_builders {
         /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
         /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
         /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
-        pub fn problem_type(mut self, signature: crate::model::ProblemType) -> Self {
-            self.inner = self.inner.problem_type(signature);
+        pub fn problem_type(mut self, input: crate::model::ProblemType) -> Self {
+            self.inner = self.inner.problem_type(input);
             self
         }
         /// <p>Defines the type of supervised learning available for the candidates. Options include:
@@ -3355,11 +3352,8 @@ pub mod fluent_builders {
         /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
         /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
         /// minimize or maximize it.</p>
-        pub fn auto_ml_job_objective(
-            mut self,
-            signature: crate::model::AutoMlJobObjective,
-        ) -> Self {
-            self.inner = self.inner.auto_ml_job_objective(signature);
+        pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
+            self.inner = self.inner.auto_ml_job_objective(input);
             self
         }
         /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
@@ -3374,8 +3368,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
         /// the AutoML job.</p>
-        pub fn auto_ml_job_config(mut self, signature: crate::model::AutoMlJobConfig) -> Self {
-            self.inner = self.inner.auto_ml_job_config(signature);
+        pub fn auto_ml_job_config(mut self, input: crate::model::AutoMlJobConfig) -> Self {
+            self.inner = self.inner.auto_ml_job_config(input);
             self
         }
         /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for
@@ -3388,8 +3382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the role that is used to access the data.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the role that is used to access the data.</p>
@@ -3399,8 +3393,8 @@ pub mod fluent_builders {
         }
         /// <p>Generates possible candidates without training the models. A candidate is a combination
         /// of data preprocessors, algorithms, and algorithm parameter settings.</p>
-        pub fn generate_candidate_definitions_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.generate_candidate_definitions_only(signature);
+        pub fn generate_candidate_definitions_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.generate_candidate_definitions_only(input);
             self
         }
         /// <p>Generates possible candidates without training the models. A candidate is a combination
@@ -3433,8 +3427,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
         /// deployment.</p>
-        pub fn model_deploy_config(mut self, signature: crate::model::ModelDeployConfig) -> Self {
-            self.inner = self.inner.model_deploy_config(signature);
+        pub fn model_deploy_config(mut self, input: crate::model::ModelDeployConfig) -> Self {
+            self.inner = self.inner.model_deploy_config(input);
             self
         }
         /// <p>Specifies how to generate the endpoint name for an automatic one-click Autopilot model
@@ -3514,8 +3508,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn code_repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(signature.into());
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input.into());
             self
         }
         /// <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
@@ -3529,8 +3523,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies details about the repository, including the URL where the repository is
         /// located, the default branch, and credentials to use to access the repository.</p>
-        pub fn git_config(mut self, signature: crate::model::GitConfig) -> Self {
-            self.inner = self.inner.git_config(signature);
+        pub fn git_config(mut self, input: crate::model::GitConfig) -> Self {
+            self.inner = self.inner.git_config(input);
             self
         }
         /// <p>Specifies details about the repository, including the URL where the repository is
@@ -3658,8 +3652,8 @@ pub mod fluent_builders {
         }
         /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
         /// and within your Amazon Web Services account. </p>
-        pub fn compilation_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(signature.into());
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input.into());
             self
         }
         /// <p>A name for the model compilation job. The name must be unique within the Amazon Web Services Region
@@ -3693,8 +3687,8 @@ pub mod fluent_builders {
         /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker
         /// Roles.</a>
         /// </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on
@@ -3727,11 +3721,8 @@ pub mod fluent_builders {
         /// <code>ModelPackageVersionArn</code> or an <code>InputConfig</code> object in the
         /// request syntax. The presence of both objects in the <code>CreateCompilationJob</code>
         /// request will return an exception.</p>
-        pub fn model_package_version_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_version_arn(signature.into());
+        pub fn model_package_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_version_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a versioned model package. Provide either a
@@ -3747,8 +3738,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides information about the location of input model artifacts, the name and shape
         /// of the expected data inputs, and the framework in which the model was trained.</p>
-        pub fn input_config(mut self, signature: crate::model::InputConfig) -> Self {
-            self.inner = self.inner.input_config(signature);
+        pub fn input_config(mut self, input: crate::model::InputConfig) -> Self {
+            self.inner = self.inner.input_config(input);
             self
         }
         /// <p>Provides information about the location of input model artifacts, the name and shape
@@ -3762,8 +3753,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides information about the output location for the compiled model and the target
         /// device the model runs on.</p>
-        pub fn output_config(mut self, signature: crate::model::OutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Provides information about the output location for the compiled model and the target
@@ -3779,8 +3770,8 @@ pub mod fluent_builders {
         /// compilation job to connect to. Control access to your models by
         /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect Compilation Jobs by Using an Amazon
         /// Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, signature: crate::model::NeoVpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::NeoVpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
@@ -3797,8 +3788,8 @@ pub mod fluent_builders {
         /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
         /// the time limit, Amazon SageMaker ends the compilation job. Use this API to cap model training
         /// costs.</p>
-        pub fn stopping_condition(mut self, signature: crate::model::StoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>Specifies a limit to how long a model compilation job can run. When the job reaches
@@ -3899,8 +3890,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
-        pub fn context_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(signature.into());
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input.into());
             self
         }
         /// <p>The name of the context. Must be unique to your account in an Amazon Web Services Region.</p>
@@ -3909,8 +3900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source type, ID, and URI.</p>
-        pub fn source(mut self, signature: crate::model::ContextSource) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::ContextSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source type, ID, and URI.</p>
@@ -3922,8 +3913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The context type.</p>
-        pub fn context_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_type(signature.into());
+        pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_type(input.into());
             self
         }
         /// <p>The context type.</p>
@@ -3932,8 +3923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the context.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the context.</p>
@@ -4043,8 +4034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the monitoring job definition.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name for the monitoring job definition.</p>
@@ -4058,9 +4049,9 @@ pub mod fluent_builders {
         /// <p>Configures the constraints and baselines for the monitoring job.</p>
         pub fn data_quality_baseline_config(
             mut self,
-            signature: crate::model::DataQualityBaselineConfig,
+            input: crate::model::DataQualityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.data_quality_baseline_config(signature);
+            self.inner = self.inner.data_quality_baseline_config(input);
             self
         }
         /// <p>Configures the constraints and baselines for the monitoring job.</p>
@@ -4074,9 +4065,9 @@ pub mod fluent_builders {
         /// <p>Specifies the container that runs the monitoring job.</p>
         pub fn data_quality_app_specification(
             mut self,
-            signature: crate::model::DataQualityAppSpecification,
+            input: crate::model::DataQualityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.data_quality_app_specification(signature);
+            self.inner = self.inner.data_quality_app_specification(input);
             self
         }
         /// <p>Specifies the container that runs the monitoring job.</p>
@@ -4089,11 +4080,8 @@ pub mod fluent_builders {
         }
         /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
         /// inputs.</p>
-        pub fn data_quality_job_input(
-            mut self,
-            signature: crate::model::DataQualityJobInput,
-        ) -> Self {
-            self.inner = self.inner.data_quality_job_input(signature);
+        pub fn data_quality_job_input(mut self, input: crate::model::DataQualityJobInput) -> Self {
+            self.inner = self.inner.data_quality_job_input(input);
             self
         }
         /// <p>A list of inputs for the monitoring job. Currently endpoints are supported as monitoring
@@ -4108,9 +4096,9 @@ pub mod fluent_builders {
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn data_quality_job_output_config(
             mut self,
-            signature: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.data_quality_job_output_config(signature);
+            self.inner = self.inner.data_quality_job_output_config(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
@@ -4122,8 +4110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, signature: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(signature);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -4135,8 +4123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies networking configuration for the monitoring job.</p>
-        pub fn network_config(mut self, signature: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(signature);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         /// <p>Specifies networking configuration for the monitoring job.</p>
@@ -4149,8 +4137,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
@@ -4162,9 +4150,9 @@ pub mod fluent_builders {
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            signature: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
@@ -4255,8 +4243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet that the device belongs to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet that the device belongs to.</p>
@@ -4268,8 +4256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).</p>
@@ -4278,8 +4266,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the fleet.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the fleet.</p>
@@ -4288,8 +4276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The output configuration for storing sample data collected by the fleet.</p>
-        pub fn output_config(mut self, signature: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>The output configuration for storing sample data collected by the fleet.</p>
@@ -4322,8 +4310,8 @@ pub mod fluent_builders {
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
         /// the role alias will be "SageMakerEdge-demo-fleet".</p>
-        pub fn enable_iot_role_alias(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iot_role_alias(signature);
+        pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
         /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
@@ -4442,8 +4430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the domain.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A name for the domain.</p>
@@ -4452,8 +4440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mode of authentication that members use to access the domain.</p>
-        pub fn auth_mode(mut self, signature: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.auth_mode(signature);
+        pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.auth_mode(input);
             self
         }
         /// <p>The mode of authentication that members use to access the domain.</p>
@@ -4467,8 +4455,8 @@ pub mod fluent_builders {
         /// <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
         /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
         /// take precedence over those specified in <code>CreateDomain</code>.</p>
-        pub fn default_user_settings(mut self, signature: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.default_user_settings(signature);
+        pub fn default_user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.default_user_settings(input);
             self
         }
         /// <p>The default settings to use to create a user profile when <code>UserSettings</code> isn't specified
@@ -4502,8 +4490,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
@@ -4551,9 +4539,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn app_network_access_type(
             mut self,
-            signature: crate::model::AppNetworkAccessType,
+            input: crate::model::AppNetworkAccessType,
         ) -> Self {
-            self.inner = self.inner.app_network_access_type(signature);
+            self.inner = self.inner.app_network_access_type(input);
             self
         }
         /// <p>Specifies the VPC used for non-EFS traffic. The default value is
@@ -4579,9 +4567,9 @@ pub mod fluent_builders {
         /// <p>This member is deprecated and replaced with <code>KmsKeyId</code>.</p>
         pub fn home_efs_file_system_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.home_efs_file_system_kms_key_id(signature.into());
+            self.inner = self.inner.home_efs_file_system_kms_key_id(input.into());
             self
         }
         /// <p>This member is deprecated and replaced with <code>KmsKeyId</code>.</p>
@@ -4594,8 +4582,8 @@ pub mod fluent_builders {
         }
         /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
         /// key by default. For more control, specify a customer managed key.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain with an Amazon Web Services managed
@@ -4611,9 +4599,9 @@ pub mod fluent_builders {
         /// provided.</p>
         pub fn app_security_group_management(
             mut self,
-            signature: crate::model::AppSecurityGroupManagement,
+            input: crate::model::AppSecurityGroupManagement,
         ) -> Self {
-            self.inner = self.inner.app_security_group_management(signature);
+            self.inner = self.inner.app_security_group_management(input);
             self
         }
         /// <p>The entity that creates and manages the required security groups for inter-app
@@ -4629,8 +4617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A collection of <code>Domain</code> settings.</p>
-        pub fn domain_settings(mut self, signature: crate::model::DomainSettings) -> Self {
-            self.inner = self.inner.domain_settings(signature);
+        pub fn domain_settings(mut self, input: crate::model::DomainSettings) -> Self {
+            self.inner = self.inner.domain_settings(input);
             self
         }
         /// <p>A collection of <code>Domain</code> settings.</p>
@@ -4702,11 +4690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(signature.into());
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input.into());
             self
         }
         /// <p>The name of the edge packaging job.</p>
@@ -4718,8 +4703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-        pub fn compilation_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(signature.into());
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input.into());
             self
         }
         /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
@@ -4731,8 +4716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the model.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the model.</p>
@@ -4741,8 +4726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the model.</p>
-        pub fn model_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_version(signature.into());
+        pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_version(input.into());
             self
         }
         /// <p>The version of the model.</p>
@@ -4754,8 +4739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
@@ -4764,8 +4749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides information about the output location for the packaged model.</p>
-        pub fn output_config(mut self, signature: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Provides information about the output location for the packaged model.</p>
@@ -4777,8 +4762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
-        pub fn resource_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_key(signature.into());
+        pub fn resource_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_key(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
@@ -4942,8 +4927,8 @@ pub mod fluent_builders {
         /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
         /// account. The name is case-insensitive in <code>CreateEndpoint</code>, but the case is
         /// preserved and must be matched in .</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the endpoint.The name must be unique within an Amazon Web Services Region in your Amazon Web Services
@@ -4957,8 +4942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
-        pub fn endpoint_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(signature.into());
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
         /// <p>The name of an endpoint configuration. For more information, see <a>CreateEndpointConfig</a>. </p>
@@ -4971,8 +4956,8 @@ pub mod fluent_builders {
         }
         /// <p>The deployment configuration for an endpoint, which contains the desired deployment
         /// strategy and rollback configurations.</p>
-        pub fn deployment_config(mut self, signature: crate::model::DeploymentConfig) -> Self {
-            self.inner = self.inner.deployment_config(signature);
+        pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(input);
             self
         }
         /// <p>The deployment configuration for an endpoint, which contains the desired deployment
@@ -5096,8 +5081,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
-        pub fn endpoint_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(signature.into());
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
         /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
@@ -5128,8 +5113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn data_capture_config(mut self, signature: crate::model::DataCaptureConfig) -> Self {
-            self.inner = self.inner.data_capture_config(signature);
+        pub fn data_capture_config(mut self, input: crate::model::DataCaptureConfig) -> Self {
+            self.inner = self.inner.data_capture_config(input);
             self
         }
         /// <p></p>
@@ -5204,8 +5189,8 @@ pub mod fluent_builders {
         /// <p>For more information about local instance storage encryption, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
         /// Instance Store Volumes</a>.</p>
         /// </note>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
@@ -5258,11 +5243,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
         /// <code>InvokeEndpointAsync</code>
         /// </a>.</p>
-        pub fn async_inference_config(
-            mut self,
-            signature: crate::model::AsyncInferenceConfig,
-        ) -> Self {
-            self.inner = self.inner.async_inference_config(signature);
+        pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
+            self.inner = self.inner.async_inference_config(input);
             self
         }
         /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
@@ -5355,8 +5337,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>The name of the experiment. The name must be unique in your Amazon Web Services account and is not
@@ -5371,8 +5353,8 @@ pub mod fluent_builders {
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
         /// specify <code>DisplayName</code>, the value in <code>ExperimentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If you don't
@@ -5383,8 +5365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the experiment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the experiment.</p>
@@ -5494,8 +5476,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(signature.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input.into());
             self
         }
         /// <p>The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon Web Services Region
@@ -5535,9 +5517,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn record_identifier_feature_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.record_identifier_feature_name(signature.into());
+            self.inner = self.inner.record_identifier_feature_name(input.into());
             self
         }
         /// <p>The name of the <code>Feature</code> whose value uniquely identifies a
@@ -5588,11 +5570,8 @@ pub mod fluent_builders {
         /// milliseconds respsectively. <code>'T'</code> and <code>Z</code> are constants.</p>
         /// </li>
         /// </ul>
-        pub fn event_time_feature_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.event_time_feature_name(signature.into());
+        pub fn event_time_feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.event_time_feature_name(input.into());
             self
         }
         /// <p>The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
@@ -5666,8 +5645,8 @@ pub mod fluent_builders {
         /// value is <code>False</code>.</p>
         /// <p>You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of
         /// the <code>OnlineStore</code>.</p>
-        pub fn online_store_config(mut self, signature: crate::model::OnlineStoreConfig) -> Self {
-            self.inner = self.inner.online_store_config(signature);
+        pub fn online_store_config(mut self, input: crate::model::OnlineStoreConfig) -> Self {
+            self.inner = self.inner.online_store_config(input);
             self
         }
         /// <p>You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code> for
@@ -5700,8 +5679,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>To learn more about this parameter, see <a>OfflineStoreConfig</a>.</p>
-        pub fn offline_store_config(mut self, signature: crate::model::OfflineStoreConfig) -> Self {
-            self.inner = self.inner.offline_store_config(signature);
+        pub fn offline_store_config(mut self, input: crate::model::OfflineStoreConfig) -> Self {
+            self.inner = self.inner.offline_store_config(input);
             self
         }
         /// <p>Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you to
@@ -5731,8 +5710,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
         /// <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
@@ -5742,8 +5721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A free-form description of a <code>FeatureGroup</code>.</p>
@@ -5829,8 +5808,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of your flow definition.</p>
-        pub fn flow_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(signature.into());
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input.into());
             self
         }
         /// <p>The name of your flow definition.</p>
@@ -5845,9 +5824,9 @@ pub mod fluent_builders {
         /// Amazon Rekognition or Amazon Textract is used as an integration source.</p>
         pub fn human_loop_request_source(
             mut self,
-            signature: crate::model::HumanLoopRequestSource,
+            input: crate::model::HumanLoopRequestSource,
         ) -> Self {
-            self.inner = self.inner.human_loop_request_source(signature);
+            self.inner = self.inner.human_loop_request_source(input);
             self
         }
         /// <p>Container for configuring the source of human task requests. Use to specify if
@@ -5862,9 +5841,9 @@ pub mod fluent_builders {
         /// <p>An object containing information about the events that trigger a human workflow.</p>
         pub fn human_loop_activation_config(
             mut self,
-            signature: crate::model::HumanLoopActivationConfig,
+            input: crate::model::HumanLoopActivationConfig,
         ) -> Self {
-            self.inner = self.inner.human_loop_activation_config(signature);
+            self.inner = self.inner.human_loop_activation_config(input);
             self
         }
         /// <p>An object containing information about the events that trigger a human workflow.</p>
@@ -5876,8 +5855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-        pub fn human_loop_config(mut self, signature: crate::model::HumanLoopConfig) -> Self {
-            self.inner = self.inner.human_loop_config(signature);
+        pub fn human_loop_config(mut self, input: crate::model::HumanLoopConfig) -> Self {
+            self.inner = self.inner.human_loop_config(input);
             self
         }
         /// <p>An object containing information about the tasks the human reviewers will perform.</p>
@@ -5889,11 +5868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object containing information about where the human review results will be uploaded.</p>
-        pub fn output_config(
-            mut self,
-            signature: crate::model::FlowDefinitionOutputConfig,
-        ) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::FlowDefinitionOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>An object containing information about where the human review results will be uploaded.</p>
@@ -5905,8 +5881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
@@ -5992,8 +5968,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user interface you are creating.</p>
-        pub fn human_task_ui_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(signature.into());
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input.into());
             self
         }
         /// <p>The name of the user interface you are creating.</p>
@@ -6005,8 +5981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Liquid template for the worker user interface.</p>
-        pub fn ui_template(mut self, signature: crate::model::UiTemplate) -> Self {
-            self.inner = self.inner.ui_template(signature);
+        pub fn ui_template(mut self, input: crate::model::UiTemplate) -> Self {
+            self.inner = self.inner.ui_template(input);
             self
         }
         /// <p>The Liquid template for the worker user interface.</p>
@@ -6104,9 +6080,9 @@ pub mod fluent_builders {
         /// and : + = @ _ % - (hyphen). The name is not case sensitive.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(signature.into());
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
             self
         }
         /// <p>The name of the tuning job. This name is the prefix for the names of all training jobs
@@ -6127,9 +6103,9 @@ pub mod fluent_builders {
         /// Hyperparameter Tuning Works</a>.</p>
         pub fn hyper_parameter_tuning_job_config(
             mut self,
-            signature: crate::model::HyperParameterTuningJobConfig,
+            input: crate::model::HyperParameterTuningJobConfig,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_config(signature);
+            self.inner = self.inner.hyper_parameter_tuning_job_config(input);
             self
         }
         /// <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
@@ -6151,9 +6127,9 @@ pub mod fluent_builders {
         /// configuration, and stopping condition.</p>
         pub fn training_job_definition(
             mut self,
-            signature: crate::model::HyperParameterTrainingJobDefinition,
+            input: crate::model::HyperParameterTrainingJobDefinition,
         ) -> Self {
-            self.inner = self.inner.training_job_definition(signature);
+            self.inner = self.inner.training_job_definition(input);
             self
         }
         /// <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
@@ -6209,9 +6185,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn warm_start_config(
             mut self,
-            signature: crate::model::HyperParameterTuningJobWarmStartConfig,
+            input: crate::model::HyperParameterTuningJobWarmStartConfig,
         ) -> Self {
-            self.inner = self.inner.warm_start_config(signature);
+            self.inner = self.inner.warm_start_config(input);
             self
         }
         /// <p>Specifies the configuration for starting the hyperparameter tuning job using one or
@@ -6326,8 +6302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The description of the image.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the image.</p>
@@ -6336,8 +6312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The display name of the image. If not provided, <code>ImageName</code> is displayed.</p>
@@ -6346,8 +6322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image. Must be unique to your account.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image. Must be unique to your account.</p>
@@ -6356,8 +6332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
@@ -6448,8 +6424,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code><acct-id>.dkr.ecr.<region>.amazonaws.com/<repo-name[:tag] or [@digest]></code>
         /// </p>
-        pub fn base_image(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.base_image(signature.into());
+        pub fn base_image(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.base_image(input.into());
             self
         }
         /// <p>The registry path of the container image to use as the starting point for this
@@ -6463,8 +6439,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
         /// (Boto3), add a unique value to the call.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique ID. If not specified, the Amazon Web Services CLI and Amazon Web Services SDKs, such as the SDK for Python
@@ -6474,8 +6450,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The <code>ImageName</code> of the <code>Image</code> to create a version of.</p>
@@ -6546,8 +6522,8 @@ pub mod fluent_builders {
         }
         /// <p>A name for the recommendation job. The name must be unique within
         /// the Amazon Web Services Region and within your Amazon Web Services account.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>A name for the recommendation job. The name must be unique within
@@ -6559,8 +6535,8 @@ pub mod fluent_builders {
         /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
         /// recommendation and <code>Advanced</code> to initiate a load test. If left unspecified,
         /// Amazon SageMaker Inference Recommender will run an instance recommendation (<code>DEFAULT</code>) job.</p>
-        pub fn job_type(mut self, signature: crate::model::RecommendationJobType) -> Self {
-            self.inner = self.inner.job_type(signature);
+        pub fn job_type(mut self, input: crate::model::RecommendationJobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
         /// <p>Defines the type of recommendation job. Specify <code>Default</code> to initiate an instance
@@ -6575,8 +6551,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
         /// to perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker
@@ -6587,11 +6563,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
         /// the traffic pattern, and endpoint configurations.</p>
-        pub fn input_config(
-            mut self,
-            signature: crate::model::RecommendationJobInputConfig,
-        ) -> Self {
-            self.inner = self.inner.input_config(signature);
+        pub fn input_config(mut self, input: crate::model::RecommendationJobInputConfig) -> Self {
+            self.inner = self.inner.input_config(input);
             self
         }
         /// <p>Provides information about the versioned model package Amazon Resource Name (ARN),
@@ -6604,8 +6577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the recommendation job.</p>
-        pub fn job_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_description(signature.into());
+        pub fn job_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_description(input.into());
             self
         }
         /// <p>Description of the recommendation job.</p>
@@ -6620,9 +6593,9 @@ pub mod fluent_builders {
         /// the conditions are met, the job is automatically stopped.</p>
         pub fn stopping_conditions(
             mut self,
-            signature: crate::model::RecommendationJobStoppingConditions,
+            input: crate::model::RecommendationJobStoppingConditions,
         ) -> Self {
-            self.inner = self.inner.stopping_conditions(signature);
+            self.inner = self.inner.stopping_conditions(input);
             self
         }
         /// <p>A set of conditions for stopping a recommendation job.  If any of
@@ -6760,8 +6733,8 @@ pub mod fluent_builders {
         /// labeling jobs. Labeling job names must be unique within an Amazon Web Services account and region.
         /// <code>LabelingJobName</code> is not case sensitive. For example, Example-job and
         /// example-job are considered the same labeling job name by Ground Truth.</p>
-        pub fn labeling_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(signature.into());
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input.into());
             self
         }
         /// <p>The name of the labeling job. This name is used to identify the job in a list of
@@ -6830,8 +6803,8 @@ pub mod fluent_builders {
         /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify and Adjust
         /// Labels</a>.</p>
         /// </important>
-        pub fn label_attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label_attribute_name(signature.into());
+        pub fn label_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label_attribute_name(input.into());
             self
         }
         /// <p>The attribute name to use for the label in the output manifest file. This is the key
@@ -6918,8 +6891,8 @@ pub mod fluent_builders {
         /// confidential information, personal information or protected health information. Use
         /// <code>ContentClassifiers</code> to specify that your data is free of personally
         /// identifiable information and adult content.</p>
-        pub fn input_config(mut self, signature: crate::model::LabelingJobInputConfig) -> Self {
-            self.inner = self.inner.input_config(signature);
+        pub fn input_config(mut self, input: crate::model::LabelingJobInputConfig) -> Self {
+            self.inner = self.inner.input_config(input);
             self
         }
         /// <p>Input data for the labeling job, such as the Amazon S3 location of the data objects and the
@@ -6953,8 +6926,8 @@ pub mod fluent_builders {
         }
         /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
         /// the output data, if any.</p>
-        pub fn output_config(mut self, signature: crate::model::LabelingJobOutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::LabelingJobOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>The location of the output data and the Amazon Web Services Key Management Service key ID for the key used to encrypt
@@ -6969,8 +6942,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
         /// during data labeling. You must grant this role the necessary permissions so that Amazon SageMaker
         /// can successfully complete data labeling.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf
@@ -7032,9 +7005,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn label_category_config_s3_uri(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.label_category_config_s3_uri(signature.into());
+            self.inner = self.inner.label_category_config_s3_uri(input.into());
             self
         }
         /// <p>The S3 URI of the file, referred to as a <i>label category configuration
@@ -7099,9 +7072,9 @@ pub mod fluent_builders {
         /// data labeling.</p>
         pub fn stopping_conditions(
             mut self,
-            signature: crate::model::LabelingJobStoppingConditions,
+            input: crate::model::LabelingJobStoppingConditions,
         ) -> Self {
-            self.inner = self.inner.stopping_conditions(signature);
+            self.inner = self.inner.stopping_conditions(input);
             self
         }
         /// <p>A set of conditions for stopping the labeling job. If any of the conditions are met,
@@ -7117,9 +7090,9 @@ pub mod fluent_builders {
         /// <p>Configures the information required to perform automated data labeling.</p>
         pub fn labeling_job_algorithms_config(
             mut self,
-            signature: crate::model::LabelingJobAlgorithmsConfig,
+            input: crate::model::LabelingJobAlgorithmsConfig,
         ) -> Self {
-            self.inner = self.inner.labeling_job_algorithms_config(signature);
+            self.inner = self.inner.labeling_job_algorithms_config(input);
             self
         }
         /// <p>Configures the information required to perform automated data labeling.</p>
@@ -7131,8 +7104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
-        pub fn human_task_config(mut self, signature: crate::model::HumanTaskConfig) -> Self {
-            self.inner = self.inner.human_task_config(signature);
+        pub fn human_task_config(mut self, input: crate::model::HumanTaskConfig) -> Self {
+            self.inner = self.inner.human_task_config(input);
             self
         }
         /// <p>Configures the labeling task and how it is presented to workers; including, but not limited to price, keywords, and batch size (task count).</p>
@@ -7247,8 +7220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new model.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the new model.</p>
@@ -7259,8 +7232,8 @@ pub mod fluent_builders {
         /// <p>The location of the primary docker image containing inference code, associated
         /// artifacts, and custom environment map that the inference code uses when the model is
         /// deployed for predictions. </p>
-        pub fn primary_container(mut self, signature: crate::model::ContainerDefinition) -> Self {
-            self.inner = self.inner.primary_container(signature);
+        pub fn primary_container(mut self, input: crate::model::ContainerDefinition) -> Self {
+            self.inner = self.inner.primary_container(input);
             self
         }
         /// <p>The location of the primary docker image containing inference code, associated
@@ -7293,9 +7266,9 @@ pub mod fluent_builders {
         /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
         pub fn inference_execution_config(
             mut self,
-            signature: crate::model::InferenceExecutionConfig,
+            input: crate::model::InferenceExecutionConfig,
         ) -> Self {
-            self.inner = self.inner.inference_execution_config(signature);
+            self.inner = self.inner.inference_execution_config(input);
             self
         }
         /// <p>Specifies details of how containers in a multi-container endpoint are called.</p>
@@ -7315,8 +7288,8 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn execution_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.execution_role_arn(signature.into());
+        pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.execution_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model
@@ -7363,8 +7336,8 @@ pub mod fluent_builders {
         /// <code>VpcConfig</code> is used in hosting services and in batch transform. For more
         /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect Endpoints by Using an Amazon Virtual Private Cloud</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect Data in Batch
         /// Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your model
@@ -7381,8 +7354,8 @@ pub mod fluent_builders {
         }
         /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
         /// from the model container.</p>
-        pub fn enable_network_isolation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_network_isolation(signature);
+        pub fn enable_network_isolation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_network_isolation(input);
             self
         }
         /// <p>Isolates the model container. No inbound or outbound network calls can be made to or
@@ -7453,8 +7426,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
         /// Amazon Web Services account.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the bias job definition. The name must be unique within an Amazon Web Services Region in the
@@ -7469,9 +7442,9 @@ pub mod fluent_builders {
         /// <p>The baseline configuration for a model bias job.</p>
         pub fn model_bias_baseline_config(
             mut self,
-            signature: crate::model::ModelBiasBaselineConfig,
+            input: crate::model::ModelBiasBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_bias_baseline_config(signature);
+            self.inner = self.inner.model_bias_baseline_config(input);
             self
         }
         /// <p>The baseline configuration for a model bias job.</p>
@@ -7485,9 +7458,9 @@ pub mod fluent_builders {
         /// <p>Configures the model bias job to run a specified Docker container image.</p>
         pub fn model_bias_app_specification(
             mut self,
-            signature: crate::model::ModelBiasAppSpecification,
+            input: crate::model::ModelBiasAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_bias_app_specification(signature);
+            self.inner = self.inner.model_bias_app_specification(input);
             self
         }
         /// <p>Configures the model bias job to run a specified Docker container image.</p>
@@ -7499,8 +7472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Inputs for the model bias job.</p>
-        pub fn model_bias_job_input(mut self, signature: crate::model::ModelBiasJobInput) -> Self {
-            self.inner = self.inner.model_bias_job_input(signature);
+        pub fn model_bias_job_input(mut self, input: crate::model::ModelBiasJobInput) -> Self {
+            self.inner = self.inner.model_bias_job_input(input);
             self
         }
         /// <p>Inputs for the model bias job.</p>
@@ -7514,9 +7487,9 @@ pub mod fluent_builders {
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_bias_job_output_config(
             mut self,
-            signature: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_bias_job_output_config(signature);
+            self.inner = self.inner.model_bias_job_output_config(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
@@ -7528,8 +7501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, signature: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(signature);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -7541,8 +7514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Networking options for a model bias job.</p>
-        pub fn network_config(mut self, signature: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(signature);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         /// <p>Networking options for a model bias job.</p>
@@ -7555,8 +7528,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
@@ -7568,9 +7541,9 @@ pub mod fluent_builders {
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            signature: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
@@ -7664,8 +7637,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the model explainability job definition. The name must be unique within an
         /// Amazon Web Services Region in the Amazon Web Services account.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p> The name of the model explainability job definition. The name must be unique within an
@@ -7680,9 +7653,9 @@ pub mod fluent_builders {
         /// <p>The baseline configuration for a model explainability job.</p>
         pub fn model_explainability_baseline_config(
             mut self,
-            signature: crate::model::ModelExplainabilityBaselineConfig,
+            input: crate::model::ModelExplainabilityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_explainability_baseline_config(signature);
+            self.inner = self.inner.model_explainability_baseline_config(input);
             self
         }
         /// <p>The baseline configuration for a model explainability job.</p>
@@ -7697,9 +7670,9 @@ pub mod fluent_builders {
         /// image.</p>
         pub fn model_explainability_app_specification(
             mut self,
-            signature: crate::model::ModelExplainabilityAppSpecification,
+            input: crate::model::ModelExplainabilityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_explainability_app_specification(signature);
+            self.inner = self.inner.model_explainability_app_specification(input);
             self
         }
         /// <p>Configures the model explainability job to run a specified Docker container
@@ -7714,9 +7687,9 @@ pub mod fluent_builders {
         /// <p>Inputs for the model explainability job.</p>
         pub fn model_explainability_job_input(
             mut self,
-            signature: crate::model::ModelExplainabilityJobInput,
+            input: crate::model::ModelExplainabilityJobInput,
         ) -> Self {
-            self.inner = self.inner.model_explainability_job_input(signature);
+            self.inner = self.inner.model_explainability_job_input(input);
             self
         }
         /// <p>Inputs for the model explainability job.</p>
@@ -7730,9 +7703,9 @@ pub mod fluent_builders {
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_explainability_job_output_config(
             mut self,
-            signature: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_explainability_job_output_config(signature);
+            self.inner = self.inner.model_explainability_job_output_config(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
@@ -7744,8 +7717,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, signature: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(signature);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -7757,8 +7730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Networking options for a model explainability job.</p>
-        pub fn network_config(mut self, signature: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(signature);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         /// <p>Networking options for a model explainability job.</p>
@@ -7771,8 +7744,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
@@ -7784,9 +7757,9 @@ pub mod fluent_builders {
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            signature: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
@@ -7899,8 +7872,8 @@ pub mod fluent_builders {
         /// are a-z, A-Z, 0-9, and - (hyphen).</p>
         /// <p>This parameter is required for unversioned models. It is not applicable to versioned
         /// models.</p>
-        pub fn model_package_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(signature.into());
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input.into());
             self
         }
         /// <p>The name of the model package. The name must have 1 to 63 characters. Valid characters
@@ -7917,11 +7890,8 @@ pub mod fluent_builders {
         /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
         /// <p>This parameter is required for versioned models, and does not apply to unversioned
         /// models.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.</p>
@@ -7935,11 +7905,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the model package.</p>
-        pub fn model_package_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_description(signature.into());
+        pub fn model_package_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_description(input.into());
             self
         }
         /// <p>A description of the model package.</p>
@@ -7968,9 +7935,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn inference_specification(
             mut self,
-            signature: crate::model::InferenceSpecification,
+            input: crate::model::InferenceSpecification,
         ) -> Self {
-            self.inner = self.inner.inference_specification(signature);
+            self.inner = self.inner.inference_specification(input);
             self
         }
         /// <p>Specifies details about inference jobs that can be run with models based on this model
@@ -8000,9 +7967,9 @@ pub mod fluent_builders {
         /// model package.</p>
         pub fn validation_specification(
             mut self,
-            signature: crate::model::ModelPackageValidationSpecification,
+            input: crate::model::ModelPackageValidationSpecification,
         ) -> Self {
-            self.inner = self.inner.validation_specification(signature);
+            self.inner = self.inner.validation_specification(input);
             self
         }
         /// <p>Specifies configurations for one or more transform jobs that Amazon SageMaker runs to test the
@@ -8017,9 +7984,9 @@ pub mod fluent_builders {
         /// <p>Details about the algorithm that was used to create the model package.</p>
         pub fn source_algorithm_specification(
             mut self,
-            signature: crate::model::SourceAlgorithmSpecification,
+            input: crate::model::SourceAlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.source_algorithm_specification(signature);
+            self.inner = self.inner.source_algorithm_specification(input);
             self
         }
         /// <p>Details about the algorithm that was used to create the model package.</p>
@@ -8033,8 +8000,8 @@ pub mod fluent_builders {
         /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
         /// <p>This parameter is optional for unversioned models, and does not apply to versioned
         /// models.</p>
-        pub fn certify_for_marketplace(mut self, signature: bool) -> Self {
-            self.inner = self.inner.certify_for_marketplace(signature);
+        pub fn certify_for_marketplace(mut self, input: bool) -> Self {
+            self.inner = self.inner.certify_for_marketplace(input);
             self
         }
         /// <p>Whether to certify the model package for listing on Amazon Web Services Marketplace.</p>
@@ -8068,11 +8035,8 @@ pub mod fluent_builders {
         /// models.</p>
         /// <p>For versioned models, the value of this parameter must be set to <code>Approved</code>
         /// to deploy the model.</p>
-        pub fn model_approval_status(
-            mut self,
-            signature: crate::model::ModelApprovalStatus,
-        ) -> Self {
-            self.inner = self.inner.model_approval_status(signature);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         /// <p>Whether the model is approved for deployment.</p>
@@ -8088,8 +8052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, signature: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(signature);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -8101,8 +8065,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that contains model metrics reports.</p>
-        pub fn model_metrics(mut self, signature: crate::model::ModelMetrics) -> Self {
-            self.inner = self.inner.model_metrics(signature);
+        pub fn model_metrics(mut self, input: crate::model::ModelMetrics) -> Self {
+            self.inner = self.inner.model_metrics(input);
             self
         }
         /// <p>A structure that contains model metrics reports.</p>
@@ -8114,8 +8078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
@@ -8149,11 +8113,8 @@ pub mod fluent_builders {
         /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
         /// For more information, see the topic on <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon SageMaker Developer Guide</i>.
         /// </p>
-        pub fn drift_check_baselines(
-            mut self,
-            signature: crate::model::DriftCheckBaselines,
-        ) -> Self {
-            self.inner = self.inner.drift_check_baselines(signature);
+        pub fn drift_check_baselines(mut self, input: crate::model::DriftCheckBaselines) -> Self {
+            self.inner = self.inner.drift_check_baselines(input);
             self
         }
         /// <p>Represents the drift check baselines that can be used when the model monitor is set using the model package.
@@ -8168,8 +8129,8 @@ pub mod fluent_builders {
         }
         /// <p>The machine learning domain of your model package and its components. Common
         /// machine learning domains include computer vision and natural language processing.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The machine learning domain of your model package and its components. Common
@@ -8180,8 +8141,8 @@ pub mod fluent_builders {
         }
         /// <p>The machine learning task your model package accomplishes. Common machine
         /// learning tasks include object detection and image classification.</p>
-        pub fn task(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task(signature.into());
+        pub fn task(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task(input.into());
             self
         }
         /// <p>The machine learning task your model package accomplishes. Common machine
@@ -8192,8 +8153,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
         /// to a single gzip compressed tar archive (.tar.gz suffix).</p>
-        pub fn sample_payload_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sample_payload_url(signature.into());
+        pub fn sample_payload_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sample_payload_url(input.into());
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored. This path must point
@@ -8294,11 +8255,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group.</p>
@@ -8312,9 +8270,9 @@ pub mod fluent_builders {
         /// <p>A description for the model group.</p>
         pub fn model_package_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.model_package_group_description(signature.into());
+            self.inner = self.inner.model_package_group_description(input.into());
             self
         }
         /// <p>A description for the model group.</p>
@@ -8408,8 +8366,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the monitoring job definition.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the monitoring job definition.</p>
@@ -8423,9 +8381,9 @@ pub mod fluent_builders {
         /// <p>Specifies the constraints and baselines for the monitoring job.</p>
         pub fn model_quality_baseline_config(
             mut self,
-            signature: crate::model::ModelQualityBaselineConfig,
+            input: crate::model::ModelQualityBaselineConfig,
         ) -> Self {
-            self.inner = self.inner.model_quality_baseline_config(signature);
+            self.inner = self.inner.model_quality_baseline_config(input);
             self
         }
         /// <p>Specifies the constraints and baselines for the monitoring job.</p>
@@ -8439,9 +8397,9 @@ pub mod fluent_builders {
         /// <p>The container that runs the monitoring job.</p>
         pub fn model_quality_app_specification(
             mut self,
-            signature: crate::model::ModelQualityAppSpecification,
+            input: crate::model::ModelQualityAppSpecification,
         ) -> Self {
-            self.inner = self.inner.model_quality_app_specification(signature);
+            self.inner = self.inner.model_quality_app_specification(input);
             self
         }
         /// <p>The container that runs the monitoring job.</p>
@@ -8455,9 +8413,9 @@ pub mod fluent_builders {
         /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
         pub fn model_quality_job_input(
             mut self,
-            signature: crate::model::ModelQualityJobInput,
+            input: crate::model::ModelQualityJobInput,
         ) -> Self {
-            self.inner = self.inner.model_quality_job_input(signature);
+            self.inner = self.inner.model_quality_job_input(input);
             self
         }
         /// <p>A list of the inputs that are monitored. Currently endpoints are supported.</p>
@@ -8471,9 +8429,9 @@ pub mod fluent_builders {
         /// <p>The output configuration for monitoring jobs.</p>
         pub fn model_quality_job_output_config(
             mut self,
-            signature: crate::model::MonitoringOutputConfig,
+            input: crate::model::MonitoringOutputConfig,
         ) -> Self {
-            self.inner = self.inner.model_quality_job_output_config(signature);
+            self.inner = self.inner.model_quality_job_output_config(input);
             self
         }
         /// <p>The output configuration for monitoring jobs.</p>
@@ -8485,8 +8443,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
-        pub fn job_resources(mut self, signature: crate::model::MonitoringResources) -> Self {
-            self.inner = self.inner.job_resources(signature);
+        pub fn job_resources(mut self, input: crate::model::MonitoringResources) -> Self {
+            self.inner = self.inner.job_resources(input);
             self
         }
         /// <p>Identifies the resources to deploy for a monitoring job.</p>
@@ -8498,8 +8456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the network configuration for the monitoring job.</p>
-        pub fn network_config(mut self, signature: crate::model::MonitoringNetworkConfig) -> Self {
-            self.inner = self.inner.network_config(signature);
+        pub fn network_config(mut self, input: crate::model::MonitoringNetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         /// <p>Specifies the network configuration for the monitoring job.</p>
@@ -8512,8 +8470,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
         /// perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
@@ -8525,9 +8483,9 @@ pub mod fluent_builders {
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
         pub fn stopping_condition(
             mut self,
-            signature: crate::model::MonitoringStoppingCondition,
+            input: crate::model::MonitoringStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>A time limit for how long the monitoring job is allowed to run before stopping.</p>
@@ -8620,11 +8578,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
         /// an Amazon Web Services account.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
@@ -8640,9 +8595,9 @@ pub mod fluent_builders {
         /// monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
-            signature: crate::model::MonitoringScheduleConfig,
+            input: crate::model::MonitoringScheduleConfig,
         ) -> Self {
-            self.inner = self.inner.monitoring_schedule_config(signature);
+            self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
         /// <p>The configuration object that specifies the monitoring schedule and defines the
@@ -8770,8 +8725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new notebook instance.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the new notebook instance.</p>
@@ -8783,8 +8738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of ML compute instance to launch for the notebook instance.</p>
-        pub fn instance_type(mut self, signature: crate::model::InstanceType) -> Self {
-            self.inner = self.inner.instance_type(signature);
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.inner = self.inner.instance_type(input);
             self
         }
         /// <p>The type of ML compute instance to launch for the notebook instance.</p>
@@ -8797,8 +8752,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
         /// your ML compute instance. </p>
-        pub fn subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_id(signature.into());
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_id(input.into());
             self
         }
         /// <p>The ID of the subnet in a VPC to which you would like to have a connectivity from
@@ -8835,8 +8790,8 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p> When you send any requests to Amazon Web Services resources from the notebook instance, Amazon SageMaker
@@ -8856,8 +8811,8 @@ pub mod fluent_builders {
         /// the storage volume attached to your notebook instance. The KMS key you provide must be
         /// enabled. For information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling and Disabling
         /// Keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that Amazon SageMaker uses to encrypt data on
@@ -8894,8 +8849,8 @@ pub mod fluent_builders {
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
         /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
         /// Customize a Notebook Instance</a>.</p>
-        pub fn lifecycle_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_config_name(signature.into());
+        pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
@@ -8915,11 +8870,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook Instances Are Internet-Enabled by Default</a>. You can set the value
         /// of this parameter to <code>Disabled</code> only if you set a value for the
         /// <code>SubnetId</code> parameter.</p>
-        pub fn direct_internet_access(
-            mut self,
-            signature: crate::model::DirectInternetAccess,
-        ) -> Self {
-            self.inner = self.inner.direct_internet_access(signature);
+        pub fn direct_internet_access(mut self, input: crate::model::DirectInternetAccess) -> Self {
+            self.inner = self.inner.direct_internet_access(input);
             self
         }
         /// <p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this
@@ -8938,8 +8890,8 @@ pub mod fluent_builders {
         }
         /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
         /// default value is 5 GB.</p>
-        pub fn volume_size_in_gb(mut self, signature: i32) -> Self {
-            self.inner = self.inner.volume_size_in_gb(signature);
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.inner = self.inner.volume_size_in_gb(input);
             self
         }
         /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
@@ -8980,11 +8932,8 @@ pub mod fluent_builders {
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
-        pub fn default_code_repository(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_code_repository(signature.into());
+        pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_code_repository(input.into());
             self
         }
         /// <p>A Git repository to associate with the notebook instance as its default code
@@ -9038,8 +8987,8 @@ pub mod fluent_builders {
         /// instance always run with root access even if you disable root access for
         /// users.</p>
         /// </note>
-        pub fn root_access(mut self, signature: crate::model::RootAccess) -> Self {
-            self.inner = self.inner.root_access(signature);
+        pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
+            self.inner = self.inner.root_access(input);
             self
         }
         /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
@@ -9058,8 +9007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The platform identifier of the notebook instance runtime environment.</p>
-        pub fn platform_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_identifier(signature.into());
+        pub fn platform_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_identifier(input.into());
             self
         }
         /// <p>The platform identifier of the notebook instance runtime environment.</p>
@@ -9148,11 +9097,11 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name(signature.into());
+                .notebook_instance_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the lifecycle configuration.</p>
@@ -9264,8 +9213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline.</p>
@@ -9277,8 +9226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the pipeline.</p>
-        pub fn pipeline_display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_display_name(signature.into());
+        pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_display_name(input.into());
             self
         }
         /// <p>The display name of the pipeline.</p>
@@ -9290,8 +9239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON pipeline definition of the pipeline.</p>
-        pub fn pipeline_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_definition(signature.into());
+        pub fn pipeline_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_definition(input.into());
             self
         }
         /// <p>The JSON pipeline definition of the pipeline.</p>
@@ -9303,8 +9252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the pipeline.</p>
-        pub fn pipeline_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_description(signature.into());
+        pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_description(input.into());
             self
         }
         /// <p>A description of the pipeline.</p>
@@ -9317,8 +9266,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -9331,8 +9280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role used by the pipeline to access and create resources.</p>
@@ -9434,8 +9383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -9444,8 +9393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the UserProfile to sign-in as.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The name of the UserProfile to sign-in as.</p>
@@ -9457,8 +9406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(signature);
+        pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(input);
             self
         }
         /// <p>The session expiration duration in seconds. This value defaults to 43200.</p>
@@ -9471,8 +9420,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
         /// 300.</p>
-        pub fn expires_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.expires_in_seconds(signature);
+        pub fn expires_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.expires_in_seconds(input);
             self
         }
         /// <p>The number of seconds until the pre-signed URL expires. This value defaults to
@@ -9561,8 +9510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the notebook instance.</p>
@@ -9574,8 +9523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
-        pub fn session_expiration_duration_in_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.session_expiration_duration_in_seconds(signature);
+        pub fn session_expiration_duration_in_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.session_expiration_duration_in_seconds(input);
             self
         }
         /// <p>The duration of the session, in seconds. The default is 12 hours.</p>
@@ -9668,9 +9617,9 @@ pub mod fluent_builders {
         /// <p>Output configuration for the processing job.</p>
         pub fn processing_output_config(
             mut self,
-            signature: crate::model::ProcessingOutputConfig,
+            input: crate::model::ProcessingOutputConfig,
         ) -> Self {
-            self.inner = self.inner.processing_output_config(signature);
+            self.inner = self.inner.processing_output_config(input);
             self
         }
         /// <p>Output configuration for the processing job.</p>
@@ -9683,8 +9632,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
         /// Amazon Web Services account.</p>
-        pub fn processing_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(signature.into());
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input.into());
             self
         }
         /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the
@@ -9698,11 +9647,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
         /// processing job. In distributed training, you specify more than one instance.</p>
-        pub fn processing_resources(
-            mut self,
-            signature: crate::model::ProcessingResources,
-        ) -> Self {
-            self.inner = self.inner.processing_resources(signature);
+        pub fn processing_resources(mut self, input: crate::model::ProcessingResources) -> Self {
+            self.inner = self.inner.processing_resources(input);
             self
         }
         /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a
@@ -9717,9 +9663,9 @@ pub mod fluent_builders {
         /// <p>The time limit for how long the processing job is allowed to run.</p>
         pub fn stopping_condition(
             mut self,
-            signature: crate::model::ProcessingStoppingCondition,
+            input: crate::model::ProcessingStoppingCondition,
         ) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>The time limit for how long the processing job is allowed to run.</p>
@@ -9731,8 +9677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configures the processing job to run a specified Docker container image.</p>
-        pub fn app_specification(mut self, signature: crate::model::AppSpecification) -> Self {
-            self.inner = self.inner.app_specification(signature);
+        pub fn app_specification(mut self, input: crate::model::AppSpecification) -> Self {
+            self.inner = self.inner.app_specification(input);
             self
         }
         /// <p>Configures the processing job to run a specified Docker container image.</p>
@@ -9771,8 +9717,8 @@ pub mod fluent_builders {
         /// <p>Networking options for a processing job, such as whether to allow inbound and
         /// outbound network calls to and from processing containers, and the VPC subnets and
         /// security groups to use for VPC-enabled processing jobs.</p>
-        pub fn network_config(mut self, signature: crate::model::NetworkConfig) -> Self {
-            self.inner = self.inner.network_config(signature);
+        pub fn network_config(mut self, input: crate::model::NetworkConfig) -> Self {
+            self.inner = self.inner.network_config(input);
             self
         }
         /// <p>Networking options for a processing job, such as whether to allow inbound and
@@ -9787,8 +9733,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
         /// your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on
@@ -9835,8 +9781,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, signature: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(signature);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -9927,8 +9873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project.</p>
@@ -9937,8 +9883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the project.</p>
-        pub fn project_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(signature.into());
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>A description for the project.</p>
@@ -9955,9 +9901,9 @@ pub mod fluent_builders {
         /// Catalog</a>.</p>
         pub fn service_catalog_provisioning_details(
             mut self,
-            signature: crate::model::ServiceCatalogProvisioningDetails,
+            input: crate::model::ServiceCatalogProvisioningDetails,
         ) -> Self {
-            self.inner = self.inner.service_catalog_provisioning_details(signature);
+            self.inner = self.inner.service_catalog_provisioning_details(input);
             self
         }
         /// <p>The product ID and provisioning artifact ID to provision a service catalog. The provisioning
@@ -10053,9 +9999,9 @@ pub mod fluent_builders {
         /// <p>The name of the Studio Lifecycle Configuration to create.</p>
         pub fn studio_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.studio_lifecycle_config_name(signature.into());
+            self.inner = self.inner.studio_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the Studio Lifecycle Configuration to create.</p>
@@ -10069,9 +10015,9 @@ pub mod fluent_builders {
         /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
         pub fn studio_lifecycle_config_content(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.studio_lifecycle_config_content(signature.into());
+            self.inner = self.inner.studio_lifecycle_config_content(input.into());
             self
         }
         /// <p>The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.</p>
@@ -10085,9 +10031,9 @@ pub mod fluent_builders {
         /// <p>The App type that the Lifecycle Configuration is attached to.</p>
         pub fn studio_lifecycle_config_app_type(
             mut self,
-            signature: crate::model::StudioLifecycleConfigAppType,
+            input: crate::model::StudioLifecycleConfigAppType,
         ) -> Self {
-            self.inner = self.inner.studio_lifecycle_config_app_type(signature);
+            self.inner = self.inner.studio_lifecycle_config_app_type(input);
             self
         }
         /// <p>The App type that the Lifecycle Configuration is attached to.</p>
@@ -10249,8 +10195,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
         /// Amazon Web Services account. </p>
-        pub fn training_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(signature.into());
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input.into());
             self
         }
         /// <p>The name of the training job. The name must be unique within an Amazon Web Services Region in an
@@ -10302,9 +10248,9 @@ pub mod fluent_builders {
         /// SageMaker</a>. </p>
         pub fn algorithm_specification(
             mut self,
-            signature: crate::model::AlgorithmSpecification,
+            input: crate::model::AlgorithmSpecification,
         ) -> Self {
-            self.inner = self.inner.algorithm_specification(signature);
+            self.inner = self.inner.algorithm_specification(input);
             self
         }
         /// <p>The registry path of the Docker image that contains the training algorithm and
@@ -10330,8 +10276,8 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform
@@ -10394,8 +10340,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
         /// creates subfolders for the artifacts. </p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker
@@ -10414,8 +10360,8 @@ pub mod fluent_builders {
         /// the ML storage volume to store the training data, choose <code>File</code> as the
         /// <code>TrainingInputMode</code> in the algorithm specification. For distributed
         /// training algorithms, specify an instance count greater than 1.</p>
-        pub fn resource_config(mut self, signature: crate::model::ResourceConfig) -> Self {
-            self.inner = self.inner.resource_config(signature);
+        pub fn resource_config(mut self, input: crate::model::ResourceConfig) -> Self {
+            self.inner = self.inner.resource_config(input);
             self
         }
         /// <p>The resources, including the ML compute instances and ML storage volumes, to use
@@ -10436,8 +10382,8 @@ pub mod fluent_builders {
         /// training job to connect to. Control access to and from your training container by
         /// configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
         /// Virtual Private Cloud</a>.</p>
-        pub fn vpc_config(mut self, signature: crate::model::VpcConfig) -> Self {
-            self.inner = self.inner.vpc_config(signature);
+        pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
+            self.inner = self.inner.vpc_config(input);
             self
         }
         /// <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
@@ -10457,8 +10403,8 @@ pub mod fluent_builders {
         /// <p>To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays
         /// job termination for 120 seconds. Algorithms can use this 120-second window to save the
         /// model artifacts, so the results of training are not lost. </p>
-        pub fn stopping_condition(mut self, signature: crate::model::StoppingCondition) -> Self {
-            self.inner = self.inner.stopping_condition(signature);
+        pub fn stopping_condition(mut self, input: crate::model::StoppingCondition) -> Self {
+            self.inner = self.inner.stopping_condition(input);
             self
         }
         /// <p>Specifies a limit to how long a model training job can run. It also specifies how long
@@ -10502,8 +10448,8 @@ pub mod fluent_builders {
         /// you enable network isolation for training jobs that are configured to use a VPC, Amazon SageMaker
         /// downloads and uploads customer data and model artifacts through the specified VPC, but
         /// the training container does not have network access.</p>
-        pub fn enable_network_isolation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_network_isolation(signature);
+        pub fn enable_network_isolation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_network_isolation(input);
             self
         }
         /// <p>Isolates the training container. No inbound or outbound network calls can be made,
@@ -10521,10 +10467,8 @@ pub mod fluent_builders {
         /// between compute instances, especially if you use a deep learning algorithm in
         /// distributed training. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect Communications Between ML
         /// Compute Instances in a Distributed Training Job</a>.</p>
-        pub fn enable_inter_container_traffic_encryption(mut self, signature: bool) -> Self {
-            self.inner = self
-                .inner
-                .enable_inter_container_traffic_encryption(signature);
+        pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_inter_container_traffic_encryption(input);
             self
         }
         /// <p>To encrypt all communications between ML compute instances in distributed training,
@@ -10550,8 +10494,8 @@ pub mod fluent_builders {
         /// used as a starting point to train models incrementally. Amazon SageMaker provides metrics and
         /// logs in CloudWatch. They can be used to see when managed spot training jobs are running,
         /// interrupted, resumed, or completed. </p>
-        pub fn enable_managed_spot_training(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_managed_spot_training(signature);
+        pub fn enable_managed_spot_training(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_managed_spot_training(input);
             self
         }
         /// <p>To train models using managed spot training, choose <code>True</code>. Managed spot
@@ -10571,8 +10515,8 @@ pub mod fluent_builders {
         }
         /// <p>Contains information about the output location for managed spot training checkpoint
         /// data.</p>
-        pub fn checkpoint_config(mut self, signature: crate::model::CheckpointConfig) -> Self {
-            self.inner = self.inner.checkpoint_config(signature);
+        pub fn checkpoint_config(mut self, input: crate::model::CheckpointConfig) -> Self {
+            self.inner = self.inner.checkpoint_config(input);
             self
         }
         /// <p>Contains information about the output location for managed spot training checkpoint
@@ -10588,8 +10532,8 @@ pub mod fluent_builders {
         /// storage paths. To learn more about
         /// how to configure the <code>DebugHookConfig</code> parameter,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.</p>
-        pub fn debug_hook_config(mut self, signature: crate::model::DebugHookConfig) -> Self {
-            self.inner = self.inner.debug_hook_config(signature);
+        pub fn debug_hook_config(mut self, input: crate::model::DebugHookConfig) -> Self {
+            self.inner = self.inner.debug_hook_config(input);
             self
         }
         /// <p>Configuration information for the Debugger hook parameters, metric and tensor collections, and
@@ -10626,9 +10570,9 @@ pub mod fluent_builders {
         /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
         pub fn tensor_board_output_config(
             mut self,
-            signature: crate::model::TensorBoardOutputConfig,
+            input: crate::model::TensorBoardOutputConfig,
         ) -> Self {
-            self.inner = self.inner.tensor_board_output_config(signature);
+            self.inner = self.inner.tensor_board_output_config(input);
             self
         }
         /// <p>Configuration of storage locations for the Debugger TensorBoard output data.</p>
@@ -10658,8 +10602,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, signature: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(signature);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -10690,8 +10634,8 @@ pub mod fluent_builders {
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
         /// storage paths.</p>
-        pub fn profiler_config(mut self, signature: crate::model::ProfilerConfig) -> Self {
-            self.inner = self.inner.profiler_config(signature);
+        pub fn profiler_config(mut self, input: crate::model::ProfilerConfig) -> Self {
+            self.inner = self.inner.profiler_config(input);
             self
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
@@ -10750,8 +10694,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of times to retry the job when the job fails due to an
         /// <code>InternalServerError</code>.</p>
-        pub fn retry_strategy(mut self, signature: crate::model::RetryStrategy) -> Self {
-            self.inner = self.inner.retry_strategy(signature);
+        pub fn retry_strategy(mut self, input: crate::model::RetryStrategy) -> Self {
+            self.inner = self.inner.retry_strategy(input);
             self
         }
         /// <p>The number of times to retry the job when the job fails due to an
@@ -10859,8 +10803,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
         /// Amazon Web Services account. </p>
-        pub fn transform_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(signature.into());
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input.into());
             self
         }
         /// <p>The name of the transform job. The name must be unique within an Amazon Web Services Region in an
@@ -10875,8 +10819,8 @@ pub mod fluent_builders {
         /// <p>The name of the model that you want to use for the transform job.
         /// <code>ModelName</code> must be the name of an existing Amazon SageMaker model within an Amazon Web Services
         /// Region in an Amazon Web Services account.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the model that you want to use for the transform job.
@@ -10892,8 +10836,8 @@ pub mod fluent_builders {
         /// chosen algorithm. If the execution-parameters endpoint is not enabled, the default value
         /// is <code>1</code>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How Containers Serve Requests</a>. For built-in algorithms, you don't need to
         /// set a value for <code>MaxConcurrentTransforms</code>.</p>
-        pub fn max_concurrent_transforms(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_concurrent_transforms(signature);
+        pub fn max_concurrent_transforms(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrent_transforms(input);
             self
         }
         /// <p>The maximum number of parallel requests that can be sent to each instance in a
@@ -10908,8 +10852,8 @@ pub mod fluent_builders {
         }
         /// <p>Configures the timeout and maximum number of retries for processing a transform job
         /// invocation.</p>
-        pub fn model_client_config(mut self, signature: crate::model::ModelClientConfig) -> Self {
-            self.inner = self.inner.model_client_config(signature);
+        pub fn model_client_config(mut self, input: crate::model::ModelClientConfig) -> Self {
+            self.inner = self.inner.model_client_config(input);
             self
         }
         /// <p>Configures the timeout and maximum number of retries for processing a transform job
@@ -10933,8 +10877,8 @@ pub mod fluent_builders {
         /// This
         /// feature works only in supported algorithms. Currently, Amazon SageMaker built-in
         /// algorithms do not support HTTP chunked encoding.</p>
-        pub fn max_payload_in_mb(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_payload_in_mb(signature);
+        pub fn max_payload_in_mb(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_payload_in_mb(input);
             self
         }
         /// <p>The maximum allowed size of the payload, in MB. A <i>payload</i> is the
@@ -10965,8 +10909,8 @@ pub mod fluent_builders {
         /// <p>To fit as many records in a mini-batch as can fit within the
         /// <code>MaxPayloadInMB</code> limit, set <code>BatchStrategy</code> to
         /// <code>MultiRecord</code> and <code>SplitType</code> to <code>Line</code>.</p>
-        pub fn batch_strategy(mut self, signature: crate::model::BatchStrategy) -> Self {
-            self.inner = self.inner.batch_strategy(signature);
+        pub fn batch_strategy(mut self, input: crate::model::BatchStrategy) -> Self {
+            self.inner = self.inner.batch_strategy(input);
             self
         }
         /// <p>Specifies the number of records to include in a mini-batch for an HTTP inference
@@ -11016,8 +10960,8 @@ pub mod fluent_builders {
         /// <p>Describes the input source and
         /// the
         /// way the transform job consumes it.</p>
-        pub fn transform_input(mut self, signature: crate::model::TransformInput) -> Self {
-            self.inner = self.inner.transform_input(signature);
+        pub fn transform_input(mut self, input: crate::model::TransformInput) -> Self {
+            self.inner = self.inner.transform_input(input);
             self
         }
         /// <p>Describes the input source and
@@ -11031,8 +10975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the results of the transform job.</p>
-        pub fn transform_output(mut self, signature: crate::model::TransformOutput) -> Self {
-            self.inner = self.inner.transform_output(signature);
+        pub fn transform_output(mut self, input: crate::model::TransformOutput) -> Self {
+            self.inner = self.inner.transform_output(input);
             self
         }
         /// <p>Describes the results of the transform job.</p>
@@ -11047,8 +10991,8 @@ pub mod fluent_builders {
         /// ML
         /// instance types and ML instance count, to use for the transform
         /// job.</p>
-        pub fn transform_resources(mut self, signature: crate::model::TransformResources) -> Self {
-            self.inner = self.inner.transform_resources(signature);
+        pub fn transform_resources(mut self, input: crate::model::TransformResources) -> Self {
+            self.inner = self.inner.transform_resources(input);
             self
         }
         /// <p>Describes the resources, including
@@ -11069,8 +11013,8 @@ pub mod fluent_builders {
         /// include input data relevant to interpreting the predictions in the output from the job.
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
         /// Results with their Corresponding Input Records</a>.</p>
-        pub fn data_processing(mut self, signature: crate::model::DataProcessing) -> Self {
-            self.inner = self.inner.data_processing(signature);
+        pub fn data_processing(mut self, input: crate::model::DataProcessing) -> Self {
+            self.inner = self.inner.data_processing(input);
             self
         }
         /// <p>The data structure used to specify the data to be used for inference in a batch
@@ -11131,8 +11075,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn experiment_config(mut self, signature: crate::model::ExperimentConfig) -> Self {
-            self.inner = self.inner.experiment_config(signature);
+        pub fn experiment_config(mut self, input: crate::model::ExperimentConfig) -> Self {
+            self.inner = self.inner.experiment_config(input);
             self
         }
         /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when
@@ -11233,8 +11177,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not
@@ -11245,8 +11189,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
@@ -11256,8 +11200,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the experiment to associate the trial with.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>The name of the experiment to associate the trial with.</p>
@@ -11269,8 +11213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, signature: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(signature);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -11371,8 +11315,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
         /// case-sensitive.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the component. The name must be unique in your Amazon Web Services account and is not
@@ -11387,8 +11331,8 @@ pub mod fluent_builders {
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
@@ -11410,8 +11354,8 @@ pub mod fluent_builders {
         /// <p>Failed</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, signature: crate::model::TrialComponentStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TrialComponentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the component. States include:</p>
@@ -11434,8 +11378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>When the component started.</p>
@@ -11447,8 +11391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>When the component ended.</p>
@@ -11542,8 +11486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-        pub fn metadata_properties(mut self, signature: crate::model::MetadataProperties) -> Self {
-            self.inner = self.inner.metadata_properties(signature);
+        pub fn metadata_properties(mut self, input: crate::model::MetadataProperties) -> Self {
+            self.inner = self.inner.metadata_properties(input);
             self
         }
         /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
@@ -11640,8 +11584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the associated Domain.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The ID of the associated Domain.</p>
@@ -11650,8 +11594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the UserProfile. This value is not case sensitive.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>A name for the UserProfile. This value is not case sensitive.</p>
@@ -11667,9 +11611,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn single_sign_on_user_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.single_sign_on_user_identifier(signature.into());
+            self.inner = self.inner.single_sign_on_user_identifier(input.into());
             self
         }
         /// <p>A specifier for the type of value specified in SingleSignOnUserValue.  Currently, the only supported value is "UserName".
@@ -11685,11 +11629,8 @@ pub mod fluent_builders {
         /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
         /// required, and must match a valid username of a user in your directory.  If the Domain's AuthMode is not SSO, this field cannot be specified.
         /// </p>
-        pub fn single_sign_on_user_value(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.single_sign_on_user_value(signature.into());
+        pub fn single_sign_on_user_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.single_sign_on_user_value(input.into());
             self
         }
         /// <p>The username of the associated Amazon Web Services Single Sign-On User for this UserProfile.  If the Domain's AuthMode is SSO, this field is
@@ -11726,8 +11667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn user_settings(mut self, signature: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.user_settings(signature);
+        pub fn user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>A collection of settings.</p>
@@ -11825,8 +11766,8 @@ pub mod fluent_builders {
         ///
         /// <p>Do not use <code>OidcConfig</code> if you specify values for
         /// <code>CognitoConfig</code>.</p>
-        pub fn cognito_config(mut self, signature: crate::model::CognitoConfig) -> Self {
-            self.inner = self.inner.cognito_config(signature);
+        pub fn cognito_config(mut self, input: crate::model::CognitoConfig) -> Self {
+            self.inner = self.inner.cognito_config(input);
             self
         }
         /// <p>Use this parameter to configure an Amazon Cognito private workforce.
@@ -11846,8 +11787,8 @@ pub mod fluent_builders {
         /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
         /// <p>Do not use <code>CognitoConfig</code> if you specify values for
         /// <code>OidcConfig</code>.</p>
-        pub fn oidc_config(mut self, signature: crate::model::OidcConfig) -> Self {
-            self.inner = self.inner.oidc_config(signature);
+        pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
+            self.inner = self.inner.oidc_config(input);
             self
         }
         /// <p>Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
@@ -11863,8 +11804,8 @@ pub mod fluent_builders {
         /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
         /// list of IP addresses for a private workforce. Workers will only be able to login to their worker portal from an
         /// IP address within this range. By default, a workforce isn't restricted to specific IP addresses.</p>
-        pub fn source_ip_config(mut self, signature: crate::model::SourceIpConfig) -> Self {
-            self.inner = self.inner.source_ip_config(signature);
+        pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
+            self.inner = self.inner.source_ip_config(input);
             self
         }
         /// <p>A list of IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Used to create an allow
@@ -11878,8 +11819,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the private workforce.</p>
-        pub fn workforce_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(signature.into());
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input.into());
             self
         }
         /// <p>The name of the private workforce.</p>
@@ -11975,8 +11916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team. Use this name to identify the work team.</p>
-        pub fn workteam_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(signature.into());
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input.into());
             self
         }
         /// <p>The name of the work team. Use this name to identify the work team.</p>
@@ -11988,8 +11929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the workforce.</p>
-        pub fn workforce_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(signature.into());
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input.into());
             self
         }
         /// <p>The name of the workforce.</p>
@@ -12050,8 +11991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the work team.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the work team.</p>
@@ -12062,9 +12003,9 @@ pub mod fluent_builders {
         /// <p>Configures notification of workers regarding available or expiring work items.</p>
         pub fn notification_configuration(
             mut self,
-            signature: crate::model::NotificationConfiguration,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notification_configuration(signature);
+            self.inner = self.inner.notification_configuration(input);
             self
         }
         /// <p>Configures notification of workers regarding available or expiring work items.</p>
@@ -12161,8 +12102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to delete.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action to delete.</p>
@@ -12231,8 +12172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm to delete.</p>
-        pub fn algorithm_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(signature.into());
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input.into());
             self
         }
         /// <p>The name of the algorithm to delete.</p>
@@ -12304,8 +12245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -12314,8 +12255,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name.</p>
@@ -12327,8 +12268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of app.</p>
-        pub fn app_type(mut self, signature: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(signature);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
         /// <p>The type of app.</p>
@@ -12337,8 +12278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(signature.into());
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input.into());
             self
         }
         /// <p>The name of the app.</p>
@@ -12407,8 +12348,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to delete.</p>
-        pub fn app_image_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(signature.into());
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input.into());
             self
         }
         /// <p>The name of the AppImageConfig to delete.</p>
@@ -12481,8 +12422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
-        pub fn artifact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(signature.into());
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to delete.</p>
@@ -12491,8 +12432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the source.</p>
-        pub fn source(mut self, signature: crate::model::ArtifactSource) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::ArtifactSource) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The URI of the source.</p>
@@ -12564,8 +12505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the source.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>The ARN of the source.</p>
@@ -12574,8 +12515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-        pub fn destination_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(signature.into());
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -12647,8 +12588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to delete.</p>
-        pub fn code_repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(signature.into());
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input.into());
             self
         }
         /// <p>The name of the Git repository to delete.</p>
@@ -12720,8 +12661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to delete.</p>
-        pub fn context_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(signature.into());
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input.into());
             self
         }
         /// <p>The name of the context to delete.</p>
@@ -12790,8 +12731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data quality monitoring job definition to delete.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the data quality monitoring job definition to delete.</p>
@@ -12863,8 +12804,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet to delete.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet to delete.</p>
@@ -12940,8 +12881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -12952,8 +12893,8 @@ pub mod fluent_builders {
         /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
         /// By default, all resources are retained (not automatically deleted).
         /// </p>
-        pub fn retention_policy(mut self, signature: crate::model::RetentionPolicy) -> Self {
-            self.inner = self.inner.retention_policy(signature);
+        pub fn retention_policy(mut self, input: crate::model::RetentionPolicy) -> Self {
+            self.inner = self.inner.retention_policy(input);
             self
         }
         /// <p>The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted.
@@ -13030,8 +12971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint that you want to delete.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the endpoint that you want to delete.</p>
@@ -13111,8 +13052,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration that you want to delete.</p>
-        pub fn endpoint_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(signature.into());
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
         /// <p>The name of the endpoint configuration that you want to delete.</p>
@@ -13186,8 +13127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to delete.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>The name of the experiment to delete.</p>
@@ -13265,8 +13206,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
         /// within an Amazon Web Services Region in an Amazon Web Services account. </p>
-        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(signature.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input.into());
             self
         }
         /// <p>The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
@@ -13339,8 +13280,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the flow definition you are deleting.</p>
-        pub fn flow_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(signature.into());
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input.into());
             self
         }
         /// <p>The name of the flow definition you are deleting.</p>
@@ -13416,8 +13357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-        pub fn human_task_ui_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(signature.into());
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input.into());
             self
         }
         /// <p>The name of the human task user interface (work task template) you want to delete.</p>
@@ -13490,8 +13431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to delete.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image to delete.</p>
@@ -13561,8 +13502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -13571,8 +13512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version to delete.</p>
-        pub fn version(mut self, signature: i32) -> Self {
-            self.inner = self.inner.version(signature);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
         /// <p>The version to delete.</p>
@@ -13644,8 +13585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model to delete.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the model to delete.</p>
@@ -13714,8 +13655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model bias job definition to delete.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model bias job definition to delete.</p>
@@ -13789,8 +13730,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model explainability job definition to delete.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model explainability job definition to delete.</p>
@@ -13866,8 +13807,8 @@ pub mod fluent_builders {
         /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
         /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn model_package_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(signature.into());
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to delete.</p>
@@ -13941,11 +13882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to delete.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group to delete.</p>
@@ -14017,11 +13955,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group for which to delete the policy.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group for which to delete the policy.</p>
@@ -14093,8 +14028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model quality monitoring job definition to delete.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model quality monitoring job definition to delete.</p>
@@ -14167,11 +14102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the monitoring schedule to delete.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>The name of the monitoring schedule to delete.</p>
@@ -14249,8 +14181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the Amazon SageMaker notebook instance to delete.</p>
@@ -14326,11 +14258,11 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration to delete.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name(signature.into());
+                .notebook_instance_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the lifecycle configuration to delete.</p>
@@ -14407,8 +14339,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to delete.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to delete.</p>
@@ -14421,8 +14353,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -14495,8 +14427,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to delete.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to delete.</p>
@@ -14567,9 +14499,9 @@ pub mod fluent_builders {
         /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
         pub fn studio_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.studio_lifecycle_config_name(signature.into());
+            self.inner = self.inner.studio_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the Studio Lifecycle Configuration to delete.</p>
@@ -14653,8 +14585,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
         /// delete.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
@@ -14743,8 +14675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to delete.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial to delete.</p>
@@ -14815,8 +14747,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to delete.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the component to delete.</p>
@@ -14889,8 +14821,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -14899,8 +14831,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name.</p>
@@ -14984,8 +14916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the workforce.</p>
-        pub fn workforce_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(signature.into());
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input.into());
             self
         }
         /// <p>The name of the workforce.</p>
@@ -15057,8 +14989,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to delete.</p>
-        pub fn workteam_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(signature.into());
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input.into());
             self
         }
         /// <p>The name of the work team to delete.</p>
@@ -15130,8 +15062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet the devices belong to.</p>
@@ -15220,8 +15152,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to describe.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action to describe.</p>
@@ -15290,8 +15222,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the algorithm to describe.</p>
-        pub fn algorithm_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_name(signature.into());
+        pub fn algorithm_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_name(input.into());
             self
         }
         /// <p>The name of the algorithm to describe.</p>
@@ -15363,8 +15295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -15373,8 +15305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name.</p>
@@ -15386,8 +15318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of app.</p>
-        pub fn app_type(mut self, signature: crate::model::AppType) -> Self {
-            self.inner = self.inner.app_type(signature);
+        pub fn app_type(mut self, input: crate::model::AppType) -> Self {
+            self.inner = self.inner.app_type(input);
             self
         }
         /// <p>The type of app.</p>
@@ -15396,8 +15328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the app.</p>
-        pub fn app_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_name(signature.into());
+        pub fn app_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_name(input.into());
             self
         }
         /// <p>The name of the app.</p>
@@ -15466,8 +15398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to describe.</p>
-        pub fn app_image_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(signature.into());
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input.into());
             self
         }
         /// <p>The name of the AppImageConfig to describe.</p>
@@ -15539,8 +15471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
-        pub fn artifact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(signature.into());
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to describe.</p>
@@ -15609,8 +15541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Requests information about an AutoML job using its unique name.</p>
-        pub fn auto_ml_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(signature.into());
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input.into());
             self
         }
         /// <p>Requests information about an AutoML job using its unique name.</p>
@@ -15682,8 +15614,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to describe.</p>
-        pub fn code_repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(signature.into());
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input.into());
             self
         }
         /// <p>The name of the Git repository to describe.</p>
@@ -15757,8 +15689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model compilation job that you want information about.</p>
-        pub fn compilation_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(signature.into());
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input.into());
             self
         }
         /// <p>The name of the model compilation job that you want information about.</p>
@@ -15830,8 +15762,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to describe.</p>
-        pub fn context_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(signature.into());
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input.into());
             self
         }
         /// <p>The name of the context to describe.</p>
@@ -15900,8 +15832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the data quality monitoring job definition to describe.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the data quality monitoring job definition to describe.</p>
@@ -15973,8 +15905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Next token of device description.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Next token of device description.</p>
@@ -15983,8 +15915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the device.</p>
-        pub fn device_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_name(signature.into());
+        pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_name(input.into());
             self
         }
         /// <p>The unique ID of the device.</p>
@@ -15993,8 +15925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet the devices belong to.</p>
@@ -16066,8 +15998,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -16139,8 +16071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -16209,11 +16141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(signature.into());
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input.into());
             self
         }
         /// <p>The name of the edge packaging job.</p>
@@ -16285,8 +16214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the endpoint.</p>
@@ -16359,8 +16288,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint configuration.</p>
-        pub fn endpoint_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(signature.into());
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
         /// <p>The name of the endpoint configuration.</p>
@@ -16432,8 +16361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to describe.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>The name of the experiment to describe.</p>
@@ -16507,8 +16436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
-        pub fn feature_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_group_name(signature.into());
+        pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_group_name(input.into());
             self
         }
         /// <p>The name of the <code>FeatureGroup</code> you want described. </p>
@@ -16522,8 +16451,8 @@ pub mod fluent_builders {
         /// <p>A token to resume pagination of the list of <code>Features</code>
         /// (<code>FeatureDefinitions</code>). 2,500 <code>Features</code> are returned by
         /// default.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to resume pagination of the list of <code>Features</code>
@@ -16594,8 +16523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the flow definition.</p>
-        pub fn flow_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_name(signature.into());
+        pub fn flow_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_name(input.into());
             self
         }
         /// <p>The name of the flow definition.</p>
@@ -16668,8 +16597,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the human task user interface
         /// (worker task template) you want information about.</p>
-        pub fn human_task_ui_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_name(signature.into());
+        pub fn human_task_ui_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_name(input.into());
             self
         }
         /// <p>The name of the human task user interface
@@ -16745,9 +16674,9 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(signature.into());
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
             self
         }
         /// <p>The name of the tuning job.</p>
@@ -16819,8 +16748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image to describe.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image to describe.</p>
@@ -16889,8 +16818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the image.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image.</p>
@@ -16899,8 +16828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the image. If not specified, the latest version is described.</p>
-        pub fn version(mut self, signature: i32) -> Self {
-            self.inner = self.inner.version(signature);
+        pub fn version(mut self, input: i32) -> Self {
+            self.inner = self.inner.version(input);
             self
         }
         /// <p>The version of the image. If not specified, the latest version is described.</p>
@@ -16973,8 +16902,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the job. The name must be unique within an
         /// Amazon Web Services Region in the Amazon Web Services account.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job. The name must be unique within an
@@ -17044,8 +16973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the labeling job to return information for.</p>
-        pub fn labeling_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(signature.into());
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input.into());
             self
         }
         /// <p>The name of the labeling job to return information for.</p>
@@ -17119,8 +17048,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the lineage group.</p>
-        pub fn lineage_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lineage_group_name(signature.into());
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lineage_group_name(input.into());
             self
         }
         /// <p>The name of the lineage group.</p>
@@ -17193,8 +17122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the model.</p>
@@ -17264,8 +17193,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
         /// in the Amazon Web Services account.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model bias job definition. The name must be unique within an Amazon Web Services Region
@@ -17341,8 +17270,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model explainability job definition. The name must be unique within an
         /// Amazon Web Services Region in the Amazon Web Services account.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model explainability job definition. The name must be unique within an
@@ -17420,8 +17349,8 @@ pub mod fluent_builders {
         /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
         /// <p>When you specify a name, the name must have 1 to 63 characters. Valid
         /// characters are a-z, A-Z, 0-9, and - (hyphen).</p>
-        pub fn model_package_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_name(signature.into());
+        pub fn model_package_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the model package to describe.</p>
@@ -17495,11 +17424,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to describe.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group to describe.</p>
@@ -17572,8 +17498,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
         /// Amazon Web Services account.</p>
-        pub fn job_definition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_definition_name(signature.into());
+        pub fn job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_definition_name(input.into());
             self
         }
         /// <p>The name of the model quality job. The name must be unique within an Amazon Web Services Region in the
@@ -17646,11 +17572,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a previously created monitoring schedule.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>Name of a previously created monitoring schedule.</p>
@@ -17722,8 +17645,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance that you want information about.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the notebook instance that you want information about.</p>
@@ -17801,11 +17724,11 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration to describe.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name(signature.into());
+                .notebook_instance_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the lifecycle configuration to describe.</p>
@@ -17879,8 +17802,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to describe.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to describe.</p>
@@ -17954,8 +17877,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -18027,8 +17950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -18101,8 +18024,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
         /// Amazon Web Services account.</p>
-        pub fn processing_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(signature.into());
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input.into());
             self
         }
         /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the
@@ -18175,8 +18098,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project to describe.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project to describe.</p>
@@ -18247,9 +18170,9 @@ pub mod fluent_builders {
         /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
         pub fn studio_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.studio_lifecycle_config_name(signature.into());
+            self.inner = self.inner.studio_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
@@ -18322,8 +18245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
-        pub fn workteam_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_arn(signature.into());
+        pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the subscribed work team to describe.</p>
@@ -18398,8 +18321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the training job.</p>
-        pub fn training_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(signature.into());
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input.into());
             self
         }
         /// <p>The name of the training job.</p>
@@ -18471,8 +18394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the transform job that you want to view details of.</p>
-        pub fn transform_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(signature.into());
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input.into());
             self
         }
         /// <p>The name of the transform job that you want to view details of.</p>
@@ -18544,8 +18467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to describe.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial to describe.</p>
@@ -18614,8 +18537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial component to describe.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the trial component to describe.</p>
@@ -18687,8 +18610,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -18697,8 +18620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name. This value is not case sensitive.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name. This value is not case sensitive.</p>
@@ -18777,8 +18700,8 @@ pub mod fluent_builders {
         /// <p>The name of the private workforce whose access you want to restrict.
         /// <code>WorkforceName</code> is automatically set to <code>default</code> when a
         /// workforce is created and cannot be modified. </p>
-        pub fn workforce_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(signature.into());
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input.into());
             self
         }
         /// <p>The name of the private workforce whose access you want to restrict.
@@ -18854,8 +18777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to return a description of.</p>
-        pub fn workteam_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(signature.into());
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input.into());
             self
         }
         /// <p>The name of the work team to return a description of.</p>
@@ -18995,8 +18918,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to disassociate from the trial.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the component to disassociate from the trial.</p>
@@ -19008,8 +18931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the trial to disassociate from.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial to disassociate from.</p>
@@ -19141,8 +19064,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -19214,8 +19137,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
-        pub fn lineage_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lineage_group_name(signature.into());
+        pub fn lineage_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lineage_group_name(input.into());
             self
         }
         /// <p>The name or Amazon Resource Name (ARN) of the lineage group.</p>
@@ -19290,11 +19213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group for which to get the resource policy.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group for which to get the resource policy.</p>
@@ -19432,8 +19352,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
-        pub fn resource(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource(signature);
+        pub fn resource(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
@@ -19445,8 +19365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the property names that are included in the response.</p>
-        pub fn suggestion_query(mut self, signature: crate::model::SuggestionQuery) -> Self {
-            self.inner = self.inner.suggestion_query(signature);
+        pub fn suggestion_query(mut self, input: crate::model::SuggestionQuery) -> Self {
+            self.inner = self.inner.suggestion_query(input);
             self
         }
         /// <p>Limits the property names that are included in the response.</p>
@@ -19518,8 +19438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only actions with the specified source URI.</p>
-        pub fn source_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(signature.into());
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input.into());
             self
         }
         /// <p>A filter that returns only actions with the specified source URI.</p>
@@ -19528,8 +19448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only actions of the specified type.</p>
-        pub fn action_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_type(signature.into());
+        pub fn action_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_type(input.into());
             self
         }
         /// <p>A filter that returns only actions of the specified type.</p>
@@ -19538,8 +19458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only actions created on or after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only actions created on or after the specified time.</p>
@@ -19551,8 +19471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only actions created on or before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only actions created on or before the specified time.</p>
@@ -19564,8 +19484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortActionsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortActionsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -19577,8 +19497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -19591,8 +19511,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
         /// the call returns a token for getting the next set of actions.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListActions</code> didn't return the full set of actions,
@@ -19602,8 +19522,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of actions to return in the response. The default value is 10.</p>
@@ -19673,8 +19593,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only algorithms created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only algorithms created after the specified time
@@ -19688,8 +19608,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only algorithms created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only algorithms created before the specified time
@@ -19702,8 +19622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of algorithms to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of algorithms to return in the response.</p>
@@ -19713,8 +19633,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the algorithm name. This filter returns only algorithms whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the algorithm name. This filter returns only algorithms whose name
@@ -19729,8 +19649,8 @@ pub mod fluent_builders {
         /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use
         /// the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the
@@ -19742,8 +19662,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::AlgorithmSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::AlgorithmSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
@@ -19756,8 +19676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -19832,8 +19752,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
         /// 10. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of AppImageConfigs to return in the response. The default value is
@@ -19844,8 +19764,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
         /// AppImageConfigs, the call returns a token for getting the next set of AppImageConfigs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of
@@ -19855,8 +19775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A filter that returns only AppImageConfigs whose name contains the specified string.</p>
@@ -19868,8 +19788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or before the specified time.</p>
@@ -19881,8 +19801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs created on or after the specified time.</p>
@@ -19894,8 +19814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
-        pub fn modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.modified_time_before(signature);
+        pub fn modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.modified_time_before(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or before the specified time.</p>
@@ -19907,8 +19827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
-        pub fn modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.modified_time_after(signature);
+        pub fn modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.modified_time_after(input);
             self
         }
         /// <p>A filter that returns only AppImageConfigs modified on or after the specified time.</p>
@@ -19920,8 +19840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::AppImageConfigSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::AppImageConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -19933,8 +19853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -20007,8 +19927,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was truncated, you will receive this token.
@@ -20018,8 +19938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
@@ -20028,8 +19948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
@@ -20041,8 +19961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-        pub fn sort_by(mut self, signature: crate::model::AppSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::AppSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
@@ -20051,8 +19971,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter to search for the domain ID.</p>
-        pub fn domain_id_equals(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id_equals(signature.into());
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id_equals(input.into());
             self
         }
         /// <p>A parameter to search for the domain ID.</p>
@@ -20064,11 +19984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter to search by user profile name.</p>
-        pub fn user_profile_name_equals(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.user_profile_name_equals(signature.into());
+        pub fn user_profile_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name_equals(input.into());
             self
         }
         /// <p>A parameter to search by user profile name.</p>
@@ -20140,8 +20057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only artifacts with the specified source URI.</p>
-        pub fn source_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(signature.into());
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input.into());
             self
         }
         /// <p>A filter that returns only artifacts with the specified source URI.</p>
@@ -20150,8 +20067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only artifacts of the specified type.</p>
-        pub fn artifact_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_type(signature.into());
+        pub fn artifact_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_type(input.into());
             self
         }
         /// <p>A filter that returns only artifacts of the specified type.</p>
@@ -20163,8 +20080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only artifacts created on or after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only artifacts created on or after the specified time.</p>
@@ -20176,8 +20093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only artifacts created on or before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only artifacts created on or before the specified time.</p>
@@ -20189,8 +20106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortArtifactsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortArtifactsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -20202,8 +20119,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -20216,8 +20133,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
         /// the call returns a token for getting the next set of artifacts.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
@@ -20227,8 +20144,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of artifacts to return in the response. The default value is 10.</p>
@@ -20297,8 +20214,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only associations with the specified source ARN.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>A filter that returns only associations with the specified source ARN.</p>
@@ -20307,8 +20224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
-        pub fn destination_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_arn(signature.into());
+        pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_arn(input.into());
             self
         }
         /// <p>A filter that returns only associations with the specified destination Amazon Resource Name (ARN).</p>
@@ -20320,8 +20237,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations with the specified source type.</p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>A filter that returns only associations with the specified source type.</p>
@@ -20330,8 +20247,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations with the specified destination type.</p>
-        pub fn destination_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_type(signature.into());
+        pub fn destination_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_type(input.into());
             self
         }
         /// <p>A filter that returns only associations with the specified destination type.</p>
@@ -20343,8 +20260,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations of the specified type.</p>
-        pub fn association_type(mut self, signature: crate::model::AssociationEdgeType) -> Self {
-            self.inner = self.inner.association_type(signature);
+        pub fn association_type(mut self, input: crate::model::AssociationEdgeType) -> Self {
+            self.inner = self.inner.association_type(input);
             self
         }
         /// <p>A filter that returns only associations of the specified type.</p>
@@ -20356,8 +20273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations created on or after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only associations created on or after the specified time.</p>
@@ -20369,8 +20286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only associations created on or before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only associations created on or before the specified time.</p>
@@ -20382,8 +20299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortAssociationsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortAssociationsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -20395,8 +20312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -20409,8 +20326,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
         /// the call returns a token for getting the next set of associations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListAssociations</code> didn't return the full set of associations,
@@ -20420,8 +20337,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of associations to return in the response. The default value is 10.</p>
@@ -20490,8 +20407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
@@ -20503,8 +20420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
@@ -20516,8 +20433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
@@ -20529,8 +20446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for time.</p>
@@ -20542,8 +20459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs, using a search filter for name.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Request a list of jobs, using a search filter for name.</p>
@@ -20555,8 +20472,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs, using a filter for status.</p>
-        pub fn status_equals(mut self, signature: crate::model::AutoMlJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::AutoMlJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>Request a list of jobs, using a filter for status.</p>
@@ -20568,8 +20485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::AutoMlSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::AutoMlSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
@@ -20581,8 +20498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::AutoMlSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::AutoMlSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is <code>Name</code>.</p>
@@ -20594,8 +20511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Request a list of jobs up to a specified limit.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Request a list of jobs up to a specified limit.</p>
@@ -20605,8 +20522,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
         /// request to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
@@ -20676,8 +20593,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>List the candidates created for the job by providing the job's name.</p>
-        pub fn auto_ml_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(signature.into());
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input.into());
             self
         }
         /// <p>List the candidates created for the job by providing the job's name.</p>
@@ -20689,8 +20606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>List the candidates for the job and filter by status.</p>
-        pub fn status_equals(mut self, signature: crate::model::CandidateStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::CandidateStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>List the candidates for the job and filter by status.</p>
@@ -20702,8 +20619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>List the candidates for the job and filter by candidate name.</p>
-        pub fn candidate_name_equals(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.candidate_name_equals(signature.into());
+        pub fn candidate_name_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.candidate_name_equals(input.into());
             self
         }
         /// <p>List the candidates for the job and filter by candidate name.</p>
@@ -20715,8 +20632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::AutoMlSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::AutoMlSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -20729,8 +20646,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>Descending</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::CandidateSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::CandidateSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
@@ -20743,8 +20660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>List the job's candidates up to a specified limit.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>List the job's candidates up to a specified limit.</p>
@@ -20754,8 +20671,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
         /// request to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was truncated, you receive this token. Use it in your next
@@ -20826,8 +20743,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were created after the specified
         /// time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were created after the specified
@@ -20841,8 +20758,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were created before the specified
         /// time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were created before the specified
@@ -20856,8 +20773,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were last modified after the
         /// specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified after the
@@ -20871,8 +20788,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only Git repositories that were last modified before the
         /// specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only Git repositories that were last modified before the
@@ -20885,8 +20802,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of Git repositories to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Git repositories to return in the response.</p>
@@ -20896,8 +20813,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the Git repositories name. This filter returns only repositories whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the Git repositories name. This filter returns only repositories whose
@@ -20912,8 +20829,8 @@ pub mod fluent_builders {
         /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To get the next set of Git repositories, use
         /// the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the
@@ -20924,8 +20841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::CodeRepositorySortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::CodeRepositorySortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
@@ -20937,8 +20854,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::CodeRepositorySortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::CodeRepositorySortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -21014,8 +20931,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of model
         /// compilation jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListCompilationJobs</code> request was truncated,
@@ -21026,8 +20943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of model compilation jobs to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of model compilation jobs to return in the response.</p>
@@ -21037,8 +20954,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs that were created after a specified
         /// time. </p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were created after a specified
@@ -21052,8 +20969,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were created before a specified
@@ -21067,8 +20984,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs that were modified after a specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified after a specified
@@ -21082,8 +20999,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs that were modified before a specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns the model compilation jobs that were modified before a specified
@@ -21097,8 +21014,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the model compilation jobs whose name contains a specified
         /// string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A filter that returns the model compilation jobs whose name contains a specified
@@ -21111,8 +21028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
-        pub fn status_equals(mut self, signature: crate::model::CompilationJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::CompilationJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves model compilation jobs with a specific <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
@@ -21124,8 +21041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ListCompilationJobsSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ListCompilationJobsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
@@ -21137,8 +21054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -21210,8 +21127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only contexts with the specified source URI.</p>
-        pub fn source_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_uri(signature.into());
+        pub fn source_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_uri(input.into());
             self
         }
         /// <p>A filter that returns only contexts with the specified source URI.</p>
@@ -21220,8 +21137,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only contexts of the specified type.</p>
-        pub fn context_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_type(signature.into());
+        pub fn context_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_type(input.into());
             self
         }
         /// <p>A filter that returns only contexts of the specified type.</p>
@@ -21230,8 +21147,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only contexts created on or after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only contexts created on or after the specified time.</p>
@@ -21243,8 +21160,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only contexts created on or before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only contexts created on or before the specified time.</p>
@@ -21256,8 +21173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortContextsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortContextsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -21269,8 +21186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -21283,8 +21200,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
         /// the call returns a token for getting the next set of contexts.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListContexts</code> didn't return the full set of contexts,
@@ -21294,8 +21211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of contexts to return in the response. The default value is 10.</p>
@@ -21365,8 +21282,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that lists the data quality job definitions associated with the specified
         /// endpoint.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>A filter that lists the data quality job definitions associated with the specified
@@ -21379,8 +21296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -21392,8 +21309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -21407,8 +21324,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// transform jobs, use the token in the next request.></p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListDataQualityJobDefinitions</code> request was
@@ -21420,8 +21337,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of data quality monitoring job definitions to return in the
         /// response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of data quality monitoring job definitions to return in the
@@ -21432,8 +21349,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the data quality monitoring job definition name. This filter returns only
         /// data quality monitoring job definitions whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the data quality monitoring job definition name. This filter returns only
@@ -21447,8 +21364,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only data quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only data quality monitoring job definitions created before the
@@ -21462,8 +21379,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only data quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only data quality monitoring job definitions created after the
@@ -21536,8 +21453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -21546,8 +21463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to select.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to select.</p>
@@ -21556,8 +21473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter fleets where packaging job was created after specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Filter fleets where packaging job was created after specified time.</p>
@@ -21569,8 +21486,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>Filter fleets where the edge packaging job was created before specified time.</p>
@@ -21582,8 +21499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
@@ -21595,8 +21512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select fleets where the job was updated before X</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>Select fleets where the job was updated before X</p>
@@ -21608,8 +21525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for fleets containing this name in their fleet device name.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filter for fleets containing this name in their fleet device name.</p>
@@ -21621,8 +21538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The column to sort by.</p>
-        pub fn sort_by(mut self, signature: crate::model::ListDeviceFleetsSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ListDeviceFleetsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The column to sort by.</p>
@@ -21634,8 +21551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>What direction to sort in.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>What direction to sort in.</p>
@@ -21707,8 +21624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -21717,8 +21634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to select.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to select.</p>
@@ -21727,8 +21644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
-        pub fn latest_heartbeat_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.latest_heartbeat_after(signature);
+        pub fn latest_heartbeat_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.latest_heartbeat_after(input);
             self
         }
         /// <p>Select fleets where the job was updated after X</p>
@@ -21740,8 +21657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that searches devices that contains this name in any of their models.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>A filter that searches devices that contains this name in any of their models.</p>
@@ -21750,8 +21667,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for fleets containing this name in their device fleet name.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>Filter for fleets containing this name in their device fleet name.</p>
@@ -21824,8 +21741,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was truncated, you will receive this token.
@@ -21835,8 +21752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
@@ -21905,8 +21822,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The response from the last list when returning a list large enough to need tokening.</p>
@@ -21915,8 +21832,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of results to select.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to select.</p>
@@ -21925,8 +21842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select jobs where the job was created after specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Select jobs where the job was created after specified time.</p>
@@ -21938,8 +21855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select jobs where the job was created before specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>Select jobs where the job was created before specified time.</p>
@@ -21951,8 +21868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select jobs where the job was updated after specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>Select jobs where the job was updated after specified time.</p>
@@ -21964,8 +21881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Select jobs where the job was updated before specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>Select jobs where the job was updated before specified time.</p>
@@ -21977,8 +21894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for jobs containing this name in their packaging job name.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filter for jobs containing this name in their packaging job name.</p>
@@ -21990,8 +21907,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for jobs where the model name contains this string.</p>
-        pub fn model_name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name_contains(signature.into());
+        pub fn model_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name_contains(input.into());
             self
         }
         /// <p>Filter for jobs where the model name contains this string.</p>
@@ -22003,8 +21920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The job status to filter for.</p>
-        pub fn status_equals(mut self, signature: crate::model::EdgePackagingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::EdgePackagingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>The job status to filter for.</p>
@@ -22016,8 +21933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Use to specify what column to sort by.</p>
-        pub fn sort_by(mut self, signature: crate::model::ListEdgePackagingJobsSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ListEdgePackagingJobsSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Use to specify what column to sort by.</p>
@@ -22029,8 +21946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>What direction to sort by.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>What direction to sort by.</p>
@@ -22102,8 +22019,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::EndpointConfigSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::EndpointConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -22115,8 +22032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -22130,8 +22047,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// endpoint configurations, use the token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListEndpointConfig</code> request was
@@ -22142,8 +22059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
@@ -22153,8 +22070,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the endpoint configuration name. This filter returns only endpoint
         /// configurations whose name contains the specified string. </p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the endpoint configuration name. This filter returns only endpoint
@@ -22168,8 +22085,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoint configurations created before the specified
         /// time (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoint configurations created before the specified
@@ -22183,8 +22100,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoint configurations with a creation time greater
         /// than or equal to the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only endpoint configurations with a creation time greater
@@ -22257,8 +22174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::EndpointSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::EndpointSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
@@ -22270,8 +22187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -22285,8 +22202,8 @@ pub mod fluent_builders {
         /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
         /// includes a <code>NextToken</code>. To retrieve the next set of endpoints, use the token
         /// in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of a <code>ListEndpoints</code> request was truncated, the response
@@ -22298,8 +22215,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of endpoints to return in the response. This value defaults to
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of endpoints to return in the response. This value defaults to
@@ -22310,8 +22227,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
         /// the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in endpoint names. This filter returns only endpoints whose name contains
@@ -22325,8 +22242,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoints that were created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only endpoints that were created before the specified time
@@ -22340,8 +22257,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only endpoints with a creation time greater than or equal to
         /// the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only endpoints with a creation time greater than or equal to
@@ -22355,8 +22272,8 @@ pub mod fluent_builders {
         }
         /// <p> A filter that returns only endpoints that were modified before the specified
         /// timestamp. </p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified before the specified
@@ -22370,8 +22287,8 @@ pub mod fluent_builders {
         }
         /// <p> A filter that returns only endpoints that were modified after the specified
         /// timestamp. </p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p> A filter that returns only endpoints that were modified after the specified
@@ -22384,8 +22301,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A filter that returns only endpoints with the specified status.</p>
-        pub fn status_equals(mut self, signature: crate::model::EndpointStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::EndpointStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p> A filter that returns only endpoints with the specified status.</p>
@@ -22459,8 +22376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only experiments created after the specified time.</p>
@@ -22472,8 +22389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only experiments created before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only experiments created before the specified time.</p>
@@ -22485,8 +22402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortExperimentsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortExperimentsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -22498,8 +22415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -22512,8 +22429,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
         /// experiments, the call returns a token for getting the next set of experiments.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListExperiments</code> didn't return the full set of
@@ -22524,8 +22441,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of experiments to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of experiments to return in the response. The default value is
@@ -22596,8 +22513,8 @@ pub mod fluent_builders {
         }
         /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
         /// <code>FeatureGroup</code>s by name. </p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
@@ -22612,9 +22529,9 @@ pub mod fluent_builders {
         /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
         pub fn feature_group_status_equals(
             mut self,
-            signature: crate::model::FeatureGroupStatus,
+            input: crate::model::FeatureGroupStatus,
         ) -> Self {
-            self.inner = self.inner.feature_group_status_equals(signature);
+            self.inner = self.inner.feature_group_status_equals(input);
             self
         }
         /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
@@ -22628,9 +22545,9 @@ pub mod fluent_builders {
         /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
         pub fn offline_store_status_equals(
             mut self,
-            signature: crate::model::OfflineStoreStatusValue,
+            input: crate::model::OfflineStoreStatusValue,
         ) -> Self {
-            self.inner = self.inner.offline_store_status_equals(signature);
+            self.inner = self.inner.offline_store_status_equals(input);
             self
         }
         /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
@@ -22643,8 +22560,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
         /// date and time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific
@@ -22658,8 +22575,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
         /// date and time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific
@@ -22672,8 +22589,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order in which feature groups are listed.</p>
-        pub fn sort_order(mut self, signature: crate::model::FeatureGroupSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::FeatureGroupSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which feature groups are listed.</p>
@@ -22685,8 +22602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value on which the feature group list is sorted.</p>
-        pub fn sort_by(mut self, signature: crate::model::FeatureGroupSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::FeatureGroupSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value on which the feature group list is sorted.</p>
@@ -22698,8 +22615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by <code>ListFeatureGroups</code>.</p>
@@ -22708,8 +22625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to resume pagination of <code>ListFeatureGroups</code> results.</p>
@@ -22778,8 +22695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only flow definitions with a creation time greater than or equal to the specified timestamp.</p>
@@ -22791,8 +22708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only flow definitions that were created before the specified timestamp.</p>
@@ -22804,8 +22721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
@@ -22817,8 +22734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to resume pagination.</p>
@@ -22827,8 +22744,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
@@ -22897,8 +22814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only human task user interfaces with a creation time greater than or equal to the specified timestamp.</p>
@@ -22910,8 +22827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only human task user interfaces that were created before the specified timestamp.</p>
@@ -22923,8 +22840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
@@ -22936,8 +22853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to resume pagination.</p>
@@ -22946,8 +22863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than the value specified in <code>MaxResults</code>, then a <code>NextToken</code> will be provided in the output that you can use to resume pagination.</p>
@@ -23020,8 +22937,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// tuning jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListHyperParameterTuningJobs</code> request was
@@ -23034,8 +22951,8 @@ pub mod fluent_builders {
         /// <p>The
         /// maximum number of tuning jobs to return. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The
@@ -23050,9 +22967,9 @@ pub mod fluent_builders {
         /// to sort results by. The default is <code>Name</code>.</p>
         pub fn sort_by(
             mut self,
-            signature: crate::model::HyperParameterTuningJobSortByOptions,
+            input: crate::model::HyperParameterTuningJobSortByOptions,
         ) -> Self {
-            self.inner = self.inner.sort_by(signature);
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The
@@ -23068,8 +22985,8 @@ pub mod fluent_builders {
         /// <p>The sort
         /// order
         /// for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort
@@ -23084,8 +23001,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the tuning job name. This filter returns only tuning jobs whose name
@@ -23100,8 +23017,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only tuning jobs that were created after the
         /// specified
         /// time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were created after the
@@ -23117,8 +23034,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only tuning jobs that were created before the
         /// specified
         /// time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were created before the
@@ -23133,8 +23050,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only tuning jobs that were modified after the specified
         /// time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified after the specified
@@ -23148,8 +23065,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only tuning jobs that were modified before the specified
         /// time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only tuning jobs that were modified before the specified
@@ -23164,11 +23081,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only tuning jobs with the
         /// specified
         /// status.</p>
-        pub fn status_equals(
-            mut self,
-            signature: crate::model::HyperParameterTuningJobStatus,
-        ) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::HyperParameterTuningJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that returns only tuning jobs with the
@@ -23243,8 +23157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only images created on or after the specified time.</p>
@@ -23256,8 +23170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only images created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only images created on or before the specified time.</p>
@@ -23269,8 +23183,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only images modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only images modified on or after the specified time.</p>
@@ -23282,8 +23196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only images modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only images modified on or before the specified time.</p>
@@ -23295,8 +23209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of images to return in the response. The default value is 10. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of images to return in the response. The default value is 10. </p>
@@ -23305,8 +23219,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only images whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A filter that returns only images whose name contains the specified string.</p>
@@ -23319,8 +23233,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
         /// the call returns a token for getting the next set of images.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListImages</code> didn't return the full set of images,
@@ -23330,8 +23244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ImageSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ImageSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
@@ -23343,8 +23257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::ImageSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::ImageSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
@@ -23417,8 +23331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only versions created on or after the specified time.</p>
@@ -23430,8 +23344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only versions created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only versions created on or before the specified time.</p>
@@ -23443,8 +23357,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image to list the versions of.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image to list the versions of.</p>
@@ -23453,8 +23367,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only versions modified on or after the specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only versions modified on or after the specified time.</p>
@@ -23466,8 +23380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only versions modified on or before the specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only versions modified on or before the specified time.</p>
@@ -23479,8 +23393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of versions to return in the response. The default value is 10. </p>
@@ -23490,8 +23404,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
         /// versions, the call returns a token for getting the next set of versions.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListImageVersions</code> didn't return the full set of
@@ -23501,8 +23415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ImageVersionSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ImageVersionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CREATION_TIME</code>.</p>
@@ -23514,8 +23428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::ImageVersionSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::ImageVersionSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>DESCENDING</code>.</p>
@@ -23587,8 +23501,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs created after the specified time (timestamp).</p>
@@ -23600,8 +23514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs created before the specified time (timestamp).</p>
@@ -23613,8 +23527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs that were last modified after the specified time (timestamp).</p>
@@ -23626,8 +23540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs that were last modified before the specified time (timestamp).</p>
@@ -23639,8 +23553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the job name. This filter returns only recommendations whose name contains the specified string.</p>
@@ -23652,8 +23566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::RecommendationJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::RecommendationJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only inference recommendations jobs with a specific status.</p>
@@ -23667,9 +23581,9 @@ pub mod fluent_builders {
         /// <p>The parameter by which to sort the results.</p>
         pub fn sort_by(
             mut self,
-            signature: crate::model::ListInferenceRecommendationsJobsSortBy,
+            input: crate::model::ListInferenceRecommendationsJobsSortBy,
         ) -> Self {
-            self.inner = self.inner.sort_by(signature);
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results.</p>
@@ -23681,8 +23595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results.</p>
@@ -23696,8 +23610,8 @@ pub mod fluent_builders {
         /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
         /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next set
         /// of recommendations, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response to a previous <code>ListInferenceRecommendationsJobsRequest</code> request
@@ -23708,8 +23622,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of recommendations to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of recommendations to return in the response.</p>
@@ -23779,8 +23693,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
@@ -23794,8 +23708,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
@@ -23809,8 +23723,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified after the specified time
@@ -23824,8 +23738,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only labeling jobs modified before the specified time
@@ -23838,8 +23752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -23850,8 +23764,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
         /// use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListLabelingJobs</code> request was truncated, the
@@ -23863,8 +23777,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the labeling job name. This filter returns only labeling jobs whose name
@@ -23877,8 +23791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -23887,8 +23801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -23900,8 +23814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::LabelingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::LabelingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only labeling jobs with a specific status.</p>
@@ -23974,8 +23888,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
         /// jobs for.</p>
-        pub fn workteam_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_arn(signature.into());
+        pub fn workteam_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the work team for which you want to see labeling
@@ -23985,8 +23899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of labeling jobs to return in each page of the response.</p>
@@ -23997,8 +23911,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// labeling jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListLabelingJobsForWorkteam</code> request was
@@ -24010,8 +23924,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created after the specified time
@@ -24025,8 +23939,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only labeling jobs created before the specified time
@@ -24042,9 +23956,9 @@ pub mod fluent_builders {
         /// specified string.</p>
         pub fn job_reference_code_contains(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.job_reference_code_contains(signature.into());
+            self.inner = self.inner.job_reference_code_contains(input.into());
             self
         }
         /// <p>A filter the limits jobs to only the ones whose job reference code contains the
@@ -24059,9 +23973,9 @@ pub mod fluent_builders {
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(
             mut self,
-            signature: crate::model::ListLabelingJobsForWorkteamSortByOptions,
+            input: crate::model::ListLabelingJobsForWorkteamSortByOptions,
         ) -> Self {
-            self.inner = self.inner.sort_by(signature);
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -24073,8 +23987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -24148,8 +24062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A timestamp to filter against lineage groups created after a certain point in time.</p>
@@ -24161,8 +24075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A timestamp to filter against lineage groups created before a certain point in time.</p>
@@ -24175,8 +24089,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortLineageGroupsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortLineageGroupsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
@@ -24189,8 +24103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -24203,8 +24117,8 @@ pub mod fluent_builders {
         }
         /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
         /// algorithms, use it in the subsequent request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response is truncated, SageMaker returns this token. To retrieve the next set of
@@ -24215,8 +24129,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of endpoints to return in the response. This value defaults to
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of endpoints to return in the response. This value defaults to
@@ -24286,8 +24200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the endpoint to monitor for model bias.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of the endpoint to monitor for model bias.</p>
@@ -24300,8 +24214,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
         /// default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
@@ -24315,8 +24229,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
@@ -24330,8 +24244,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
@@ -24342,8 +24256,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of model bias jobs to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of model bias jobs to return in the response. The default value is
@@ -24353,8 +24267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for model bias jobs whose name contains a specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filter for model bias jobs whose name contains a specified string.</p>
@@ -24366,8 +24280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only model bias jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model bias jobs created before a specified time.</p>
@@ -24379,8 +24293,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only model bias jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model bias jobs created after a specified time.</p>
@@ -24454,8 +24368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the endpoint to monitor for model explainability.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of the endpoint to monitor for model explainability.</p>
@@ -24468,8 +24382,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
         /// default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Whether to sort results by the <code>Name</code> or <code>CreationTime</code> field. The
@@ -24483,8 +24397,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
@@ -24498,8 +24412,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
@@ -24509,8 +24423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
@@ -24519,8 +24433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filter for model explainability jobs whose name contains a specified string.</p>
@@ -24533,8 +24447,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model explainability jobs created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model explainability jobs created before a specified
@@ -24548,8 +24462,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model explainability jobs created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model explainability jobs created after a specified
@@ -24628,9 +24542,9 @@ pub mod fluent_builders {
         /// or Task to filter supported. Filter names and values are case-sensitive.</p>
         pub fn search_expression(
             mut self,
-            signature: crate::model::ModelMetadataSearchExpression,
+            input: crate::model::ModelMetadataSearchExpression,
         ) -> Self {
-            self.inner = self.inner.search_expression(signature);
+            self.inner = self.inner.search_expression(input);
             self
         }
         /// <p>One or more filters that searches for the specified resource or resources
@@ -24647,8 +24561,8 @@ pub mod fluent_builders {
         /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
         /// the response includes a NextToken. To retrieve the next set of model metadata,
         /// use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
@@ -24659,8 +24573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of models to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of models to return in the response.</p>
@@ -24729,8 +24643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model groups created after the specified time.</p>
@@ -24742,8 +24656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only model groups created before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model groups created before the specified time.</p>
@@ -24755,8 +24669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -24766,8 +24680,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the model group name. This filter returns only model groups whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the model group name. This filter returns only model groups whose name
@@ -24782,8 +24696,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// model groups, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListModelPackageGroups</code> request was
@@ -24794,8 +24708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ModelPackageGroupSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ModelPackageGroupSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -24807,8 +24721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -24881,8 +24795,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model packages created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model packages created after the specified time
@@ -24896,8 +24810,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model packages created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model packages created before the specified time
@@ -24910,8 +24824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of model packages to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of model packages to return in the response.</p>
@@ -24921,8 +24835,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the model package name. This filter returns only model packages whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the model package name. This filter returns only model packages whose name
@@ -24936,11 +24850,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only the model packages with the specified approval
         /// status.</p>
-        pub fn model_approval_status(
-            mut self,
-            signature: crate::model::ModelApprovalStatus,
-        ) -> Self {
-            self.inner = self.inner.model_approval_status(signature);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         /// <p>A filter that returns only the model packages with the specified approval
@@ -24953,11 +24864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only model versions that belong to the specified model group.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>A filter that returns only model versions that belong to the specified model group.</p>
@@ -24984,8 +24892,8 @@ pub mod fluent_builders {
         /// <code>BOTH</code> - List both versioned and unversioned models.</p>
         /// </li>
         /// </ul>
-        pub fn model_package_type(mut self, signature: crate::model::ModelPackageType) -> Self {
-            self.inner = self.inner.model_package_type(signature);
+        pub fn model_package_type(mut self, input: crate::model::ModelPackageType) -> Self {
+            self.inner = self.inner.model_package_type(input);
             self
         }
         /// <p>A filter that returns onlyl the model packages of the specified type. This can be one
@@ -25014,8 +24922,8 @@ pub mod fluent_builders {
         /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of model
         /// packages, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response to a previous <code>ListModelPackages</code> request was truncated,
@@ -25027,8 +24935,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameter by which to sort the results. The default is
         /// <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ModelPackageSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ModelPackageSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is
@@ -25041,8 +24949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
@@ -25115,8 +25023,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model quality monitoring job definitions that are associated
         /// with the specified endpoint.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions that are associated
@@ -25129,8 +25037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringJobDefinitionSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringJobDefinitionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -25142,8 +25050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -25157,8 +25065,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// model quality monitoring job definitions, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListModelQualityJobDefinitions</code> request was
@@ -25170,8 +25078,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return in a call to
         /// <code>ListModelQualityJobDefinitions</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a call to
@@ -25182,8 +25090,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the transform job name. This filter returns only model quality monitoring
         /// job definitions whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the transform job name. This filter returns only model quality monitoring
@@ -25197,8 +25105,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model quality monitoring job definitions created before the
         /// specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions created before the
@@ -25212,8 +25120,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only model quality monitoring job definitions created after the
         /// specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only model quality monitoring job definitions created after the
@@ -25286,8 +25194,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ModelSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ModelSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
@@ -25299,8 +25207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::OrderKey) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::OrderKey) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -25314,8 +25222,8 @@ pub mod fluent_builders {
         /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of models, use the
         /// token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the response to a previous <code>ListModels</code> request was truncated, the
@@ -25326,8 +25234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of models to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of models to return in the response.</p>
@@ -25337,8 +25245,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the model name. This filter returns only models whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the model name. This filter returns only models whose
@@ -25352,8 +25260,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only models created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only models created before the specified time
@@ -25367,8 +25275,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only models with a creation time greater than or equal to the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only models with a creation time greater than or equal to the
@@ -25441,11 +25349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a specific schedule to fetch jobs for.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>Name of a specific schedule to fetch jobs for.</p>
@@ -25457,8 +25362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Name of a specific endpoint to fetch jobs for.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of a specific endpoint to fetch jobs for.</p>
@@ -25471,8 +25376,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
         /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringExecutionSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringExecutionSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
@@ -25486,8 +25391,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
@@ -25501,8 +25406,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
@@ -25512,8 +25417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
@@ -25522,8 +25427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for jobs scheduled before a specified time.</p>
-        pub fn scheduled_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time_before(signature);
+        pub fn scheduled_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time_before(input);
             self
         }
         /// <p>Filter for jobs scheduled before a specified time.</p>
@@ -25535,8 +25440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for jobs scheduled after a specified time.</p>
-        pub fn scheduled_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.scheduled_time_after(signature);
+        pub fn scheduled_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.scheduled_time_after(input);
             self
         }
         /// <p>Filter for jobs scheduled after a specified time.</p>
@@ -25548,8 +25453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs created before a specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs created before a specified time.</p>
@@ -25561,8 +25466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs created after a specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs created after a specified time.</p>
@@ -25574,8 +25479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs modified after a specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only jobs modified after a specified time.</p>
@@ -25587,8 +25492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only jobs modified before a specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only jobs modified before a specified time.</p>
@@ -25600,8 +25505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::ExecutionStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::ExecutionStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only jobs with a specific status.</p>
@@ -25616,9 +25521,9 @@ pub mod fluent_builders {
         /// definitions.</p>
         pub fn monitoring_job_definition_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.monitoring_job_definition_name(signature.into());
+            self.inner = self.inner.monitoring_job_definition_name(input.into());
             self
         }
         /// <p>Gets a list of the monitoring job runs of the specified monitoring job
@@ -25632,8 +25537,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only the monitoring job runs of the specified monitoring
         /// type.</p>
-        pub fn monitoring_type_equals(mut self, signature: crate::model::MonitoringType) -> Self {
-            self.inner = self.inner.monitoring_type_equals(signature);
+        pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
+            self.inner = self.inner.monitoring_type_equals(input);
             self
         }
         /// <p>A filter that returns only the monitoring job runs of the specified monitoring
@@ -25706,8 +25611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of a specific endpoint to fetch schedules for.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>Name of a specific endpoint to fetch schedules for.</p>
@@ -25720,8 +25625,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
         /// <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::MonitoringScheduleSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::MonitoringScheduleSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Whether to sort results by <code>Status</code>, <code>CreationTime</code>,
@@ -25735,8 +25640,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
         /// The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
@@ -25750,8 +25655,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
         /// executions, use it in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned if the response is truncated. To retrieve the next set of job
@@ -25761,8 +25666,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of jobs to return in the response. The default value is 10.</p>
@@ -25771,8 +25676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filter for monitoring schedules whose name contains a specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>Filter for monitoring schedules whose name contains a specified string.</p>
@@ -25784,8 +25689,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules created before a specified time.</p>
@@ -25797,8 +25702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules created after a specified time.</p>
@@ -25810,8 +25715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
@@ -25823,8 +25728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified after a specified time.</p>
@@ -25836,8 +25741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
-        pub fn status_equals(mut self, signature: crate::model::ScheduleStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::ScheduleStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that returns only monitoring schedules modified before a specified time.</p>
@@ -25852,9 +25757,9 @@ pub mod fluent_builders {
         /// definition.</p>
         pub fn monitoring_job_definition_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.monitoring_job_definition_name(signature.into());
+            self.inner = self.inner.monitoring_job_definition_name(input.into());
             self
         }
         /// <p>Gets a list of the monitoring schedules for the specified monitoring job
@@ -25868,8 +25773,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only the monitoring schedules for the specified monitoring
         /// type.</p>
-        pub fn monitoring_type_equals(mut self, signature: crate::model::MonitoringType) -> Self {
-            self.inner = self.inner.monitoring_type_equals(signature);
+        pub fn monitoring_type_equals(mut self, input: crate::model::MonitoringType) -> Self {
+            self.inner = self.inner.monitoring_type_equals(input);
             self
         }
         /// <p>A filter that returns only the monitoring schedules for the specified monitoring
@@ -25946,8 +25851,8 @@ pub mod fluent_builders {
         /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To get the next set of
         /// lifecycle configurations, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was
@@ -25958,8 +25863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of lifecycle configurations to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of lifecycle configurations to return in the response.</p>
@@ -25970,9 +25875,9 @@ pub mod fluent_builders {
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
         pub fn sort_by(
             mut self,
-            signature: crate::model::NotebookInstanceLifecycleConfigSortKey,
+            input: crate::model::NotebookInstanceLifecycleConfigSortKey,
         ) -> Self {
-            self.inner = self.inner.sort_by(signature);
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
@@ -25986,9 +25891,9 @@ pub mod fluent_builders {
         /// <p>The sort order for results.</p>
         pub fn sort_order(
             mut self,
-            signature: crate::model::NotebookInstanceLifecycleConfigSortOrder,
+            input: crate::model::NotebookInstanceLifecycleConfigSortOrder,
         ) -> Self {
-            self.inner = self.inner.sort_order(signature);
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results.</p>
@@ -26001,8 +25906,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
         /// configurations whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the lifecycle configuration name. This filter returns only lifecycle
@@ -26016,8 +25921,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only lifecycle configurations that were created before the
         /// specified time (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were created before the
@@ -26031,8 +25936,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only lifecycle configurations that were created after the
         /// specified time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were created after the
@@ -26046,8 +25951,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only lifecycle configurations that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified before the
@@ -26061,8 +25966,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only lifecycle configurations that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only lifecycle configurations that were modified after the
@@ -26144,8 +26049,8 @@ pub mod fluent_builders {
         /// truncated, you must use the same values for the filer and sort order in the next
         /// request. </p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> If the previous call to the <code>ListNotebookInstances</code> is truncated, the
@@ -26162,8 +26067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of notebook instances to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of notebook instances to return.</p>
@@ -26172,8 +26077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::NotebookInstanceSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::NotebookInstanceSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>Name</code>.</p>
@@ -26185,8 +26090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. </p>
-        pub fn sort_order(mut self, signature: crate::model::NotebookInstanceSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::NotebookInstanceSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. </p>
@@ -26199,8 +26104,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the notebook instances' name. This filter returns only notebook
         /// instances whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the notebook instances' name. This filter returns only notebook
@@ -26214,8 +26119,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only notebook instances that were created before the
         /// specified time (timestamp). </p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were created before the
@@ -26229,8 +26134,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only notebook instances that were created after the specified
         /// time (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were created after the specified
@@ -26244,8 +26149,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only notebook instances that were modified before the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified before the
@@ -26259,8 +26164,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only notebook instances that were modified after the
         /// specified time (timestamp).</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only notebook instances that were modified after the
@@ -26273,8 +26178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only notebook instances with the specified status.</p>
-        pub fn status_equals(mut self, signature: crate::model::NotebookInstanceStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::NotebookInstanceStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that returns only notebook instances with the specified status.</p>
@@ -26290,11 +26195,11 @@ pub mod fluent_builders {
         /// lifecycle configuration with a name that contains the specified string.</p>
         pub fn notebook_instance_lifecycle_config_name_contains(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name_contains(signature.into());
+                .notebook_instance_lifecycle_config_name_contains(input.into());
             self
         }
         /// <p>A string in the name of a notebook instances lifecycle configuration associated with
@@ -26314,11 +26219,9 @@ pub mod fluent_builders {
         /// with a name that contains the specified string.</p>
         pub fn default_code_repository_contains(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .default_code_repository_contains(signature.into());
+            self.inner = self.inner.default_code_repository_contains(input.into());
             self
         }
         /// <p>A string in the name or URL of a Git repository associated with this notebook
@@ -26335,11 +26238,9 @@ pub mod fluent_builders {
         /// repository.</p>
         pub fn additional_code_repository_equals(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .additional_code_repository_equals(signature.into());
+            self.inner = self.inner.additional_code_repository_equals(input.into());
             self
         }
         /// <p>A filter that returns only notebook instances with associated with the specified git
@@ -26412,8 +26313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline.</p>
@@ -26426,8 +26327,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipeline executions that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns the pipeline executions that were created after a specified
@@ -26441,8 +26342,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipeline executions that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns the pipeline executions that were created before a specified
@@ -26455,8 +26356,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortPipelineExecutionsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortPipelineExecutionsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
@@ -26468,8 +26369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results.</p>
@@ -26482,8 +26383,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline executions, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListPipelineExecutions</code> request was truncated,
@@ -26493,8 +26394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of pipeline executions to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of pipeline executions to return in the response.</p>
@@ -26563,8 +26464,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -26577,8 +26478,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipeline execution steps, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListPipelineExecutionSteps</code> request was truncated,
@@ -26588,8 +26489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of pipeline execution steps to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of pipeline execution steps to return in the response.</p>
@@ -26598,8 +26499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
@@ -26673,8 +26574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -26687,8 +26588,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of parameters, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListPipelineParametersForExecution</code> request was truncated,
@@ -26698,8 +26599,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of parameters to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of parameters to return in the response.</p>
@@ -26768,8 +26669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The prefix of the pipeline name.</p>
-        pub fn pipeline_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name_prefix(signature.into());
+        pub fn pipeline_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name_prefix(input.into());
             self
         }
         /// <p>The prefix of the pipeline name.</p>
@@ -26782,8 +26683,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipelines that were created after a specified
         /// time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns the pipelines that were created after a specified
@@ -26797,8 +26698,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the pipelines that were created before a specified
         /// time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns the pipelines that were created before a specified
@@ -26811,8 +26712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortPipelinesBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortPipelinesBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreatedTime</code>.</p>
@@ -26824,8 +26725,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results.</p>
@@ -26838,8 +26739,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of pipelines, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListPipelines</code> request was truncated,
@@ -26849,8 +26750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of pipelines to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of pipelines to return in the response.</p>
@@ -26919,8 +26820,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
@@ -26932,8 +26833,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only processing jobs created after the specified time.</p>
@@ -26945,8 +26846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only processing jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified after the specified time.</p>
@@ -26958,8 +26859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only processing jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only processing jobs modified before the specified time.</p>
@@ -26972,8 +26873,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the processing job name. This filter returns only processing jobs whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the processing job name. This filter returns only processing jobs whose
@@ -26986,8 +26887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only processing jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::ProcessingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::ProcessingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only processing jobs with a specific status.</p>
@@ -26999,8 +26900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -27009,8 +26910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -27024,8 +26925,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of processing
         /// jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListProcessingJobs</code> request was truncated,
@@ -27036,8 +26937,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of processing jobs to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of processing jobs to return in the response.</p>
@@ -27107,8 +27008,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the projects that were created after a specified
         /// time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns the projects that were created after a specified
@@ -27122,8 +27023,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the projects that were created before a specified
         /// time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns the projects that were created before a specified
@@ -27136,8 +27037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of projects to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of projects to return in the response.</p>
@@ -27147,8 +27048,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns the projects whose name contains a specified
         /// string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A filter that returns the projects whose name contains a specified
@@ -27162,8 +27063,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of projects, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListProjects</code> request was truncated,
@@ -27173,8 +27074,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ProjectSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ProjectSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field by which to sort results. The default is <code>CreationTime</code>.</p>
@@ -27186,8 +27087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::ProjectSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::ProjectSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -27259,8 +27160,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of Studio Lifecycle Configurations to return in the response. The default value is 10.</p>
@@ -27269,8 +27170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.</p>
@@ -27279,8 +27180,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.</p>
@@ -27294,9 +27195,9 @@ pub mod fluent_builders {
         /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
         pub fn app_type_equals(
             mut self,
-            signature: crate::model::StudioLifecycleConfigAppType,
+            input: crate::model::StudioLifecycleConfigAppType,
         ) -> Self {
-            self.inner = self.inner.app_type_equals(signature);
+            self.inner = self.inner.app_type_equals(input);
             self
         }
         /// <p>A parameter to search for the App Type to which the Lifecycle Configuration is attached.</p>
@@ -27308,8 +27209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or before the specified time.</p>
@@ -27321,8 +27222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations created on or after the specified time.</p>
@@ -27334,8 +27235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
-        pub fn modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.modified_time_before(signature);
+        pub fn modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.modified_time_before(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified before the specified time.</p>
@@ -27347,8 +27248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
-        pub fn modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.modified_time_after(signature);
+        pub fn modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.modified_time_after(input);
             self
         }
         /// <p>A filter that returns only Lifecycle Configurations modified after the specified time.</p>
@@ -27360,8 +27261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is CreationTime.</p>
-        pub fn sort_by(mut self, signature: crate::model::StudioLifecycleConfigSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::StudioLifecycleConfigSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is CreationTime.</p>
@@ -27373,8 +27274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is Descending.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is Descending.</p>
@@ -27449,8 +27350,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the work team name. This filter returns only work teams whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the work team name. This filter returns only work teams whose name
@@ -27465,8 +27366,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
         /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set of
         /// labeling jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListSubscribedWorkteams</code> request was
@@ -27477,8 +27378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
@@ -27548,8 +27449,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
         /// retrieve.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to
@@ -27561,8 +27462,8 @@ pub mod fluent_builders {
         /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
         /// returns this token. To retrieve the next set of tags, use it in the subsequent request.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> If the response to the previous <code>ListTags</code> request is truncated, Amazon SageMaker
@@ -27573,8 +27474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of tags to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of tags to return.</p>
@@ -27665,8 +27566,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of training
         /// jobs, use the token in the next request. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListTrainingJobs</code> request was truncated,
@@ -27677,8 +27578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of training jobs to return in the response.</p>
@@ -27688,8 +27589,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only training jobs created after the specified time
         /// (timestamp).</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs created after the specified time
@@ -27703,8 +27604,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only training jobs created before the specified time
         /// (timestamp).</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only training jobs created before the specified time
@@ -27718,8 +27619,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only training jobs modified after the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only training jobs modified after the specified time
@@ -27733,8 +27634,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only training jobs modified before the specified time
         /// (timestamp).</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only training jobs modified before the specified time
@@ -27748,8 +27649,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the training job name. This filter returns only training jobs whose
         /// name contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the training job name. This filter returns only training jobs whose
@@ -27762,8 +27663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only training jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::TrainingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::TrainingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only training jobs with a specific status.</p>
@@ -27775,8 +27676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -27785,8 +27686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -27863,9 +27764,9 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job whose training jobs you want to list.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(signature.into());
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
             self
         }
         /// <p>The name of the tuning job whose training jobs you want to list.</p>
@@ -27879,8 +27780,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
         /// request was truncated, the response includes a <code>NextToken</code>. To retrieve the
         /// next set of training jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListTrainingJobsForHyperParameterTuningJob</code>
@@ -27891,8 +27792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of training jobs to return. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of training jobs to return. The default value is 10.</p>
@@ -27903,8 +27804,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only training jobs with the
         /// specified
         /// status.</p>
-        pub fn status_equals(mut self, signature: crate::model::TrainingJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::TrainingJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that returns only training jobs with the
@@ -27922,8 +27823,8 @@ pub mod fluent_builders {
         /// by. The default is <code>Name</code>.</p>
         /// <p>If the value of this field is <code>FinalObjectiveMetricValue</code>, any training
         /// jobs that did not return an objective metric are not listed.</p>
-        pub fn sort_by(mut self, signature: crate::model::TrainingJobSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::TrainingJobSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort
@@ -27941,8 +27842,8 @@ pub mod fluent_builders {
         /// <p>The sort order
         /// for
         /// results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order
@@ -28016,8 +27917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs created after the specified time.</p>
@@ -28029,8 +27930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only transform jobs created before the specified time.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>A filter that returns only transform jobs created before the specified time.</p>
@@ -28042,8 +27943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only transform jobs modified after the specified time.</p>
-        pub fn last_modified_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_after(signature);
+        pub fn last_modified_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_after(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified after the specified time.</p>
@@ -28055,8 +27956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only transform jobs modified before the specified time.</p>
-        pub fn last_modified_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.last_modified_time_before(signature);
+        pub fn last_modified_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.last_modified_time_before(input);
             self
         }
         /// <p>A filter that returns only transform jobs modified before the specified time.</p>
@@ -28069,8 +27970,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the transform job name. This filter returns only transform jobs whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the transform job name. This filter returns only transform jobs whose name
@@ -28083,8 +27984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that retrieves only transform jobs with a specific status.</p>
-        pub fn status_equals(mut self, signature: crate::model::TransformJobStatus) -> Self {
-            self.inner = self.inner.status_equals(signature);
+        pub fn status_equals(mut self, input: crate::model::TransformJobStatus) -> Self {
+            self.inner = self.inner.status_equals(input);
             self
         }
         /// <p>A filter that retrieves only transform jobs with a specific status.</p>
@@ -28096,8 +27997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -28106,8 +28007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Descending</code>.</p>
@@ -28121,8 +28022,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
         /// the response includes a <code>NextToken</code>. To retrieve the next set of transform
         /// jobs, use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListTransformJobs</code> request was truncated,
@@ -28133,8 +28034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of transform jobs to return in the response. The default value is <code>10</code>.</p>
@@ -28224,8 +28125,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only components that are part of the specified experiment. If you
         /// specify <code>ExperimentName</code>, you can't filter by <code>SourceArn</code> or
         /// <code>TrialName</code>.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>A filter that returns only components that are part of the specified experiment. If you
@@ -28241,8 +28142,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only components that are part of the specified trial. If you specify
         /// <code>TrialName</code>, you can't filter by <code>ExperimentName</code> or
         /// <code>SourceArn</code>.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>A filter that returns only components that are part of the specified trial. If you specify
@@ -28255,8 +28156,8 @@ pub mod fluent_builders {
         /// <p>A filter that returns only components that have the specified source Amazon Resource Name
         /// (ARN). If you specify <code>SourceArn</code>, you can't filter by <code>ExperimentName</code>
         /// or <code>TrialName</code>.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>A filter that returns only components that have the specified source Amazon Resource Name
@@ -28267,8 +28168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only components created after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only components created after the specified time.</p>
@@ -28280,8 +28181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only components created before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only components created before the specified time.</p>
@@ -28293,8 +28194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortTrialComponentsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortTrialComponentsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -28306,8 +28207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -28320,8 +28221,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of components to return in the response. The default value is
         /// 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of components to return in the response. The default value is
@@ -28332,8 +28233,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
         /// components, the call returns a token for getting the next set of components.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListTrialComponents</code> didn't return the full set of
@@ -28407,8 +28308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A filter that returns only trials that are part of the specified experiment.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>A filter that returns only trials that are part of the specified experiment.</p>
@@ -28421,8 +28322,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter that returns only trials that are associated with the specified trial
         /// component.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>A filter that returns only trials that are associated with the specified trial
@@ -28435,8 +28336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only trials created after the specified time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>A filter that returns only trials created after the specified time.</p>
@@ -28448,8 +28349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter that returns only trials created before the specified time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>A filter that returns only trials created before the specified time.</p>
@@ -28461,8 +28362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortTrialsBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortTrialsBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The property used to sort results. The default value is <code>CreationTime</code>.</p>
@@ -28474,8 +28375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order. The default value is <code>Descending</code>.</p>
@@ -28487,8 +28388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of trials to return in the response. The default value is 10.</p>
@@ -28498,8 +28399,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
         /// call returns a token for getting the next set of trials.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous call to <code>ListTrials</code> didn't return the full set of trials, the
@@ -28570,8 +28471,8 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was truncated, you will receive this token.
         /// Use it in your next request to receive the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was truncated, you will receive this token.
@@ -28581,8 +28482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Returns a list up to a specified limit.</p>
@@ -28591,8 +28492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for the results. The default is Ascending.</p>
@@ -28604,8 +28505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-        pub fn sort_by(mut self, signature: crate::model::UserProfileSortKey) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::UserProfileSortKey) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
@@ -28617,8 +28518,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter by which to filter the results.</p>
-        pub fn domain_id_equals(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id_equals(signature.into());
+        pub fn domain_id_equals(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id_equals(input.into());
             self
         }
         /// <p>A parameter by which to filter the results.</p>
@@ -28630,11 +28531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A parameter by which to filter the results.</p>
-        pub fn user_profile_name_contains(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.user_profile_name_contains(signature.into());
+        pub fn user_profile_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name_contains(input.into());
             self
         }
         /// <p>A parameter by which to filter the results.</p>
@@ -28707,8 +28605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Sort workforces using the workforce name or creation date.</p>
-        pub fn sort_by(mut self, signature: crate::model::ListWorkforcesSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ListWorkforcesSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>Sort workforces using the workforce name or creation date.</p>
@@ -28720,8 +28618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Sort workforces in ascending or descending order.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Sort workforces in ascending or descending order.</p>
@@ -28733,8 +28631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A filter you can use to search for workforces using part of the workforce name.</p>
@@ -28746,8 +28644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to resume pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to resume pagination.</p>
@@ -28756,8 +28654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of workforces returned in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of workforces returned in the response.</p>
@@ -28828,8 +28726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::ListWorkteamsSortByOptions) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ListWorkteamsSortByOptions) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -28841,8 +28739,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The sort order for results. The default is <code>Ascending</code>.</p>
@@ -28855,8 +28753,8 @@ pub mod fluent_builders {
         }
         /// <p>A string in the work team's name. This filter returns only work teams whose name
         /// contains the specified string.</p>
-        pub fn name_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name_contains(signature.into());
+        pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name_contains(input.into());
             self
         }
         /// <p>A string in the work team's name. This filter returns only work teams whose name
@@ -28871,8 +28769,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
         /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
         /// use the token in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous <code>ListWorkteams</code> request was truncated, the
@@ -28883,8 +28781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of work teams to return in each page of the response.</p>
@@ -28955,11 +28853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model group to add a resource policy to.</p>
-        pub fn model_package_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.model_package_group_name(signature.into());
+        pub fn model_package_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_group_name(input.into());
             self
         }
         /// <p>The name of the model group to add a resource policy to.</p>
@@ -28971,8 +28866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource policy for the model group.</p>
-        pub fn resource_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(signature.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
             self
         }
         /// <p>The resource policy for the model group.</p>
@@ -29064,8 +28959,8 @@ pub mod fluent_builders {
         }
         /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
         /// StartArn(s) the query will look.</p>
-        pub fn direction(mut self, signature: crate::model::Direction) -> Self {
-            self.inner = self.inner.direction(signature);
+        pub fn direction(mut self, input: crate::model::Direction) -> Self {
+            self.inner = self.inner.direction(input);
             self
         }
         /// <p>Associations between lineage entities are directed.  This parameter determines the direction from the
@@ -29080,8 +28975,8 @@ pub mod fluent_builders {
         /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
         /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking-entities.html">Associations</a> and
         /// lineage entities on the path. Set to <code>False</code> to only return lineage entities that match your query.</p>
-        pub fn include_edges(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_edges(signature);
+        pub fn include_edges(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_edges(input);
             self
         }
         /// <p> Setting this value to <code>True</code> will retrieve not only the entities of interest but also the
@@ -29110,8 +29005,8 @@ pub mod fluent_builders {
         /// <p>ModifiedAfter - Filter entities modified after this date.</p>
         /// </li>
         /// </ul>
-        pub fn filters(mut self, signature: crate::model::QueryFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::QueryFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
@@ -29142,8 +29037,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
         /// of <code>Associations</code> from the <code>StartArn</code> entity to the matched results.</p>
-        pub fn max_depth(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_depth(signature);
+        pub fn max_depth(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_depth(input);
             self
         }
         /// <p>The maximum depth in lineage relationships from the <code>StartArns</code> that will be traversed. Depth is a measure of the number
@@ -29153,8 +29048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Limits the number of vertices in the results. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
@@ -29163,8 +29058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Limits the number of vertices in the request. Use the <code>NextToken</code> in a response to to retrieve the next page of results.</p>
@@ -29233,8 +29128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -29340,8 +29235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
-        pub fn ui_template(mut self, signature: crate::model::UiTemplate) -> Self {
-            self.inner = self.inner.ui_template(signature);
+        pub fn ui_template(mut self, input: crate::model::UiTemplate) -> Self {
+            self.inner = self.inner.ui_template(input);
             self
         }
         /// <p>A <code>Template</code> object containing the worker UI template to render.</p>
@@ -29354,8 +29249,8 @@ pub mod fluent_builders {
         }
         /// <p>A <code>RenderableTask</code> object containing a representative task to
         /// render.</p>
-        pub fn task(mut self, signature: crate::model::RenderableTask) -> Self {
-            self.inner = self.inner.task(signature);
+        pub fn task(mut self, input: crate::model::RenderableTask) -> Self {
+            self.inner = self.inner.task(input);
             self
         }
         /// <p>A <code>RenderableTask</code> object containing a representative task to
@@ -29369,8 +29264,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
         /// template.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the
@@ -29383,8 +29278,8 @@ pub mod fluent_builders {
         /// provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
         /// parameter.</p>
         /// <p>See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.</p>
-        pub fn human_task_ui_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_task_ui_arn(signature.into());
+        pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_task_ui_arn(input.into());
             self
         }
         /// <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not
@@ -29459,8 +29354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -29473,8 +29368,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than once.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -29551,8 +29446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
-        pub fn resource(mut self, signature: crate::model::ResourceType) -> Self {
-            self.inner = self.inner.resource(signature);
+        pub fn resource(mut self, input: crate::model::ResourceType) -> Self {
+            self.inner = self.inner.resource(input);
             self
         }
         /// <p>The name of the Amazon SageMaker resource to search for.</p>
@@ -29568,8 +29463,8 @@ pub mod fluent_builders {
         /// nested filter. The maximum number of recursive <code>SubExpressions</code>,
         /// <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
         /// <code>SearchExpression</code> object is 50.</p>
-        pub fn search_expression(mut self, signature: crate::model::SearchExpression) -> Self {
-            self.inner = self.inner.search_expression(signature);
+        pub fn search_expression(mut self, input: crate::model::SearchExpression) -> Self {
+            self.inner = self.inner.search_expression(input);
             self
         }
         /// <p>A Boolean conditional statement. Resources must satisfy this condition to be
@@ -29586,8 +29481,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
         /// default is <code>LastModifiedTime</code>.</p>
-        pub fn sort_by(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sort_by(signature.into());
+        pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sort_by(input.into());
             self
         }
         /// <p>The name of the resource property used to sort the <code>SearchResults</code>. The
@@ -29598,8 +29493,8 @@ pub mod fluent_builders {
         }
         /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
         /// <code>Descending</code>. The default is <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SearchSortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SearchSortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
@@ -29615,8 +29510,8 @@ pub mod fluent_builders {
         /// <code>SearchExpression</code>, the response includes a
         /// <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
         /// <code>SearchRequest</code> to continue retrieving results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If more than <code>MaxResults</code> resources match the specified
@@ -29628,8 +29523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -29700,8 +29595,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-        pub fn callback_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_token(signature.into());
+        pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_token(input.into());
             self
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
@@ -29713,8 +29608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A message describing why the step failed.</p>
-        pub fn failure_reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.failure_reason(signature.into());
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.failure_reason(input.into());
             self
         }
         /// <p>A message describing why the step failed.</p>
@@ -29727,8 +29622,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -29803,8 +29698,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
-        pub fn callback_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_token(signature.into());
+        pub fn callback_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_token(input.into());
             self
         }
         /// <p>The pipeline generated token from the Amazon SQS queue.</p>
@@ -29834,8 +29729,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than one time.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -29912,11 +29807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to start.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>The name of the schedule to start.</p>
@@ -29991,8 +29883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to start.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the notebook instance to start.</p>
@@ -30064,8 +29956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline.</p>
@@ -30079,9 +29971,9 @@ pub mod fluent_builders {
         /// <p>The display name of the pipeline execution.</p>
         pub fn pipeline_execution_display_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_display_name(signature.into());
+            self.inner = self.inner.pipeline_execution_display_name(input.into());
             self
         }
         /// <p>The display name of the pipeline execution.</p>
@@ -30112,9 +30004,9 @@ pub mod fluent_builders {
         /// <p>The description of the pipeline execution.</p>
         pub fn pipeline_execution_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_description(signature.into());
+            self.inner = self.inner.pipeline_execution_description(input.into());
             self
         }
         /// <p>The description of the pipeline execution.</p>
@@ -30127,8 +30019,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than once.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -30201,8 +30093,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the object you are requesting.</p>
-        pub fn auto_ml_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_ml_job_name(signature.into());
+        pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_ml_job_name(input.into());
             self
         }
         /// <p>The name of the object you are requesting.</p>
@@ -30279,8 +30171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the model compilation job to stop.</p>
-        pub fn compilation_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compilation_job_name(signature.into());
+        pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compilation_job_name(input.into());
             self
         }
         /// <p>The name of the model compilation job to stop.</p>
@@ -30352,11 +30244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the edge packaging job.</p>
-        pub fn edge_packaging_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.edge_packaging_job_name(signature.into());
+        pub fn edge_packaging_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.edge_packaging_job_name(input.into());
             self
         }
         /// <p>The name of the edge packaging job.</p>
@@ -30436,9 +30325,9 @@ pub mod fluent_builders {
         /// <p>The name of the tuning job to stop.</p>
         pub fn hyper_parameter_tuning_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hyper_parameter_tuning_job_name(signature.into());
+            self.inner = self.inner.hyper_parameter_tuning_job_name(input.into());
             self
         }
         /// <p>The name of the tuning job to stop.</p>
@@ -30510,8 +30399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job you want to stop.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the job you want to stop.</p>
@@ -30581,8 +30470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the labeling job to stop.</p>
-        pub fn labeling_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.labeling_job_name(signature.into());
+        pub fn labeling_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.labeling_job_name(input.into());
             self
         }
         /// <p>The name of the labeling job to stop.</p>
@@ -30654,11 +30543,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the schedule to stop.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>The name of the schedule to stop.</p>
@@ -30738,8 +30624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to terminate.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the notebook instance to terminate.</p>
@@ -30835,8 +30721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -30849,8 +30735,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
         /// operation. An idempotent operation completes no more than once.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
@@ -30923,8 +30809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the processing job to stop.</p>
-        pub fn processing_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.processing_job_name(signature.into());
+        pub fn processing_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.processing_job_name(input.into());
             self
         }
         /// <p>The name of the processing job to stop.</p>
@@ -31002,8 +30888,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the training job to stop.</p>
-        pub fn training_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(signature.into());
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input.into());
             self
         }
         /// <p>The name of the training job to stop.</p>
@@ -31080,8 +30966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the transform job to stop.</p>
-        pub fn transform_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transform_job_name(signature.into());
+        pub fn transform_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transform_job_name(input.into());
             self
         }
         /// <p>The name of the transform job to stop.</p>
@@ -31153,8 +31039,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the action to update.</p>
-        pub fn action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_name(signature.into());
+        pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_name(input.into());
             self
         }
         /// <p>The name of the action to update.</p>
@@ -31163,8 +31049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the action.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the action.</p>
@@ -31173,8 +31059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status for the action.</p>
-        pub fn status(mut self, signature: crate::model::ActionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ActionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status for the action.</p>
@@ -31286,8 +31172,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the AppImageConfig to update.</p>
-        pub fn app_image_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_image_config_name(signature.into());
+        pub fn app_image_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_image_config_name(input.into());
             self
         }
         /// <p>The name of the AppImageConfig to update.</p>
@@ -31301,9 +31187,9 @@ pub mod fluent_builders {
         /// <p>The new KernelGateway app to run on the image.</p>
         pub fn kernel_gateway_image_config(
             mut self,
-            signature: crate::model::KernelGatewayImageConfig,
+            input: crate::model::KernelGatewayImageConfig,
         ) -> Self {
-            self.inner = self.inner.kernel_gateway_image_config(signature);
+            self.inner = self.inner.kernel_gateway_image_config(input);
             self
         }
         /// <p>The new KernelGateway app to run on the image.</p>
@@ -31375,8 +31261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
-        pub fn artifact_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_arn(signature.into());
+        pub fn artifact_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the artifact to update.</p>
@@ -31385,8 +31271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the artifact.</p>
-        pub fn artifact_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_name(signature.into());
+        pub fn artifact_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_name(input.into());
             self
         }
         /// <p>The new name for the artifact.</p>
@@ -31498,8 +31384,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Git repository to update.</p>
-        pub fn code_repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.code_repository_name(signature.into());
+        pub fn code_repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.code_repository_name(input.into());
             self
         }
         /// <p>The name of the Git repository to update.</p>
@@ -31518,8 +31404,8 @@ pub mod fluent_builders {
         /// <code>{"username": <i>UserName</i>, "password":
         /// <i>Password</i>}</code>
         /// </p>
-        pub fn git_config(mut self, signature: crate::model::GitConfigForUpdate) -> Self {
-            self.inner = self.inner.git_config(signature);
+        pub fn git_config(mut self, input: crate::model::GitConfigForUpdate) -> Self {
+            self.inner = self.inner.git_config(input);
             self
         }
         /// <p>The configuration of the git repository, including the URL and the Amazon Resource
@@ -31598,8 +31484,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the context to update.</p>
-        pub fn context_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.context_name(signature.into());
+        pub fn context_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.context_name(input.into());
             self
         }
         /// <p>The name of the context to update.</p>
@@ -31608,8 +31494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the context.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the context.</p>
@@ -31718,8 +31604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet.</p>
@@ -31731,8 +31617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the device.</p>
@@ -31741,8 +31627,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Description of the fleet.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Description of the fleet.</p>
@@ -31751,8 +31637,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Output configuration  for storing sample data collected by the fleet.</p>
-        pub fn output_config(mut self, signature: crate::model::EdgeOutputConfig) -> Self {
-            self.inner = self.inner.output_config(signature);
+        pub fn output_config(mut self, input: crate::model::EdgeOutputConfig) -> Self {
+            self.inner = self.inner.output_config(input);
             self
         }
         /// <p>Output configuration  for storing sample data collected by the fleet.</p>
@@ -31768,8 +31654,8 @@ pub mod fluent_builders {
         /// "SageMakerEdge-{DeviceFleetName}".</p>
         /// <p>For example, if your device fleet is called "demo-fleet", the name of
         /// the role alias will be "SageMakerEdge-demo-fleet".</p>
-        pub fn enable_iot_role_alias(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iot_role_alias(signature);
+        pub fn enable_iot_role_alias(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iot_role_alias(input);
             self
         }
         /// <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet creation.
@@ -31842,8 +31728,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the fleet the devices belong to.</p>
-        pub fn device_fleet_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_fleet_name(signature.into());
+        pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_fleet_name(input.into());
             self
         }
         /// <p>The name of the fleet the devices belong to.</p>
@@ -31932,8 +31818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the domain to be updated.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The ID of the domain to be updated.</p>
@@ -31942,8 +31828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn default_user_settings(mut self, signature: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.default_user_settings(signature);
+        pub fn default_user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.default_user_settings(input);
             self
         }
         /// <p>A collection of settings.</p>
@@ -31957,9 +31843,9 @@ pub mod fluent_builders {
         /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
         pub fn domain_settings_for_update(
             mut self,
-            signature: crate::model::DomainSettingsForUpdate,
+            input: crate::model::DomainSettingsForUpdate,
         ) -> Self {
-            self.inner = self.inner.domain_settings_for_update(signature);
+            self.inner = self.inner.domain_settings_for_update(input);
             self
         }
         /// <p>A collection of <code>DomainSettings</code> configuration values to update.</p>
@@ -32047,8 +31933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the endpoint whose configuration you want to update.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the endpoint whose configuration you want to update.</p>
@@ -32060,8 +31946,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new endpoint configuration.</p>
-        pub fn endpoint_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_config_name(signature.into());
+        pub fn endpoint_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_config_name(input.into());
             self
         }
         /// <p>The name of the new endpoint configuration.</p>
@@ -32078,8 +31964,8 @@ pub mod fluent_builders {
         /// properties specified in a new <code>EndpointConfig</code> call when updating an
         /// endpoint, set <code>RetainAllVariantProperties</code> to <code>false</code>. The default
         /// is <code>false</code>.</p>
-        pub fn retain_all_variant_properties(mut self, signature: bool) -> Self {
-            self.inner = self.inner.retain_all_variant_properties(signature);
+        pub fn retain_all_variant_properties(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain_all_variant_properties(input);
             self
         }
         /// <p>When updating endpoint resources, enables or disables the retention of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VariantProperty.html">variant properties</a>, such as the instance count or the variant weight. To
@@ -32126,8 +32012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
-        pub fn deployment_config(mut self, signature: crate::model::DeploymentConfig) -> Self {
-            self.inner = self.inner.deployment_config(signature);
+        pub fn deployment_config(mut self, input: crate::model::DeploymentConfig) -> Self {
+            self.inner = self.inner.deployment_config(input);
             self
         }
         /// <p>The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.</p>
@@ -32140,8 +32026,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to reuse the last deployment configuration. The default value is
         /// false (the configuration is not reused).</p>
-        pub fn retain_deployment_config(mut self, signature: bool) -> Self {
-            self.inner = self.inner.retain_deployment_config(signature);
+        pub fn retain_deployment_config(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain_deployment_config(input);
             self
         }
         /// <p>Specifies whether to reuse the last deployment configuration. The default value is
@@ -32217,8 +32103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing Amazon SageMaker endpoint.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of an existing Amazon SageMaker endpoint.</p>
@@ -32311,8 +32197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the experiment to update.</p>
-        pub fn experiment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.experiment_name(signature.into());
+        pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.experiment_name(input.into());
             self
         }
         /// <p>The name of the experiment to update.</p>
@@ -32325,8 +32211,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the experiment as displayed. The name doesn't need to be unique. If
@@ -32336,8 +32222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the experiment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the experiment.</p>
@@ -32426,8 +32312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the image.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the image.</p>
@@ -32436,8 +32322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new display name for the image.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The new display name for the image.</p>
@@ -32446,8 +32332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the image to update.</p>
-        pub fn image_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.image_name(signature.into());
+        pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.image_name(input.into());
             self
         }
         /// <p>The name of the image to update.</p>
@@ -32456,8 +32342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The new Amazon Resource Name (ARN) for the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
@@ -32526,8 +32412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the model package.</p>
-        pub fn model_package_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_package_arn(signature.into());
+        pub fn model_package_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_package_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the model package.</p>
@@ -32539,11 +32425,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The approval status of the model.</p>
-        pub fn model_approval_status(
-            mut self,
-            signature: crate::model::ModelApprovalStatus,
-        ) -> Self {
-            self.inner = self.inner.model_approval_status(signature);
+        pub fn model_approval_status(mut self, input: crate::model::ModelApprovalStatus) -> Self {
+            self.inner = self.inner.model_approval_status(input);
             self
         }
         /// <p>The approval status of the model.</p>
@@ -32555,8 +32438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the approval status of the model.</p>
-        pub fn approval_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_description(signature.into());
+        pub fn approval_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_description(input.into());
             self
         }
         /// <p>A description for the approval status of the model.</p>
@@ -32706,11 +32589,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
         /// an Amazon Web Services account.</p>
-        pub fn monitoring_schedule_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.monitoring_schedule_name(signature.into());
+        pub fn monitoring_schedule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_schedule_name(input.into());
             self
         }
         /// <p>The name of the monitoring schedule. The name must be unique within an Amazon Web Services Region within
@@ -32726,9 +32606,9 @@ pub mod fluent_builders {
         /// monitoring job.</p>
         pub fn monitoring_schedule_config(
             mut self,
-            signature: crate::model::MonitoringScheduleConfig,
+            input: crate::model::MonitoringScheduleConfig,
         ) -> Self {
-            self.inner = self.inner.monitoring_schedule_config(signature);
+            self.inner = self.inner.monitoring_schedule_config(input);
             self
         }
         /// <p>The configuration object that specifies the monitoring schedule and defines the
@@ -32803,8 +32683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the notebook instance to update.</p>
-        pub fn notebook_instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_instance_name(signature.into());
+        pub fn notebook_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_instance_name(input.into());
             self
         }
         /// <p>The name of the notebook instance to update.</p>
@@ -32816,8 +32696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon ML compute instance type.</p>
-        pub fn instance_type(mut self, signature: crate::model::InstanceType) -> Self {
-            self.inner = self.inner.instance_type(signature);
+        pub fn instance_type(mut self, input: crate::model::InstanceType) -> Self {
+            self.inner = self.inner.instance_type(input);
             self
         }
         /// <p>The Amazon ML compute instance type.</p>
@@ -32834,8 +32714,8 @@ pub mod fluent_builders {
         /// <p>To be able to pass this role to Amazon SageMaker, the caller of this API must have the
         /// <code>iam:PassRole</code> permission.</p>
         /// </note>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access the
@@ -32851,8 +32731,8 @@ pub mod fluent_builders {
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
         /// information about lifestyle configurations, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step 2.1: (Optional)
         /// Customize a Notebook Instance</a>.</p>
-        pub fn lifecycle_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lifecycle_config_name(signature.into());
+        pub fn lifecycle_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of a lifecycle configuration to associate with the notebook instance. For
@@ -32869,8 +32749,8 @@ pub mod fluent_builders {
         /// currently associated with the notebook instance. This operation is idempotent. If you
         /// specify a lifecycle configuration that is not associated with the notebook instance when
         /// you call this method, it does not throw an error.</p>
-        pub fn disassociate_lifecycle_config(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disassociate_lifecycle_config(signature);
+        pub fn disassociate_lifecycle_config(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_lifecycle_config(input);
             self
         }
         /// <p>Set to <code>true</code> to remove the notebook instance lifecycle configuration
@@ -32890,8 +32770,8 @@ pub mod fluent_builders {
         /// volume size when you update a notebook instance, but you can't decrease the volume size.
         /// If you want to decrease the size of the ML storage volume in use, create a new notebook
         /// instance with the desired size.</p>
-        pub fn volume_size_in_gb(mut self, signature: i32) -> Self {
-            self.inner = self.inner.volume_size_in_gb(signature);
+        pub fn volume_size_in_gb(mut self, input: i32) -> Self {
+            self.inner = self.inner.volume_size_in_gb(input);
             self
         }
         /// <p>The size, in GB, of the ML storage volume to attach to the notebook instance. The
@@ -32910,11 +32790,8 @@ pub mod fluent_builders {
         /// other Git repository. When you open a notebook instance, it opens in the directory that
         /// contains this repository. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon SageMaker
         /// Notebook Instances</a>.</p>
-        pub fn default_code_repository(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.default_code_repository(signature.into());
+        pub fn default_code_repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_code_repository(input.into());
             self
         }
         /// <p>The Git repository to associate with the notebook instance as its default code
@@ -32992,8 +32869,8 @@ pub mod fluent_builders {
         /// instance. This operation is idempotent. If you specify an accelerator type that is not
         /// associated with the notebook instance when you call this method, it does not throw an
         /// error.</p>
-        pub fn disassociate_accelerator_types(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disassociate_accelerator_types(signature);
+        pub fn disassociate_accelerator_types(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_accelerator_types(input);
             self
         }
         /// <p>A list of the Elastic Inference (EI) instance types to remove from this notebook
@@ -33010,8 +32887,8 @@ pub mod fluent_builders {
         /// <p>The name or URL of the default Git repository to remove from this notebook instance.
         /// This operation is idempotent. If you specify a Git repository that is not associated
         /// with the notebook instance when you call this method, it does not throw an error.</p>
-        pub fn disassociate_default_code_repository(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disassociate_default_code_repository(signature);
+        pub fn disassociate_default_code_repository(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_default_code_repository(input);
             self
         }
         /// <p>The name or URL of the default Git repository to remove from this notebook instance.
@@ -33028,10 +32905,8 @@ pub mod fluent_builders {
         /// instance. This operation is idempotent. If you specify a Git repository that is not
         /// associated with the notebook instance when you call this method, it does not throw an
         /// error.</p>
-        pub fn disassociate_additional_code_repositories(mut self, signature: bool) -> Self {
-            self.inner = self
-                .inner
-                .disassociate_additional_code_repositories(signature);
+        pub fn disassociate_additional_code_repositories(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_additional_code_repositories(input);
             self
         }
         /// <p>A list of names or URLs of the default Git repositories to remove from this notebook
@@ -33054,8 +32929,8 @@ pub mod fluent_builders {
         /// notebook instance, but lifecycle configuration scripts still run with root
         /// permissions.</p>
         /// </note>
-        pub fn root_access(mut self, signature: crate::model::RootAccess) -> Self {
-            self.inner = self.inner.root_access(signature);
+        pub fn root_access(mut self, input: crate::model::RootAccess) -> Self {
+            self.inner = self.inner.root_access(input);
             self
         }
         /// <p>Whether root access is enabled or disabled for users of the notebook instance. The
@@ -33137,11 +33012,11 @@ pub mod fluent_builders {
         /// <p>The name of the lifecycle configuration.</p>
         pub fn notebook_instance_lifecycle_config_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .notebook_instance_lifecycle_config_name(signature.into());
+                .notebook_instance_lifecycle_config_name(input.into());
             self
         }
         /// <p>The name of the lifecycle configuration.</p>
@@ -33255,8 +33130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the pipeline to update.</p>
-        pub fn pipeline_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_name(signature.into());
+        pub fn pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_name(input.into());
             self
         }
         /// <p>The name of the pipeline to update.</p>
@@ -33268,8 +33143,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The display name of the pipeline.</p>
-        pub fn pipeline_display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_display_name(signature.into());
+        pub fn pipeline_display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_display_name(input.into());
             self
         }
         /// <p>The display name of the pipeline.</p>
@@ -33281,8 +33156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The JSON pipeline definition.</p>
-        pub fn pipeline_definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_definition(signature.into());
+        pub fn pipeline_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_definition(input.into());
             self
         }
         /// <p>The JSON pipeline definition.</p>
@@ -33294,8 +33169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the pipeline.</p>
-        pub fn pipeline_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_description(signature.into());
+        pub fn pipeline_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_description(input.into());
             self
         }
         /// <p>The description of the pipeline.</p>
@@ -33307,8 +33182,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that the pipeline uses to execute.</p>
@@ -33377,8 +33252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
-        pub fn pipeline_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pipeline_execution_arn(signature.into());
+        pub fn pipeline_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pipeline_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the pipeline execution.</p>
@@ -33392,9 +33267,9 @@ pub mod fluent_builders {
         /// <p>The description of the pipeline execution.</p>
         pub fn pipeline_execution_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_description(signature.into());
+            self.inner = self.inner.pipeline_execution_description(input.into());
             self
         }
         /// <p>The description of the pipeline execution.</p>
@@ -33408,9 +33283,9 @@ pub mod fluent_builders {
         /// <p>The display name of the pipeline execution.</p>
         pub fn pipeline_execution_display_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pipeline_execution_display_name(signature.into());
+            self.inner = self.inner.pipeline_execution_display_name(input.into());
             self
         }
         /// <p>The display name of the pipeline execution.</p>
@@ -33489,8 +33364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the project.</p>
-        pub fn project_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_name(signature.into());
+        pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_name(input.into());
             self
         }
         /// <p>The name of the project.</p>
@@ -33499,8 +33374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the project.</p>
-        pub fn project_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_description(signature.into());
+        pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_description(input.into());
             self
         }
         /// <p>The description for the project.</p>
@@ -33518,11 +33393,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn service_catalog_provisioning_update_details(
             mut self,
-            signature: crate::model::ServiceCatalogProvisioningUpdateDetails,
+            input: crate::model::ServiceCatalogProvisioningUpdateDetails,
         ) -> Self {
             self.inner = self
                 .inner
-                .service_catalog_provisioning_update_details(signature);
+                .service_catalog_provisioning_update_details(input);
             self
         }
         /// <p>The product ID and provisioning artifact ID to provision a service catalog.
@@ -33621,8 +33496,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a training job to update the Debugger profiling configuration.</p>
-        pub fn training_job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.training_job_name(signature.into());
+        pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_job_name(input.into());
             self
         }
         /// <p>The name of a training job to update the Debugger profiling configuration.</p>
@@ -33635,8 +33510,8 @@ pub mod fluent_builders {
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
         /// storage paths.</p>
-        pub fn profiler_config(mut self, signature: crate::model::ProfilerConfigForUpdate) -> Self {
-            self.inner = self.inner.profiler_config(signature);
+        pub fn profiler_config(mut self, input: crate::model::ProfilerConfigForUpdate) -> Self {
+            self.inner = self.inner.profiler_config(input);
             self
         }
         /// <p>Configuration information for Debugger system monitoring, framework profiling, and
@@ -33731,8 +33606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the trial to update.</p>
-        pub fn trial_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_name(signature.into());
+        pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_name(input.into());
             self
         }
         /// <p>The name of the trial to update.</p>
@@ -33742,8 +33617,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the trial as displayed. The name doesn't need to be unique. If
@@ -33813,8 +33688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the component to update.</p>
-        pub fn trial_component_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trial_component_name(signature.into());
+        pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trial_component_name(input.into());
             self
         }
         /// <p>The name of the component to update.</p>
@@ -33828,8 +33703,8 @@ pub mod fluent_builders {
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
         /// <code>DisplayName</code> isn't specified, <code>TrialComponentName</code> is
         /// displayed.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name of the component as displayed. The name doesn't need to be unique. If
@@ -33840,8 +33715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status of the component.</p>
-        pub fn status(mut self, signature: crate::model::TrialComponentStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::TrialComponentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status of the component.</p>
@@ -33853,8 +33728,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component started.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>When the component started.</p>
@@ -33866,8 +33741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When the component ended.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>When the component ended.</p>
@@ -34068,8 +33943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The domain ID.</p>
-        pub fn domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_id(signature.into());
+        pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_id(input.into());
             self
         }
         /// <p>The domain ID.</p>
@@ -34078,8 +33953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user profile name.</p>
-        pub fn user_profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_profile_name(signature.into());
+        pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_profile_name(input.into());
             self
         }
         /// <p>The user profile name.</p>
@@ -34091,8 +33966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A collection of settings.</p>
-        pub fn user_settings(mut self, signature: crate::model::UserSettings) -> Self {
-            self.inner = self.inner.user_settings(signature);
+        pub fn user_settings(mut self, input: crate::model::UserSettings) -> Self {
+            self.inner = self.inner.user_settings(input);
             self
         }
         /// <p>A collection of settings.</p>
@@ -34186,8 +34061,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the private workforce that you want to update. You can find your workforce
         /// name by using the  operation.</p>
-        pub fn workforce_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workforce_name(signature.into());
+        pub fn workforce_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workforce_name(input.into());
             self
         }
         /// <p>The name of the private workforce that you want to update. You can find your workforce
@@ -34202,8 +34077,8 @@ pub mod fluent_builders {
         /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
         /// access tasks assigned to this workforce.</p>
         /// <p>Maximum: Ten CIDR values</p>
-        pub fn source_ip_config(mut self, signature: crate::model::SourceIpConfig) -> Self {
-            self.inner = self.inner.source_ip_config(signature);
+        pub fn source_ip_config(mut self, input: crate::model::SourceIpConfig) -> Self {
+            self.inner = self.inner.source_ip_config(input);
             self
         }
         /// <p>A list of one to ten worker IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
@@ -34218,8 +34093,8 @@ pub mod fluent_builders {
         }
         /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
         /// configuration for a workforce made using your own IdP.</p>
-        pub fn oidc_config(mut self, signature: crate::model::OidcConfig) -> Self {
-            self.inner = self.inner.oidc_config(signature);
+        pub fn oidc_config(mut self, input: crate::model::OidcConfig) -> Self {
+            self.inner = self.inner.oidc_config(input);
             self
         }
         /// <p>Use this parameter to update your OIDC Identity Provider (IdP)
@@ -34292,8 +34167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the work team to update.</p>
-        pub fn workteam_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workteam_name(signature.into());
+        pub fn workteam_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workteam_name(input.into());
             self
         }
         /// <p>The name of the work team to update.</p>
@@ -34360,8 +34235,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An updated description for the work team.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An updated description for the work team.</p>
@@ -34372,9 +34247,9 @@ pub mod fluent_builders {
         /// <p>Configures SNS topic notifications for available or expiring work items</p>
         pub fn notification_configuration(
             mut self,
-            signature: crate::model::NotificationConfiguration,
+            input: crate::model::NotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.notification_configuration(signature);
+            self.inner = self.inner.notification_configuration(input);
             self
         }
         /// <p>Configures SNS topic notifications for available or expiring work items</p>

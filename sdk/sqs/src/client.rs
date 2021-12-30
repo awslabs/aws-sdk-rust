@@ -336,8 +336,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue to which permissions are added.</p>
@@ -347,8 +347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
-        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(signature.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
@@ -497,8 +497,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
@@ -510,8 +510,8 @@ pub mod fluent_builders {
         /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
         /// <a>ReceiveMessage</a>
         /// </code> action.</p>
-        pub fn receipt_handle(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.receipt_handle(signature.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.receipt_handle(input.into());
             self
         }
         /// <p>The receipt handle associated with the message whose visibility timeout is changed. This parameter is returned by the <code>
@@ -525,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
-        pub fn visibility_timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.visibility_timeout(signature);
+        pub fn visibility_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.visibility_timeout(input);
             self
         }
         /// <p>The new value for the message's visibility timeout (in seconds). Values range: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
@@ -610,8 +610,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue whose messages' visibility is changed.</p>
@@ -766,8 +766,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_name(signature.into());
+        pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_name(input.into());
             self
         }
         /// <p>The name of the new queue. The following limits apply to this name:</p>
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
@@ -1303,8 +1303,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The receipt handle associated with the message to delete.</p>
-        pub fn receipt_handle(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.receipt_handle(signature.into());
+        pub fn receipt_handle(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.receipt_handle(input.into());
             self
         }
         /// <p>The receipt handle associated with the message to delete.</p>
@@ -1388,8 +1388,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue from which messages are deleted.</p>
@@ -1491,8 +1491,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue to delete.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue to delete.</p>
@@ -1566,8 +1566,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue whose attribute information is retrieved.</p>
@@ -1998,8 +1998,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_name(signature.into());
+        pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_name(input.into());
             self
         }
         /// <p>The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).</p>
@@ -2009,11 +2009,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
-        pub fn queue_owner_aws_account_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.queue_owner_aws_account_id(signature.into());
+        pub fn queue_owner_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_owner_aws_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the account that created the queue.</p>
@@ -2096,8 +2093,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of a dead-letter queue.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of a dead-letter queue.</p>
@@ -2107,8 +2104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
@@ -2118,8 +2115,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
         /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
@@ -2203,8 +2200,8 @@ pub mod fluent_builders {
         }
         /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_name_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_name_prefix(signature.into());
+        pub fn queue_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_name_prefix(input.into());
             self
         }
         /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
@@ -2217,8 +2214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Pagination token to request the next set of results.</p>
@@ -2228,8 +2225,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
         /// You must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of results to include in the response. Value range is 1 to 1000.
@@ -2305,8 +2302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the queue.</p>
@@ -2389,8 +2386,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.</p>
@@ -2496,8 +2493,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue from which messages are received.</p>
@@ -2703,8 +2700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
-        pub fn max_number_of_messages(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_number_of_messages(signature);
+        pub fn max_number_of_messages(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_number_of_messages(input);
             self
         }
         /// <p>The maximum number of messages to return. Amazon SQS never returns more messages than this value (however, fewer messages might be returned). Valid values: 1 to 10. Default: 1.</p>
@@ -2713,8 +2710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
-        pub fn visibility_timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.visibility_timeout(signature);
+        pub fn visibility_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.visibility_timeout(input);
             self
         }
         /// <p>The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a <code>ReceiveMessage</code> request.</p>
@@ -2729,8 +2726,8 @@ pub mod fluent_builders {
         /// requests is longer than the <code>WaitTimeSeconds</code> parameter. For example,
         /// with the Java SDK, you can set HTTP transport settings using the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/nio/netty/NettyNioAsyncHttpClient.html"> NettyNioAsyncHttpClient</a> for asynchronous clients, or the <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/http/apache/ApacheHttpClient.html"> ApacheHttpClient</a> for synchronous clients. </p>
         /// </important>
-        pub fn wait_time_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.wait_time_seconds(signature);
+        pub fn wait_time_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.wait_time_seconds(input);
             self
         }
         /// <p>The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than <code>WaitTimeSeconds</code>.
@@ -2789,11 +2786,8 @@ pub mod fluent_builders {
         /// <p>For best practices of using <code>ReceiveRequestAttemptId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using the ReceiveRequestAttemptId Request Parameter</a>
         /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        pub fn receive_request_attempt_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.receive_request_attempt_id(signature.into());
+        pub fn receive_request_attempt_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.receive_request_attempt_id(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -2925,8 +2919,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
@@ -2938,8 +2932,8 @@ pub mod fluent_builders {
         /// <p>The identification of the permission to remove. This is the label added using the <code>
         /// <a>AddPermission</a>
         /// </code> action.</p>
-        pub fn label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.label(signature.into());
+        pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.label(input.into());
             self
         }
         /// <p>The identification of the permission to remove. This is the label added using the <code>
@@ -3018,8 +3012,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue to which a message is sent.</p>
@@ -3036,8 +3030,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>.</p>
         /// </important>
-        pub fn message_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_body(signature.into());
+        pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_body(input.into());
             self
         }
         /// <p>The message to send. The minimum size is one character. The maximum size is 256 KB.</p>
@@ -3059,8 +3053,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>When you set <code>FifoQueue</code>, you can't set <code>DelaySeconds</code> per message. You can set this parameter only on a queue level.</p>
         /// </note>
-        pub fn delay_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.delay_seconds(signature);
+        pub fn delay_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.delay_seconds(input);
             self
         }
         /// <p>
@@ -3200,11 +3194,8 @@ pub mod fluent_builders {
         /// <p>For best practices of using <code>MessageDeduplicationId</code>, see
         /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using the MessageDeduplicationId Property</a>
         /// in the <i>Amazon SQS Developer Guide</i>.</p>
-        pub fn message_deduplication_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.message_deduplication_id(signature.into());
+        pub fn message_deduplication_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_deduplication_id(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -3287,8 +3278,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>MessageGroupId</code> is required for FIFO queues. You can't use it for Standard queues.</p>
         /// </important>
-        pub fn message_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_group_id(signature.into());
+        pub fn message_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_group_id(input.into());
             self
         }
         /// <p>This parameter applies only to FIFO (first-in-first-out) queues.</p>
@@ -3404,8 +3395,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue to which batched messages are sent.</p>
@@ -3513,8 +3504,8 @@ pub mod fluent_builders {
         }
         /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
         /// <p>Queue URLs and names are case-sensitive.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the Amazon SQS queue whose attributes are set.</p>
@@ -3940,8 +3931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the queue.</p>
@@ -4039,8 +4030,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The URL of the queue.</p>
-        pub fn queue_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.queue_url(signature.into());
+        pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.queue_url(input.into());
             self
         }
         /// <p>The URL of the queue.</p>

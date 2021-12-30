@@ -322,8 +322,8 @@ pub mod fluent_builders {
         /// hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The cluster identifier. This parameter is stored as a lowercase
@@ -349,8 +349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
@@ -359,8 +359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the cluster.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the cluster.</p>
@@ -376,8 +376,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>AWS recommends that you have at least two read replicas per cluster.</p>
         /// </note>
-        pub fn replication_factor(mut self, signature: i32) -> Self {
-            self.inner = self.inner.replication_factor(signature);
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.replication_factor(input);
             self
         }
         /// <p>The number of nodes in the DAX cluster. A replication factor of 1 will
@@ -418,8 +418,8 @@ pub mod fluent_builders {
         /// <p>DAX clusters can only run in an Amazon VPC environment. All of the subnets
         /// that you specify in a subnet group must exist in the same VPC.</p>
         /// </important>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to be used for the replication group.</p>
@@ -507,9 +507,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance on the DAX cluster is
@@ -572,8 +572,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The Amazon SNS topic owner must be same as the DAX cluster owner.</p>
         /// </note>
-        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(signature.into());
+        pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will
@@ -591,8 +591,8 @@ pub mod fluent_builders {
         /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
         /// will assume this role and use the role's permissions to access DynamoDB on your
         /// behalf.</p>
-        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(signature.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX
@@ -603,8 +603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The parameter group to be associated with the DAX cluster.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The parameter group to be associated with the DAX cluster.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
-        pub fn sse_specification(mut self, signature: crate::model::SseSpecification) -> Self {
-            self.inner = self.inner.sse_specification(signature);
+        pub fn sse_specification(mut self, input: crate::model::SseSpecification) -> Self {
+            self.inner = self.inner.sse_specification(input);
             self
         }
         /// <p>Represents the settings used to enable server-side encryption on the cluster.</p>
@@ -658,9 +658,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cluster_endpoint_encryption_type(
             mut self,
-            signature: crate::model::ClusterEndpointEncryptionType,
+            input: crate::model::ClusterEndpointEncryptionType,
         ) -> Self {
-            self.inner = self.inner.cluster_endpoint_encryption_type(signature);
+            self.inner = self.inner.cluster_endpoint_encryption_type(input);
             self
         }
         /// <p>The type of encryption the cluster's endpoint should support. Values are:</p>
@@ -744,8 +744,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the parameter group to apply to all of the clusters in this replication
         /// group.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to apply to all of the clusters in this replication
@@ -758,8 +758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the parameter group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the parameter group.</p>
@@ -828,8 +828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>A name for the subnet group. This value is stored as a lowercase string. </p>
@@ -841,8 +841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the subnet group</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the subnet group</p>
@@ -931,8 +931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new number of nodes for the DAX cluster.</p>
-        pub fn new_replication_factor(mut self, signature: i32) -> Self {
-            self.inner = self.inner.new_replication_factor(signature);
+        pub fn new_replication_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.new_replication_factor(input);
             self
         }
         /// <p>The new number of nodes for the DAX cluster.</p>
@@ -1049,8 +1049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to be deleted.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster to be deleted.</p>
@@ -1120,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to delete.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to delete.</p>
@@ -1197,8 +1197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to delete.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to delete.</p>
@@ -1302,8 +1302,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1318,8 +1318,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1395,8 +1395,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1411,8 +1411,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1489,8 +1489,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the event source for which events will be returned. If not
         /// specified, then all sources are included in the response.</p>
-        pub fn source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_name(signature.into());
+        pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_name(input.into());
             self
         }
         /// <p>The identifier of the event source for which events will be returned. If not
@@ -1501,8 +1501,8 @@ pub mod fluent_builders {
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are
         /// returned.</p>
-        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are
@@ -1516,8 +1516,8 @@ pub mod fluent_builders {
         }
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
         /// format.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
         /// format.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
@@ -1545,8 +1545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes' worth of events to retrieve.</p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The number of minutes' worth of events to retrieve.</p>
@@ -1558,8 +1558,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1574,8 +1574,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1668,8 +1668,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1684,8 +1684,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1757,8 +1757,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group.</p>
@@ -1771,8 +1771,8 @@ pub mod fluent_builders {
         }
         /// <p>How the parameter is defined. For example, <code>system</code> denotes a
         /// system-defined parameter.</p>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>How the parameter is defined. For example, <code>system</code> denotes a
@@ -1785,8 +1785,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1801,8 +1801,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1895,8 +1895,8 @@ pub mod fluent_builders {
         /// than the specified <code>MaxResults</code> value, a token is included in the response so
         /// that the remaining results can be retrieved.</p>
         /// <p>The value for <code>MaxResults</code> must be between 20 and 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in the response. If more results exist
@@ -1911,8 +1911,8 @@ pub mod fluent_builders {
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token, up to the value specified by
         /// <code>MaxResults</code>.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -1984,8 +1984,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX cluster that will receive additional nodes.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the DAX cluster that will receive additional nodes.</p>
@@ -1994,8 +1994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new number of nodes for the DAX cluster.</p>
-        pub fn new_replication_factor(mut self, signature: i32) -> Self {
-            self.inner = self.inner.new_replication_factor(signature);
+        pub fn new_replication_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.new_replication_factor(input);
             self
         }
         /// <p>The new number of nodes for the DAX cluster.</p>
@@ -2086,8 +2086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX resource to which the tags belong.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the DAX resource to which the tags belong.</p>
@@ -2101,8 +2101,8 @@ pub mod fluent_builders {
         /// <p>An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
         /// results beyond the token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional token returned from a prior request. Use this token for pagination of
@@ -2179,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the DAX cluster containing the node to be rebooted.</p>
@@ -2189,8 +2189,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The system-assigned ID of the node to be rebooted.</p>
-        pub fn node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_id(signature.into());
+        pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_id(input.into());
             self
         }
         /// <p>The system-assigned ID of the node to be rebooted.</p>
@@ -2260,8 +2260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX resource to which tags should be added.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the DAX resource to which tags should be added.</p>
@@ -2351,8 +2351,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX resource from which the tags should be removed.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The name of the DAX resource from which the tags should be removed.</p>
@@ -2443,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DAX cluster to be modified.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the DAX cluster to be modified.</p>
@@ -2453,8 +2453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the changes being made to the cluster.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the changes being made to the cluster.</p>
@@ -2467,9 +2467,9 @@ pub mod fluent_builders {
         /// 30 minutes, and is performed automatically within the maintenance window.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>A range of time when maintenance of DAX cluster software will be performed. For
@@ -2483,8 +2483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
-        pub fn notification_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notification_topic_arn(signature.into());
+        pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
@@ -2498,11 +2498,8 @@ pub mod fluent_builders {
         /// <p>The current state of the topic. A value of “active” means that notifications will
         /// be sent to the topic. A value of “inactive” means that notifications will not be sent to the
         /// topic.</p>
-        pub fn notification_topic_status(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.notification_topic_status(signature.into());
+        pub fn notification_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notification_topic_status(input.into());
             self
         }
         /// <p>The current state of the topic. A value of “active” means that notifications will
@@ -2516,8 +2513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a parameter group for this cluster.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of a parameter group for this cluster.</p>
@@ -2610,8 +2607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group.</p>
@@ -2710,8 +2707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group.</p>
@@ -2723,8 +2720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the subnet group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the subnet group.</p>

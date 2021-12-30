@@ -416,8 +416,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique ID of the service update</p>
-        pub fn service_update(mut self, signature: crate::model::ServiceUpdateRequest) -> Self {
-            self.inner = self.inner.service_update(signature);
+        pub fn service_update(mut self, input: crate::model::ServiceUpdateRequest) -> Self {
+            self.inner = self.inner.service_update(input);
             self
         }
         /// <p>The unique ID of the service update</p>
@@ -489,8 +489,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
-        pub fn source_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_snapshot_name(signature.into());
+        pub fn source_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_name(input.into());
             self
         }
         /// <p>The name of an existing snapshot from which to make a copy.</p>
@@ -502,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
-        pub fn target_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_snapshot_name(signature.into());
+        pub fn target_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_snapshot_name(input.into());
             self
         }
         /// <p>A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.</p>
@@ -521,8 +521,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/snapshots-exporting.html">Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket</a>.
         ///
         /// </p>
-        pub fn target_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_bucket(signature.into());
+        pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access.
@@ -540,8 +540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
@@ -627,8 +627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List.</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List.</p>
@@ -731,8 +731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
@@ -741,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The compute and memory capacity of the nodes in the cluster.</p>
@@ -751,8 +751,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group associated with the cluster.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group associated with the cluster.</p>
@@ -764,8 +764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the cluster.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the cluster.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shards the cluster will contain. The default value is 1. </p>
-        pub fn num_shards(mut self, signature: i32) -> Self {
-            self.inner = self.inner.num_shards(signature);
+        pub fn num_shards(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_shards(input);
             self
         }
         /// <p>The number of shards the cluster will contain. The default value is 1. </p>
@@ -784,8 +784,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
-        pub fn num_replicas_per_shard(mut self, signature: i32) -> Self {
-            self.inner = self.inner.num_replicas_per_shard(signature);
+        pub fn num_replicas_per_shard(mut self, input: i32) -> Self {
+            self.inner = self.inner.num_replicas_per_shard(input);
             self
         }
         /// <p>The number of replicas to apply to each shard. The default value is 1. The maximum is 5. </p>
@@ -794,8 +794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the subnet group to be used for the cluster.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to be used for the cluster.</p>
@@ -824,8 +824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
-        pub fn maintenance_window(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_window(signature.into());
+        pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_window(input.into());
             self
         }
         /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
@@ -837,8 +837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port number on which each of the nodes accepts connections.</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which each of the nodes accepts connections.</p>
@@ -847,8 +847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.</p>
@@ -860,8 +860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag to enable in-transit encryption on the cluster.</p>
-        pub fn tls_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.tls_enabled(signature);
+        pub fn tls_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.tls_enabled(input);
             self
         }
         /// <p>A flag to enable in-transit encryption on the cluster.</p>
@@ -870,8 +870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the cluster.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the cluster.</p>
@@ -897,8 +897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
-        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(signature.into());
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.</p>
@@ -910,8 +910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(signature);
+        pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(input);
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -941,8 +941,8 @@ pub mod fluent_builders {
         /// <p>    Example: 05:00-09:00</p>
         ///
         /// <p>    If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(signature.into());
+        pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
@@ -958,8 +958,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Access Control List to associate with the cluster.</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List to associate with the cluster.</p>
@@ -968,8 +968,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version number of the Redis engine to be used for the cluster.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the Redis engine to be used for the cluster.</p>
@@ -981,8 +981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
@@ -1054,8 +1054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group.</p>
@@ -1067,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group family that the parameter group can be used with.</p>
-        pub fn family(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.family(signature.into());
+        pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.family(input.into());
             self
         }
         /// <p>The name of the parameter group family that the parameter group can be used with.</p>
@@ -1077,8 +1077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the parameter group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of the parameter group.</p>
@@ -1164,8 +1164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The snapshot is created from this cluster.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The snapshot is created from this cluster.</p>
@@ -1174,8 +1174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the snapshot being created.</p>
-        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(signature.into());
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>A name for the snapshot being created.</p>
@@ -1187,8 +1187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
@@ -1277,8 +1277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group.</p>
@@ -1290,8 +1290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the subnet group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the subnet group.</p>
@@ -1394,8 +1394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user. This value must be unique as it also serves as the user identifier.</p>
@@ -1404,8 +1404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-        pub fn authentication_mode(mut self, signature: crate::model::AuthenticationMode) -> Self {
-            self.inner = self.inner.authentication_mode(signature);
+        pub fn authentication_mode(mut self, input: crate::model::AuthenticationMode) -> Self {
+            self.inner = self.inner.authentication_mode(input);
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
@@ -1417,8 +1417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(signature.into());
+        pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(input.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>
@@ -1507,8 +1507,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List to delete</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List to delete</p>
@@ -1577,8 +1577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to be deleted</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster to be deleted</p>
@@ -1587,8 +1587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
-        pub fn final_snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.final_snapshot_name(signature.into());
+        pub fn final_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.final_snapshot_name(input.into());
             self
         }
         /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>
@@ -1661,8 +1661,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to delete.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to delete.</p>
@@ -1734,8 +1734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot to delete</p>
-        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(signature.into());
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>The name of the snapshot to delete</p>
@@ -1807,8 +1807,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to delete</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to delete</p>
@@ -1880,8 +1880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user to delete</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user to delete</p>
@@ -1950,8 +1950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ACL</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the ACL</p>
@@ -1960,8 +1960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2040,8 +2040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster</p>
@@ -2050,8 +2050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2060,8 +2060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2070,8 +2070,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
-        pub fn show_shard_details(mut self, signature: bool) -> Self {
-            self.inner = self.inner.show_shard_details(signature);
+        pub fn show_shard_details(mut self, input: bool) -> Self {
+            self.inner = self.inner.show_shard_details(input);
             self
         }
         /// <p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>
@@ -2140,8 +2140,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Redis engine version</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The Redis engine version</p>
@@ -2153,8 +2153,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a specific parameter group family to return details for.</p>
-        pub fn parameter_group_family(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_family(signature.into());
+        pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_family(input.into());
             self
         }
         /// <p>The name of a specific parameter group family to return details for.</p>
@@ -2166,8 +2166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2176,8 +2176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2186,8 +2186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
-        pub fn default_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_only(signature);
+        pub fn default_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_only(input);
             self
         }
         /// <p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>
@@ -2258,8 +2258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
-        pub fn source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_name(signature.into());
+        pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_name(input.into());
             self
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, all sources are included in the response.</p>
@@ -2268,8 +2268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
@@ -2283,8 +2283,8 @@ pub mod fluent_builders {
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
         ///
         /// Example: 2017-03-30T07:03:49.555Z</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
@@ -2300,8 +2300,8 @@ pub mod fluent_builders {
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
         ///
         /// Example: 2017-03-30T07:03:49.555Z</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.
@@ -2315,8 +2315,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The number of minutes worth of events to retrieve.</p>
@@ -2325,8 +2325,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2335,8 +2335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2405,8 +2405,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a specific  parameter group to return details for.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific  parameter group to return details for.</p>
@@ -2418,8 +2418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2428,8 +2428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2498,8 +2498,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>he name of a specific  parameter group to return details for.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>he name of a specific  parameter group to return details for.</p>
@@ -2511,8 +2511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2521,8 +2521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2591,8 +2591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the service update to describe.</p>
-        pub fn service_update_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_update_name(signature.into());
+        pub fn service_update_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_update_name(input.into());
             self
         }
         /// <p>The unique ID of the service update to describe.</p>
@@ -2638,8 +2638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2648,8 +2648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2719,8 +2719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
@@ -2729,8 +2729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
-        pub fn snapshot_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_name(signature.into());
+        pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_name(input.into());
             self
         }
         /// <p>A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.</p>
@@ -2742,8 +2742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.</p>
@@ -2752,8 +2752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2762,8 +2762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2772,8 +2772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
-        pub fn show_detail(mut self, signature: bool) -> Self {
-            self.inner = self.inner.show_detail(signature);
+        pub fn show_detail(mut self, input: bool) -> Self {
+            self.inner = self.inner.show_detail(input);
             self
         }
         /// <p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>
@@ -2842,8 +2842,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to return details for.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to return details for.</p>
@@ -2855,8 +2855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2865,8 +2865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -2935,8 +2935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user</p>
@@ -2962,8 +2962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.</p>
@@ -2972,8 +2972,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
@@ -3042,8 +3042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster being failed over</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The cluster being failed over</p>
@@ -3052,8 +3052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the shard</p>
-        pub fn shard_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_name(signature.into());
+        pub fn shard_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_name(input.into());
             self
         }
         /// <p>The name of the shard</p>
@@ -3125,8 +3125,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
         /// you can scale up to.</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types
@@ -3200,8 +3200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags</p>
@@ -3270,8 +3270,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to reset.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to reset.</p>
@@ -3283,8 +3283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
-        pub fn all_parameters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.all_parameters(signature);
+        pub fn all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.all_parameters(input);
             self
         }
         /// <p>If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.</p>
@@ -3380,8 +3380,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added</p>
@@ -3467,8 +3467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be removed</p>
@@ -3554,8 +3554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Access Control List</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The name of the Access Control List</p>
@@ -3658,8 +3658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster to update</p>
-        pub fn cluster_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_name(signature.into());
+        pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_name(input.into());
             self
         }
         /// <p>The name of the cluster to update</p>
@@ -3668,8 +3668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the cluster to update</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the cluster to update</p>
@@ -3695,8 +3695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maintenance window to update</p>
-        pub fn maintenance_window(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_window(signature.into());
+        pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_window(input.into());
             self
         }
         /// <p>The maintenance window to update</p>
@@ -3708,8 +3708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The SNS topic ARN to update</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The SNS topic ARN to update</p>
@@ -3721,8 +3721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
-        pub fn sns_topic_status(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_status(signature.into());
+        pub fn sns_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_status(input.into());
             self
         }
         /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.</p>
@@ -3734,8 +3734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the parameter group to update</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to update</p>
@@ -3747,8 +3747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
-        pub fn snapshot_window(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_window(signature.into());
+        pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_window(input.into());
             self
         }
         /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.</p>
@@ -3760,8 +3760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-        pub fn snapshot_retention_limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.snapshot_retention_limit(signature);
+        pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.snapshot_retention_limit(input);
             self
         }
         /// <p>The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
@@ -3770,8 +3770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid node type that you want to scale this cluster up or down to.</p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>A valid node type that you want to scale this cluster up or down to.</p>
@@ -3780,8 +3780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.</p>
@@ -3795,9 +3795,9 @@ pub mod fluent_builders {
         /// <p>The number of replicas that will reside in each shard</p>
         pub fn replica_configuration(
             mut self,
-            signature: crate::model::ReplicaConfigurationRequest,
+            input: crate::model::ReplicaConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.replica_configuration(signature);
+            self.inner = self.inner.replica_configuration(input);
             self
         }
         /// <p>The number of replicas that will reside in each shard</p>
@@ -3811,9 +3811,9 @@ pub mod fluent_builders {
         /// <p>The number of shards in the cluster</p>
         pub fn shard_configuration(
             mut self,
-            signature: crate::model::ShardConfigurationRequest,
+            input: crate::model::ShardConfigurationRequest,
         ) -> Self {
-            self.inner = self.inner.shard_configuration(signature);
+            self.inner = self.inner.shard_configuration(input);
             self
         }
         /// <p>The number of shards in the cluster</p>
@@ -3825,8 +3825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Access Control List that is associated with the cluster</p>
-        pub fn acl_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.acl_name(signature.into());
+        pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.acl_name(input.into());
             self
         }
         /// <p>The Access Control List that is associated with the cluster</p>
@@ -3895,8 +3895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to update.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to update.</p>
@@ -3986,8 +3986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group</p>
@@ -3999,8 +3999,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the subnet group</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the subnet group</p>
@@ -4086,8 +4086,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the user</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The name of the user</p>
@@ -4096,8 +4096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
-        pub fn authentication_mode(mut self, signature: crate::model::AuthenticationMode) -> Self {
-            self.inner = self.inner.authentication_mode(signature);
+        pub fn authentication_mode(mut self, input: crate::model::AuthenticationMode) -> Self {
+            self.inner = self.inner.authentication_mode(input);
             self
         }
         /// <p>Denotes the user's authentication properties, such as whether it requires a password to authenticate.</p>
@@ -4109,8 +4109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Access permissions string used for this user.</p>
-        pub fn access_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_string(signature.into());
+        pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_string(input.into());
             self
         }
         /// <p>Access permissions string used for this user.</p>

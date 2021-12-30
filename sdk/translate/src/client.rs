@@ -256,8 +256,8 @@ pub mod fluent_builders {
         }
         /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
         /// that is unique in the account and region.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A custom name for the parallel data resource in Amazon Translate. You must assign a name
@@ -267,8 +267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
@@ -277,8 +277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn parallel_data_config(mut self, signature: crate::model::ParallelDataConfig) -> Self {
-            self.inner = self.inner.parallel_data_config(signature);
+        pub fn parallel_data_config(mut self, input: crate::model::ParallelDataConfig) -> Self {
+            self.inner = self.inner.parallel_data_config(input);
             self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
@@ -290,8 +290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption key used to encrypt this object.</p>
-        pub fn encryption_key(mut self, signature: crate::model::EncryptionKey) -> Self {
-            self.inner = self.inner.encryption_key(signature);
+        pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
+            self.inner = self.inner.encryption_key(input);
             self
         }
         /// <p>The encryption key used to encrypt this object.</p>
@@ -304,8 +304,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. This token is automatically generated when you use
         /// Amazon Translate through an AWS SDK.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. This token is automatically generated when you use
@@ -375,8 +375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parallel data resource that is being deleted.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parallel data resource that is being deleted.</p>
@@ -445,8 +445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom terminology being deleted. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom terminology being deleted. </p>
@@ -517,8 +517,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
         /// response.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier that Amazon Translate generated for the job. The <a>StartTextTranslationJob</a> operation returns this identifier in its
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parallel data resource that is being retrieved.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parallel data resource that is being retrieved.</p>
@@ -658,8 +658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom terminology being retrieved.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom terminology being retrieved.</p>
@@ -675,9 +675,9 @@ pub mod fluent_builders {
         /// Otherwise, Amazon Translate throws an error.</p>
         pub fn terminology_data_format(
             mut self,
-            signature: crate::model::TerminologyDataFormat,
+            input: crate::model::TerminologyDataFormat,
         ) -> Self {
-            self.inner = self.inner.terminology_data_format(signature);
+            self.inner = self.inner.terminology_data_format(input);
             self
         }
         /// <p>The data format of the custom terminology being retrieved.</p>
@@ -761,8 +761,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom terminology being imported.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the custom terminology being imported.</p>
@@ -773,8 +773,8 @@ pub mod fluent_builders {
         /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
         /// merge strategy is supported. In this case, the imported terminology will overwrite an existing
         /// terminology of the same name.</p>
-        pub fn merge_strategy(mut self, signature: crate::model::MergeStrategy) -> Self {
-            self.inner = self.inner.merge_strategy(signature);
+        pub fn merge_strategy(mut self, input: crate::model::MergeStrategy) -> Self {
+            self.inner = self.inner.merge_strategy(input);
             self
         }
         /// <p>The merge strategy of the custom terminology being imported. Currently, only the OVERWRITE
@@ -788,8 +788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the custom terminology being imported.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the custom terminology being imported.</p>
@@ -798,8 +798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The terminology data for the custom terminology being imported.</p>
-        pub fn terminology_data(mut self, signature: crate::model::TerminologyData) -> Self {
-            self.inner = self.inner.terminology_data(signature);
+        pub fn terminology_data(mut self, input: crate::model::TerminologyData) -> Self {
+            self.inner = self.inner.terminology_data(input);
             self
         }
         /// <p>The terminology data for the custom terminology being imported.</p>
@@ -811,8 +811,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption key for the custom terminology being imported.</p>
-        pub fn encryption_key(mut self, signature: crate::model::EncryptionKey) -> Self {
-            self.inner = self.inner.encryption_key(signature);
+        pub fn encryption_key(mut self, input: crate::model::EncryptionKey) -> Self {
+            self.inner = self.inner.encryption_key(input);
             self
         }
         /// <p>The encryption key for the custom terminology being imported.</p>
@@ -884,8 +884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A string that specifies the next page of results to return in a paginated response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A string that specifies the next page of results to return in a paginated response.</p>
@@ -894,8 +894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of parallel data resources returned for each request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of parallel data resources returned for each request.</p>
@@ -965,8 +965,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
         /// fetch the next group of custom terminologies. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the request to ListTerminologies was truncated, include the NextToken to
@@ -976,8 +976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of custom terminologies returned per list request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of custom terminologies returned per list request.</p>
@@ -1047,8 +1047,8 @@ pub mod fluent_builders {
         }
         /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
         /// name, job status, and submission time. You can only set one filter at a time.</p>
-        pub fn filter(mut self, signature: crate::model::TextTranslationJobFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::TextTranslationJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The parameters that specify which batch translation jobs to retrieve. Filters include job
@@ -1061,8 +1061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to request the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to request the next page of results.</p>
@@ -1071,8 +1071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in each page. The default value is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in each page. The default value is 100.</p>
@@ -1148,8 +1148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the batch translation job to be performed.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The name of the batch translation job to be performed.</p>
@@ -1159,8 +1159,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the format and S3 location of the input documents for the translation
         /// job.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Specifies the format and S3 location of the input documents for the translation
@@ -1174,8 +1174,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the S3 folder to which your job output will be saved.
         /// </p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies the S3 folder to which your job output will be saved.
@@ -1189,8 +1189,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
         /// that grants Amazon Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role
@@ -1205,8 +1205,8 @@ pub mod fluent_builders {
         /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
         /// <p>Amazon Translate does not automatically detect a source language during batch translation
         /// jobs.</p>
-        pub fn source_language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_language_code(signature.into());
+        pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_language_code(input.into());
             self
         }
         /// <p>The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
@@ -1298,8 +1298,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
         /// SDK.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. This token is auto-generated when using the Amazon Translate
@@ -1310,8 +1310,8 @@ pub mod fluent_builders {
         }
         /// <p>Settings to configure your translation output, including the option to mask profane words
         /// and phrases.</p>
-        pub fn settings(mut self, signature: crate::model::TranslationSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>Settings to configure your translation output, including the option to mask profane words
@@ -1390,8 +1390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job ID of the job to be stopped.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID of the job to be stopped.</p>
@@ -1462,8 +1462,8 @@ pub mod fluent_builders {
         }
         /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
         /// your character set, this may be fewer than 5,000 characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on
@@ -1499,8 +1499,8 @@ pub mod fluent_builders {
         /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify
         /// <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
         /// Comprehend</a> to determine the source language.</p>
-        pub fn source_language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_language_code(signature.into());
+        pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_language_code(input.into());
             self
         }
         /// <p>The language code for the language of the source text. The language must be a language
@@ -1518,8 +1518,8 @@ pub mod fluent_builders {
         }
         /// <p>The language code requested for the language of the target text. The language must be a
         /// language supported by Amazon Translate.</p>
-        pub fn target_language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_language_code(signature.into());
+        pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_language_code(input.into());
             self
         }
         /// <p>The language code requested for the language of the target text. The language must be a
@@ -1533,8 +1533,8 @@ pub mod fluent_builders {
         }
         /// <p>Settings to configure your translation output, including the option to mask profane words
         /// and phrases.</p>
-        pub fn settings(mut self, signature: crate::model::TranslationSettings) -> Self {
-            self.inner = self.inner.settings(signature);
+        pub fn settings(mut self, input: crate::model::TranslationSettings) -> Self {
+            self.inner = self.inner.settings(input);
             self
         }
         /// <p>Settings to configure your translation output, including the option to mask profane words
@@ -1608,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parallel data resource being updated.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the parallel data resource being updated.</p>
@@ -1618,8 +1618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A custom description for the parallel data resource in Amazon Translate.</p>
@@ -1628,8 +1628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
-        pub fn parallel_data_config(mut self, signature: crate::model::ParallelDataConfig) -> Self {
-            self.inner = self.inner.parallel_data_config(signature);
+        pub fn parallel_data_config(mut self, input: crate::model::ParallelDataConfig) -> Self {
+            self.inner = self.inner.parallel_data_config(input);
             self
         }
         /// <p>Specifies the format and S3 location of the parallel data input file.</p>
@@ -1642,8 +1642,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. This token is automatically generated when you use
         /// Amazon Translate through an AWS SDK.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. This token is automatically generated when you use

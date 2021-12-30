@@ -211,8 +211,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(signature.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(input.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -291,8 +291,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(signature.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(input.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -305,8 +305,8 @@ pub mod fluent_builders {
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
         /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
         /// the start of the software usage.</p>
-        pub fn timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.timestamp(signature);
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.timestamp(input);
             self
         }
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
@@ -321,8 +321,8 @@ pub mod fluent_builders {
         }
         /// <p>It will be one of the fcp dimension name provided during the publishing of the
         /// product.</p>
-        pub fn usage_dimension(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_dimension(signature.into());
+        pub fn usage_dimension(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_dimension(input.into());
             self
         }
         /// <p>It will be one of the fcp dimension name provided during the publishing of the
@@ -336,8 +336,8 @@ pub mod fluent_builders {
         }
         /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
         /// specified.</p>
-        pub fn usage_quantity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.usage_quantity(signature);
+        pub fn usage_quantity(mut self, input: i32) -> Self {
+            self.inner = self.inner.usage_quantity(input);
             self
         }
         /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
@@ -350,8 +350,8 @@ pub mod fluent_builders {
         /// the request. If you have the permissions, the request returns DryRunOperation;
         /// otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not
         /// specified.</p>
-        pub fn dry_run(mut self, signature: bool) -> Self {
-            self.inner = self.inner.dry_run(signature);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p>Checks whether you have the permissions required for the action, but does not make
@@ -486,8 +486,8 @@ pub mod fluent_builders {
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
         /// code should be the same as the one used during the publishing of a new
         /// product.</p>
-        pub fn product_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_code(signature.into());
+        pub fn product_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_code(input.into());
             self
         }
         /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
@@ -498,8 +498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Public Key Version provided by AWS Marketplace</p>
-        pub fn public_key_version(mut self, signature: i32) -> Self {
-            self.inner = self.inner.public_key_version(signature);
+        pub fn public_key_version(mut self, input: i32) -> Self {
+            self.inner = self.inner.public_key_version(input);
             self
         }
         /// <p>Public Key Version provided by AWS Marketplace</p>
@@ -509,8 +509,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) To scope down the registration to a specific running software instance
         /// and guard against replay attacks.</p>
-        pub fn nonce(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.nonce(signature.into());
+        pub fn nonce(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nonce(input.into());
             self
         }
         /// <p>(Optional) To scope down the registration to a specific running software instance
@@ -585,8 +585,8 @@ pub mod fluent_builders {
         /// <p>When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through the browser. The registration token is resolved to obtain a
         /// CustomerIdentifier and product code.</p>
-        pub fn registration_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registration_token(signature.into());
+        pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registration_token(input.into());
             self
         }
         /// <p>When a buyer visits your website during the registration process, the buyer submits

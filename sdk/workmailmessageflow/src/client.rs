@@ -166,8 +166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the email message to retrieve.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The identifier of the email message to retrieve.</p>
@@ -249,8 +249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the email message being updated.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The identifier of the email message being updated.</p>
@@ -259,8 +259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the raw message content of the updated email message.</p>
-        pub fn content(mut self, signature: crate::model::RawMessageContent) -> Self {
-            self.inner = self.inner.content(signature);
+        pub fn content(mut self, input: crate::model::RawMessageContent) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// <p>Describes the raw message content of the updated email message.</p>

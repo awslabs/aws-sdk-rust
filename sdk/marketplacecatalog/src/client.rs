@@ -198,8 +198,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. The catalog related to the request. Fixed value:
         /// <code>AWSMarketplace</code>.</p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>Required. The catalog related to the request. Fixed value:
@@ -210,8 +210,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
         /// want to cancel.</p>
-        pub fn change_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(signature.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_id(input.into());
             self
         }
         /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
@@ -286,8 +286,8 @@ pub mod fluent_builders {
         /// <p>Required. The catalog related to the request. Fixed value:
         /// <code>AWSMarketplace</code>
         /// </p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>Required. The catalog related to the request. Fixed value:
@@ -299,8 +299,8 @@ pub mod fluent_builders {
         }
         /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
         /// want to describe the details for.</p>
-        pub fn change_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_id(signature.into());
+        pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_id(input.into());
             self
         }
         /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
@@ -375,8 +375,8 @@ pub mod fluent_builders {
         /// <p>Required. The catalog related to the request. Fixed value:
         /// <code>AWSMarketplace</code>
         /// </p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>Required. The catalog related to the request. Fixed value:
@@ -387,8 +387,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
-        pub fn entity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_id(signature.into());
+        pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_id(input.into());
             self
         }
         /// <p>Required. The unique ID of the entity to describe.</p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
         /// </p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
@@ -493,8 +493,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and
         /// <code>SortOrder</code>.</p>
-        pub fn sort(mut self, signature: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(signature);
+        pub fn sort(mut self, input: crate::model::Sort) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and
@@ -506,8 +506,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results returned by a single call. This value must be provided
         /// in the next call to retrieve the next set of results. By default, this value is
         /// 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results returned by a single call. This value must be provided
@@ -519,8 +519,8 @@ pub mod fluent_builders {
         }
         /// <p>The token value retrieved from a previous call to access the next page of
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token value retrieved from a previous call to access the next page of
@@ -591,8 +591,8 @@ pub mod fluent_builders {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
         /// </p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
@@ -602,8 +602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of entities to retrieve.</p>
-        pub fn entity_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.entity_type(signature.into());
+        pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.entity_type(input.into());
             self
         }
         /// <p>The type of entities to retrieve.</p>
@@ -632,8 +632,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and
         /// <code>SortOrder</code>.</p>
-        pub fn sort(mut self, signature: crate::model::Sort) -> Self {
-            self.inner = self.inner.sort(signature);
+        pub fn sort(mut self, input: crate::model::Sort) -> Self {
+            self.inner = self.inner.sort(input);
             self
         }
         /// <p>An object that contains two attributes, <code>SortBy</code> and
@@ -643,8 +643,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
@@ -654,8 +654,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
         /// the default value is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
@@ -738,8 +738,8 @@ pub mod fluent_builders {
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
         /// </p>
-        pub fn catalog(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog(signature.into());
+        pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog(input.into());
             self
         }
         /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
@@ -767,8 +767,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
         /// be used to filter the list of change sets. </p>
-        pub fn change_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(signature.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input.into());
             self
         }
         /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
@@ -781,8 +781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique token to identify the request to ensure idempotency.</p>

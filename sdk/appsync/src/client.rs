@@ -439,8 +439,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API Id.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API Id.</p>
@@ -450,8 +450,8 @@ pub mod fluent_builders {
         }
         /// <p>TTL in seconds for cache entries.</p>
         /// <p>Valid values are between 1 and 3600 seconds.</p>
-        pub fn ttl(mut self, signature: i64) -> Self {
-            self.inner = self.inner.ttl(signature);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.inner = self.inner.ttl(input);
             self
         }
         /// <p>TTL in seconds for cache entries.</p>
@@ -462,8 +462,8 @@ pub mod fluent_builders {
         }
         /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
         /// creation.</p>
-        pub fn transit_encryption_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.transit_encryption_enabled(signature);
+        pub fn transit_encryption_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.transit_encryption_enabled(input);
             self
         }
         /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
@@ -473,8 +473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
-        pub fn at_rest_encryption_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.at_rest_encryption_enabled(signature);
+        pub fn at_rest_encryption_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.at_rest_encryption_enabled(input);
             self
         }
         /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
@@ -495,8 +495,8 @@ pub mod fluent_builders {
         /// that you specify are cached.</p>
         /// </li>
         /// </ul>
-        pub fn api_caching_behavior(mut self, signature: crate::model::ApiCachingBehavior) -> Self {
-            self.inner = self.inner.api_caching_behavior(signature);
+        pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
+            self.inner = self.inner.api_caching_behavior(input);
             self
         }
         /// <p>Caching behavior.</p>
@@ -593,8 +593,8 @@ pub mod fluent_builders {
         /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::ApiCacheType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The cache instance type. Valid values are </p>
@@ -737,8 +737,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for your GraphQL API.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The ID for your GraphQL API.</p>
@@ -747,8 +747,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the purpose of the API key.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the purpose of the API key.</p>
@@ -759,8 +759,8 @@ pub mod fluent_builders {
         /// <p>The time from creation time after which the API key expires. The date is represented as
         /// seconds since the epoch, rounded down to the nearest hour. The default value for this
         /// parameter is 7 days from creation time. For more information, see .</p>
-        pub fn expires(mut self, signature: i64) -> Self {
-            self.inner = self.inner.expires(signature);
+        pub fn expires(mut self, input: i64) -> Self {
+            self.inner = self.inner.expires(input);
             self
         }
         /// <p>The time from creation time after which the API key expires. The date is represented as
@@ -831,8 +831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID for the GraphQL API for the <code>DataSource</code>.</p>
@@ -841,8 +841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name for the <code>DataSource</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A user-supplied name for the <code>DataSource</code>.</p>
@@ -851,8 +851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the <code>DataSource</code>.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the <code>DataSource</code>.</p>
@@ -861,8 +861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the <code>DataSource</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of the <code>DataSource</code>.</p>
@@ -875,8 +875,8 @@ pub mod fluent_builders {
         }
         /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
         /// role when accessing the data source.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
@@ -889,11 +889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon DynamoDB settings.</p>
-        pub fn dynamodb_config(
-            mut self,
-            signature: crate::model::DynamodbDataSourceConfig,
-        ) -> Self {
-            self.inner = self.inner.dynamodb_config(signature);
+        pub fn dynamodb_config(mut self, input: crate::model::DynamodbDataSourceConfig) -> Self {
+            self.inner = self.inner.dynamodb_config(input);
             self
         }
         /// <p>Amazon DynamoDB settings.</p>
@@ -905,8 +902,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Amazon Web Services Lambda settings.</p>
-        pub fn lambda_config(mut self, signature: crate::model::LambdaDataSourceConfig) -> Self {
-            self.inner = self.inner.lambda_config(signature);
+        pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
+            self.inner = self.inner.lambda_config(input);
             self
         }
         /// <p>Amazon Web Services Lambda settings.</p>
@@ -922,9 +919,9 @@ pub mod fluent_builders {
         /// configuration is deprecated. For new data sources, use <a>CreateDataSourceRequest$openSearchServiceConfig</a> to create an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
-            signature: crate::model::ElasticsearchDataSourceConfig,
+            input: crate::model::ElasticsearchDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.elasticsearch_config(signature);
+            self.inner = self.inner.elasticsearch_config(input);
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
@@ -940,9 +937,9 @@ pub mod fluent_builders {
         /// <p>Amazon OpenSearch Service settings.</p>
         pub fn open_search_service_config(
             mut self,
-            signature: crate::model::OpenSearchServiceDataSourceConfig,
+            input: crate::model::OpenSearchServiceDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.open_search_service_config(signature);
+            self.inner = self.inner.open_search_service_config(input);
             self
         }
         /// <p>Amazon OpenSearch Service settings.</p>
@@ -954,8 +951,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>HTTP endpoint settings.</p>
-        pub fn http_config(mut self, signature: crate::model::HttpDataSourceConfig) -> Self {
-            self.inner = self.inner.http_config(signature);
+        pub fn http_config(mut self, input: crate::model::HttpDataSourceConfig) -> Self {
+            self.inner = self.inner.http_config(input);
             self
         }
         /// <p>HTTP endpoint settings.</p>
@@ -969,9 +966,9 @@ pub mod fluent_builders {
         /// <p>Relational database settings.</p>
         pub fn relational_database_config(
             mut self,
-            signature: crate::model::RelationalDatabaseDataSourceConfig,
+            input: crate::model::RelationalDatabaseDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.relational_database_config(signature);
+            self.inner = self.inner.relational_database_config(input);
             self
         }
         /// <p>Relational database settings.</p>
@@ -1045,8 +1042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API ID.</p>
@@ -1055,8 +1052,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The <code>Function</code> name. The function name does not have to be unique.</p>
@@ -1065,8 +1062,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The <code>Function</code> description.</p>
@@ -1076,8 +1073,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>Function</code>
         /// <code>DataSource</code> name.</p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>The <code>Function</code>
@@ -1091,11 +1088,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the
         /// 2018-05-29 version of the request mapping template.</p>
-        pub fn request_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_mapping_template(signature.into());
+        pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the
@@ -1108,11 +1102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> response mapping template. </p>
-        pub fn response_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.response_mapping_template(signature.into());
+        pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_mapping_template(input.into());
             self
         }
         /// <p>The <code>Function</code> response mapping template. </p>
@@ -1125,8 +1116,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>version</code> of the request mapping template. Currently the supported value
         /// is 2018-05-29. </p>
-        pub fn function_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(signature.into());
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(input.into());
             self
         }
         /// <p>The <code>version</code> of the request mapping template. Currently the supported value
@@ -1141,8 +1132,8 @@ pub mod fluent_builders {
         /// <p>Describes a Sync configuration for a resolver.</p>
         /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
         /// be performed when the resolver is invoked.</p>
-        pub fn sync_config(mut self, signature: crate::model::SyncConfig) -> Self {
-            self.inner = self.inner.sync_config(signature);
+        pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
+            self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
@@ -1216,8 +1207,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A user-supplied name for the <code>GraphqlApi</code>.</p>
@@ -1226,8 +1217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration.</p>
-        pub fn log_config(mut self, signature: crate::model::LogConfig) -> Self {
-            self.inner = self.inner.log_config(signature);
+        pub fn log_config(mut self, input: crate::model::LogConfig) -> Self {
+            self.inner = self.inner.log_config(input);
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration.</p>
@@ -1240,8 +1231,8 @@ pub mod fluent_builders {
         }
         /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
         /// pools, or Amazon Web Services Lambda.</p>
-        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(signature);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
@@ -1254,8 +1245,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
-        pub fn user_pool_config(mut self, signature: crate::model::UserPoolConfig) -> Self {
-            self.inner = self.inner.user_pool_config(signature);
+        pub fn user_pool_config(mut self, input: crate::model::UserPoolConfig) -> Self {
+            self.inner = self.inner.user_pool_config(input);
             self
         }
         /// <p>The Amazon Cognito user pool configuration.</p>
@@ -1267,11 +1258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OpenID Connect configuration.</p>
-        pub fn open_id_connect_config(
-            mut self,
-            signature: crate::model::OpenIdConnectConfig,
-        ) -> Self {
-            self.inner = self.inner.open_id_connect_config(signature);
+        pub fn open_id_connect_config(mut self, input: crate::model::OpenIdConnectConfig) -> Self {
+            self.inner = self.inner.open_id_connect_config(input);
             self
         }
         /// <p>The OpenID Connect configuration.</p>
@@ -1331,8 +1319,8 @@ pub mod fluent_builders {
         }
         /// <p>A flag indicating whether to enable X-Ray tracing for the
         /// <code>GraphqlApi</code>.</p>
-        pub fn xray_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.xray_enabled(signature);
+        pub fn xray_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.xray_enabled(input);
             self
         }
         /// <p>A flag indicating whether to enable X-Ray tracing for the
@@ -1344,9 +1332,9 @@ pub mod fluent_builders {
         /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
-            signature: crate::model::LambdaAuthorizerConfig,
+            input: crate::model::LambdaAuthorizerConfig,
         ) -> Self {
-            self.inner = self.inner.lambda_authorizer_config(signature);
+            self.inner = self.inner.lambda_authorizer_config(input);
             self
         }
         /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
@@ -1420,8 +1408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The ID for the GraphQL API for which the resolver is being created.</p>
@@ -1430,8 +1418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the <code>Type</code>.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The name of the <code>Type</code>.</p>
@@ -1440,8 +1428,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the field to attach the resolver to.</p>
-        pub fn field_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_name(signature.into());
+        pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.field_name(input.into());
             self
         }
         /// <p>The name of the field to attach the resolver to.</p>
@@ -1450,8 +1438,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data source for which the resolver is being created.</p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>The name of the data source for which the resolver is being created.</p>
@@ -1468,11 +1456,8 @@ pub mod fluent_builders {
         /// Template Language (VTL).</p>
         /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
         /// other data sources, VTL request and response mapping templates are required.</p>
-        pub fn request_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_mapping_template(signature.into());
+        pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The mapping template to be used for requests.</p>
@@ -1489,11 +1474,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mapping template to be used for responses from the data source.</p>
-        pub fn response_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.response_mapping_template(signature.into());
+        pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_mapping_template(input.into());
             self
         }
         /// <p>The mapping template to be used for responses from the data source.</p>
@@ -1520,8 +1502,8 @@ pub mod fluent_builders {
         /// sources.</p>
         /// </li>
         /// </ul>
-        pub fn kind(mut self, signature: crate::model::ResolverKind) -> Self {
-            self.inner = self.inner.kind(signature);
+        pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
+            self.inner = self.inner.kind(input);
             self
         }
         /// <p>The resolver type.</p>
@@ -1545,8 +1527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
-        pub fn pipeline_config(mut self, signature: crate::model::PipelineConfig) -> Self {
-            self.inner = self.inner.pipeline_config(signature);
+        pub fn pipeline_config(mut self, input: crate::model::PipelineConfig) -> Self {
+            self.inner = self.inner.pipeline_config(input);
             self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
@@ -1558,8 +1540,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
-        pub fn sync_config(mut self, signature: crate::model::SyncConfig) -> Self {
-            self.inner = self.inner.sync_config(signature);
+        pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
+            self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
@@ -1571,8 +1553,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The caching configuration for the resolver.</p>
-        pub fn caching_config(mut self, signature: crate::model::CachingConfig) -> Self {
-            self.inner = self.inner.caching_config(signature);
+        pub fn caching_config(mut self, input: crate::model::CachingConfig) -> Self {
+            self.inner = self.inner.caching_config(input);
             self
         }
         /// <p>The caching configuration for the resolver.</p>
@@ -1644,8 +1626,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -1656,8 +1638,8 @@ pub mod fluent_builders {
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
         /// <p>For more information, see the <a href="http://graphql.org/learn/schema/">GraphQL SDL
         /// documentation</a>.</p>
-        pub fn definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(signature.into());
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The type definition, in GraphQL Schema Definition Language (SDL) format.</p>
@@ -1668,8 +1650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type format: SDL or JSON.</p>
-        pub fn format(mut self, signature: crate::model::TypeDefinitionFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::TypeDefinitionFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The type format: SDL or JSON.</p>
@@ -1741,8 +1723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -1811,8 +1793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -1821,8 +1803,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the API key.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID for the API key.</p>
@@ -1891,8 +1873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -1901,8 +1883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data source.</p>
@@ -1971,8 +1953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API ID.</p>
@@ -1981,8 +1963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> ID.</p>
-        pub fn function_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_id(signature.into());
+        pub fn function_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_id(input.into());
             self
         }
         /// <p>The <code>Function</code> ID.</p>
@@ -2051,8 +2033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2121,8 +2103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2131,8 +2113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the resolver type.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The name of the resolver type.</p>
@@ -2141,8 +2123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resolver field name.</p>
-        pub fn field_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_name(signature.into());
+        pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.field_name(input.into());
             self
         }
         /// <p>The resolver field name.</p>
@@ -2211,8 +2193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2221,8 +2203,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The type name.</p>
@@ -2291,8 +2273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2361,8 +2343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2431,8 +2413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2441,8 +2423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data source.</p>
@@ -2511,8 +2493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API ID.</p>
@@ -2521,8 +2503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> ID.</p>
-        pub fn function_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_id(signature.into());
+        pub fn function_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_id(input.into());
             self
         }
         /// <p>The <code>Function</code> ID.</p>
@@ -2591,8 +2573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID for the GraphQL API.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID for the GraphQL API.</p>
@@ -2661,8 +2643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2671,8 +2653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema format: SDL or JSON.</p>
-        pub fn format(mut self, signature: crate::model::OutputType) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::OutputType) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The schema format: SDL or JSON.</p>
@@ -2681,8 +2663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
-        pub fn include_directives(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_directives(signature);
+        pub fn include_directives(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_directives(input);
             self
         }
         /// <p>A flag that specifies whether the schema introspection should contain directives.</p>
@@ -2751,8 +2733,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2761,8 +2743,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resolver type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The resolver type name.</p>
@@ -2771,8 +2753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resolver field name.</p>
-        pub fn field_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_name(signature.into());
+        pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.field_name(input.into());
             self
         }
         /// <p>The resolver field name.</p>
@@ -2841,8 +2823,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2911,8 +2893,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -2921,8 +2903,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The type name.</p>
@@ -2931,8 +2913,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type format: SDL or JSON.</p>
-        pub fn format(mut self, signature: crate::model::TypeDefinitionFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::TypeDefinitionFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The type format: SDL or JSON.</p>
@@ -3010,8 +2992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3021,8 +3003,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3032,8 +3014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3102,8 +3084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3113,8 +3095,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3124,8 +3106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3194,8 +3176,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API ID.</p>
@@ -3205,8 +3187,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3216,8 +3198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3287,8 +3269,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3298,8 +3280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3368,8 +3350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3378,8 +3360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The type name.</p>
@@ -3389,8 +3371,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3400,8 +3382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3470,8 +3452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3480,8 +3462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Function ID.</p>
-        pub fn function_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_id(signature.into());
+        pub fn function_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_id(input.into());
             self
         }
         /// <p>The Function ID.</p>
@@ -3491,8 +3473,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which you can
         /// use to return the next set of items in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which you can
@@ -3502,8 +3484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3572,8 +3554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
@@ -3642,8 +3624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3652,8 +3634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type format: SDL or JSON.</p>
-        pub fn format(mut self, signature: crate::model::TypeDefinitionFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::TypeDefinitionFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The type format: SDL or JSON.</p>
@@ -3666,8 +3648,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
         /// used to return the next set of items in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier that was returned from the previous call to this operation, which can be
@@ -3677,8 +3659,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results you want the request to return.</p>
@@ -3749,8 +3731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -3759,8 +3741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The schema definition, in GraphQL schema language format.</p>
-        pub fn definition(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.definition(signature);
+        pub fn definition(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.definition(input);
             self
         }
         /// <p>The schema definition, in GraphQL schema language format.</p>
@@ -3832,8 +3814,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
@@ -3925,8 +3907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The <code>GraphqlApi</code> ARN.</p>
@@ -4012,8 +3994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API Id.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API Id.</p>
@@ -4023,8 +4005,8 @@ pub mod fluent_builders {
         }
         /// <p>TTL in seconds for cache entries.</p>
         /// <p>Valid values are between 1 and 3600 seconds.</p>
-        pub fn ttl(mut self, signature: i64) -> Self {
-            self.inner = self.inner.ttl(signature);
+        pub fn ttl(mut self, input: i64) -> Self {
+            self.inner = self.inner.ttl(input);
             self
         }
         /// <p>TTL in seconds for cache entries.</p>
@@ -4046,8 +4028,8 @@ pub mod fluent_builders {
         /// that you specify are cached.</p>
         /// </li>
         /// </ul>
-        pub fn api_caching_behavior(mut self, signature: crate::model::ApiCachingBehavior) -> Self {
-            self.inner = self.inner.api_caching_behavior(signature);
+        pub fn api_caching_behavior(mut self, input: crate::model::ApiCachingBehavior) -> Self {
+            self.inner = self.inner.api_caching_behavior(input);
             self
         }
         /// <p>Caching behavior.</p>
@@ -4144,8 +4126,8 @@ pub mod fluent_builders {
         /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
         /// </li>
         /// </ul>
-        pub fn r#type(mut self, signature: crate::model::ApiCacheType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ApiCacheType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The cache instance type. Valid values are </p>
@@ -4287,8 +4269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the GraphQL API.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The ID for the GraphQL API.</p>
@@ -4297,8 +4279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The API key ID.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The API key ID.</p>
@@ -4307,8 +4289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the purpose of the API key.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the purpose of the API key.</p>
@@ -4318,8 +4300,8 @@ pub mod fluent_builders {
         }
         /// <p>The time from update time after which the API key expires. The date is represented as
         /// seconds since the epoch. For more information, see .</p>
-        pub fn expires(mut self, signature: i64) -> Self {
-            self.inner = self.inner.expires(signature);
+        pub fn expires(mut self, input: i64) -> Self {
+            self.inner = self.inner.expires(input);
             self
         }
         /// <p>The time from update time after which the API key expires. The date is represented as
@@ -4389,8 +4371,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -4399,8 +4381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name for the data source.</p>
@@ -4409,8 +4391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the data source.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the data source.</p>
@@ -4419,8 +4401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new data source type.</p>
-        pub fn r#type(mut self, signature: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The new data source type.</p>
@@ -4432,8 +4414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new service role ARN for the data source.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>The new service role ARN for the data source.</p>
@@ -4445,11 +4427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new Amazon DynamoDB configuration.</p>
-        pub fn dynamodb_config(
-            mut self,
-            signature: crate::model::DynamodbDataSourceConfig,
-        ) -> Self {
-            self.inner = self.inner.dynamodb_config(signature);
+        pub fn dynamodb_config(mut self, input: crate::model::DynamodbDataSourceConfig) -> Self {
+            self.inner = self.inner.dynamodb_config(input);
             self
         }
         /// <p>The new Amazon DynamoDB configuration.</p>
@@ -4461,8 +4440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new Amazon Web Services Lambda configuration.</p>
-        pub fn lambda_config(mut self, signature: crate::model::LambdaDataSourceConfig) -> Self {
-            self.inner = self.inner.lambda_config(signature);
+        pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
+            self.inner = self.inner.lambda_config(input);
             self
         }
         /// <p>The new Amazon Web Services Lambda configuration.</p>
@@ -4478,9 +4457,9 @@ pub mod fluent_builders {
         /// configuration is deprecated. Instead, use <a>UpdateDataSourceRequest$openSearchServiceConfig</a> to update an OpenSearch data source.</p>
         pub fn elasticsearch_config(
             mut self,
-            signature: crate::model::ElasticsearchDataSourceConfig,
+            input: crate::model::ElasticsearchDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.elasticsearch_config(signature);
+            self.inner = self.inner.elasticsearch_config(input);
             self
         }
         /// <p>The new OpenSearch configuration.</p>
@@ -4496,9 +4475,9 @@ pub mod fluent_builders {
         /// <p>The new OpenSearch configuration.</p>
         pub fn open_search_service_config(
             mut self,
-            signature: crate::model::OpenSearchServiceDataSourceConfig,
+            input: crate::model::OpenSearchServiceDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.open_search_service_config(signature);
+            self.inner = self.inner.open_search_service_config(input);
             self
         }
         /// <p>The new OpenSearch configuration.</p>
@@ -4510,8 +4489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new HTTP endpoint configuration.</p>
-        pub fn http_config(mut self, signature: crate::model::HttpDataSourceConfig) -> Self {
-            self.inner = self.inner.http_config(signature);
+        pub fn http_config(mut self, input: crate::model::HttpDataSourceConfig) -> Self {
+            self.inner = self.inner.http_config(input);
             self
         }
         /// <p>The new HTTP endpoint configuration.</p>
@@ -4525,9 +4504,9 @@ pub mod fluent_builders {
         /// <p>The new relational database configuration.</p>
         pub fn relational_database_config(
             mut self,
-            signature: crate::model::RelationalDatabaseDataSourceConfig,
+            input: crate::model::RelationalDatabaseDataSourceConfig,
         ) -> Self {
-            self.inner = self.inner.relational_database_config(signature);
+            self.inner = self.inner.relational_database_config(input);
             self
         }
         /// <p>The new relational database configuration.</p>
@@ -4599,8 +4578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The GraphQL API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The GraphQL API ID.</p>
@@ -4609,8 +4588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The <code>Function</code> name.</p>
@@ -4619,8 +4598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The <code>Function</code> description.</p>
@@ -4629,8 +4608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function ID.</p>
-        pub fn function_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_id(signature.into());
+        pub fn function_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_id(input.into());
             self
         }
         /// <p>The function ID.</p>
@@ -4640,8 +4619,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>Function</code>
         /// <code>DataSource</code> name.</p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>The <code>Function</code>
@@ -4655,11 +4634,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the
         /// 2018-05-29 version of the request mapping template.</p>
-        pub fn request_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_mapping_template(signature.into());
+        pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The <code>Function</code> request mapping template. Functions support only the
@@ -4672,11 +4648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Function</code> request mapping template. </p>
-        pub fn response_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.response_mapping_template(signature.into());
+        pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_mapping_template(input.into());
             self
         }
         /// <p>The <code>Function</code> request mapping template. </p>
@@ -4689,8 +4662,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>version</code> of the request mapping template. Currently the supported value
         /// is 2018-05-29. </p>
-        pub fn function_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.function_version(signature.into());
+        pub fn function_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.function_version(input.into());
             self
         }
         /// <p>The <code>version</code> of the request mapping template. Currently the supported value
@@ -4705,8 +4678,8 @@ pub mod fluent_builders {
         /// <p>Describes a Sync configuration for a resolver.</p>
         /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
         /// be performed when the resolver is invoked.</p>
-        pub fn sync_config(mut self, signature: crate::model::SyncConfig) -> Self {
-            self.inner = self.inner.sync_config(signature);
+        pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
+            self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>Describes a Sync configuration for a resolver.</p>
@@ -4780,8 +4753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -4790,8 +4763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the <code>GraphqlApi</code> object.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name for the <code>GraphqlApi</code> object.</p>
@@ -4800,8 +4773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
-        pub fn log_config(mut self, signature: crate::model::LogConfig) -> Self {
-            self.inner = self.inner.log_config(signature);
+        pub fn log_config(mut self, input: crate::model::LogConfig) -> Self {
+            self.inner = self.inner.log_config(input);
             self
         }
         /// <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.</p>
@@ -4813,8 +4786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
-        pub fn authentication_type(mut self, signature: crate::model::AuthenticationType) -> Self {
-            self.inner = self.inner.authentication_type(signature);
+        pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
@@ -4827,8 +4800,8 @@ pub mod fluent_builders {
         }
         /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
         /// object.</p>
-        pub fn user_pool_config(mut self, signature: crate::model::UserPoolConfig) -> Self {
-            self.inner = self.inner.user_pool_config(signature);
+        pub fn user_pool_config(mut self, input: crate::model::UserPoolConfig) -> Self {
+            self.inner = self.inner.user_pool_config(input);
             self
         }
         /// <p>The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code>
@@ -4841,11 +4814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
-        pub fn open_id_connect_config(
-            mut self,
-            signature: crate::model::OpenIdConnectConfig,
-        ) -> Self {
-            self.inner = self.inner.open_id_connect_config(signature);
+        pub fn open_id_connect_config(mut self, input: crate::model::OpenIdConnectConfig) -> Self {
+            self.inner = self.inner.open_id_connect_config(input);
             self
         }
         /// <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
@@ -4882,8 +4852,8 @@ pub mod fluent_builders {
         }
         /// <p>A flag indicating whether to enable X-Ray tracing for the
         /// <code>GraphqlApi</code>.</p>
-        pub fn xray_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.xray_enabled(signature);
+        pub fn xray_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.xray_enabled(input);
             self
         }
         /// <p>A flag indicating whether to enable X-Ray tracing for the
@@ -4895,9 +4865,9 @@ pub mod fluent_builders {
         /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn lambda_authorizer_config(
             mut self,
-            signature: crate::model::LambdaAuthorizerConfig,
+            input: crate::model::LambdaAuthorizerConfig,
         ) -> Self {
-            self.inner = self.inner.lambda_authorizer_config(signature);
+            self.inner = self.inner.lambda_authorizer_config(input);
             self
         }
         /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
@@ -4969,8 +4939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -4979,8 +4949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The new type name.</p>
@@ -4989,8 +4959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new field name.</p>
-        pub fn field_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.field_name(signature.into());
+        pub fn field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.field_name(input.into());
             self
         }
         /// <p>The new field name.</p>
@@ -4999,8 +4969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new data source name.</p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>The new data source name.</p>
@@ -5017,11 +4987,8 @@ pub mod fluent_builders {
         /// Template Language (VTL).</p>
         /// <p>VTL request mapping templates are optional when using a Lambda data source. For all
         /// other data sources, VTL request and response mapping templates are required.</p>
-        pub fn request_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.request_mapping_template(signature.into());
+        pub fn request_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_mapping_template(input.into());
             self
         }
         /// <p>The new request mapping template.</p>
@@ -5038,11 +5005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new response mapping template.</p>
-        pub fn response_mapping_template(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.response_mapping_template(signature.into());
+        pub fn response_mapping_template(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.response_mapping_template(input.into());
             self
         }
         /// <p>The new response mapping template.</p>
@@ -5069,8 +5033,8 @@ pub mod fluent_builders {
         /// sources.</p>
         /// </li>
         /// </ul>
-        pub fn kind(mut self, signature: crate::model::ResolverKind) -> Self {
-            self.inner = self.inner.kind(signature);
+        pub fn kind(mut self, input: crate::model::ResolverKind) -> Self {
+            self.inner = self.inner.kind(input);
             self
         }
         /// <p>The resolver type.</p>
@@ -5094,8 +5058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
-        pub fn pipeline_config(mut self, signature: crate::model::PipelineConfig) -> Self {
-            self.inner = self.inner.pipeline_config(signature);
+        pub fn pipeline_config(mut self, input: crate::model::PipelineConfig) -> Self {
+            self.inner = self.inner.pipeline_config(input);
             self
         }
         /// <p>The <code>PipelineConfig</code>.</p>
@@ -5107,8 +5071,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
-        pub fn sync_config(mut self, signature: crate::model::SyncConfig) -> Self {
-            self.inner = self.inner.sync_config(signature);
+        pub fn sync_config(mut self, input: crate::model::SyncConfig) -> Self {
+            self.inner = self.inner.sync_config(input);
             self
         }
         /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
@@ -5120,8 +5084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The caching configuration for the resolver.</p>
-        pub fn caching_config(mut self, signature: crate::model::CachingConfig) -> Self {
-            self.inner = self.inner.caching_config(signature);
+        pub fn caching_config(mut self, input: crate::model::CachingConfig) -> Self {
+            self.inner = self.inner.caching_config(input);
             self
         }
         /// <p>The caching configuration for the resolver.</p>
@@ -5193,8 +5157,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The API ID.</p>
-        pub fn api_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.api_id(signature.into());
+        pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.api_id(input.into());
             self
         }
         /// <p>The API ID.</p>
@@ -5203,8 +5167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new type name.</p>
-        pub fn type_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.type_name(signature.into());
+        pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.type_name(input.into());
             self
         }
         /// <p>The new type name.</p>
@@ -5213,8 +5177,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new definition.</p>
-        pub fn definition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.definition(signature.into());
+        pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.definition(input.into());
             self
         }
         /// <p>The new definition.</p>
@@ -5223,8 +5187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new type format: SDL or JSON.</p>
-        pub fn format(mut self, signature: crate::model::TypeDefinitionFormat) -> Self {
-            self.inner = self.inner.format(signature);
+        pub fn format(mut self, input: crate::model::TypeDefinitionFormat) -> Self {
+            self.inner = self.inner.format(input);
             self
         }
         /// <p>The new type format: SDL or JSON.</p>

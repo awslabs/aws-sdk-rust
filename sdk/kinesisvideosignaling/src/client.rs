@@ -180,8 +180,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
         /// configured peers. </p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the signaling channel to be used for the peer-to-peer connection between
@@ -191,8 +191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>
@@ -202,8 +202,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
         /// value.</p>
-        pub fn service(mut self, signature: crate::model::Service) -> Self {
-            self.inner = self.inner.service(signature);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
         /// <p>Specifies the desired service. Currently, <code>TURN</code> is the only valid
@@ -213,8 +213,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional user ID to be associated with the credentials.</p>
-        pub fn username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.username(signature.into());
+        pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.username(input.into());
             self
         }
         /// <p>An optional user ID to be associated with the credentials.</p>
@@ -289,8 +289,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the signaling channel by which Alexa and the master peer
         /// communicate.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the signaling channel by which Alexa and the master peer
@@ -300,8 +300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the sender client.</p>
-        pub fn sender_client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sender_client_id(signature.into());
+        pub fn sender_client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sender_client_id(input.into());
             self
         }
         /// <p>The unique identifier for the sender client.</p>
@@ -313,8 +313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The base64-encoded SDP offer content.</p>
-        pub fn message_payload(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_payload(signature.into());
+        pub fn message_payload(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_payload(input.into());
             self
         }
         /// <p>The base64-encoded SDP offer content.</p>

@@ -652,11 +652,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -668,8 +665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the request proposal.</p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>The ID of the request proposal.</p>
@@ -680,11 +677,9 @@ pub mod fluent_builders {
         /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
         pub fn associated_gateway_owner_account(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .associated_gateway_owner_account(signature.into());
+            self.inner = self.inner.associated_gateway_owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.</p>
@@ -790,8 +785,8 @@ pub mod fluent_builders {
         /// 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners
         /// who have met specific requirements
         /// are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection.</p>
-        pub fn bandwidth(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bandwidth(signature.into());
+        pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bandwidth(input.into());
             self
         }
         /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps,
@@ -803,8 +798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the provisioned connection.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the provisioned connection.</p>
@@ -816,8 +811,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account of the customer for whom the connection will be provisioned.</p>
@@ -829,8 +824,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
-        pub fn interconnect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_id(signature.into());
+        pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_id(input.into());
             self
         }
         /// <p>The ID of the interconnect on which the connection will be provisioned.</p>
@@ -842,8 +837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dedicated VLAN provisioned to the connection.</p>
-        pub fn vlan(mut self, signature: i32) -> Self {
-            self.inner = self.inner.vlan(signature);
+        pub fn vlan(mut self, input: i32) -> Self {
+            self.inner = self.inner.vlan(input);
             self
         }
         /// <p>The dedicated VLAN provisioned to the connection.</p>
@@ -917,8 +912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect or LAG.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the interconnect or LAG.</p>
@@ -930,8 +925,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account ID of the customer for the connection.</p>
@@ -943,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
-        pub fn bandwidth(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bandwidth(signature.into());
+        pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bandwidth(input.into());
             self
         }
         /// <p>The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps or 10Gbps hosted connection. </p>
@@ -953,8 +948,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the hosted connection.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the hosted connection.</p>
@@ -966,8 +961,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
-        pub fn vlan(mut self, signature: i32) -> Self {
-            self.inner = self.inner.vlan(signature);
+        pub fn vlan(mut self, input: i32) -> Self {
+            self.inner = self.inner.vlan(input);
             self
         }
         /// <p>The dedicated VLAN provisioned to the hosted connection.</p>
@@ -1055,8 +1050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection on which the private virtual interface is provisioned.</p>
@@ -1068,8 +1063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the virtual private interface.</p>
@@ -1083,11 +1078,9 @@ pub mod fluent_builders {
         /// <p>Information about the private virtual interface.</p>
         pub fn new_private_virtual_interface_allocation(
             mut self,
-            signature: crate::model::NewPrivateVirtualInterfaceAllocation,
+            input: crate::model::NewPrivateVirtualInterfaceAllocation,
         ) -> Self {
-            self.inner = self
-                .inner
-                .new_private_virtual_interface_allocation(signature);
+            self.inner = self.inner.new_private_virtual_interface_allocation(input);
             self
         }
         /// <p>Information about the private virtual interface.</p>
@@ -1166,8 +1159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
@@ -1179,8 +1172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
@@ -1194,11 +1187,9 @@ pub mod fluent_builders {
         /// <p>Information about the public virtual interface.</p>
         pub fn new_public_virtual_interface_allocation(
             mut self,
-            signature: crate::model::NewPublicVirtualInterfaceAllocation,
+            input: crate::model::NewPublicVirtualInterfaceAllocation,
         ) -> Self {
-            self.inner = self
-                .inner
-                .new_public_virtual_interface_allocation(signature);
+            self.inner = self.inner.new_public_virtual_interface_allocation(input);
             self
         }
         /// <p>Information about the public virtual interface.</p>
@@ -1274,8 +1265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection on which the transit virtual interface is provisioned.</p>
@@ -1287,8 +1278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the transit virtual interface.</p>
@@ -1302,11 +1293,9 @@ pub mod fluent_builders {
         /// <p>Information about the transit virtual interface.</p>
         pub fn new_transit_virtual_interface_allocation(
             mut self,
-            signature: crate::model::NewTransitVirtualInterfaceAllocation,
+            input: crate::model::NewTransitVirtualInterfaceAllocation,
         ) -> Self {
-            self.inner = self
-                .inner
-                .new_transit_virtual_interface_allocation(signature);
+            self.inner = self.inner.new_transit_virtual_interface_allocation(input);
             self
         }
         /// <p>Information about the transit virtual interface.</p>
@@ -1393,8 +1382,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -1406,8 +1395,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the LAG with which to associate the connection.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG with which to associate the connection.</p>
@@ -1483,8 +1472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the hosted connection.</p>
@@ -1496,8 +1485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the interconnect or the LAG.</p>
-        pub fn parent_connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_connection_id(signature.into());
+        pub fn parent_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_connection_id(input.into());
             self
         }
         /// <p>The ID of the interconnect or the LAG.</p>
@@ -1572,8 +1561,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
         /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -1588,8 +1577,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
         /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p>
         /// <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p>
@@ -1603,8 +1592,8 @@ pub mod fluent_builders {
         /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
         /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
         /// <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-        pub fn ckn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ckn(signature.into());
+        pub fn ckn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ckn(input.into());
             self
         }
         /// <p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p>
@@ -1619,8 +1608,8 @@ pub mod fluent_builders {
         /// <p>You can create the CKN/CAK pair using an industry standard tool.</p>
         /// <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p>
         /// <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>
-        pub fn cak(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cak(signature.into());
+        pub fn cak(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cak(input.into());
             self
         }
         /// <p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p>
@@ -1701,8 +1690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -1714,8 +1703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the LAG or connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the LAG or connection.</p>
@@ -1789,8 +1778,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the hosted connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the hosted connection.</p>
@@ -1868,8 +1857,8 @@ pub mod fluent_builders {
         /// The name of the customer agreement.
         ///
         /// </p>
-        pub fn agreement_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agreement_name(signature.into());
+        pub fn agreement_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agreement_name(input.into());
             self
         }
         /// <p>
@@ -1948,8 +1937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -1961,8 +1950,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
-        pub fn virtual_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_id(signature.into());
+        pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
@@ -1974,11 +1963,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2052,8 +2038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -2127,8 +2113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -2140,11 +2126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2222,8 +2205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -2235,8 +2218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the BGP peer.</p>
-        pub fn new_bgp_peer(mut self, signature: crate::model::NewBgpPeer) -> Self {
-            self.inner = self.inner.new_bgp_peer(signature);
+        pub fn new_bgp_peer(mut self, input: crate::model::NewBgpPeer) -> Self {
+            self.inner = self.inner.new_bgp_peer(input);
             self
         }
         /// <p>Information about the BGP peer.</p>
@@ -2316,8 +2299,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The location of the connection.</p>
-        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(signature.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
         /// <p>The location of the connection.</p>
@@ -2326,8 +2309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The bandwidth of the connection.</p>
-        pub fn bandwidth(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bandwidth(signature.into());
+        pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bandwidth(input.into());
             self
         }
         /// <p>The bandwidth of the connection.</p>
@@ -2336,8 +2319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the connection.</p>
@@ -2349,8 +2332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -2376,8 +2359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service provider associated with the requested connection.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the service provider associated with the requested connection.</p>
@@ -2390,8 +2373,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
         /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
-        pub fn request_mac_sec(mut self, signature: bool) -> Self {
-            self.inner = self.inner.request_mac_sec(signature);
+        pub fn request_mac_sec(mut self, input: bool) -> Self {
+            self.inner = self.inner.request_mac_sec(input);
             self
         }
         /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
@@ -2468,9 +2451,9 @@ pub mod fluent_builders {
         /// <p>The name of the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_name(signature.into());
+            self.inner = self.inner.direct_connect_gateway_name(input.into());
             self
         }
         /// <p>The name of the Direct Connect gateway.</p>
@@ -2484,8 +2467,8 @@ pub mod fluent_builders {
         /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
         /// on the Amazon side of the connection. The ASN must be in the private range of 64,512 to
         /// 65,534 or 4,200,000,000 to 4,294,967,294. The default is 64512.</p>
-        pub fn amazon_side_asn(mut self, signature: i64) -> Self {
-            self.inner = self.inner.amazon_side_asn(signature);
+        pub fn amazon_side_asn(mut self, input: i64) -> Self {
+            self.inner = self.inner.amazon_side_asn(input);
             self
         }
         /// <p>The autonomous system number (ASN) for Border Gateway Protocol (BGP) to be configured
@@ -2559,11 +2542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2575,8 +2555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
@@ -2613,8 +2593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
-        pub fn virtual_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_id(signature.into());
+        pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
@@ -2680,11 +2660,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -2698,11 +2675,11 @@ pub mod fluent_builders {
         /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
         pub fn direct_connect_gateway_owner_account(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .direct_connect_gateway_owner_account(signature.into());
+                .direct_connect_gateway_owner_account(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account that owns the Direct Connect gateway.</p>
@@ -2714,8 +2691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
-        pub fn gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gateway_id(signature.into());
+        pub fn gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
@@ -2847,8 +2824,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the interconnect.</p>
-        pub fn interconnect_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_name(signature.into());
+        pub fn interconnect_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_name(input.into());
             self
         }
         /// <p>The name of the interconnect.</p>
@@ -2860,8 +2837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
-        pub fn bandwidth(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bandwidth(signature.into());
+        pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bandwidth(input.into());
             self
         }
         /// <p>The port bandwidth, in Gbps. The possible values are 1 and 10.</p>
@@ -2870,8 +2847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the interconnect.</p>
-        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(signature.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
         /// <p>The location of the interconnect.</p>
@@ -2880,8 +2857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -2907,8 +2884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service provider associated with the interconnect.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the service provider associated with the interconnect.</p>
@@ -2998,8 +2975,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of physical dedicated connections initially provisioned and bundled by the
         /// LAG.</p>
-        pub fn number_of_connections(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_connections(signature);
+        pub fn number_of_connections(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_connections(input);
             self
         }
         /// <p>The number of physical dedicated connections initially provisioned and bundled by the
@@ -3009,8 +2986,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location for the LAG.</p>
-        pub fn location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location(signature.into());
+        pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location(input.into());
             self
         }
         /// <p>The location for the LAG.</p>
@@ -3020,8 +2997,8 @@ pub mod fluent_builders {
         }
         /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
         /// possible values are 1Gbps and 10Gbps. </p>
-        pub fn connections_bandwidth(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connections_bandwidth(signature.into());
+        pub fn connections_bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connections_bandwidth(input.into());
             self
         }
         /// <p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The
@@ -3034,8 +3011,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the LAG.</p>
-        pub fn lag_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_name(signature.into());
+        pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_name(input.into());
             self
         }
         /// <p>The name of the LAG.</p>
@@ -3044,8 +3021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of an existing dedicated connection to migrate to the LAG.</p>
@@ -3091,8 +3068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the service provider associated with the LAG.</p>
@@ -3107,8 +3084,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>All connections in the LAG must be capable of  supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see  <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
         /// </note>
-        pub fn request_mac_sec(mut self, signature: bool) -> Self {
-            self.inner = self.inner.request_mac_sec(signature);
+        pub fn request_mac_sec(mut self, input: bool) -> Self {
+            self.inner = self.inner.request_mac_sec(input);
             self
         }
         /// <p>Indicates whether the connection will support MAC Security (MACsec).</p>
@@ -3190,8 +3167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -3205,9 +3182,9 @@ pub mod fluent_builders {
         /// <p>Information about the private virtual interface.</p>
         pub fn new_private_virtual_interface(
             mut self,
-            signature: crate::model::NewPrivateVirtualInterface,
+            input: crate::model::NewPrivateVirtualInterface,
         ) -> Self {
-            self.inner = self.inner.new_private_virtual_interface(signature);
+            self.inner = self.inner.new_private_virtual_interface(input);
             self
         }
         /// <p>Information about the private virtual interface.</p>
@@ -3282,8 +3259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -3297,9 +3274,9 @@ pub mod fluent_builders {
         /// <p>Information about the public virtual interface.</p>
         pub fn new_public_virtual_interface(
             mut self,
-            signature: crate::model::NewPublicVirtualInterface,
+            input: crate::model::NewPublicVirtualInterface,
         ) -> Self {
-            self.inner = self.inner.new_public_virtual_interface(signature);
+            self.inner = self.inner.new_public_virtual_interface(input);
             self
         }
         /// <p>Information about the public virtual interface.</p>
@@ -3380,8 +3357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -3395,9 +3372,9 @@ pub mod fluent_builders {
         /// <p>Information about the transit virtual interface.</p>
         pub fn new_transit_virtual_interface(
             mut self,
-            signature: crate::model::NewTransitVirtualInterface,
+            input: crate::model::NewTransitVirtualInterface,
         ) -> Self {
-            self.inner = self.inner.new_transit_virtual_interface(signature);
+            self.inner = self.inner.new_transit_virtual_interface(input);
             self
         }
         /// <p>Information about the transit virtual interface.</p>
@@ -3470,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -3483,8 +3460,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
-        pub fn asn(mut self, signature: i32) -> Self {
-            self.inner = self.inner.asn(signature);
+        pub fn asn(mut self, input: i32) -> Self {
+            self.inner = self.inner.asn(input);
             self
         }
         /// <p>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</p>
@@ -3493,8 +3470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
-        pub fn customer_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_address(signature.into());
+        pub fn customer_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_address(input.into());
             self
         }
         /// <p>The IP address assigned to the customer interface.</p>
@@ -3506,8 +3483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the BGP peer.</p>
-        pub fn bgp_peer_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bgp_peer_id(signature.into());
+        pub fn bgp_peer_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bgp_peer_id(input.into());
             self
         }
         /// <p>The ID of the BGP peer.</p>
@@ -3579,8 +3556,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -3654,11 +3631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -3733,8 +3707,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -3746,11 +3720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -3762,8 +3733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
-        pub fn virtual_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_id(signature.into());
+        pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway.</p>
@@ -3828,8 +3799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the proposal.</p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>The ID of the proposal.</p>
@@ -3902,8 +3873,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
-        pub fn interconnect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_id(signature.into());
+        pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_id(input.into());
             self
         }
         /// <p>The ID of the interconnect.</p>
@@ -3976,8 +3947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -4046,8 +4017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -4124,8 +4095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -4138,8 +4109,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
         /// the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the APN partner or service provider who establishes connectivity on your behalf. If you specify this parameter,
@@ -4152,8 +4123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-        pub fn loa_content_type(mut self, signature: crate::model::LoaContentType) -> Self {
-            self.inner = self.inner.loa_content_type(signature);
+        pub fn loa_content_type(mut self, input: crate::model::LoaContentType) -> Self {
+            self.inner = self.inner.loa_content_type(input);
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
@@ -4225,8 +4196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -4302,8 +4273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
-        pub fn interconnect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_id(signature.into());
+        pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_id(input.into());
             self
         }
         /// <p>The ID of the interconnect.</p>
@@ -4428,11 +4399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4444,8 +4412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the proposal.</p>
-        pub fn proposal_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.proposal_id(signature.into());
+        pub fn proposal_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.proposal_id(input.into());
             self
         }
         /// <p>The ID of the proposal.</p>
@@ -4454,8 +4422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the associated gateway.</p>
-        pub fn associated_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.associated_gateway_id(signature.into());
+        pub fn associated_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.associated_gateway_id(input.into());
             self
         }
         /// <p>The ID of the associated gateway.</p>
@@ -4470,8 +4438,8 @@ pub mod fluent_builders {
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
         /// returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -4483,8 +4451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4577,8 +4545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -4590,8 +4558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the associated gateway.</p>
-        pub fn associated_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.associated_gateway_id(signature.into());
+        pub fn associated_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.associated_gateway_id(input.into());
             self
         }
         /// <p>The ID of the associated gateway.</p>
@@ -4603,11 +4571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4622,8 +4587,8 @@ pub mod fluent_builders {
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
         /// returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -4635,8 +4600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
@@ -4645,8 +4610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
-        pub fn virtual_gateway_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_gateway_id(signature.into());
+        pub fn virtual_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_gateway_id(input.into());
             self
         }
         /// <p>The ID of the virtual private gateway or transit gateway.</p>
@@ -4724,11 +4689,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4740,8 +4702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -4756,8 +4718,8 @@ pub mod fluent_builders {
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
         /// returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -4769,8 +4731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
@@ -4839,11 +4801,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway.</p>
@@ -4858,8 +4817,8 @@ pub mod fluent_builders {
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
         /// returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -4871,8 +4830,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token provided in the previous call to retrieve the next page.</p>
@@ -4945,8 +4904,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect or LAG.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the interconnect or LAG.</p>
@@ -5022,8 +4981,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
-        pub fn interconnect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_id(signature.into());
+        pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_id(input.into());
             self
         }
         /// <p>The ID of the interconnect.</p>
@@ -5035,8 +4994,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the service provider who establishes connectivity on your behalf. If you supply this parameter, the LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
@@ -5048,8 +5007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-        pub fn loa_content_type(mut self, signature: crate::model::LoaContentType) -> Self {
-            self.inner = self.inner.loa_content_type(signature);
+        pub fn loa_content_type(mut self, input: crate::model::LoaContentType) -> Self {
+            self.inner = self.inner.loa_content_type(input);
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
@@ -5121,8 +5080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the interconnect.</p>
-        pub fn interconnect_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.interconnect_id(signature.into());
+        pub fn interconnect_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.interconnect_id(input.into());
             self
         }
         /// <p>The ID of the interconnect.</p>
@@ -5194,8 +5153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -5267,8 +5226,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of a connection, LAG, or interconnect.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of a connection, LAG, or interconnect.</p>
@@ -5281,8 +5240,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
         /// LOA-CFA lists the provider name alongside your company name as the requester of the cross connect.</p>
-        pub fn provider_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider_name(signature.into());
+        pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider_name(input.into());
             self
         }
         /// <p>The name of the service provider who establishes connectivity on your behalf. If you specify this parameter, the
@@ -5295,8 +5254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
-        pub fn loa_content_type(mut self, signature: crate::model::LoaContentType) -> Self {
-            self.inner = self.inner.loa_content_type(signature);
+        pub fn loa_content_type(mut self, input: crate::model::LoaContentType) -> Self {
+            self.inner = self.inner.loa_content_type(input);
             self
         }
         /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
@@ -5431,8 +5390,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -5444,8 +5403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
-        pub fn router_type_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.router_type_identifier(signature.into());
+        pub fn router_type_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.router_type_identifier(input.into());
             self
         }
         /// <p>Identifies the router by a combination of vendor, platform, and software version. For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.</p>
@@ -5659,8 +5618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -5672,8 +5631,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface.</p>
@@ -5754,8 +5713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -5767,8 +5726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -5838,8 +5797,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
         /// <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -5853,8 +5812,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
         /// <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>
-        pub fn secret_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_arn(signature.into());
+        pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>
@@ -5924,8 +5883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface failover test.</p>
-        pub fn test_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.test_id(signature.into());
+        pub fn test_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.test_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface failover test.</p>
@@ -5934,8 +5893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the virtual interface that was tested.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface that was tested.</p>
@@ -5964,8 +5923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the virtual interface failover test.</p>
-        pub fn status(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status(signature.into());
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status(input.into());
             self
         }
         /// <p>The status of the virtual interface failover test.</p>
@@ -5977,8 +5936,8 @@ pub mod fluent_builders {
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
         /// <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are
         /// returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -5990,8 +5949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -6063,8 +6022,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface you want to test.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface you want to test.</p>
@@ -6095,8 +6054,8 @@ pub mod fluent_builders {
         /// <p>The time in minutes that the virtual interface failover test will last.</p>
         /// <p>Maximum value: 180 minutes (3 hours).</p>
         /// <p>Default: 180 minutes (3 hours).</p>
-        pub fn test_duration_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.test_duration_in_minutes(signature);
+        pub fn test_duration_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.test_duration_in_minutes(input);
             self
         }
         /// <p>The time in minutes that the virtual interface failover test will last.</p>
@@ -6167,8 +6126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual interface you no longer want to test.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual interface you no longer want to test.</p>
@@ -6241,8 +6200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6328,8 +6287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -6425,8 +6384,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the dedicated connection.</p>
         /// <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the dedicated connection.</p>
@@ -6439,8 +6398,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the connection.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>The name of the connection.</p>
@@ -6453,8 +6412,8 @@ pub mod fluent_builders {
         }
         /// <p>The connection MAC Security (MACsec) encryption mode.</p>
         /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-        pub fn encryption_mode(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_mode(signature.into());
+        pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_mode(input.into());
             self
         }
         /// <p>The connection MAC Security (MACsec) encryption mode.</p>
@@ -6527,11 +6486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway to update.</p>
-        pub fn direct_connect_gateway_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.direct_connect_gateway_id(signature.into());
+        pub fn direct_connect_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.direct_connect_gateway_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway to update.</p>
@@ -6545,9 +6501,9 @@ pub mod fluent_builders {
         /// <p>The new name for the Direct Connect gateway.</p>
         pub fn new_direct_connect_gateway_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_direct_connect_gateway_name(signature.into());
+            self.inner = self.inner.new_direct_connect_gateway_name(input.into());
             self
         }
         /// <p>The new name for the Direct Connect gateway.</p>
@@ -6622,8 +6578,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
-        pub fn association_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.association_id(signature.into());
+        pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.association_id(input.into());
             self
         }
         /// <p>The ID of the Direct Connect gateway association.</p>
@@ -6765,8 +6721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the LAG.</p>
-        pub fn lag_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_id(signature.into());
+        pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_id(input.into());
             self
         }
         /// <p>The ID of the LAG.</p>
@@ -6775,8 +6731,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the LAG.</p>
-        pub fn lag_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lag_name(signature.into());
+        pub fn lag_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lag_name(input.into());
             self
         }
         /// <p>The name of the LAG.</p>
@@ -6785,8 +6741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
-        pub fn minimum_links(mut self, signature: i32) -> Self {
-            self.inner = self.inner.minimum_links(signature);
+        pub fn minimum_links(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_links(input);
             self
         }
         /// <p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>
@@ -6796,8 +6752,8 @@ pub mod fluent_builders {
         }
         /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
         /// <p>Amazon Web Services applies the value to all connections which are part of the LAG.</p>
-        pub fn encryption_mode(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.encryption_mode(signature.into());
+        pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.encryption_mode(input.into());
             self
         }
         /// <p>The LAG MAC Security (MACsec) encryption mode.</p>
@@ -6876,8 +6832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the virtual private interface.</p>
-        pub fn virtual_interface_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_id(signature.into());
+        pub fn virtual_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_id(input.into());
             self
         }
         /// <p>The ID of the virtual private interface.</p>
@@ -6889,8 +6845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
-        pub fn mtu(mut self, signature: i32) -> Self {
-            self.inner = self.inner.mtu(signature);
+        pub fn mtu(mut self, input: i32) -> Self {
+            self.inner = self.inner.mtu(input);
             self
         }
         /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -6899,8 +6855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to enable or disable SiteLink.</p>
-        pub fn enable_site_link(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_site_link(signature);
+        pub fn enable_site_link(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_site_link(input);
             self
         }
         /// <p>Indicates whether to enable or disable SiteLink.</p>
@@ -6909,8 +6865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the virtual private interface.</p>
-        pub fn virtual_interface_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.virtual_interface_name(signature.into());
+        pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.virtual_interface_name(input.into());
             self
         }
         /// <p>The name of the virtual private interface.</p>

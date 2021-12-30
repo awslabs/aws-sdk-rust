@@ -1253,8 +1253,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the DB cluster to associate the IAM role with.</p>
@@ -1267,8 +1267,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
         /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the Aurora DB
@@ -1279,8 +1279,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
         /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(signature.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input.into());
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be associated with.
@@ -1354,8 +1354,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to associate the IAM role with.</p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The name of the DB instance to associate the IAM role with.</p>
@@ -1368,8 +1368,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for
         /// example <code>arn:aws:iam::123456789012:role/AccessRole</code>. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with the DB instance, for
@@ -1381,8 +1381,8 @@ pub mod fluent_builders {
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
         /// For information about supported feature names, see <a>DBEngineVersion</a>.
         /// </p>
-        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(signature.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input.into());
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be associated with.
@@ -1453,8 +1453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the RDS event notification subscription you want to add a source identifier to.</p>
@@ -1487,8 +1487,8 @@ pub mod fluent_builders {
         /// <p>If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(signature.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input.into());
             self
         }
         /// <p>The identifier of the event source to be added.</p>
@@ -1586,8 +1586,8 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon RDS resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about  
@@ -1683,8 +1683,8 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an RDS Amazon Resource Name (ARN)</a>.</p>
-        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(signature.into());
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
         /// <p>The RDS Amazon Resource Name (ARN) of the resource that the
@@ -1703,8 +1703,8 @@ pub mod fluent_builders {
         /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>,
         /// <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code>
         /// </p>
-        pub fn apply_action(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.apply_action(signature.into());
+        pub fn apply_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.apply_action(input.into());
             self
         }
         /// <p>The pending maintenance action to apply to this resource.</p>
@@ -1734,8 +1734,8 @@ pub mod fluent_builders {
         /// opt-in requests.</p>
         /// </li>
         /// </ul>
-        pub fn opt_in_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.opt_in_type(signature.into());
+        pub fn opt_in_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.opt_in_type(input.into());
             self
         }
         /// <p>A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in
@@ -1833,8 +1833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to add authorization to.</p>
-        pub fn db_security_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(signature.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input.into());
             self
         }
         /// <p>The name of the DB security group to add authorization to.</p>
@@ -1846,8 +1846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP range to authorize.</p>
-        pub fn cidrip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(signature.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input.into());
             self
         }
         /// <p>The IP range to authorize.</p>
@@ -1861,11 +1861,8 @@ pub mod fluent_builders {
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code>
         /// or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.ec2_security_group_name(signature.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input.into());
             self
         }
         /// <p>
@@ -1886,8 +1883,8 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, <code>EC2SecurityGroupOwnerId</code> and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_id(signature.into());
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_id(input.into());
             self
         }
         /// <p>
@@ -1911,9 +1908,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn ec2_security_group_owner_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
+            self.inner = self.inner.ec2_security_group_owner_id(input.into());
             self
         }
         /// <p>
@@ -2014,8 +2011,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster to be backtracked. This parameter is
@@ -2060,8 +2057,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2017-07-08T18:00Z</code>
         /// </p>
-        pub fn backtrack_to(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.backtrack_to(signature);
+        pub fn backtrack_to(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.backtrack_to(input);
             self
         }
         /// <p>The timestamp of the time to backtrack the DB cluster to, specified in ISO
@@ -2092,8 +2089,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is
         /// enabled. Otherwise, an error occurs when binary logging is enabled.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>A value that indicates whether to force the DB cluster to backtrack when binary logging is
@@ -2106,10 +2103,10 @@ pub mod fluent_builders {
         /// backtrack time when <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time. When this parameter is disabled and <i>BacktrackTo</i> is set to a timestamp earlier than the earliest
         /// backtrack time, an error occurs.</p>
-        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, signature: bool) -> Self {
+        pub fn use_earliest_time_on_point_in_time_unavailable(mut self, input: bool) -> Self {
             self.inner = self
                 .inner
-                .use_earliest_time_on_point_in_time_unavailable(signature);
+                .use_earliest_time_on_point_in_time_unavailable(input);
             self
         }
         /// <p>A value that indicates whether to backtrack the DB cluster to the earliest possible
@@ -2188,8 +2185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to cancel.</p>
-        pub fn export_task_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(signature.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot export task to cancel.</p>
@@ -2274,11 +2271,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_cluster_parameter_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .source_db_cluster_parameter_group_identifier(signature.into());
+                .source_db_cluster_parameter_group_identifier(input.into());
             self
         }
         /// <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group.
@@ -2322,11 +2319,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_parameter_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_cluster_parameter_group_identifier(signature.into());
+                .target_db_cluster_parameter_group_identifier(input.into());
             self
         }
         /// <p>The identifier for the copied DB cluster parameter group.</p>
@@ -2359,11 +2356,11 @@ pub mod fluent_builders {
         /// <p>A description for the copied DB cluster parameter group.</p>
         pub fn target_db_cluster_parameter_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_cluster_parameter_group_description(signature.into());
+                .target_db_cluster_parameter_group_description(input.into());
             self
         }
         /// <p>A description for the copied DB cluster parameter group.</p>
@@ -2556,11 +2553,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .source_db_cluster_snapshot_identifier(signature.into());
+                .source_db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot to copy. This parameter isn't case-sensitive.</p>
@@ -2607,11 +2604,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_cluster_snapshot_identifier(signature.into());
+                .target_db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter isn't case-sensitive.</p>
@@ -2652,8 +2649,8 @@ pub mod fluent_builders {
         ///
         /// <p>If you copy an unencrypted DB cluster snapshot and specify a value for the <code>KmsKeyId</code> parameter,
         /// an error is returned.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster snapshot.
@@ -2715,8 +2712,8 @@ pub mod fluent_builders {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(signature.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input.into());
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CopyDBClusterSnapshot</code> API action in the Amazon Web Services Region that contains the
@@ -2767,8 +2764,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
         /// By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags(signature);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
@@ -2873,11 +2870,11 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_parameter_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .source_db_parameter_group_identifier(signature.into());
+                .source_db_parameter_group_identifier(input.into());
             self
         }
         /// <p>
@@ -2920,11 +2917,11 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_parameter_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_parameter_group_identifier(signature.into());
+                .target_db_parameter_group_identifier(input.into());
             self
         }
         /// <p>The identifier for the copied DB parameter group.</p>
@@ -2955,11 +2952,11 @@ pub mod fluent_builders {
         /// <p>A description for the copied DB parameter group.</p>
         pub fn target_db_parameter_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .target_db_parameter_group_description(signature.into());
+                .target_db_parameter_group_description(input.into());
             self
         }
         /// <p>A description for the copied DB parameter group.</p>
@@ -3094,9 +3091,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_snapshot_identifier(signature.into());
+            self.inner = self.inner.source_db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the source DB snapshot.</p>
@@ -3161,9 +3158,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_snapshot_identifier(signature.into());
+            self.inner = self.inner.target_db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the copy of the snapshot.
@@ -3218,8 +3215,8 @@ pub mod fluent_builders {
         /// that they are created in, and you can't use KMS keys from one Amazon Web Services Region in another
         /// Amazon Web Services Region.
         /// </p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB snapshot.
@@ -3271,8 +3268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
-        pub fn copy_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags(signature);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the source DB snapshot to the target DB snapshot. By default, tags are not copied.</p>
@@ -3334,8 +3331,8 @@ pub mod fluent_builders {
         /// instead of specifying <code>PreSignedUrl</code> manually. Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid
         /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
-        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(signature.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input.into());
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the
@@ -3408,8 +3405,8 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of an option group to associate with the copy of the snapshot.</p>
@@ -3432,9 +3429,9 @@ pub mod fluent_builders {
         /// <p>Example: <code>rds-caz-aiqhTgQv</code>.</p>
         pub fn target_custom_availability_zone(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_custom_availability_zone(signature.into());
+            self.inner = self.inner.target_custom_availability_zone(input.into());
             self
         }
         /// <p>The external custom Availability Zone (CAZ) identifier for the target CAZ.</p>
@@ -3516,9 +3513,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_option_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_option_group_identifier(signature.into());
+            self.inner = self.inner.source_option_group_identifier(input.into());
             self
         }
         /// <p>The identifier for the source option group.
@@ -3556,9 +3553,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_option_group_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_option_group_identifier(signature.into());
+            self.inner = self.inner.target_option_group_identifier(input.into());
             self
         }
         /// <p>The identifier for the copied option group.</p>
@@ -3589,9 +3586,9 @@ pub mod fluent_builders {
         /// <p>The description for the copied option group.</p>
         pub fn target_option_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_option_group_description(signature.into());
+            self.inner = self.inner.target_option_group_description(input.into());
             self
         }
         /// <p>The description for the copied option group.</p>
@@ -3691,9 +3688,9 @@ pub mod fluent_builders {
         /// <p>The name of the custom Availability Zone (AZ).</p>
         pub fn custom_availability_zone_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_availability_zone_name(signature.into());
+            self.inner = self.inner.custom_availability_zone_name(input.into());
             self
         }
         /// <p>The name of the custom Availability Zone (AZ).</p>
@@ -3706,8 +3703,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and
         /// the VMware vSphere cluster.</p>
-        pub fn existing_vpn_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.existing_vpn_id(signature.into());
+        pub fn existing_vpn_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.existing_vpn_id(input.into());
             self
         }
         /// <p>The ID of an existing virtual private network (VPN) between the Amazon RDS website and
@@ -3721,8 +3718,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn new_vpn_tunnel_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_vpn_tunnel_name(signature.into());
+        pub fn new_vpn_tunnel_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_vpn_tunnel_name(input.into());
             self
         }
         /// <p>The name of a new VPN tunnel between the Amazon RDS website and the VMware vSphere cluster.</p>
@@ -3736,11 +3733,8 @@ pub mod fluent_builders {
         }
         /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
         /// <p>Specify this parameter only if <code>ExistingVpnId</code> isn't specified.</p>
-        pub fn vpn_tunnel_originator_ip(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.vpn_tunnel_originator_ip(signature.into());
+        pub fn vpn_tunnel_originator_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpn_tunnel_originator_ip(input.into());
             self
         }
         /// <p>The IP address of network traffic from your on-premises data center. A custom AZ receives the network traffic.</p>
@@ -3837,8 +3831,8 @@ pub mod fluent_builders {
         }
         /// <p>The database engine to use for your custom engine version (CEV). The only supported value is
         /// <code>custom-oracle-ee</code>.</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine to use for your custom engine version (CEV). The only supported value is
@@ -3851,8 +3845,8 @@ pub mod fluent_builders {
         /// </code>. For example,
         /// a valid name is <code>19.my_cev1</code>. This setting is required for RDS Custom, but optional for Amazon RDS.
         /// The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The name of your CEV. The name format is <code>19.<i>customized_string</i>
@@ -3870,11 +3864,11 @@ pub mod fluent_builders {
         /// bucket name is <code>my-custom-installation-files</code>.</p>
         pub fn database_installation_files_s3_bucket_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .database_installation_files_s3_bucket_name(signature.into());
+                .database_installation_files_s3_bucket_name(input.into());
             self
         }
         /// <p>The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid
@@ -3892,11 +3886,11 @@ pub mod fluent_builders {
         /// bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.</p>
         pub fn database_installation_files_s3_prefix(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .database_installation_files_s3_prefix(signature.into());
+                .database_installation_files_s3_prefix(input.into());
             self
         }
         /// <p>The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid
@@ -3916,8 +3910,8 @@ pub mod fluent_builders {
         /// Creating symmetric KMS keys</a> in the <i>Amazon Web Services Key Management Service
         /// Developer Guide</i>.</p>
         /// <p>You can choose the same symmetric key when you create a CEV and a DB instance, or choose different keys.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric KMS key is required for
@@ -3933,8 +3927,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of your CEV.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of your CEV.</p>
@@ -3971,8 +3965,8 @@ pub mod fluent_builders {
         /// </dl>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest">
         /// Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn manifest(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.manifest(signature.into());
+        pub fn manifest(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.manifest(input.into());
             self
         }
         /// <p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3.
@@ -4141,8 +4135,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups are retained.</p>     
@@ -4160,8 +4154,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn character_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(signature.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input.into());
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified CharacterSet.</p>
@@ -4177,8 +4171,8 @@ pub mod fluent_builders {
         /// provide a name, Amazon RDS doesn't create a database in the DB cluster you are
         /// creating.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name for your database of up to 64 alphanumeric characters. If you do not
@@ -4208,8 +4202,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>     
@@ -4249,9 +4243,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>
@@ -4298,8 +4292,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB cluster.</p>
@@ -4343,8 +4337,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>     
@@ -4425,8 +4419,8 @@ pub mod fluent_builders {
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -4502,8 +4496,8 @@ pub mod fluent_builders {
         /// Valid values: <code>1150-65535</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the instances in the DB cluster accept connections.</p>     
@@ -4544,8 +4538,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(signature.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The name of the master user for the DB cluster.</p>   
@@ -4572,8 +4566,8 @@ pub mod fluent_builders {
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>   
@@ -4588,8 +4582,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
         /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
@@ -4627,11 +4621,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -4681,9 +4672,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -4710,9 +4701,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn replication_source_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.replication_source_identifier(signature.into());
+            self.inner = self.inner.replication_source_identifier(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB
@@ -4746,8 +4737,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn storage_encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(signature);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is encrypted.</p>
@@ -4778,8 +4769,8 @@ pub mod fluent_builders {
         /// must set <code>KmsKeyId</code> to a KMS key identifier that is valid in the destination Amazon Web Services
         /// Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>       
@@ -4845,8 +4836,8 @@ pub mod fluent_builders {
         /// request for the operation that can be executed in the source Amazon Web Services Region.</p>
         /// </note>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(signature.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input.into());
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for
@@ -4901,8 +4892,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -4931,8 +4922,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora MySQL DB clusters only</p>
-        pub fn backtrack_window(mut self, signature: i64) -> Self {
-            self.inner = self.inner.backtrack_window(signature);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -5030,8 +5021,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn engine_mode(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_mode(signature.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_mode(input.into());
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
@@ -5078,11 +5069,8 @@ pub mod fluent_builders {
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn scaling_configuration(
-            mut self,
-            signature: crate::model::ScalingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.scaling_configuration(signature);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
@@ -5098,8 +5086,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection isn't enabled.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -5115,11 +5103,8 @@ pub mod fluent_builders {
         /// in the new global database cluster.
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -5142,8 +5127,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_http_endpoint(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_http_endpoint(signature);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_http_endpoint(input);
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -5161,8 +5146,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
@@ -5178,8 +5163,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The Active Directory directory ID to create the DB cluster in.</p>
@@ -5194,8 +5179,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -5216,8 +5201,8 @@ pub mod fluent_builders {
         /// primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>   
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_global_write_forwarding(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_global_write_forwarding(signature);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_global_write_forwarding(input);
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -5242,11 +5227,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn db_cluster_instance_class(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_cluster_instance_class(signature.into());
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
@@ -5265,8 +5247,8 @@ pub mod fluent_builders {
         /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_storage(signature);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
         /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>
@@ -5290,8 +5272,8 @@ pub mod fluent_builders {
         /// is specified, otherwise <code>gp2</code>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB cluster.</p>
@@ -5319,8 +5301,8 @@ pub mod fluent_builders {
         /// <p>This setting is required to create a Multi-AZ DB cluster.</p>       
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>   
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
@@ -5362,8 +5344,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
@@ -5401,8 +5383,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
@@ -5419,8 +5401,8 @@ pub mod fluent_builders {
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off
@@ -5440,8 +5422,8 @@ pub mod fluent_builders {
         /// up and enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs.
@@ -5463,8 +5445,8 @@ pub mod fluent_builders {
         /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.
@@ -5485,9 +5467,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -5505,8 +5487,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
@@ -5583,8 +5565,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -5599,9 +5581,9 @@ pub mod fluent_builders {
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
+            self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
             self
         }
         /// <p>The identifier to use for the new endpoint. This parameter is stored as a lowercase string.</p>
@@ -5613,8 +5595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(signature.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(input.into());
             self
         }
         /// <p>The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
@@ -5789,9 +5771,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -5870,11 +5852,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_family(signature.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster
@@ -5944,8 +5923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the DB cluster parameter group.</p>
@@ -6057,9 +6036,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
@@ -6093,8 +6072,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster to create a snapshot for. This parameter isn't case-sensitive.</p>
@@ -6315,8 +6294,8 @@ pub mod fluent_builders {
         /// database engine.</p>
         /// </li>
         /// </ul>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -6463,8 +6442,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -6619,8 +6598,8 @@ pub mod fluent_builders {
         /// </ul>            
         /// </li>
         /// </ul>
-        pub fn allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_storage(signature);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
         /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
@@ -6763,8 +6742,8 @@ pub mod fluent_builders {
         /// and availability for your engine, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the DB instance, for example db.m4.large.
@@ -6863,8 +6842,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -6980,8 +6959,8 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(signature.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The name for the master user.</p>
@@ -7049,8 +7028,8 @@ pub mod fluent_builders {
         /// <b>PostgreSQL</b>
         /// </p>
         /// <p>Constraints: Must contain from 8 to 128 characters.</p>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master user. The password can include any printable ASCII character except "/", """, or "@".</p>
@@ -7167,8 +7146,8 @@ pub mod fluent_builders {
         /// RDS on VMware User Guide.</a>
         /// </p>
         /// </note>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>
@@ -7203,8 +7182,8 @@ pub mod fluent_builders {
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
         /// <p>If there is no DB subnet group, then it is a non-VPC DB instance.</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
@@ -7231,9 +7210,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -7271,11 +7250,8 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance. If you do not specify a value, then
@@ -7319,8 +7295,8 @@ pub mod fluent_builders {
         /// <p>Can't be set to 0 or 35 for an RDS Custom DB instance</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables
@@ -7375,11 +7351,8 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>
@@ -7472,8 +7445,8 @@ pub mod fluent_builders {
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
         /// <p>Type: Integer</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -7537,8 +7510,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
         /// the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. You can't set
@@ -7607,8 +7580,8 @@ pub mod fluent_builders {
         /// <p>For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS for PostgreSQL versions and extensions</a> in the
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -7681,8 +7654,8 @@ pub mod fluent_builders {
         /// By default, minor engine upgrades are applied automatically.</p>
         /// <p>If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code> to
         /// <code>false</code>.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB instance during the maintenance window.
@@ -7698,8 +7671,8 @@ pub mod fluent_builders {
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>License model information for this DB instance.</p>
@@ -7721,8 +7694,8 @@ pub mod fluent_builders {
         /// of the storage amount for the DB instance. For SQL Server DB instances, must be a multiple between 1 and 50
         /// of the storage amount for the DB instance.
         /// </p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.
@@ -7741,8 +7714,8 @@ pub mod fluent_builders {
         /// from an option group. Also, that option group can't be removed from a DB instance after it is
         /// associated with a DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>A value that indicates that the DB instance should be associated with the specified option group.</p>
@@ -7766,8 +7739,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. The character set is managed by
         /// the DB cluster. For more information, see <code>CreateDBCluster</code>.</p>
-        pub fn character_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(signature.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input.into());
             self
         }
         /// <p>For supported engines, this value indicates that the DB instance should be associated with the
@@ -7788,11 +7761,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
         /// <p>This parameter doesn't apply to RDS Custom.</p>
-        pub fn nchar_character_set_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.nchar_character_set_name(signature.into());
+        pub fn nchar_character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.nchar_character_set_name(input.into());
             self
         }
         /// <p>The name of the NCHAR character set for the Oracle DB instance.</p>
@@ -7829,8 +7799,8 @@ pub mod fluent_builders {
         /// <p>If the subnets are part of a VPC that has an internet gateway attached to it, the DB instance is public.</p>
         /// </li>
         /// </ul>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -7881,8 +7851,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster that the instance will belong to.</p>
@@ -7906,8 +7876,8 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -7928,8 +7898,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(signature.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -7943,11 +7913,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_password(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tde_credential_password(signature.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -7966,8 +7933,8 @@ pub mod fluent_builders {
         /// <b>Amazon Aurora</b>
         /// </p>
         /// <p>Not applicable. The encryption for DB instances is managed by the DB cluster.</p>
-        pub fn storage_encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(signature);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is encrypted. By default, it isn't encrypted.</p>
@@ -8000,8 +7967,8 @@ pub mod fluent_builders {
         /// <p>A KMS key is required for RDS Custom Oracle instances. For most RDS engines, if you leave this parameter empty
         /// while enabling <code>StorageEncrypted</code>, the engine uses the default KMS key. However, RDS Custom for Oracle
         /// doesn't use the default key when this parameter is empty. You must explicitly specify a key.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
@@ -8032,8 +7999,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
@@ -8051,8 +8018,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -8072,8 +8039,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for
@@ -8093,8 +8060,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -8112,8 +8079,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -8133,8 +8100,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, signature: i32) -> Self {
-            self.inner = self.inner.promotion_tier(signature);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.inner = self.inner.promotion_tier(input);
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -8153,8 +8120,8 @@ pub mod fluent_builders {
         /// The time zone parameter is currently supported only by
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft SQL Server</a>.
         /// </p>
-        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(signature.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>The time zone of the DB instance.
@@ -8173,8 +8140,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
@@ -8197,8 +8164,8 @@ pub mod fluent_builders {
         /// User Guide</i>.
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance. For more information, see
@@ -8218,9 +8185,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -8238,8 +8205,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
@@ -8381,8 +8348,8 @@ pub mod fluent_builders {
         /// For more information, see <code>CreateDBCluster</code>. DB instances in a DB
         /// cluster can be deleted even when deletion protection is enabled for the DB cluster.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -8408,8 +8375,8 @@ pub mod fluent_builders {
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn max_allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(signature);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -8432,8 +8399,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(signature);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS
@@ -8470,9 +8437,9 @@ pub mod fluent_builders {
         /// <p>This setting is required for RDS Custom.</p>
         pub fn custom_iam_instance_profile(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_iam_instance_profile(signature.into());
+            self.inner = self.inner.custom_iam_instance_profile(input.into());
             self
         }
         /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
@@ -8504,8 +8471,8 @@ pub mod fluent_builders {
         /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
         /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn backup_target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_target(signature.into());
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_target(input.into());
             self
         }
         /// <p>Specifies where automated backups and manual snapshots are stored.</p>
@@ -8596,8 +8563,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key
         /// that identifies a DB instance. This parameter is stored as a lowercase string.</p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier of the read replica. This identifier is the unique key
@@ -8650,9 +8617,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_instance_identifier(signature.into());
+            self.inner = self.inner.source_db_instance_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB instance that will act as the source for the read replica.
@@ -8708,8 +8675,8 @@ pub mod fluent_builders {
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: Inherits from the source DB instance.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the read replica, for example
@@ -8731,8 +8698,8 @@ pub mod fluent_builders {
         /// <p>
         /// Example: <code>us-east-1d</code>
         /// </p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone (AZ) where the read replica will be created.</p>
@@ -8751,8 +8718,8 @@ pub mod fluent_builders {
         /// <p>Default: Inherits from the source DB instance</p>
         /// <p>Valid Values: <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number that the DB instance uses for connections.</p>
@@ -8770,8 +8737,8 @@ pub mod fluent_builders {
         /// your read replica as a Multi-AZ DB instance is independent of whether the source
         /// database is a Multi-AZ DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the read replica is in a Multi-AZ deployment. </p>
@@ -8789,8 +8756,8 @@ pub mod fluent_builders {
         /// read replica during the maintenance window.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Inherits from the source DB instance</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the
@@ -8802,8 +8769,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
@@ -8817,8 +8784,8 @@ pub mod fluent_builders {
         /// instance.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The option group the DB instance is associated with. If omitted, the option group associated with the source instance is used.</p>
@@ -8853,11 +8820,8 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -8895,8 +8859,8 @@ pub mod fluent_builders {
         /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -8962,8 +8926,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>Specifies a DB subnet group for the DB instance. The new DB instance is created in the VPC associated with the DB subnet group. If no DB subnet group is specified, then the new DB instance isn't created in a VPC.</p>
@@ -9039,8 +9003,8 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the read replica.</p>
@@ -9061,8 +9025,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of
         /// the read replica. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the read replica to snapshots of
@@ -9079,8 +9043,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -9102,8 +9066,8 @@ pub mod fluent_builders {
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you must
         /// supply a <code>MonitoringRoleArn</code> value.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -9132,8 +9096,8 @@ pub mod fluent_builders {
         /// <p>You can't create an encrypted read replica from an unencrypted DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom, which uses the same KMS key as the primary
         /// replica.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted read replica.</p>
@@ -9218,8 +9182,8 @@ pub mod fluent_builders {
         /// doesn't support cross-Region read replicas.</p>
         /// </note>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(signature.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input.into());
             self
         }
         /// <p>The URL that contains a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code> API action
@@ -9303,8 +9267,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
@@ -9327,8 +9291,8 @@ pub mod fluent_builders {
         /// Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the read replica.</p>
@@ -9348,9 +9312,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -9368,8 +9332,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
@@ -9431,8 +9395,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn use_default_processor_features(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(signature);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
@@ -9451,8 +9415,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -9470,8 +9434,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
@@ -9485,8 +9449,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -9511,8 +9475,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For RDS Custom, you must specify this parameter and set it to <code>mounted</code>. The value won't be set by default.
         /// After replica creation, you can manage the open mode manually.</p>
-        pub fn replica_mode(mut self, signature: crate::model::ReplicaMode) -> Self {
-            self.inner = self.inner.replica_mode(signature);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.inner = self.inner.replica_mode(input);
             self
         }
         /// <p>The open mode of the replica database: mounted or read-only.</p>
@@ -9540,8 +9504,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(signature);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -9573,9 +9537,9 @@ pub mod fluent_builders {
         /// <p>This setting is required for RDS Custom.</p>
         pub fn custom_iam_instance_profile(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_iam_instance_profile(signature.into());
+            self.inner = self.inner.custom_iam_instance_profile(input.into());
             self
         }
         /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
@@ -9700,11 +9664,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This value is stored as a lowercase string.</p>
         /// </note>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -9813,11 +9774,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_family(signature.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The DB parameter group family name. A DB parameter group can be associated with one and only one DB parameter group family, and can be applied only to a DB instance running a database engine and engine version compatible with that DB parameter group family.</p>
@@ -9911,8 +9869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the DB parameter group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the DB parameter group.</p>
@@ -9998,8 +9956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier for the proxy. This name must be unique for all proxies owned by your Amazon Web Services account in the specified Amazon Web Services Region. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -10014,8 +9972,8 @@ pub mod fluent_builders {
         /// This value determines which database network protocol the proxy recognizes when it interprets
         /// network traffic to and from the database.
         /// The engine family applies to MySQL and PostgreSQL for both RDS and Aurora.</p>
-        pub fn engine_family(mut self, signature: crate::model::EngineFamily) -> Self {
-            self.inner = self.inner.engine_family(signature);
+        pub fn engine_family(mut self, input: crate::model::EngineFamily) -> Self {
+            self.inner = self.inner.engine_family(input);
             self
         }
         /// <p>The kinds of databases that the proxy can connect to.
@@ -10047,8 +10005,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
@@ -10092,8 +10050,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy.</p>
-        pub fn require_tls(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_tls(signature);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_tls(input);
             self
         }
         /// <p>A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
@@ -10104,8 +10062,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.idle_client_timeout(signature);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_client_timeout(input);
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
@@ -10120,8 +10078,8 @@ pub mod fluent_builders {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, signature: bool) -> Self {
-            self.inner = self.inner.debug_logging(signature);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_logging(input);
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -10216,8 +10174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The name of the DB proxy associated with the DB proxy endpoint that you create.</p>
@@ -10229,8 +10187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the DB proxy endpoint to create.</p>
-        pub fn db_proxy_endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(signature.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input.into());
             self
         }
         /// <p>The name of the DB proxy endpoint to create.</p>
@@ -10283,8 +10241,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write
         /// or read-only operations. The default is <code>READ_WRITE</code>.</p>
-        pub fn target_role(mut self, signature: crate::model::DbProxyEndpointTargetRole) -> Self {
-            self.inner = self.inner.target_role(signature);
+        pub fn target_role(mut self, input: crate::model::DbProxyEndpointTargetRole) -> Self {
+            self.inner = self.inner.target_role(input);
             self
         }
         /// <p>A value that indicates whether the DB proxy endpoint can be used for read/write
@@ -10398,8 +10356,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mysecuritygroup</code>
         /// </p>
-        pub fn db_security_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(signature.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input.into());
             self
         }
         /// <p>The name for the DB security group. This value is stored as a lowercase string.</p>
@@ -10430,9 +10388,9 @@ pub mod fluent_builders {
         /// <p>The description for the DB security group.</p>
         pub fn db_security_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_security_group_description(signature.into());
+            self.inner = self.inner.db_security_group_description(input.into());
             self
         }
         /// <p>The description for the DB security group.</p>
@@ -10539,8 +10497,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot.</p>
@@ -10575,8 +10533,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB instance that you want to create the snapshot of.</p>
@@ -10678,8 +10636,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
@@ -10696,9 +10654,9 @@ pub mod fluent_builders {
         /// <p>The description for the DB subnet group.</p>
         pub fn db_subnet_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_subnet_group_description(signature.into());
+            self.inner = self.inner.db_subnet_group_description(input.into());
             self
         }
         /// <p>The description for the DB subnet group.</p>
@@ -10827,8 +10785,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the subscription.</p>
         /// <p>Constraints: The name must be less than 255 characters.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the subscription.</p>
@@ -10841,8 +10799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
@@ -10859,8 +10817,8 @@ pub mod fluent_builders {
         /// returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be
@@ -10966,8 +10924,8 @@ pub mod fluent_builders {
         /// <p>
         /// A value that indicates whether to activate the subscription. If the event notification subscription isn't activated, the subscription is created but not active.
         /// </p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>
@@ -11075,11 +11033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the new global database cluster.</p>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the new global database cluster.</p>
@@ -11096,9 +11051,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn source_db_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_identifier(signature.into());
+            self.inner = self.inner.source_db_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -11113,8 +11068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
@@ -11123,8 +11078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The engine version of the Aurora global database.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The engine version of the Aurora global database.</p>
@@ -11139,8 +11094,8 @@ pub mod fluent_builders {
         /// The deletion protection setting for the new global database.
         /// The global database can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>
@@ -11155,8 +11110,8 @@ pub mod fluent_builders {
         /// The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon
         /// Aurora will not create a database in the global database cluster you are creating.
         /// </p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>
@@ -11173,8 +11128,8 @@ pub mod fluent_builders {
         /// <p>
         /// The storage encryption setting for the new global database cluster.
         /// </p>
-        pub fn storage_encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(signature);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
         /// <p>
@@ -11260,8 +11215,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>myoptiongroup</code>
         /// </p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>Specifies the name of the option group to be created.</p>
@@ -11346,8 +11301,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(signature.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
         /// <p>Specifies the name of the engine that this option group should be associated with.</p>
@@ -11415,8 +11370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
-        pub fn major_engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(signature.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input.into());
             self
         }
         /// <p>Specifies the major version of the engine that this option group should be associated with.</p>
@@ -11428,11 +11383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the option group.</p>
-        pub fn option_group_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.option_group_description(signature.into());
+        pub fn option_group_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_description(input.into());
             self
         }
         /// <p>The description of the option group.</p>
@@ -11528,9 +11480,9 @@ pub mod fluent_builders {
         /// <p>The custom AZ identifier.</p>
         pub fn custom_availability_zone_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(signature.into());
+            self.inner = self.inner.custom_availability_zone_id(input.into());
             self
         }
         /// <p>The custom AZ identifier.</p>
@@ -11622,8 +11574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The database engine. The only supported engine is <code>custom-oracle-ee</code>.</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine. The only supported engine is <code>custom-oracle-ee</code>.</p>
@@ -11634,8 +11586,8 @@ pub mod fluent_builders {
         /// <p>The custom engine version (CEV) for your DB instance. This option is required for
         /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
         /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The custom engine version (CEV) for your DB instance. This option is required for
@@ -11728,8 +11680,8 @@ pub mod fluent_builders {
         /// <p>Must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.</p>
@@ -11753,8 +11705,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code> is disabled.</p>
         /// </note>
-        pub fn skip_final_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(signature);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB cluster snapshot before the DB cluster is deleted.
@@ -11791,9 +11743,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn final_db_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(signature.into());
+            self.inner = self.inner.final_db_snapshot_identifier(input.into());
             self
         }
         /// <p>
@@ -11890,9 +11842,9 @@ pub mod fluent_builders {
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
+            self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
             self
         }
         /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
@@ -11989,9 +11941,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group.</p>
@@ -12093,9 +12045,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be the name of an existing DB cluster snapshot in the <code>available</code> state.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster snapshot to delete.</p>
@@ -12199,8 +12151,8 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing DB instance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier for the DB instance to be deleted. This parameter isn't case-sensitive.</p>
@@ -12228,8 +12180,8 @@ pub mod fluent_builders {
         /// or <code>incompatible-network</code>, RDS can delete the instance only if you enable this parameter.</p>
         /// <p>If you delete a read replica or an RDS Custom instance, you must enable this setting.</p>
         /// <p>This setting is required for RDS Custom.</p>
-        pub fn skip_final_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.skip_final_snapshot(signature);
+        pub fn skip_final_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_final_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
@@ -12272,9 +12224,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn final_db_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.final_db_snapshot_identifier(signature.into());
+            self.inner = self.inner.final_db_snapshot_identifier(input.into());
             self
         }
         /// <p>
@@ -12310,8 +12262,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to remove automated backups immediately after the DB
         /// instance is deleted. This parameter isn't case-sensitive. The default is to remove
         /// automated backups immediately after the DB instance is deleted.</p>
-        pub fn delete_automated_backups(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_automated_backups(signature);
+        pub fn delete_automated_backups(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_automated_backups(input);
             self
         }
         /// <p>A value that indicates whether to remove automated backups immediately after the DB
@@ -12382,8 +12334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
-        pub fn dbi_resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(signature.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input.into());
             self
         }
         /// <p>The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services Region.</p>
@@ -12399,11 +12351,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .db_instance_automated_backups_arn(signature.into());
+            self.inner = self.inner.db_instance_automated_backups_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the automated backups to delete, for example,
@@ -12489,11 +12439,8 @@ pub mod fluent_builders {
         /// <p>Can't be associated with any DB instances</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -12577,8 +12524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy to delete.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The name of the DB proxy to delete.</p>
@@ -12652,8 +12599,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy endpoint to delete.</p>
-        pub fn db_proxy_endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(signature.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input.into());
             self
         }
         /// <p>The name of the DB proxy endpoint to delete.</p>
@@ -12746,8 +12693,8 @@ pub mod fluent_builders {
         /// <p>Must not be "Default"</p>
         /// </li>
         /// </ul>
-        pub fn db_security_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(signature.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input.into());
             self
         }
         /// <p>The name of the DB security group to delete.</p>
@@ -12842,8 +12789,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB snapshot identifier.</p>
         /// <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The DB snapshot identifier.</p>
@@ -12926,8 +12873,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the database subnet group to delete.</p>
@@ -13006,8 +12953,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to delete.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the RDS event notification subscription you want to delete.</p>
@@ -13087,11 +13034,8 @@ pub mod fluent_builders {
         /// <p>
         /// The cluster identifier of the global database cluster being deleted.
         /// </p>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -13166,8 +13110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(signature.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.installation_media_id(input.into());
             self
         }
         /// <p>The installation medium ID.</p>
@@ -13242,8 +13186,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>You can't delete default option groups.</p>
         /// </note>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to be deleted.</p>
@@ -13318,8 +13262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
@@ -13331,8 +13275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(signature.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
@@ -13505,8 +13449,8 @@ pub mod fluent_builders {
         /// <p>Must match an existing CertificateIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn certificate_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(signature.into());
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(input.into());
             self
         }
         /// <p>The user-supplied certificate identifier. If this parameter is specified, information for only the identified certificate is returned. This parameter isn't case-sensitive.</p>
@@ -13547,8 +13491,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -13569,8 +13513,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -13652,9 +13596,9 @@ pub mod fluent_builders {
         /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
         pub fn custom_availability_zone_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(signature.into());
+            self.inner = self.inner.custom_availability_zone_id(input.into());
             self
         }
         /// <p>The custom AZ identifier. If this parameter is specified, information from only the specific custom AZ is returned.</p>
@@ -13687,8 +13631,8 @@ pub mod fluent_builders {
         /// a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -13705,8 +13649,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -13801,8 +13745,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster to be described. This parameter is
@@ -13840,8 +13784,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>123e4567-e89b-12d3-a456-426655440000</code>
         /// </p>
-        pub fn backtrack_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backtrack_identifier(signature.into());
+        pub fn backtrack_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backtrack_identifier(input.into());
             self
         }
         /// <p>If specified, this value is the backtrack identifier of the backtrack to be
@@ -13960,8 +13904,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -13980,8 +13924,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -14059,8 +14003,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
         /// stored as a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is
@@ -14075,9 +14019,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
+            self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
             self
         }
         /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
@@ -14125,8 +14069,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -14145,8 +14089,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p> An optional pagination token provided by a previous
@@ -14243,9 +14187,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific DB cluster parameter group to return details for.</p>
@@ -14286,8 +14230,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -14308,8 +14252,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -14403,9 +14347,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific DB cluster parameter group to return parameter details for.</p>
@@ -14427,8 +14371,8 @@ pub mod fluent_builders {
         /// Parameter sources can be <code>engine</code>, <code>service</code>,
         /// or <code>customer</code>.
         /// </p>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>
@@ -14464,8 +14408,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -14486,8 +14430,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -14580,8 +14524,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The user-supplied DB cluster identifier. If this parameter is specified, information from only the specific DB cluster is returned. This parameter isn't case-sensitive.</p>
@@ -14675,8 +14619,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -14695,8 +14639,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -14711,8 +14655,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
         /// shared from other Amazon Web Services accounts.</p>
-        pub fn include_shared(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_shared(signature);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
         /// <p>Optional Boolean parameter that specifies whether the output includes information about clusters
@@ -14793,9 +14737,9 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB cluster snapshot to describe the attributes for.</p>
@@ -14888,8 +14832,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The ID of the DB cluster to retrieve the list of DB cluster snapshots for.
@@ -14926,9 +14870,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>A specific DB cluster snapshot identifier to describe.
@@ -14980,8 +14924,8 @@ pub mod fluent_builders {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(signature.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(input.into());
             self
         }
         /// <p>The type of DB cluster snapshots to be returned. You can specify one of the following values:</p>
@@ -15082,8 +15026,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response.
@@ -15102,8 +15046,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -15121,8 +15065,8 @@ pub mod fluent_builders {
         /// permission to copy or restore. By default, these snapshots are not included.</p>
         /// <p>You can give an Amazon Web Services account permission to restore a manual DB cluster snapshot from
         /// another Amazon Web Services account by the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
-        pub fn include_shared(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_shared(signature);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -15137,8 +15081,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
         /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB cluster snapshot  as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p>
-        pub fn include_public(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_public(signature);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_public(input);
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
@@ -15281,8 +15225,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine to return.</p>
@@ -15365,8 +15309,8 @@ pub mod fluent_builders {
         /// <p>The database engine version to return.</p>
         /// <p>Example: <code>5.1.49</code>
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The database engine version to return.</p>
@@ -15386,11 +15330,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBParameterGroupFamily.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_family(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_family(signature.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The name of a specific DB parameter group family to return details for.</p>
@@ -15431,8 +15372,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -15452,8 +15393,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -15467,8 +15408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
-        pub fn default_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.default_only(signature);
+        pub fn default_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.default_only(input);
             self
         }
         /// <p>A value that indicates whether only the default version of the specified engine or engine and major version combination is returned.</p>
@@ -15483,8 +15424,8 @@ pub mod fluent_builders {
         /// <p>For RDS Custom, the default is not to list supported character sets. If you set <code>ListSupportedCharacterSets</code>
         /// to <code>true</code>, RDS Custom returns no results.
         /// </p>
-        pub fn list_supported_character_sets(mut self, signature: bool) -> Self {
-            self.inner = self.inner.list_supported_character_sets(signature);
+        pub fn list_supported_character_sets(mut self, input: bool) -> Self {
+            self.inner = self.inner.list_supported_character_sets(input);
             self
         }
         /// <p>A value that indicates whether to list the supported character sets for each engine version.</p>
@@ -15508,8 +15449,8 @@ pub mod fluent_builders {
         /// <p>For RDS Custom, the default is not to list supported time zones. If you set <code>ListSupportedTimezones</code>
         /// to <code>true</code>, RDS Custom returns no results.
         /// </p>
-        pub fn list_supported_timezones(mut self, signature: bool) -> Self {
-            self.inner = self.inner.list_supported_timezones(signature);
+        pub fn list_supported_timezones(mut self, input: bool) -> Self {
+            self.inner = self.inner.list_supported_timezones(input);
             self
         }
         /// <p>A value that indicates whether to list the supported time zones for each engine version.</p>
@@ -15524,8 +15465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
-        pub fn include_all(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_all(signature);
+        pub fn include_all(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_all(input);
             self
         }
         /// <p>A value that indicates whether to include engine versions that aren't available in the list. The default is to list only available engine versions.</p>
@@ -15603,8 +15544,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource ID of the DB instance that is the source of
         /// the automated backup. This parameter isn't case-sensitive. </p>
-        pub fn dbi_resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(signature.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input.into());
             self
         }
         /// <p>The resource ID of the DB instance that is the source of
@@ -15619,8 +15560,8 @@ pub mod fluent_builders {
         /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must
         /// match the identifier of an existing DB instance. It returns information from the
         /// specific DB instance' automated backup. This parameter isn't case-sensitive. </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must
@@ -15719,8 +15660,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist than the specified
         /// <code>MaxRecords</code> value, a pagination token called a marker is included in the response so that
         /// you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified
@@ -15732,8 +15673,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response
         /// includes only records beyond the marker, up to <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response
@@ -15747,11 +15688,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn db_instance_automated_backups_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .db_instance_automated_backups_arn(signature.into());
+            self.inner = self.inner.db_instance_automated_backups_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups, for example,
@@ -15834,8 +15773,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.</p>
@@ -15937,8 +15876,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -15960,8 +15899,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16043,8 +15982,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -16062,8 +16001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the available log files for log file names that contain the specified string.</p>
-        pub fn filename_contains(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filename_contains(signature.into());
+        pub fn filename_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filename_contains(input.into());
             self
         }
         /// <p>Filters the available log files for log file names that contain the specified string.</p>
@@ -16075,8 +16014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
-        pub fn file_last_written(mut self, signature: i64) -> Self {
-            self.inner = self.inner.file_last_written(signature);
+        pub fn file_last_written(mut self, input: i64) -> Self {
+            self.inner = self.inner.file_last_written(input);
             self
         }
         /// <p>Filters the available log files for files written since the specified date, in POSIX timestamp format with milliseconds.</p>
@@ -16085,8 +16024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the available log files for files larger than the specified size.</p>
-        pub fn file_size(mut self, signature: i64) -> Self {
-            self.inner = self.inner.file_size(signature);
+        pub fn file_size(mut self, input: i64) -> Self {
+            self.inner = self.inner.file_size(input);
             self
         }
         /// <p>Filters the available log files for files larger than the specified size.</p>
@@ -16112,8 +16051,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a pagination token called a marker is included in the response so you can retrieve the remaining results.</p>
@@ -16122,8 +16061,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token provided in the previous request. If this parameter is specified the response includes only records beyond the marker, up to MaxRecords.</p>
@@ -16201,11 +16140,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -16247,8 +16183,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -16270,8 +16206,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16352,11 +16288,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing DBParameterGroup.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific DB parameter group to return details for.</p>
@@ -16377,8 +16310,8 @@ pub mod fluent_builders {
         /// <p>Default: All parameter types returned</p>
         /// <p>Valid Values: <code>user | system | engine-default</code>
         /// </p>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>The parameter types to return.</p>
@@ -16414,8 +16347,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -16437,8 +16370,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16515,8 +16448,8 @@ pub mod fluent_builders {
         /// <p>The name of the DB proxy. If you omit this parameter,
         /// the output includes information about all DB proxies owned by
         /// your Amazon Web Services account ID.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The name of the DB proxy. If you omit this parameter,
@@ -16551,8 +16484,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16569,8 +16502,8 @@ pub mod fluent_builders {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -16645,8 +16578,8 @@ pub mod fluent_builders {
         /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit
         /// this parameter, the output includes information about all DB proxy endpoints
         /// associated with all your DB proxies.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The name of the DB proxy whose endpoints you want to describe. If you omit
@@ -16662,8 +16595,8 @@ pub mod fluent_builders {
         /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter,
         /// the output includes information about all DB proxy endpoints associated with
         /// the specified proxy.</p>
-        pub fn db_proxy_endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(signature.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input.into());
             self
         }
         /// <p>The name of a DB proxy endpoint to describe. If you omit this parameter,
@@ -16698,8 +16631,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16716,8 +16649,8 @@ pub mod fluent_builders {
         /// included in the response so that the remaining results can be retrieved. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -16790,8 +16723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxy</code> associated with the target group.</p>
@@ -16803,8 +16736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(signature.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
@@ -16837,8 +16770,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -16858,8 +16791,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -16935,8 +16868,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxyTarget</code> to describe.</p>
@@ -16948,8 +16881,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
-        pub fn target_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(signature.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code> to describe.</p>
@@ -16982,8 +16915,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -17003,8 +16936,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -17083,8 +17016,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to return details for.</p>
-        pub fn db_security_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(signature.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input.into());
             self
         }
         /// <p>The name of the DB security group to return details for.</p>
@@ -17120,8 +17053,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -17143,8 +17076,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -17226,8 +17159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot to describe the attributes for.</p>
@@ -17308,8 +17241,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The ID of the DB instance to retrieve the list of DB snapshots for.
@@ -17342,8 +17275,8 @@ pub mod fluent_builders {
         /// <p>If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter must also be specified.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>
@@ -17405,8 +17338,8 @@ pub mod fluent_builders {
         /// of <code>manual</code> or <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code> is
         /// set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply when <code>SnapshotType</code> is set to
         /// <code>public</code>.</p>
-        pub fn snapshot_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(signature.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(input.into());
             self
         }
         /// <p>The type of snapshots to be returned. You can specify one of the following values:</p>
@@ -17528,8 +17461,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -17551,8 +17484,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -17572,8 +17505,8 @@ pub mod fluent_builders {
         /// <p>You can give an Amazon Web Services account permission to restore a manual DB snapshot from
         /// another Amazon Web Services account by using the <code>ModifyDBSnapshotAttribute</code> API action.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn include_shared(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_shared(signature);
+        pub fn include_shared(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_shared(input);
             self
         }
         /// <p>A value that indicates whether to include shared manual DB cluster snapshots
@@ -17590,8 +17523,8 @@ pub mod fluent_builders {
         /// or restored by any Amazon Web Services account. By default, the public snapshots are not included.</p>
         /// <p>You can share a manual DB snapshot as public by using the <a>ModifyDBSnapshotAttribute</a> API.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn include_public(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_public(signature);
+        pub fn include_public(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_public(input);
             self
         }
         /// <p>A value that indicates whether to include manual DB cluster snapshots that are public and can be copied
@@ -17603,8 +17536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A specific DB resource ID to describe.</p>
-        pub fn dbi_resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dbi_resource_id(signature.into());
+        pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dbi_resource_id(input.into());
             self
         }
         /// <p>A specific DB resource ID to describe.</p>
@@ -17679,8 +17612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB subnet group to return details for.</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the DB subnet group to return details for.</p>
@@ -17716,8 +17649,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -17738,8 +17671,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -17819,11 +17752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
-        pub fn db_parameter_group_family(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_family(signature.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group family to return engine parameter information for.</p>
@@ -17858,8 +17788,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -17880,8 +17810,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -17956,11 +17886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB parameter group family.</p>
-        pub fn db_parameter_group_family(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_family(signature.into());
+        pub fn db_parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_family(input.into());
             self
         }
         /// <p>The name of the DB parameter group family.</p>
@@ -17995,8 +17922,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -18017,8 +17944,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -18099,8 +18026,8 @@ pub mod fluent_builders {
         /// <p>The type of source that is generating the events.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The type of source that is generating the events.</p>
@@ -18220,8 +18147,8 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(signature.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input.into());
             self
         }
         /// <p>The identifier of the event source for which events are returned. If not specified, then all sources are included in the response.</p>
@@ -18260,8 +18187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
-        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are returned.</p>
@@ -18278,8 +18205,8 @@ pub mod fluent_builders {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>
@@ -18301,8 +18228,8 @@ pub mod fluent_builders {
         /// go to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia page.</a>
         /// </p>
         /// <p>Example: 2009-07-08T18:00Z</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>
@@ -18320,8 +18247,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of minutes to retrieve events for.</p>
         /// <p>Default: 60</p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The number of minutes to retrieve events for.</p>
@@ -18372,8 +18299,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -18395,8 +18322,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -18473,8 +18400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to describe.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the RDS event notification subscription you want to describe.</p>
@@ -18510,8 +18437,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -18533,8 +18460,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -18610,8 +18537,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot export task to be described.</p>
-        pub fn export_task_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(signature.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot export task to be described.</p>
@@ -18623,8 +18550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.</p>
@@ -18758,8 +18685,8 @@ pub mod fluent_builders {
         /// If you specify this parameter, the response includes only records beyond the marker,
         /// up to the value specified by the <code>MaxRecords</code> parameter.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -18779,8 +18706,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -18873,11 +18800,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match an existing DBClusterIdentifier.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -18920,8 +18844,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -18940,8 +18864,8 @@ pub mod fluent_builders {
         /// this parameter is specified, the response includes only records beyond the marker, up to the value
         /// specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -19015,8 +18939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The installation medium ID.</p>
-        pub fn installation_media_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.installation_media_id(signature.into());
+        pub fn installation_media_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.installation_media_id(input.into());
             self
         }
         /// <p>The installation medium ID.</p>
@@ -19077,8 +19001,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request.
         /// If this parameter is specified, the response includes
         /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>An optional pagination token provided by a previous DescribeInstallationMedia request.
@@ -19092,8 +19016,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request.
@@ -19224,8 +19148,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(signature.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
         /// <p>A required parameter. Options available for the given engine name are described.</p>
@@ -19293,8 +19217,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
-        pub fn major_engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(signature.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input.into());
             self
         }
         /// <p>If specified, filters the results to include only options for the specified major engine version.</p>
@@ -19330,8 +19254,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -19350,8 +19274,8 @@ pub mod fluent_builders {
         /// If this parameter is specified, the response includes
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous request.
@@ -19423,8 +19347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to describe. Can't be supplied together with EngineName or MajorEngineVersion.</p>
@@ -19458,8 +19382,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -19480,8 +19404,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -19556,8 +19480,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_name(signature.into());
+        pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_name(input.into());
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine.</p>
@@ -19625,8 +19549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
-        pub fn major_engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.major_engine_version(signature.into());
+        pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.major_engine_version(input.into());
             self
         }
         /// <p>Filters the list of option groups to only include groups associated with a specific database engine version. If specified, then EngineName must also be specified.</p>
@@ -19772,8 +19696,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the engine to retrieve DB instance options for.</p>
@@ -19854,8 +19778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.</p>
@@ -19867,8 +19791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
@@ -19882,8 +19806,8 @@ pub mod fluent_builders {
         /// <p>The license model filter value. Specify this parameter to show only the available offerings
         /// matching the specified license model.</p>
         /// <p>RDS Custom supports only the BYOL licensing model.</p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>The license model filter value. Specify this parameter to show only the available offerings
@@ -19899,11 +19823,8 @@ pub mod fluent_builders {
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
         /// <p>Omit this parameter to show the available offerings in the specified Amazon Web Services Region.</p>
         /// <p> This setting doesn't apply to RDS Custom.</p>
-        pub fn availability_zone_group(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.availability_zone_group(signature.into());
+        pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_group(input.into());
             self
         }
         /// <p>The Availability Zone group associated with a Local Zone. Specify this parameter to retrieve available offerings for the Local Zones in the group.</p>
@@ -19920,8 +19841,8 @@ pub mod fluent_builders {
         /// only VPC offerings.</p>
         /// <p>RDS Custom supports only VPC offerings. If you describe non-VPC offerings for RDS Custom, the output
         /// shows VPC offerings.</p>
-        pub fn vpc(mut self, signature: bool) -> Self {
-            self.inner = self.inner.vpc(signature);
+        pub fn vpc(mut self, input: bool) -> Self {
+            self.inner = self.inner.vpc(input);
             self
         }
         /// <p>A value that indicates whether to show only VPC or non-VPC offerings. RDS Custom supports
@@ -19957,8 +19878,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -19980,8 +19901,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code> .
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -20056,8 +19977,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
-        pub fn resource_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_identifier(signature.into());
+        pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_identifier(input.into());
             self
         }
         /// <p>The ARN of a resource to return pending maintenance actions for.</p>
@@ -20122,8 +20043,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to a number of records specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -20145,8 +20066,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -20222,11 +20143,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
-        pub fn reserved_db_instance_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.reserved_db_instance_id(signature.into());
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_db_instance_id(input.into());
             self
         }
         /// <p>The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.</p>
@@ -20240,11 +20158,9 @@ pub mod fluent_builders {
         /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .reserved_db_instances_offering_id(signature.into());
+            self.inner = self.inner.reserved_db_instances_offering_id(input.into());
             self
         }
         /// <p>The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.</p>
@@ -20256,8 +20172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.</p>
@@ -20271,8 +20187,8 @@ pub mod fluent_builders {
         /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(signature.into());
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input.into());
             self
         }
         /// <p>The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
@@ -20283,8 +20199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
-        pub fn product_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(signature.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(input.into());
             self
         }
         /// <p>The product description filter value. Specify this parameter to show only those reservations matching the specified product description.</p>
@@ -20298,8 +20214,8 @@ pub mod fluent_builders {
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(signature.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input.into());
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
@@ -20313,8 +20229,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
@@ -20326,8 +20242,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.</p>
         /// </note>
-        pub fn lease_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lease_id(signature.into());
+        pub fn lease_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lease_id(input.into());
             self
         }
         /// <p>The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.</p>
@@ -20362,8 +20278,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -20383,8 +20299,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -20464,11 +20380,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .reserved_db_instances_offering_id(signature.into());
+            self.inner = self.inner.reserved_db_instances_offering_id(input.into());
             self
         }
         /// <p>The offering identifier filter value. Specify this parameter to show only the available offering that matches the specified reservation identifier.</p>
@@ -20482,8 +20396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.</p>
@@ -20497,8 +20411,8 @@ pub mod fluent_builders {
         /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
         /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
         /// </p>
-        pub fn duration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.duration(signature.into());
+        pub fn duration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.duration(input.into());
             self
         }
         /// <p>Duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.</p>
@@ -20512,8 +20426,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>The results show offerings that partially match the filter value.</p>
         /// </note>
-        pub fn product_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.product_description(signature.into());
+        pub fn product_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.product_description(input.into());
             self
         }
         /// <p>Product description filter value. Specify this parameter to show only the available offerings that contain the specified product description.</p>
@@ -20530,8 +20444,8 @@ pub mod fluent_builders {
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
         /// <p>Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code>
         /// </p>
-        pub fn offering_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.offering_type(signature.into());
+        pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.offering_type(input.into());
             self
         }
         /// <p>The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.</p>
@@ -20545,8 +20459,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether to show only those reservations that support Multi-AZ.</p>
@@ -20578,8 +20492,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>
@@ -20599,8 +20513,8 @@ pub mod fluent_builders {
         /// only records beyond the marker,
         /// up to the value specified by <code>MaxRecords</code>.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>
@@ -20681,8 +20595,8 @@ pub mod fluent_builders {
         /// <p>Must specify a valid Amazon Web Services Region name.</p>
         /// </li>
         /// </ul>
-        pub fn region_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(signature.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input.into());
             self
         }
         /// <p>The source Amazon Web Services Region name. For example, <code>us-east-1</code>.</p>
@@ -20701,8 +20615,8 @@ pub mod fluent_builders {
         /// included in the response so you can retrieve the remaining results. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: Minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -20717,8 +20631,8 @@ pub mod fluent_builders {
         /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response
         /// includes only records beyond the marker, up to the value specified by
         /// <code>MaxRecords</code>.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeSourceRegions</code> request. If this parameter is specified, the response
@@ -20812,8 +20726,8 @@ pub mod fluent_builders {
         }
         /// <p>The customer identifier or the ARN of your DB instance.
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The customer identifier or the ARN of your DB instance.
@@ -20893,8 +20807,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The customer-assigned name of the DB instance that contains the log files you want to list.</p>
@@ -20912,8 +20826,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the log file to be downloaded.</p>
-        pub fn log_file_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_file_name(signature.into());
+        pub fn log_file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_file_name(input.into());
             self
         }
         /// <p>The name of the log file to be downloaded.</p>
@@ -20925,8 +20839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token provided in the previous request or "0". If the Marker parameter is specified the response includes only records beyond the marker until the end of the file or up to NumberOfLines.</p>
@@ -20959,8 +20873,8 @@ pub mod fluent_builders {
         /// request, continuing until the AdditionalDataPending response element returns false.</p>
         /// </li>
         /// </ul>
-        pub fn number_of_lines(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_lines(signature);
+        pub fn number_of_lines(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_lines(input);
             self
         }
         /// <p>The number of lines to download. If the number of lines specified results in a file over 1 MB in size, the file is truncated at 1 MB in size.</p>
@@ -21080,8 +20994,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
@@ -21104,9 +21018,9 @@ pub mod fluent_builders {
         /// <p>This setting isn't supported for RDS for MySQL Multi-AZ DB clusters.</p>
         pub fn target_db_instance_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_instance_identifier(signature.into());
+            self.inner = self.inner.target_db_instance_identifier(input.into());
             self
         }
         /// <p>The name of the DB instance to promote to the primary DB instance.</p>
@@ -21205,11 +21119,8 @@ pub mod fluent_builders {
         /// <a>GlobalCluster</a> (Aurora global database).</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>Identifier of the Aurora global database (<a>GlobalCluster</a>)
@@ -21236,9 +21147,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_db_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_cluster_identifier(signature.into());
+            self.inner = self.inner.target_db_cluster_identifier(input.into());
             self
         }
         /// <p>Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora
@@ -21316,9 +21227,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
         pub fn custom_availability_zone_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_availability_zone_id(signature.into());
+            self.inner = self.inner.custom_availability_zone_id(input.into());
             self
         }
         /// <p>The identifier of the custom Availability Zone (AZ) to import the installation media to.</p>
@@ -21360,8 +21271,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -21412,8 +21323,8 @@ pub mod fluent_builders {
         /// <p>See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport">
         /// Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -21441,9 +21352,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn engine_installation_media_path(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.engine_installation_media_path(signature.into());
+            self.inner = self.inner.engine_installation_media_path(input.into());
             self
         }
         /// <p>The path to the installation medium for the specified DB engine.</p>
@@ -21459,11 +21370,8 @@ pub mod fluent_builders {
         /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
         /// <p>Example: <code>WindowsISO/en_windows_server_2016_x64_dvd_9327751.iso</code>
         /// </p>
-        pub fn os_installation_media_path(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.os_installation_media_path(signature.into());
+        pub fn os_installation_media_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.os_installation_media_path(input.into());
             self
         }
         /// <p>The path to the installation medium for the operating system associated with the specified DB engine.</p>
@@ -21543,8 +21451,8 @@ pub mod fluent_builders {
         /// creating an ARN,
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon RDS resource with tags to be listed. This value is an Amazon Resource Name (ARN). For information about
@@ -21662,8 +21570,8 @@ pub mod fluent_builders {
         /// <p>The new default certificate identifier to override the current one with.</p>
         /// <p>To determine the valid values, use the <code>describe-certificates</code> CLI
         /// command or the <code>DescribeCertificates</code> API operation.</p>
-        pub fn certificate_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_identifier(signature.into());
+        pub fn certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_identifier(input.into());
             self
         }
         /// <p>The new default certificate identifier to override the current one with.</p>
@@ -21679,8 +21587,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to remove the override for the default certificate.
         /// If the override is removed, the default certificate is the system
         /// default.</p>
-        pub fn remove_customer_override(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remove_customer_override(signature);
+        pub fn remove_customer_override(mut self, input: bool) -> Self {
+            self.inner = self.inner.remove_customer_override(input);
             self
         }
         /// <p>A value that indicates whether to remove the override for the default certificate.
@@ -21774,8 +21682,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DB cluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>
@@ -21803,8 +21711,8 @@ pub mod fluent_builders {
         /// <p>For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.</p>
         /// </li>
         /// </ul>
-        pub fn capacity(mut self, signature: i32) -> Self {
-            self.inner = self.inner.capacity(signature);
+        pub fn capacity(mut self, input: i32) -> Self {
+            self.inner = self.inner.capacity(input);
             self
         }
         /// <p>The DB cluster capacity.</p>
@@ -21826,8 +21734,8 @@ pub mod fluent_builders {
         /// to perform seamless scaling before enforcing the timeout action. The default is
         /// 300.</p>
         /// <p>Specify a value between 10 and 600 seconds.</p>
-        pub fn seconds_before_timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.seconds_before_timeout(signature);
+        pub fn seconds_before_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.seconds_before_timeout(input);
             self
         }
         /// <p>The amount of time, in seconds, that Aurora Serverless tries to find a scaling point
@@ -21843,8 +21751,8 @@ pub mod fluent_builders {
         /// <code>ForceApplyCapacityChange</code>, the default, sets the capacity to the specified value as soon as possible.</p>
         /// <p>
         /// <code>RollbackCapacityChange</code> ignores the capacity change if a scaling point isn't found in the timeout period.</p>
-        pub fn timeout_action(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timeout_action(signature.into());
+        pub fn timeout_action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timeout_action(input.into());
             self
         }
         /// <p>The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code> or <code>RollbackCapacityChange</code>.</p>
@@ -21930,8 +21838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The DB engine. The only supported value is <code>custom-oracle-ee</code>.</p>
@@ -21942,8 +21850,8 @@ pub mod fluent_builders {
         /// <p>The custom engine version (CEV) that you want to modify. This option is required for
         /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
         /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The custom engine version (CEV) that you want to modify. This option is required for
@@ -21957,8 +21865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of your CEV.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description of your CEV.</p>
@@ -21984,8 +21892,8 @@ pub mod fluent_builders {
         /// <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an
         /// RDS Custom instance, snapshot, or automated backup.
         /// </p>
-        pub fn status(mut self, signature: crate::model::CustomEngineVersionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::CustomEngineVersionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The availability status to be assigned to the CEV. Valid values are as follows:</p>
@@ -22090,8 +21998,8 @@ pub mod fluent_builders {
         /// <p>Constraints: This identifier must match the identifier of an existing DB
         /// cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.</p>    
@@ -22121,11 +22029,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>my-cluster2</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn new_db_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.new_db_cluster_identifier(signature.into());
+        pub fn new_db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_cluster_identifier(input.into());
             self
         }
         /// <p>The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.</p>    
@@ -22164,8 +22069,8 @@ pub mod fluent_builders {
         /// applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>By default, this parameter is disabled.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn apply_immediately(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_immediately(signature);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -22194,8 +22099,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. Specify a minimum value of 1.</p>     
@@ -22215,9 +22120,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to use for the DB cluster.</p>
@@ -22253,8 +22158,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the DB cluster accepts connections.</p>   
@@ -22269,8 +22174,8 @@ pub mod fluent_builders {
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The new password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>     
@@ -22285,8 +22190,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
         /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>A value that indicates that the DB cluster should be associated with the specified option group.</p>
@@ -22324,11 +22229,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -22378,9 +22280,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -22410,8 +22312,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -22439,8 +22341,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora MySQL DB clusters only</p>
-        pub fn backtrack_window(mut self, signature: i64) -> Self {
-            self.inner = self.inner.backtrack_window(signature);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -22461,9 +22363,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            signature: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(signature);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(input);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster.</p>
@@ -22499,8 +22401,8 @@ pub mod fluent_builders {
         /// <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -22539,8 +22441,8 @@ pub mod fluent_builders {
         /// <code>EngineVersion</code> parameter that is a different major version than the DB
         /// cluster's current version.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(signature);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>     
@@ -22572,11 +22474,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters only</p>
         pub fn db_instance_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .db_instance_parameter_group_name(signature.into());
+            self.inner = self.inner.db_instance_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to apply to all instances of the DB cluster. </p>
@@ -22612,8 +22512,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The Active Directory directory ID to move the DB cluster to.  
@@ -22630,8 +22530,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -22645,11 +22545,8 @@ pub mod fluent_builders {
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn scaling_configuration(
-            mut self,
-            signature: crate::model::ScalingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.scaling_configuration(signature);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         /// <p>The scaling properties of the DB cluster. You can only modify scaling properties for DB clusters in <code>serverless</code> DB engine mode.</p>
@@ -22665,8 +22562,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection isn't enabled.</p>       
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -22685,8 +22582,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora Serverless</a> in the
         /// <i>Amazon Aurora User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_http_endpoint(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_http_endpoint(signature);
+        pub fn enable_http_endpoint(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_http_endpoint(input);
             self
         }
         /// <p>A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the HTTP endpoint
@@ -22704,8 +22601,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
         /// The default is not to copy them.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster.
@@ -22724,8 +22621,8 @@ pub mod fluent_builders {
         /// demoted by the <a>FailoverGlobalCluster</a> API operation, but it does nothing until then.
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_global_write_forwarding(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_global_write_forwarding(signature);
+        pub fn enable_global_write_forwarding(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_global_write_forwarding(input);
             self
         }
         /// <p>A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
@@ -22749,11 +22646,8 @@ pub mod fluent_builders {
         /// <p>For the full list of DB instance classes and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn db_cluster_instance_class(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_cluster_instance_class(signature.into());
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
@@ -22771,8 +22665,8 @@ pub mod fluent_builders {
         /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
         /// <p>Type: Integer</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_storage(signature);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
         /// <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.</p>      
@@ -22795,8 +22689,8 @@ pub mod fluent_builders {
         /// is specified, otherwise <code>gp2</code>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB cluster.</p>       
@@ -22822,8 +22716,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB cluster.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated
@@ -22839,8 +22733,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
         /// By default, minor engine upgrades are applied automatically.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window.
@@ -22857,8 +22751,8 @@ pub mod fluent_builders {
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster.
@@ -22879,8 +22773,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code> value.</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An
@@ -22902,8 +22796,8 @@ pub mod fluent_builders {
         /// Using Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to turn on Performance Insights for the DB cluster.</p>
@@ -22923,9 +22817,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Multi-AZ DB clusters only</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -22943,8 +22837,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
@@ -23022,9 +22916,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
         pub fn db_cluster_endpoint_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_endpoint_identifier(signature.into());
+            self.inner = self.inner.db_cluster_endpoint_identifier(input.into());
             self
         }
         /// <p>The identifier of the endpoint to modify. This parameter is stored as a lowercase string.</p>
@@ -23036,8 +22930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
-        pub fn endpoint_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_type(signature.into());
+        pub fn endpoint_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_type(input.into());
             self
         }
         /// <p>The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.</p>
@@ -23180,9 +23074,9 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to modify.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to modify.</p>
@@ -23311,9 +23205,9 @@ pub mod fluent_builders {
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
         pub fn db_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.db_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB cluster snapshot to modify the attributes for.</p>
@@ -23331,8 +23225,8 @@ pub mod fluent_builders {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBClusterSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(signature.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The name of the DB cluster snapshot attribute to modify.</p>
@@ -23477,8 +23371,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -23507,8 +23401,8 @@ pub mod fluent_builders {
         /// <p>For the valid values for allocated storage for each engine,
         /// see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_storage(signature);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
         /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
@@ -23539,8 +23433,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The new compute and memory capacity of the DB instance, for example db.m4.large.
@@ -23577,8 +23471,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetGroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The new DB subnet group for the DB instance.
@@ -23693,8 +23587,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide.</i> to see the impact of enabling
         /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine when the changes are applied.
         /// </p>
-        pub fn apply_immediately(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_immediately(signature);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
         /// <p>A value that indicates whether the modifications in this request and
@@ -23764,8 +23658,8 @@ pub mod fluent_builders {
         /// This includes restoring privileges that might have been accidentally revoked.
         /// </p>
         /// </note>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The new password for the master user. The password can include any printable ASCII
@@ -23834,11 +23728,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Default: Uses existing setting</p>
         /// <p>Constraints: The DB parameter group must be in the same DB parameter group family as the DB instance.</p>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to apply to the DB instance.</p>
@@ -23886,8 +23777,8 @@ pub mod fluent_builders {
         /// 9.3.5.</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -23952,11 +23843,8 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>
@@ -24012,9 +23900,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be at least 30 minutes</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, which
@@ -24043,8 +23931,8 @@ pub mod fluent_builders {
         /// parameter is enabled for this request.
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment. Changing this parameter doesn't result
@@ -24073,8 +23961,8 @@ pub mod fluent_builders {
         /// <p>In RDS Custom, this parameter is supported for read replicas only if they are in the
         /// <code>PATCH_DB_FAILURE</code> lifecycle.
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>
@@ -24106,8 +23994,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraints: Major version upgrades must be allowed when specifying a value
         /// for the EngineVersion parameter that is a different major version than the DB instance's current version.</p>
-        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(signature);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed. Changing this parameter doesn't
@@ -24136,8 +24024,8 @@ pub mod fluent_builders {
         /// doesn't cause an outage.</p>
         /// <p>For an RDS Custom DB instance, set <code>AutoMinorVersionUpgrade</code>
         /// to <code>false</code>. Otherwise, the operation returns an error.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
@@ -24166,8 +24054,8 @@ pub mod fluent_builders {
         /// <p>Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
         /// <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>The license model for the DB instance.</p>
@@ -24206,8 +24094,8 @@ pub mod fluent_builders {
         /// Values that are not at least 10% greater than the existing value are rounded up so that they are 10% greater than the current value.
         /// </p>
         /// <p>Default: Uses existing setting</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The new Provisioned IOPS (I/O operations per second) value for the RDS instance.
@@ -24248,8 +24136,8 @@ pub mod fluent_builders {
         /// from an option group, and that option group can't be removed from a DB instance after
         /// it is associated with a DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>A value that indicates the DB instance should be associated with the specified option group.</p>
@@ -24288,11 +24176,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn new_db_instance_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.new_db_instance_identifier(signature.into());
+        pub fn new_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_instance_identifier(input.into());
             self
         }
         /// <p>The new DB instance identifier for the DB instance when renaming a DB instance. When you change the DB instance
@@ -24343,8 +24228,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -24375,8 +24260,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(signature.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -24390,11 +24275,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_password(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tde_credential_password(signature.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -24408,11 +24290,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the certificate to associate with the DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn ca_certificate_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.ca_certificate_identifier(signature.into());
+        pub fn ca_certificate_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ca_certificate_identifier(input.into());
             self
         }
         /// <p>Specifies the certificate to associate with the DB instance.</p>
@@ -24431,8 +24310,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The Active Directory directory ID to move the DB instance to.  
@@ -24453,8 +24332,8 @@ pub mod fluent_builders {
         /// <p>Not applicable. Copying tags to snapshots is managed by the DB cluster. Setting this
         /// value for an Aurora DB instance has no effect on the DB cluster setting. For more
         /// information, see <code>ModifyDBCluster</code>.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -24474,8 +24353,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code>
         /// </p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds, between points when Enhanced Monitoring metrics are collected
@@ -24544,8 +24423,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p> Valid values: <code>1150-65535</code>
         /// </p>
-        pub fn db_port_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.db_port_number(signature);
+        pub fn db_port_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.db_port_number(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -24624,8 +24503,8 @@ pub mod fluent_builders {
         /// <p>Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
         /// of the value of the <code>ApplyImmediately</code> parameter.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.
@@ -24656,8 +24535,8 @@ pub mod fluent_builders {
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0, supply a <code>MonitoringRoleArn</code>
         /// value.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon CloudWatch Logs. For
@@ -24677,8 +24556,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>The name of the IAM role to use when making API calls to the Directory Service.</p>
@@ -24698,8 +24577,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: 1</p>
         /// <p>Valid Values: 0 - 15</p>
-        pub fn promotion_tier(mut self, signature: i32) -> Self {
-            self.inner = self.inner.promotion_tier(signature);
+        pub fn promotion_tier(mut self, input: i32) -> Self {
+            self.inner = self.inner.promotion_tier(input);
             self
         }
         /// <p>A value that specifies the order in which an Aurora Replica is promoted to the primary instance
@@ -24723,8 +24602,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
@@ -24749,8 +24628,8 @@ pub mod fluent_builders {
         /// User Guide</i>.
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.</p>
@@ -24771,9 +24650,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -24791,8 +24670,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
@@ -24811,9 +24690,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn cloudwatch_logs_export_configuration(
             mut self,
-            signature: crate::model::CloudwatchLogsExportConfiguration,
+            input: crate::model::CloudwatchLogsExportConfiguration,
         ) -> Self {
-            self.inner = self.inner.cloudwatch_logs_export_configuration(signature);
+            self.inner = self.inner.cloudwatch_logs_export_configuration(input);
             self
         }
         /// <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a
@@ -24850,8 +24729,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn use_default_processor_features(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(signature);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
@@ -24870,8 +24749,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -24890,8 +24769,8 @@ pub mod fluent_builders {
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn max_allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(signature);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -24928,8 +24807,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>       
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn certificate_rotation_restart(mut self, signature: bool) -> Self {
-            self.inner = self.inner.certificate_rotation_restart(signature);
+        pub fn certificate_rotation_restart(mut self, input: bool) -> Self {
+            self.inner = self.inner.certificate_rotation_restart(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is restarted when you rotate your
@@ -24974,8 +24853,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn replica_mode(mut self, signature: crate::model::ReplicaMode) -> Self {
-            self.inner = self.inner.replica_mode(signature);
+        pub fn replica_mode(mut self, input: crate::model::ReplicaMode) -> Self {
+            self.inner = self.inner.replica_mode(input);
             self
         }
         /// <p>A value that sets the open mode of a replica database to either mounted or read-only.</p>
@@ -25005,8 +24884,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(signature);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -25026,9 +24905,9 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn aws_backup_recovery_point_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.aws_backup_recovery_point_arn(signature.into());
+            self.inner = self.inner.aws_backup_recovery_point_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p>
@@ -25044,8 +24923,8 @@ pub mod fluent_builders {
         /// If <code>full</code>, the DB instance automates monitoring and instance recovery. If
         /// <code>all paused</code>, the instance pauses automation for the duration set by
         /// <code>ResumeFullAutomationModeMinutes</code>.</p>
-        pub fn automation_mode(mut self, signature: crate::model::AutomationMode) -> Self {
-            self.inner = self.inner.automation_mode(signature);
+        pub fn automation_mode(mut self, input: crate::model::AutomationMode) -> Self {
+            self.inner = self.inner.automation_mode(input);
             self
         }
         /// <p>The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all paused</code>.
@@ -25062,8 +24941,8 @@ pub mod fluent_builders {
         /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes
         /// full automation. The minimum value is <code>60</code> (default). The maximum value is <code>1,440</code>.
         /// </p>
-        pub fn resume_full_automation_mode_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.resume_full_automation_mode_minutes(signature);
+        pub fn resume_full_automation_mode_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.resume_full_automation_mode_minutes(input);
             self
         }
         /// <p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes
@@ -25158,11 +25037,8 @@ pub mod fluent_builders {
         /// <p>If supplied, must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -25279,8 +25155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier for the <code>DBProxy</code> to modify.</p>
@@ -25292,8 +25168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_db_proxy_name(signature.into());
+        pub fn new_db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_proxy_name(input.into());
             self
         }
         /// <p>The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -25324,8 +25200,8 @@ pub mod fluent_builders {
         /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
         /// By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't
         /// use TLS.</p>
-        pub fn require_tls(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_tls(signature);
+        pub fn require_tls(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_tls(input);
             self
         }
         /// <p>Whether Transport Layer Security (TLS) encryption is required for connections to the proxy.
@@ -25337,8 +25213,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
         /// value higher or lower than the connection timeout limit for the associated database.</p>
-        pub fn idle_client_timeout(mut self, signature: i32) -> Self {
-            self.inner = self.inner.idle_client_timeout(signature);
+        pub fn idle_client_timeout(mut self, input: i32) -> Self {
+            self.inner = self.inner.idle_client_timeout(input);
             self
         }
         /// <p>The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this
@@ -25353,8 +25229,8 @@ pub mod fluent_builders {
         /// SQL statements that you submit through the proxy. Thus, only enable this setting
         /// when needed for debugging, and only when you have security measures in place to
         /// safeguard any sensitive information that appears in the logs.</p>
-        pub fn debug_logging(mut self, signature: bool) -> Self {
-            self.inner = self.inner.debug_logging(signature);
+        pub fn debug_logging(mut self, input: bool) -> Self {
+            self.inner = self.inner.debug_logging(input);
             self
         }
         /// <p>Whether the proxy includes detailed information about SQL statements in its logs.
@@ -25368,8 +25244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.</p>
@@ -25455,8 +25331,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
-        pub fn db_proxy_endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_endpoint_name(signature.into());
+        pub fn db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_endpoint_name(input.into());
             self
         }
         /// <p>The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.</p>
@@ -25470,11 +25346,8 @@ pub mod fluent_builders {
         /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must
         /// begin with a letter and must contain only ASCII letters, digits, and hyphens; it
         /// can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_db_proxy_endpoint_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.new_db_proxy_endpoint_name(signature.into());
+        pub fn new_db_proxy_endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_db_proxy_endpoint_name(input.into());
             self
         }
         /// <p>The new identifier for the <code>DBProxyEndpoint</code>. An identifier must
@@ -25569,8 +25442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new target group to assign to the proxy.</p>
-        pub fn target_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(signature.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input.into());
             self
         }
         /// <p>The name of the new target group to assign to the proxy.</p>
@@ -25582,8 +25455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new proxy to which to assign the target group.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The name of the new proxy to which to assign the target group.</p>
@@ -25597,9 +25470,9 @@ pub mod fluent_builders {
         /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
         pub fn connection_pool_config(
             mut self,
-            signature: crate::model::ConnectionPoolConfiguration,
+            input: crate::model::ConnectionPoolConfiguration,
         ) -> Self {
-            self.inner = self.inner.connection_pool_config(signature);
+            self.inner = self.inner.connection_pool_config(input);
             self
         }
         /// <p>The settings that determine the size and behavior of the connection pool for the target group.</p>
@@ -25611,8 +25484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
-        pub fn new_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_name(signature.into());
+        pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_name(input.into());
             self
         }
         /// <p>The new name for the modified <code>DBProxyTarget</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.</p>
@@ -25688,8 +25561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the DB snapshot to modify.</p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB snapshot to modify.</p>
@@ -25744,8 +25617,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
         /// Upgrading the PostgreSQL DB Engine for Amazon RDS</a>.
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The engine version to upgrade the DB snapshot to.
@@ -25807,8 +25680,8 @@ pub mod fluent_builders {
         /// For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Oracle.html#USER_UpgradeDBInstance.Oracle.OGPG.OG">Option group considerations</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The option group to identify with the upgraded DB snapshot.
@@ -25903,8 +25776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot to modify the attributes for.</p>
@@ -25922,8 +25795,8 @@ pub mod fluent_builders {
         /// <p>To view the list of attributes available to modify, use the
         /// <a>DescribeDBSnapshotAttributes</a> API action.</p>
         /// </note>
-        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(signature.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The name of the DB snapshot attribute to modify.</p>
@@ -26062,8 +25935,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The name for the DB subnet group. This value is stored as a lowercase string.
@@ -26082,9 +25955,9 @@ pub mod fluent_builders {
         /// <p>The description for the DB subnet group.</p>
         pub fn db_subnet_group_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_subnet_group_description(signature.into());
+            self.inner = self.inner.db_subnet_group_description(input.into());
             self
         }
         /// <p>The description for the DB subnet group.</p>
@@ -26177,8 +26050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the RDS event notification subscription.</p>
@@ -26190,8 +26063,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic created for event notification. The ARN is created by Amazon SNS when you create a topic and subscribe to it.</p>
@@ -26205,8 +26078,8 @@ pub mod fluent_builders {
         /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. If this value isn't specified, all events are returned.</p>
         /// <p>Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
         /// </p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The type of source that is generating the events. For example, if you want to be notified of events generated by a DB instance, you would set this parameter to db-instance. If this value isn't specified, all events are returned.</p>
@@ -26246,8 +26119,8 @@ pub mod fluent_builders {
         /// <p>
         /// A value that indicates whether to activate the subscription.
         /// </p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>
@@ -26334,11 +26207,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing global database cluster.</p>
         /// </li>
         /// </ul>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -26377,9 +26247,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn new_global_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_global_cluster_identifier(signature.into());
+            self.inner = self.inner.new_global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -26411,8 +26281,8 @@ pub mod fluent_builders {
         /// Indicates if the global database cluster has deletion protection enabled. The global database cluster
         /// can't be deleted when deletion protection is enabled.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>
@@ -26438,8 +26308,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'</code>
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to which you want to upgrade.
@@ -26471,8 +26341,8 @@ pub mod fluent_builders {
         /// <p>If you upgrade the major version of a global database, the cluster and DB instance parameter
         /// groups are set to the default parameter groups for the new version. Apply any custom parameter
         /// groups after completing the upgrade.</p>
-        pub fn allow_major_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_major_version_upgrade(signature);
+        pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_major_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether major version upgrades are allowed.</p>
@@ -26548,8 +26418,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group to be modified.</p>
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to be modified.</p>
@@ -26596,8 +26466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
-        pub fn apply_immediately(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_immediately(signature);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
         /// <p>A value that indicates whether to apply the change immediately or during the next maintenance window for each instance associated with the option group.</p>
@@ -26692,8 +26562,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier. This value is stored as a lowercase string.</p>
@@ -26723,8 +26593,8 @@ pub mod fluent_builders {
         /// <p>Can't be set to 0 if the DB instance is a source to read replicas.</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups are retained. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.</p>
@@ -26769,11 +26639,8 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>
@@ -26880,8 +26747,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster-replica1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the DB cluster read replica to promote. This parameter isn't
@@ -26967,11 +26834,9 @@ pub mod fluent_builders {
         /// <p>Example: 438012d3-4052-4cc7-b2e3-8d3372e0e706</p>
         pub fn reserved_db_instances_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .reserved_db_instances_offering_id(signature.into());
+            self.inner = self.inner.reserved_db_instances_offering_id(input.into());
             self
         }
         /// <p>The ID of the Reserved DB instance offering to purchase.</p>
@@ -26985,11 +26850,8 @@ pub mod fluent_builders {
         }
         /// <p>Customer-specified identifier to track this reservation.</p>
         /// <p>Example: myreservationID</p>
-        pub fn reserved_db_instance_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.reserved_db_instance_id(signature.into());
+        pub fn reserved_db_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_db_instance_id(input.into());
             self
         }
         /// <p>Customer-specified identifier to track this reservation.</p>
@@ -27004,8 +26866,8 @@ pub mod fluent_builders {
         /// <p>The number of instances to reserve.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn db_instance_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.db_instance_count(signature);
+        pub fn db_instance_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.db_instance_count(input);
             self
         }
         /// <p>The number of instances to reserve.</p>
@@ -27120,8 +26982,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBCluster.</p>
         /// </li>
         /// </ul>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
@@ -27218,8 +27080,8 @@ pub mod fluent_builders {
         /// <p>Must match the identifier of an existing DBInstance.</p>
         /// </li>
         /// </ul>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.</p>
@@ -27240,8 +27102,8 @@ pub mod fluent_builders {
         /// A value that indicates whether the reboot is conducted through a Multi-AZ failover.
         /// </p>
         /// <p>Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.</p>
-        pub fn force_failover(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_failover(signature);
+        pub fn force_failover(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_failover(input);
             self
         }
         /// <p>
@@ -27313,8 +27175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
-        pub fn db_proxy_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_proxy_name(signature.into());
+        pub fn db_proxy_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_proxy_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.</p>
@@ -27326,8 +27188,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
-        pub fn target_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_group_name(signature.into());
+        pub fn target_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_group_name(input.into());
             self
         }
         /// <p>The identifier of the <code>DBProxyTargetGroup</code>.</p>
@@ -27442,11 +27304,8 @@ pub mod fluent_builders {
         /// <p>
         /// The cluster identifier to detach from the Aurora global database cluster.
         /// </p>
-        pub fn global_cluster_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.global_cluster_identifier(signature.into());
+        pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -27462,8 +27321,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon Resource Name (ARN) identifying the cluster that was detached from the Aurora global database cluster.
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>
@@ -27549,8 +27408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the DB cluster to disassociate the IAM role from.</p>
@@ -27563,8 +27422,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example
         /// <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB cluster, for example
@@ -27575,8 +27434,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
         /// For information about supported feature names, see <a>DBEngineVersion</a>.</p>
-        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(signature.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input.into());
             self
         }
         /// <p>The name of the feature for the DB cluster that the IAM role is to be disassociated from.
@@ -27646,8 +27505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB instance to disassociate the IAM role from.</p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The name of the DB instance to disassociate the IAM role from.</p>
@@ -27660,8 +27519,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance,
         /// for example, <code>arn:aws:iam::123456789012:role/AccessRole</code>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to disassociate from the DB instance,
@@ -27673,8 +27532,8 @@ pub mod fluent_builders {
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
         /// For information about supported feature names, see <code>DBEngineVersion</code>.
         /// </p>
-        pub fn feature_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.feature_name(signature.into());
+        pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.feature_name(input.into());
             self
         }
         /// <p>The name of the feature for the DB instance that the IAM role is to be disassociated from.
@@ -27747,8 +27606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the RDS event notification subscription you want to remove a source identifier from.</p>
@@ -27763,8 +27622,8 @@ pub mod fluent_builders {
         /// The source identifier to be removed from the subscription, such as the <b>DB instance identifier</b>
         /// for a DB instance or the name of a security group.
         /// </p>
-        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(signature.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input.into());
             self
         }
         /// <p>
@@ -27847,8 +27706,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
         /// Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon RDS resource that the tags are removed from. This value is an Amazon Resource Name (ARN). For information about  
@@ -27965,9 +27824,9 @@ pub mod fluent_builders {
         /// <p>The name of the DB cluster parameter group to reset.</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to reset.</p>
@@ -27981,8 +27840,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group
         /// to their default values. You can't use this parameter if there
         /// is a list of parameter names specified for the <code>Parameters</code> parameter.</p>
-        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(signature);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(input);
             self
         }
         /// <p>A value that indicates whether to reset all parameters in the DB cluster parameter group
@@ -28085,11 +27944,8 @@ pub mod fluent_builders {
         /// <p>Must match the name of an existing <code>DBParameterGroup</code>.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group.</p>
@@ -28110,8 +27966,8 @@ pub mod fluent_builders {
         /// A value that indicates whether to reset all parameters in the DB parameter group to default values.
         /// By default, all parameters in the DB parameter group are reset to default values.
         /// </p>
-        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(signature);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(input);
             self
         }
         /// <p>
@@ -28293,8 +28149,8 @@ pub mod fluent_builders {
         /// <p>Must be a value from 1 to 35</p>
         /// </li>
         /// </ul>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups of the restored DB cluster are retained. You must specify a minimum value of 1.</p>
@@ -28310,8 +28166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
-        pub fn character_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.character_set_name(signature.into());
+        pub fn character_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.character_set_name(input.into());
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified CharacterSet.</p>
@@ -28323,8 +28179,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
@@ -28350,8 +28206,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-cluster1</code>
         /// </p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the DB cluster to create from the source data in the Amazon S3 bucket. This parameter isn't case-sensitive.</p>
@@ -28387,9 +28243,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to associate
@@ -28430,8 +28286,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>A DB subnet group to associate with the restored DB cluster.</p>
@@ -28449,8 +28305,8 @@ pub mod fluent_builders {
         /// <p>The name of the database engine to be used for this DB cluster.</p>
         /// <p>Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), and <code>aurora-postgresql</code>
         /// </p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this DB cluster.</p>
@@ -28483,8 +28339,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>9.6.3</code>, <code>10.7</code>
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to use.</p>
@@ -28521,8 +28377,8 @@ pub mod fluent_builders {
         /// <p>
         /// Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the instances in the restored DB cluster accept connections.</p>
@@ -28546,8 +28402,8 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(signature.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The name of the master user for the restored DB cluster.</p>
@@ -28572,8 +28428,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master database user. This password can contain any printable ASCII character except "/", """, or "@".</p>
@@ -28588,8 +28444,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
         /// <p>Permanent options can't be removed from an option group. An option group can't be removed from a
         /// DB cluster once it is associated with a DB cluster.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>A value that indicates that the restored DB cluster should be associated with the specified option group.</p>
@@ -28627,11 +28483,8 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>The daily time range during which automated backups are created
@@ -28679,9 +28532,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
@@ -28724,8 +28577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
-        pub fn storage_encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(signature);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
         /// <p>A value that indicates whether the restored DB cluster is encrypted.</p>
@@ -28741,8 +28594,8 @@ pub mod fluent_builders {
         /// Amazon RDS will use your default KMS key. There is a  
         /// default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different
         /// default KMS key for each Amazon Web Services Region.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB cluster.</p>
@@ -28765,8 +28618,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -28789,8 +28642,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid values: <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine(signature.into());
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine(input.into());
             self
         }
         /// <p>The identifier for the database engine that was backed up to create the files stored in the
@@ -28810,8 +28663,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>5.6.40</code>, <code>5.7.28</code>
         /// </p>
-        pub fn source_engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_version(signature.into());
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_version(input.into());
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -28827,8 +28680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket that contains the data used to create the Amazon Aurora DB cluster.</p>
@@ -28842,8 +28695,8 @@ pub mod fluent_builders {
         /// <p>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster.
         /// If you do not specify a <b>SourceS3Prefix</b> value, then the Amazon Aurora DB cluster is
         /// created by using all of the files in the Amazon S3 bucket.</p>
-        pub fn s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(signature.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input.into());
             self
         }
         /// <p>The prefix for all of the file names that contain the data used to create the Amazon Aurora DB cluster.
@@ -28855,8 +28708,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that authorizes
         /// Amazon RDS to access the Amazon S3 bucket on your behalf.</p>
-        pub fn s3_ingestion_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_ingestion_role_arn(signature.into());
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_ingestion_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that authorizes
@@ -28880,8 +28733,8 @@ pub mod fluent_builders {
         /// <p>If specified, this value must be set to a number from 0 to 259,200 (72 hours).</p>
         /// </li>
         /// </ul>
-        pub fn backtrack_window(mut self, signature: i64) -> Self {
-            self.inner = self.inner.backtrack_window(signature);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -28928,8 +28781,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection isn't enabled.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -28941,8 +28794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
@@ -28958,8 +28811,8 @@ pub mod fluent_builders {
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos Authentication</a>
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -28975,8 +28828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -29107,8 +28960,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot.
@@ -29145,8 +28998,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
@@ -29170,8 +29023,8 @@ pub mod fluent_builders {
         /// <p>Default: The same as source</p>      
         /// <p>Constraint: Must be compatible with the engine of the source</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine to use for the new DB cluster.</p>
@@ -29228,8 +29081,8 @@ pub mod fluent_builders {
         /// <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version of the database engine to use for the new DB cluster.</p>
@@ -29290,8 +29143,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: The same port as the original DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>   
@@ -29308,8 +29161,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the DB subnet group to use for the new DB cluster.</p>    
@@ -29326,8 +29179,8 @@ pub mod fluent_builders {
         }
         /// <p>The database name for the restored DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The database name for the restored DB cluster.</p>
@@ -29341,8 +29194,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
         /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to use for the restored DB cluster.</p>
@@ -29412,8 +29265,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from a DB
@@ -29448,8 +29301,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -29480,8 +29333,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn backtrack_window(mut self, signature: i64) -> Self {
-            self.inner = self.inner.backtrack_window(signature);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -29534,8 +29387,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
         /// CreateDBCluster</a>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn engine_mode(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_mode(signature.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_mode(input.into());
             self
         }
         /// <p>The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
@@ -29549,11 +29402,8 @@ pub mod fluent_builders {
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn scaling_configuration(
-            mut self,
-            signature: crate::model::ScalingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.scaling_configuration(signature);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
@@ -29586,9 +29436,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster. If this
@@ -29621,8 +29471,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection isn't enabled.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -29635,8 +29485,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
@@ -29651,8 +29501,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -29667,8 +29517,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -29686,11 +29536,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_cluster_instance_class(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_cluster_instance_class(signature.into());
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
@@ -29719,8 +29566,8 @@ pub mod fluent_builders {
         /// is specified, otherwise <code>gp2</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>       
@@ -29746,8 +29593,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
@@ -29786,8 +29633,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
@@ -29917,8 +29764,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the new DB cluster to be created.</p>    
@@ -29959,8 +29806,8 @@ pub mod fluent_builders {
         /// <p>If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn restore_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.restore_type(signature.into());
+        pub fn restore_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.restore_type(input.into());
             self
         }
         /// <p>The type of restore to be performed. You can specify one of the following values:</p>
@@ -29994,9 +29841,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn source_db_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_cluster_identifier(signature.into());
+            self.inner = self.inner.source_db_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the source DB cluster from which to restore.</p>    
@@ -30035,8 +29882,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>2015-03-07T23:45:00Z</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn restore_to_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.restore_to_time(signature);
+        pub fn restore_to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.restore_to_time(input);
             self
         }
         /// <p>The date and time to restore the DB cluster to.</p>      
@@ -30073,8 +29920,8 @@ pub mod fluent_builders {
         /// </p>    
         /// <p>Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn use_latest_restorable_time(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(signature);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
         /// <p>A value that indicates whether to restore the DB cluster to the latest
@@ -30092,8 +29939,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: The default port for the engine.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the new DB cluster accepts connections.</p>   
@@ -30110,8 +29957,8 @@ pub mod fluent_builders {
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The DB subnet group name to use for the new DB cluster.</p>   
@@ -30128,8 +29975,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the option group for the new DB cluster.</p>
         /// <p>DB clusters are associated with a default option group that can't be modified.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group for the new DB cluster.</p>
@@ -30199,8 +30046,8 @@ pub mod fluent_builders {
         /// <p>If <code>DBClusterIdentifier</code> refers to a DB cluster that isn't encrypted, then the restore request
         /// is rejected.</p>   
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier to use when restoring an encrypted DB cluster from an encrypted DB cluster.</p>
@@ -30233,8 +30080,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
         /// </p>   
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -30262,8 +30109,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Aurora MySQL DB clusters only</p>
-        pub fn backtrack_window(mut self, signature: i64) -> Self {
-            self.inner = self.inner.backtrack_window(signature);
+        pub fn backtrack_window(mut self, input: i64) -> Self {
+            self.inner = self.inner.backtrack_window(input);
             self
         }
         /// <p>The target backtrack window, in seconds. To disable backtracking, set this value to
@@ -30326,9 +30173,9 @@ pub mod fluent_builders {
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
         pub fn db_cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.db_cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.db_cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB cluster parameter group to associate with this DB cluster.
@@ -30360,8 +30207,8 @@ pub mod fluent_builders {
         /// The database can't be deleted when deletion protection is enabled. By default,
         /// deletion protection isn't enabled.</p>
         /// <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster has deletion protection enabled.
@@ -30374,8 +30221,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The default is not to copy them.</p>
@@ -30393,8 +30240,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon Aurora User Guide</i>.
         /// </p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB cluster in.
@@ -30412,8 +30259,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -30427,11 +30274,8 @@ pub mod fluent_builders {
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn scaling_configuration(
-            mut self,
-            signature: crate::model::ScalingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.scaling_configuration(signature);
+        pub fn scaling_configuration(mut self, input: crate::model::ScalingConfiguration) -> Self {
+            self.inner = self.inner.scaling_configuration(input);
             self
         }
         /// <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling properties of the DB cluster.</p>
@@ -30449,8 +30293,8 @@ pub mod fluent_builders {
         /// that is an Aurora Serverless cluster, the original cluster must be an Aurora Serverless cluster or
         /// an encrypted provisioned cluster.</p>
         /// <p>Valid for: Aurora DB clusters only</p>
-        pub fn engine_mode(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_mode(signature.into());
+        pub fn engine_mode(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_mode(input.into());
             self
         }
         /// <p>The engine mode of the new cluster. Specify <code>provisioned</code> or <code>serverless</code>,
@@ -30469,11 +30313,8 @@ pub mod fluent_builders {
         /// <p>For the full list of DB instance classes, and availability for your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn db_cluster_instance_class(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_cluster_instance_class(signature.into());
+        pub fn db_cluster_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster,
@@ -30502,8 +30343,8 @@ pub mod fluent_builders {
         /// is specified, otherwise <code>gp2</code>
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>        
@@ -30550,8 +30391,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB cluster is publicly accessible.</p>       
@@ -30592,8 +30433,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
         /// </p>
         /// <p>Valid for: Multi-AZ DB clusters only</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for
@@ -30695,8 +30536,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>Name of the DB instance to create from the DB snapshot. This parameter isn't case-sensitive.</p>
@@ -30732,8 +30573,8 @@ pub mod fluent_builders {
         /// must be the ARN of the shared DB snapshot.</p>
         /// </li>
         /// </ul>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the DB snapshot to restore from.</p>
@@ -30761,8 +30602,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large.
@@ -30783,8 +30624,8 @@ pub mod fluent_builders {
         /// <p>Default: The same port as the original DB instance</p>
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -30800,8 +30641,8 @@ pub mod fluent_builders {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -30820,8 +30661,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
@@ -30838,8 +30679,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
@@ -30856,8 +30697,8 @@ pub mod fluent_builders {
         /// by the security group it uses. That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -30874,8 +30715,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
         /// during the maintenance window.</p>
         /// <p>If you restore an RDS Custom DB instance, you must disable this parameter.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the DB instance
@@ -30891,8 +30732,8 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -30911,8 +30752,8 @@ pub mod fluent_builders {
         /// <p>The database name for the restored DB instance.</p>
         /// <p>This parameter doesn't apply to the MySQL, PostgreSQL, or MariaDB engines. It also doesn't apply to RDS
         /// Custom DB instances.</p>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The database name for the restored DB instance.</p>
@@ -30986,8 +30827,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -31069,8 +30910,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Constraints: Must be an integer greater than 1000.</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>Specifies the amount of provisioned IOPS for the DB instance, expressed in I/O operations per second.
@@ -31093,8 +30934,8 @@ pub mod fluent_builders {
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
         /// group, and that option group can't be removed from a DB instance after it is associated with a DB instance.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
@@ -31142,8 +30983,8 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -31164,8 +31005,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(signature.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -31179,11 +31020,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_password(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tde_credential_password(signature.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -31228,8 +31066,8 @@ pub mod fluent_builders {
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -31243,8 +31081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -31254,8 +31092,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -31275,8 +31113,8 @@ pub mod fluent_builders {
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access
@@ -31342,8 +31180,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn use_default_processor_features(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(signature);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
@@ -31375,11 +31213,8 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -31414,8 +31249,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -31438,8 +31273,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(signature);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -31476,9 +31311,9 @@ pub mod fluent_builders {
         /// <p>This setting is required for RDS Custom.</p>
         pub fn custom_iam_instance_profile(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_iam_instance_profile(signature.into());
+            self.inner = self.inner.custom_iam_instance_profile(input.into());
             self
         }
         /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
@@ -31510,8 +31345,8 @@ pub mod fluent_builders {
         /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
         /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn backup_target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_target(signature.into());
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_target(input.into());
             self
         }
         /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
@@ -31596,8 +31431,8 @@ pub mod fluent_builders {
         /// <p>The name of the database to create when the DB instance is created.
         /// Follow the naming rules specified in <code>CreateDBInstance</code>.
         /// </p>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The name of the database to create when the DB instance is created.
@@ -31626,8 +31461,8 @@ pub mod fluent_builders {
         ///
         /// <p>Example: <code>mydbinstance</code>
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>The DB instance identifier. This parameter is stored as a lowercase string.
@@ -31666,8 +31501,8 @@ pub mod fluent_builders {
         /// You can also allocate additional memory for future growth.
         /// </p>
         /// </note>
-        pub fn allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.allocated_storage(signature);
+        pub fn allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.allocated_storage(input);
             self
         }
         /// <p>The amount of storage (in gigabytes) to allocate initially for the DB instance.
@@ -31693,8 +31528,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Importing from Amazon S3 isn't supported on the db.t2.micro DB instance class.
         /// </p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the DB instance,
@@ -31718,8 +31553,8 @@ pub mod fluent_builders {
         ///
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The name of the database engine to be used for this instance.
@@ -31747,8 +31582,8 @@ pub mod fluent_builders {
         /// <p>Can't be a reserved word for the chosen database engine.</p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(signature.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The name for the master user.
@@ -31779,8 +31614,8 @@ pub mod fluent_builders {
         /// </p>
         ///
         /// <p>Constraints: Must contain from 8 to 41 characters.</p>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password for the master user.
@@ -31844,8 +31679,8 @@ pub mod fluent_builders {
         /// <p>Constraint: The <code>AvailabilityZone</code> parameter can't be specified if the DB instance is a Multi-AZ deployment.
         /// The specified Availability Zone must be in the same Amazon Web Services Region as the current endpoint.
         /// </p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone that the DB instance is created in.
@@ -31867,8 +31702,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>A DB subnet group to associate with this DB instance.</p>
@@ -31904,9 +31739,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The time range each week during which system maintenance can occur,
@@ -31942,11 +31777,8 @@ pub mod fluent_builders {
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
         /// <p>If you do not specify a value for <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code>
         /// for the specified DB engine is used.</p>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -31963,8 +31795,8 @@ pub mod fluent_builders {
         /// Setting this parameter to a positive number enables backups.
         /// For more information, see <code>CreateDBInstance</code>.
         /// </p>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The number of days for which automated backups are retained.
@@ -31996,11 +31828,8 @@ pub mod fluent_builders {
         /// <p>Must be at least 30 minutes.</p>
         /// </li>
         /// </ul>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>The time range each day
@@ -32039,8 +31868,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>3306</code>
         /// </p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the database accepts connections.
@@ -32058,8 +31887,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
         /// If the DB instance is a Multi-AZ deployment, you can't set the <code>AvailabilityZone</code> parameter.
         /// </p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.
@@ -32073,8 +31902,8 @@ pub mod fluent_builders {
         /// Choose the latest minor version of your database engine.
         /// For information about engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>The version number of the database engine to use.
@@ -32092,8 +31921,8 @@ pub mod fluent_builders {
         /// to the DB instance during the maintenance window. By default, minor engine upgrades
         /// are not applied automatically.
         /// </p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor engine upgrades are applied automatically
@@ -32107,8 +31936,8 @@ pub mod fluent_builders {
         /// <p>The license model for this DB instance.
         /// Use <code>general-public-license</code>.
         /// </p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>The license model for this DB instance.
@@ -32126,8 +31955,8 @@ pub mod fluent_builders {
         /// For information about valid Iops values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned IOPS Storage to Improve Performance</a>
         /// in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second)
@@ -32142,8 +31971,8 @@ pub mod fluent_builders {
         /// <p>The name of the option group to associate with this DB instance.
         /// If this argument is omitted, the default option group for the specified engine is used.
         /// </p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to associate with this DB instance.
@@ -32164,8 +31993,8 @@ pub mod fluent_builders {
         /// That public access is not permitted if the security group assigned to the DB instance doesn't permit it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -32212,8 +32041,8 @@ pub mod fluent_builders {
         /// if the <code>Iops</code> parameter is specified;
         /// otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.
@@ -32233,8 +32062,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the new DB instance is encrypted or not.
         /// </p>
-        pub fn storage_encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.storage_encrypted(signature);
+        pub fn storage_encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.storage_encrypted(input);
             self
         }
         /// <p>A value that indicates whether the new DB instance is encrypted or not.
@@ -32253,8 +32082,8 @@ pub mod fluent_builders {
         /// There is a default KMS key for your Amazon Web Services account.
         /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
         /// </p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.
@@ -32273,8 +32102,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.
         /// </p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the DB instance to snapshots of the DB instance. By default, tags are not copied.
@@ -32296,8 +32125,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>0</code>
         /// </p>
-        pub fn monitoring_interval(mut self, signature: i32) -> Self {
-            self.inner = self.inner.monitoring_interval(signature);
+        pub fn monitoring_interval(mut self, input: i32) -> Self {
+            self.inner = self.inner.monitoring_interval(input);
             self
         }
         /// <p>The interval, in seconds,
@@ -32326,8 +32155,8 @@ pub mod fluent_builders {
         /// <p>If <code>MonitoringInterval</code> is set to a value other than 0,
         /// then you must supply a <code>MonitoringRoleArn</code> value.
         /// </p>
-        pub fn monitoring_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitoring_role_arn(signature.into());
+        pub fn monitoring_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitoring_role_arn(input.into());
             self
         }
         /// <p>The ARN for the IAM role that permits RDS
@@ -32353,8 +32182,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
@@ -32376,8 +32205,8 @@ pub mod fluent_builders {
         ///
         /// <p>Valid Values:  <code>mysql</code>
         /// </p>
-        pub fn source_engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine(signature.into());
+        pub fn source_engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine(input.into());
             self
         }
         /// <p>The name of the engine of your source database.
@@ -32397,8 +32226,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>5.6.40</code>
         /// </p>
-        pub fn source_engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_engine_version(signature.into());
+        pub fn source_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_engine_version(input.into());
             self
         }
         /// <p>The version of the database that the backup files were created from.</p>
@@ -32416,8 +32245,8 @@ pub mod fluent_builders {
         /// <p>The name of your Amazon S3 bucket
         /// that contains your database backup file.
         /// </p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The name of your Amazon S3 bucket
@@ -32432,8 +32261,8 @@ pub mod fluent_builders {
         }
         /// <p>The prefix of your Amazon S3 bucket.
         /// </p>
-        pub fn s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(signature.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input.into());
             self
         }
         /// <p>The prefix of your Amazon S3 bucket.
@@ -32444,8 +32273,8 @@ pub mod fluent_builders {
         }
         /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
         /// </p>
-        pub fn s3_ingestion_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_ingestion_role_arn(signature.into());
+        pub fn s3_ingestion_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_ingestion_role_arn(input.into());
             self
         }
         /// <p>An Amazon Web Services Identity and Access Management (IAM) role to allow Amazon RDS to access your Amazon S3 bucket.
@@ -32463,8 +32292,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
         /// User Guide</i>.
         /// </p>
-        pub fn enable_performance_insights(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_insights(signature);
+        pub fn enable_performance_insights(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_insights(input);
             self
         }
         /// <p>A value that indicates whether to enable Performance Insights for the DB instance.
@@ -32484,9 +32313,9 @@ pub mod fluent_builders {
         /// Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.performance_insights_kms_key_id(signature.into());
+            self.inner = self.inner.performance_insights_kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of Performance Insights data.</p>
@@ -32502,8 +32331,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
-        pub fn performance_insights_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.performance_insights_retention_period(signature);
+        pub fn performance_insights_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.performance_insights_retention_period(input);
             self
         }
         /// <p>The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years). </p>
@@ -32557,8 +32386,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
         /// processor features.</p>
-        pub fn use_default_processor_features(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(signature);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default
@@ -32576,8 +32405,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -32595,8 +32424,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn max_allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(signature);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -32686,9 +32515,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_db_instance_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.source_db_instance_identifier(signature.into());
+            self.inner = self.inner.source_db_instance_identifier(input.into());
             self
         }
         /// <p>The identifier of the source DB instance from which to restore.</p>
@@ -32720,9 +32549,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn target_db_instance_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.target_db_instance_identifier(signature.into());
+            self.inner = self.inner.target_db_instance_identifier(input.into());
             self
         }
         /// <p>The name of the new DB instance to be created.</p>
@@ -32758,8 +32587,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>2009-09-07T23:45:00Z</code>
         /// </p>
-        pub fn restore_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.restore_time(signature);
+        pub fn restore_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.restore_time(input);
             self
         }
         /// <p>The date and time to restore from.</p>
@@ -32787,8 +32616,8 @@ pub mod fluent_builders {
         /// isn't restored from the latest backup time.
         /// </p>
         /// <p>Constraints: Can't be specified if the <code>RestoreTime</code> parameter is provided.</p>
-        pub fn use_latest_restorable_time(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_latest_restorable_time(signature);
+        pub fn use_latest_restorable_time(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_latest_restorable_time(input);
             self
         }
         /// <p>
@@ -32807,8 +32636,8 @@ pub mod fluent_builders {
         /// Class</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
         /// <p>Default: The same DBInstanceClass as the original DB instance.</p>
-        pub fn db_instance_class(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_class(signature.into());
+        pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_class(input.into());
             self
         }
         /// <p>The compute and memory capacity of the Amazon RDS DB instance, for example
@@ -32829,8 +32658,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Value must be <code>1150-65535</code>
         /// </p>
         /// <p>Default: The same port as the original DB instance.</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the database accepts connections.</p>
@@ -32846,8 +32675,8 @@ pub mod fluent_builders {
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a Multi-AZ deployment.</p>
         /// <p>Example: <code>us-east-1a</code>
         /// </p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone (AZ) where the DB instance will be created.</p>
@@ -32866,8 +32695,8 @@ pub mod fluent_builders {
         /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
         /// <p>Example: <code>mySubnetgroup</code>
         /// </p>
-        pub fn db_subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_subnet_group_name(signature.into());
+        pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_subnet_group_name(input.into());
             self
         }
         /// <p>The DB subnet group name to use for the new instance.</p>
@@ -32885,8 +32714,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is a
         /// Multi-AZ deployment.</p>
-        pub fn multi_az(mut self, signature: bool) -> Self {
-            self.inner = self.inner.multi_az(signature);
+        pub fn multi_az(mut self, input: bool) -> Self {
+            self.inner = self.inner.multi_az(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is a Multi-AZ deployment.</p>
@@ -32906,8 +32735,8 @@ pub mod fluent_builders {
         /// it.</p>
         /// <p>When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.</p>  
         /// <p>For more information, see <a>CreateDBInstance</a>.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>A value that indicates whether the DB instance is publicly accessible.</p>
@@ -32926,8 +32755,8 @@ pub mod fluent_builders {
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the
         /// DB instance during the maintenance window.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn auto_minor_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_minor_version_upgrade(signature);
+        pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_minor_version_upgrade(input);
             self
         }
         /// <p>A value that indicates whether minor version upgrades are applied automatically to the
@@ -32943,8 +32772,8 @@ pub mod fluent_builders {
         /// <p>
         /// Valid values:  <code>license-included</code> | <code>bring-your-own-license</code> | <code>general-public-license</code>
         /// </p>
-        pub fn license_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_model(signature.into());
+        pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_model(input.into());
             self
         }
         /// <p>License model information for the restored DB instance.</p>
@@ -32964,8 +32793,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This parameter isn't supported for the MySQL or MariaDB engines. It also doesn't apply to RDS Custom.</p>
         /// </note>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The database name for the restored DB instance.</p>
@@ -33040,8 +32869,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>The database engine to use for the new instance.</p>
@@ -33118,8 +32947,8 @@ pub mod fluent_builders {
         /// <b>SQL Server</b>
         /// </p>
         /// <p>Setting the IOPS value for the SQL Server database engine isn't supported.</p>
-        pub fn iops(mut self, signature: i32) -> Self {
-            self.inner = self.inner.iops(signature);
+        pub fn iops(mut self, input: i32) -> Self {
+            self.inner = self.inner.iops(input);
             self
         }
         /// <p>The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB instance.</p>
@@ -33137,8 +32966,8 @@ pub mod fluent_builders {
         /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
         /// option group, and that option group can't be removed from a DB instance after it is associated with a DB instance</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn option_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.option_group_name(signature.into());
+        pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.option_group_name(input.into());
             self
         }
         /// <p>The name of the option group to be used for the restored DB instance.</p>
@@ -33154,8 +32983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
-        pub fn copy_tags_to_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags_to_snapshot(signature);
+        pub fn copy_tags_to_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags_to_snapshot(input);
             self
         }
         /// <p>A value that indicates whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.</p>
@@ -33196,8 +33025,8 @@ pub mod fluent_builders {
         /// Default: <code>io1</code> if the <code>Iops</code> parameter
         /// is specified, otherwise <code>gp2</code>
         /// </p>
-        pub fn storage_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.storage_type(signature.into());
+        pub fn storage_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.storage_type(input.into());
             self
         }
         /// <p>Specifies the storage type to be associated with the DB instance.</p>
@@ -33218,8 +33047,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tde_credential_arn(signature.into());
+        pub fn tde_credential_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_arn(input.into());
             self
         }
         /// <p>The ARN from the key store with which to associate the instance for TDE encryption.</p>
@@ -33233,11 +33062,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn tde_credential_password(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.tde_credential_password(signature.into());
+        pub fn tde_credential_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tde_credential_password(input.into());
             self
         }
         /// <p>The password for the given ARN from the key store in order to access the device.</p>
@@ -33282,8 +33108,8 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html">
         /// Kerberos Authentication</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>Specify the Active Directory directory ID to restore the DB instance in.
@@ -33298,8 +33124,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn domain_iam_role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_iam_role_name(signature.into());
+        pub fn domain_iam_role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_iam_role_name(input.into());
             self
         }
         /// <p>Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
@@ -33320,8 +33146,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
         /// IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
         /// </p>
-        pub fn enable_iam_database_authentication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_iam_database_authentication(signature);
+        pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_iam_database_authentication(input);
             self
         }
         /// <p>A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
@@ -33387,8 +33213,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn use_default_processor_features(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_default_processor_features(signature);
+        pub fn use_default_processor_features(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_default_processor_features(input);
             self
         }
         /// <p>A value that indicates whether the DB instance class of the DB instance uses its default processor features.</p>
@@ -33419,11 +33245,8 @@ pub mod fluent_builders {
         /// <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn db_parameter_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.db_parameter_group_name(signature.into());
+        pub fn db_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the DB parameter group to associate with this DB instance.</p>
@@ -33458,8 +33281,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
         /// Deleting a DB Instance</a>.
         /// </p>
-        pub fn deletion_protection(mut self, signature: bool) -> Self {
-            self.inner = self.inner.deletion_protection(signature);
+        pub fn deletion_protection(mut self, input: bool) -> Self {
+            self.inner = self.inner.deletion_protection(input);
             self
         }
         /// <p>A value that indicates whether the DB instance has deletion protection enabled.
@@ -33473,8 +33296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The resource ID of the source DB instance from which to restore.</p>
-        pub fn source_dbi_resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_dbi_resource_id(signature.into());
+        pub fn source_dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_dbi_resource_id(input.into());
             self
         }
         /// <p>The resource ID of the source DB instance from which to restore.</p>
@@ -33491,8 +33314,8 @@ pub mod fluent_builders {
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>This setting doesn't apply to RDS Custom.</p>
-        pub fn max_allocated_storage(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_allocated_storage(signature);
+        pub fn max_allocated_storage(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_allocated_storage(input);
             self
         }
         /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
@@ -33510,11 +33333,11 @@ pub mod fluent_builders {
         /// <p>This setting doesn't apply to RDS Custom.</p>
         pub fn source_db_instance_automated_backups_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .source_db_instance_automated_backups_arn(signature.into());
+                .source_db_instance_automated_backups_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example,
@@ -33539,8 +33362,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon RDS User Guide</i>.</p>
         /// <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned IP addresses</a>
         /// in the <i>Amazon Web Services Outposts User Guide</i>.</p>
-        pub fn enable_customer_owned_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_customer_owned_ip(signature);
+        pub fn enable_customer_owned_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_customer_owned_ip(input);
             self
         }
         /// <p>A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p>
@@ -33577,9 +33400,9 @@ pub mod fluent_builders {
         /// <p>This setting is required for RDS Custom.</p>
         pub fn custom_iam_instance_profile(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.custom_iam_instance_profile(signature.into());
+            self.inner = self.inner.custom_iam_instance_profile(input.into());
             self
         }
         /// <p>The instance profile associated with the underlying Amazon EC2 instance of an
@@ -33611,8 +33434,8 @@ pub mod fluent_builders {
         /// <p>Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code> (Amazon Web Services Region). The default is <code>region</code>.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
         /// with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-        pub fn backup_target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_target(signature.into());
+        pub fn backup_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_target(input.into());
             self
         }
         /// <p>Specifies where automated backups and manual snapshots are stored for the restored DB instance.</p>
@@ -33687,8 +33510,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the DB security group to revoke ingress from.</p>
-        pub fn db_security_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_security_group_name(signature.into());
+        pub fn db_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_security_group_name(input.into());
             self
         }
         /// <p>The name of the DB security group to revoke ingress from.</p>
@@ -33705,8 +33528,8 @@ pub mod fluent_builders {
         /// <code>EC2SecurityGroupName</code>, <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code>
         /// can't be provided.
         /// </p>
-        pub fn cidrip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(signature.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input.into());
             self
         }
         /// <p>
@@ -33724,11 +33547,8 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.ec2_security_group_name(signature.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input.into());
             self
         }
         /// <p>
@@ -33748,8 +33568,8 @@ pub mod fluent_builders {
         /// For VPC DB security groups, <code>EC2SecurityGroupId</code> must be provided.
         /// Otherwise, EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be provided.
         /// </p>
-        pub fn ec2_security_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ec2_security_group_id(signature.into());
+        pub fn ec2_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_id(input.into());
             self
         }
         /// <p>
@@ -33773,9 +33593,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn ec2_security_group_owner_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
+            self.inner = self.inner.ec2_security_group_owner_id(input.into());
             self
         }
         /// <p>
@@ -33856,8 +33676,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
         /// for example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster,
@@ -33870,8 +33690,8 @@ pub mod fluent_builders {
         /// Database events such as a change or access generate an activity stream event.
         /// The database session can handle these events either synchronously or asynchronously.
         /// </p>
-        pub fn mode(mut self, signature: crate::model::ActivityStreamMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ActivityStreamMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>Specifies the mode of the database activity stream.
@@ -33887,8 +33707,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
         /// The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encrypting messages in the database activity stream.
@@ -33899,8 +33719,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether or not the database activity stream is to start as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_immediately(signature);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
         /// <p>Specifies whether or not the database activity stream is to start as soon as possible,
@@ -33911,8 +33731,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies
         /// to an Oracle DB instance. By default, no engine-native audit fields are included.</p>
-        pub fn engine_native_audit_fields_included(mut self, signature: bool) -> Self {
-            self.inner = self.inner.engine_native_audit_fields_included(signature);
+        pub fn engine_native_audit_fields_included(mut self, input: bool) -> Self {
+            self.inner = self.inner.engine_native_audit_fields_included(input);
             self
         }
         /// <p>Specifies whether the database activity stream includes engine-native audit fields. This option only applies
@@ -33995,8 +33815,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be started. This parameter is stored as
@@ -34086,8 +33906,8 @@ pub mod fluent_builders {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>
@@ -34168,8 +33988,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_instance_arn(signature.into());
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for the replicated automated backups, for example,
@@ -34182,8 +34002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The retention period for the replicated automated backups.</p>
-        pub fn backup_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_period(signature);
+        pub fn backup_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_period(input);
             self
         }
         /// <p>The retention period for the replicated automated backups.</p>
@@ -34194,8 +34014,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
         /// Amazon Resource Name (ARN) for the KMS encryption key in the destination Amazon Web Services Region, for example,
         /// <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Amazon Web Services KMS key identifier for encryption of the replicated automated backups. The KMS key ID is the
@@ -34209,8 +34029,8 @@ pub mod fluent_builders {
         /// called in the Amazon Web Services Region of the source DB instance. The presigned URL must be a valid request for the
         /// StartDBInstanceAutomatedBackupsReplication API action that can be executed in the Amazon Web Services Region that contains
         /// the source DB instance.</p>
-        pub fn pre_signed_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pre_signed_url(signature.into());
+        pub fn pre_signed_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pre_signed_url(input.into());
             self
         }
         /// <p>A URL that contains a Signature Version 4 signed request for the StartDBInstanceAutomatedBackupsReplication action to be
@@ -34289,8 +34109,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
         /// the Amazon S3 bucket where the snapshot is to be exported to. </p>
-        pub fn export_task_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_task_identifier(signature.into());
+        pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_task_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the snapshot export task. This ID isn't an identifier for
@@ -34303,8 +34123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
-        pub fn source_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_arn(signature.into());
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the snapshot to export to Amazon S3.</p>
@@ -34313,8 +34133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
-        pub fn s3_bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_name(signature.into());
+        pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_name(input.into());
             self
         }
         /// <p>The name of the Amazon S3 bucket to export the snapshot to.</p>
@@ -34327,8 +34147,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket
         /// when exporting a snapshot. </p>
-        pub fn iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role_arn(signature.into());
+        pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role_arn(input.into());
             self
         }
         /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket
@@ -34370,8 +34190,8 @@ pub mod fluent_builders {
         /// <p>GrantOperation.RetireGrant</p>
         /// </li>
         /// </ul>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS
@@ -34412,8 +34232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
-        pub fn s3_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_prefix(signature.into());
+        pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_prefix(input.into());
             self
         }
         /// <p>The Amazon S3 bucket prefix to use as the file name and path of the exported snapshot.</p>
@@ -34557,8 +34377,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
         /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
@@ -34570,8 +34390,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether or not the database activity stream is to stop as soon as possible,
         /// regardless of the maintenance window for the database.</p>
-        pub fn apply_immediately(mut self, signature: bool) -> Self {
-            self.inner = self.inner.apply_immediately(signature);
+        pub fn apply_immediately(mut self, input: bool) -> Self {
+            self.inner = self.inner.apply_immediately(input);
             self
         }
         /// <p>Specifies whether or not the database activity stream is to stop as soon as possible,
@@ -34654,8 +34474,8 @@ pub mod fluent_builders {
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as
         /// a lowercase string.</p>
-        pub fn db_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_cluster_identifier(signature.into());
+        pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_cluster_identifier(input.into());
             self
         }
         /// <p>The DB cluster identifier of the Amazon Aurora DB cluster to be stopped. This parameter is stored as
@@ -34747,8 +34567,8 @@ pub mod fluent_builders {
         /// <p>
         /// The user-supplied instance identifier.
         /// </p>
-        pub fn db_instance_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_instance_identifier(signature.into());
+        pub fn db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_instance_identifier(input.into());
             self
         }
         /// <p>
@@ -34764,8 +34584,8 @@ pub mod fluent_builders {
         /// <p>
         /// The user-supplied instance identifier of the DB Snapshot created immediately before the DB instance is stopped.
         /// </p>
-        pub fn db_snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_snapshot_identifier(signature.into());
+        pub fn db_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_snapshot_identifier(input.into());
             self
         }
         /// <p>
@@ -34846,8 +34666,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example,
         /// <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.</p>
-        pub fn source_db_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_db_instance_arn(signature.into());
+        pub fn source_db_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_db_instance_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source DB instance for which to stop replicating automated backups, for example,

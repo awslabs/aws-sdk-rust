@@ -383,8 +383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -396,8 +396,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
@@ -435,11 +435,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -451,8 +449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -466,9 +464,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -484,9 +482,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -498,8 +496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -511,8 +509,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -523,9 +521,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -537,8 +535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -670,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Job to be deleted.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the Job to be deleted.</p>
@@ -740,8 +738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>RThe ID of the Recovery Instance to be deleted.</p>
-        pub fn recovery_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(signature.into());
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>RThe ID of the Recovery Instance to be deleted.</p>
@@ -817,11 +815,11 @@ pub mod fluent_builders {
         /// <p>The ID of the Replication Configuration Template to be deleted.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .replication_configuration_template_id(signature.into());
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>The ID of the Replication Configuration Template to be deleted.</p>
@@ -893,8 +891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server to be deleted.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server to be deleted.</p>
@@ -966,8 +964,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the Job for which Job log items will be retrieved.</p>
@@ -976,8 +974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Job log items to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Job log items to retrieve.</p>
@@ -986,8 +984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Job log items to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Job log items to retrieve.</p>
@@ -1056,8 +1054,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A set of filters by which to return Jobs.</p>
-        pub fn filters(mut self, signature: crate::model::DescribeJobsRequestFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::DescribeJobsRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Jobs.</p>
@@ -1069,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Jobs to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Jobs to retrieve.</p>
@@ -1079,8 +1077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Job to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Job to retrieve.</p>
@@ -1151,9 +1149,9 @@ pub mod fluent_builders {
         /// <p>A set of filters by which to return Recovery Instances.</p>
         pub fn filters(
             mut self,
-            signature: crate::model::DescribeRecoveryInstancesRequestFilters,
+            input: crate::model::DescribeRecoveryInstancesRequestFilters,
         ) -> Self {
-            self.inner = self.inner.filters(signature);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Recovery Instances.</p>
@@ -1165,8 +1163,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Recovery Instances to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Recovery Instances to retrieve.</p>
@@ -1175,8 +1173,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Recovery Instance to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Recovery Instance to retrieve.</p>
@@ -1245,8 +1243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filter Recovery Snapshots by Source Server ID.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>Filter Recovery Snapshots by Source Server ID.</p>
@@ -1260,9 +1258,9 @@ pub mod fluent_builders {
         /// <p>A set of filters by which to return Recovery Snapshots.</p>
         pub fn filters(
             mut self,
-            signature: crate::model::DescribeRecoverySnapshotsRequestFilters,
+            input: crate::model::DescribeRecoverySnapshotsRequestFilters,
         ) -> Self {
-            self.inner = self.inner.filters(signature);
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Recovery Snapshots.</p>
@@ -1274,8 +1272,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
-        pub fn order(mut self, signature: crate::model::RecoverySnapshotsOrder) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::RecoverySnapshotsOrder) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// <p>The sorted ordering by which to return Recovery Snapshots.</p>
@@ -1287,8 +1285,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Recovery Snapshots to retrieve.</p>
@@ -1297,8 +1295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Recovery Snapshot to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Recovery Snapshot to retrieve.</p>
@@ -1393,8 +1391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
@@ -1403,8 +1401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Replication Configuration Template to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Replication Configuration Template to retrieve.</p>
@@ -1473,11 +1471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A set of filters by which to return Source Servers.</p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::DescribeSourceServersRequestFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::DescribeSourceServersRequestFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>A set of filters by which to return Source Servers.</p>
@@ -1489,8 +1484,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Maximum number of Source Servers to retrieve.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Maximum number of Source Servers to retrieve.</p>
@@ -1499,8 +1494,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token of the next Source Server to retrieve.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token of the next Source Server to retrieve.</p>
@@ -1569,8 +1564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance to disconnect.</p>
-        pub fn recovery_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(signature.into());
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance to disconnect.</p>
@@ -1642,8 +1637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server to disconnect.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server to disconnect.</p>
@@ -1717,8 +1712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-        pub fn recovery_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(signature.into());
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
@@ -1790,8 +1785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
@@ -1863,8 +1858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Serve for this Replication Configuration.r</p>
@@ -1996,8 +1991,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource whose tags should be returned.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource whose tags should be returned.</p>
@@ -2066,8 +2061,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server whose data replication should be retried.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server whose data replication should be retried.</p>
@@ -2261,8 +2256,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
-        pub fn is_drill(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_drill(signature);
+        pub fn is_drill(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_drill(input);
             self
         }
         /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
@@ -2354,8 +2349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-        pub fn recovery_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(signature.into());
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
@@ -2427,8 +2422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be added or updated.</p>
@@ -2597,8 +2592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>ARN of the resource for which tags are to be removed.</p>
@@ -2686,8 +2681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Recovery Instance.</p>
-        pub fn recovery_instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recovery_instance_id(signature.into());
+        pub fn recovery_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recovery_instance_id(input.into());
             self
         }
         /// <p>The ID of the Recovery Instance.</p>
@@ -2699,8 +2694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Failback Replication Configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Failback Replication Configuration.</p>
@@ -2709,8 +2704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.</p>
@@ -2719,8 +2714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
-        pub fn use_private_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_private_ip(signature);
+        pub fn use_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_private_ip(input);
             self
         }
         /// <p>Whether to use Private IP for the failback replication of the Recovery Instance.</p>
@@ -2789,8 +2784,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
@@ -2802,8 +2797,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the launch configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the launch configuration.</p>
@@ -2812,8 +2807,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-        pub fn launch_disposition(mut self, signature: crate::model::LaunchDisposition) -> Self {
-            self.inner = self.inner.launch_disposition(signature);
+        pub fn launch_disposition(mut self, input: crate::model::LaunchDisposition) -> Self {
+            self.inner = self.inner.launch_disposition(input);
             self
         }
         /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
@@ -2827,11 +2822,9 @@ pub mod fluent_builders {
         /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
         pub fn target_instance_type_right_sizing_method(
             mut self,
-            signature: crate::model::TargetInstanceTypeRightSizingMethod,
+            input: crate::model::TargetInstanceTypeRightSizingMethod,
         ) -> Self {
-            self.inner = self
-                .inner
-                .target_instance_type_right_sizing_method(signature);
+            self.inner = self.inner.target_instance_type_right_sizing_method(input);
             self
         }
         /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
@@ -2845,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
-        pub fn copy_private_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_private_ip(signature);
+        pub fn copy_private_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_private_ip(input);
             self
         }
         /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -2855,8 +2848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
-        pub fn copy_tags(mut self, signature: bool) -> Self {
-            self.inner = self.inner.copy_tags(signature);
+        pub fn copy_tags(mut self, input: bool) -> Self {
+            self.inner = self.inner.copy_tags(input);
             self
         }
         /// <p>Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.</p>
@@ -2865,8 +2858,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The licensing configuration to be used for this launch configuration.</p>
-        pub fn licensing(mut self, signature: crate::model::Licensing) -> Self {
-            self.inner = self.inner.licensing(signature);
+        pub fn licensing(mut self, input: crate::model::Licensing) -> Self {
+            self.inner = self.inner.licensing(input);
             self
         }
         /// <p>The licensing configuration to be used for this launch configuration.</p>
@@ -2938,8 +2931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Source Server for this Replication Configuration.</p>
-        pub fn source_server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_server_id(signature.into());
+        pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_server_id(input.into());
             self
         }
         /// <p>The ID of the Source Server for this Replication Configuration.</p>
@@ -2951,8 +2944,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Replication Configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Replication Configuration.</p>
@@ -2961,8 +2954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -2974,8 +2967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.</p>
@@ -3013,11 +3006,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -3029,8 +3020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -3044,9 +3035,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -3084,9 +3075,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -3098,8 +3089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -3111,8 +3102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -3123,9 +3114,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -3137,8 +3128,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
@@ -3251,11 +3242,11 @@ pub mod fluent_builders {
         /// <p>The Replication Configuration Template ID.</p>
         pub fn replication_configuration_template_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .replication_configuration_template_id(signature.into());
+                .replication_configuration_template_id(input.into());
             self
         }
         /// <p>The Replication Configuration Template ID.</p>
@@ -3267,8 +3258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Replication Configuration Template ARN.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Replication Configuration Template ARN.</p>
@@ -3277,8 +3268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
-        pub fn staging_area_subnet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.staging_area_subnet_id(signature.into());
+        pub fn staging_area_subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.staging_area_subnet_id(input.into());
             self
         }
         /// <p>The subnet to be used by the replication staging area.</p>
@@ -3290,8 +3281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-        pub fn associate_default_security_group(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_default_security_group(signature);
+        pub fn associate_default_security_group(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_default_security_group(input);
             self
         }
         /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
@@ -3329,11 +3320,9 @@ pub mod fluent_builders {
         /// <p>The instance type to be used for the replication server.</p>
         pub fn replication_server_instance_type(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .replication_server_instance_type(signature.into());
+            self.inner = self.inner.replication_server_instance_type(input.into());
             self
         }
         /// <p>The instance type to be used for the replication server.</p>
@@ -3345,8 +3334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-        pub fn use_dedicated_replication_server(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_dedicated_replication_server(signature);
+        pub fn use_dedicated_replication_server(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_dedicated_replication_server(input);
             self
         }
         /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -3360,9 +3349,9 @@ pub mod fluent_builders {
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
         pub fn default_large_staging_disk_type(
             mut self,
-            signature: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
+            input: crate::model::ReplicationConfigurationDefaultLargeStagingDiskType,
         ) -> Self {
-            self.inner = self.inner.default_large_staging_disk_type(signature);
+            self.inner = self.inner.default_large_staging_disk_type(input);
             self
         }
         /// <p>The Staging Disk EBS volume type to be used during replication.</p>
@@ -3378,9 +3367,9 @@ pub mod fluent_builders {
         /// <p>The type of EBS encryption to be used during replication.</p>
         pub fn ebs_encryption(
             mut self,
-            signature: crate::model::ReplicationConfigurationEbsEncryption,
+            input: crate::model::ReplicationConfigurationEbsEncryption,
         ) -> Self {
-            self.inner = self.inner.ebs_encryption(signature);
+            self.inner = self.inner.ebs_encryption(input);
             self
         }
         /// <p>The type of EBS encryption to be used during replication.</p>
@@ -3392,8 +3381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
-        pub fn ebs_encryption_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ebs_encryption_key_arn(signature.into());
+        pub fn ebs_encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ebs_encryption_key_arn(input.into());
             self
         }
         /// <p>The ARN of the EBS encryption key to be used during replication.</p>
@@ -3405,8 +3394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-        pub fn bandwidth_throttling(mut self, signature: i64) -> Self {
-            self.inner = self.inner.bandwidth_throttling(signature);
+        pub fn bandwidth_throttling(mut self, input: i64) -> Self {
+            self.inner = self.inner.bandwidth_throttling(input);
             self
         }
         /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
@@ -3417,9 +3406,9 @@ pub mod fluent_builders {
         /// <p>The data plane routing mechanism that will be used for replication.</p>
         pub fn data_plane_routing(
             mut self,
-            signature: crate::model::ReplicationConfigurationDataPlaneRouting,
+            input: crate::model::ReplicationConfigurationDataPlaneRouting,
         ) -> Self {
-            self.inner = self.inner.data_plane_routing(signature);
+            self.inner = self.inner.data_plane_routing(input);
             self
         }
         /// <p>The data plane routing mechanism that will be used for replication.</p>
@@ -3431,8 +3420,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-        pub fn create_public_ip(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_public_ip(signature);
+        pub fn create_public_ip(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_public_ip(input);
             self
         }
         /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>

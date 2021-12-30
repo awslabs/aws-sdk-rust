@@ -611,8 +611,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application about which to get revision
         /// information.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application about which to get revision
@@ -787,8 +787,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
         /// AWS account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the applicable IAM user or
@@ -885,8 +885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -1309,8 +1309,8 @@ pub mod fluent_builders {
         }
         /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
         /// traffic to the replacement environment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a blue/green deployment for which you want to start rerouting
@@ -1326,8 +1326,8 @@ pub mod fluent_builders {
         /// the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
         /// indicates that the traffic is shifted, but the original target is not terminated.
         /// </p>
-        pub fn deployment_wait_type(mut self, signature: crate::model::DeploymentWaitType) -> Self {
-            self.inner = self.inner.deployment_wait_type(signature);
+        pub fn deployment_wait_type(mut self, input: crate::model::DeploymentWaitType) -> Self {
+            self.inner = self.inner.deployment_wait_type(input);
             self
         }
         /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that
@@ -1403,8 +1403,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the application. This name must be unique with the applicable IAM user or
         /// AWS account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application. This name must be unique with the applicable IAM user or
@@ -1418,8 +1418,8 @@ pub mod fluent_builders {
         }
         /// <p> The destination platform type for the deployment (<code>Lambda</code>,
         /// <code>Server</code>, or <code>ECS</code>).</p>
-        pub fn compute_platform(mut self, signature: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(signature);
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
         /// <p> The destination platform type for the deployment (<code>Lambda</code>,
@@ -1514,8 +1514,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -1528,8 +1528,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the deployment group.</p>
-        pub fn deployment_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(signature.into());
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of the deployment group.</p>
@@ -1541,8 +1541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type and location of the revision to deploy. </p>
-        pub fn revision(mut self, signature: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(signature);
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p> The type and location of the revision to deploy. </p>
@@ -1558,8 +1558,8 @@ pub mod fluent_builders {
         /// <p>If not specified, the value configured in the deployment group is used as the default.
         /// If the deployment group does not have a deployment configuration associated with it,
         /// <code>CodeDeployDefault</code>.<code>OneAtATime</code> is used by default.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The name of a deployment configuration associated with the IAM user or AWS
@@ -1575,8 +1575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A comment about the deployment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A comment about the deployment.</p>
@@ -1609,8 +1609,8 @@ pub mod fluent_builders {
         /// <code>ignoreApplicationStopFailures</code> to specify that the
         /// <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, and
         /// <code>AfterBlockTraffic</code> failures should be ignored. </p>
-        pub fn ignore_application_stop_failures(mut self, signature: bool) -> Self {
-            self.inner = self.inner.ignore_application_stop_failures(signature);
+        pub fn ignore_application_stop_failures(mut self, input: bool) -> Self {
+            self.inner = self.inner.ignore_application_stop_failures(input);
             self
         }
         /// <p> If true, then if an <code>ApplicationStop</code>, <code>BeforeBlockTraffic</code>, or
@@ -1647,8 +1647,8 @@ pub mod fluent_builders {
         }
         /// <p> Information about the instances that belong to the replacement environment in a
         /// blue/green deployment. </p>
-        pub fn target_instances(mut self, signature: crate::model::TargetInstances) -> Self {
-            self.inner = self.inner.target_instances(signature);
+        pub fn target_instances(mut self, input: crate::model::TargetInstances) -> Self {
+            self.inner = self.inner.target_instances(input);
             self
         }
         /// <p> Information about the instances that belong to the replacement environment in a
@@ -1664,9 +1664,9 @@ pub mod fluent_builders {
         /// created.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            signature: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(signature);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
         /// <p>Configuration information for an automatic rollback that is added when a deployment is
@@ -1680,8 +1680,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates whether to deploy to all instances or only to instances that are not
         /// running the latest application revision. </p>
-        pub fn update_outdated_instances_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.update_outdated_instances_only(signature);
+        pub fn update_outdated_instances_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.update_outdated_instances_only(input);
             self
         }
         /// <p> Indicates whether to deploy to all instances or only to instances that are not
@@ -1711,8 +1711,8 @@ pub mod fluent_builders {
         /// part of the new deployment.</p>
         /// </li>
         /// </ul>
-        pub fn file_exists_behavior(mut self, signature: crate::model::FileExistsBehavior) -> Self {
-            self.inner = self.inner.file_exists_behavior(signature);
+        pub fn file_exists_behavior(mut self, input: crate::model::FileExistsBehavior) -> Self {
+            self.inner = self.inner.file_exists_behavior(input);
             self
         }
         /// <p>Information about how AWS CodeDeploy handles files that already exist in a deployment
@@ -1801,8 +1801,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the deployment configuration to create.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The name of the deployment configuration to create.</p>
@@ -1832,11 +1832,8 @@ pub mod fluent_builders {
         /// <p>The value parameter takes an integer.</p>
         /// <p>For example, to set a minimum of 95% healthy instance, specify a type of FLEET_PERCENT
         /// and a value of 95.</p>
-        pub fn minimum_healthy_hosts(
-            mut self,
-            signature: crate::model::MinimumHealthyHosts,
-        ) -> Self {
-            self.inner = self.inner.minimum_healthy_hosts(signature);
+        pub fn minimum_healthy_hosts(mut self, input: crate::model::MinimumHealthyHosts) -> Self {
+            self.inner = self.inner.minimum_healthy_hosts(input);
             self
         }
         /// <p>The minimum number of healthy instances that should be available at any time during
@@ -1866,11 +1863,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration that specifies how the deployment traffic is routed.</p>
-        pub fn traffic_routing_config(
-            mut self,
-            signature: crate::model::TrafficRoutingConfig,
-        ) -> Self {
-            self.inner = self.inner.traffic_routing_config(signature);
+        pub fn traffic_routing_config(mut self, input: crate::model::TrafficRoutingConfig) -> Self {
+            self.inner = self.inner.traffic_routing_config(input);
             self
         }
         /// <p>The configuration that specifies how the deployment traffic is routed.</p>
@@ -1883,8 +1877,8 @@ pub mod fluent_builders {
         }
         /// <p>The destination platform type for the deployment (<code>Lambda</code>,
         /// <code>Server</code>, or <code>ECS</code>).</p>
-        pub fn compute_platform(mut self, signature: crate::model::ComputePlatform) -> Self {
-            self.inner = self.inner.compute_platform(signature);
+        pub fn compute_platform(mut self, input: crate::model::ComputePlatform) -> Self {
+            self.inner = self.inner.compute_platform(input);
             self
         }
         /// <p>The destination platform type for the deployment (<code>Lambda</code>,
@@ -1958,8 +1952,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -1972,8 +1966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a new deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(signature.into());
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a new deployment group for the specified application.</p>
@@ -1995,8 +1989,8 @@ pub mod fluent_builders {
         /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working with
         /// Deployment Configurations in CodeDeploy</a> in the <i>AWS CodeDeploy User
         /// Guide</i>.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>If specified, the deployment configuration name can be either one of the predefined
@@ -2076,8 +2070,8 @@ pub mod fluent_builders {
         }
         /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
         /// user's behalf when interacting with AWS services.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>A service role Amazon Resource Name (ARN) that allows AWS CodeDeploy to act on the
@@ -2114,8 +2108,8 @@ pub mod fluent_builders {
         }
         /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
         /// created.</p>
-        pub fn alarm_configuration(mut self, signature: crate::model::AlarmConfiguration) -> Self {
-            self.inner = self.inner.alarm_configuration(signature);
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
             self
         }
         /// <p>Information to add about Amazon CloudWatch alarms when the deployment group is
@@ -2131,9 +2125,9 @@ pub mod fluent_builders {
         /// group is created.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            signature: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(signature);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
         /// <p>Configuration information for an automatic rollback that is added when a deployment
@@ -2155,9 +2149,9 @@ pub mod fluent_builders {
         /// different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
-            signature: crate::model::OutdatedInstancesStrategy,
+            input: crate::model::OutdatedInstancesStrategy,
         ) -> Self {
-            self.inner = self.inner.outdated_instances_strategy(signature);
+            self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
         /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
@@ -2177,8 +2171,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
         /// and whether to route deployment traffic behind a load balancer.</p>
-        pub fn deployment_style(mut self, signature: crate::model::DeploymentStyle) -> Self {
-            self.inner = self.inner.deployment_style(signature);
+        pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
+            self.inner = self.inner.deployment_style(input);
             self
         }
         /// <p>Information about the type of deployment, in-place or blue/green, that you want to run
@@ -2193,9 +2187,9 @@ pub mod fluent_builders {
         /// <p>Information about blue/green deployment options for a deployment group.</p>
         pub fn blue_green_deployment_configuration(
             mut self,
-            signature: crate::model::BlueGreenDeploymentConfiguration,
+            input: crate::model::BlueGreenDeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.blue_green_deployment_configuration(signature);
+            self.inner = self.inner.blue_green_deployment_configuration(input);
             self
         }
         /// <p>Information about blue/green deployment options for a deployment group.</p>
@@ -2207,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
-        pub fn load_balancer_info(mut self, signature: crate::model::LoadBalancerInfo) -> Self {
-            self.inner = self.inner.load_balancer_info(signature);
+        pub fn load_balancer_info(mut self, input: crate::model::LoadBalancerInfo) -> Self {
+            self.inner = self.inner.load_balancer_info(input);
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
@@ -2222,8 +2216,8 @@ pub mod fluent_builders {
         /// <p>Information about groups of tags applied to EC2 instances. The deployment group
         /// includes only EC2 instances identified by all the tag groups. Cannot be used in the same
         /// call as <code>ec2TagFilters</code>.</p>
-        pub fn ec2_tag_set(mut self, signature: crate::model::Ec2TagSet) -> Self {
-            self.inner = self.inner.ec2_tag_set(signature);
+        pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
+            self.inner = self.inner.ec2_tag_set(input);
             self
         }
         /// <p>Information about groups of tags applied to EC2 instances. The deployment group
@@ -2262,8 +2256,8 @@ pub mod fluent_builders {
         /// <p>Information about groups of tags applied to on-premises instances. The deployment
         /// group includes only on-premises instances identified by all of the tag groups. Cannot be
         /// used in the same call as <code>onPremisesInstanceTagFilters</code>.</p>
-        pub fn on_premises_tag_set(mut self, signature: crate::model::OnPremisesTagSet) -> Self {
-            self.inner = self.inner.on_premises_tag_set(signature);
+        pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
+            self.inner = self.inner.on_premises_tag_set(input);
             self
         }
         /// <p>Information about groups of tags applied to on-premises instances. The deployment
@@ -2359,8 +2353,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -2438,8 +2432,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a deployment configuration associated with the IAM user or AWS
         /// account.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The name of a deployment configuration associated with the IAM user or AWS
@@ -2513,8 +2507,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -2527,8 +2521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(signature.into());
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
@@ -2600,8 +2594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the GitHub account connection to delete.</p>
-        pub fn token_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token_name(signature.into());
+        pub fn token_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token_name(input.into());
             self
         }
         /// <p>The name of the GitHub account connection to delete.</p>
@@ -2671,8 +2665,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
         /// linked to one or more CodeDeploy resources.</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>The unique ID of an external resource (for example, a CloudFormation stack ID) that is
@@ -2742,8 +2736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the on-premises instance to deregister.</p>
-        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(signature.into());
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p>The name of the on-premises instance to deregister.</p>
@@ -2816,8 +2810,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -2890,8 +2884,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the application that corresponds to the revision.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the application that corresponds to the revision.</p>
@@ -2903,8 +2897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the application revision to get, including type and location.</p>
-        pub fn revision(mut self, signature: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(signature);
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p>Information about the application revision to get, including type and location.</p>
@@ -2982,8 +2976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment associated with the IAM user or AWS account. </p>
@@ -3056,8 +3050,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a deployment configuration associated with the IAM user or AWS
         /// account.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The name of a deployment configuration associated with the IAM user or AWS
@@ -3131,8 +3125,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -3145,8 +3139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
-        pub fn deployment_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(signature.into());
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
@@ -3218,8 +3212,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3231,8 +3225,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID of an instance in the deployment group. </p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p> The unique ID of an instance in the deployment group. </p>
@@ -3301,8 +3295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3314,8 +3308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID of a deployment target. </p>
-        pub fn target_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_id(signature.into());
+        pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment target. </p>
@@ -3384,8 +3378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the on-premises instance about which to get information. </p>
-        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(signature.into());
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p> The name of the on-premises instance about which to get information. </p>
@@ -3458,8 +3452,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account. </p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p> The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -3491,8 +3485,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p> If not specified or set to null, the results are returned in an arbitrary order.
         /// </p>
-        pub fn sort_by(mut self, signature: crate::model::ApplicationRevisionSortBy) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::ApplicationRevisionSortBy) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The column name to use to sort the list results:</p>
@@ -3535,8 +3529,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If not specified, the results are sorted in ascending order.</p>
         /// <p>If set to null, the results are sorted in an arbitrary order.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p> The order in which to sort the list results: </p>
@@ -3561,8 +3555,8 @@ pub mod fluent_builders {
         }
         /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
         /// <p> If set to null, all of the user's buckets are searched. </p>
-        pub fn s3_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket(signature.into());
+        pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket(input.into());
             self
         }
         /// <p> An Amazon S3 bucket name to limit the search for revisions. </p>
@@ -3573,8 +3567,8 @@ pub mod fluent_builders {
         }
         /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
         /// </p>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p> A key prefix for the set of Amazon S3 objects to limit the search for revisions.
@@ -3604,8 +3598,8 @@ pub mod fluent_builders {
         /// <code>ignore</code>: List all revisions.</p>
         /// </li>
         /// </ul>
-        pub fn deployed(mut self, signature: crate::model::ListStateFilterAction) -> Self {
-            self.inner = self.inner.deployed(signature);
+        pub fn deployed(mut self, input: crate::model::ListStateFilterAction) -> Self {
+            self.inner = self.inner.deployed(input);
             self
         }
         /// <p> Whether to list revisions based on whether the revision is the target revision of a
@@ -3635,8 +3629,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
         /// It can be used to return the next set of applications in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous <code>ListApplicationRevisions</code> call.
@@ -3707,8 +3701,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous list applications call. It can be used to
         /// return the next set of applications in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous list applications call. It can be used to
@@ -3779,8 +3773,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
         /// can be used to return the next set of deployment configurations in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous <code>ListDeploymentConfigs</code> call. It
@@ -3852,8 +3846,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -3867,8 +3861,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous list deployment groups call. It can be used
         /// to return the next set of deployment groups in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous list deployment groups call. It can be used
@@ -3944,8 +3938,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -3958,8 +3952,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous list deployment instances call. It can be
         /// used to return the next set of deployment instances in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous list deployment instances call. It can be
@@ -4132,8 +4126,8 @@ pub mod fluent_builders {
         /// <code>deploymentGroupName</code> must be specified. If it is not specified, then
         /// <code>deploymentGroupName</code> must not be specified. </p>
         /// </note>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -4156,8 +4150,8 @@ pub mod fluent_builders {
         /// <code>applicationName</code> must be specified. If it is not specified, then
         /// <code>applicationName</code> must not be specified. </p>
         /// </note>
-        pub fn deployment_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_group_name(signature.into());
+        pub fn deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_group_name(input.into());
             self
         }
         /// <p>The name of a deployment group for the specified application.</p>
@@ -4175,8 +4169,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique ID of an external resource for returning deployments linked to the external
         /// resource.</p>
-        pub fn external_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.external_id(signature.into());
+        pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.external_id(input.into());
             self
         }
         /// <p>The unique ID of an external resource for returning deployments linked to the external
@@ -4263,8 +4257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
-        pub fn create_time_range(mut self, signature: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.create_time_range(signature);
+        pub fn create_time_range(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.create_time_range(input);
             self
         }
         /// <p>A time range (start and end) for returning a subset of the list of deployments.</p>
@@ -4277,8 +4271,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous list deployments call. It can be used to
         /// return the next set of deployments in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous list deployments call. It can be used to
@@ -4348,8 +4342,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -4362,8 +4356,8 @@ pub mod fluent_builders {
         }
         /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
         /// call. It can be used to return the next set of deployment targets in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A token identifier returned from the previous <code>ListDeploymentTargets</code>
@@ -4488,8 +4482,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
         /// call. It can be used to return the next set of names in the list. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous <code>ListGitHubAccountTokenNames</code>
@@ -4574,8 +4568,8 @@ pub mod fluent_builders {
         /// resulting list.</p>
         /// </li>
         /// </ul>
-        pub fn registration_status(mut self, signature: crate::model::RegistrationStatus) -> Self {
-            self.inner = self.inner.registration_status(signature);
+        pub fn registration_status(mut self, input: crate::model::RegistrationStatus) -> Self {
+            self.inner = self.inner.registration_status(input);
             self
         }
         /// <p>The registration status of the on-premises instances:</p>
@@ -4619,8 +4613,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous list on-premises instances call. It can be
         /// used to return the next set of on-premises instances in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous list on-premises instances call. It can be
@@ -4693,8 +4687,8 @@ pub mod fluent_builders {
         /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
         /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
@@ -4706,8 +4700,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
         /// be used to return the next set of applications in the list.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An identifier returned from the previous <code>ListTagsForResource</code> call. It can
@@ -4788,8 +4782,8 @@ pub mod fluent_builders {
         }
         /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
         /// deployment lifecycle event. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. Pass this ID to a Lambda function that validates a
@@ -4805,11 +4799,9 @@ pub mod fluent_builders {
         /// specified in the <code>hooks</code> section of the AppSpec file. </p>
         pub fn lifecycle_event_hook_execution_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .lifecycle_event_hook_execution_id(signature.into());
+            self.inner = self.inner.lifecycle_event_hook_execution_id(input.into());
             self
         }
         /// <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
@@ -4824,8 +4816,8 @@ pub mod fluent_builders {
         /// <p>The result of a Lambda function that validates a deployment lifecycle event.
         /// <code>Succeeded</code> and <code>Failed</code> are the only valid values for
         /// <code>status</code>.</p>
-        pub fn status(mut self, signature: crate::model::LifecycleEventStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::LifecycleEventStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The result of a Lambda function that validates a deployment lifecycle event.
@@ -4900,8 +4892,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
         /// account.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
@@ -4914,8 +4906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A comment about the revision.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A comment about the revision.</p>
@@ -4925,8 +4917,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about the application revision to register, including type and
         /// location.</p>
-        pub fn revision(mut self, signature: crate::model::RevisionLocation) -> Self {
-            self.inner = self.inner.revision(signature);
+        pub fn revision(mut self, input: crate::model::RevisionLocation) -> Self {
+            self.inner = self.inner.revision(input);
             self
         }
         /// <p>Information about the application revision to register, including type and
@@ -5003,8 +4995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the on-premises instance to register.</p>
-        pub fn instance_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_name(signature.into());
+        pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_name(input.into());
             self
         }
         /// <p>The name of the on-premises instance to register.</p>
@@ -5016,8 +5008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
-        pub fn iam_session_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_session_arn(signature.into());
+        pub fn iam_session_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_session_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM session to associate with the on-premises instance.</p>
@@ -5029,8 +5021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
-        pub fn iam_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_user_arn(signature.into());
+        pub fn iam_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_user_arn(input.into());
             self
         }
         /// <p>The ARN of the IAM user to associate with the on-premises instance.</p>
@@ -5197,8 +5189,8 @@ pub mod fluent_builders {
         }
         /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
         /// termination wait time. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a blue/green deployment for which you want to skip the instance
@@ -5271,8 +5263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of a deployment. </p>
-        pub fn deployment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_id(signature.into());
+        pub fn deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_id(input.into());
             self
         }
         /// <p> The unique ID of a deployment. </p>
@@ -5285,8 +5277,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
         /// should be rolled back to the previous version of the application revision. </p>
-        pub fn auto_rollback_enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_rollback_enabled(signature);
+        pub fn auto_rollback_enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_rollback_enabled(input);
             self
         }
         /// <p> Indicates, when a deployment is stopped, whether instances that have been updated
@@ -5357,8 +5349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The ARN of a resource, such as a CodeDeploy application or deployment group. </p>
@@ -5449,8 +5441,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
         /// tags with the keys in the <code>TagKeys</code> input parameter. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) that specifies from which resource to disassociate the
@@ -5541,8 +5533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current name of the application you want to change.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The current name of the application you want to change.</p>
@@ -5554,8 +5546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name to give the application.</p>
-        pub fn new_application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_application_name(signature.into());
+        pub fn new_application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_application_name(input.into());
             self
         }
         /// <p>The new name to give the application.</p>
@@ -5627,8 +5619,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application name that corresponds to the deployment group to update.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The application name that corresponds to the deployment group to update.</p>
@@ -5642,9 +5634,9 @@ pub mod fluent_builders {
         /// <p>The current name of the deployment group.</p>
         pub fn current_deployment_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.current_deployment_group_name(signature.into());
+            self.inner = self.inner.current_deployment_group_name(input.into());
             self
         }
         /// <p>The current name of the deployment group.</p>
@@ -5656,11 +5648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the deployment group, if you want to change it.</p>
-        pub fn new_deployment_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.new_deployment_group_name(signature.into());
+        pub fn new_deployment_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_deployment_group_name(input.into());
             self
         }
         /// <p>The new name of the deployment group, if you want to change it.</p>
@@ -5672,8 +5661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
-        pub fn deployment_config_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_config_name(signature.into());
+        pub fn deployment_config_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_config_name(input.into());
             self
         }
         /// <p>The replacement deployment configuration name to use, if you want to change it.</p>
@@ -5748,8 +5737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A replacement ARN for the service role, if you want to change it.</p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>A replacement ARN for the service role, if you want to change it.</p>
@@ -5785,8 +5774,8 @@ pub mod fluent_builders {
         }
         /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
         /// is updated.</p>
-        pub fn alarm_configuration(mut self, signature: crate::model::AlarmConfiguration) -> Self {
-            self.inner = self.inner.alarm_configuration(signature);
+        pub fn alarm_configuration(mut self, input: crate::model::AlarmConfiguration) -> Self {
+            self.inner = self.inner.alarm_configuration(input);
             self
         }
         /// <p>Information to add or change about Amazon CloudWatch alarms when the deployment group
@@ -5802,9 +5791,9 @@ pub mod fluent_builders {
         /// deployment group is updated.</p>
         pub fn auto_rollback_configuration(
             mut self,
-            signature: crate::model::AutoRollbackConfiguration,
+            input: crate::model::AutoRollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.auto_rollback_configuration(signature);
+            self.inner = self.inner.auto_rollback_configuration(input);
             self
         }
         /// <p>Information for an automatic rollback configuration that is added or changed when a
@@ -5826,9 +5815,9 @@ pub mod fluent_builders {
         /// different revisions.</p>
         pub fn outdated_instances_strategy(
             mut self,
-            signature: crate::model::OutdatedInstancesStrategy,
+            input: crate::model::OutdatedInstancesStrategy,
         ) -> Self {
-            self.inner = self.inner.outdated_instances_strategy(signature);
+            self.inner = self.inner.outdated_instances_strategy(input);
             self
         }
         /// <p>Indicates what happens when new EC2 instances are launched mid-deployment and do not
@@ -5848,8 +5837,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about the type of deployment, either in-place or blue/green, you want to
         /// run and whether to route deployment traffic behind a load balancer.</p>
-        pub fn deployment_style(mut self, signature: crate::model::DeploymentStyle) -> Self {
-            self.inner = self.inner.deployment_style(signature);
+        pub fn deployment_style(mut self, input: crate::model::DeploymentStyle) -> Self {
+            self.inner = self.inner.deployment_style(input);
             self
         }
         /// <p>Information about the type of deployment, either in-place or blue/green, you want to
@@ -5864,9 +5853,9 @@ pub mod fluent_builders {
         /// <p>Information about blue/green deployment options for a deployment group.</p>
         pub fn blue_green_deployment_configuration(
             mut self,
-            signature: crate::model::BlueGreenDeploymentConfiguration,
+            input: crate::model::BlueGreenDeploymentConfiguration,
         ) -> Self {
-            self.inner = self.inner.blue_green_deployment_configuration(signature);
+            self.inner = self.inner.blue_green_deployment_configuration(input);
             self
         }
         /// <p>Information about blue/green deployment options for a deployment group.</p>
@@ -5878,8 +5867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
-        pub fn load_balancer_info(mut self, signature: crate::model::LoadBalancerInfo) -> Self {
-            self.inner = self.inner.load_balancer_info(signature);
+        pub fn load_balancer_info(mut self, input: crate::model::LoadBalancerInfo) -> Self {
+            self.inner = self.inner.load_balancer_info(input);
             self
         }
         /// <p>Information about the load balancer used in a deployment.</p>
@@ -5892,8 +5881,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about groups of tags applied to on-premises instances. The deployment
         /// group includes only EC2 instances identified by all the tag groups.</p>
-        pub fn ec2_tag_set(mut self, signature: crate::model::Ec2TagSet) -> Self {
-            self.inner = self.inner.ec2_tag_set(signature);
+        pub fn ec2_tag_set(mut self, input: crate::model::Ec2TagSet) -> Self {
+            self.inner = self.inner.ec2_tag_set(input);
             self
         }
         /// <p>Information about groups of tags applied to on-premises instances. The deployment
@@ -5930,8 +5919,8 @@ pub mod fluent_builders {
         }
         /// <p>Information about an on-premises instance tag set. The deployment group includes only
         /// on-premises instances identified by all the tag groups.</p>
-        pub fn on_premises_tag_set(mut self, signature: crate::model::OnPremisesTagSet) -> Self {
-            self.inner = self.inner.on_premises_tag_set(signature);
+        pub fn on_premises_tag_set(mut self, input: crate::model::OnPremisesTagSet) -> Self {
+            self.inner = self.inner.on_premises_tag_set(input);
             self
         }
         /// <p>Information about an on-premises instance tag set. The deployment group includes only

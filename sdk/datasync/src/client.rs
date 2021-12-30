@@ -435,8 +435,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
-        pub fn task_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_execution_arn(signature.into());
+        pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task execution to cancel.</p>
@@ -533,8 +533,8 @@ pub mod fluent_builders {
         /// <p>For more information, see Activating an Agent in the <i>DataSync
         /// User Guide.</i>
         /// </p>
-        pub fn activation_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.activation_key(signature.into());
+        pub fn activation_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.activation_key(input.into());
             self
         }
         /// <p>Your agent activation key. You can get the activation key either by sending an HTTP GET
@@ -558,8 +558,8 @@ pub mod fluent_builders {
         }
         /// <p>The name you configured for your agent. This value is a text reference that is used to
         /// identify the agent in the console.</p>
-        pub fn agent_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_name(signature.into());
+        pub fn agent_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_name(input.into());
             self
         }
         /// <p>The name you configured for your agent. This value is a text reference that is used to
@@ -601,8 +601,8 @@ pub mod fluent_builders {
         /// the client-side VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC
         /// endpoint, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
         /// <p>VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.</p>
-        pub fn vpc_endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_endpoint_id(signature.into());
+        pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_endpoint_id(input.into());
             self
         }
         /// <p>The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is
@@ -728,8 +728,8 @@ pub mod fluent_builders {
         /// <code>Subdirectory</code> must be specified with forward slashes. For example,
         /// <code>/path/to/folder</code>.</p>
         /// </note>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory in the location’s path. This subdirectory in the EFS file system is used
@@ -745,8 +745,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon EFS file system.</p>
-        pub fn efs_filesystem_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.efs_filesystem_arn(signature.into());
+        pub fn efs_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.efs_filesystem_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the Amazon EFS file system.</p>
@@ -781,8 +781,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn ec2_config(mut self, signature: crate::model::Ec2Config) -> Self {
-            self.inner = self.inner.ec2_config(signature);
+        pub fn ec2_config(mut self, input: crate::model::Ec2Config) -> Self {
+            self.inner = self.inner.ec2_config(input);
             self
         }
         /// <p>The subnet and security group that the Amazon EFS file system uses. The security group
@@ -900,8 +900,8 @@ pub mod fluent_builders {
         /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
         /// File Server file system is used to read data from the Amazon FSx for Windows File Server
         /// source location or write data to the FSx for Windows File Server destination.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory in the location’s path. This subdirectory in the Amazon FSx for Windows
@@ -912,8 +912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
-        pub fn fsx_filesystem_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.fsx_filesystem_arn(signature.into());
+        pub fn fsx_filesystem_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.fsx_filesystem_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the FSx for Windows File Server file system.</p>
@@ -968,8 +968,8 @@ pub mod fluent_builders {
         /// Server file system.</p>
         /// <p>For information about choosing a user name that ensures sufficient permissions to files,
         /// folders, and metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.</p>
-        pub fn user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user(signature.into());
+        pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user(input.into());
             self
         }
         /// <p>The user who has the permissions to access files and folders in the FSx for Windows File
@@ -981,8 +981,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
@@ -992,8 +992,8 @@ pub mod fluent_builders {
         }
         /// <p>The password of the user who has the permissions to access files and folders in the FSx
         /// for Windows File Server file system.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user who has the permissions to access files and folders in the FSx
@@ -1065,8 +1065,8 @@ pub mod fluent_builders {
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
         /// data to the HDFS cluster. If the subdirectory isn't specified, it will default to
         /// <code>/</code>.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
@@ -1099,8 +1099,8 @@ pub mod fluent_builders {
         }
         /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
         /// of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
-        pub fn block_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.block_size(signature);
+        pub fn block_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_size(input);
             self
         }
         /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple
@@ -1111,8 +1111,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
         /// default, data is replicated to three DataNodes.</p>
-        pub fn replication_factor(mut self, signature: i32) -> Self {
-            self.inner = self.inner.replication_factor(signature);
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.replication_factor(input);
             self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. By
@@ -1122,8 +1122,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-        pub fn kms_key_provider_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_provider_uri(signature.into());
+        pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_provider_uri(input.into());
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
@@ -1140,8 +1140,8 @@ pub mod fluent_builders {
         /// <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
         /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
         /// assumes the same value. </p>
-        pub fn qop_configuration(mut self, signature: crate::model::QopConfiguration) -> Self {
-            self.inner = self.inner.qop_configuration(signature);
+        pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
+            self.inner = self.inner.qop_configuration(input);
             self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
@@ -1158,11 +1158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
-        pub fn authentication_type(
-            mut self,
-            signature: crate::model::HdfsAuthenticationType,
-        ) -> Self {
-            self.inner = self.inner.authentication_type(signature);
+        pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
@@ -1178,8 +1175,8 @@ pub mod fluent_builders {
         /// <p>If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
         /// is required. </p>
         /// </note>
-        pub fn simple_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simple_user(signature.into());
+        pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.simple_user(input.into());
             self
         }
         /// <p>The user name used to identify the client on the host operating system. </p>
@@ -1196,8 +1193,8 @@ pub mod fluent_builders {
         /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
         /// parameter is required.</p>
         /// </note>
-        pub fn kerberos_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kerberos_principal(signature.into());
+        pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kerberos_principal(input.into());
             self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
@@ -1220,8 +1217,8 @@ pub mod fluent_builders {
         /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
         /// parameter is required. </p>
         /// </note>
-        pub fn kerberos_keytab(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.kerberos_keytab(signature);
+        pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_keytab(input);
             self
         }
         /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
@@ -1247,8 +1244,8 @@ pub mod fluent_builders {
         /// <p>If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this
         /// parameter is required.</p>
         /// </note>
-        pub fn kerberos_krb5_conf(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.kerberos_krb5_conf(signature);
+        pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_krb5_conf(input);
             self
         }
         /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
@@ -1383,8 +1380,8 @@ pub mod fluent_builders {
         ///
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
         /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
@@ -1417,8 +1414,8 @@ pub mod fluent_builders {
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4)
         /// address.</p>
         /// </note>
-        pub fn server_hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_hostname(signature.into());
+        pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_hostname(input.into());
             self
         }
         /// <p>The name of the NFS server. This value is the IP address or Domain Name Service (DNS)
@@ -1439,8 +1436,8 @@ pub mod fluent_builders {
         /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to
         /// an NFS server. </p>
         /// <p>If you are copying data to or from your Snowcone device, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server on Snowcone</a> for more information.</p>
-        pub fn on_prem_config(mut self, signature: crate::model::OnPremConfig) -> Self {
-            self.inner = self.inner.on_prem_config(signature);
+        pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
+            self.inner = self.inner.on_prem_config(input);
             self
         }
         /// <p>Contains a list of Amazon Resource Names (ARNs) of agents that are used to connect to
@@ -1454,8 +1451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
-        pub fn mount_options(mut self, signature: crate::model::NfsMountOptions) -> Self {
-            self.inner = self.inner.mount_options(signature);
+        pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
+            self.inner = self.inner.mount_options(input);
             self
         }
         /// <p>The NFS mount options that DataSync can use to mount your NFS share.</p>
@@ -1549,8 +1546,8 @@ pub mod fluent_builders {
         /// <p>The name of the self-managed object storage server. This value is the
         /// IP address or Domain Name Service (DNS) name of the object storage server.
         /// An agent uses this host name to mount the object storage server in a network. </p>
-        pub fn server_hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_hostname(signature.into());
+        pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_hostname(input.into());
             self
         }
         /// <p>The name of the self-managed object storage server. This value is the
@@ -1566,8 +1563,8 @@ pub mod fluent_builders {
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
         /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
         /// specify a custom port if your self-managed object storage server requires one.</p>
-        pub fn server_port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.server_port(signature);
+        pub fn server_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.server_port(input);
             self
         }
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
@@ -1579,11 +1576,8 @@ pub mod fluent_builders {
         }
         /// <p>The protocol that the object storage server uses to communicate.
         /// Valid values are HTTP or HTTPS.</p>
-        pub fn server_protocol(
-            mut self,
-            signature: crate::model::ObjectStorageServerProtocol,
-        ) -> Self {
-            self.inner = self.inner.server_protocol(signature);
+        pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
+            self.inner = self.inner.server_protocol(input);
             self
         }
         /// <p>The protocol that the object storage server uses to communicate.
@@ -1597,8 +1591,8 @@ pub mod fluent_builders {
         }
         /// <p>The subdirectory in the self-managed object storage server that is used
         /// to read data from.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the self-managed object storage server that is used
@@ -1609,8 +1603,8 @@ pub mod fluent_builders {
         }
         /// <p>The bucket on the self-managed object storage server that is used
         /// to read data from.</p>
-        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(signature.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The bucket on the self-managed object storage server that is used
@@ -1623,8 +1617,8 @@ pub mod fluent_builders {
         /// object storage server. If your object storage requires a user name and password to
         /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
         /// and password, respectively.</p>
-        pub fn access_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key(signature.into());
+        pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key(input.into());
             self
         }
         /// <p>Optional. The access key is used if credentials are required to access the self-managed
@@ -1639,8 +1633,8 @@ pub mod fluent_builders {
         /// object storage server. If your object storage requires a user name and password to
         /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
         /// and password, respectively.</p>
-        pub fn secret_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_key(signature.into());
+        pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_key(input.into());
             self
         }
         /// <p>Optional. The secret key is used if credentials are required to access the self-managed
@@ -1757,8 +1751,8 @@ pub mod fluent_builders {
         }
         /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read
         /// data from the S3 source location or write data to the S3 destination.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read
@@ -1769,8 +1763,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
         /// access point ARN.</p>
-        pub fn s3_bucket_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_bucket_arn(signature.into());
+        pub fn s3_bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_bucket_arn(input.into());
             self
         }
         /// <p>The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
@@ -1788,8 +1782,8 @@ pub mod fluent_builders {
         ///
         /// <p>For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have behaviors that
         /// can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with S3 storage classes in DataSync</a>.</p>
-        pub fn s3_storage_class(mut self, signature: crate::model::S3StorageClass) -> Self {
-            self.inner = self.inner.s3_storage_class(signature);
+        pub fn s3_storage_class(mut self, input: crate::model::S3StorageClass) -> Self {
+            self.inner = self.inner.s3_storage_class(input);
             self
         }
         /// <p>The Amazon S3 storage class that you want to store your files in when this location is
@@ -1810,8 +1804,8 @@ pub mod fluent_builders {
         ///
         /// <p>For detailed information about using such a role, see Creating a Location for
         /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
-        pub fn s3_config(mut self, signature: crate::model::S3Config) -> Self {
-            self.inner = self.inner.s3_config(signature);
+        pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
+            self.inner = self.inner.s3_config(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
@@ -1941,8 +1935,8 @@ pub mod fluent_builders {
         /// DataSync to access, or use credentials of a member of the Backup Operators group to mount
         /// the share. Doing either enables the agent to access the data. For the agent to access
         /// directories, you must additionally enable all execute access.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
@@ -1972,8 +1966,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.</p>
         /// </note>
-        pub fn server_hostname(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_hostname(signature.into());
+        pub fn server_hostname(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_hostname(input.into());
             self
         }
         /// <p>The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name
@@ -1994,8 +1988,8 @@ pub mod fluent_builders {
         ///
         /// <p>For information about choosing a user name that ensures sufficient permissions to files,
         /// folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
-        pub fn user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user(signature.into());
+        pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user(input.into());
             self
         }
         /// <p>The user who can mount the share, has the permissions to access files and folders in the
@@ -2008,8 +2002,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
@@ -2019,8 +2013,8 @@ pub mod fluent_builders {
         }
         /// <p>The password of the user who can mount the share, has the permissions to access files and
         /// folders in the SMB share.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user who can mount the share, has the permissions to access files and
@@ -2049,8 +2043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mount options used by DataSync to access the SMB server.</p>
-        pub fn mount_options(mut self, signature: crate::model::SmbMountOptions) -> Self {
-            self.inner = self.inner.mount_options(signature);
+        pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
+            self.inner = self.inner.mount_options(input);
             self
         }
         /// <p>The mount options used by DataSync to access the SMB server.</p>
@@ -2159,8 +2153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
-        pub fn source_location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_location_arn(signature.into());
+        pub fn source_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source location for the task.</p>
@@ -2172,11 +2166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
-        pub fn destination_location_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.destination_location_arn(signature.into());
+        pub fn destination_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location. </p>
@@ -2189,11 +2180,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
         /// monitor and log events in the task. </p>
-        pub fn cloud_watch_log_group_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cloud_watch_log_group_arn(signature.into());
+        pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_log_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
@@ -2207,8 +2195,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of a task. This value is a text reference that is used to identify the task in
         /// the console. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a task. This value is a text reference that is used to identify the task in
@@ -2224,8 +2212,8 @@ pub mod fluent_builders {
         /// <p>For each individual task execution, you can override these options by specifying the
         /// <code>OverrideOptions</code> before starting the task execution. For more information, see
         /// the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a> operation. </p>
-        pub fn options(mut self, signature: crate::model::Options) -> Self {
-            self.inner = self.inner.options(signature);
+        pub fn options(mut self, input: crate::model::Options) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>The set of configuration options that control the behavior of a single execution of the
@@ -2266,8 +2254,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
         /// location. The schedule should be specified in UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-        pub fn schedule(mut self, signature: crate::model::TaskSchedule) -> Self {
-            self.inner = self.inner.schedule(signature);
+        pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
+            self.inner = self.inner.schedule(input);
             self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
@@ -2384,8 +2372,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
         /// operation to return a list of agents for your account and Amazon Web Services Region.</p>
-        pub fn agent_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_arn(signature.into());
+        pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
@@ -2455,8 +2443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the location to delete.</p>
@@ -2525,8 +2513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task to delete.</p>
@@ -2597,8 +2585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
-        pub fn agent_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_arn(signature.into());
+        pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to describe.</p>
@@ -2667,8 +2655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the EFS location to describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the EFS location to describe.</p>
@@ -2739,8 +2727,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
         /// describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
@@ -2811,8 +2799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the HDFS cluster location to describe.</p>
@@ -2881,8 +2869,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to describe.</p>
@@ -2952,8 +2940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location that was described.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location that was described.</p>
@@ -3022,8 +3010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket location to describe.</p>
@@ -3092,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to describe.</p>
@@ -3162,8 +3150,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
@@ -3232,8 +3220,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
-        pub fn task_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_execution_arn(signature.into());
+        pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task that is being executed.</p>
@@ -3312,8 +3300,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of agents to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of agents to list.</p>
@@ -3323,8 +3311,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
         /// agents.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
@@ -3397,8 +3385,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of locations to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of locations to return.</p>
@@ -3408,8 +3396,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
         /// locations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
@@ -3500,8 +3488,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags to list.</p>
@@ -3510,8 +3498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of locations to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of locations to return.</p>
@@ -3521,8 +3509,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
         /// locations.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
@@ -3592,8 +3580,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task whose tasks you want to list.</p>
@@ -3602,8 +3590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of executed tasks to list.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of executed tasks to list.</p>
@@ -3613,8 +3601,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of the
         /// executed tasks.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of the
@@ -3684,8 +3672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of tasks to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of tasks to return.</p>
@@ -3695,8 +3683,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
         /// tasks.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque string that indicates the position at which to begin the next list of
@@ -3797,8 +3785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the task to start.</p>
@@ -3816,8 +3804,8 @@ pub mod fluent_builders {
         /// the default value is used. You can override the
         /// defaults options on each task execution by specifying an overriding <code>Options</code> value
         /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-        pub fn override_options(mut self, signature: crate::model::Options) -> Self {
-            self.inner = self.inner.override_options(signature);
+        pub fn override_options(mut self, input: crate::model::Options) -> Self {
+            self.inner = self.inner.override_options(input);
             self
         }
         /// <p>Represents the options that are available to control the behavior of a
@@ -3948,8 +3936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply the tag to.</p>
@@ -4035,8 +4023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to remove the tag from.</p>
@@ -4122,8 +4110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
-        pub fn agent_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.agent_arn(signature.into());
+        pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the agent to update.</p>
@@ -4132,8 +4120,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you want to use to configure the agent.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to use to configure the agent.</p>
@@ -4203,8 +4191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the source HDFS cluster location.</p>
@@ -4214,8 +4202,8 @@ pub mod fluent_builders {
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
         /// data to the HDFS cluster.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write
@@ -4246,8 +4234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
-        pub fn block_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.block_size(signature);
+        pub fn block_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.block_size(input);
             self
         }
         /// <p>The size of the data blocks to write into the HDFS cluster. </p>
@@ -4256,8 +4244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
-        pub fn replication_factor(mut self, signature: i32) -> Self {
-            self.inner = self.inner.replication_factor(signature);
+        pub fn replication_factor(mut self, input: i32) -> Self {
+            self.inner = self.inner.replication_factor(input);
             self
         }
         /// <p>The number of DataNodes to replicate the data to when writing to the HDFS cluster. </p>
@@ -4266,8 +4254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
-        pub fn kms_key_provider_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_provider_uri(signature.into());
+        pub fn kms_key_provider_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_provider_uri(input.into());
             self
         }
         /// <p>The URI of the HDFS cluster's Key Management Server (KMS). </p>
@@ -4281,8 +4269,8 @@ pub mod fluent_builders {
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
         /// and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS)
         /// cluster. </p>
-        pub fn qop_configuration(mut self, signature: crate::model::QopConfiguration) -> Self {
-            self.inner = self.inner.qop_configuration(signature);
+        pub fn qop_configuration(mut self, input: crate::model::QopConfiguration) -> Self {
+            self.inner = self.inner.qop_configuration(input);
             self
         }
         /// <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC)
@@ -4296,11 +4284,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
-        pub fn authentication_type(
-            mut self,
-            signature: crate::model::HdfsAuthenticationType,
-        ) -> Self {
-            self.inner = self.inner.authentication_type(signature);
+        pub fn authentication_type(mut self, input: crate::model::HdfsAuthenticationType) -> Self {
+            self.inner = self.inner.authentication_type(input);
             self
         }
         /// <p>The type of authentication used to determine the identity of the user. </p>
@@ -4312,8 +4297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name used to identify the client on the host operating system.</p>
-        pub fn simple_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.simple_user(signature.into());
+        pub fn simple_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.simple_user(input.into());
             self
         }
         /// <p>The user name used to identify the client on the host operating system.</p>
@@ -4322,8 +4307,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
-        pub fn kerberos_principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kerberos_principal(signature.into());
+        pub fn kerberos_principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kerberos_principal(input.into());
             self
         }
         /// <p>The Kerberos principal with access to the files and folders on the HDFS cluster. </p>
@@ -4338,8 +4323,8 @@ pub mod fluent_builders {
         /// principal and the encrypted keys. You can load the keytab from a file by providing the file's
         /// address. If you use the AWS CLI, it performs base64 encoding for you. Otherwise, provide the
         /// base64-encoded text.</p>
-        pub fn kerberos_keytab(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.kerberos_keytab(signature);
+        pub fn kerberos_keytab(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_keytab(input);
             self
         }
         /// <p>The Kerberos key table (keytab) that contains mappings between the defined Kerberos
@@ -4357,8 +4342,8 @@ pub mod fluent_builders {
         /// can load the <code>krb5.conf</code> file by providing the file's address. If you're using the
         /// AWS CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
         /// text.</p>
-        pub fn kerberos_krb5_conf(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.kerberos_krb5_conf(signature);
+        pub fn kerberos_krb5_conf(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.kerberos_krb5_conf(input);
             self
         }
         /// <p>The <code>krb5.conf</code> file that contains the Kerberos configuration information. You
@@ -4451,8 +4436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the NFS location to update.</p>
@@ -4479,8 +4464,8 @@ pub mod fluent_builders {
         ///
         /// <p>For information about NFS export configuration, see 18.7. The /etc/exports
         /// Configuration File in the Red Hat Enterprise Linux documentation.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the NFS file system that is used to read data from the NFS source
@@ -4508,8 +4493,8 @@ pub mod fluent_builders {
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
         /// location.</p>
-        pub fn on_prem_config(mut self, signature: crate::model::OnPremConfig) -> Self {
-            self.inner = self.inner.on_prem_config(signature);
+        pub fn on_prem_config(mut self, input: crate::model::OnPremConfig) -> Self {
+            self.inner = self.inner.on_prem_config(input);
             self
         }
         /// <p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS)
@@ -4523,8 +4508,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the mount options that are available for DataSync to access an NFS
         /// location.</p>
-        pub fn mount_options(mut self, signature: crate::model::NfsMountOptions) -> Self {
-            self.inner = self.inner.mount_options(signature);
+        pub fn mount_options(mut self, input: crate::model::NfsMountOptions) -> Self {
+            self.inner = self.inner.mount_options(input);
             self
         }
         /// <p>Represents the mount options that are available for DataSync to access an NFS
@@ -4599,8 +4584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the self-managed object storage server location to be updated.</p>
@@ -4611,8 +4596,8 @@ pub mod fluent_builders {
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
         /// The server port is set by default to TCP 80 (HTTP) or TCP 443 (HTTPS). You can
         /// specify a custom port if your self-managed object storage server requires one.</p>
-        pub fn server_port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.server_port(signature);
+        pub fn server_port(mut self, input: i32) -> Self {
+            self.inner = self.inner.server_port(input);
             self
         }
         /// <p>The port that your self-managed object storage server accepts inbound network traffic on.
@@ -4624,11 +4609,8 @@ pub mod fluent_builders {
         }
         /// <p>The protocol that the object storage server uses to communicate. Valid values are
         /// <code>HTTP</code> or <code>HTTPS</code>.</p>
-        pub fn server_protocol(
-            mut self,
-            signature: crate::model::ObjectStorageServerProtocol,
-        ) -> Self {
-            self.inner = self.inner.server_protocol(signature);
+        pub fn server_protocol(mut self, input: crate::model::ObjectStorageServerProtocol) -> Self {
+            self.inner = self.inner.server_protocol(input);
             self
         }
         /// <p>The protocol that the object storage server uses to communicate. Valid values are
@@ -4642,8 +4624,8 @@ pub mod fluent_builders {
         }
         /// <p>The subdirectory in the self-managed object storage server that is used
         /// to read data from.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the self-managed object storage server that is used
@@ -4656,8 +4638,8 @@ pub mod fluent_builders {
         /// object storage server. If your object storage requires a user name and password to
         /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
         /// and password, respectively.</p>
-        pub fn access_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_key(signature.into());
+        pub fn access_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key(input.into());
             self
         }
         /// <p>Optional. The access key is used if credentials are required to access the self-managed
@@ -4672,8 +4654,8 @@ pub mod fluent_builders {
         /// object storage server. If your object storage requires a user name and password to
         /// authenticate, use <code>AccessKey</code> and <code>SecretKey</code> to provide the user name
         /// and password, respectively.</p>
-        pub fn secret_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_key(signature.into());
+        pub fn secret_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_key(input.into());
             self
         }
         /// <p>Optional. The secret key is used if credentials are required to access the self-managed
@@ -4766,8 +4748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
-        pub fn location_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_arn(signature.into());
+        pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SMB location to update.</p>
@@ -4800,8 +4782,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Doing either of these options enables the agent to access the data. For the agent to
         /// access directories, you must also enable all execute access.</p>
-        pub fn subdirectory(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subdirectory(signature.into());
+        pub fn subdirectory(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subdirectory(input.into());
             self
         }
         /// <p>The subdirectory in the SMB file system that is used to read data from the SMB source
@@ -4835,8 +4817,8 @@ pub mod fluent_builders {
         }
         /// <p>The user who can mount the share has the permissions to access files and folders in the
         /// SMB share.</p>
-        pub fn user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user(signature.into());
+        pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user(input.into());
             self
         }
         /// <p>The user who can mount the share has the permissions to access files and folders in the
@@ -4846,8 +4828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
-        pub fn domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain(signature.into());
+        pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain(input.into());
             self
         }
         /// <p>The name of the Windows domain that the SMB server belongs to.</p>
@@ -4857,8 +4839,8 @@ pub mod fluent_builders {
         }
         /// <p>The password of the user who can mount the share has the permissions to access files and
         /// folders in the SMB share.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of the user who can mount the share has the permissions to access files and
@@ -4888,8 +4870,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the mount options that are available for DataSync to access an SMB
         /// location.</p>
-        pub fn mount_options(mut self, signature: crate::model::SmbMountOptions) -> Self {
-            self.inner = self.inner.mount_options(signature);
+        pub fn mount_options(mut self, input: crate::model::SmbMountOptions) -> Self {
+            self.inner = self.inner.mount_options(input);
             self
         }
         /// <p>Represents the mount options that are available for DataSync to access an SMB
@@ -4962,8 +4944,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
-        pub fn task_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_arn(signature.into());
+        pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the task to update.</p>
@@ -4981,8 +4963,8 @@ pub mod fluent_builders {
         /// the default value is used. You can override the
         /// defaults options on each task execution by specifying an overriding <code>Options</code> value
         /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-        pub fn options(mut self, signature: crate::model::Options) -> Self {
-            self.inner = self.inner.options(signature);
+        pub fn options(mut self, input: crate::model::Options) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>Represents the options that are available to control the behavior of a
@@ -5028,8 +5010,8 @@ pub mod fluent_builders {
         /// location. You can configure your task to execute hourly, daily, weekly or on specific days of
         /// the week. You control when in the day or hour you want the task to execute. The time you
         /// specify is UTC time. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.</p>
-        pub fn schedule(mut self, signature: crate::model::TaskSchedule) -> Self {
-            self.inner = self.inner.schedule(signature);
+        pub fn schedule(mut self, input: crate::model::TaskSchedule) -> Self {
+            self.inner = self.inner.schedule(input);
             self
         }
         /// <p>Specifies a schedule used to periodically transfer files from a source to a destination
@@ -5044,8 +5026,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the task to update.</p>
@@ -5055,11 +5037,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
         /// group.</p>
-        pub fn cloud_watch_log_group_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cloud_watch_log_group_arn(signature.into());
+        pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cloud_watch_log_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource name of the Amazon CloudWatch log
@@ -5162,8 +5141,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
-        pub fn task_execution_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.task_execution_arn(signature.into());
+        pub fn task_execution_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.task_execution_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the specific task execution that is being updated. </p>
@@ -5184,8 +5163,8 @@ pub mod fluent_builders {
         /// the default value is used. You can override the
         /// defaults options on each task execution by specifying an overriding <code>Options</code> value
         /// to <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.</p>
-        pub fn options(mut self, signature: crate::model::Options) -> Self {
-            self.inner = self.inner.options(signature);
+        pub fn options(mut self, input: crate::model::Options) -> Self {
+            self.inner = self.inner.options(input);
             self
         }
         /// <p>Represents the options that are available to control the behavior of a

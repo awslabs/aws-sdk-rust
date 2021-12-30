@@ -175,11 +175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which of the alternate contacts to delete. </p>
-        pub fn alternate_contact_type(
-            mut self,
-            signature: crate::model::AlternateContactType,
-        ) -> Self {
-            self.inner = self.inner.alternate_contact_type(signature);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which of the alternate contacts to delete. </p>
@@ -208,8 +205,8 @@ pub mod fluent_builders {
         /// <p>To call this operation on an account that is not a member of an organization, then
         /// don't specify this parameter, and call the operation using an identity belonging to
         /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
@@ -297,11 +294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies which alternate contact you want to retrieve.</p>
-        pub fn alternate_contact_type(
-            mut self,
-            signature: crate::model::AlternateContactType,
-        ) -> Self {
-            self.inner = self.inner.alternate_contact_type(signature);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which alternate contact you want to retrieve.</p>
@@ -330,8 +324,8 @@ pub mod fluent_builders {
         /// <p>To call this operation on an account that is not a member of an organization, then
         /// don't specify this parameter, and call the operation using an identity belonging to
         /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
@@ -419,8 +413,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies a name for the alternate contact.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies a name for the alternate contact.</p>
@@ -429,8 +423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a title for the alternate contact.</p>
-        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(signature.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>Specifies a title for the alternate contact.</p>
@@ -439,8 +433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies an email address for the alternate contact. </p>
-        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(signature.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>Specifies an email address for the alternate contact. </p>
@@ -452,8 +446,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a phone number for the alternate contact.</p>
-        pub fn phone_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.phone_number(signature.into());
+        pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.phone_number(input.into());
             self
         }
         /// <p>Specifies a phone number for the alternate contact.</p>
@@ -462,11 +456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies which alternate contact you want to create or update.</p>
-        pub fn alternate_contact_type(
-            mut self,
-            signature: crate::model::AlternateContactType,
-        ) -> Self {
-            self.inner = self.inner.alternate_contact_type(signature);
+        pub fn alternate_contact_type(mut self, input: crate::model::AlternateContactType) -> Self {
+            self.inner = self.inner.alternate_contact_type(input);
             self
         }
         /// <p>Specifies which alternate contact you want to create or update.</p>
@@ -495,8 +486,8 @@ pub mod fluent_builders {
         /// <p>To call this operation on an account that is not a member of an organization, then
         /// don't specify this parameter, and call the operation using an identity belonging to
         /// the account whose contacts you wish to retrieve or modify.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that

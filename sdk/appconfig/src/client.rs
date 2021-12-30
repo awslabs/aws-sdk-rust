@@ -403,8 +403,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the application.</p>
@@ -413,8 +413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the application.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the application.</p>
@@ -531,8 +531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -544,8 +544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the configuration profile.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the configuration profile.</p>
@@ -554,8 +554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the configuration profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the configuration profile.</p>
@@ -574,8 +574,8 @@ pub mod fluent_builders {
         /// </code>. Here is an example:
         /// <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
         /// </p>
-        pub fn location_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.location_uri(signature.into());
+        pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.location_uri(input.into());
             self
         }
         /// <p>A URI to locate the configuration. You can specify the AppConfig hosted configuration
@@ -600,8 +600,8 @@ pub mod fluent_builders {
         /// hosted configuration store. It is required for all other sources that store your
         /// configuration. </p>
         /// </important>
-        pub fn retrieval_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.retrieval_role_arn(signature.into());
+        pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.retrieval_role_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
@@ -665,8 +665,8 @@ pub mod fluent_builders {
         /// <p>The type of configurations that the configuration profile contains. A configuration can
         /// be a feature flag used for enabling or disabling new features or a free-form configuration
         /// used for distributing configurations to your application.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of configurations that the configuration profile contains. A configuration can
@@ -740,8 +740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the deployment strategy.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the deployment strategy.</p>
@@ -750,8 +750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the deployment strategy.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the deployment strategy.</p>
@@ -760,8 +760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Total amount of time for a deployment to last.</p>
-        pub fn deployment_duration_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.deployment_duration_in_minutes(signature);
+        pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.deployment_duration_in_minutes(input);
             self
         }
         /// <p>Total amount of time for a deployment to last.</p>
@@ -774,8 +774,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
         /// complete and no longer eligible for automatic roll back.</p>
-        pub fn final_bake_time_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.final_bake_time_in_minutes(signature);
+        pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.final_bake_time_in_minutes(input);
             self
         }
         /// <p>The amount of time AppConfig monitors for alarms before considering the deployment to be
@@ -786,8 +786,8 @@ pub mod fluent_builders {
         }
         /// <p>The percentage of targets to receive a deployed configuration during each
         /// interval.</p>
-        pub fn growth_factor(mut self, signature: f32) -> Self {
-            self.inner = self.inner.growth_factor(signature);
+        pub fn growth_factor(mut self, input: f32) -> Self {
+            self.inner = self.inner.growth_factor(input);
             self
         }
         /// <p>The percentage of targets to receive a deployed configuration during each
@@ -826,8 +826,8 @@ pub mod fluent_builders {
         /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
         /// targets, 8% of the targets, and continues until the configuration has been deployed to all
         /// targets.</p>
-        pub fn growth_type(mut self, signature: crate::model::GrowthType) -> Self {
-            self.inner = self.inner.growth_type(signature);
+        pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
+            self.inner = self.inner.growth_type(input);
             self
         }
         /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
@@ -868,8 +868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-        pub fn replicate_to(mut self, signature: crate::model::ReplicateTo) -> Self {
-            self.inner = self.inner.replicate_to(signature);
+        pub fn replicate_to(mut self, input: crate::model::ReplicateTo) -> Self {
+            self.inner = self.inner.replicate_to(input);
             self
         }
         /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -988,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A name for the environment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for the environment.</p>
@@ -998,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment.</p>
@@ -1112,8 +1112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -1125,11 +1125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -1141,8 +1138,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the configuration.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the configuration.</p>
@@ -1151,8 +1148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the configuration or the configuration data.</p>
-        pub fn content(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.content(signature);
+        pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.content(input);
             self
         }
         /// <p>The content of the configuration or the configuration data.</p>
@@ -1162,8 +1159,8 @@ pub mod fluent_builders {
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
         /// information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-        pub fn content_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content_type(signature.into());
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content_type(input.into());
             self
         }
         /// <p>A standard MIME type describing the format of the configuration content. For more
@@ -1176,8 +1173,8 @@ pub mod fluent_builders {
         /// updates when creating a new version. To ensure your data is not overwritten when creating
         /// multiple hosted configuration versions in rapid succession, specify the version number of
         /// the latest hosted configuration version.</p>
-        pub fn latest_version_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.latest_version_number(signature);
+        pub fn latest_version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.latest_version_number(input);
             self
         }
         /// <p>An optional locking token used to prevent race conditions from overwriting configuration
@@ -1250,8 +1247,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application to delete.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The ID of the application to delete.</p>
@@ -1324,8 +1321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID that includes the configuration profile you want to delete.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID that includes the configuration profile you want to delete.</p>
@@ -1337,11 +1334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the configuration profile you want to delete.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The ID of the configuration profile you want to delete.</p>
@@ -1414,8 +1408,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the deployment strategy you want to delete.</p>
-        pub fn deployment_strategy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_strategy_id(signature.into());
+        pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_strategy_id(input.into());
             self
         }
         /// <p>The ID of the deployment strategy you want to delete.</p>
@@ -1488,8 +1482,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID that includes the environment that you want to delete.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID that includes the environment that you want to delete.</p>
@@ -1501,8 +1495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the environment that you want to delete.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment that you want to delete.</p>
@@ -1575,8 +1569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -1588,11 +1582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -1604,8 +1595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The versions number to delete.</p>
-        pub fn version_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The versions number to delete.</p>
@@ -1674,8 +1665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application you want to get.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The ID of the application you want to get.</p>
@@ -1760,8 +1751,8 @@ pub mod fluent_builders {
         }
         /// <p>The application to get. Specify either the application name or the application
         /// ID.</p>
-        pub fn application(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application(signature.into());
+        pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application(input.into());
             self
         }
         /// <p>The application to get. Specify either the application name or the application
@@ -1772,8 +1763,8 @@ pub mod fluent_builders {
         }
         /// <p>The environment to get. Specify either the environment name or the environment
         /// ID.</p>
-        pub fn environment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment(signature.into());
+        pub fn environment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment(input.into());
             self
         }
         /// <p>The environment to get. Specify either the environment name or the environment
@@ -1784,8 +1775,8 @@ pub mod fluent_builders {
         }
         /// <p>The configuration to get. Specify either the configuration name or the configuration
         /// ID.</p>
-        pub fn configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration(signature.into());
+        pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration(input.into());
             self
         }
         /// <p>The configuration to get. Specify either the configuration name or the configuration
@@ -1800,8 +1791,8 @@ pub mod fluent_builders {
         /// <p>The clientId parameter in the following command is a unique, user-specified ID to
         /// identify the client for the configuration. This ID enables AppConfig to deploy the
         /// configuration in intervals, as defined in the deployment strategy. </p>
-        pub fn client_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_id(signature.into());
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_id(input.into());
             self
         }
         /// <p>The clientId parameter in the following command is a unique, user-specified ID to
@@ -1829,9 +1820,9 @@ pub mod fluent_builders {
         /// Configuration</a> in the <i>AppConfig User Guide</i>.</p>
         pub fn client_configuration_version(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.client_configuration_version(signature.into());
+            self.inner = self.inner.client_configuration_version(input.into());
             self
         }
         /// <p>The configuration version returned in the most recent <code>GetConfiguration</code>
@@ -1919,8 +1910,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the application that includes the configuration profile you want to
         /// get.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The ID of the application that includes the configuration profile you want to
@@ -1933,11 +1924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the configuration profile that you want to get.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The ID of the configuration profile that you want to get.</p>
@@ -2009,8 +1997,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application that includes the deployment you want to get. </p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The ID of the application that includes the deployment you want to get. </p>
@@ -2022,8 +2010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the environment that includes the deployment you want to get. </p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment that includes the deployment you want to get. </p>
@@ -2035,8 +2023,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sequence number of the deployment.</p>
-        pub fn deployment_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.deployment_number(signature);
+        pub fn deployment_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.deployment_number(input);
             self
         }
         /// <p>The sequence number of the deployment.</p>
@@ -2109,8 +2097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the deployment strategy to get.</p>
-        pub fn deployment_strategy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_strategy_id(signature.into());
+        pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_strategy_id(input.into());
             self
         }
         /// <p>The ID of the deployment strategy to get.</p>
@@ -2186,8 +2174,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application that includes the environment you want to get.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The ID of the application that includes the environment you want to get.</p>
@@ -2199,8 +2187,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the environment that you want to get.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The ID of the environment that you want to get.</p>
@@ -2272,8 +2260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -2285,11 +2273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -2301,8 +2286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version.</p>
-        pub fn version_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.version_number(signature);
+        pub fn version_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.version_number(input);
             self
         }
         /// <p>The version.</p>
@@ -2372,8 +2357,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2387,8 +2372,8 @@ pub mod fluent_builders {
         /// nextToken should not be set. On subsequent calls, the nextToken parameter should be set to
         /// the previous responses nextToken value. Use this token to get the next set of results.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Next token is a pagination token generated by AppConfig to
@@ -2461,8 +2446,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -2475,8 +2460,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2486,8 +2471,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -2497,8 +2482,8 @@ pub mod fluent_builders {
         }
         /// <p>A filter based on the type of configurations that the configuration profile contains. A
         /// configuration can be a feature flag or a free-form configuration.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>A filter based on the type of configurations that the configuration profile contains. A
@@ -2568,8 +2553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -2581,8 +2566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The environment ID.</p>
@@ -2595,8 +2580,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2606,8 +2591,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -2677,8 +2662,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2688,8 +2673,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -2758,8 +2743,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -2772,8 +2757,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2783,8 +2768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results.</p>
@@ -2854,8 +2839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -2867,11 +2852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -2884,8 +2866,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
         /// you can specify in a subsequent call to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items to return for this call. The call also returns a token that
@@ -2895,8 +2877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to start the list. Use this token to get the next set of results. </p>
@@ -2965,8 +2947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -3035,8 +3017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -3048,8 +3030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The environment ID.</p>
@@ -3061,8 +3043,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The deployment strategy ID.</p>
-        pub fn deployment_strategy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_strategy_id(signature.into());
+        pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_strategy_id(input.into());
             self
         }
         /// <p>The deployment strategy ID.</p>
@@ -3074,11 +3056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -3090,8 +3069,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration version to deploy.</p>
-        pub fn configuration_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_version(signature.into());
+        pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_version(input.into());
             self
         }
         /// <p>The configuration version to deploy.</p>
@@ -3103,8 +3082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the deployment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the deployment.</p>
@@ -3202,8 +3181,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -3215,8 +3194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The environment ID.</p>
@@ -3228,8 +3207,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The sequence number of the deployment.</p>
-        pub fn deployment_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.deployment_number(signature);
+        pub fn deployment_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.deployment_number(input);
             self
         }
         /// <p>The sequence number of the deployment.</p>
@@ -3302,8 +3281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which to retrieve tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource for which to retrieve tags.</p>
@@ -3399,8 +3378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource for which to remove tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource for which to remove tags.</p>
@@ -3486,8 +3465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -3499,8 +3478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application.</p>
@@ -3509,8 +3488,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the application.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the application.</p>
@@ -3579,8 +3558,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -3592,11 +3571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the configuration profile.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The ID of the configuration profile.</p>
@@ -3608,8 +3584,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the configuration profile.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the configuration profile.</p>
@@ -3618,8 +3594,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the configuration profile.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the configuration profile.</p>
@@ -3629,8 +3605,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
         /// <code>LocationUri</code>.</p>
-        pub fn retrieval_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.retrieval_role_arn(signature.into());
+        pub fn retrieval_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.retrieval_role_arn(input.into());
             self
         }
         /// <p>The ARN of an IAM role with permission to access the configuration at the specified
@@ -3720,8 +3696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The deployment strategy ID.</p>
-        pub fn deployment_strategy_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_strategy_id(signature.into());
+        pub fn deployment_strategy_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_strategy_id(input.into());
             self
         }
         /// <p>The deployment strategy ID.</p>
@@ -3733,8 +3709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the deployment strategy.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the deployment strategy.</p>
@@ -3743,8 +3719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Total amount of time for a deployment to last.</p>
-        pub fn deployment_duration_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.deployment_duration_in_minutes(signature);
+        pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.deployment_duration_in_minutes(input);
             self
         }
         /// <p>Total amount of time for a deployment to last.</p>
@@ -3757,8 +3733,8 @@ pub mod fluent_builders {
         }
         /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
         /// to be complete and no longer eligible for automatic rollback.</p>
-        pub fn final_bake_time_in_minutes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.final_bake_time_in_minutes(signature);
+        pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
+            self.inner = self.inner.final_bake_time_in_minutes(input);
             self
         }
         /// <p>The amount of time that AppConfig monitors for alarms before considering the deployment
@@ -3769,8 +3745,8 @@ pub mod fluent_builders {
         }
         /// <p>The percentage of targets to receive a deployed configuration during each
         /// interval.</p>
-        pub fn growth_factor(mut self, signature: f32) -> Self {
-            self.inner = self.inner.growth_factor(signature);
+        pub fn growth_factor(mut self, input: f32) -> Self {
+            self.inner = self.inner.growth_factor(input);
             self
         }
         /// <p>The percentage of targets to receive a deployed configuration during each
@@ -3808,8 +3784,8 @@ pub mod fluent_builders {
         /// <p>Expressed numerically, the deployment rolls out as follows: 2% of the targets, 4% of the
         /// targets, 8% of the targets, and continues until the configuration has been deployed to all
         /// targets.</p>
-        pub fn growth_type(mut self, signature: crate::model::GrowthType) -> Self {
-            self.inner = self.inner.growth_type(signature);
+        pub fn growth_type(mut self, input: crate::model::GrowthType) -> Self {
+            self.inner = self.inner.growth_type(input);
             self
         }
         /// <p>The algorithm used to define how percentage grows over time. AppConfig supports the
@@ -3909,8 +3885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -3922,8 +3898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The environment ID.</p>
-        pub fn environment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_id(signature.into());
+        pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_id(input.into());
             self
         }
         /// <p>The environment ID.</p>
@@ -3935,8 +3911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the environment.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the environment.</p>
@@ -3945,8 +3921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the environment.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the environment.</p>
@@ -4032,8 +4008,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The application ID.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The application ID.</p>
@@ -4045,11 +4021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration profile ID.</p>
-        pub fn configuration_profile_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.configuration_profile_id(signature.into());
+        pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_profile_id(input.into());
             self
         }
         /// <p>The configuration profile ID.</p>
@@ -4061,8 +4034,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the configuration to validate.</p>
-        pub fn configuration_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.configuration_version(signature.into());
+        pub fn configuration_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.configuration_version(input.into());
             self
         }
         /// <p>The version of the configuration to validate.</p>

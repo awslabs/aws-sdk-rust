@@ -310,8 +310,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server with which to associate the node.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server with which to associate the node.
@@ -322,8 +322,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the node.
         /// </p>
-        pub fn node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_name(signature.into());
+        pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_name(input.into());
             self
         }
         /// <p>The name of the node.
@@ -484,8 +484,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server that you want to back up.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server that you want to back up.
@@ -497,8 +497,8 @@ pub mod fluent_builders {
         /// <p>
         /// A user-defined description of the backup.
         /// </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>
@@ -653,8 +653,8 @@ pub mod fluent_builders {
         /// <p>
         /// Associate a public IP address with a server that you are launching. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
         /// </p>
-        pub fn associate_public_ip_address(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_public_ip_address(signature);
+        pub fn associate_public_ip_address(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_public_ip_address(input);
             self
         }
         /// <p>
@@ -668,8 +668,8 @@ pub mod fluent_builders {
         /// domain to the endpoint that is generated when the server is created (the value of the CreateServer Endpoint attribute). You cannot access the server by using the
         /// generated <code>Endpoint</code> value if the server is using a custom domain. If you specify a custom domain, you must also specify values for <code>CustomCertificate</code>
         /// and <code>CustomPrivateKey</code>.</p>
-        pub fn custom_domain(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_domain(signature.into());
+        pub fn custom_domain(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_domain(input.into());
             self
         }
         /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>. To access the server, create a CNAME DNS record in your preferred DNS service that points the custom
@@ -703,8 +703,8 @@ pub mod fluent_builders {
         /// <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
         /// </li>
         /// </ul>
-        pub fn custom_certificate(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_certificate(signature.into());
+        pub fn custom_certificate(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_certificate(input.into());
             self
         }
         /// <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed certificate, or a certificate chain. If you specify a
@@ -736,8 +736,8 @@ pub mod fluent_builders {
         }
         /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
         /// If you specify a custom private key, you must also specify values for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
-        pub fn custom_private_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_private_key(signature.into());
+        pub fn custom_private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_private_key(input.into());
             self
         }
         /// <p>A private key in PEM format for connecting to the server by using HTTPS. The private key must not be encrypted; it cannot be protected by a password or passphrase.
@@ -752,8 +752,8 @@ pub mod fluent_builders {
         /// <p>
         /// Enable or disable scheduled backups. Valid values are <code>true</code> or <code>false</code>. The default value is <code>true</code>.
         /// </p>
-        pub fn disable_automated_backup(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disable_automated_backup(signature);
+        pub fn disable_automated_backup(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_automated_backup(input);
             self
         }
         /// <p>
@@ -766,8 +766,8 @@ pub mod fluent_builders {
         /// <p>
         /// The configuration management engine to use. Valid values include <code>ChefAutomate</code> and <code>Puppet</code>.
         /// </p>
-        pub fn engine(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine(signature.into());
+        pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine(input.into());
             self
         }
         /// <p>
@@ -780,8 +780,8 @@ pub mod fluent_builders {
         /// <p>
         /// The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
         /// </p>
-        pub fn engine_model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_model(signature.into());
+        pub fn engine_model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_model(input.into());
             self
         }
         /// <p>
@@ -795,8 +795,8 @@ pub mod fluent_builders {
         /// The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion
         /// is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or <code>2017</code>.
         /// </p>
-        pub fn engine_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.engine_version(signature.into());
+        pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_version(input.into());
             self
         }
         /// <p>
@@ -917,8 +917,8 @@ pub mod fluent_builders {
         /// The number of automated backups that you want to keep. Whenever a new backup is created, AWS OpsWorks CM deletes the oldest backups if this number is exceeded.
         /// The default value is <code>1</code>.
         /// </p>
-        pub fn backup_retention_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_count(signature);
+        pub fn backup_retention_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_count(input);
             self
         }
         /// <p>
@@ -933,8 +933,8 @@ pub mod fluent_builders {
         /// The name of the server. The server name must be unique within your AWS account, within each region.
         /// Server names must start with a letter; then letters, numbers, or hyphens (-) are allowed, up to a maximum of 40 characters.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>
@@ -953,8 +953,8 @@ pub mod fluent_builders {
         /// This template creates a CloudFormation stack that includes the instance profile you need.
         ///
         /// </p>
-        pub fn instance_profile_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_profile_arn(signature.into());
+        pub fn instance_profile_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_profile_arn(input.into());
             self
         }
         /// <p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon EC2 instance type to use. For example, <code>m5.large</code>.
         /// </p>
-        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(signature.into());
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p>
@@ -992,8 +992,8 @@ pub mod fluent_builders {
         /// <p>
         /// The Amazon EC2 key pair to set for the instance. This parameter is optional; if desired, you may specify this parameter to connect to your instances by using SSH.
         /// </p>
-        pub fn key_pair(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair(signature.into());
+        pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair(input.into());
             self
         }
         /// <p>
@@ -1015,9 +1015,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>
@@ -1059,11 +1059,8 @@ pub mod fluent_builders {
         /// <p>
         /// <b>Example:</b>
         /// <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>
@@ -1132,8 +1129,8 @@ pub mod fluent_builders {
         /// run the service-role-creation.yaml AWS CloudFormation template, located at https://s3.amazonaws.com/opsworks-cm-us-east-1-prod-default-assets/misc/opsworks-cm-roles.yaml.
         /// This template creates a CloudFormation stack that includes the service role and instance profile that you need.
         /// </p>
-        pub fn service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role_arn(signature.into());
+        pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role_arn(input.into());
             self
         }
         /// <p>
@@ -1244,8 +1241,8 @@ pub mod fluent_builders {
         /// <p>
         /// If you specify this field, AWS OpsWorks CM creates the server by using the backup represented by BackupId.
         /// </p>
-        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(signature.into());
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>
@@ -1325,8 +1322,8 @@ pub mod fluent_builders {
         /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
         /// Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>.
         /// </p>
-        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(signature.into());
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>The ID of the backup to delete. Run the DescribeBackups command to get a list of backup IDs.
@@ -1412,8 +1409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the server to delete.</p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The ID of the server to delete.</p>
@@ -1558,8 +1555,8 @@ pub mod fluent_builders {
         }
         /// <p>Describes a single backup.
         /// </p>
-        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(signature.into());
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p>Describes a single backup.
@@ -1570,8 +1567,8 @@ pub mod fluent_builders {
         }
         /// <p>Returns backups for the server with the specified ServerName.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>Returns backups for the server with the specified ServerName.
@@ -1581,8 +1578,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
@@ -1591,8 +1588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This is not currently implemented for <code>DescribeBackups</code> requests.</p>
@@ -1670,8 +1667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the server for which you want to view events.</p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server for which you want to view events.</p>
@@ -1687,8 +1684,8 @@ pub mod fluent_builders {
         /// Setting a <code>nextToken</code> value that was not returned in
         /// your previous results causes an <code>InvalidNextTokenException</code> to occur.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>NextToken is a string that is returned in some command responses. It indicates that
@@ -1708,8 +1705,8 @@ pub mod fluent_builders {
         /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
         /// request parameter to get the next set of results.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>To receive a paginated response, use this parameter to specify the maximum number
@@ -1791,9 +1788,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn node_association_status_token(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.node_association_status_token(signature.into());
+            self.inner = self.inner.node_association_status_token(input.into());
             self
         }
         /// <p>The token returned in either the AssociateNodeResponse or the DisassociateNodeResponse.
@@ -1807,8 +1804,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server from which to disassociate the node.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server from which to disassociate the node.
@@ -1889,8 +1886,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Describes the server with the specified ServerName.</p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>Describes the server with the specified ServerName.</p>
@@ -1900,8 +1897,8 @@ pub mod fluent_builders {
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
@@ -1912,8 +1909,8 @@ pub mod fluent_builders {
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This is not currently implemented for <code>DescribeServers</code> requests.
@@ -1991,8 +1988,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server from which to disassociate the node.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server from which to disassociate the node.
@@ -2003,8 +2000,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the client node.
         /// </p>
-        pub fn node_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_name(signature.into());
+        pub fn node_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_name(input.into());
             self
         }
         /// <p>The name of the client node.
@@ -2129,8 +2126,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
         /// This exports a user data script that includes parameters and values provided in the <code>InputAttributes</code> list.</p>
-        pub fn export_attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.export_attribute_name(signature.into());
+        pub fn export_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.export_attribute_name(input.into());
             self
         }
         /// <p>The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
@@ -2143,8 +2140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the server from which you are exporting the attribute.</p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server from which you are exporting the attribute.</p>
@@ -2282,8 +2279,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
         /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server for which you want to show applied tags. For example,
@@ -2299,8 +2296,8 @@ pub mod fluent_builders {
         /// the response object's <code>nextToken</code> parameter value is <code>null</code>.
         /// Setting a <code>nextToken</code> value that was not returned in
         /// your previous results causes an <code>InvalidNextTokenException</code> to occur.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>NextToken is a string that is returned in some command responses. It indicates that
@@ -2318,8 +2315,8 @@ pub mod fluent_builders {
         /// of results to be returned with a single call. If the number of available results exceeds
         /// this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code>
         /// request parameter to get the next set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>To receive a paginated response, use this parameter to specify the maximum number
@@ -2406,8 +2403,8 @@ pub mod fluent_builders {
         }
         /// <p> The ID of the backup that you want to use to restore a server.
         /// </p>
-        pub fn backup_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.backup_id(signature.into());
+        pub fn backup_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backup_id(input.into());
             self
         }
         /// <p> The ID of the backup that you want to use to restore a server.
@@ -2418,8 +2415,8 @@ pub mod fluent_builders {
         }
         /// <p> The name of the server that you want to restore.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p> The name of the server that you want to restore.
@@ -2432,8 +2429,8 @@ pub mod fluent_builders {
         /// For example, <code>m5.large</code>. Valid values are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this parameter,
         /// RestoreServer uses the instance type from the specified backup.
         /// </p>
-        pub fn instance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_type(signature.into());
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_type(input.into());
             self
         }
         /// <p> The type of instance to restore. Valid values must be specified in the following format: <code>^([cm][34]|t2).*</code>
@@ -2450,8 +2447,8 @@ pub mod fluent_builders {
         /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
         /// if the administrator no longer has the SSH key.
         /// </p>
-        pub fn key_pair(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_pair(signature.into());
+        pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_pair(input.into());
             self
         }
         /// <p> The name of the key pair to set on the new EC2 instance. This can be helpful
@@ -2530,8 +2527,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server on which to run maintenance.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server on which to run maintenance.
@@ -2643,8 +2640,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
         /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For example,
@@ -2770,8 +2767,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
         /// <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of a resource from which you want to remove tags. For example,
@@ -2864,8 +2861,8 @@ pub mod fluent_builders {
         }
         /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
         /// </p>
-        pub fn disable_automated_backup(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disable_automated_backup(signature);
+        pub fn disable_automated_backup(mut self, input: bool) -> Self {
+            self.inner = self.inner.disable_automated_backup(input);
             self
         }
         /// <p>Setting DisableAutomatedBackup to <code>true</code> disables automated or scheduled backups. Automated backups are enabled by default.
@@ -2876,8 +2873,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the number of automated backups that you want to keep.
         /// </p>
-        pub fn backup_retention_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.backup_retention_count(signature);
+        pub fn backup_retention_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.backup_retention_count(input);
             self
         }
         /// <p>Sets the number of automated backups that you want to keep.
@@ -2888,8 +2885,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server to update.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server to update.
@@ -2907,9 +2904,9 @@ pub mod fluent_builders {
         /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>
@@ -2933,11 +2930,8 @@ pub mod fluent_builders {
         /// <p>
         /// Time windows always use coordinated universal time (UTC). Valid strings for day of week (<code>DDD</code>) are: <code>Mon</code>, <code>Tue</code>, <code>Wed</code>,
         /// <code>Thr</code>, <code>Fri</code>, <code>Sat</code>, or <code>Sun</code>.</p>
-        pub fn preferred_backup_window(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.preferred_backup_window(signature.into());
+        pub fn preferred_backup_window(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.preferred_backup_window(input.into());
             self
         }
         /// <p>
@@ -3029,8 +3023,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the server to update.
         /// </p>
-        pub fn server_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_name(signature.into());
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_name(input.into());
             self
         }
         /// <p>The name of the server to update.
@@ -3041,8 +3035,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the engine attribute to update.
         /// </p>
-        pub fn attribute_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_name(signature.into());
+        pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_name(input.into());
             self
         }
         /// <p>The name of the engine attribute to update.
@@ -3056,8 +3050,8 @@ pub mod fluent_builders {
         }
         /// <p>The value to set for the attribute.
         /// </p>
-        pub fn attribute_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_value(signature.into());
+        pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_value(input.into());
             self
         }
         /// <p>The value to set for the attribute.

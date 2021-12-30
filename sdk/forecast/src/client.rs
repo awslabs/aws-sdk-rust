@@ -535,8 +535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the predictor</p>
-        pub fn predictor_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_name(signature.into());
+        pub fn predictor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_name(input.into());
             self
         }
         /// <p>A unique name for the predictor</p>
@@ -549,8 +549,8 @@ pub mod fluent_builders {
         }
         /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
         /// the prediction length.</p>
-        pub fn forecast_horizon(mut self, signature: i32) -> Self {
-            self.inner = self.inner.forecast_horizon(signature);
+        pub fn forecast_horizon(mut self, input: i32) -> Self {
+            self.inner = self.inner.forecast_horizon(input);
             self
         }
         /// <p>The number of time-steps that the model predicts. The forecast horizon is also called
@@ -613,8 +613,8 @@ pub mod fluent_builders {
         /// frequency.</p>
         /// <p>When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the
         /// RELATED_TIME_SERIES dataset frequency.</p>
-        pub fn forecast_frequency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_frequency(signature.into());
+        pub fn forecast_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_frequency(input.into());
             self
         }
         /// <p>The frequency of predictions in a forecast.</p>
@@ -633,8 +633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data configuration for your dataset group and any additional datasets.</p>
-        pub fn data_config(mut self, signature: crate::model::DataConfig) -> Self {
-            self.inner = self.inner.data_config(signature);
+        pub fn data_config(mut self, input: crate::model::DataConfig) -> Self {
+            self.inner = self.inner.data_config(input);
             self
         }
         /// <p>The data configuration for your dataset group and any additional datasets.</p>
@@ -648,8 +648,8 @@ pub mod fluent_builders {
         /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
         /// access the key. You can specify this optional object in the
         /// <a>CreateDataset</a> and <a>CreatePredictor</a> requests.</p>
-        pub fn encryption_config(mut self, signature: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(signature);
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
         /// <p>An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
@@ -668,11 +668,8 @@ pub mod fluent_builders {
         /// <p>When upgrading or retraining a predictor, only specify values for the
         /// <code>ReferencePredictorArn</code> and <code>PredictorName</code>. The value for
         /// <code>PredictorName</code> must be a unique predictor name.</p>
-        pub fn reference_predictor_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.reference_predictor_arn(signature.into());
+        pub fn reference_predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reference_predictor_arn(input.into());
             self
         }
         /// <p>The ARN of the predictor to retrain or upgrade. This parameter is only used when
@@ -689,8 +686,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
-        pub fn optimization_metric(mut self, signature: crate::model::OptimizationMetric) -> Self {
-            self.inner = self.inner.optimization_metric(signature);
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(input);
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -702,8 +699,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn explain_predictor(mut self, signature: bool) -> Self {
-            self.inner = self.inner.explain_predictor(signature);
+        pub fn explain_predictor(mut self, input: bool) -> Self {
+            self.inner = self.inner.explain_predictor(input);
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -892,8 +889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the dataset.</p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>A name for the dataset.</p>
@@ -908,8 +905,8 @@ pub mod fluent_builders {
         /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
         /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
         /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
-        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(signature);
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
         /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
@@ -924,8 +921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
-        pub fn dataset_type(mut self, signature: crate::model::DatasetType) -> Self {
-            self.inner = self.inner.dataset_type(signature);
+        pub fn dataset_type(mut self, input: crate::model::DatasetType) -> Self {
+            self.inner = self.inner.dataset_type(input);
             self
         }
         /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
@@ -941,8 +938,8 @@ pub mod fluent_builders {
         /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
         /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
         /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
-        pub fn data_frequency(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_frequency(signature.into());
+        pub fn data_frequency(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_frequency(input.into());
             self
         }
         /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
@@ -961,8 +958,8 @@ pub mod fluent_builders {
         /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
         /// determine the minimum required fields in your training data. For information about the
         /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
-        pub fn schema(mut self, signature: crate::model::Schema) -> Self {
-            self.inner = self.inner.schema(signature);
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
         /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
@@ -975,8 +972,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
         /// the key.</p>
-        pub fn encryption_config(mut self, signature: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(signature);
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
         /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
@@ -1123,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the dataset group.</p>
-        pub fn dataset_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_name(signature.into());
+        pub fn dataset_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_name(input.into());
             self
         }
         /// <p>A name for the dataset group.</p>
@@ -1143,8 +1140,8 @@ pub mod fluent_builders {
         /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
         /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
         /// information, see <a>howitworks-datasets-groups</a>.</p>
-        pub fn domain(mut self, signature: crate::model::Domain) -> Self {
-            self.inner = self.inner.domain(signature);
+        pub fn domain(mut self, input: crate::model::Domain) -> Self {
+            self.inner = self.inner.domain(input);
             self
         }
         /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
@@ -1325,11 +1322,8 @@ pub mod fluent_builders {
         /// <p>The name for the dataset import job. We recommend including the current timestamp in the
         /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
         /// <code>ResourceAlreadyExistsException</code> exception.</p>
-        pub fn dataset_import_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.dataset_import_job_name(signature.into());
+        pub fn dataset_import_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_name(input.into());
             self
         }
         /// <p>The name for the dataset import job. We recommend including the current timestamp in the
@@ -1344,8 +1338,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
         /// to.</p>
-        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(signature.into());
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
@@ -1359,8 +1353,8 @@ pub mod fluent_builders {
         /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
         /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
         /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
-        pub fn data_source(mut self, signature: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(signature);
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
             self
         }
         /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
@@ -1391,8 +1385,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
         /// HH:mm:ss".</p>
-        pub fn timestamp_format(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timestamp_format(signature.into());
+        pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timestamp_format(input.into());
             self
         }
         /// <p>The format of timestamps in the dataset. The format that you specify depends on the
@@ -1423,8 +1417,8 @@ pub mod fluent_builders {
         /// single time zone. </p>
         /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
         /// API</a> for a complete list of valid time zone names.</p>
-        pub fn time_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.time_zone(signature.into());
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input.into());
             self
         }
         /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
@@ -1439,8 +1433,8 @@ pub mod fluent_builders {
         /// <p>Automatically derive time zone information from the geolocation attribute. This option
         /// is ideal for datasets that contain timestamps in multiple time zones and those
         /// timestamps are expressed in local time.</p>
-        pub fn use_geolocation_for_time_zone(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_geolocation_for_time_zone(signature);
+        pub fn use_geolocation_for_time_zone(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_geolocation_for_time_zone(input);
             self
         }
         /// <p>Automatically derive time zone information from the geolocation attribute. This option
@@ -1465,8 +1459,8 @@ pub mod fluent_builders {
         /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
         /// </li>
         /// </ul>
-        pub fn geolocation_format(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geolocation_format(signature.into());
+        pub fn geolocation_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geolocation_format(input.into());
             self
         }
         /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
@@ -1732,8 +1726,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the Explainability.</p>
-        pub fn explainability_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_name(signature.into());
+        pub fn explainability_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_name(input.into());
             self
         }
         /// <p>A unique name for the Explainability.</p>
@@ -1746,8 +1740,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
         /// Explainability.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the
@@ -1758,11 +1752,8 @@ pub mod fluent_builders {
         }
         /// <p>The configuration settings that define the granularity of time series and time points
         /// for the Explainability.</p>
-        pub fn explainability_config(
-            mut self,
-            signature: crate::model::ExplainabilityConfig,
-        ) -> Self {
-            self.inner = self.inner.explainability_config(signature);
+        pub fn explainability_config(mut self, input: crate::model::ExplainabilityConfig) -> Self {
+            self.inner = self.inner.explainability_config(input);
             self
         }
         /// <p>The configuration settings that define the granularity of time series and time points
@@ -1777,8 +1768,8 @@ pub mod fluent_builders {
         /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
         /// access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the
         /// <a>CreateDatasetImportJob</a> request.</p>
-        pub fn data_source(mut self, signature: crate::model::DataSource) -> Self {
-            self.inner = self.inner.data_source(signature);
+        pub fn data_source(mut self, input: crate::model::DataSource) -> Self {
+            self.inner = self.inner.data_source(input);
             self
         }
         /// <p>The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to
@@ -1792,8 +1783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
-        pub fn schema(mut self, signature: crate::model::Schema) -> Self {
-            self.inner = self.inner.schema(signature);
+        pub fn schema(mut self, input: crate::model::Schema) -> Self {
+            self.inner = self.inner.schema(input);
             self
         }
         /// <p>Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.</p>
@@ -1802,8 +1793,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
-        pub fn enable_visualization(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_visualization(signature);
+        pub fn enable_visualization(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_visualization(input);
             self
         }
         /// <p>Create an Expainability visualization that is viewable within the AWS console.</p>
@@ -1813,8 +1804,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
         /// point for the Explainability.</p>
-        pub fn start_date_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.start_date_time(signature.into());
+        pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.start_date_time(input.into());
             self
         }
         /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
@@ -1828,8 +1819,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
         /// time point for the Explainability.</p>
-        pub fn end_date_time(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.end_date_time(signature.into());
+        pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.end_date_time(input.into());
             self
         }
         /// <p>If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
@@ -1989,11 +1980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique name for the Explainability export.</p>
-        pub fn explainability_export_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.explainability_export_name(signature.into());
+        pub fn explainability_export_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_name(input.into());
             self
         }
         /// <p>A unique name for the Explainability export.</p>
@@ -2005,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
-        pub fn explainability_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(signature.into());
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability to export.</p>
@@ -2019,8 +2007,8 @@ pub mod fluent_builders {
         }
         /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
         /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
-        pub fn destination(mut self, signature: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(signature);
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
@@ -2190,8 +2178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the forecast.</p>
-        pub fn forecast_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_name(signature.into());
+        pub fn forecast_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_name(input.into());
             self
         }
         /// <p>A name for the forecast.</p>
@@ -2203,8 +2191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
@@ -2379,11 +2367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the forecast export job.</p>
-        pub fn forecast_export_job_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.forecast_export_job_name(signature.into());
+        pub fn forecast_export_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_name(input.into());
             self
         }
         /// <p>The name for the forecast export job.</p>
@@ -2395,8 +2380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
-        pub fn forecast_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(signature.into());
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
@@ -2409,8 +2394,8 @@ pub mod fluent_builders {
         /// bucket.</p>
         /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
         /// IAM role must allow Amazon Forecast permission to access the key.</p>
-        pub fn destination(mut self, signature: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(signature);
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
@@ -2613,8 +2598,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the predictor.</p>
-        pub fn predictor_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_name(signature.into());
+        pub fn predictor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_name(input.into());
             self
         }
         /// <p>A name for the predictor.</p>
@@ -2662,8 +2647,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn algorithm_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.algorithm_arn(signature.into());
+        pub fn algorithm_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.algorithm_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
@@ -2717,8 +2702,8 @@ pub mod fluent_builders {
         /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
         /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
         /// TARGET_TIME_SERIES dataset length.</p>
-        pub fn forecast_horizon(mut self, signature: i32) -> Self {
-            self.inner = self.inner.forecast_horizon(signature);
+        pub fn forecast_horizon(mut self, input: i32) -> Self {
+            self.inner = self.inner.forecast_horizon(input);
             self
         }
         /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
@@ -2762,8 +2747,8 @@ pub mod fluent_builders {
         /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
         /// is a good option if you aren't sure which algorithm is suitable for your training data. In
         /// this case, <code>PerformHPO</code> must be false.</p>
-        pub fn perform_auto_ml(mut self, signature: bool) -> Self {
-            self.inner = self.inner.perform_auto_ml(signature);
+        pub fn perform_auto_ml(mut self, input: bool) -> Self {
+            self.inner = self.inner.perform_auto_ml(input);
             self
         }
         /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
@@ -2788,9 +2773,9 @@ pub mod fluent_builders {
         /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn auto_ml_override_strategy(
             mut self,
-            signature: crate::model::AutoMlOverrideStrategy,
+            input: crate::model::AutoMlOverrideStrategy,
         ) -> Self {
-            self.inner = self.inner.auto_ml_override_strategy(signature);
+            self.inner = self.inner.auto_ml_override_strategy(input);
             self
         }
         /// <note>
@@ -2828,8 +2813,8 @@ pub mod fluent_builders {
         /// <p>CNN-QR</p>
         /// </li>
         /// </ul>
-        pub fn perform_hpo(mut self, signature: bool) -> Self {
-            self.inner = self.inner.perform_hpo(signature);
+        pub fn perform_hpo(mut self, input: bool) -> Self {
+            self.inner = self.inner.perform_hpo(input);
             self
         }
         /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
@@ -2885,11 +2870,8 @@ pub mod fluent_builders {
         /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
         /// evaluates a predictor by splitting a dataset into training data and testing data. The
         /// evaluation parameters define how to perform the split and the number of iterations.</p>
-        pub fn evaluation_parameters(
-            mut self,
-            signature: crate::model::EvaluationParameters,
-        ) -> Self {
-            self.inner = self.inner.evaluation_parameters(signature);
+        pub fn evaluation_parameters(mut self, input: crate::model::EvaluationParameters) -> Self {
+            self.inner = self.inner.evaluation_parameters(input);
             self
         }
         /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
@@ -2907,11 +2889,8 @@ pub mod fluent_builders {
         /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
         /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
         /// true.</p>
-        pub fn hpo_config(
-            mut self,
-            signature: crate::model::HyperParameterTuningJobConfig,
-        ) -> Self {
-            self.inner = self.inner.hpo_config(signature);
+        pub fn hpo_config(mut self, input: crate::model::HyperParameterTuningJobConfig) -> Self {
+            self.inner = self.inner.hpo_config(input);
             self
         }
         /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
@@ -2927,8 +2906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
@@ -2940,11 +2919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The featurization configuration.</p>
-        pub fn featurization_config(
-            mut self,
-            signature: crate::model::FeaturizationConfig,
-        ) -> Self {
-            self.inner = self.inner.featurization_config(signature);
+        pub fn featurization_config(mut self, input: crate::model::FeaturizationConfig) -> Self {
+            self.inner = self.inner.featurization_config(input);
             self
         }
         /// <p>The featurization configuration.</p>
@@ -2957,8 +2933,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
         /// the key.</p>
-        pub fn encryption_config(mut self, signature: crate::model::EncryptionConfig) -> Self {
-            self.inner = self.inner.encryption_config(signature);
+        pub fn encryption_config(mut self, input: crate::model::EncryptionConfig) -> Self {
+            self.inner = self.inner.encryption_config(input);
             self
         }
         /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
@@ -3036,8 +3012,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
-        pub fn optimization_metric(mut self, signature: crate::model::OptimizationMetric) -> Self {
-            self.inner = self.inner.optimization_metric(signature);
+        pub fn optimization_metric(mut self, input: crate::model::OptimizationMetric) -> Self {
+            self.inner = self.inner.optimization_metric(input);
             self
         }
         /// <p>The accuracy metric used to optimize the predictor.</p>
@@ -3125,11 +3101,9 @@ pub mod fluent_builders {
         /// <p>The name for the backtest export job.</p>
         pub fn predictor_backtest_export_job_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .predictor_backtest_export_job_name(signature.into());
+            self.inner = self.inner.predictor_backtest_export_job_name(input.into());
             self
         }
         /// <p>The name for the backtest export job.</p>
@@ -3141,8 +3115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
@@ -3155,8 +3129,8 @@ pub mod fluent_builders {
         }
         /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
         /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
-        pub fn destination(mut self, signature: crate::model::DataDestination) -> Self {
-            self.inner = self.inner.destination(signature);
+        pub fn destination(mut self, input: crate::model::DataDestination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
@@ -3316,8 +3290,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
-        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(signature.into());
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
@@ -3389,8 +3363,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
-        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(signature.into());
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
@@ -3464,8 +3438,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
-        pub fn dataset_import_job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_arn(signature.into());
+        pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
@@ -3539,8 +3513,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
-        pub fn explainability_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(signature.into());
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability resource to delete.</p>
@@ -3612,11 +3586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
-        pub fn explainability_export_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.explainability_export_arn(signature.into());
+        pub fn explainability_export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export to delete. </p>
@@ -3692,8 +3663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
-        pub fn forecast_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(signature.into());
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
@@ -3764,11 +3735,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
-        pub fn forecast_export_job_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.forecast_export_job_arn(signature.into());
+        pub fn forecast_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
@@ -3842,8 +3810,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
@@ -3917,11 +3885,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
         pub fn predictor_backtest_export_job_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .predictor_backtest_export_job_arn(signature.into());
+            self.inner = self.inner.predictor_backtest_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
@@ -4025,8 +3991,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
         /// of the parent resource will also be deleted.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
@@ -4096,8 +4062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
@@ -4189,8 +4155,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
-        pub fn dataset_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_arn(signature.into());
+        pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
@@ -4283,8 +4249,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(signature.into());
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
@@ -4390,8 +4356,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
-        pub fn dataset_import_job_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_import_job_arn(signature.into());
+        pub fn dataset_import_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_import_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
@@ -4463,8 +4429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-        pub fn explainability_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explainability_arn(signature.into());
+        pub fn explainability_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
@@ -4536,11 +4502,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-        pub fn explainability_export_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.explainability_export_arn(signature.into());
+        pub fn explainability_export_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explainability_export_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
@@ -4640,8 +4603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
-        pub fn forecast_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.forecast_arn(signature.into());
+        pub fn forecast_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
@@ -4734,11 +4697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
-        pub fn forecast_export_job_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.forecast_export_job_arn(signature.into());
+        pub fn forecast_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.forecast_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
@@ -4849,8 +4809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
@@ -4950,11 +4910,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
         pub fn predictor_backtest_export_job_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .predictor_backtest_export_job_arn(signature.into());
+            self.inner = self.inner.predictor_backtest_export_job_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
@@ -5043,8 +5001,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-        pub fn predictor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predictor_arn(signature.into());
+        pub fn predictor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predictor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
@@ -5121,8 +5079,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5133,8 +5091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5208,8 +5166,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5220,8 +5178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5369,8 +5327,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5381,8 +5339,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5457,8 +5415,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// NextToken. To retrieve the next set of results, use the token in the next request.
         /// Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5469,8 +5427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items returned in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items returned in the response.</p>
@@ -5605,8 +5563,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// NextToken. To retrieve the next set of results, use the token in the next request.
         /// Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5617,8 +5575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5753,8 +5711,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5765,8 +5723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -5918,8 +5876,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -5930,8 +5888,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -6078,8 +6036,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a NextToken.
         /// To retrieve the next set of results, use the token in the next request. Tokens expire after
         /// 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a NextToken.
@@ -6090,8 +6048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -6231,8 +6189,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -6243,8 +6201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -6386,8 +6344,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
@@ -6481,8 +6439,8 @@ pub mod fluent_builders {
         /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
         /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
         /// <code>ForecastExportJobArn</code>. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
@@ -6554,8 +6512,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
@@ -6689,8 +6647,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
@@ -6781,8 +6739,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset group.</p>
-        pub fn dataset_group_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_group_arn(signature.into());
+        pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_group_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset group.</p>

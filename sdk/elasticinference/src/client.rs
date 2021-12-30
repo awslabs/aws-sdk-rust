@@ -203,8 +203,8 @@ pub mod fluent_builders {
         /// availability-zone: will return the accelerator type offering at the availability zone level.
         /// availability-zone-id: will return the accelerator type offering at the availability zone level returning the availability zone id.
         /// </p>
-        pub fn location_type(mut self, signature: crate::model::LocationType) -> Self {
-            self.inner = self.inner.location_type(signature);
+        pub fn location_type(mut self, input: crate::model::LocationType) -> Self {
+            self.inner = self.inner.location_type(input);
             self
         }
         /// <p>
@@ -354,8 +354,8 @@ pub mod fluent_builders {
         /// To resume pagination, provide the NextToken value in the starting-token argument of a subsequent command.
         /// Do not use the NextToken response element directly outside of the AWS CLI.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>
@@ -370,8 +370,8 @@ pub mod fluent_builders {
         /// <p>
         /// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -508,8 +508,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ARN of the Elastic Inference Accelerator to list the tags for.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>
@@ -584,8 +584,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ARN of the Elastic Inference Accelerator to tag.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>
@@ -687,8 +687,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ARN of the Elastic Inference Accelerator to untag.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>

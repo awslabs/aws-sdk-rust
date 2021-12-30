@@ -313,8 +313,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset being created. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset being created. </p>
@@ -324,8 +324,8 @@ pub mod fluent_builders {
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names,
         /// column names, and data types. </p>
-        pub fn dataset_schema(mut self, signature: crate::model::DatasetSchema) -> Self {
-            self.inner = self.inner.dataset_schema(signature);
+        pub fn dataset_schema(mut self, input: crate::model::DatasetSchema) -> Self {
+            self.inner = self.inner.dataset_schema(input);
             self
         }
         /// <p>A JSON description of the data that is in each time series dataset, including names,
@@ -338,8 +338,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
-        pub fn server_side_kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_side_kms_key_id(signature.into());
+        pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_side_kms_key_id(input.into());
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt dataset data by Amazon Lookout for Equipment. </p>
@@ -352,8 +352,8 @@ pub mod fluent_builders {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
         /// Lookout for Equipment generates one. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
@@ -445,8 +445,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the previously trained ML model being used to create the inference
         /// scheduler. </p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the previously trained ML model being used to create the inference
@@ -456,11 +456,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the inference scheduler being created. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler being created. </p>
@@ -477,8 +474,8 @@ pub mod fluent_builders {
         /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
         /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
         /// the same frequency and they don't need to stop and restart the scheduler when uploading new data. </p>
-        pub fn data_delay_offset_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.data_delay_offset_in_minutes(signature);
+        pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.data_delay_offset_in_minutes(input);
             self
         }
         /// <p>A period of time (in minutes) by which inference on the data is delayed after the data
@@ -496,11 +493,8 @@ pub mod fluent_builders {
         /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
         /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
         /// example, it starts once every 5 minutes. </p>
-        pub fn data_upload_frequency(
-            mut self,
-            signature: crate::model::DataUploadFrequency,
-        ) -> Self {
-            self.inner = self.inner.data_upload_frequency(signature);
+        pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
+            self.inner = self.inner.data_upload_frequency(input);
             self
         }
         /// <p> How often data is uploaded to the source S3 bucket for the input data. The value chosen
@@ -519,9 +513,9 @@ pub mod fluent_builders {
         /// including delimiter, format, and dataset location. </p>
         pub fn data_input_configuration(
             mut self,
-            signature: crate::model::InferenceInputConfiguration,
+            input: crate::model::InferenceInputConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_input_configuration(signature);
+            self.inner = self.inner.data_input_configuration(input);
             self
         }
         /// <p>Specifies configuration information for the input data for the inference scheduler,
@@ -537,9 +531,9 @@ pub mod fluent_builders {
         /// including the S3 location for the output. </p>
         pub fn data_output_configuration(
             mut self,
-            signature: crate::model::InferenceOutputConfiguration,
+            input: crate::model::InferenceOutputConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_output_configuration(signature);
+            self.inner = self.inner.data_output_configuration(input);
             self
         }
         /// <p>Specifies configuration information for the output results for the inference scheduler,
@@ -553,8 +547,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being
         /// used for the inference. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the data source being
@@ -564,8 +558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
-        pub fn server_side_kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_side_kms_key_id(signature.into());
+        pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_side_kms_key_id(input.into());
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt inference scheduler data by Amazon Lookout for Equipment. </p>
@@ -578,8 +572,8 @@ pub mod fluent_builders {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
         /// Lookout for Equipment generates one. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
@@ -674,8 +668,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the ML model to be created.</p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name for the ML model to be created.</p>
@@ -684,8 +678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dataset for the ML model being created. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset for the ML model being created. </p>
@@ -694,8 +688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The data schema for the ML model being created. </p>
-        pub fn dataset_schema(mut self, signature: crate::model::DatasetSchema) -> Self {
-            self.inner = self.inner.dataset_schema(signature);
+        pub fn dataset_schema(mut self, input: crate::model::DatasetSchema) -> Self {
+            self.inner = self.inner.dataset_schema(input);
             self
         }
         /// <p>The data schema for the ML model being created. </p>
@@ -710,9 +704,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn labels_input_configuration(
             mut self,
-            signature: crate::model::LabelsInputConfiguration,
+            input: crate::model::LabelsInputConfiguration,
         ) -> Self {
-            self.inner = self.inner.labels_input_configuration(signature);
+            self.inner = self.inner.labels_input_configuration(input);
             self
         }
         /// <p>The input configuration for the labels being used for the ML model that's being created.
@@ -726,8 +720,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
         /// Lookout for Equipment generates one. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. If you do not set the client request token, Amazon
@@ -738,8 +732,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
         /// training data for the ML model. </p>
-        pub fn training_data_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.training_data_start_time(signature);
+        pub fn training_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.training_data_start_time(input);
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
@@ -753,8 +747,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates the time reference in the dataset that should be used to end the subset of
         /// training data for the ML model. </p>
-        pub fn training_data_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.training_data_end_time(signature);
+        pub fn training_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.training_data_end_time(input);
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to end the subset of
@@ -768,8 +762,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.evaluation_data_start_time(signature);
+        pub fn evaluation_data_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.evaluation_data_start_time(input);
             self
         }
         /// <p>Indicates the time reference in the dataset that should be used to begin the subset of
@@ -783,8 +777,8 @@ pub mod fluent_builders {
         }
         /// <p> Indicates the time reference in the dataset that should be used to end the subset of
         /// evaluation data for the ML model. </p>
-        pub fn evaluation_data_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.evaluation_data_end_time(signature);
+        pub fn evaluation_data_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.evaluation_data_end_time(input);
             self
         }
         /// <p> Indicates the time reference in the dataset that should be used to end the subset of
@@ -798,8 +792,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
         /// being used to create the ML model. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source
@@ -821,9 +815,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn data_pre_processing_configuration(
             mut self,
-            signature: crate::model::DataPreProcessingConfiguration,
+            input: crate::model::DataPreProcessingConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_pre_processing_configuration(signature);
+            self.inner = self.inner.data_pre_processing_configuration(input);
             self
         }
         /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of
@@ -845,8 +839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-        pub fn server_side_kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_side_kms_key_id(signature.into());
+        pub fn server_side_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_side_kms_key_id(input.into());
             self
         }
         /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
@@ -875,8 +869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
-        pub fn off_condition(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.off_condition(signature.into());
+        pub fn off_condition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.off_condition(input.into());
             self
         }
         /// <p>Indicates that the asset associated with this sensor has been shut off. As long as this condition is met, Lookout for Equipment will not use data from this asset for training, evaluation, or inference.</p>
@@ -952,8 +946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to be deleted. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset to be deleted. </p>
@@ -1023,11 +1017,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the inference scheduler to be deleted. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler to be deleted. </p>
@@ -1100,8 +1091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ML model to be deleted. </p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the ML model to be deleted. </p>
@@ -1171,8 +1162,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The job ID of the data ingestion job. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The job ID of the data ingestion job. </p>
@@ -1241,8 +1232,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset to be described. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset to be described. </p>
@@ -1312,11 +1303,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the inference scheduler being described. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler being described. </p>
@@ -1389,8 +1377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the ML model to be described. </p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the ML model to be described. </p>
@@ -1460,8 +1448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset being used for the data ingestion job. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset being used for the data ingestion job. </p>
@@ -1471,8 +1459,8 @@ pub mod fluent_builders {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
         /// jobs. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of data ingestion
@@ -1482,8 +1470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Specifies the maximum number of data ingestion jobs to list. </p>
@@ -1492,8 +1480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
-        pub fn status(mut self, signature: crate::model::IngestionJobStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::IngestionJobStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>Indicates the status of the data ingestion job. </p>
@@ -1567,8 +1555,8 @@ pub mod fluent_builders {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of datasets.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of datasets.
@@ -1578,8 +1566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Specifies the maximum number of datasets to list. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Specifies the maximum number of datasets to list. </p>
@@ -1588,11 +1576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The beginning of the name of the datasets to be listed. </p>
-        pub fn dataset_name_begins_with(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.dataset_name_begins_with(signature.into());
+        pub fn dataset_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name_begins_with(input.into());
             self
         }
         /// <p>The beginning of the name of the datasets to be listed. </p>
@@ -1666,8 +1651,8 @@ pub mod fluent_builders {
         }
         /// <p>An opaque pagination token indicating where to continue the listing of inference
         /// executions.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An opaque pagination token indicating where to continue the listing of inference
@@ -1677,8 +1662,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the maximum number of inference executions to list. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of inference executions to list. </p>
@@ -1687,11 +1672,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the inference scheduler for the inference execution listed. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler for the inference execution listed. </p>
@@ -1704,8 +1686,8 @@ pub mod fluent_builders {
         }
         /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
         /// inference execution. </p>
-        pub fn data_start_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.data_start_time_after(signature);
+        pub fn data_start_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.data_start_time_after(input);
             self
         }
         /// <p>The time reference in the inferenced dataset after which Amazon Lookout for Equipment started the
@@ -1719,8 +1701,8 @@ pub mod fluent_builders {
         }
         /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
         /// inference execution. </p>
-        pub fn data_end_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.data_end_time_before(signature);
+        pub fn data_end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.data_end_time_before(input);
             self
         }
         /// <p>The time reference in the inferenced dataset before which Amazon Lookout for Equipment stopped the
@@ -1733,8 +1715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the inference execution. </p>
-        pub fn status(mut self, signature: crate::model::InferenceExecutionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::InferenceExecutionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the inference execution. </p>
@@ -1808,8 +1790,8 @@ pub mod fluent_builders {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of inference
         /// schedulers. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of inference
@@ -1819,8 +1801,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Specifies the maximum number of inference schedulers to list. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Specifies the maximum number of inference schedulers to list. </p>
@@ -1831,11 +1813,11 @@ pub mod fluent_builders {
         /// <p>The beginning of the name of the inference schedulers to be listed. </p>
         pub fn inference_scheduler_name_begins_with(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .inference_scheduler_name_begins_with(signature.into());
+                .inference_scheduler_name_begins_with(input.into());
             self
         }
         /// <p>The beginning of the name of the inference schedulers to be listed. </p>
@@ -1847,8 +1829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
-        pub fn model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name(signature.into());
+        pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name(input.into());
             self
         }
         /// <p>The name of the ML model used by the inference scheduler to be listed. </p>
@@ -1919,8 +1901,8 @@ pub mod fluent_builders {
         }
         /// <p> An opaque pagination token indicating where to continue the listing of ML models.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> An opaque pagination token indicating where to continue the listing of ML models.
@@ -1930,8 +1912,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Specifies the maximum number of ML models to list. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Specifies the maximum number of ML models to list. </p>
@@ -1940,8 +1922,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status of the ML model. </p>
-        pub fn status(mut self, signature: crate::model::ModelStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ModelStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status of the ML model. </p>
@@ -1950,8 +1932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The beginning of the name of the ML models being listed. </p>
-        pub fn model_name_begins_with(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model_name_begins_with(signature.into());
+        pub fn model_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model_name_begins_with(input.into());
             self
         }
         /// <p>The beginning of the name of the ML models being listed. </p>
@@ -1963,11 +1945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
-        pub fn dataset_name_begins_with(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.dataset_name_begins_with(signature.into());
+        pub fn dataset_name_begins_with(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name_begins_with(input.into());
             self
         }
         /// <p>The beginning of the name of the dataset of the ML models to be listed. </p>
@@ -2040,8 +2019,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
         /// the focus of the <code>ListTagsForResource</code> operation. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is
@@ -2111,8 +2090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the dataset being used by the data ingestion job. </p>
-        pub fn dataset_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.dataset_name(signature.into());
+        pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.dataset_name(input.into());
             self
         }
         /// <p>The name of the dataset being used by the data ingestion job. </p>
@@ -2124,9 +2103,9 @@ pub mod fluent_builders {
         /// S3 location. </p>
         pub fn ingestion_input_configuration(
             mut self,
-            signature: crate::model::IngestionInputConfiguration,
+            input: crate::model::IngestionInputConfiguration,
         ) -> Self {
-            self.inner = self.inner.ingestion_input_configuration(signature);
+            self.inner = self.inner.ingestion_input_configuration(input);
             self
         }
         /// <p> Specifies information for the input data for the data ingestion job, including dataset
@@ -2140,8 +2119,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
         /// the data ingestion job. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
@@ -2152,8 +2131,8 @@ pub mod fluent_builders {
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
         /// Lookout for Equipment generates one. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p> A unique identifier for the request. If you do not set the client request token, Amazon
@@ -2223,11 +2202,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the inference scheduler to be started. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler to be started. </p>
@@ -2299,11 +2275,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the inference scheduler to be stopped. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler to be stopped. </p>
@@ -2380,8 +2353,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be
         /// associated. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the specific resource to which the tag should be
@@ -2471,8 +2444,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
         /// </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which the tag is currently associated.
@@ -2559,11 +2532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the inference scheduler to be updated. </p>
-        pub fn inference_scheduler_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.inference_scheduler_name(signature.into());
+        pub fn inference_scheduler_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.inference_scheduler_name(input.into());
             self
         }
         /// <p>The name of the inference scheduler to be updated. </p>
@@ -2580,8 +2550,8 @@ pub mod fluent_builders {
         /// five minutes is selected, the inference scheduler will wake up at the configured frequency with the
         /// additional five minute delay time to check the customer S3 bucket. The customer can upload data at
         /// the same frequency and they don't need to stop and restart the scheduler when uploading new data.</p>
-        pub fn data_delay_offset_in_minutes(mut self, signature: i64) -> Self {
-            self.inner = self.inner.data_delay_offset_in_minutes(signature);
+        pub fn data_delay_offset_in_minutes(mut self, input: i64) -> Self {
+            self.inner = self.inner.data_delay_offset_in_minutes(input);
             self
         }
         /// <p> A period of time (in minutes) by which inference on the data is delayed after the data
@@ -2599,11 +2569,8 @@ pub mod fluent_builders {
         /// Lookout for Equipment will upload the real-time data to the source bucket once every 5 minutes. This frequency
         /// also determines how often Amazon Lookout for Equipment starts a scheduled inference on your data. In this
         /// example, it starts once every 5 minutes. </p>
-        pub fn data_upload_frequency(
-            mut self,
-            signature: crate::model::DataUploadFrequency,
-        ) -> Self {
-            self.inner = self.inner.data_upload_frequency(signature);
+        pub fn data_upload_frequency(mut self, input: crate::model::DataUploadFrequency) -> Self {
+            self.inner = self.inner.data_upload_frequency(input);
             self
         }
         /// <p>How often data is uploaded to the source S3 bucket for the input data. The value chosen
@@ -2622,9 +2589,9 @@ pub mod fluent_builders {
         /// delimiter, format, and dataset location. </p>
         pub fn data_input_configuration(
             mut self,
-            signature: crate::model::InferenceInputConfiguration,
+            input: crate::model::InferenceInputConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_input_configuration(signature);
+            self.inner = self.inner.data_input_configuration(input);
             self
         }
         /// <p> Specifies information for the input data for the inference scheduler, including
@@ -2639,9 +2606,9 @@ pub mod fluent_builders {
         /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
         pub fn data_output_configuration(
             mut self,
-            signature: crate::model::InferenceOutputConfiguration,
+            input: crate::model::InferenceOutputConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_output_configuration(signature);
+            self.inner = self.inner.data_output_configuration(input);
             self
         }
         /// <p> Specifies information for the output results from the inference scheduler, including the output S3 location. </p>
@@ -2654,8 +2621,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for
         /// the inference scheduler. </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of a role with permission to access the data source for

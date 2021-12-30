@@ -520,8 +520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
@@ -538,8 +538,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
@@ -616,8 +616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to delete the device position history from.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to delete the device position history from.</p>
@@ -720,8 +720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The geofence collection storing the geofences to be deleted.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The geofence collection storing the geofences to be deleted.</p>
@@ -831,8 +831,8 @@ pub mod fluent_builders {
         }
         /// <p>The geofence collection used in evaluating the position of devices against its
         /// geofences.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The geofence collection used in evaluating the position of devices against its
@@ -927,8 +927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tracker resource retrieving the device position.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The tracker resource retrieving the device position.</p>
@@ -1029,8 +1029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The geofence collection storing the geofences.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The geofence collection storing the geofences.</p>
@@ -1129,8 +1129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to update.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to update.</p>
@@ -1245,8 +1245,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-        pub fn calculator_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calculator_name(signature.into());
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
             self
         }
         /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
@@ -1411,8 +1411,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Default Value: <code>Car</code>
         /// </p>
-        pub fn travel_mode(mut self, signature: crate::model::TravelMode) -> Self {
-            self.inner = self.inner.travel_mode(signature);
+        pub fn travel_mode(mut self, input: crate::model::TravelMode) -> Self {
+            self.inner = self.inner.travel_mode(input);
             self
         }
         /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
@@ -1452,8 +1452,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn departure_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.departure_time(signature);
+        pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.departure_time(input);
             self
         }
         /// <p>Specifies the desired time of departure. Uses the given time to calculate the route.
@@ -1485,8 +1485,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Values: <code>false</code> | <code>true</code>
         /// </p>
-        pub fn depart_now(mut self, signature: bool) -> Self {
-            self.inner = self.inner.depart_now(signature);
+        pub fn depart_now(mut self, input: bool) -> Self {
+            self.inner = self.inner.depart_now(input);
             self
         }
         /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
@@ -1503,8 +1503,8 @@ pub mod fluent_builders {
         /// <p>Set the unit system to specify the distance.</p>
         /// <p>Default Value: <code>Kilometers</code>
         /// </p>
-        pub fn distance_unit(mut self, signature: crate::model::DistanceUnit) -> Self {
-            self.inner = self.inner.distance_unit(signature);
+        pub fn distance_unit(mut self, input: crate::model::DistanceUnit) -> Self {
+            self.inner = self.inner.distance_unit(input);
             self
         }
         /// <p>Set the unit system to specify the distance.</p>
@@ -1523,8 +1523,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Values: <code>false</code> | <code>true</code>
         /// </p>
-        pub fn include_leg_geometry(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_leg_geometry(signature);
+        pub fn include_leg_geometry(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_leg_geometry(input);
             self
         }
         /// <p>Set to include the geometry details in the result for each path between a pair of
@@ -1542,9 +1542,9 @@ pub mod fluent_builders {
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
         pub fn car_mode_options(
             mut self,
-            signature: crate::model::CalculateRouteCarModeOptions,
+            input: crate::model::CalculateRouteCarModeOptions,
         ) -> Self {
-            self.inner = self.inner.car_mode_options(signature);
+            self.inner = self.inner.car_mode_options(input);
             self
         }
         /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
@@ -1563,9 +1563,9 @@ pub mod fluent_builders {
         /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
         pub fn truck_mode_options(
             mut self,
-            signature: crate::model::CalculateRouteTruckModeOptions,
+            input: crate::model::CalculateRouteTruckModeOptions,
         ) -> Self {
-            self.inner = self.inner.truck_mode_options(signature);
+            self.inner = self.inner.truck_mode_options(input);
             self
         }
         /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
@@ -1653,8 +1653,8 @@ pub mod fluent_builders {
         /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
         /// </li>
         /// </ul>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>A custom name for the geofence collection.</p>
@@ -1681,8 +1681,8 @@ pub mod fluent_builders {
         /// <p>Specifies the pricing plan for the geofence collection.</p>
         /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
         /// page</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Specifies the pricing plan for the geofence collection.</p>
@@ -1712,11 +1712,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
         /// </p>
-        pub fn pricing_plan_data_source(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.pricing_plan_data_source(signature.into());
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>Specifies the data provider for the geofence collection.</p>
@@ -1744,8 +1741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the geofence collection.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the geofence collection.</p>
@@ -1828,8 +1825,8 @@ pub mod fluent_builders {
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
         /// </p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
@@ -1912,8 +1909,8 @@ pub mod fluent_builders {
         /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
         /// </li>
         /// </ul>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The name for the map resource.</p>
@@ -1934,8 +1931,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the map style selected from an available data provider.</p>
-        pub fn configuration(mut self, signature: crate::model::MapConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::MapConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Specifies the map style selected from an available data provider.</p>
@@ -1948,8 +1945,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the pricing plan for your map resource.</p>
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Specifies the pricing plan for your map resource.</p>
@@ -1962,8 +1959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the map resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the map resource.</p>
@@ -2120,8 +2117,8 @@ pub mod fluent_builders {
         /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
         /// </li>
         /// </ul>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource. </p>
@@ -2168,8 +2165,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
         /// on the <i>Amazon Location Service Developer Guide</i>.</p>
-        pub fn data_source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source(signature.into());
+        pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source(input.into());
             self
         }
         /// <p>Specifies the geospatial data provider for the new place index.</p>
@@ -2204,8 +2201,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the pricing plan for your place index resource.</p>
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Specifies the pricing plan for your place index resource.</p>
@@ -2218,8 +2215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description for the place index resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for the place index resource.</p>
@@ -2230,9 +2227,9 @@ pub mod fluent_builders {
         /// <p>Specifies the data storage option requesting Places.</p>
         pub fn data_source_configuration(
             mut self,
-            signature: crate::model::DataSourceConfiguration,
+            input: crate::model::DataSourceConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_source_configuration(signature);
+            self.inner = self.inner.data_source_configuration(input);
             self
         }
         /// <p>Specifies the data storage option requesting Places.</p>
@@ -2393,8 +2390,8 @@ pub mod fluent_builders {
         /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
         /// </li>
         /// </ul>
-        pub fn calculator_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calculator_name(signature.into());
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
             self
         }
         /// <p>The name of the route calculator resource. </p>
@@ -2438,8 +2435,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
         /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-        pub fn data_source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source(signature.into());
+        pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source(input.into());
             self
         }
         /// <p>Specifies the data provider of traffic and road network data.</p>
@@ -2468,8 +2465,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the pricing plan for your route calculator resource.</p>
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Specifies the pricing plan for your route calculator resource.</p>
@@ -2482,8 +2479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional description for the route calculator resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The optional description for the route calculator resource.</p>
@@ -2650,8 +2647,8 @@ pub mod fluent_builders {
         /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
         /// </li>
         /// </ul>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name for the tracker resource.</p>
@@ -2673,8 +2670,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the pricing plan for the tracker resource.</p>
         /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Specifies the pricing plan for the tracker resource.</p>
@@ -2687,8 +2684,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
@@ -2711,11 +2708,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Valid values: <code>Esri</code> | <code>Here</code>
         /// </p>
-        pub fn pricing_plan_data_source(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.pricing_plan_data_source(signature.into());
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>Specifies the data provider for the tracker resource.</p>
@@ -2741,8 +2735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description for the tracker resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>An optional description for the tracker resource.</p>
@@ -2843,8 +2837,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
-        pub fn position_filtering(mut self, signature: crate::model::PositionFiltering) -> Self {
-            self.inner = self.inner.position_filtering(signature);
+        pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
+            self.inner = self.inner.position_filtering(input);
             self
         }
         /// <p>Specifies the position filtering for the tracker resource.</p>
@@ -2939,8 +2933,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the geofence collection to be deleted.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The name of the geofence collection to be deleted.</p>
@@ -3016,8 +3010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the map resource to be deleted.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The name of the map resource to be deleted.</p>
@@ -3089,8 +3083,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the place index resource to be deleted.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource to be deleted.</p>
@@ -3162,8 +3156,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route calculator resource to be deleted.</p>
-        pub fn calculator_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calculator_name(signature.into());
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
             self
         }
         /// <p>The name of the route calculator resource to be deleted.</p>
@@ -3240,8 +3234,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to be deleted.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to be deleted.</p>
@@ -3310,8 +3304,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the geofence collection.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The name of the geofence collection.</p>
@@ -3383,8 +3377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the map resource.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The name of the map resource.</p>
@@ -3453,8 +3447,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the place index resource.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource.</p>
@@ -3523,8 +3517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route calculator resource.</p>
-        pub fn calculator_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calculator_name(signature.into());
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
             self
         }
         /// <p>The name of the route calculator resource.</p>
@@ -3596,8 +3590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource.</p>
@@ -3670,8 +3664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
@@ -3688,8 +3682,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
@@ -3769,8 +3763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tracker resource receiving the position update.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The tracker resource receiving the position update.</p>
@@ -3779,8 +3773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device whose position you want to retrieve.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The device whose position you want to retrieve.</p>
@@ -3853,8 +3847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tracker resource receiving the request for the device position history.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -3863,8 +3857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device whose position history you want to retrieve.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The device whose position history you want to retrieve.</p>
@@ -3876,8 +3870,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page. </p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -3898,8 +3892,8 @@ pub mod fluent_builders {
         /// <code>EndTimeExclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn start_time_inclusive(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time_inclusive(signature);
+        pub fn start_time_inclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time_inclusive(input);
             self
         }
         /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
@@ -3929,8 +3923,8 @@ pub mod fluent_builders {
         /// <code>StartTimeInclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn end_time_exclusive(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time_exclusive(signature);
+        pub fn end_time_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time_exclusive(input);
             self
         }
         /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
@@ -4011,8 +4005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The geofence collection storing the target geofence.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The geofence collection storing the target geofence.</p>
@@ -4024,8 +4018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The geofence you're retrieving details for.</p>
-        pub fn geofence_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geofence_id(signature.into());
+        pub fn geofence_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geofence_id(input.into());
             self
         }
         /// <p>The geofence you're retrieving details for.</p>
@@ -4094,8 +4088,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The map resource associated with the glyph ﬁle.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The map resource associated with the glyph ﬁle.</p>
@@ -4143,8 +4137,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn font_stack(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.font_stack(signature.into());
+        pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.font_stack(input.into());
             self
         }
         /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
@@ -4194,8 +4188,8 @@ pub mod fluent_builders {
         /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
         /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
         /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
-        pub fn font_unicode_range(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.font_unicode_range(signature.into());
+        pub fn font_unicode_range(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.font_unicode_range(input.into());
             self
         }
         /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
@@ -4271,8 +4265,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The map resource associated with the sprite ﬁle.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The map resource associated with the sprite ﬁle.</p>
@@ -4304,8 +4298,8 @@ pub mod fluent_builders {
         /// <code>sprites@2x.json</code> for high pixel density displays</p>
         /// </li>
         /// </ul>
-        pub fn file_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_name(signature.into());
+        pub fn file_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_name(input.into());
             self
         }
         /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
@@ -4400,8 +4394,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The map resource to retrieve the style descriptor from.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The map resource to retrieve the style descriptor from.</p>
@@ -4475,8 +4469,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The map resource to retrieve the map tiles from.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The map resource to retrieve the map tiles from.</p>
@@ -4485,8 +4479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The zoom value for the map tile.</p>
-        pub fn z(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.z(signature.into());
+        pub fn z(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.z(input.into());
             self
         }
         /// <p>The zoom value for the map tile.</p>
@@ -4495,8 +4489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The X axis value for the map tile.</p>
-        pub fn x(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.x(signature.into());
+        pub fn x(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.x(input.into());
             self
         }
         /// <p>The X axis value for the map tile.</p>
@@ -4505,8 +4499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Y axis value for the map tile. </p>
-        pub fn y(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.y(signature.into());
+        pub fn y(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.y(input.into());
             self
         }
         /// <p>The Y axis value for the map tile. </p>
@@ -4575,8 +4569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tracker resource containing the requested devices.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The tracker resource containing the requested devices.</p>
@@ -4587,8 +4581,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the number of entries returned in a single call.</p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the number of entries returned in a single call.</p>
@@ -4602,8 +4596,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page.</p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -4677,8 +4671,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
@@ -4692,8 +4686,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page. </p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -4765,8 +4759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the geofence collection storing the list of geofences.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The name of the geofence collection storing the list of geofences.</p>
@@ -4781,8 +4775,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page. </p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -4856,8 +4850,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
@@ -4871,8 +4865,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page.</p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -4946,8 +4940,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the maximum number of results returned in a single call.</p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the maximum number of results returned in a single call.</p>
@@ -4961,8 +4955,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page.</p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -5036,8 +5030,8 @@ pub mod fluent_builders {
         /// <p>An optional maximum number of results returned in a single call.</p>
         /// <p>Default Value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional maximum number of results returned in a single call.</p>
@@ -5051,8 +5045,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page.</p>
         /// <p>Default Value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -5130,8 +5124,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
@@ -5206,8 +5200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The tracker resource whose associated geofence collections you want to list.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The tracker resource whose associated geofence collections you want to list.</p>
@@ -5218,8 +5212,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
@@ -5233,8 +5227,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page. </p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -5308,8 +5302,8 @@ pub mod fluent_builders {
         /// <p>An optional limit for the number of resources returned in a single call. </p>
         /// <p>Default value: <code>100</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional limit for the number of resources returned in a single call. </p>
@@ -5323,8 +5317,8 @@ pub mod fluent_builders {
         /// token is provided, the default page is the first page. </p>
         /// <p>Default value: <code>null</code>
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token specifying which page of results to return in the response. If no
@@ -5397,8 +5391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The geofence collection to store the geofence in.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The geofence collection to store the geofence in.</p>
@@ -5410,8 +5404,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
-        pub fn geofence_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.geofence_id(signature.into());
+        pub fn geofence_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.geofence_id(input.into());
             self
         }
         /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
@@ -5423,8 +5417,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
         /// </note>
-        pub fn geometry(mut self, signature: crate::model::GeofenceGeometry) -> Self {
-            self.inner = self.inner.geometry(signature);
+        pub fn geometry(mut self, input: crate::model::GeofenceGeometry) -> Self {
+            self.inner = self.inner.geometry(input);
             self
         }
         /// <p>Contains the polygon details to specify the position of the geofence.</p>
@@ -5500,8 +5494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the place index resource you want to use for the search.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource you want to use for the search.</p>
@@ -5538,8 +5532,8 @@ pub mod fluent_builders {
         /// <p>An optional parameter. The maximum number of results returned per request.</p>
         /// <p>Default value: <code>50</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request.</p>
@@ -5554,8 +5548,8 @@ pub mod fluent_builders {
         /// <p>This setting affects the languages used in the results. It does not change which
         /// results are returned. If the language is not specified, or not supported for a
         /// particular result, the partner automatically chooses a language for the result.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
@@ -5637,8 +5631,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the place index resource you want to use for the search.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource you want to use for the search.</p>
@@ -5649,8 +5643,8 @@ pub mod fluent_builders {
         /// <p>The address, name,
         /// city, or region to be used in the search in free-form text format. For example, <code>123 Any
         /// Street</code>.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The address, name,
@@ -5772,8 +5766,8 @@ pub mod fluent_builders {
         /// <p>An optional parameter. The maximum number of results returned per request. </p>
         /// <p>The default: <code>50</code>
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>An optional parameter. The maximum number of results returned per request. </p>
@@ -5788,8 +5782,8 @@ pub mod fluent_builders {
         /// <p>This setting affects the languages used in the results. It does not change which
         /// results are returned. If the language is not specified, or not supported for a
         /// particular result, the partner automatically chooses a language for the result.</p>
-        pub fn language(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language(signature.into());
+        pub fn language(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language(input.into());
             self
         }
         /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example,
@@ -5881,8 +5875,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
@@ -6036,8 +6030,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
@@ -6129,8 +6123,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the geofence collection to update.</p>
-        pub fn collection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.collection_name(signature.into());
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.collection_name(input.into());
             self
         }
         /// <p>The name of the geofence collection to update.</p>
@@ -6144,8 +6138,8 @@ pub mod fluent_builders {
         /// <p>Updates the pricing plan for the geofence collection.</p>
         /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
         /// pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Updates the pricing plan for the geofence collection.</p>
@@ -6172,11 +6166,8 @@ pub mod fluent_builders {
         /// billing for your geofence collection. Your data won't be shared with the data
         /// provider, and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
-        pub fn pricing_plan_data_source(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.pricing_plan_data_source(signature.into());
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>Updates the data provider for the geofence collection. </p>
@@ -6201,8 +6192,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates the description for the geofence collection.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Updates the description for the geofence collection.</p>
@@ -6271,8 +6262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the map resource to update.</p>
-        pub fn map_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.map_name(signature.into());
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.map_name(input.into());
             self
         }
         /// <p>The name of the map resource to update.</p>
@@ -6282,8 +6273,8 @@ pub mod fluent_builders {
         }
         /// <p>Updates the pricing plan for the map resource.</p>
         /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Updates the pricing plan for the map resource.</p>
@@ -6296,8 +6287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates the description for the map resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Updates the description for the map resource.</p>
@@ -6366,8 +6357,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the place index resource to update.</p>
-        pub fn index_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_name(signature.into());
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_name(input.into());
             self
         }
         /// <p>The name of the place index resource to update.</p>
@@ -6377,8 +6368,8 @@ pub mod fluent_builders {
         }
         /// <p>Updates the pricing plan for the place index resource.</p>
         /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Updates the pricing plan for the place index resource.</p>
@@ -6391,8 +6382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates the description for the place index resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Updates the description for the place index resource.</p>
@@ -6403,9 +6394,9 @@ pub mod fluent_builders {
         /// <p>Updates the data storage option for the place index resource.</p>
         pub fn data_source_configuration(
             mut self,
-            signature: crate::model::DataSourceConfiguration,
+            input: crate::model::DataSourceConfiguration,
         ) -> Self {
-            self.inner = self.inner.data_source_configuration(signature);
+            self.inner = self.inner.data_source_configuration(input);
             self
         }
         /// <p>Updates the data storage option for the place index resource.</p>
@@ -6477,8 +6468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the route calculator resource to update.</p>
-        pub fn calculator_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.calculator_name(signature.into());
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.calculator_name(input.into());
             self
         }
         /// <p>The name of the route calculator resource to update.</p>
@@ -6492,8 +6483,8 @@ pub mod fluent_builders {
         /// <p>Updates the pricing plan for the route calculator resource.</p>
         /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
         /// Service pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Updates the pricing plan for the route calculator resource.</p>
@@ -6507,8 +6498,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates the description for the route calculator resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Updates the description for the route calculator resource.</p>
@@ -6577,8 +6568,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the tracker resource to update.</p>
-        pub fn tracker_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tracker_name(signature.into());
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tracker_name(input.into());
             self
         }
         /// <p>The name of the tracker resource to update.</p>
@@ -6589,8 +6580,8 @@ pub mod fluent_builders {
         /// <p>Updates the pricing plan for the tracker resource.</p>
         /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
         /// pricing</a>.</p>
-        pub fn pricing_plan(mut self, signature: crate::model::PricingPlan) -> Self {
-            self.inner = self.inner.pricing_plan(signature);
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.inner = self.inner.pricing_plan(input);
             self
         }
         /// <p>Updates the pricing plan for the tracker resource.</p>
@@ -6615,11 +6606,8 @@ pub mod fluent_builders {
         /// billing for your tracker resource. Your data won't be shared with the data provider,
         /// and will remain in your AWS account and Region unless you move it.</p>
         /// </note>
-        pub fn pricing_plan_data_source(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.pricing_plan_data_source(signature.into());
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pricing_plan_data_source(input.into());
             self
         }
         /// <p>Updates the data provider for the tracker resource. </p>
@@ -6642,8 +6630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates the description for the tracker resource.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>Updates the description for the tracker resource.</p>
@@ -6670,8 +6658,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn position_filtering(mut self, signature: crate::model::PositionFiltering) -> Self {
-            self.inner = self.inner.position_filtering(signature);
+        pub fn position_filtering(mut self, input: crate::model::PositionFiltering) -> Self {
+            self.inner = self.inner.position_filtering(input);
             self
         }
         /// <p>Updates the position filtering for the tracker resource.</p>

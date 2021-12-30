@@ -771,9 +771,9 @@ pub mod fluent_builders {
         /// <p>The name for the approval rule template. </p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name for the approval rule template. </p>
@@ -785,8 +785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that you want to associate with the template.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that you want to associate with the template.</p>
@@ -854,9 +854,9 @@ pub mod fluent_builders {
         /// <p>The name of the template you want to associate with one or more repositories.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template you want to associate with one or more repositories.</p>
@@ -951,8 +951,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the merge conflicts you want to review.</p>
@@ -967,9 +967,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -983,11 +983,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -1000,8 +997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, signature: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(signature);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -1013,8 +1010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
-        pub fn max_merge_hunks(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_merge_hunks(signature);
+        pub fn max_merge_hunks(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_merge_hunks(input);
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
@@ -1023,8 +1020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
-        pub fn max_conflict_files(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_conflict_files(signature);
+        pub fn max_conflict_files(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_conflict_files(input);
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
@@ -1055,9 +1052,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -1076,9 +1073,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -1093,8 +1090,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -1155,9 +1152,9 @@ pub mod fluent_builders {
         /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template that you want to disassociate from one or more repositories.</p>
@@ -1279,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that contains the commits.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the commits.</p>
@@ -1450,9 +1447,9 @@ pub mod fluent_builders {
         /// repositories.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template. Provide descriptive names, because this name
@@ -1511,9 +1508,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn approval_rule_template_content(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_content(signature.into());
+            self.inner = self.inner.approval_rule_template_content(input.into());
             self
         }
         /// <p>The content of the approval rule that is created on pull requests in associated
@@ -1572,11 +1569,9 @@ pub mod fluent_builders {
         /// repositories.</p>
         pub fn approval_rule_template_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .approval_rule_template_description(signature.into());
+            self.inner = self.inner.approval_rule_template_description(input.into());
             self
         }
         /// <p>The description of the approval rule template. Consider providing a description that
@@ -1653,8 +1648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository in which you want to create the new branch.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository in which you want to create the new branch.</p>
@@ -1666,8 +1661,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the new branch to create.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the new branch to create.</p>
@@ -1676,8 +1671,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the commit to point the new branch to.</p>
-        pub fn commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(signature.into());
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p>The ID of the commit to point the new branch to.</p>
@@ -1746,8 +1741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you create the commit.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you create the commit.</p>
@@ -1759,8 +1754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch where you create the commit.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch where you create the commit.</p>
@@ -1770,8 +1765,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the commit that is the parent of the commit you create. Not required if this
         /// is an empty repository.</p>
-        pub fn parent_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(signature.into());
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
         /// <p>The ID of the commit that is the parent of the commit you create. Not required if this
@@ -1785,8 +1780,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the commit. This information is used as both the
         /// author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the commit. This information is used as both the
@@ -1796,8 +1791,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address of the person who created the commit.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person who created the commit.</p>
@@ -1807,8 +1802,8 @@ pub mod fluent_builders {
         }
         /// <p>The commit message you want to include in the commit. Commit messages are limited to
         /// 256 KB. If no message is specified, a default message is used.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message you want to include in the commit. Commit messages are limited to
@@ -1823,8 +1818,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If true, a ..gitkeep file is created for empty folders.
         /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -1947,8 +1942,8 @@ pub mod fluent_builders {
         }
         /// <p>The title of the pull request. This title is used to identify the pull request to
         /// other users in the repository.</p>
-        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(signature.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>The title of the pull request. This title is used to identify the pull request to
@@ -1958,8 +1953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the pull request.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the pull request.</p>
@@ -1996,8 +1991,8 @@ pub mod fluent_builders {
         /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an
         /// idempotency token is created for you.</p>
         /// </note>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
@@ -2076,8 +2071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request for which you want to create the approval rule.</p>
@@ -2089,8 +2084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the approval rule.</p>
-        pub fn approval_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(signature.into());
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name for the approval rule.</p>
@@ -2144,8 +2139,8 @@ pub mod fluent_builders {
         /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
         ///
         /// </note>
-        pub fn approval_rule_content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_content(signature.into());
+        pub fn approval_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_content(input.into());
             self
         }
         /// <p>The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information
@@ -2266,8 +2261,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the <i>AWS CodeCommit User Guide</i>. The
         /// suffix .git is prohibited.</p>
         /// </note>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the new repository to be created.</p>
@@ -2293,8 +2288,8 @@ pub mod fluent_builders {
         /// HTML-encode the description field in any application that uses this API to display
         /// the repository description on a webpage.</p>
         /// </note>
-        pub fn repository_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_description(signature.into());
+        pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_description(input.into());
             self
         }
         /// <p>A comment or description about the new repository.</p>
@@ -2403,8 +2398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to create the unreferenced merge commit.</p>
@@ -2417,11 +2412,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -2437,9 +2429,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -2452,8 +2444,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, signature: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(signature);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -2470,9 +2462,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -2491,9 +2483,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -2508,8 +2500,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the unreferenced commit. This information is used
         /// as both the author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the unreferenced commit. This information is used
@@ -2519,8 +2511,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The email address for the person who created the unreferenced commit.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address for the person who created the unreferenced commit.</p>
@@ -2529,8 +2521,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message for the unreferenced commit.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message for the unreferenced commit.</p>
@@ -2544,8 +2536,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
         /// created for empty folders. The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -2557,8 +2549,8 @@ pub mod fluent_builders {
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
         /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(signature);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
@@ -2633,9 +2625,9 @@ pub mod fluent_builders {
         /// <p>The name of the approval rule template to delete.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template to delete.</p>
@@ -2707,8 +2699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the branch to be deleted.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branch to be deleted.</p>
@@ -2720,8 +2712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch to delete.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch to delete.</p>
@@ -2791,8 +2783,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
         /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(signature.into());
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
@@ -2864,8 +2856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the file to delete.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the file to delete.</p>
@@ -2877,8 +2869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch where the commit that deletes the file is made.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch where the commit that deletes the file is made.</p>
@@ -2889,8 +2881,8 @@ pub mod fluent_builders {
         /// <p>The fully qualified path to the file that to be deleted, including the full name and
         /// extension of that file. For example, /examples/file.md is a fully qualified path to a
         /// file named file.md in a folder named examples.</p>
-        pub fn file_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(signature.into());
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
         /// <p>The fully qualified path to the file that to be deleted, including the full name and
@@ -2903,8 +2895,8 @@ pub mod fluent_builders {
         /// <p>The ID of the commit that is the tip of the branch where you want to create the commit
         /// that deletes the file. This must be the HEAD commit for the branch. The commit that
         /// deletes the file is created from this commit ID.</p>
-        pub fn parent_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(signature.into());
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
         /// <p>The ID of the commit that is the tip of the branch where you want to create the commit
@@ -2922,8 +2914,8 @@ pub mod fluent_builders {
         /// This includes empty folders that are part of the directory structure. For example, if
         /// the path to a file is dir1/dir2/dir3/dir4, and dir2 and dir3 are empty, deleting the
         /// last file in dir4 also deletes the empty folders dir4, dir3, and dir2.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If a file is the only object in the folder or directory, specifies whether to delete
@@ -2937,8 +2929,8 @@ pub mod fluent_builders {
         }
         /// <p>The commit message you want to include as part of deleting the file. Commit messages
         /// are limited to 256 KB. If no message is specified, a default message is used.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message you want to include as part of deleting the file. Commit messages
@@ -2952,8 +2944,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author of the commit that deletes the file. If no name is specified,
         /// the user's ARN is used as the author name and committer name.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the author of the commit that deletes the file. If no name is specified,
@@ -2964,8 +2956,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address for the commit that deletes the file. If no email address is
         /// specified, the email address is left blank.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address for the commit that deletes the file. If no email address is
@@ -3037,8 +3029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request that contains the approval rule you want to delete.</p>
@@ -3050,8 +3042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the approval rule you want to delete.</p>
-        pub fn approval_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(signature.into());
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name of the approval rule you want to delete.</p>
@@ -3128,8 +3120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to delete.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to delete.</p>
@@ -3203,8 +3195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to get information about a merge conflict.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to get information about a merge conflict.</p>
@@ -3219,9 +3211,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -3235,11 +3227,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -3252,8 +3241,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
-        pub fn merge_option(mut self, signature: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(signature);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.</p>
@@ -3265,8 +3254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
-        pub fn max_merge_hunks(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_merge_hunks(signature);
+        pub fn max_merge_hunks(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_merge_hunks(input);
             self
         }
         /// <p>The maximum number of merge hunks to include in the output.</p>
@@ -3275,8 +3264,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The path of the target files used to describe the conflicts. </p>
-        pub fn file_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(signature.into());
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
         /// <p>The path of the target files used to describe the conflicts. </p>
@@ -3290,9 +3279,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -3311,9 +3300,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -3328,8 +3317,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -3399,8 +3388,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -3414,9 +3403,9 @@ pub mod fluent_builders {
         /// <p>Optional. The pull request event type about which you want to return information.</p>
         pub fn pull_request_event_type(
             mut self,
-            signature: crate::model::PullRequestEventType,
+            input: crate::model::PullRequestEventType,
         ) -> Self {
-            self.inner = self.inner.pull_request_event_type(signature);
+            self.inner = self.inner.pull_request_event_type(input);
             self
         }
         /// <p>Optional. The pull request event type about which you want to return information.</p>
@@ -3430,8 +3419,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
         /// Examples include updating the pull request with more commits or changing the status of a
         /// pull request.</p>
-        pub fn actor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.actor_arn(signature.into());
+        pub fn actor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.actor_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
@@ -3443,8 +3432,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -3455,8 +3444,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.
         /// The default is 100 events, which is also the maximum number of events that can be returned in a result.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.
@@ -3524,9 +3513,9 @@ pub mod fluent_builders {
         /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template to disassociate from a specified repository.</p>
@@ -3538,8 +3527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository you want to disassociate from the template.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository you want to disassociate from the template.</p>
@@ -3611,8 +3600,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request you want to evaluate.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request you want to evaluate.</p>
@@ -3626,8 +3615,8 @@ pub mod fluent_builders {
         /// <p>The system-generated ID for the pull request revision. To retrieve the most recent
         /// revision ID for a pull request, use
         /// <a>GetPullRequest</a>.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID for the pull request revision. To retrieve the most recent
@@ -3700,9 +3689,9 @@ pub mod fluent_builders {
         /// <p>The name of the approval rule template for which you want to get information.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template for which you want to get information.</p>
@@ -3774,8 +3763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the blob.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the blob.</p>
@@ -3787,8 +3776,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
-        pub fn blob_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.blob_id(signature.into());
+        pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.blob_id(input.into());
             self
         }
         /// <p>The ID of the blob, which is its SHA-1 pointer.</p>
@@ -3857,8 +3846,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branch for which you want to retrieve information.</p>
@@ -3870,8 +3859,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch for which you want to retrieve information.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch for which you want to retrieve information.</p>
@@ -3945,8 +3934,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
         /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(signature.into());
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The unique, system-generated ID of the comment. To get this ID, use  <a>GetCommentsForComparedCommit</a>
@@ -4016,8 +4005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the comment for which you want to get reactions information.</p>
-        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(signature.into());
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The ID of the comment for which you want to get reactions information.</p>
@@ -4026,8 +4015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
-        pub fn reaction_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reaction_user_arn(signature.into());
+        pub fn reaction_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reaction_user_arn(input.into());
             self
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.</p>
@@ -4039,8 +4028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the results. </p>
@@ -4049,8 +4038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.  The default is the same as the allowed maximum, 1,000.</p>
@@ -4123,8 +4112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to compare commits.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to compare commits.</p>
@@ -4137,8 +4126,8 @@ pub mod fluent_builders {
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the before
         /// commit.</p>
-        pub fn before_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(signature.into());
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the before
@@ -4152,8 +4141,8 @@ pub mod fluent_builders {
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the after
         /// commit.</p>
-        pub fn after_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(signature.into());
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the after
@@ -4166,8 +4155,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that when provided in a request, returns the next batch of the results. </p>
@@ -4177,8 +4166,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results. The
         /// default is 100 comments, but you can configure up to 500.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results. The
@@ -4252,8 +4241,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -4265,8 +4254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the pull request.</p>
@@ -4278,8 +4267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-        pub fn before_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(signature.into());
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
@@ -4291,8 +4280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
-        pub fn after_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(signature.into());
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the comment was made.</p>
@@ -4305,8 +4294,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -4317,8 +4306,8 @@ pub mod fluent_builders {
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
         /// You can return up to 500 comments with a single request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results. The default is 100 comments.
@@ -4388,8 +4377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to which the commit was made.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to which the commit was made.</p>
@@ -4401,8 +4390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
-        pub fn commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(signature.into());
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p>The commit ID. Commit IDs are the full SHA ID of the commit.</p>
@@ -4473,8 +4462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to get differences.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to get differences.</p>
@@ -4490,11 +4479,8 @@ pub mod fluent_builders {
         /// <code>afterCommitSpecifier</code> value are shown. If you do not use
         /// <code>beforeCommitSpecifier</code> in your request, consider limiting the results
         /// with <code>maxResults</code>.</p>
-        pub fn before_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.before_commit_specifier(signature.into());
+        pub fn before_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -4510,8 +4496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-        pub fn after_commit_specifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_specifier(signature.into());
+        pub fn after_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
@@ -4526,8 +4512,8 @@ pub mod fluent_builders {
         /// also be used to specify the previous name of a directory or folder. If
         /// <code>beforePath</code> and <code>afterPath</code> are not specified, differences
         /// are shown for all paths.</p>
-        pub fn before_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_path(signature.into());
+        pub fn before_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_path(input.into());
             self
         }
         /// <p>The file path in which to check for differences. Limits the results to this path. Can
@@ -4541,8 +4527,8 @@ pub mod fluent_builders {
         /// <p>The file path in which to check differences. Limits the results to this path. Can also
         /// be used to specify the changed name of a directory or folder, if it has changed. If not
         /// specified, differences are shown for all paths.</p>
-        pub fn after_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_path(signature.into());
+        pub fn after_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_path(input.into());
             self
         }
         /// <p>The file path in which to check differences. Limits the results to this path. Can also
@@ -4553,8 +4539,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -4564,8 +4550,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -4635,8 +4621,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the file.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the file.</p>
@@ -4650,8 +4636,8 @@ pub mod fluent_builders {
         /// <p>The fully quaified reference that identifies the commit that contains the file. For
         /// example, you can specify a full commit ID, a tag, a branch name, or a reference such as
         /// refs/heads/master. If none is provided, the head commit is used.</p>
-        pub fn commit_specifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_specifier(signature.into());
+        pub fn commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_specifier(input.into());
             self
         }
         /// <p>The fully quaified reference that identifies the commit that contains the file. For
@@ -4667,8 +4653,8 @@ pub mod fluent_builders {
         /// <p>The fully qualified path to the file, including the full name and extension of the
         /// file. For example, /examples/file.md is the fully qualified path to a file named file.md
         /// in a folder named examples.</p>
-        pub fn file_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(signature.into());
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
         /// <p>The fully qualified path to the file, including the full name and extension of the
@@ -4739,8 +4725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository.</p>
@@ -4755,8 +4741,8 @@ pub mod fluent_builders {
         /// folder's content to return. A fully qualified reference can be a commit ID, branch name,
         /// tag, or reference such as HEAD. If no specifier is provided, the folder content is
         /// returned as it exists in the HEAD commit.</p>
-        pub fn commit_specifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_specifier(signature.into());
+        pub fn commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_specifier(input.into());
             self
         }
         /// <p>A fully qualified reference used to identify a commit that contains the version of the
@@ -4773,8 +4759,8 @@ pub mod fluent_builders {
         /// <p>The fully qualified path to the folder whose contents are returned, including the
         /// folder name. For example, /examples is a fully-qualified path to a folder named examples
         /// that was created off of the root directory (/) of a repository. </p>
-        pub fn folder_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.folder_path(signature.into());
+        pub fn folder_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.folder_path(input.into());
             self
         }
         /// <p>The fully qualified path to the folder whose contents are returned, including the
@@ -4845,8 +4831,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the merge commit about which you want to get information.</p>
@@ -4859,11 +4845,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -4879,9 +4862,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -4899,9 +4882,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -4920,9 +4903,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -4996,8 +4979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -5012,9 +4995,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -5028,11 +5011,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -5045,8 +5025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.  </p>
-        pub fn merge_option(mut self, signature: crate::model::MergeOptionTypeEnum) -> Self {
-            self.inner = self.inner.merge_option(signature);
+        pub fn merge_option(mut self, input: crate::model::MergeOptionTypeEnum) -> Self {
+            self.inner = self.inner.merge_option(input);
             self
         }
         /// <p>The merge option or strategy you want to use to merge the code.  </p>
@@ -5063,9 +5043,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -5080,8 +5060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
-        pub fn max_conflict_files(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_conflict_files(signature);
+        pub fn max_conflict_files(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_conflict_files(input);
             self
         }
         /// <p>The maximum number of files to include in the output.</p>
@@ -5094,9 +5074,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -5111,8 +5091,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -5184,8 +5164,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the commits about which you want to get merge options.</p>
@@ -5198,11 +5178,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -5218,9 +5195,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -5238,9 +5215,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -5259,9 +5236,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -5335,8 +5312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -5409,8 +5386,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID for the pull request.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID for the pull request.</p>
@@ -5422,8 +5399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The system-generated ID for the pull request revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID for the pull request revision.</p>
@@ -5493,8 +5470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The ID of the pull request for which you want to get information about whether approval rules have been set aside (overridden).</p>
@@ -5508,8 +5485,8 @@ pub mod fluent_builders {
         /// <p>The system-generated ID of the revision for the pull request. To retrieve the most
         /// recent revision ID, use
         /// <a>GetPullRequest</a>.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID of the revision for the pull request. To retrieve the most
@@ -5588,8 +5565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to get information about.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to get information about.</p>
@@ -5661,8 +5638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository for which the trigger is configured.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which the trigger is configured.</p>
@@ -5736,8 +5713,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -5747,8 +5724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -5810,8 +5787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which you want to list all associated approval rule templates.</p>
@@ -5824,8 +5801,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -5835,8 +5812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -5905,8 +5882,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository that contains the branches.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository that contains the branches.</p>
@@ -5918,8 +5895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An enumeration token that allows the operation to batch the results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that allows the operation to batch the results.</p>
@@ -5989,8 +5966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository for which you want to list pull requests.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository for which you want to list pull requests.</p>
@@ -6003,8 +5980,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results
         /// to pull requests created by that user.</p>
-        pub fn author_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_arn(signature.into());
+        pub fn author_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_arn(input.into());
             self
         }
         /// <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull request. If used, this filters the results
@@ -6014,11 +5991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-        pub fn pull_request_status(
-            mut self,
-            signature: crate::model::PullRequestStatusEnum,
-        ) -> Self {
-            self.inner = self.inner.pull_request_status(signature);
+        pub fn pull_request_status(mut self, input: crate::model::PullRequestStatusEnum) -> Self {
+            self.inner = self.inner.pull_request_status(input);
             self
         }
         /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
@@ -6031,8 +6005,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -6042,8 +6016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -6114,8 +6088,8 @@ pub mod fluent_builders {
         /// <p>An enumeration token that allows the operation to batch the results of the operation.
         /// Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit,
         /// another page of 1,000 records is retrieved.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that allows the operation to batch the results of the operation.
@@ -6126,8 +6100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria used to sort the results of a list repositories operation.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortByEnum) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortByEnum) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The criteria used to sort the results of a list repositories operation.</p>
@@ -6136,8 +6110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The order in which to sort the results of a list repositories operation.</p>
-        pub fn order(mut self, signature: crate::model::OrderEnum) -> Self {
-            self.inner = self.inner.order(signature);
+        pub fn order(mut self, input: crate::model::OrderEnum) -> Self {
+            self.inner = self.inner.order(input);
             self
         }
         /// <p>The order in which to sort the results of a list repositories operation.</p>
@@ -6210,9 +6184,9 @@ pub mod fluent_builders {
         /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template for which you want to list repositories that are associated with that template.</p>
@@ -6225,8 +6199,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -6236,8 +6210,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>A non-zero, non-negative integer used to limit the number of returned results.</p>
@@ -6309,8 +6283,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information
         /// about tags, if any.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want to get information
@@ -6321,8 +6295,8 @@ pub mod fluent_builders {
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
         /// results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An enumeration token that, when provided in a request, returns the next batch of the
@@ -6392,8 +6366,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6406,11 +6380,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6426,9 +6397,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6441,8 +6412,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied.</p>
-        pub fn target_branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(signature.into());
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied.</p>
@@ -6514,8 +6485,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6528,11 +6499,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6548,9 +6516,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6563,8 +6531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied. </p>
-        pub fn target_branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(signature.into());
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied. </p>
@@ -6581,9 +6549,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -6602,9 +6570,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -6619,8 +6587,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the commit. This information is used as both the
         /// author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the commit. This information is used as both the
@@ -6631,8 +6599,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address of the person merging the branches. This information is used in the
         /// commit information for the merge.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person merging the branches. This information is used in the
@@ -6642,8 +6610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message for the merge.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message for the merge.</p>
@@ -6657,8 +6625,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If this is specified as true, a .gitkeep file is
         /// created for empty folders. The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -6670,8 +6638,8 @@ pub mod fluent_builders {
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
         /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(signature);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
@@ -6744,8 +6712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to merge two branches.</p>
@@ -6758,11 +6726,8 @@ pub mod fluent_builders {
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, a branch name or a full commit ID).</p>
-        pub fn source_commit_specifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_commit_specifier(signature.into());
+        pub fn source_commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6778,9 +6743,9 @@ pub mod fluent_builders {
         /// (for example, a branch name or a full commit ID).</p>
         pub fn destination_commit_specifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.destination_commit_specifier(signature.into());
+            self.inner = self.inner.destination_commit_specifier(input.into());
             self
         }
         /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit
@@ -6793,8 +6758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The branch where the merge is applied. </p>
-        pub fn target_branch(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_branch(signature.into());
+        pub fn target_branch(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_branch(input.into());
             self
         }
         /// <p>The branch where the merge is applied. </p>
@@ -6811,9 +6776,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -6832,9 +6797,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -6849,8 +6814,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the commit. This information is used as both the
         /// author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the commit. This information is used as both the
@@ -6861,8 +6826,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address of the person merging the branches. This information is used in the
         /// commit information for the merge.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person merging the branches. This information is used in the
@@ -6872,8 +6837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -6887,8 +6852,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
         /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -6900,8 +6865,8 @@ pub mod fluent_builders {
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
         /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(signature);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
@@ -6975,8 +6940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -6988,8 +6953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -7002,8 +6967,8 @@ pub mod fluent_builders {
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
         /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(signature.into());
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
@@ -7077,8 +7042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -7090,8 +7055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -7104,8 +7069,8 @@ pub mod fluent_builders {
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
         /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(signature.into());
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
@@ -7123,9 +7088,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -7144,9 +7109,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -7160,8 +7125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -7174,8 +7139,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the commit. This information is used as both the
         /// author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the commit. This information is used as both the
@@ -7186,8 +7151,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address of the person merging the branches. This information is used in the
         /// commit information for the merge.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person merging the branches. This information is used in the
@@ -7199,8 +7164,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
         /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -7212,8 +7177,8 @@ pub mod fluent_builders {
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
         /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(signature);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
@@ -7287,8 +7252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -7300,8 +7265,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where the pull request was created.</p>
@@ -7314,8 +7279,8 @@ pub mod fluent_builders {
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
         /// exception thrown if the current commit ID of the tip of the source branch does not match this commit ID.</p>
-        pub fn source_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_commit_id(signature.into());
+        pub fn source_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the original or updated commit in the pull request source branch. Pass this value if you want an
@@ -7333,9 +7298,9 @@ pub mod fluent_builders {
         /// both branches has differences on the same line.</p>
         pub fn conflict_detail_level(
             mut self,
-            signature: crate::model::ConflictDetailLevelTypeEnum,
+            input: crate::model::ConflictDetailLevelTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_detail_level(signature);
+            self.inner = self.inner.conflict_detail_level(input);
             self
         }
         /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used,
@@ -7354,9 +7319,9 @@ pub mod fluent_builders {
         /// conflicts to be resolved manually before the merge operation is successful.</p>
         pub fn conflict_resolution_strategy(
             mut self,
-            signature: crate::model::ConflictResolutionStrategyTypeEnum,
+            input: crate::model::ConflictResolutionStrategyTypeEnum,
         ) -> Self {
-            self.inner = self.inner.conflict_resolution_strategy(signature);
+            self.inner = self.inner.conflict_resolution_strategy(input);
             self
         }
         /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt
@@ -7370,8 +7335,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>The commit message to include in the commit information for the merge.</p>
@@ -7384,8 +7349,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the author who created the commit. This information is used as both the
         /// author and committer for the commit.</p>
-        pub fn author_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author_name(signature.into());
+        pub fn author_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author_name(input.into());
             self
         }
         /// <p>The name of the author who created the commit. This information is used as both the
@@ -7396,8 +7361,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address of the person merging the branches. This information is used in the
         /// commit information for the merge.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>The email address of the person merging the branches. This information is used in the
@@ -7409,8 +7374,8 @@ pub mod fluent_builders {
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
         /// changes leave the folders empty. If true, a .gitkeep file is created for empty folders.
         /// The default is false.</p>
-        pub fn keep_empty_folders(mut self, signature: bool) -> Self {
-            self.inner = self.inner.keep_empty_folders(signature);
+        pub fn keep_empty_folders(mut self, input: bool) -> Self {
+            self.inner = self.inner.keep_empty_folders(input);
             self
         }
         /// <p>If the commit contains deletions, whether to keep a folder or folder structure if the
@@ -7422,8 +7387,8 @@ pub mod fluent_builders {
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
         /// resolving conflicts during a merge.</p>
-        pub fn conflict_resolution(mut self, signature: crate::model::ConflictResolution) -> Self {
-            self.inner = self.inner.conflict_resolution(signature);
+        pub fn conflict_resolution(mut self, input: crate::model::ConflictResolution) -> Self {
+            self.inner = self.inner.conflict_resolution(input);
             self
         }
         /// <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use when
@@ -7498,8 +7463,8 @@ pub mod fluent_builders {
         /// <p>The system-generated ID of the pull request for which you want to override all
         /// approval rule requirements. To get this information, use
         /// <a>GetPullRequest</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request for which you want to override all
@@ -7514,8 +7479,8 @@ pub mod fluent_builders {
         }
         /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request.
         /// To get the revision ID, use GetPullRequest.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID of the most recent revision of the pull request. You cannot override approval rules for anything but the most recent revision of a pull request.
@@ -7526,8 +7491,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
         /// approval rule requirements (REVOKE). REVOKE status is not stored.</p>
-        pub fn override_status(mut self, signature: crate::model::OverrideStatus) -> Self {
-            self.inner = self.inner.override_status(signature);
+        pub fn override_status(mut self, input: crate::model::OverrideStatus) -> Self {
+            self.inner = self.inner.override_status(input);
             self
         }
         /// <p>Whether you want to set aside approval rule requirements for the pull request (OVERRIDE) or revoke a previous override and apply
@@ -7600,8 +7565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to post a comment on the comparison between commits.</p>
@@ -7615,8 +7580,8 @@ pub mod fluent_builders {
         /// <p>To establish the directionality of the comparison, the full commit ID of the before
         /// commit. Required for commenting on any commit unless that commit is the initial
         /// commit.</p>
-        pub fn before_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(signature.into());
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the before
@@ -7631,8 +7596,8 @@ pub mod fluent_builders {
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the after
         /// commit.</p>
-        pub fn after_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(signature.into());
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>To establish the directionality of the comparison, the full commit ID of the after
@@ -7645,8 +7610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the comparison where you want to comment.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The location of the comparison where you want to comment.</p>
@@ -7655,8 +7620,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the comment you want to make.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the comment you want to make.</p>
@@ -7668,8 +7633,8 @@ pub mod fluent_builders {
         /// the request cannot be repeated with a changed parameter. If a request is received with
         /// the same parameters and a token is included, the request returns information about the
         /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
@@ -7744,8 +7709,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -7757,8 +7722,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the repository where you want to post a comment on a pull request.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to post a comment on a pull request.</p>
@@ -7770,8 +7735,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
-        pub fn before_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.before_commit_id(signature.into());
+        pub fn before_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.before_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was created.</p>
@@ -7783,8 +7748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
-        pub fn after_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.after_commit_id(signature.into());
+        pub fn after_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.after_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the commit in the source branch that is the current tip of the branch for the pull request when you post the comment.</p>
@@ -7798,8 +7763,8 @@ pub mod fluent_builders {
         /// <p>The location of the change where you want to post your comment. If no location is
         /// provided, the comment is posted as a general comment on the pull request difference
         /// between the before commit ID and the after commit ID.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The location of the change where you want to post your comment. If no location is
@@ -7810,8 +7775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of your comment on the change.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of your comment on the change.</p>
@@ -7823,8 +7788,8 @@ pub mod fluent_builders {
         /// the request cannot be repeated with a changed parameter. If a request is received with
         /// the same parameters and a token is included, the request returns information about the
         /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
@@ -7900,8 +7865,8 @@ pub mod fluent_builders {
         }
         /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <a>GetCommentsForComparedCommit</a>
         /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn in_reply_to(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.in_reply_to(signature.into());
+        pub fn in_reply_to(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.in_reply_to(input.into());
             self
         }
         /// <p>The system-generated ID of the comment to which you want to reply. To get this ID, use <a>GetCommentsForComparedCommit</a>
@@ -7914,8 +7879,8 @@ pub mod fluent_builders {
         /// the request cannot be repeated with a changed parameter. If a request is received with
         /// the same parameters and a token is included, the request returns information about the
         /// initial request that used that token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
@@ -7930,8 +7895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The contents of your reply to a comment.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The contents of your reply to a comment.</p>
@@ -8001,8 +7966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the comment to which you want to add or update a reaction.</p>
-        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(signature.into());
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The ID of the comment to which you want to add or update a reaction.</p>
@@ -8012,8 +7977,8 @@ pub mod fluent_builders {
         }
         /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none.
         /// For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-        pub fn reaction_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reaction_value(signature.into());
+        pub fn reaction_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reaction_value(input.into());
             self
         }
         /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none.
@@ -8086,8 +8051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to add or update the file.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to add or update the file.</p>
@@ -8100,8 +8065,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the branch where you want to add or update the file. If this is an empty
         /// repository, this branch is created.</p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p>The name of the branch where you want to add or update the file. If this is an empty
@@ -8111,8 +8076,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the file, in binary object format. </p>
-        pub fn file_content(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.file_content(signature);
+        pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.file_content(input);
             self
         }
         /// <p>The content of the file, in binary object format. </p>
@@ -8128,8 +8093,8 @@ pub mod fluent_builders {
         /// <p>If the path does not currently exist in the repository, the path is created as part of adding
         /// the file.</p>
         /// </note>
-        pub fn file_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.file_path(signature.into());
+        pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.file_path(input.into());
             self
         }
         /// <p>The name of the file you want to add or update, including the relative path to the file in the repository.</p>
@@ -8143,8 +8108,8 @@ pub mod fluent_builders {
         }
         /// <p>The file mode permissions of the blob. Valid file mode permissions are listed
         /// here.</p>
-        pub fn file_mode(mut self, signature: crate::model::FileModeTypeEnum) -> Self {
-            self.inner = self.inner.file_mode(signature);
+        pub fn file_mode(mut self, input: crate::model::FileModeTypeEnum) -> Self {
+            self.inner = self.inner.file_mode(input);
             self
         }
         /// <p>The file mode permissions of the blob. Valid file mode permissions are listed
@@ -8160,8 +8125,8 @@ pub mod fluent_builders {
         /// no commit ID is required. If this is not an empty repository, a commit ID is required. </p>
         /// <p>The commit ID must match the ID of the head commit at the time of the operation.
         /// Otherwise, an error occurs, and the file is not added or updated.</p>
-        pub fn parent_commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parent_commit_id(signature.into());
+        pub fn parent_commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parent_commit_id(input.into());
             self
         }
         /// <p>The full commit ID of the head commit in the branch where you want to add or update the file. If this is an empty repository,
@@ -8177,8 +8142,8 @@ pub mod fluent_builders {
         }
         /// <p>A message about why this file was added or updated. Although it is optional, a message
         /// makes the commit history for your repository more useful.</p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p>A message about why this file was added or updated. Although it is optional, a message
@@ -8192,8 +8157,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the person adding or updating the file. Although it is optional, a name
         /// makes the commit history for your repository more useful.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the person adding or updating the file. Although it is optional, a name
@@ -8203,8 +8168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An email address for the person adding or updating the file.</p>
-        pub fn email(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email(signature.into());
+        pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email(input.into());
             self
         }
         /// <p>An email address for the person adding or updating the file.</p>
@@ -8273,8 +8238,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository where you want to create or update the trigger.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository where you want to create or update the trigger.</p>
@@ -8365,8 +8330,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to add or update tags.</p>
@@ -8460,8 +8425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository in which to test the triggers.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository in which to test the triggers.</p>
@@ -8552,8 +8517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to which you want to remove tags.</p>
@@ -8643,9 +8608,9 @@ pub mod fluent_builders {
         /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
@@ -8658,8 +8623,8 @@ pub mod fluent_builders {
         }
         /// <p>The content that replaces the existing content of the rule. Content statements must be
         /// complete. You cannot provide only the changes.</p>
-        pub fn new_rule_content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_rule_content(signature.into());
+        pub fn new_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_rule_content(input.into());
             self
         }
         /// <p>The content that replaces the existing content of the rule. Content statements must be
@@ -8676,9 +8641,9 @@ pub mod fluent_builders {
         /// <a>GetPullRequest</a>.</p>
         pub fn existing_rule_content_sha256(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.existing_rule_content_sha256(signature.into());
+            self.inner = self.inner.existing_rule_content_sha256(input.into());
             self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
@@ -8756,9 +8721,9 @@ pub mod fluent_builders {
         /// <p>The name of the template for which you want to update the description.</p>
         pub fn approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.approval_rule_template_name(signature.into());
+            self.inner = self.inner.approval_rule_template_name(input.into());
             self
         }
         /// <p>The name of the template for which you want to update the description.</p>
@@ -8772,11 +8737,9 @@ pub mod fluent_builders {
         /// <p>The updated description of the approval rule template.</p>
         pub fn approval_rule_template_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .approval_rule_template_description(signature.into());
+            self.inner = self.inner.approval_rule_template_description(input.into());
             self
         }
         /// <p>The updated description of the approval rule template.</p>
@@ -8850,9 +8813,9 @@ pub mod fluent_builders {
         /// <p>The current name of the approval rule template.</p>
         pub fn old_approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.old_approval_rule_template_name(signature.into());
+            self.inner = self.inner.old_approval_rule_template_name(input.into());
             self
         }
         /// <p>The current name of the approval rule template.</p>
@@ -8866,9 +8829,9 @@ pub mod fluent_builders {
         /// <p>The new name you want to apply to the approval rule template.</p>
         pub fn new_approval_rule_template_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.new_approval_rule_template_name(signature.into());
+            self.inner = self.inner.new_approval_rule_template_name(input.into());
             self
         }
         /// <p>The new name you want to apply to the approval rule template.</p>
@@ -8941,8 +8904,8 @@ pub mod fluent_builders {
         }
         /// <p>The system-generated ID of the comment you want to update. To get this ID, use <a>GetCommentsForComparedCommit</a>
         /// or <a>GetCommentsForPullRequest</a>.</p>
-        pub fn comment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_id(signature.into());
+        pub fn comment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_id(input.into());
             self
         }
         /// <p>The system-generated ID of the comment you want to update. To get this ID, use <a>GetCommentsForComparedCommit</a>
@@ -8952,8 +8915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated content to replace the existing content of the comment.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The updated content to replace the existing content of the comment.</p>
@@ -9025,8 +8988,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to set or change the default branch for.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to set or change the default branch for.</p>
@@ -9038,8 +9001,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the branch to set as the default.</p>
-        pub fn default_branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_branch_name(signature.into());
+        pub fn default_branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_branch_name(input.into());
             self
         }
         /// <p>The name of the branch to set as the default.</p>
@@ -9114,8 +9077,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
@@ -9127,8 +9090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the approval rule you want to update.</p>
-        pub fn approval_rule_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.approval_rule_name(signature.into());
+        pub fn approval_rule_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.approval_rule_name(input.into());
             self
         }
         /// <p>The name of the approval rule you want to update.</p>
@@ -9144,9 +9107,9 @@ pub mod fluent_builders {
         /// <a>GetPullRequest</a>.</p>
         pub fn existing_rule_content_sha256(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.existing_rule_content_sha256(signature.into());
+            self.inner = self.inner.existing_rule_content_sha256(input.into());
             self
         }
         /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this
@@ -9200,8 +9163,8 @@ pub mod fluent_builders {
         /// Identifiers</a> in the <i>IAM User Guide</i>.</p>
         ///
         /// </note>
-        pub fn new_rule_content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_rule_content(signature.into());
+        pub fn new_rule_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_rule_content(input.into());
             self
         }
         /// <p>The updated content for the approval rule.</p>
@@ -9313,8 +9276,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request.</p>
@@ -9326,8 +9289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The system-generated ID of the revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>The system-generated ID of the revision.</p>
@@ -9336,8 +9299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The approval state to associate with the user on the pull request.</p>
-        pub fn approval_state(mut self, signature: crate::model::ApprovalState) -> Self {
-            self.inner = self.inner.approval_state(signature);
+        pub fn approval_state(mut self, input: crate::model::ApprovalState) -> Self {
+            self.inner = self.inner.approval_state(input);
             self
         }
         /// <p>The approval state to associate with the user on the pull request.</p>
@@ -9409,8 +9372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -9423,8 +9386,8 @@ pub mod fluent_builders {
         }
         /// <p>The updated content of the description for the pull request. This content replaces the
         /// existing description.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated content of the description for the pull request. This content replaces the
@@ -9494,8 +9457,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -9509,11 +9472,8 @@ pub mod fluent_builders {
         /// <p>The status of the pull request. The only valid operations are to update the status
         /// from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or
         /// from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-        pub fn pull_request_status(
-            mut self,
-            signature: crate::model::PullRequestStatusEnum,
-        ) -> Self {
-            self.inner = self.inner.pull_request_status(signature);
+        pub fn pull_request_status(mut self, input: crate::model::PullRequestStatusEnum) -> Self {
+            self.inner = self.inner.pull_request_status(input);
             self
         }
         /// <p>The status of the pull request. The only valid operations are to update the status
@@ -9587,8 +9547,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
-        pub fn pull_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.pull_request_id(signature.into());
+        pub fn pull_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.pull_request_id(input.into());
             self
         }
         /// <p>The system-generated ID of the pull request. To get this ID, use <a>ListPullRequests</a>.</p>
@@ -9600,8 +9560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated title of the pull request. This replaces the existing title.</p>
-        pub fn title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.title(signature.into());
+        pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.title(input.into());
             self
         }
         /// <p>The updated title of the pull request. This replaces the existing title.</p>
@@ -9677,8 +9637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the repository to set or change the comment or description for.</p>
-        pub fn repository_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_name(signature.into());
+        pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_name(input.into());
             self
         }
         /// <p>The name of the repository to set or change the comment or description for.</p>
@@ -9690,8 +9650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
-        pub fn repository_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository_description(signature.into());
+        pub fn repository_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository_description(input.into());
             self
         }
         /// <p>The new comment or description for the specified repository. Repository descriptions are limited to 1,000 characters.</p>
@@ -9767,8 +9727,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The current name of the repository.</p>
-        pub fn old_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.old_name(signature.into());
+        pub fn old_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.old_name(input.into());
             self
         }
         /// <p>The current name of the repository.</p>
@@ -9777,8 +9737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the repository.</p>
-        pub fn new_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_name(signature.into());
+        pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_name(input.into());
             self
         }
         /// <p>The new name for the repository.</p>

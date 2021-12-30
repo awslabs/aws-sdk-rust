@@ -205,8 +205,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing.</p>
@@ -215,8 +215,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(signature.into());
+        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shadow_name(input.into());
             self
         }
         /// <p>The name of the shadow.</p>
@@ -291,8 +291,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The topic name of the retained message to retrieve.</p>
-        pub fn topic(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic(signature.into());
+        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic(input.into());
             self
         }
         /// <p>The topic name of the retained message to retrieve.</p>
@@ -364,8 +364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing.</p>
@@ -374,8 +374,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(signature.into());
+        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shadow_name(input.into());
             self
         }
         /// <p>The name of the shadow.</p>
@@ -445,8 +445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing.</p>
@@ -455,8 +455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -465,8 +465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The result page size.</p>
-        pub fn page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_size(signature);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The result page size.</p>
@@ -546,8 +546,8 @@ pub mod fluent_builders {
         /// <p>To retrieve the next set of results, the <code>nextToken</code>
         /// value from a previous response; otherwise <b>null</b> to receive
         /// the first set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>To retrieve the next set of results, the <code>nextToken</code>
@@ -558,8 +558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return at one time.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return at one time.</p>
@@ -634,8 +634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the MQTT topic.</p>
-        pub fn topic(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic(signature.into());
+        pub fn topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic(input.into());
             self
         }
         /// <p>The name of the MQTT topic.</p>
@@ -644,8 +644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Quality of Service (QoS) level.</p>
-        pub fn qos(mut self, signature: i32) -> Self {
-            self.inner = self.inner.qos(signature);
+        pub fn qos(mut self, input: i32) -> Self {
+            self.inner = self.inner.qos(input);
             self
         }
         /// <p>The Quality of Service (QoS) level.</p>
@@ -659,8 +659,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default value: <code>false</code>
         /// </p>
-        pub fn retain(mut self, signature: bool) -> Self {
-            self.inner = self.inner.retain(signature);
+        pub fn retain(mut self, input: bool) -> Self {
+            self.inner = self.inner.retain(input);
             self
         }
         /// <p>A Boolean value that determines whether to set the RETAIN flag when the message is published.</p>
@@ -676,8 +676,8 @@ pub mod fluent_builders {
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
         /// <p>Publishing an empty (null) payload with <b>retain</b> =
         /// <code>true</code> deletes the retained message identified by <b>topic</b> from IoT Core.</p>
-        pub fn payload(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(signature);
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payload(input);
             self
         }
         /// <p>The message body. MQTT accepts text, binary, and empty (null) message payloads.</p>
@@ -751,8 +751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the thing.</p>
-        pub fn thing_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.thing_name(signature.into());
+        pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.thing_name(input.into());
             self
         }
         /// <p>The name of the thing.</p>
@@ -761,8 +761,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the shadow.</p>
-        pub fn shadow_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shadow_name(signature.into());
+        pub fn shadow_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shadow_name(input.into());
             self
         }
         /// <p>The name of the shadow.</p>
@@ -771,8 +771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state information, in JSON format.</p>
-        pub fn payload(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.payload(signature);
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.payload(input);
             self
         }
         /// <p>The state information, in JSON format.</p>

@@ -493,8 +493,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -503,8 +503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -516,8 +516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -586,8 +586,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -600,8 +600,8 @@ pub mod fluent_builders {
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
         /// by moderators.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -634,8 +634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -716,8 +716,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
-        pub fn callback_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.callback_id(signature.into());
+        pub fn callback_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.callback_id(input.into());
             self
         }
         /// <p>The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.</p>
@@ -726,8 +726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -736,8 +736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
-        pub fn delete_resource(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_resource(signature);
+        pub fn delete_resource(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_resource(input);
             self
         }
         /// <p>When a processor determines that a message needs to be <code>DENIED</code>, pass this parameter with a value of true.</p>
@@ -746,8 +746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Stores information about the processed message.</p>
-        pub fn channel_message(mut self, signature: crate::model::ChannelMessageCallback) -> Self {
-            self.inner = self.inner.channel_message(signature);
+        pub fn channel_message(mut self, input: crate::model::ChannelMessageCallback) -> Self {
+            self.inner = self.inner.channel_message(input);
             self
         }
         /// <p>Stores information about the processed message.</p>
@@ -829,8 +829,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel request.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the channel request.</p>
@@ -842,8 +842,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -854,8 +854,8 @@ pub mod fluent_builders {
         /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
         /// moderators, and channel members can add themselves and other members to unrestricted
         /// channels. Only administrators and moderators can add members to restricted channels.</p>
-        pub fn mode(mut self, signature: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
@@ -868,8 +868,8 @@ pub mod fluent_builders {
         /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
         /// channels aren't discoverable by users outside the channel. Public channels are discoverable
         /// by anyone in the <code>AppInstance</code>.</p>
-        pub fn privacy(mut self, signature: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(signature);
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
         /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
@@ -883,8 +883,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
@@ -893,8 +893,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client token for the request. An <code>Idempotency</code> token.</p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1004,8 +1004,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the ban request.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the ban request.</p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
@@ -1024,8 +1024,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1115,8 +1115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow request.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow request.</p>
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel flow.</p>
@@ -1172,8 +1172,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The client token for the request. An Idempotency token.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The client token for the request. An Idempotency token.</p>
@@ -1282,8 +1282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which you're adding users.</p>
@@ -1292,8 +1292,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member you want to add to the channel.</p>
@@ -1306,8 +1306,8 @@ pub mod fluent_builders {
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
         /// by moderators.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -1323,8 +1323,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1417,8 +1417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1427,8 +1427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator.</p>
@@ -1440,8 +1440,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1517,8 +1517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel being deleted.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel being deleted.</p>
@@ -1527,8 +1527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1603,8 +1603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the <code>AppInstanceUser</code> was banned.</p>
@@ -1613,8 +1613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> that you want to reinstate.</p>
@@ -1623,8 +1623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1697,8 +1697,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -1776,8 +1776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which you want to remove the user.</p>
@@ -1786,8 +1786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.</p>
@@ -1796,8 +1796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1874,8 +1874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1884,8 +1884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being deleted.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being deleted.</p>
@@ -1894,8 +1894,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -1980,8 +1980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the moderator being deleted.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2071,8 +2071,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2081,8 +2081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2158,8 +2158,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel from which the user is banned.</p>
@@ -2168,8 +2168,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member being banned.</p>
@@ -2178,8 +2178,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2248,8 +2248,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -2326,8 +2326,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2336,8 +2336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member.</p>
@@ -2346,8 +2346,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2425,8 +2425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel to which the user belongs.</p>
@@ -2435,8 +2435,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the user in a channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in a channel.</p>
@@ -2448,8 +2448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2527,8 +2527,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the moderated channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the moderated channel.</p>
@@ -2537,8 +2537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code> in the moderated channel.</p>
@@ -2550,8 +2550,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2625,8 +2625,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2635,8 +2635,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
-        pub fn channel_moderator_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_moderator_arn(signature.into());
+        pub fn channel_moderator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_moderator_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the channel moderator.</p>
@@ -2648,8 +2648,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -2723,8 +2723,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2733,8 +2733,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -2746,8 +2746,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -2818,8 +2818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2828,8 +2828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member retrieving the preferences.</p>
@@ -2838,8 +2838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserARN</code> of the user making the API call.</p>
@@ -2914,8 +2914,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -2924,8 +2924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message.</p>
@@ -2934,8 +2934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3040,8 +3040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel</p>
@@ -3050,8 +3050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message.</p>
@@ -3060,8 +3060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
@@ -3196,8 +3196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3206,8 +3206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of bans that you want returned.</p>
@@ -3216,8 +3216,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested bans are returned.</p>
@@ -3226,8 +3226,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3296,8 +3296,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the app instance.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the app instance.</p>
@@ -3309,8 +3309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channel flows that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channel flows that you want to return.</p>
@@ -3319,8 +3319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channel flows are returned.</p>
@@ -3398,8 +3398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -3411,8 +3411,8 @@ pub mod fluent_builders {
         /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
         /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMembershipType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
@@ -3427,8 +3427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channel memberships that you want returned.</p>
@@ -3438,8 +3438,8 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API calls until all requested channel memberships are
         /// returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channel memberships are
@@ -3449,8 +3449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3528,8 +3528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstanceUser</code>s</p>
@@ -3541,8 +3541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of users that you want returned.</p>
@@ -3552,8 +3552,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned from previous API requests until the number of channel memberships is
         /// reached.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of channel memberships is
@@ -3563,8 +3563,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3643,8 +3643,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3654,8 +3654,8 @@ pub mod fluent_builders {
         }
         /// <p>The order in which you want messages sorted. Default is Descending, based on time
         /// created.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>The order in which you want messages sorted. Default is Descending, based on time
@@ -3668,8 +3668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
-        pub fn not_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_before(signature);
+        pub fn not_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_before(input);
             self
         }
         /// <p>The initial or starting time stamp for your requested messages.</p>
@@ -3681,8 +3681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
-        pub fn not_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.not_after(signature);
+        pub fn not_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.not_after(input);
             self
         }
         /// <p>The final or ending time stamp for your requested messages.</p>
@@ -3694,8 +3694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of messages that you want returned.</p>
@@ -3704,8 +3704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested messages are returned.</p>
@@ -3714,8 +3714,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3789,8 +3789,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -3799,8 +3799,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of moderators that you want returned.</p>
@@ -3810,8 +3810,8 @@ pub mod fluent_builders {
         }
         /// <p>The token passed by previous API calls until all requested moderators are
         /// returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested moderators are
@@ -3821,8 +3821,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -3912,8 +3912,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
-        pub fn app_instance_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_arn(signature.into());
+        pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_arn(input.into());
             self
         }
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -3927,8 +3927,8 @@ pub mod fluent_builders {
         /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
         /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
         /// can retrieve private channels. </p>
-        pub fn privacy(mut self, signature: crate::model::ChannelPrivacy) -> Self {
-            self.inner = self.inner.privacy(signature);
+        pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
+            self.inner = self.inner.privacy(input);
             self
         }
         /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
@@ -3942,8 +3942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
@@ -3952,8 +3952,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -3962,8 +3962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4034,8 +4034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -4047,8 +4047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels that you want to return.</p>
@@ -4057,8 +4057,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token passed by previous API calls until all requested channels are returned.</p>
@@ -4135,8 +4135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the user in the moderated channel.</p>
-        pub fn app_instance_user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_instance_user_arn(signature.into());
+        pub fn app_instance_user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_instance_user_arn(input.into());
             self
         }
         /// <p>The ARN of the user in the moderated channel.</p>
@@ -4148,8 +4148,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of channels in the request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of channels in the request.</p>
@@ -4159,8 +4159,8 @@ pub mod fluent_builders {
         }
         /// <p>The token returned from previous API requests until the number of channels moderated by
         /// the user is reached.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token returned from previous API requests until the number of channels moderated by
@@ -4170,8 +4170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4240,8 +4240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4312,8 +4312,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4322,8 +4322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
-        pub fn member_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.member_arn(signature.into());
+        pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.member_arn(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the member setting the preferences.</p>
@@ -4332,8 +4332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserARN</code>  of the user making the API call.</p>
@@ -4342,11 +4342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
-        pub fn preferences(
-            mut self,
-            signature: crate::model::ChannelMembershipPreferences,
-        ) -> Self {
-            self.inner = self.inner.preferences(signature);
+        pub fn preferences(mut self, input: crate::model::ChannelMembershipPreferences) -> Self {
+            self.inner = self.inner.preferences(input);
             self
         }
         /// <p>The channel membership preferences of an <code>AppInstanceUser</code> .</p>
@@ -4425,8 +4422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -4435,8 +4432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the message being redacted.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID of the message being redacted.</p>
@@ -4445,8 +4442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4524,8 +4521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4534,8 +4531,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message.</p>
@@ -4544,8 +4541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::ChannelMessageType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ChannelMessageType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
@@ -4557,11 +4554,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
-        pub fn persistence(
-            mut self,
-            signature: crate::model::ChannelMessagePersistenceType,
-        ) -> Self {
-            self.inner = self.inner.persistence(signature);
+        pub fn persistence(mut self, input: crate::model::ChannelMessagePersistenceType) -> Self {
+            self.inner = self.inner.persistence(input);
             self
         }
         /// <p>Boolean that controls whether the message is persisted on the back end. Required.</p>
@@ -4573,8 +4567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The optional metadata for each message.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The optional metadata for each message.</p>
@@ -4583,8 +4577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>The <code>Idempotency</code> token for each client request.</p>
@@ -4596,8 +4590,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4608,9 +4602,9 @@ pub mod fluent_builders {
         /// <p>The push notification configuration of the message.</p>
         pub fn push_notification(
             mut self,
-            signature: crate::model::PushNotificationConfiguration,
+            input: crate::model::PushNotificationConfiguration,
         ) -> Self {
-            self.inner = self.inner.push_notification(signature);
+            self.inner = self.inner.push_notification(input);
             self
         }
         /// <p>The push notification configuration of the message.</p>
@@ -4705,8 +4699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -4792,8 +4786,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource ARN.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource ARN.</p>
@@ -4886,8 +4880,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -4896,8 +4890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel.</p>
@@ -4906,8 +4900,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The mode of the update request.</p>
-        pub fn mode(mut self, signature: crate::model::ChannelMode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>The mode of the update request.</p>
@@ -4916,8 +4910,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata for the update request.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata for the update request.</p>
@@ -4926,8 +4920,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -4996,8 +4990,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel flow.</p>
-        pub fn channel_flow_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_flow_arn(signature.into());
+        pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_flow_arn(input.into());
             self
         }
         /// <p>The ARN of the channel flow.</p>
@@ -5026,8 +5020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the channel flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the channel flow.</p>
@@ -5102,8 +5096,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -5112,8 +5106,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID string of the message being updated.</p>
-        pub fn message_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.message_id(signature.into());
+        pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.message_id(input.into());
             self
         }
         /// <p>The ID string of the message being updated.</p>
@@ -5122,8 +5116,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The content of the message being updated.</p>
-        pub fn content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.content(signature.into());
+        pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.content(input.into());
             self
         }
         /// <p>The content of the message being updated.</p>
@@ -5132,8 +5126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The metadata of the message being updated.</p>
-        pub fn metadata(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metadata(signature.into());
+        pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metadata(input.into());
             self
         }
         /// <p>The metadata of the message being updated.</p>
@@ -5142,8 +5136,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
@@ -5218,8 +5212,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the channel.</p>
-        pub fn channel_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.channel_arn(signature.into());
+        pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.channel_arn(input.into());
             self
         }
         /// <p>The ARN of the channel.</p>
@@ -5228,8 +5222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-        pub fn chime_bearer(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.chime_bearer(signature.into());
+        pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.chime_bearer(input.into());
             self
         }
         /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>

@@ -312,8 +312,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the order to cancel.
         /// </p>
-        pub fn order_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.order_id(signature.into());
+        pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_id(input.into());
             self
         }
         /// <p>
@@ -386,8 +386,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID or the Amazon Resource Name (ARN) of the Outpost.
         /// </p>
-        pub fn outpost_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_identifier(signature.into());
+        pub fn outpost_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_identifier(input.into());
             self
         }
         /// <p>
@@ -418,8 +418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The payment option for the order.</p>
-        pub fn payment_option(mut self, signature: crate::model::PaymentOption) -> Self {
-            self.inner = self.inner.payment_option(signature);
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(input);
             self
         }
         /// <p>The payment option for the order.</p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The payment terms for the order.</p>
-        pub fn payment_term(mut self, signature: crate::model::PaymentTerm) -> Self {
-            self.inner = self.inner.payment_term(signature);
+        pub fn payment_term(mut self, input: crate::model::PaymentTerm) -> Self {
+            self.inner = self.inner.payment_term(input);
             self
         }
         /// <p>The payment terms for the order.</p>
@@ -505,8 +505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Outpost.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the Outpost.</p>
@@ -515,8 +515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the Outpost.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the Outpost.</p>
@@ -525,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -535,8 +535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone.</p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Availability Zone.</p>
@@ -548,8 +548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Availability Zone.</p>
-        pub fn availability_zone_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone_id(signature.into());
+        pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone_id(input.into());
             self
         }
         /// <p>The ID of the Availability Zone.</p>
@@ -588,9 +588,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn supported_hardware_type(
             mut self,
-            signature: crate::model::SupportedHardwareType,
+            input: crate::model::SupportedHardwareType,
         ) -> Self {
-            self.inner = self.inner.supported_hardware_type(signature);
+            self.inner = self.inner.supported_hardware_type(input);
             self
         }
         /// <p>
@@ -666,8 +666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the site.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the site.</p>
@@ -676,8 +676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the site.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the site.</p>
@@ -688,8 +688,8 @@ pub mod fluent_builders {
         /// <p>Additional information that you provide about site access requirements, electrician
         /// scheduling, personal protective equipment, or regulation of equipment materials that could
         /// affect your installation process. </p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>Additional information that you provide about site access requirements, electrician
@@ -730,8 +730,8 @@ pub mod fluent_builders {
         /// The location to install and power on the hardware. This address might be
         /// different from the shipping address.
         /// </p>
-        pub fn operating_address(mut self, signature: crate::model::Address) -> Self {
-            self.inner = self.inner.operating_address(signature);
+        pub fn operating_address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.operating_address(input);
             self
         }
         /// <p>
@@ -749,8 +749,8 @@ pub mod fluent_builders {
         /// The location to ship the hardware. This address might be different
         /// from the operating address.
         /// </p>
-        pub fn shipping_address(mut self, signature: crate::model::Address) -> Self {
-            self.inner = self.inner.shipping_address(signature);
+        pub fn shipping_address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.shipping_address(input);
             self
         }
         /// <p>
@@ -771,9 +771,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn rack_physical_properties(
             mut self,
-            signature: crate::model::RackPhysicalProperties,
+            input: crate::model::RackPhysicalProperties,
         ) -> Self {
-            self.inner = self.inner.rack_physical_properties(signature);
+            self.inner = self.inner.rack_physical_properties(input);
             self
         }
         /// <p> Information about the physical and logistical details for the rack at this site.
@@ -851,8 +851,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the Outpost.
         /// </p>
-        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(signature.into());
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -993,8 +993,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the catalog item.</p>
-        pub fn catalog_item_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.catalog_item_id(signature.into());
+        pub fn catalog_item_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.catalog_item_id(input.into());
             self
         }
         /// <p>The ID of the catalog item.</p>
@@ -1066,8 +1066,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the order.</p>
-        pub fn order_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.order_id(signature.into());
+        pub fn order_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.order_id(input.into());
             self
         }
         /// <p>The ID of the order.</p>
@@ -1138,8 +1138,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the Outpost.
         /// </p>
-        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(signature.into());
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>
@@ -1212,8 +1212,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID of the Outpost.
         /// </p>
-        pub fn outpost_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.outpost_id(signature.into());
+        pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_id(input.into());
             self
         }
         /// <p>
@@ -1224,8 +1224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum page size.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum page size.</p>
@@ -1306,8 +1306,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1378,8 +1378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1388,8 +1388,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The type of the address you request. </p>
-        pub fn address_type(mut self, signature: crate::model::AddressType) -> Self {
-            self.inner = self.inner.address_type(signature);
+        pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
+            self.inner = self.inner.address_type(input);
             self
         }
         /// <p> The type of the address you request. </p>
@@ -1465,8 +1465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -1475,8 +1475,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum page size.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum page size.</p>
@@ -1632,11 +1632,8 @@ pub mod fluent_builders {
         /// <p>
         /// The ID or the Amazon Resource Name (ARN) of the Outpost.
         /// </p>
-        pub fn outpost_identifier_filter(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.outpost_identifier_filter(signature.into());
+        pub fn outpost_identifier_filter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.outpost_identifier_filter(input.into());
             self
         }
         /// <p>
@@ -1650,8 +1647,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -1660,8 +1657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum page size.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum page size.</p>
@@ -1735,8 +1732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -1745,8 +1742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum page size.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum page size.</p>
@@ -1899,8 +1896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token.</p>
@@ -1909,8 +1906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum page size.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum page size.</p>
@@ -1979,8 +1976,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2049,8 +2046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2142,8 +2139,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -2231,8 +2228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2241,8 +2238,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the site.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the site.</p>
@@ -2251,8 +2248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the site.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the site.</p>
@@ -2263,8 +2260,8 @@ pub mod fluent_builders {
         /// <p>
         /// Notes about a site.
         /// </p>
-        pub fn notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notes(signature.into());
+        pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notes(input.into());
             self
         }
         /// <p>
@@ -2346,8 +2343,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2358,8 +2355,8 @@ pub mod fluent_builders {
         /// <p>
         /// The type of the address.
         /// </p>
-        pub fn address_type(mut self, signature: crate::model::AddressType) -> Self {
-            self.inner = self.inner.address_type(signature);
+        pub fn address_type(mut self, input: crate::model::AddressType) -> Self {
+            self.inner = self.inner.address_type(input);
             self
         }
         /// <p>
@@ -2375,8 +2372,8 @@ pub mod fluent_builders {
         /// <p>
         /// The address for the site.
         /// </p>
-        pub fn address(mut self, signature: crate::model::Address) -> Self {
-            self.inner = self.inner.address(signature);
+        pub fn address(mut self, input: crate::model::Address) -> Self {
+            self.inner = self.inner.address(input);
             self
         }
         /// <p>
@@ -2452,8 +2449,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2463,8 +2460,8 @@ pub mod fluent_builders {
         }
         /// <p>Specify in kVA the power draw available at the hardware placement position for the
         /// rack.</p>
-        pub fn power_draw_kva(mut self, signature: crate::model::PowerDrawKva) -> Self {
-            self.inner = self.inner.power_draw_kva(signature);
+        pub fn power_draw_kva(mut self, input: crate::model::PowerDrawKva) -> Self {
+            self.inner = self.inner.power_draw_kva(input);
             self
         }
         /// <p>Specify in kVA the power draw available at the hardware placement position for the
@@ -2485,8 +2482,8 @@ pub mod fluent_builders {
         /// <p>Three-phase AC feed: 346 V to 480 V, 50 Hz or 60 Hz</p>
         /// </li>
         /// </ul>
-        pub fn power_phase(mut self, signature: crate::model::PowerPhase) -> Self {
-            self.inner = self.inner.power_phase(signature);
+        pub fn power_phase(mut self, input: crate::model::PowerPhase) -> Self {
+            self.inner = self.inner.power_phase(input);
             self
         }
         /// <p> Specify the power option that you can provide for hardware. </p>
@@ -2539,8 +2536,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn power_connector(mut self, signature: crate::model::PowerConnector) -> Self {
-            self.inner = self.inner.power_connector(signature);
+        pub fn power_connector(mut self, input: crate::model::PowerConnector) -> Self {
+            self.inner = self.inner.power_connector(input);
             self
         }
         /// <p> Specify the power connector that Amazon Web Services should plan to provide for connections to the
@@ -2585,8 +2582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Specify whether the power feed comes above or below the rack. </p>
-        pub fn power_feed_drop(mut self, signature: crate::model::PowerFeedDrop) -> Self {
-            self.inner = self.inner.power_feed_drop(signature);
+        pub fn power_feed_drop(mut self, input: crate::model::PowerFeedDrop) -> Self {
+            self.inner = self.inner.power_feed_drop(input);
             self
         }
         /// <p> Specify whether the power feed comes above or below the rack. </p>
@@ -2599,8 +2596,8 @@ pub mod fluent_builders {
         }
         /// <p> Specify the uplink speed the rack should support for the connection to the Region.
         /// </p>
-        pub fn uplink_gbps(mut self, signature: crate::model::UplinkGbps) -> Self {
-            self.inner = self.inner.uplink_gbps(signature);
+        pub fn uplink_gbps(mut self, input: crate::model::UplinkGbps) -> Self {
+            self.inner = self.inner.uplink_gbps(input);
             self
         }
         /// <p> Specify the uplink speed the rack should support for the connection to the Region.
@@ -2627,8 +2624,8 @@ pub mod fluent_builders {
         /// <p>40 and 100 Gbps- Uplinks available: 1, 2, 4</p>
         /// </li>
         /// </ul>
-        pub fn uplink_count(mut self, signature: crate::model::UplinkCount) -> Self {
-            self.inner = self.inner.uplink_count(signature);
+        pub fn uplink_count(mut self, input: crate::model::UplinkCount) -> Self {
+            self.inner = self.inner.uplink_count(input);
             self
         }
         /// <p>Racks come with two Outpost network devices. Depending on the supported uplink speed at
@@ -2655,11 +2652,8 @@ pub mod fluent_builders {
         }
         /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
         /// </p>
-        pub fn fiber_optic_cable_type(
-            mut self,
-            signature: crate::model::FiberOpticCableType,
-        ) -> Self {
-            self.inner = self.inner.fiber_optic_cable_type(signature);
+        pub fn fiber_optic_cable_type(mut self, input: crate::model::FiberOpticCableType) -> Self {
+            self.inner = self.inner.fiber_optic_cable_type(input);
             self
         }
         /// <p> Specify the type of fiber that you will use to attach the Outpost to your network.
@@ -2731,8 +2725,8 @@ pub mod fluent_builders {
         /// <code>OPTIC_1000BASE_SX</code> : 1000Base-SX</p>
         /// </li>
         /// </ul>
-        pub fn optical_standard(mut self, signature: crate::model::OpticalStandard) -> Self {
-            self.inner = self.inner.optical_standard(signature);
+        pub fn optical_standard(mut self, input: crate::model::OpticalStandard) -> Self {
+            self.inner = self.inner.optical_standard(input);
             self
         }
         /// <p>Specify the type of optical standard that you will use to attach the Outpost to your
@@ -2806,9 +2800,9 @@ pub mod fluent_builders {
         /// 2000lbs. </p>
         pub fn maximum_supported_weight_lbs(
             mut self,
-            signature: crate::model::MaximumSupportedWeightLbs,
+            input: crate::model::MaximumSupportedWeightLbs,
         ) -> Self {
-            self.inner = self.inner.maximum_supported_weight_lbs(signature);
+            self.inner = self.inner.maximum_supported_weight_lbs(input);
             self
         }
         /// <p> Specify the maximum rack weight that this site can support. <code>NO_LIMIT</code> is over

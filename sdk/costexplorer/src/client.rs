@@ -393,8 +393,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cost anomaly detection monitor object that you want to create.</p>
-        pub fn anomaly_monitor(mut self, signature: crate::model::AnomalyMonitor) -> Self {
-            self.inner = self.inner.anomaly_monitor(signature);
+        pub fn anomaly_monitor(mut self, input: crate::model::AnomalyMonitor) -> Self {
+            self.inner = self.inner.anomaly_monitor(input);
             self
         }
         /// <p>The cost anomaly detection monitor object that you want to create.</p>
@@ -468,11 +468,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cost anomaly subscription object that you want to create. </p>
-        pub fn anomaly_subscription(
-            mut self,
-            signature: crate::model::AnomalySubscription,
-        ) -> Self {
-            self.inner = self.inner.anomaly_subscription(signature);
+        pub fn anomaly_subscription(mut self, input: crate::model::AnomalySubscription) -> Self {
+            self.inner = self.inner.anomaly_subscription(input);
             self
         }
         /// <p>The cost anomaly subscription object that you want to create. </p>
@@ -544,8 +541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique name of the Cost Category.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The unique name of the Cost Category.</p>
@@ -554,8 +551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
-        pub fn rule_version(mut self, signature: crate::model::CostCategoryRuleVersion) -> Self {
-            self.inner = self.inner.rule_version(signature);
+        pub fn rule_version(mut self, input: crate::model::CostCategoryRuleVersion) -> Self {
+            self.inner = self.inner.rule_version(input);
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -587,8 +584,8 @@ pub mod fluent_builders {
         }
         /// <p>The
         /// default value for the cost category.</p>
-        pub fn default_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(signature.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(input.into());
             self
         }
         /// <p>The
@@ -685,8 +682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
-        pub fn monitor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(signature.into());
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
@@ -755,8 +752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
-        pub fn subscription_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(signature.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
@@ -830,8 +827,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier for your Cost Category.
         /// </p>
-        pub fn cost_category_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(signature.into());
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
         /// <p>
@@ -908,8 +905,8 @@ pub mod fluent_builders {
         /// <p>
         /// The unique identifier for your Cost Category.
         /// </p>
-        pub fn cost_category_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(signature.into());
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
         /// <p>
@@ -925,8 +922,8 @@ pub mod fluent_builders {
         /// <p>
         /// The date when the Cost Category was effective.
         /// </p>
-        pub fn effective_on(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.effective_on(signature.into());
+        pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.effective_on(input.into());
             self
         }
         /// <p>
@@ -999,8 +996,8 @@ pub mod fluent_builders {
         }
         /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
         /// Resource Name (ARN). </p>
-        pub fn monitor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(signature.into());
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
@@ -1011,8 +1008,8 @@ pub mod fluent_builders {
         }
         /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object
         /// will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-        pub fn date_interval(mut self, signature: crate::model::AnomalyDateInterval) -> Self {
-            self.inner = self.inner.date_interval(signature);
+        pub fn date_interval(mut self, input: crate::model::AnomalyDateInterval) -> Self {
+            self.inner = self.inner.date_interval(input);
             self
         }
         /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object
@@ -1025,8 +1022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-        pub fn feedback(mut self, signature: crate::model::AnomalyFeedbackType) -> Self {
-            self.inner = self.inner.feedback(signature);
+        pub fn feedback(mut self, input: crate::model::AnomalyFeedbackType) -> Self {
+            self.inner = self.inner.feedback(input);
             self
         }
         /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
@@ -1040,8 +1037,8 @@ pub mod fluent_builders {
         /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you
         /// can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated
         /// dollar impact greater than 200. </p>
-        pub fn total_impact(mut self, signature: crate::model::TotalImpactFilter) -> Self {
-            self.inner = self.inner.total_impact(signature);
+        pub fn total_impact(mut self, input: crate::model::TotalImpactFilter) -> Self {
+            self.inner = self.inner.total_impact(input);
             self
         }
         /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you
@@ -1056,8 +1053,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
         /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
@@ -1070,8 +1067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
@@ -1159,8 +1156,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
         /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
@@ -1173,8 +1170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries that a paginated response contains. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries that a paginated response contains. </p>
@@ -1261,8 +1258,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Cost anomaly monitor ARNs. </p>
-        pub fn monitor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(signature.into());
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>Cost anomaly monitor ARNs. </p>
@@ -1272,8 +1269,8 @@ pub mod fluent_builders {
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
         /// the response from a previous call has more results than the maximum page size. </p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
@@ -1286,8 +1283,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of entries a paginated response contains. </p>
@@ -1365,8 +1362,8 @@ pub mod fluent_builders {
         /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
         /// usage data is retrieved from <code>2017-01-01</code> up to and including
         /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
@@ -1383,8 +1380,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
         /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
@@ -1400,8 +1397,8 @@ pub mod fluent_builders {
         /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
         /// to define any combination of dimension filters. For more information, see
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
@@ -1485,8 +1482,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -1566,8 +1563,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
         /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
@@ -1582,8 +1579,8 @@ pub mod fluent_builders {
         /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
         /// <code>Granularity</code> isn't set, the response object doesn't include the
         /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
@@ -1603,8 +1600,8 @@ pub mod fluent_builders {
         /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
         /// <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify
@@ -1685,8 +1682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -1762,8 +1759,8 @@ pub mod fluent_builders {
         }
         /// <p>The value that you want to search the filter values for.</p>
         /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
-        pub fn search_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(signature.into());
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search the filter values for.</p>
@@ -1776,8 +1773,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time period of the request. </p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period of the request. </p>
@@ -1789,8 +1786,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique name of the Cost Category.</p>
-        pub fn cost_category_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_name(signature.into());
+        pub fn cost_category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_name(input.into());
             self
         }
         /// <p>The unique name of the Cost Category.</p>
@@ -1856,8 +1853,8 @@ pub mod fluent_builders {
         /// supported. AND and OR aren't supported. Dimensions are limited to
         /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
@@ -2019,8 +2016,8 @@ pub mod fluent_builders {
         /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
         /// <p>The maximum number of objects that to be returned for this request.  If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
@@ -2031,8 +2028,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
@@ -2104,8 +2101,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
@@ -2137,8 +2134,8 @@ pub mod fluent_builders {
         /// <p>UNBLENDED_COST</p>
         /// </li>
         /// </ul>
-        pub fn metric(mut self, signature: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric(signature);
+        pub fn metric(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric(input);
             self
         }
         /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see
@@ -2168,8 +2165,8 @@ pub mod fluent_builders {
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
         /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
@@ -2300,8 +2297,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
@@ -2430,8 +2427,8 @@ pub mod fluent_builders {
         /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
         /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
         /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-        pub fn prediction_interval_level(mut self, signature: i32) -> Self {
-            self.inner = self.inner.prediction_interval_level(signature);
+        pub fn prediction_interval_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.prediction_interval_level(input);
             self
         }
         /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
@@ -2502,8 +2499,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value that you want to search the filter values for.</p>
-        pub fn search_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(signature.into());
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search the filter values for.</p>
@@ -2519,8 +2516,8 @@ pub mod fluent_builders {
         /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
         /// usage data is retrieved from <code>2017-01-01</code> up to and including
         /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The start date and end date for retrieving the dimension values. The start date is
@@ -2539,8 +2536,8 @@ pub mod fluent_builders {
         /// For more information, see <code>Context</code>.
         ///
         /// </p>
-        pub fn dimension(mut self, signature: crate::model::Dimension) -> Self {
-            self.inner = self.inner.dimension(signature);
+        pub fn dimension(mut self, input: crate::model::Dimension) -> Self {
+            self.inner = self.inner.dimension(input);
             self
         }
         /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
@@ -2668,8 +2665,8 @@ pub mod fluent_builders {
         /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
         /// </li>
         /// </ul>
-        pub fn context(mut self, signature: crate::model::Context) -> Self {
-            self.inner = self.inner.context(signature);
+        pub fn context(mut self, input: crate::model::Context) -> Self {
+            self.inner = self.inner.context(input);
             self
         }
         /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>.
@@ -2845,8 +2842,8 @@ pub mod fluent_builders {
         /// supported. AND and OR aren't supported. Dimensions are limited to
         /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
@@ -3007,8 +3004,8 @@ pub mod fluent_builders {
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
@@ -3018,8 +3015,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -3134,8 +3131,8 @@ pub mod fluent_builders {
         /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data
         /// for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
         /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data
@@ -3233,8 +3230,8 @@ pub mod fluent_builders {
         /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
         /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
@@ -3294,8 +3291,8 @@ pub mod fluent_builders {
         /// If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
         /// <p>Cost category is also supported.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -3368,8 +3365,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -3436,8 +3433,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
@@ -3504,8 +3501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -3585,8 +3582,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The account ID that is associated with the recommendation. </p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The account ID that is associated with the recommendation. </p>
@@ -3595,8 +3592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The specific service that you want recommendations for.</p>
-        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(signature.into());
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The specific service that you want recommendations for.</p>
@@ -3659,8 +3656,8 @@ pub mod fluent_builders {
         /// supported. AND and OR aren't supported. Dimensions are limited to
         /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
@@ -3723,8 +3720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-        pub fn account_scope(mut self, signature: crate::model::AccountScope) -> Self {
-            self.inner = self.inner.account_scope(signature);
+        pub fn account_scope(mut self, input: crate::model::AccountScope) -> Self {
+            self.inner = self.inner.account_scope(input);
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -3738,9 +3735,9 @@ pub mod fluent_builders {
         /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
         pub fn lookback_period_in_days(
             mut self,
-            signature: crate::model::LookbackPeriodInDays,
+            input: crate::model::LookbackPeriodInDays,
         ) -> Self {
-            self.inner = self.inner.lookback_period_in_days(signature);
+            self.inner = self.inner.lookback_period_in_days(input);
             self
         }
         /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
@@ -3752,8 +3749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reservation term that you want recommendations for.</p>
-        pub fn term_in_years(mut self, signature: crate::model::TermInYears) -> Self {
-            self.inner = self.inner.term_in_years(signature);
+        pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
+            self.inner = self.inner.term_in_years(input);
             self
         }
         /// <p>The reservation term that you want recommendations for.</p>
@@ -3765,8 +3762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reservation purchase option that you want recommendations for.</p>
-        pub fn payment_option(mut self, signature: crate::model::PaymentOption) -> Self {
-            self.inner = self.inner.payment_option(signature);
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(input);
             self
         }
         /// <p>The reservation purchase option that you want recommendations for.</p>
@@ -3778,11 +3775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
-        pub fn service_specification(
-            mut self,
-            signature: crate::model::ServiceSpecification,
-        ) -> Self {
-            self.inner = self.inner.service_specification(signature);
+        pub fn service_specification(mut self, input: crate::model::ServiceSpecification) -> Self {
+            self.inner = self.inner.service_specification(input);
             self
         }
         /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
@@ -3794,8 +3788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_size(signature);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -3804,8 +3798,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -3880,8 +3874,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
         /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
@@ -3914,8 +3908,8 @@ pub mod fluent_builders {
         /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
         /// If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
@@ -3970,8 +3964,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
         /// as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to
         /// only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
@@ -4111,8 +4105,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
@@ -4215,8 +4209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4228,8 +4222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -4361,8 +4355,8 @@ pub mod fluent_builders {
         /// supported. AND and OR aren't supported. Dimensions are limited to
         /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
@@ -4431,9 +4425,9 @@ pub mod fluent_builders {
         /// neither. </p>
         pub fn configuration(
             mut self,
-            signature: crate::model::RightsizingRecommendationConfiguration,
+            input: crate::model::RightsizingRecommendationConfiguration,
         ) -> Self {
-            self.inner = self.inner.configuration(signature);
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p> Enables you to customize recommendations across two attributes. You can choose to view
@@ -4450,8 +4444,8 @@ pub mod fluent_builders {
         }
         /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is
         /// "<code>AmazonEC2</code>".</p>
-        pub fn service(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service(signature.into());
+        pub fn service(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service(input.into());
             self
         }
         /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is
@@ -4461,8 +4455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_size(signature);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -4471,8 +4465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
@@ -4567,8 +4561,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -4598,8 +4592,8 @@ pub mod fluent_builders {
         }
         /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
         /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
@@ -4639,8 +4633,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
         /// as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
         /// <p>Cost category is also supported.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
@@ -4693,8 +4687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4703,8 +4697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -4753,8 +4747,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
@@ -4870,9 +4864,9 @@ pub mod fluent_builders {
         /// <p>The Savings Plans recommendation type requested.</p>
         pub fn savings_plans_type(
             mut self,
-            signature: crate::model::SupportedSavingsPlansType,
+            input: crate::model::SupportedSavingsPlansType,
         ) -> Self {
-            self.inner = self.inner.savings_plans_type(signature);
+            self.inner = self.inner.savings_plans_type(input);
             self
         }
         /// <p>The Savings Plans recommendation type requested.</p>
@@ -4886,8 +4880,8 @@ pub mod fluent_builders {
         /// <p>The savings plan recommendation term used to
         /// generate these
         /// recommendations.</p>
-        pub fn term_in_years(mut self, signature: crate::model::TermInYears) -> Self {
-            self.inner = self.inner.term_in_years(signature);
+        pub fn term_in_years(mut self, input: crate::model::TermInYears) -> Self {
+            self.inner = self.inner.term_in_years(input);
             self
         }
         /// <p>The savings plan recommendation term used to
@@ -4901,8 +4895,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The payment option used to generate these recommendations.</p>
-        pub fn payment_option(mut self, signature: crate::model::PaymentOption) -> Self {
-            self.inner = self.inner.payment_option(signature);
+        pub fn payment_option(mut self, input: crate::model::PaymentOption) -> Self {
+            self.inner = self.inner.payment_option(input);
             self
         }
         /// <p>The payment option used to generate these recommendations.</p>
@@ -4914,8 +4908,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
-        pub fn account_scope(mut self, signature: crate::model::AccountScope) -> Self {
-            self.inner = self.inner.account_scope(signature);
+        pub fn account_scope(mut self, input: crate::model::AccountScope) -> Self {
+            self.inner = self.inner.account_scope(input);
             self
         }
         /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
@@ -4927,8 +4921,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -4940,8 +4934,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
-        pub fn page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_size(signature);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>The number of recommendations that you want returned in a single response object.</p>
@@ -4952,9 +4946,9 @@ pub mod fluent_builders {
         /// <p>The lookback period used to generate the recommendation.</p>
         pub fn lookback_period_in_days(
             mut self,
-            signature: crate::model::LookbackPeriodInDays,
+            input: crate::model::LookbackPeriodInDays,
         ) -> Self {
-            self.inner = self.inner.lookback_period_in_days(signature);
+            self.inner = self.inner.lookback_period_in_days(input);
             self
         }
         /// <p>The lookback period used to generate the recommendation.</p>
@@ -4975,8 +4969,8 @@ pub mod fluent_builders {
         /// <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for
         /// which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
         /// <code>OR</code> operators are not supported.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
@@ -5057,8 +5051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -5071,8 +5065,8 @@ pub mod fluent_builders {
         }
         /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
         /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
@@ -5121,8 +5115,8 @@ pub mod fluent_builders {
         /// <code>GetSavingsPlansUtilization</code> uses the same
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
         /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
@@ -5197,8 +5191,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
@@ -5304,8 +5298,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
@@ -5348,8 +5342,8 @@ pub mod fluent_builders {
         /// <code>GetSavingsPlansUtilizationDetails</code> uses the same
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
         /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
@@ -5406,8 +5400,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -5416,8 +5410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
@@ -5467,8 +5461,8 @@ pub mod fluent_builders {
         /// </ul>
         ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
-        pub fn sort_by(mut self, signature: crate::model::SortDefinition) -> Self {
-            self.inner = self.inner.sort_by(signature);
+        pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
+            self.inner = self.inner.sort_by(input);
             self
         }
         /// <p>The value by which you want to sort the data.</p>
@@ -5581,8 +5575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The value that you want to search for.</p>
-        pub fn search_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.search_string(signature.into());
+        pub fn search_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.search_string(input.into());
             self
         }
         /// <p>The value that you want to search for.</p>
@@ -5595,8 +5589,8 @@ pub mod fluent_builders {
         }
         /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
         /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
@@ -5609,8 +5603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The key of the tag that you want to return values for.</p>
-        pub fn tag_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.tag_key(signature.into());
+        pub fn tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.tag_key(input.into());
             self
         }
         /// <p>The key of the tag that you want to return values for.</p>
@@ -5673,8 +5667,8 @@ pub mod fluent_builders {
         /// supported. AND and OR aren't supported. Dimensions are limited to
         /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
@@ -5835,8 +5829,8 @@ pub mod fluent_builders {
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
         /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
@@ -5846,8 +5840,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
-        pub fn next_page_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_page_token(signature.into());
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_page_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -5920,8 +5914,8 @@ pub mod fluent_builders {
         }
         /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
         /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
-        pub fn time_period(mut self, signature: crate::model::DateInterval) -> Self {
-            self.inner = self.inner.time_period(signature);
+        pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
+            self.inner = self.inner.time_period(input);
             self
         }
         /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
@@ -5943,8 +5937,8 @@ pub mod fluent_builders {
         /// <p>NORMALIZED_USAGE_AMOUNT</p>
         /// </li>
         /// </ul>
-        pub fn metric(mut self, signature: crate::model::Metric) -> Self {
-            self.inner = self.inner.metric(signature);
+        pub fn metric(mut self, input: crate::model::Metric) -> Self {
+            self.inner = self.inner.metric(input);
             self
         }
         /// <p>Which metric Cost Explorer uses to create your forecast.</p>
@@ -5963,8 +5957,8 @@ pub mod fluent_builders {
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
         /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
-        pub fn granularity(mut self, signature: crate::model::Granularity) -> Self {
-            self.inner = self.inner.granularity(signature);
+        pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
+            self.inner = self.inner.granularity(input);
             self
         }
         /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
@@ -6095,8 +6089,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn filter(mut self, signature: crate::model::Expression) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::Expression) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
@@ -6225,8 +6219,8 @@ pub mod fluent_builders {
         /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
         /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
         /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
-        pub fn prediction_interval_level(mut self, signature: i32) -> Self {
-            self.inner = self.inner.prediction_interval_level(signature);
+        pub fn prediction_interval_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.prediction_interval_level(input);
             self
         }
         /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
@@ -6299,8 +6293,8 @@ pub mod fluent_builders {
         /// <p>
         /// The date when the Cost Category was effective.
         /// </p>
-        pub fn effective_on(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.effective_on(signature.into());
+        pub fn effective_on(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.effective_on(input.into());
             self
         }
         /// <p>
@@ -6313,8 +6307,8 @@ pub mod fluent_builders {
         /// <p>
         /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -6325,8 +6319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The number of entries a paginated response contains. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The number of entries a paginated response contains. </p>
@@ -6395,8 +6389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cost anomaly ID. </p>
-        pub fn anomaly_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_id(signature.into());
+        pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_id(input.into());
             self
         }
         /// <p>A cost anomaly ID. </p>
@@ -6405,8 +6399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
-        pub fn feedback(mut self, signature: crate::model::AnomalyFeedbackType) -> Self {
-            self.inner = self.inner.feedback(signature);
+        pub fn feedback(mut self, input: crate::model::AnomalyFeedbackType) -> Self {
+            self.inner = self.inner.feedback(input);
             self
         }
         /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
@@ -6479,8 +6473,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
-        pub fn monitor_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_arn(signature.into());
+        pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_arn(input.into());
             self
         }
         /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
@@ -6489,8 +6483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name for the cost anomaly monitor. </p>
-        pub fn monitor_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.monitor_name(signature.into());
+        pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.monitor_name(input.into());
             self
         }
         /// <p>The new name for the cost anomaly monitor. </p>
@@ -6559,8 +6553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
-        pub fn subscription_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_arn(signature.into());
+        pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_arn(input.into());
             self
         }
         /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
@@ -6572,8 +6566,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The update to the threshold value for receiving notifications. </p>
-        pub fn threshold(mut self, signature: f64) -> Self {
-            self.inner = self.inner.threshold(signature);
+        pub fn threshold(mut self, input: f64) -> Self {
+            self.inner = self.inner.threshold(input);
             self
         }
         /// <p>The update to the threshold value for receiving notifications. </p>
@@ -6582,8 +6576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The update to the frequency value that subscribers receive notifications. </p>
-        pub fn frequency(mut self, signature: crate::model::AnomalySubscriptionFrequency) -> Self {
-            self.inner = self.inner.frequency(signature);
+        pub fn frequency(mut self, input: crate::model::AnomalySubscriptionFrequency) -> Self {
+            self.inner = self.inner.frequency(input);
             self
         }
         /// <p>The update to the frequency value that subscribers receive notifications. </p>
@@ -6629,8 +6623,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the subscription. </p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The new name of the subscription. </p>
@@ -6702,8 +6696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for your Cost Category.</p>
-        pub fn cost_category_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cost_category_arn(signature.into());
+        pub fn cost_category_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cost_category_arn(input.into());
             self
         }
         /// <p>The unique identifier for your Cost Category.</p>
@@ -6715,8 +6709,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
-        pub fn rule_version(mut self, signature: crate::model::CostCategoryRuleVersion) -> Self {
-            self.inner = self.inner.rule_version(signature);
+        pub fn rule_version(mut self, input: crate::model::CostCategoryRuleVersion) -> Self {
+            self.inner = self.inner.rule_version(input);
             self
         }
         /// <p>The rule schema version in this particular Cost Category.</p>
@@ -6748,8 +6742,8 @@ pub mod fluent_builders {
         }
         /// <p>The
         /// default value for the cost category.</p>
-        pub fn default_value(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_value(signature.into());
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_value(input.into());
             self
         }
         /// <p>The

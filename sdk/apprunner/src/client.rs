@@ -318,8 +318,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to associate a custom domain name with.</p>
@@ -329,8 +329,8 @@ pub mod fluent_builders {
         }
         /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
         /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>A custom domain endpoint to associate. Specify a root domain (for example, <code>example.com</code>), a subdomain (for example,
@@ -344,8 +344,8 @@ pub mod fluent_builders {
         /// domain.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn enable_www_subdomain(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_www_subdomain(signature);
+        pub fn enable_www_subdomain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_www_subdomain(input);
             self
         }
         /// <p>Set to <code>true</code> to associate the subdomain <code>www.<i>DomainName</i>
@@ -429,9 +429,9 @@ pub mod fluent_builders {
         /// name. When you use the same name in subsequent calls, App Runner creates incremental revisions of the configuration.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_name(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
         /// <p>A name for the auto scaling configuration. When you use it for the first time in an Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
@@ -447,8 +447,8 @@ pub mod fluent_builders {
         /// up your service.</p>
         /// <p>Default: <code>100</code>
         /// </p>
-        pub fn max_concurrency(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_concurrency(signature);
+        pub fn max_concurrency(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_concurrency(input);
             self
         }
         /// <p>The maximum number of concurrent requests that you want an instance to process. If the number of concurrent requests exceeds this limit, App Runner scales
@@ -465,8 +465,8 @@ pub mod fluent_builders {
         /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn min_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.min_size(signature);
+        pub fn min_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.min_size(input);
             self
         }
         /// <p>The minimum number of instances that App Runner provisions for your service. The service always has at least <code>MinSize</code> provisioned instances.
@@ -482,8 +482,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
         /// <p>Default: <code>25</code>
         /// </p>
-        pub fn max_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_size(signature);
+        pub fn max_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_size(input);
             self
         }
         /// <p>The maximum number of instances that your service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
@@ -574,8 +574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>A name for the new connection. It must be unique across all App Runner connections for the Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -587,8 +587,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source repository provider.</p>
-        pub fn provider_type(mut self, signature: crate::model::ProviderType) -> Self {
-            self.inner = self.inner.provider_type(signature);
+        pub fn provider_type(mut self, input: crate::model::ProviderType) -> Self {
+            self.inner = self.inner.provider_type(input);
             self
         }
         /// <p>The source repository provider.</p>
@@ -678,8 +678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>A name for the new service. It must be unique across all the running App Runner services in your Amazon Web Services account in the Amazon Web Services Region.</p>
@@ -688,11 +688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
-        pub fn source_configuration(
-            mut self,
-            signature: crate::model::SourceConfiguration,
-        ) -> Self {
-            self.inner = self.inner.source_configuration(signature);
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.inner = self.inner.source_configuration(input);
             self
         }
         /// <p>The source to deploy to the App Runner service. It can be a code or an image repository.</p>
@@ -706,9 +703,9 @@ pub mod fluent_builders {
         /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
         pub fn instance_configuration(
             mut self,
-            signature: crate::model::InstanceConfiguration,
+            input: crate::model::InstanceConfiguration,
         ) -> Self {
-            self.inner = self.inner.instance_configuration(signature);
+            self.inner = self.inner.instance_configuration(input);
             self
         }
         /// <p>The runtime configuration of instances (scaling units) of the App Runner service.</p>
@@ -740,9 +737,9 @@ pub mod fluent_builders {
         /// App Runner uses an Amazon Web Services managed CMK.</p>
         pub fn encryption_configuration(
             mut self,
-            signature: crate::model::EncryptionConfiguration,
+            input: crate::model::EncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.encryption_configuration(signature);
+            self.inner = self.inner.encryption_configuration(input);
             self
         }
         /// <p>An optional custom encryption key that App Runner uses to encrypt the copy of your source repository that it maintains and your service logs. By default,
@@ -757,9 +754,9 @@ pub mod fluent_builders {
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
-            signature: crate::model::HealthCheckConfiguration,
+            input: crate::model::HealthCheckConfiguration,
         ) -> Self {
-            self.inner = self.inner.health_check_configuration(signature);
+            self.inner = self.inner.health_check_configuration(input);
             self
         }
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
@@ -774,9 +771,9 @@ pub mod fluent_builders {
         /// associates the latest revision of a default auto scaling configuration.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service. If not provided, App Runner
@@ -856,9 +853,9 @@ pub mod fluent_builders {
         /// </code>. If a revision isn't specified, the latest active revision is deleted.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want to delete.</p>
@@ -935,8 +932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
-        pub fn connection_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_arn(signature.into());
+        pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner connection that you want to delete.</p>
@@ -1010,8 +1007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to delete.</p>
@@ -1087,9 +1084,9 @@ pub mod fluent_builders {
         /// described.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
@@ -1166,8 +1163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want associated custom domain names to be described for.</p>
@@ -1178,8 +1175,8 @@ pub mod fluent_builders {
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
         /// identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
@@ -1191,8 +1188,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that each response (result page) can include. It's used for a paginated request.</p>
@@ -1262,8 +1259,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a description for.</p>
@@ -1335,8 +1332,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to disassociate a custom domain name from.</p>
@@ -1345,8 +1342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The domain name that you want to disassociate from the App Runner service.</p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p>The domain name that you want to disassociate from the App Runner service.</p>
@@ -1419,9 +1416,9 @@ pub mod fluent_builders {
         /// returns revisions of all configurations.</p>
         pub fn auto_scaling_configuration_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_name(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_name(input.into());
             self
         }
         /// <p>The name of the App Runner auto scaling configuration that you want to list. If specified, App Runner lists revisions that share this name. If not specified, App Runner
@@ -1437,8 +1434,8 @@ pub mod fluent_builders {
         /// <p>Keep as <code>false</code> to list all revisions for each requested configuration name.</p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn latest_only(mut self, signature: bool) -> Self {
-            self.inner = self.inner.latest_only(signature);
+        pub fn latest_only(mut self, input: bool) -> Self {
+            self.inner = self.inner.latest_only(input);
             self
         }
         /// <p>Set to <code>true</code> to list only the latest revision for each requested configuration name.</p>
@@ -1451,8 +1448,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1464,8 +1461,8 @@ pub mod fluent_builders {
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
         /// identical to the ones that are specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
@@ -1536,8 +1533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
-        pub fn connection_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_name(signature.into());
+        pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_name(input.into());
             self
         }
         /// <p>If specified, only this connection is returned. If not specified, the result isn't filtered by name.</p>
@@ -1550,8 +1547,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). Used for a paginated request.</p>
@@ -1563,8 +1560,8 @@ pub mod fluent_builders {
         /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
         /// identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
@@ -1637,8 +1634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want a list of operations for.</p>
@@ -1649,8 +1646,8 @@ pub mod fluent_builders {
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
         /// identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token from a previous result page. It's used for a paginated request. The request retrieves the next result page. All other parameter values must be
@@ -1662,8 +1659,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1735,8 +1732,8 @@ pub mod fluent_builders {
         /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
         /// identical to the ones specified in the initial request.</p>
         /// <p>If you don't specify <code>NextToken</code>, the request retrieves the first result page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token from a previous result page. Used for a paginated request. The request retrieves the next result page. All other parameter values must be
@@ -1748,8 +1745,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
         /// <p>If you don't specify <code>MaxResults</code>, the request retrieves all available results in a single response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to include in each response (result page). It's used for a paginated request.</p>
@@ -1820,8 +1817,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that a tag list is requested for.</p>
@@ -1894,8 +1891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to pause.</p>
@@ -1966,8 +1963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to resume.</p>
@@ -2041,8 +2038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to manually deploy to.</p>
@@ -2112,8 +2109,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to update tags for.</p>
@@ -2203,8 +2200,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
         /// <p>It must be the ARN of an App Runner resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
@@ -2296,8 +2293,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
-        pub fn service_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_arn(signature.into());
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the App Runner service that you want to update.</p>
@@ -2310,11 +2307,8 @@ pub mod fluent_builders {
         /// around. This means that you must provide the same structure member of <code>SourceConfiguration</code> that you originally included when you created the
         /// service. Specifically, you can include either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the source configuration, set the
         /// values to members of the structure that you include.</p>
-        pub fn source_configuration(
-            mut self,
-            signature: crate::model::SourceConfiguration,
-        ) -> Self {
-            self.inner = self.inner.source_configuration(signature);
+        pub fn source_configuration(mut self, input: crate::model::SourceConfiguration) -> Self {
+            self.inner = self.inner.source_configuration(input);
             self
         }
         /// <p>The source configuration to apply to the App Runner service.</p>
@@ -2332,9 +2326,9 @@ pub mod fluent_builders {
         /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
         pub fn instance_configuration(
             mut self,
-            signature: crate::model::InstanceConfiguration,
+            input: crate::model::InstanceConfiguration,
         ) -> Self {
-            self.inner = self.inner.instance_configuration(signature);
+            self.inner = self.inner.instance_configuration(input);
             self
         }
         /// <p>The runtime configuration to apply to instances (scaling units) of the App Runner service.</p>
@@ -2348,9 +2342,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
         pub fn auto_scaling_configuration_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.auto_scaling_configuration_arn(signature.into());
+            self.inner = self.inner.auto_scaling_configuration_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an App Runner automatic scaling configuration resource that you want to associate with your service.</p>
@@ -2364,9 +2358,9 @@ pub mod fluent_builders {
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>
         pub fn health_check_configuration(
             mut self,
-            signature: crate::model::HealthCheckConfiguration,
+            input: crate::model::HealthCheckConfiguration,
         ) -> Self {
-            self.inner = self.inner.health_check_configuration(signature);
+            self.inner = self.inner.health_check_configuration(input);
             self
         }
         /// <p>The settings for the health check that App Runner performs to monitor the health of your service.</p>

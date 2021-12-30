@@ -550,8 +550,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -560,8 +560,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration of the instance fleet.</p>
-        pub fn instance_fleet(mut self, signature: crate::model::InstanceFleetConfig) -> Self {
-            self.inner = self.inner.instance_fleet(signature);
+        pub fn instance_fleet(mut self, input: crate::model::InstanceFleetConfig) -> Self {
+            self.inner = self.inner.instance_fleet(input);
             self
         }
         /// <p>Specifies the configuration of the instance fleet.</p>
@@ -650,8 +650,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Job flow in which to add the instance groups.</p>
-        pub fn job_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_id(signature.into());
+        pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_id(input.into());
             self
         }
         /// <p>Job flow in which to add the instance groups.</p>
@@ -737,8 +737,8 @@ pub mod fluent_builders {
         }
         /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
         /// </p>
-        pub fn job_flow_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_id(signature.into());
+        pub fn job_flow_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_id(input.into());
             self
         }
         /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
@@ -828,8 +828,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
         /// cluster identifier or an Amazon EMR Studio ID.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
@@ -955,9 +955,9 @@ pub mod fluent_builders {
         /// <code>SEND_INTERRUPT</code>.</p>
         pub fn step_cancellation_option(
             mut self,
-            signature: crate::model::StepCancellationOption,
+            input: crate::model::StepCancellationOption,
         ) -> Self {
-            self.inner = self.inner.step_cancellation_option(signature);
+            self.inner = self.inner.step_cancellation_option(input);
             self
         }
         /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
@@ -1031,8 +1031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -1044,8 +1044,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
         /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
         /// Guide</i>.</p>
-        pub fn security_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(signature.into());
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
@@ -1120,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
@@ -1130,8 +1130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A detailed description of the Amazon EMR Studio.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A detailed description of the Amazon EMR Studio.</p>
@@ -1140,8 +1140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
-        pub fn auth_mode(mut self, signature: crate::model::AuthMode) -> Self {
-            self.inner = self.inner.auth_mode(signature);
+        pub fn auth_mode(mut self, input: crate::model::AuthMode) -> Self {
+            self.inner = self.inner.auth_mode(input);
             self
         }
         /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
@@ -1151,8 +1151,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
         /// Studio.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
@@ -1184,8 +1184,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
         /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
-        pub fn service_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(signature.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
         /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
@@ -1197,8 +1197,8 @@ pub mod fluent_builders {
         /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
         /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
         /// session policies.</p>
-        pub fn user_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_role(signature.into());
+        pub fn user_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_role(input.into());
             self
         }
         /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
@@ -1213,9 +1213,9 @@ pub mod fluent_builders {
         /// in the same VPC specified by <code>VpcId</code>.</p>
         pub fn workspace_security_group_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.workspace_security_group_id(signature.into());
+            self.inner = self.inner.workspace_security_group_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
@@ -1231,11 +1231,8 @@ pub mod fluent_builders {
         /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
         /// inbound network traffic from the Workspace security group, and it must be in the same VPC
         /// specified by <code>VpcId</code>.</p>
-        pub fn engine_security_group_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.engine_security_group_id(signature.into());
+        pub fn engine_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.engine_security_group_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
@@ -1249,8 +1246,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
-        pub fn default_s3_location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_s3_location(signature.into());
+        pub fn default_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_s3_location(input.into());
             self
         }
         /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
@@ -1262,8 +1259,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
-        pub fn idp_auth_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.idp_auth_url(signature.into());
+        pub fn idp_auth_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.idp_auth_url(input.into());
             self
         }
         /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
@@ -1274,9 +1271,9 @@ pub mod fluent_builders {
         /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
         pub fn idp_relay_state_parameter_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.idp_relay_state_parameter_name(signature.into());
+            self.inner = self.inner.idp_relay_state_parameter_name(input.into());
             self
         }
         /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
@@ -1370,8 +1367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
@@ -1382,8 +1379,8 @@ pub mod fluent_builders {
         /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
         /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(signature.into());
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
@@ -1395,8 +1392,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
-        pub fn identity_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(signature.into());
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
@@ -1409,8 +1406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
@@ -1423,8 +1420,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
         /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
-        pub fn session_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_policy_arn(signature.into());
+        pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
@@ -1497,8 +1494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -1567,8 +1564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -1637,8 +1634,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -1649,8 +1646,8 @@ pub mod fluent_builders {
         /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
         /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(signature.into());
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
@@ -1663,8 +1660,8 @@ pub mod fluent_builders {
         /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(signature.into());
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
         /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
@@ -1678,8 +1675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
@@ -1752,8 +1749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to describe.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster to describe.</p>
@@ -1842,8 +1839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Return only job flows created after this date and time.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>Return only job flows created after this date and time.</p>
@@ -1855,8 +1852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Return only job flows created before this date and time.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>Return only job flows created before this date and time.</p>
@@ -1962,8 +1959,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the notebook execution.</p>
-        pub fn notebook_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_execution_id(signature.into());
+        pub fn notebook_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_id(input.into());
             self
         }
         /// <p>The unique identifier of the notebook execution.</p>
@@ -2035,8 +2032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The target release label to be described.</p>
-        pub fn release_label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(signature.into());
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
         /// <p>The target release label to be described.</p>
@@ -2048,8 +2045,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
@@ -2058,8 +2055,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use. Currently set to null.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Reserved for future use. Currently set to null.</p>
@@ -2129,8 +2126,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the security configuration.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the security configuration.</p>
@@ -2199,8 +2196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster with steps to describe.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster with steps to describe.</p>
@@ -2209,8 +2206,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the step to describe.</p>
-        pub fn step_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.step_id(signature.into());
+        pub fn step_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.step_id(input.into());
             self
         }
         /// <p>The identifier of the step to describe.</p>
@@ -2280,8 +2277,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon EMR Studio ID.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The Amazon EMR Studio ID.</p>
@@ -2350,8 +2347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
@@ -2484,8 +2481,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
         /// </p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
@@ -2556,8 +2553,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -2568,8 +2565,8 @@ pub mod fluent_builders {
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(signature.into());
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
@@ -2581,8 +2578,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(signature.into());
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
         /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
@@ -2595,8 +2592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to fetch is a user or a group.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to fetch is a user or a group.</p>
@@ -2668,8 +2665,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier for the bootstrap actions to list.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The cluster identifier for the bootstrap actions to list.</p>
@@ -2678,8 +2675,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2752,8 +2749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The creation date and time beginning value filter for listing clusters.</p>
-        pub fn created_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_after(signature);
+        pub fn created_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_after(input);
             self
         }
         /// <p>The creation date and time beginning value filter for listing clusters.</p>
@@ -2765,8 +2762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The creation date and time end value filter for listing clusters.</p>
-        pub fn created_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.created_before(signature);
+        pub fn created_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.created_before(input);
             self
         }
         /// <p>The creation date and time end value filter for listing clusters.</p>
@@ -2795,8 +2792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2869,8 +2866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -2879,8 +2876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -2949,8 +2946,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster for which to list the instance groups.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the instance groups.</p>
@@ -2959,8 +2956,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -3031,8 +3028,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster for which to list the instances.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the instances.</p>
@@ -3041,8 +3038,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the instance group for which to list the instances.</p>
-        pub fn instance_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(signature.into());
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
         /// <p>The identifier of the instance group for which to list the instances.</p>
@@ -3071,8 +3068,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the instance fleet.</p>
-        pub fn instance_fleet_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_fleet_id(signature.into());
+        pub fn instance_fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_fleet_id(input.into());
             self
         }
         /// <p>The unique identifier of the instance fleet.</p>
@@ -3084,8 +3081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
-        pub fn instance_fleet_type(mut self, signature: crate::model::InstanceFleetType) -> Self {
-            self.inner = self.inner.instance_fleet_type(signature);
+        pub fn instance_fleet_type(mut self, input: crate::model::InstanceFleetType) -> Self {
+            self.inner = self.inner.instance_fleet_type(input);
             self
         }
         /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
@@ -3116,8 +3113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -3189,8 +3186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of the editor associated with the notebook execution.</p>
-        pub fn editor_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.editor_id(signature.into());
+        pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.editor_id(input.into());
             self
         }
         /// <p>The unique ID of the editor associated with the notebook execution.</p>
@@ -3250,8 +3247,8 @@ pub mod fluent_builders {
         /// <code>StopNotebookExecution</code> request.</p>
         /// </li>
         /// </ul>
-        pub fn status(mut self, signature: crate::model::NotebookExecutionStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::NotebookExecutionStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The status filter for listing notebook executions.</p>
@@ -3315,8 +3312,8 @@ pub mod fluent_builders {
         }
         /// <p>The beginning of time range filter for listing notebook executions. The default is the
         /// timestamp of 30 days ago.</p>
-        pub fn from(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from(signature);
+        pub fn from(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from(input);
             self
         }
         /// <p>The beginning of time range filter for listing notebook executions. The default is the
@@ -3327,8 +3324,8 @@ pub mod fluent_builders {
         }
         /// <p>The end of time range filter for listing notebook executions. The default is the current
         /// timestamp.</p>
-        pub fn to(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to(signature);
+        pub fn to(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to(input);
             self
         }
         /// <p>The end of time range filter for listing notebook executions. The default is the current
@@ -3340,8 +3337,8 @@ pub mod fluent_builders {
         /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
         /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
         /// call.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
@@ -3412,8 +3409,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
-        pub fn filters(mut self, signature: crate::model::ReleaseLabelFilter) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ReleaseLabelFilter) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
@@ -3425,8 +3422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
@@ -3435,8 +3432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
@@ -3508,8 +3505,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3580,8 +3577,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster for which to list the steps.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The identifier of the cluster for which to list the steps.</p>
@@ -3628,8 +3625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
@@ -3699,8 +3696,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3770,8 +3767,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -3781,8 +3778,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
         /// results include session mapping details for both users and groups.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
@@ -3795,8 +3792,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>The pagination token that indicates the set of results to retrieve.</p>
@@ -3866,8 +3863,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -3876,8 +3873,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
-        pub fn step_concurrency_level(mut self, signature: i32) -> Self {
-            self.inner = self.inner.step_concurrency_level(signature);
+        pub fn step_concurrency_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.step_concurrency_level(input);
             self
         }
         /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
@@ -3952,8 +3949,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The unique identifier of the cluster.</p>
@@ -3962,11 +3959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The configuration parameters of the instance fleet.</p>
-        pub fn instance_fleet(
-            mut self,
-            signature: crate::model::InstanceFleetModifyConfig,
-        ) -> Self {
-            self.inner = self.inner.instance_fleet(signature);
+        pub fn instance_fleet(mut self, input: crate::model::InstanceFleetModifyConfig) -> Self {
+            self.inner = self.inner.instance_fleet(input);
             self
         }
         /// <p>The configuration parameters of the instance fleet.</p>
@@ -4040,8 +4034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the cluster to which the instance group belongs.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>The ID of the cluster to which the instance group belongs.</p>
@@ -4131,8 +4125,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
         /// is applied is within this cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
@@ -4143,8 +4137,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
         /// applied.</p>
-        pub fn instance_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(signature.into());
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
         /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
@@ -4157,8 +4151,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the definition of the automatic scaling policy.</p>
-        pub fn auto_scaling_policy(mut self, signature: crate::model::AutoScalingPolicy) -> Self {
-            self.inner = self.inner.auto_scaling_policy(signature);
+        pub fn auto_scaling_policy(mut self, input: crate::model::AutoScalingPolicy) -> Self {
+            self.inner = self.inner.auto_scaling_policy(input);
             self
         }
         /// <p>Specifies the definition of the automatic scaling policy.</p>
@@ -4230,8 +4224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
@@ -4242,9 +4236,9 @@ pub mod fluent_builders {
         /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
         pub fn auto_termination_policy(
             mut self,
-            signature: crate::model::AutoTerminationPolicy,
+            input: crate::model::AutoTerminationPolicy,
         ) -> Self {
-            self.inner = self.inner.auto_termination_policy(signature);
+            self.inner = self.inner.auto_termination_policy(input);
             self
         }
         /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
@@ -4335,9 +4329,9 @@ pub mod fluent_builders {
         /// </note>
         pub fn block_public_access_configuration(
             mut self,
-            signature: crate::model::BlockPublicAccessConfiguration,
+            input: crate::model::BlockPublicAccessConfiguration,
         ) -> Self {
-            self.inner = self.inner.block_public_access_configuration(signature);
+            self.inner = self.inner.block_public_access_configuration(input);
             self
         }
         /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
@@ -4426,8 +4420,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
@@ -4436,11 +4430,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the constraints for the managed scaling policy. </p>
-        pub fn managed_scaling_policy(
-            mut self,
-            signature: crate::model::ManagedScalingPolicy,
-        ) -> Self {
-            self.inner = self.inner.managed_scaling_policy(signature);
+        pub fn managed_scaling_policy(mut self, input: crate::model::ManagedScalingPolicy) -> Self {
+            self.inner = self.inner.managed_scaling_policy(input);
             self
         }
         /// <p>Specifies the constraints for the managed scaling policy. </p>
@@ -4514,8 +4505,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
         /// is applied is within this cluster.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
@@ -4525,8 +4516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
-        pub fn instance_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_group_id(signature.into());
+        pub fn instance_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_group_id(input.into());
             self
         }
         /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
@@ -4598,8 +4589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
@@ -4669,8 +4660,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
         /// </p>
-        pub fn cluster_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_id(signature.into());
+        pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_id(input.into());
             self
         }
         /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
@@ -4744,8 +4735,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
         /// cluster identifier or an Amazon EMR Studio ID.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
@@ -4854,8 +4845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job flow.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the job flow.</p>
@@ -4865,8 +4856,8 @@ pub mod fluent_builders {
         }
         /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
         /// provided, logs are not created.</p>
-        pub fn log_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_uri(signature.into());
+        pub fn log_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_uri(input.into());
             self
         }
         /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
@@ -4878,11 +4869,8 @@ pub mod fluent_builders {
         /// <p>The KMS key used for encrypting log files. If a value is not
         /// provided, the logs remain encrypted by AES-256. This attribute is only available with
         /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
-        pub fn log_encryption_kms_key_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.log_encryption_kms_key_id(signature.into());
+        pub fn log_encryption_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_encryption_kms_key_id(input.into());
             self
         }
         /// <p>The KMS key used for encrypting log files. If a value is not
@@ -4896,8 +4884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON string for selecting additional features.</p>
-        pub fn additional_info(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_info(signature.into());
+        pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_info(input.into());
             self
         }
         /// <p>A JSON string for selecting additional features.</p>
@@ -4911,8 +4899,8 @@ pub mod fluent_builders {
         /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
         /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
         /// <code>CustomAmiID</code>.</p>
-        pub fn ami_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ami_version(signature.into());
+        pub fn ami_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ami_version(input.into());
             self
         }
         /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
@@ -4929,8 +4917,8 @@ pub mod fluent_builders {
         /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
         /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
         /// <code>AmiVersion</code>.</p>
-        pub fn release_label(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.release_label(signature.into());
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.release_label(input.into());
             self
         }
         /// <p>The Amazon EMR release label, which determines the version of open-source application
@@ -4948,8 +4936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A specification of the number and type of Amazon EC2 instances.</p>
-        pub fn instances(mut self, signature: crate::model::JobFlowInstancesConfig) -> Self {
-            self.inner = self.inner.instances(signature);
+        pub fn instances(mut self, input: crate::model::JobFlowInstancesConfig) -> Self {
+            self.inner = self.inner.instances(input);
             self
         }
         /// <p>A specification of the number and type of Amazon EC2 instances.</p>
@@ -5175,8 +5163,8 @@ pub mod fluent_builders {
         }
         /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
         /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
-        pub fn visible_to_all_users(mut self, signature: bool) -> Self {
-            self.inner = self.inner.visible_to_all_users(signature);
+        pub fn visible_to_all_users(mut self, input: bool) -> Self {
+            self.inner = self.inner.visible_to_all_users(input);
             self
         }
         /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
@@ -5189,8 +5177,8 @@ pub mod fluent_builders {
         /// instances of the cluster assume this role. The default role is
         /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
         /// already created it using the CLI or console.</p>
-        pub fn job_flow_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_flow_role(signature.into());
+        pub fn job_flow_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_flow_role(input.into());
             self
         }
         /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
@@ -5206,8 +5194,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
         /// your behalf.</p>
-        pub fn service_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(signature.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
         /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
@@ -5234,8 +5222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a security configuration to apply to the cluster.</p>
-        pub fn security_configuration(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.security_configuration(signature.into());
+        pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.security_configuration(input.into());
             self
         }
         /// <p>The name of a security configuration to apply to the cluster.</p>
@@ -5250,8 +5238,8 @@ pub mod fluent_builders {
         /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
         /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
         /// group.</p>
-        pub fn auto_scaling_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.auto_scaling_role(signature.into());
+        pub fn auto_scaling_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_scaling_role(input.into());
             self
         }
         /// <p>An IAM role for automatic scaling policies. The default role is
@@ -5277,8 +5265,8 @@ pub mod fluent_builders {
         /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
         /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
         /// earlier than 5.1.0.</p>
-        pub fn scale_down_behavior(mut self, signature: crate::model::ScaleDownBehavior) -> Self {
-            self.inner = self.inner.scale_down_behavior(signature);
+        pub fn scale_down_behavior(mut self, input: crate::model::ScaleDownBehavior) -> Self {
+            self.inner = self.inner.scale_down_behavior(input);
             self
         }
         /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
@@ -5310,8 +5298,8 @@ pub mod fluent_builders {
         /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
         /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
         /// AMI</a>. </p>
-        pub fn custom_ami_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_ami_id(signature.into());
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_ami_id(input.into());
             self
         }
         /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
@@ -5333,8 +5321,8 @@ pub mod fluent_builders {
         }
         /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
         /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
-        pub fn ebs_root_volume_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.ebs_root_volume_size(signature);
+        pub fn ebs_root_volume_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.ebs_root_volume_size(input);
             self
         }
         /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
@@ -5348,8 +5336,8 @@ pub mod fluent_builders {
         /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
         /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
         /// and all updates must be applied manually.</p>
-        pub fn repo_upgrade_on_boot(mut self, signature: crate::model::RepoUpgradeOnBoot) -> Self {
-            self.inner = self.inner.repo_upgrade_on_boot(signature);
+        pub fn repo_upgrade_on_boot(mut self, input: crate::model::RepoUpgradeOnBoot) -> Self {
+            self.inner = self.inner.repo_upgrade_on_boot(input);
             self
         }
         /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
@@ -5367,8 +5355,8 @@ pub mod fluent_builders {
         /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
         /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
         /// in the <i>Amazon EMR Management Guide</i>.</p>
-        pub fn kerberos_attributes(mut self, signature: crate::model::KerberosAttributes) -> Self {
-            self.inner = self.inner.kerberos_attributes(signature);
+        pub fn kerberos_attributes(mut self, input: crate::model::KerberosAttributes) -> Self {
+            self.inner = self.inner.kerberos_attributes(input);
             self
         }
         /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
@@ -5383,8 +5371,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies the number of steps that can be executed concurrently. The default value is
         /// <code>1</code>. The maximum value is <code>256</code>.</p>
-        pub fn step_concurrency_level(mut self, signature: i32) -> Self {
-            self.inner = self.inner.step_concurrency_level(signature);
+        pub fn step_concurrency_level(mut self, input: i32) -> Self {
+            self.inner = self.inner.step_concurrency_level(input);
             self
         }
         /// <p>Specifies the number of steps that can be executed concurrently. The default value is
@@ -5394,11 +5382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
-        pub fn managed_scaling_policy(
-            mut self,
-            signature: crate::model::ManagedScalingPolicy,
-        ) -> Self {
-            self.inner = self.inner.managed_scaling_policy(signature);
+        pub fn managed_scaling_policy(mut self, input: crate::model::ManagedScalingPolicy) -> Self {
+            self.inner = self.inner.managed_scaling_policy(input);
             self
         }
         /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
@@ -5432,9 +5417,9 @@ pub mod fluent_builders {
         /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
         pub fn auto_termination_policy(
             mut self,
-            signature: crate::model::AutoTerminationPolicy,
+            input: crate::model::AutoTerminationPolicy,
         ) -> Self {
-            self.inner = self.inner.auto_termination_policy(signature);
+            self.inner = self.inner.auto_termination_policy(input);
             self
         }
         /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
@@ -5541,8 +5526,8 @@ pub mod fluent_builders {
         /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
         /// instances in the cluster from shutting down due to API calls, user intervention, or
         /// job-flow error.</p>
-        pub fn termination_protected(mut self, signature: bool) -> Self {
-            self.inner = self.inner.termination_protected(signature);
+        pub fn termination_protected(mut self, input: bool) -> Self {
+            self.inner = self.inner.termination_protected(input);
             self
         }
         /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
@@ -5635,8 +5620,8 @@ pub mod fluent_builders {
         /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
         /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
         /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
-        pub fn visible_to_all_users(mut self, signature: bool) -> Self {
-            self.inner = self.inner.visible_to_all_users(signature);
+        pub fn visible_to_all_users(mut self, input: bool) -> Self {
+            self.inner = self.inner.visible_to_all_users(input);
             self
         }
         /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
@@ -5707,8 +5692,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
-        pub fn editor_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.editor_id(signature.into());
+        pub fn editor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.editor_id(input.into());
             self
         }
         /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
@@ -5724,8 +5709,8 @@ pub mod fluent_builders {
         /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
         /// for the notebook execution is
         /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
-        pub fn relative_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.relative_path(signature.into());
+        pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.relative_path(input.into());
             self
         }
         /// <p>The path and file name of the notebook file for this execution, relative to the path
@@ -5744,11 +5729,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional name for the notebook execution.</p>
-        pub fn notebook_execution_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.notebook_execution_name(signature.into());
+        pub fn notebook_execution_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_name(input.into());
             self
         }
         /// <p>An optional name for the notebook execution.</p>
@@ -5761,8 +5743,8 @@ pub mod fluent_builders {
         }
         /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
         /// execution.</p>
-        pub fn notebook_params(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_params(signature.into());
+        pub fn notebook_params(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_params(input.into());
             self
         }
         /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
@@ -5775,8 +5757,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
-        pub fn execution_engine(mut self, signature: crate::model::ExecutionEngineConfig) -> Self {
-            self.inner = self.inner.execution_engine(signature);
+        pub fn execution_engine(mut self, input: crate::model::ExecutionEngineConfig) -> Self {
+            self.inner = self.inner.execution_engine(input);
             self
         }
         /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
@@ -5789,8 +5771,8 @@ pub mod fluent_builders {
         }
         /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
         /// role) for the notebook execution.</p>
-        pub fn service_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_role(signature.into());
+        pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_role(input.into());
             self
         }
         /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
@@ -5803,11 +5785,9 @@ pub mod fluent_builders {
         /// Notebook for this notebook execution.</p>
         pub fn notebook_instance_security_group_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .notebook_instance_security_group_id(signature.into());
+            self.inner = self.inner.notebook_instance_security_group_id(input.into());
             self
         }
         /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
@@ -5901,8 +5881,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the notebook execution.</p>
-        pub fn notebook_execution_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.notebook_execution_id(signature.into());
+        pub fn notebook_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.notebook_execution_id(input.into());
             self
         }
         /// <p>The unique identifier of the notebook execution.</p>
@@ -6058,8 +6038,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio to update.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio to update.</p>
@@ -6068,8 +6048,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A descriptive name for the Amazon EMR Studio.</p>
@@ -6078,8 +6058,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
@@ -6105,8 +6085,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
-        pub fn default_s3_location(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_s3_location(signature.into());
+        pub fn default_s3_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_s3_location(input.into());
             self
         }
         /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
@@ -6179,8 +6159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
-        pub fn studio_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.studio_id(signature.into());
+        pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.studio_id(input.into());
             self
         }
         /// <p>The ID of the Amazon EMR Studio.</p>
@@ -6191,8 +6171,8 @@ pub mod fluent_builders {
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
         /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_id(signature.into());
+        pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_id(input.into());
             self
         }
         /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
@@ -6204,8 +6184,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
         /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-        pub fn identity_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.identity_name(signature.into());
+        pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.identity_name(input.into());
             self
         }
         /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
@@ -6218,8 +6198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the identity to update is a user or a group.</p>
-        pub fn identity_type(mut self, signature: crate::model::IdentityType) -> Self {
-            self.inner = self.inner.identity_type(signature);
+        pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
+            self.inner = self.inner.identity_type(input);
             self
         }
         /// <p>Specifies whether the identity to update is a user or a group.</p>
@@ -6232,8 +6212,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
         /// user or group.</p>
-        pub fn session_policy_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.session_policy_arn(signature.into());
+        pub fn session_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.session_policy_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified

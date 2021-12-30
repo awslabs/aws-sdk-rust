@@ -636,8 +636,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -649,8 +649,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -725,8 +725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -738,8 +738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -848,8 +848,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -938,8 +938,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The identifier for the folder that the evidence is stored in. </p>
@@ -1120,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1133,8 +1133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -1146,8 +1146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -1233,8 +1233,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the assessment to be created. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the assessment to be created. </p>
@@ -1243,8 +1243,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The optional description of the assessment to be created. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The optional description of the assessment to be created. </p>
@@ -1255,9 +1255,9 @@ pub mod fluent_builders {
         /// <p> The assessment report storage destination for the assessment that's being created. </p>
         pub fn assessment_reports_destination(
             mut self,
-            signature: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.assessment_reports_destination(signature);
+            self.inner = self.inner.assessment_reports_destination(input);
             self
         }
         /// <p> The assessment report storage destination for the assessment that's being created. </p>
@@ -1270,8 +1270,8 @@ pub mod fluent_builders {
         }
         /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
         /// scope for the assessment. </p>
-        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p> The wrapper that contains the Amazon Web Services accounts and services that are in
@@ -1298,8 +1298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the framework that the assessment will be created from. </p>
-        pub fn framework_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(signature.into());
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the framework that the assessment will be created from. </p>
@@ -1391,8 +1391,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the new custom framework. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the new custom framework. </p>
@@ -1401,8 +1401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An optional description for the new custom framework. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> An optional description for the new custom framework. </p>
@@ -1412,8 +1412,8 @@ pub mod fluent_builders {
         }
         /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
-        pub fn compliance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compliance_type(signature.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compliance_type(input.into());
             self
         }
         /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the new assessment report. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the new assessment report. </p>
@@ -1541,8 +1541,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the assessment report. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the assessment report. </p>
@@ -1551,8 +1551,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1624,8 +1624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name of the control. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the control. </p>
@@ -1634,8 +1634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the control. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the control. </p>
@@ -1644,8 +1644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The steps to follow to determine if the control is satisfied. </p>
-        pub fn testing_information(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.testing_information(signature.into());
+        pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.testing_information(input.into());
             self
         }
         /// <p> The steps to follow to determine if the control is satisfied. </p>
@@ -1657,8 +1657,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
-        pub fn action_plan_title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_title(signature.into());
+        pub fn action_plan_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_title(input.into());
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
@@ -1670,11 +1670,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-        pub fn action_plan_instructions(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.action_plan_instructions(signature.into());
+        pub fn action_plan_instructions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_instructions(input.into());
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
@@ -1789,8 +1786,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -1862,8 +1859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the custom framework. </p>
-        pub fn framework_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(signature.into());
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the custom framework. </p>
@@ -1934,8 +1931,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the share request to be deleted.</p>
-        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(signature.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input.into());
             self
         }
         /// <p>The unique identifier for the share request to be deleted.</p>
@@ -1944,8 +1941,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, signature: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(signature);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
@@ -2017,8 +2014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2030,8 +2027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
-        pub fn assessment_report_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_report_id(signature.into());
+        pub fn assessment_report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_report_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
@@ -2103,8 +2100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -2243,8 +2240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the administrator account. </p>
-        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(signature.into());
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p> The identifier for the administrator account. </p>
@@ -2318,8 +2315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2331,8 +2328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -2464,8 +2461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -2537,8 +2534,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the framework. </p>
-        pub fn framework_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(signature.into());
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The identifier for the framework. </p>
@@ -2607,8 +2604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment report. </p>
-        pub fn assessment_report_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_report_id(signature.into());
+        pub fn assessment_report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_report_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment report. </p>
@@ -2620,8 +2617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2693,8 +2690,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -2706,8 +2703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -2719,8 +2716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -2729,8 +2726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -2739,8 +2736,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -2809,8 +2806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -2879,8 +2876,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -2889,8 +2886,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -2959,8 +2956,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -2972,8 +2969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -2985,8 +2982,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -2998,8 +2995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the evidence. </p>
-        pub fn evidence_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_id(signature.into());
+        pub fn evidence_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_id(input.into());
             self
         }
         /// <p> The unique identifier for the evidence. </p>
@@ -3068,8 +3065,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -3081,8 +3078,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -3094,8 +3091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -3107,8 +3104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3117,8 +3114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3188,8 +3185,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -3201,8 +3198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -3214,8 +3211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
-        pub fn evidence_folder_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evidence_folder_id(signature.into());
+        pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evidence_folder_id(input.into());
             self
         }
         /// <p> The unique identifier for the folder that the evidence is stored in. </p>
@@ -3288,8 +3285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -3301,8 +3298,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3311,8 +3308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3384,8 +3381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The identifier for the assessment. </p>
@@ -3397,8 +3394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The identifier for the control set. </p>
@@ -3410,8 +3407,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -3420,8 +3417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3430,8 +3427,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -3560,8 +3557,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the assessment. </p>
@@ -3755,8 +3752,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The list of <code>SettingAttribute</code> enum values. </p>
-        pub fn attribute(mut self, signature: crate::model::SettingAttribute) -> Self {
-            self.inner = self.inner.attribute(signature);
+        pub fn attribute(mut self, input: crate::model::SettingAttribute) -> Self {
+            self.inner = self.inner.attribute(input);
             self
         }
         /// <p> The list of <code>SettingAttribute</code> enum values. </p>
@@ -3837,8 +3834,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the control domain. </p>
-        pub fn control_domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_domain_id(signature.into());
+        pub fn control_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(input.into());
             self
         }
         /// <p>The unique identifier for the control domain. </p>
@@ -3850,8 +3847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
@@ -3863,8 +3860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -3873,8 +3870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -3944,8 +3941,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The type of framework, such as a standard framework or a custom framework. </p>
-        pub fn framework_type(mut self, signature: crate::model::FrameworkType) -> Self {
-            self.inner = self.inner.framework_type(signature);
+        pub fn framework_type(mut self, input: crate::model::FrameworkType) -> Self {
+            self.inner = self.inner.framework_type(input);
             self
         }
         /// <p> The type of framework, such as a standard framework or a custom framework. </p>
@@ -3957,8 +3954,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -3967,8 +3964,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4039,8 +4036,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, signature: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(signature);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p> Specifies whether the share request is a sent request or a received request.</p>
@@ -4052,8 +4049,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4062,8 +4059,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4132,8 +4129,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4142,8 +4139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4212,8 +4209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The current status of the assessment.</p>
-        pub fn status(mut self, signature: crate::model::AssessmentStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The current status of the assessment.</p>
@@ -4225,8 +4222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4235,8 +4232,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4311,8 +4308,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4321,8 +4318,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4398,8 +4395,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the active assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p>The unique identifier for the active assessment. </p>
@@ -4411,8 +4408,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4421,8 +4418,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4500,8 +4497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the control domain. </p>
-        pub fn control_domain_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_domain_id(signature.into());
+        pub fn control_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_domain_id(input.into());
             self
         }
         /// <p>The unique identifier for the control domain. </p>
@@ -4513,8 +4510,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token that's used to fetch the next set of results. </p>
@@ -4523,8 +4520,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Represents the maximum number of results on a page or for an API request call. </p>
@@ -4593,8 +4590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The type of control, such as a standard control or a custom control. </p>
-        pub fn control_type(mut self, signature: crate::model::ControlType) -> Self {
-            self.inner = self.inner.control_type(signature);
+        pub fn control_type(mut self, input: crate::model::ControlType) -> Self {
+            self.inner = self.inner.control_type(input);
             self
         }
         /// <p> The type of control, such as a standard control or a custom control. </p>
@@ -4606,8 +4603,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4616,8 +4613,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4686,8 +4683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The control mapping data source that the keywords apply to. </p>
-        pub fn source(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p> The control mapping data source that the keywords apply to. </p>
@@ -4696,8 +4693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4706,8 +4703,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4776,8 +4773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> The pagination token that's used to fetch the next set of results. </p>
@@ -4786,8 +4783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> Represents the maximum number of results on a page or for an API request call. </p>
@@ -4856,8 +4853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
@@ -4926,8 +4923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The KMS key details. </p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p> The KMS key details. </p>
@@ -4936,11 +4933,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The delegated administrator account for Audit Manager. </p>
-        pub fn delegated_admin_account(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.delegated_admin_account(signature.into());
+        pub fn delegated_admin_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account(input.into());
             self
         }
         /// <p> The delegated administrator account for Audit Manager. </p>
@@ -5013,8 +5007,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the delegated administrator account. </p>
-        pub fn admin_account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.admin_account_id(signature.into());
+        pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.admin_account_id(input.into());
             self
         }
         /// <p> The identifier for the delegated administrator account. </p>
@@ -5096,8 +5090,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the custom framework to be shared. </p>
-        pub fn framework_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(signature.into());
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The unique identifier for the custom framework to be shared. </p>
@@ -5106,8 +5100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon Web Services account of the recipient. </p>
-        pub fn destination_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_account(signature.into());
+        pub fn destination_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_account(input.into());
             self
         }
         /// <p> The Amazon Web Services account of the recipient. </p>
@@ -5119,8 +5113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon Web Services Region of the recipient. </p>
-        pub fn destination_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(signature.into());
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(input.into());
             self
         }
         /// <p> The Amazon Web Services Region of the recipient. </p>
@@ -5132,8 +5126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> An optional comment from the sender about the share request. </p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p> An optional comment from the sender about the share request. </p>
@@ -5202,8 +5196,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the resource. </p>
@@ -5295,8 +5289,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) of the specified resource. </p>
@@ -5382,8 +5376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5395,8 +5389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the assessment to be updated. </p>
-        pub fn assessment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_name(signature.into());
+        pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_name(input.into());
             self
         }
         /// <p> The name of the assessment to be updated. </p>
@@ -5408,8 +5402,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the assessment. </p>
-        pub fn assessment_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_description(signature.into());
+        pub fn assessment_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_description(input.into());
             self
         }
         /// <p> The description of the assessment. </p>
@@ -5421,8 +5415,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The scope of the assessment. </p>
-        pub fn scope(mut self, signature: crate::model::Scope) -> Self {
-            self.inner = self.inner.scope(signature);
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
             self
         }
         /// <p> The scope of the assessment. </p>
@@ -5434,9 +5428,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn assessment_reports_destination(
             mut self,
-            signature: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.assessment_reports_destination(signature);
+            self.inner = self.inner.assessment_reports_destination(input);
             self
         }
         /// <p> The assessment report storage destination for the assessment that's being updated.
@@ -5526,8 +5520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5539,8 +5533,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -5552,8 +5546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The unique identifier for the control. </p>
@@ -5562,8 +5556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status of the control. </p>
-        pub fn control_status(mut self, signature: crate::model::ControlStatus) -> Self {
-            self.inner = self.inner.control_status(signature);
+        pub fn control_status(mut self, input: crate::model::ControlStatus) -> Self {
+            self.inner = self.inner.control_status(input);
             self
         }
         /// <p> The status of the control. </p>
@@ -5575,8 +5569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The comment body text for the control. </p>
-        pub fn comment_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment_body(signature.into());
+        pub fn comment_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment_body(input.into());
             self
         }
         /// <p> The comment body text for the control. </p>
@@ -5645,8 +5639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5658,8 +5652,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique identifier for the control set. </p>
-        pub fn control_set_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_set_id(signature.into());
+        pub fn control_set_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_set_id(input.into());
             self
         }
         /// <p> The unique identifier for the control set. </p>
@@ -5671,8 +5665,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The status of the control set that's being updated. </p>
-        pub fn status(mut self, signature: crate::model::ControlSetStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::ControlSetStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The status of the control set that's being updated. </p>
@@ -5684,8 +5678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The comment that's related to the status update. </p>
-        pub fn comment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.comment(signature.into());
+        pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.comment(input.into());
             self
         }
         /// <p> The comment that's related to the status update. </p>
@@ -5754,8 +5748,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the framework. </p>
-        pub fn framework_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework_id(signature.into());
+        pub fn framework_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework_id(input.into());
             self
         }
         /// <p> The unique identifier for the framework. </p>
@@ -5764,8 +5758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the framework to be updated. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the framework to be updated. </p>
@@ -5774,8 +5768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description of the updated framework. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description of the updated framework. </p>
@@ -5785,8 +5779,8 @@ pub mod fluent_builders {
         }
         /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
         /// </p>
-        pub fn compliance_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.compliance_type(signature.into());
+        pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.compliance_type(input.into());
             self
         }
         /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA.
@@ -5881,8 +5875,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the share request. </p>
-        pub fn request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.request_id(signature.into());
+        pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.request_id(input.into());
             self
         }
         /// <p> The unique identifier for the share request. </p>
@@ -5891,8 +5885,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
-        pub fn request_type(mut self, signature: crate::model::ShareRequestType) -> Self {
-            self.inner = self.inner.request_type(signature);
+        pub fn request_type(mut self, input: crate::model::ShareRequestType) -> Self {
+            self.inner = self.inner.request_type(input);
             self
         }
         /// <p>Specifies whether the share request is a sent request or a received request.</p>
@@ -5904,8 +5898,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the update action for the share request.</p>
-        pub fn action(mut self, signature: crate::model::ShareRequestAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::ShareRequestAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the update action for the share request.</p>
@@ -5977,8 +5971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique identifier for the assessment. </p>
-        pub fn assessment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.assessment_id(signature.into());
+        pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.assessment_id(input.into());
             self
         }
         /// <p> The unique identifier for the assessment. </p>
@@ -5990,8 +5984,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The current status of the assessment. </p>
-        pub fn status(mut self, signature: crate::model::AssessmentStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::AssessmentStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p> The current status of the assessment. </p>
@@ -6063,8 +6057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The identifier for the control. </p>
-        pub fn control_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.control_id(signature.into());
+        pub fn control_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.control_id(input.into());
             self
         }
         /// <p> The identifier for the control. </p>
@@ -6073,8 +6067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the updated control. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name of the updated control. </p>
@@ -6083,8 +6077,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The optional description of the control. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The optional description of the control. </p>
@@ -6093,8 +6087,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The steps that you should follow to determine if the control is met. </p>
-        pub fn testing_information(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.testing_information(signature.into());
+        pub fn testing_information(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.testing_information(input.into());
             self
         }
         /// <p> The steps that you should follow to determine if the control is met. </p>
@@ -6106,8 +6100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
-        pub fn action_plan_title(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action_plan_title(signature.into());
+        pub fn action_plan_title(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_title(input.into());
             self
         }
         /// <p> The title of the action plan for remediating the control. </p>
@@ -6119,11 +6113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
-        pub fn action_plan_instructions(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.action_plan_instructions(signature.into());
+        pub fn action_plan_instructions(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action_plan_instructions(input.into());
             self
         }
         /// <p> The recommended actions to carry out if the control isn't fulfilled. </p>
@@ -6216,8 +6207,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
         /// notifications to. </p>
-        pub fn sns_topic(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic(signature.into());
+        pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic(input.into());
             self
         }
         /// <p> The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends
@@ -6229,9 +6220,9 @@ pub mod fluent_builders {
         /// <p> The default storage destination for assessment reports. </p>
         pub fn default_assessment_reports_destination(
             mut self,
-            signature: crate::model::AssessmentReportsDestination,
+            input: crate::model::AssessmentReportsDestination,
         ) -> Self {
-            self.inner = self.inner.default_assessment_reports_destination(signature);
+            self.inner = self.inner.default_assessment_reports_destination(input);
             self
         }
         /// <p> The default storage destination for assessment reports. </p>
@@ -6260,8 +6251,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The KMS key details. </p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p> The KMS key details. </p>
@@ -6331,8 +6322,8 @@ pub mod fluent_builders {
         }
         /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored
         /// in. </p>
-        pub fn s3_relative_path(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_relative_path(signature.into());
+        pub fn s3_relative_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_relative_path(input.into());
             self
         }
         /// <p> The relative path of the Amazon S3 bucket that the assessment report is stored

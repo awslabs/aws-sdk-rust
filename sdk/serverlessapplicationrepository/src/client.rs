@@ -258,8 +258,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-        pub fn author(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author(signature.into());
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author(input.into());
             self
         }
         /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
@@ -268,8 +268,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
@@ -278,8 +278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn home_page_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_page_url(signature.into());
+        pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_page_url(input.into());
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
@@ -309,8 +309,8 @@ pub mod fluent_builders {
         }
         /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
         /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-        pub fn license_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_body(signature.into());
+        pub fn license_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_body(input.into());
             self
         }
         /// <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
@@ -320,8 +320,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
-        pub fn license_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.license_url(signature.into());
+        pub fn license_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.license_url(input.into());
             self
         }
         /// <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
@@ -330,8 +330,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
@@ -341,8 +341,8 @@ pub mod fluent_builders {
         }
         /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
         /// The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-        pub fn readme_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_body(signature.into());
+        pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_body(input.into());
             self
         }
         /// <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
@@ -352,8 +352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
-        pub fn readme_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_url(signature.into());
+        pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_url(input.into());
             self
         }
         /// <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
@@ -364,8 +364,8 @@ pub mod fluent_builders {
         /// <p>The semantic version of the application:</p><p>
         /// <a href="https://semver.org/">https://semver.org/</a>
         /// </p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application:</p><p>
@@ -379,11 +379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
-        pub fn source_code_archive_url(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_code_archive_url(signature.into());
+        pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
@@ -395,8 +392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn source_code_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_url(signature.into());
+        pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_url(input.into());
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
@@ -408,8 +405,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
-        pub fn spdx_license_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.spdx_license_id(signature.into());
+        pub fn spdx_license_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.spdx_license_id(input.into());
             self
         }
         /// <p>A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
@@ -422,8 +419,8 @@ pub mod fluent_builders {
         }
         /// <p>The local raw packaged AWS SAM template file of your application.
         /// The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The local raw packaged AWS SAM template file of your application.
@@ -436,8 +433,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
-        pub fn template_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(signature.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input.into());
             self
         }
         /// <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
@@ -506,8 +503,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -519,8 +516,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the new version.</p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the new version.</p>
@@ -532,11 +529,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
-        pub fn source_code_archive_url(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_code_archive_url(signature.into());
+        pub fn source_code_archive_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_archive_url(input.into());
             self
         }
         /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p>
@@ -548,8 +542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
-        pub fn source_code_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_code_url(signature.into());
+        pub fn source_code_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_code_url(input.into());
             self
         }
         /// <p>A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit.</p>
@@ -561,8 +555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The raw packaged AWS SAM template of your application.</p>
-        pub fn template_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_body(signature.into());
+        pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_body(input.into());
             self
         }
         /// <p>The raw packaged AWS SAM template of your application.</p>
@@ -574,8 +568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
-        pub fn template_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_url(signature.into());
+        pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_url(input.into());
             self
         }
         /// <p>A link to the packaged AWS SAM template of your application.</p>
@@ -644,8 +638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -719,8 +713,8 @@ pub mod fluent_builders {
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
         /// </i> API.</p>
-        pub fn change_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.change_set_name(signature.into());
+        pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.change_set_name(input.into());
             self
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -734,8 +728,8 @@ pub mod fluent_builders {
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
         /// </i> API.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -746,8 +740,8 @@ pub mod fluent_builders {
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
         /// </i> API.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -815,9 +809,9 @@ pub mod fluent_builders {
         /// </i> API.</p>
         pub fn rollback_configuration(
             mut self,
-            signature: crate::model::RollbackConfiguration,
+            input: crate::model::RollbackConfiguration,
         ) -> Self {
-            self.inner = self.inner.rollback_configuration(signature);
+            self.inner = self.inner.rollback_configuration(input);
             self
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -832,8 +826,8 @@ pub mod fluent_builders {
         /// <p>The semantic version of the application:</p><p>
         /// <a href="https://semver.org/">https://semver.org/</a>
         /// </p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application:</p><p>
@@ -848,8 +842,8 @@ pub mod fluent_builders {
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
         /// </i> API.</p>
-        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(signature.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p>This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -878,8 +872,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -948,8 +942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -963,8 +957,8 @@ pub mod fluent_builders {
         /// <p>The semantic version of the application:</p><p>
         /// <a href="https://semver.org/">https://semver.org/</a>
         /// </p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application:</p><p>
@@ -1038,8 +1032,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1111,8 +1105,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1124,8 +1118,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the application to get.</p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application to get.</p>
@@ -1197,8 +1191,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1270,8 +1264,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1283,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
-        pub fn template_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_id(signature.into());
+        pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_id(input.into());
             self
         }
         /// <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p>
@@ -1353,8 +1347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1366,8 +1360,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1376,8 +1370,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1386,8 +1380,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The semantic version of the application to get.</p>
-        pub fn semantic_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.semantic_version(signature.into());
+        pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.semantic_version(input.into());
             self
         }
         /// <p>The semantic version of the application to get.</p>
@@ -1459,8 +1453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1469,8 +1463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1539,8 +1533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1552,8 +1546,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The total number of items to return.</p>
-        pub fn max_items(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_items(signature);
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
             self
         }
         /// <p>The total number of items to return.</p>
@@ -1562,8 +1556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to specify where to start paginating.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to specify where to start paginating.</p>
@@ -1635,8 +1629,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1725,8 +1719,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1738,8 +1732,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Organization ID to unshare the application from.</p>
-        pub fn organization_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.organization_id(signature.into());
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.organization_id(input.into());
             self
         }
         /// <p>The AWS Organization ID to unshare the application from.</p>
@@ -1811,8 +1805,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the application.</p>
@@ -1824,8 +1818,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
-        pub fn author(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.author(signature.into());
+        pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.author(input.into());
             self
         }
         /// <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
@@ -1834,8 +1828,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
@@ -1844,8 +1838,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
-        pub fn home_page_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.home_page_url(signature.into());
+        pub fn home_page_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.home_page_url(input.into());
             self
         }
         /// <p>A URL with more information about the application, for example the location of your GitHub repository for the application.</p>
@@ -1874,8 +1868,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
-        pub fn readme_body(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_body(signature.into());
+        pub fn readme_body(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_body(input.into());
             self
         }
         /// <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
@@ -1884,8 +1878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>
-        pub fn readme_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.readme_url(signature.into());
+        pub fn readme_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readme_url(input.into());
             self
         }
         /// <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p>

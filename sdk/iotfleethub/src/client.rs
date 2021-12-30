@@ -211,8 +211,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -224,11 +224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.application_description(signature.into());
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -241,8 +238,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
@@ -256,8 +253,8 @@ pub mod fluent_builders {
         /// <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
         /// </code>.</p>
         /// </note>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p>
@@ -356,8 +353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -370,8 +367,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
@@ -444,8 +441,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -520,8 +517,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A token used to get the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token used to get the next set of results.</p>
@@ -593,8 +590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -666,8 +663,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -762,8 +759,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -852,8 +849,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Id of the web application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique Id of the web application.</p>
@@ -865,8 +862,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the web application.</p>
-        pub fn application_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_name(signature.into());
+        pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_name(input.into());
             self
         }
         /// <p>The name of the web application.</p>
@@ -878,11 +875,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional description of the web application.</p>
-        pub fn application_description(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.application_description(signature.into());
+        pub fn application_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_description(input.into());
             self
         }
         /// <p>An optional description of the web application.</p>
@@ -895,8 +889,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.
         /// Don't reuse this client token if a new idempotent request is required.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request.

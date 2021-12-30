@@ -358,8 +358,8 @@ pub mod fluent_builders {
         /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
         /// notification channel to add. The one
         /// supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>
-        pub fn config(mut self, signature: crate::model::NotificationChannelConfig) -> Self {
-            self.inner = self.inner.config(signature);
+        pub fn config(mut self, input: crate::model::NotificationChannelConfig) -> Self {
+            self.inner = self.inner.config(input);
             self
         }
         /// <p> A <code>NotificationChannelConfig</code> object that specifies what type of
@@ -499,8 +499,8 @@ pub mod fluent_builders {
         /// <p> The start of the time range passed in. The start time granularity is at the day
         /// level. The floor of the start time is used. Returned information occurred after this
         /// day. </p>
-        pub fn from_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time(signature);
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time(input);
             self
         }
         /// <p> The start of the time range passed in. The start time granularity is at the day
@@ -516,8 +516,8 @@ pub mod fluent_builders {
         /// <p> The end of the time range passed in. The start time granularity is at the day level.
         /// The floor of the start time is used. Returned information occurred before this day. If
         /// this is not specified, then the current day is used. </p>
-        pub fn to_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time(signature);
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time(input);
             self
         }
         /// <p> The end of the time range passed in. The start time granularity is at the day level.
@@ -591,8 +591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the anomaly. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the anomaly. </p>
@@ -601,8 +601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the member account.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the member account.</p>
@@ -672,8 +672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the insight for which the feedback was provided. </p>
-        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(signature.into());
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the insight for which the feedback was provided. </p>
@@ -742,8 +742,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the insight. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the insight. </p>
@@ -752,8 +752,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the member account in the organization.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the member account in the organization.</p>
@@ -920,8 +920,8 @@ pub mod fluent_builders {
         /// <p> The start of the time range passed in. The start time granularity is at the day
         /// level. The floor of the start time is used. Returned information occurred after this
         /// day. </p>
-        pub fn from_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time(signature);
+        pub fn from_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time(input);
             self
         }
         /// <p> The start of the time range passed in. The start time granularity is at the day
@@ -937,8 +937,8 @@ pub mod fluent_builders {
         /// <p> The end of the time range passed in. The start time granularity is at the day level.
         /// The floor of the start time is used. Returned information occurred before this day. If
         /// this is not specified, then the current day is used. </p>
-        pub fn to_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time(signature);
+        pub fn to_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time(input);
             self
         }
         /// <p> The end of the time range passed in. The start time granularity is at the day level.
@@ -1055,9 +1055,9 @@ pub mod fluent_builders {
         /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn organization_resource_collection_type(
             mut self,
-            signature: crate::model::OrganizationResourceCollectionType,
+            input: crate::model::OrganizationResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.organization_resource_collection_type(signature);
+            self.inner = self.inner.organization_resource_collection_type(input);
             self
         }
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
@@ -1107,8 +1107,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1119,8 +1119,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1199,9 +1199,9 @@ pub mod fluent_builders {
         /// the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
-            signature: crate::model::ResourceCollectionType,
+            input: crate::model::ResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.resource_collection_type(signature);
+            self.inner = self.inner.resource_collection_type(input);
             self
         }
         /// <p> An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources
@@ -1217,8 +1217,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1355,8 +1355,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1432,9 +1432,9 @@ pub mod fluent_builders {
         /// <code>CLOUD_FORMATION</code> for Amazon Web Services CloudFormation stacks. </p>
         pub fn resource_collection_type(
             mut self,
-            signature: crate::model::ResourceCollectionType,
+            input: crate::model::ResourceCollectionType,
         ) -> Self {
-            self.inner = self.inner.resource_collection_type(signature);
+            self.inner = self.inner.resource_collection_type(input);
             self
         }
         /// <p> The type of Amazon Web Services resource collections to return. The one valid value is
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1520,8 +1520,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
-        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(signature.into());
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
@@ -1531,8 +1531,8 @@ pub mod fluent_builders {
         }
         /// <p> A time range used to specify when the requested anomalies started. All returned
         /// anomalies started during this time range. </p>
-        pub fn start_time_range(mut self, signature: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(signature);
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
         /// <p> A time range used to specify when the requested anomalies started. All returned
@@ -1546,8 +1546,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1558,8 +1558,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1569,8 +1569,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -1641,8 +1641,8 @@ pub mod fluent_builders {
         }
         /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
         /// </p>
-        pub fn filters(mut self, signature: crate::model::ListEventsFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::ListEventsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p> A <code>ListEventsFilters</code> object used to specify which events to return.
@@ -1656,8 +1656,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1668,8 +1668,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1679,8 +1679,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -1752,8 +1752,8 @@ pub mod fluent_builders {
         }
         /// <p> A filter used to filter the returned insights by their status. You can specify one
         /// status filter. </p>
-        pub fn status_filter(mut self, signature: crate::model::ListInsightsStatusFilter) -> Self {
-            self.inner = self.inner.status_filter(signature);
+        pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
         /// <p> A filter used to filter the returned insights by their status. You can specify one
@@ -1767,8 +1767,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1779,8 +1779,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1854,8 +1854,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -1926,8 +1926,8 @@ pub mod fluent_builders {
         }
         /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
         /// </p>
-        pub fn status_filter(mut self, signature: crate::model::ListInsightsStatusFilter) -> Self {
-            self.inner = self.inner.status_filter(signature);
+        pub fn status_filter(mut self, input: crate::model::ListInsightsStatusFilter) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
         /// <p> A filter used by <code>ListInsights</code> to specify which insights to return.
@@ -1941,8 +1941,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -1987,8 +1987,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -2059,8 +2059,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the requested insight. </p>
-        pub fn insight_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.insight_id(signature.into());
+        pub fn insight_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.insight_id(input.into());
             self
         }
         /// <p> The ID of the requested insight. </p>
@@ -2070,8 +2070,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -2081,8 +2081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A locale that specifies the language to use for recommendations.</p>
-        pub fn locale(mut self, signature: crate::model::Locale) -> Self {
-            self.inner = self.inner.locale(signature);
+        pub fn locale(mut self, input: crate::model::Locale) -> Self {
+            self.inner = self.inner.locale(input);
             self
         }
         /// <p>A locale that specifies the language to use for recommendations.</p>
@@ -2091,8 +2091,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The ID of the Amazon Web Services account. </p>
@@ -2161,8 +2161,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The feedback from customers is about the recommendations in this insight. </p>
-        pub fn insight_feedback(mut self, signature: crate::model::InsightFeedback) -> Self {
-            self.inner = self.inner.insight_feedback(signature);
+        pub fn insight_feedback(mut self, input: crate::model::InsightFeedback) -> Self {
+            self.inner = self.inner.insight_feedback(input);
             self
         }
         /// <p> The feedback from customers is about the recommendations in this insight. </p>
@@ -2236,8 +2236,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The ID of the notification channel to be removed. </p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p> The ID of the notification channel to be removed. </p>
@@ -2314,8 +2314,8 @@ pub mod fluent_builders {
         }
         /// <p> The start of the time range passed in. Returned insights occurred after this time.
         /// </p>
-        pub fn start_time_range(mut self, signature: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(signature);
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
         /// <p> The start of the time range passed in. Returned insights occurred after this time.
@@ -2329,8 +2329,8 @@ pub mod fluent_builders {
         }
         /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
         /// status filters on your insight search. </p>
-        pub fn filters(mut self, signature: crate::model::SearchInsightsFilters) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::SearchInsightsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p> A <code>SearchInsightsFilters</code> object that is used to set the severity and
@@ -2344,8 +2344,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2356,8 +2356,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -2368,8 +2368,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
         /// <code>PROACTIVE</code>). </p>
-        pub fn r#type(mut self, signature: crate::model::InsightType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
@@ -2464,8 +2464,8 @@ pub mod fluent_builders {
         }
         /// <p> A time range used to specify when the behavior of an insight or anomaly started.
         /// </p>
-        pub fn start_time_range(mut self, signature: crate::model::StartTimeRange) -> Self {
-            self.inner = self.inner.start_time_range(signature);
+        pub fn start_time_range(mut self, input: crate::model::StartTimeRange) -> Self {
+            self.inner = self.inner.start_time_range(input);
             self
         }
         /// <p> A time range used to specify when the behavior of an insight or anomaly started.
@@ -2479,11 +2479,8 @@ pub mod fluent_builders {
         }
         /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
         /// severity and status filters on your insight search. </p>
-        pub fn filters(
-            mut self,
-            signature: crate::model::SearchOrganizationInsightsFilters,
-        ) -> Self {
-            self.inner = self.inner.filters(signature);
+        pub fn filters(mut self, input: crate::model::SearchOrganizationInsightsFilters) -> Self {
+            self.inner = self.inner.filters(input);
             self
         }
         /// <p> A <code>SearchOrganizationInsightsFilters</code> object that is used to set the
@@ -2497,8 +2494,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call.
         /// To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call.
@@ -2509,8 +2506,8 @@ pub mod fluent_builders {
         }
         /// <p>The pagination token to use to retrieve
         /// the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The pagination token to use to retrieve
@@ -2521,8 +2518,8 @@ pub mod fluent_builders {
         }
         /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
         /// <code>PROACTIVE</code>). </p>
-        pub fn r#type(mut self, signature: crate::model::InsightType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::InsightType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p> The type of insights you are searching for (<code>REACTIVE</code> or
@@ -2595,9 +2592,9 @@ pub mod fluent_builders {
         /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
         pub fn resource_collection(
             mut self,
-            signature: crate::model::CostEstimationResourceCollectionFilter,
+            input: crate::model::CostEstimationResourceCollectionFilter,
         ) -> Self {
-            self.inner = self.inner.resource_collection(signature);
+            self.inner = self.inner.resource_collection(input);
             self
         }
         /// <p>The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.</p>
@@ -2609,8 +2606,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token used to identify each cost estimate request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token used to identify each cost estimate request.</p>
@@ -2684,8 +2681,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies if the resource collection in the request is added or deleted to the
         /// resource collection. </p>
-        pub fn action(mut self, signature: crate::model::UpdateResourceCollectionAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::UpdateResourceCollectionAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p> Specifies if the resource collection in the request is added or deleted to the
@@ -2700,9 +2697,9 @@ pub mod fluent_builders {
         /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
         pub fn resource_collection(
             mut self,
-            signature: crate::model::UpdateResourceCollectionFilter,
+            input: crate::model::UpdateResourceCollectionFilter,
         ) -> Self {
-            self.inner = self.inner.resource_collection(signature);
+            self.inner = self.inner.resource_collection(input);
             self
         }
         /// <p> Contains information used to update a collection of Amazon Web Services resources. </p>
@@ -2779,9 +2776,9 @@ pub mod fluent_builders {
         /// you want to update, and whether you want to update it to enabled or disabled. </p>
         pub fn service_integration(
             mut self,
-            signature: crate::model::UpdateServiceIntegrationConfig,
+            input: crate::model::UpdateServiceIntegrationConfig,
         ) -> Self {
-            self.inner = self.inner.service_integration(signature);
+            self.inner = self.inner.service_integration(input);
             self
         }
         /// <p> An <code>IntegratedServiceConfig</code> object used to specify the integrated service

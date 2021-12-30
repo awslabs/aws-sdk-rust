@@ -614,8 +614,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
         /// different for each directory owner account. </p>
-        pub fn shared_directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_directory_id(signature.into());
+        pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_directory_id(input.into());
             self
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
@@ -695,8 +695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier (ID) of the directory to which to add the address block.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier (ID) of the directory to which to add the address block.</p>
@@ -792,10 +792,10 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>These security rules impact an internal network interface that is not exposed
         /// publicly.</p>
-        pub fn update_security_group_for_directory_controllers(mut self, signature: bool) -> Self {
+        pub fn update_security_group_for_directory_controllers(mut self, input: bool) -> Self {
             self.inner = self
                 .inner
-                .update_security_group_for_directory_controllers(signature);
+                .update_security_group_for_directory_controllers(input);
             self
         }
         /// <p>If set to true, updates the inbound and outbound rules of the security group that has
@@ -937,8 +937,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory to which you want to add Region replication.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory to which you want to add Region replication.</p>
@@ -948,8 +948,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Region where you want to add domain controllers for replication. For
         /// example, <code>us-east-1</code>.</p>
-        pub fn region_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(signature.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input.into());
             self
         }
         /// <p>The name of the Region where you want to add domain controllers for replication. For
@@ -959,8 +959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
-        pub fn vpc_settings(mut self, signature: crate::model::DirectoryVpcSettings) -> Self {
-            self.inner = self.inner.vpc_settings(signature);
+        pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
+            self.inner = self.inner.vpc_settings(input);
             self
         }
         /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
@@ -1034,8 +1034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier (ID) for the directory to which to add the tag.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Identifier (ID) for the directory to which to add the tag.</p>
@@ -1125,8 +1125,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory whose schema extension will be canceled.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory whose schema extension will be canceled.</p>
@@ -1135,8 +1135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the schema extension that will be canceled.</p>
-        pub fn schema_extension_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schema_extension_id(signature.into());
+        pub fn schema_extension_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schema_extension_id(input.into());
             self
         }
         /// <p>The identifier of the schema extension that will be canceled.</p>
@@ -1213,8 +1213,8 @@ pub mod fluent_builders {
         }
         /// <p>The fully qualified name of your self-managed directory, such as
         /// <code>corp.example.com</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The fully qualified name of your self-managed directory, such as
@@ -1224,8 +1224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
-        pub fn short_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.short_name(signature.into());
+        pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.short_name(input.into());
             self
         }
         /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
@@ -1234,8 +1234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password for your self-managed user account.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for your self-managed user account.</p>
@@ -1244,8 +1244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the directory.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the directory.</p>
@@ -1254,8 +1254,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the directory.</p>
-        pub fn size(mut self, signature: crate::model::DirectorySize) -> Self {
-            self.inner = self.inner.size(signature);
+        pub fn size(mut self, input: crate::model::DirectorySize) -> Self {
+            self.inner = self.inner.size(input);
             self
         }
         /// <p>The size of the directory.</p>
@@ -1265,11 +1265,8 @@ pub mod fluent_builders {
         }
         /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
         /// for the operation.</p>
-        pub fn connect_settings(
-            mut self,
-            signature: crate::model::DirectoryConnectSettings,
-        ) -> Self {
-            self.inner = self.inner.connect_settings(signature);
+        pub fn connect_settings(mut self, input: crate::model::DirectoryConnectSettings) -> Self {
+            self.inner = self.inner.connect_settings(input);
             self
         }
         /// <p>A <a>DirectoryConnectSettings</a> object that contains additional information
@@ -1364,8 +1361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to create the alias.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to create the alias.</p>
@@ -1376,8 +1373,8 @@ pub mod fluent_builders {
         /// <p>The requested alias.</p>
         /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
         /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// <p>The requested alias.</p>
@@ -1448,8 +1445,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory in which to create the computer account.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory in which to create the computer account.</p>
@@ -1458,8 +1455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the computer account.</p>
-        pub fn computer_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.computer_name(signature.into());
+        pub fn computer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.computer_name(input.into());
             self
         }
         /// <p>The name of the computer account.</p>
@@ -1471,8 +1468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>A one-time password that is used to join the computer to the directory. You should generate a random, strong password to use for this parameter.</p>
@@ -1483,11 +1480,11 @@ pub mod fluent_builders {
         /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
         pub fn organizational_unit_distinguished_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
             self.inner = self
                 .inner
-                .organizational_unit_distinguished_name(signature.into());
+                .organizational_unit_distinguished_name(input.into());
             self
         }
         /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
@@ -1581,8 +1578,8 @@ pub mod fluent_builders {
         }
         /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
         /// forwarder.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
@@ -1593,8 +1590,8 @@ pub mod fluent_builders {
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
         /// a trust relationship.</p>
-        pub fn remote_domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_domain_name(signature.into());
+        pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_domain_name(input.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
@@ -1689,8 +1686,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The fully qualified name for the directory, such as <code>corp.example.com</code>.</p>
@@ -1699,8 +1696,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
-        pub fn short_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.short_name(signature.into());
+        pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.short_name(input.into());
             self
         }
         /// <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
@@ -1737,8 +1734,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>For additional information about how Active Directory passwords are enforced, see <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements">Password must meet complexity requirements</a> on the Microsoft website.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the directory administrator. The directory creation process creates a
@@ -1775,8 +1772,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the directory.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the directory.</p>
@@ -1785,8 +1782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The size of the directory.</p>
-        pub fn size(mut self, signature: crate::model::DirectorySize) -> Self {
-            self.inner = self.inner.size(signature);
+        pub fn size(mut self, input: crate::model::DirectorySize) -> Self {
+            self.inner = self.inner.size(input);
             self
         }
         /// <p>The size of the directory.</p>
@@ -1796,8 +1793,8 @@ pub mod fluent_builders {
         }
         /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
         /// the operation.</p>
-        pub fn vpc_settings(mut self, signature: crate::model::DirectoryVpcSettings) -> Self {
-            self.inner = self.inner.vpc_settings(signature);
+        pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
+            self.inner = self.inner.vpc_settings(input);
             self
         }
         /// <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
@@ -1889,8 +1886,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
         /// your specified CloudWatch log group.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to
@@ -1901,8 +1898,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
         /// forwarded.</p>
-        pub fn log_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_group_name(signature.into());
+        pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_group_name(input.into());
             self
         }
         /// <p>The name of the CloudWatch log group where the real-time domain controller logs are
@@ -1980,8 +1977,8 @@ pub mod fluent_builders {
         /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
         /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
         /// to be publicly resolvable.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
@@ -1994,8 +1991,8 @@ pub mod fluent_builders {
         /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
         /// NetBIOS name, it will default to the first part of your directory DNS. For example,
         /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
-        pub fn short_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.short_name(signature.into());
+        pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.short_name(input.into());
             self
         }
         /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
@@ -2007,8 +2004,8 @@ pub mod fluent_builders {
         }
         /// <p>The password for the default administrative user named <code>Admin</code>.</p>
         /// <p>If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API call.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password for the default administrative user named <code>Admin</code>.</p>
@@ -2019,8 +2016,8 @@ pub mod fluent_builders {
         }
         /// <p>A description for the directory. This label will appear on the Amazon Web Services console
         /// <code>Directory Details</code> page after the directory is created.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the directory. This label will appear on the Amazon Web Services console
@@ -2030,8 +2027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
-        pub fn vpc_settings(mut self, signature: crate::model::DirectoryVpcSettings) -> Self {
-            self.inner = self.inner.vpc_settings(signature);
+        pub fn vpc_settings(mut self, input: crate::model::DirectoryVpcSettings) -> Self {
+            self.inner = self.inner.vpc_settings(input);
             self
         }
         /// <p>Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation.</p>
@@ -2044,8 +2041,8 @@ pub mod fluent_builders {
         }
         /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
         /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
-        pub fn edition(mut self, signature: crate::model::DirectoryEdition) -> Self {
-            self.inner = self.inner.edition(signature);
+        pub fn edition(mut self, input: crate::model::DirectoryEdition) -> Self {
+            self.inner = self.inner.edition(input);
             self
         }
         /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
@@ -2138,8 +2135,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory of which to take a snapshot.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory of which to take a snapshot.</p>
@@ -2148,8 +2145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The descriptive name to apply to the snapshot.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The descriptive name to apply to the snapshot.</p>
@@ -2225,8 +2222,8 @@ pub mod fluent_builders {
         }
         /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
         /// relationship.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
@@ -2237,8 +2234,8 @@ pub mod fluent_builders {
         }
         /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
         /// trust relationship.</p>
-        pub fn remote_domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_domain_name(signature.into());
+        pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_domain_name(input.into());
             self
         }
         /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
@@ -2252,8 +2249,8 @@ pub mod fluent_builders {
         }
         /// <p>The trust password. The must be the same password that was used when creating the trust
         /// relationship on the external domain.</p>
-        pub fn trust_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_password(signature.into());
+        pub fn trust_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_password(input.into());
             self
         }
         /// <p>The trust password. The must be the same password that was used when creating the trust
@@ -2266,8 +2263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The direction of the trust relationship.</p>
-        pub fn trust_direction(mut self, signature: crate::model::TrustDirection) -> Self {
-            self.inner = self.inner.trust_direction(signature);
+        pub fn trust_direction(mut self, input: crate::model::TrustDirection) -> Self {
+            self.inner = self.inner.trust_direction(input);
             self
         }
         /// <p>The direction of the trust relationship.</p>
@@ -2279,8 +2276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
-        pub fn trust_type(mut self, signature: crate::model::TrustType) -> Self {
-            self.inner = self.inner.trust_type(signature);
+        pub fn trust_type(mut self, input: crate::model::TrustType) -> Self {
+            self.inner = self.inner.trust_type(input);
             self
         }
         /// <p>The trust relationship type. <code>Forest</code> is the default.</p>
@@ -2312,8 +2309,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Optional parameter to enable selective authentication for the trust.</p>
-        pub fn selective_auth(mut self, signature: crate::model::SelectiveAuth) -> Self {
-            self.inner = self.inner.selective_auth(signature);
+        pub fn selective_auth(mut self, input: crate::model::SelectiveAuth) -> Self {
+            self.inner = self.inner.selective_auth(input);
             self
         }
         /// <p>Optional parameter to enable selective authentication for the trust.</p>
@@ -2386,8 +2383,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The directory ID for which you are deleting the conditional forwarder.</p>
@@ -2397,8 +2394,8 @@ pub mod fluent_builders {
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
         /// the conditional forwarder.</p>
-        pub fn remote_domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_domain_name(signature.into());
+        pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_domain_name(input.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
@@ -2475,8 +2472,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory to delete.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory to delete.</p>
@@ -2545,8 +2542,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier of the directory whose log subscription you want to delete.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the directory whose log subscription you want to delete.</p>
@@ -2615,8 +2612,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory snapshot to be deleted.</p>
-        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(signature.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The identifier of the directory snapshot to be deleted.</p>
@@ -2686,8 +2683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Trust ID of the trust relationship to be deleted.</p>
-        pub fn trust_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_id(signature.into());
+        pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_id(input.into());
             self
         }
         /// <p>The Trust ID of the trust relationship to be deleted.</p>
@@ -2696,10 +2693,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
-        pub fn delete_associated_conditional_forwarder(mut self, signature: bool) -> Self {
-            self.inner = self
-                .inner
-                .delete_associated_conditional_forwarder(signature);
+        pub fn delete_associated_conditional_forwarder(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_associated_conditional_forwarder(input);
             self
         }
         /// <p>Delete a conditional forwarder as part of a DeleteTrustRequest.</p>
@@ -2773,8 +2768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -2783,8 +2778,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the certificate.</p>
-        pub fn certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(signature.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input.into());
             self
         }
         /// <p>The identifier of the certificate.</p>
@@ -2857,8 +2852,8 @@ pub mod fluent_builders {
         }
         /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
         /// to the specified Amazon SNS topic.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
@@ -2869,8 +2864,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon SNS topic from which to remove the directory as a
         /// publisher.</p>
-        pub fn topic_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_name(signature.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_name(input.into());
             self
         }
         /// <p>The name of the Amazon SNS topic from which to remove the directory as a
@@ -2940,8 +2935,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -2950,8 +2945,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the certificate.</p>
-        pub fn certificate_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_id(signature.into());
+        pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_id(input.into());
             self
         }
         /// <p>The identifier of the certificate.</p>
@@ -3026,8 +3021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to retrieve information.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to retrieve information.</p>
@@ -3036,8 +3031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
-        pub fn r#type(mut self, signature: crate::model::ClientAuthenticationType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
@@ -3049,8 +3044,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
@@ -3059,8 +3054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
@@ -3132,8 +3127,8 @@ pub mod fluent_builders {
         }
         /// <p>The directory ID for which to get the list of associated conditional
         /// forwarders.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The directory ID for which to get the list of associated conditional
@@ -3255,8 +3250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to <a>DescribeDirectories</a>. Pass null if this is the first call.</p>
@@ -3266,8 +3261,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
         /// is specified by the limitations of the operation.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return. If this value is zero, the maximum number of items
@@ -3338,8 +3333,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the directory for which to retrieve the domain controller
         /// information.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the directory for which to retrieve the domain controller
@@ -3370,8 +3365,8 @@ pub mod fluent_builders {
         /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
         /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
@@ -3382,8 +3377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -3456,8 +3451,8 @@ pub mod fluent_builders {
         }
         /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
         /// is null, associations for all Directory IDs are returned.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
@@ -3550,8 +3545,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -3561,8 +3556,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
         /// supported.</p>
-        pub fn r#type(mut self, signature: crate::model::LdapsType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
@@ -3572,8 +3567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of next token used for pagination.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The type of next token used for pagination.</p>
@@ -3582,8 +3577,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the number of items that should be displayed on one page.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Specifies the number of items that should be displayed on one page.</p>
@@ -3653,8 +3648,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -3663,8 +3658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
-        pub fn region_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.region_name(signature.into());
+        pub fn region_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.region_name(input.into());
             self
         }
         /// <p>The name of the Region. For example, <code>us-east-1</code>.</p>
@@ -3673,8 +3668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>. Pass null if this is the first call.</p>
@@ -3743,8 +3738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Returns the identifier of the directory in the directory owner account. </p>
-        pub fn owner_directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_directory_id(signature.into());
+        pub fn owner_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_directory_id(input.into());
             self
         }
         /// <p>Returns the identifier of the directory in the directory owner account. </p>
@@ -3774,8 +3769,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
         /// <a>DescribeSharedDirectories</a>. Pass null if this is the first call. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>DescribeSharedDirectoriesResult.NextToken</code> value from a previous call to
@@ -3785,8 +3780,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of shared directories to return in the response object.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of shared directories to return in the response object.</p>
@@ -3861,8 +3856,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to retrieve snapshot information.</p>
@@ -3893,8 +3888,8 @@ pub mod fluent_builders {
         }
         /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
         /// <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
@@ -3904,8 +3899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of objects to return.</p>
@@ -3977,8 +3972,8 @@ pub mod fluent_builders {
         }
         /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
         /// relationship.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
@@ -4012,8 +4007,8 @@ pub mod fluent_builders {
         }
         /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
         /// <a>DescribeTrusts</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <i>DescribeTrustsResult.NextToken</i> value from a previous call to
@@ -4023,8 +4018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of objects to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of objects to return.</p>
@@ -4093,8 +4088,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory </p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory </p>
@@ -4103,8 +4098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
-        pub fn r#type(mut self, signature: crate::model::ClientAuthenticationType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of client authentication to disable. Currently, only the parameter, <code>SmartCard</code> is supported.</p>
@@ -4176,8 +4171,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4187,8 +4182,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
         /// supported.</p>
-        pub fn r#type(mut self, signature: crate::model::LdapsType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
@@ -4259,8 +4254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to disable MFA.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to disable MFA.</p>
@@ -4329,8 +4324,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to disable single-sign on.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to disable single-sign on.</p>
@@ -4346,8 +4341,8 @@ pub mod fluent_builders {
         /// and <i>Password</i> parameters. These credentials are only used to disable
         /// single sign-on and are not stored by the service. The AD Connector service account is not
         /// changed.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The username of an alternate account to use to disable single-sign on. This is only used
@@ -4365,8 +4360,8 @@ pub mod fluent_builders {
         /// <p>The password of an alternate account to use to disable single-sign on. This is only used
         /// for AD Connector directories. For more information, see the <i>UserName</i>
         /// parameter.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of an alternate account to use to disable single-sign on. This is only used
@@ -4437,8 +4432,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the specified directory. </p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the specified directory. </p>
@@ -4450,8 +4445,8 @@ pub mod fluent_builders {
         /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
         /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
         /// </p>
-        pub fn r#type(mut self, signature: crate::model::ClientAuthenticationType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
@@ -4526,8 +4521,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4537,8 +4532,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
         /// supported.</p>
-        pub fn r#type(mut self, signature: crate::model::LdapsType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::LdapsType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is
@@ -4609,8 +4604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to enable MFA.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to enable MFA.</p>
@@ -4620,8 +4615,8 @@ pub mod fluent_builders {
         }
         /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
         /// server.</p>
-        pub fn radius_settings(mut self, signature: crate::model::RadiusSettings) -> Self {
-            self.inner = self.inner.radius_settings(signature);
+        pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
+            self.inner = self.inner.radius_settings(input);
             self
         }
         /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -4696,8 +4691,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which to enable single-sign on.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to enable single-sign on.</p>
@@ -4713,8 +4708,8 @@ pub mod fluent_builders {
         /// <i>Password</i> parameters. These credentials are only used to enable single
         /// sign-on and are not stored by the service. The AD Connector service account is not
         /// changed.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The username of an alternate account to use to enable single-sign on. This is only used
@@ -4732,8 +4727,8 @@ pub mod fluent_builders {
         /// <p>The password of an alternate account to use to enable single-sign on. This is only used
         /// for AD Connector directories. For more information, see the <i>UserName</i>
         /// parameter.</p>
-        pub fn password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.password(signature.into());
+        pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.password(input.into());
             self
         }
         /// <p>The password of an alternate account to use to enable single-sign on. This is only used
@@ -4864,8 +4859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Contains the identifier of the directory to obtain the limits for.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Contains the identifier of the directory to obtain the limits for.</p>
@@ -4934,8 +4929,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -4947,8 +4942,8 @@ pub mod fluent_builders {
         /// element indicates that more certificates are available. Use the value of the returned
         /// <code>NextToken</code> element in your request until the token comes back as
         /// <code>null</code>. Pass <code>null</code> if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token for requesting another page of certificates if the <code>NextToken</code> response
@@ -4960,8 +4955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items that should show up on one page</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of items that should show up on one page</p>
@@ -5031,8 +5026,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
         /// addresses.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
@@ -5042,8 +5037,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
@@ -5053,8 +5048,8 @@ pub mod fluent_builders {
         }
         /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
         /// is specified by the limitations of the operation.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
@@ -5127,8 +5122,8 @@ pub mod fluent_builders {
         /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
         /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
         /// Amazon Web Services account or the directory, an empty list will be returned.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
@@ -5140,8 +5135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of items to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of items to return.</p>
@@ -5150,8 +5145,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items returned.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items returned.</p>
@@ -5221,8 +5216,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the directory from which to retrieve the schema extension
         /// information.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory from which to retrieve the schema extension
@@ -5233,8 +5228,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
         /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
@@ -5244,8 +5239,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to return.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of items to return.</p>
@@ -5314,8 +5309,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Identifier (ID) of the directory for which you want to retrieve tags.</p>
@@ -5324,8 +5319,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -5334,8 +5329,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>Reserved for future use.</p>
@@ -5404,8 +5399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory.</p>
@@ -5414,8 +5409,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The certificate PEM string that needs to be registered.</p>
-        pub fn certificate_data(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.certificate_data(signature.into());
+        pub fn certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.certificate_data(input.into());
             self
         }
         /// <p>The certificate PEM string that needs to be registered.</p>
@@ -5427,8 +5422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::CertificateType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::CertificateType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.</p>
@@ -5442,9 +5437,9 @@ pub mod fluent_builders {
         /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
         pub fn client_cert_auth_settings(
             mut self,
-            signature: crate::model::ClientCertAuthSettings,
+            input: crate::model::ClientCertAuthSettings,
         ) -> Self {
-            self.inner = self.inner.client_cert_auth_settings(signature);
+            self.inner = self.inner.client_cert_auth_settings(input);
             self
         }
         /// <p>A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.</p>
@@ -5520,8 +5515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
@@ -5531,8 +5526,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
         /// topic must be in the same region as the specified Directory ID.</p>
-        pub fn topic_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.topic_name(signature.into());
+        pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.topic_name(input.into());
             self
         }
         /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
@@ -5603,8 +5598,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
         /// different for each directory owner account.</p>
-        pub fn shared_directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shared_directory_id(signature.into());
+        pub fn shared_directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shared_directory_id(input.into());
             self
         }
         /// <p>Identifier of the shared directory in the directory consumer account. This identifier is
@@ -5678,8 +5673,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier (ID) of the directory from which you want to remove the IP
         /// addresses.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier (ID) of the directory from which you want to remove the IP
@@ -5768,8 +5763,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the directory for which you want to remove Region replication.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which you want to remove Region replication.</p>
@@ -5838,8 +5833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier (ID) of the directory from which to remove the tag.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>Identifier (ID) of the directory from which to remove the tag.</p>
@@ -5943,8 +5938,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
         /// resides.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
@@ -5954,8 +5949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user name of the user whose password will be reset.</p>
-        pub fn user_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_name(signature.into());
+        pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_name(input.into());
             self
         }
         /// <p>The user name of the user whose password will be reset.</p>
@@ -5964,8 +5959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new password that will be reset.</p>
-        pub fn new_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_password(signature.into());
+        pub fn new_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_password(input.into());
             self
         }
         /// <p>The new password that will be reset.</p>
@@ -6039,8 +6034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot to restore from.</p>
-        pub fn snapshot_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_id(signature.into());
+        pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_id(input.into());
             self
         }
         /// <p>The identifier of the snapshot to restore from.</p>
@@ -6121,8 +6116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
@@ -6133,8 +6128,8 @@ pub mod fluent_builders {
         /// <p>A directory share request that is sent by the directory owner to the directory consumer.
         /// The request includes a typed message to help the directory consumer administrator determine
         /// whether to approve or reject the share invitation.</p>
-        pub fn share_notes(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.share_notes(signature.into());
+        pub fn share_notes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.share_notes(input.into());
             self
         }
         /// <p>A directory share request that is sent by the directory owner to the directory consumer.
@@ -6146,8 +6141,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier for the directory consumer account with whom the directory is to be
         /// shared.</p>
-        pub fn share_target(mut self, signature: crate::model::ShareTarget) -> Self {
-            self.inner = self.inner.share_target(signature);
+        pub fn share_target(mut self, input: crate::model::ShareTarget) -> Self {
+            self.inner = self.inner.share_target(input);
             self
         }
         /// <p>Identifier for the directory consumer account with whom the directory is to be
@@ -6162,8 +6157,8 @@ pub mod fluent_builders {
         /// <p>The method used when sharing a directory to determine whether the directory should be
         /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
         /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
-        pub fn share_method(mut self, signature: crate::model::ShareMethod) -> Self {
-            self.inner = self.inner.share_method(signature);
+        pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
+            self.inner = self.inner.share_method(input);
             self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be
@@ -6238,8 +6233,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the directory for which the schema extension will be applied
         /// to.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which the schema extension will be applied
@@ -6250,10 +6245,8 @@ pub mod fluent_builders {
         }
         /// <p>If true, creates a snapshot of the directory before applying the schema
         /// extension.</p>
-        pub fn create_snapshot_before_schema_extension(mut self, signature: bool) -> Self {
-            self.inner = self
-                .inner
-                .create_snapshot_before_schema_extension(signature);
+        pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_snapshot_before_schema_extension(input);
             self
         }
         /// <p>If true, creates a snapshot of the directory before applying the schema
@@ -6270,8 +6263,8 @@ pub mod fluent_builders {
         /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
         /// each line as it would be formatted in an ldif file with \n. See the example request below for
         /// more details. The file size can be no larger than 1MB.</p>
-        pub fn ldif_content(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ldif_content(signature.into());
+        pub fn ldif_content(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ldif_content(input.into());
             self
         }
         /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
@@ -6282,8 +6275,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the schema extension.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the schema extension.</p>
@@ -6353,8 +6346,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
         /// sharing.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
@@ -6365,8 +6358,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier for the directory consumer account with whom the directory has to be
         /// unshared.</p>
-        pub fn unshare_target(mut self, signature: crate::model::UnshareTarget) -> Self {
-            self.inner = self.inner.unshare_target(signature);
+        pub fn unshare_target(mut self, input: crate::model::UnshareTarget) -> Self {
+            self.inner = self.inner.unshare_target(input);
             self
         }
         /// <p>Identifier for the directory consumer account with whom the directory has to be
@@ -6441,8 +6434,8 @@ pub mod fluent_builders {
         }
         /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
         /// forwarder.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
@@ -6453,8 +6446,8 @@ pub mod fluent_builders {
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
         /// a trust relationship.</p>
-        pub fn remote_domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remote_domain_name(signature.into());
+        pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remote_domain_name(input.into());
             self
         }
         /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
@@ -6551,8 +6544,8 @@ pub mod fluent_builders {
         }
         /// <p>Identifier of the directory to which the domain controllers will be added or
         /// removed.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>Identifier of the directory to which the domain controllers will be added or
@@ -6562,8 +6555,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of domain controllers desired in the directory.</p>
-        pub fn desired_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.desired_number(signature);
+        pub fn desired_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.desired_number(input);
             self
         }
         /// <p>The number of domain controllers desired in the directory.</p>
@@ -6634,8 +6627,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the directory for which to update the RADIUS server
         /// information.</p>
-        pub fn directory_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.directory_id(signature.into());
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input.into());
             self
         }
         /// <p>The identifier of the directory for which to update the RADIUS server
@@ -6646,8 +6639,8 @@ pub mod fluent_builders {
         }
         /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
         /// server.</p>
-        pub fn radius_settings(mut self, signature: crate::model::RadiusSettings) -> Self {
-            self.inner = self.inner.radius_settings(signature);
+        pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
+            self.inner = self.inner.radius_settings(input);
             self
         }
         /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -6721,8 +6714,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier of the trust relationship.</p>
-        pub fn trust_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_id(signature.into());
+        pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_id(input.into());
             self
         }
         /// <p>Identifier of the trust relationship.</p>
@@ -6731,8 +6724,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Updates selective authentication for the trust.</p>
-        pub fn selective_auth(mut self, signature: crate::model::SelectiveAuth) -> Self {
-            self.inner = self.inner.selective_auth(signature);
+        pub fn selective_auth(mut self, input: crate::model::SelectiveAuth) -> Self {
+            self.inner = self.inner.selective_auth(input);
             self
         }
         /// <p>Updates selective authentication for the trust.</p>
@@ -6807,8 +6800,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique Trust ID of the trust relationship to verify.</p>
-        pub fn trust_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.trust_id(signature.into());
+        pub fn trust_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.trust_id(input.into());
             self
         }
         /// <p>The unique Trust ID of the trust relationship to verify.</p>

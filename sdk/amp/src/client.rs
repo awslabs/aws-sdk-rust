@@ -287,8 +287,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to create the alert manager definition.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to create the alert manager definition.
@@ -297,8 +297,8 @@ pub mod fluent_builders {
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(signature);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The alert manager definition data.
@@ -307,8 +307,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -377,8 +377,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to create the rule group namespace.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to create the rule group namespace.
@@ -387,8 +387,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -397,8 +397,8 @@ pub mod fluent_builders {
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(signature);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The namespace data that define the rule groups.
@@ -407,8 +407,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -500,8 +500,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// An optional user-assigned alias for this workspace. This alias is for user reference and does not need to be unique.
@@ -510,8 +510,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -603,8 +603,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to delete the alert manager definition.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to delete the alert manager definition.
@@ -613,8 +613,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -683,8 +683,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to delete rule group definition.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to delete rule group definition.
@@ -693,8 +693,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -703,8 +703,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -773,8 +773,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to delete.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to delete.
@@ -783,8 +783,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -853,8 +853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -923,8 +923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -933,8 +933,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace.
@@ -1003,8 +1003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace to describe.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace to describe.
@@ -1073,8 +1073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace.
@@ -1083,8 +1083,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
@@ -1093,8 +1093,8 @@ pub mod fluent_builders {
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.
@@ -1103,8 +1103,8 @@ pub mod fluent_builders {
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
@@ -1173,8 +1173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1243,8 +1243,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.
@@ -1253,8 +1253,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
@@ -1263,8 +1263,8 @@ pub mod fluent_builders {
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// Maximum results to return in response (default=100, maximum=1000).
@@ -1333,8 +1333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to update the alert manager definition.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to update the alert manager definition.
@@ -1343,8 +1343,8 @@ pub mod fluent_builders {
             self
         }
         /// The alert manager definition data.
-        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(signature);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The alert manager definition data.
@@ -1353,8 +1353,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -1423,8 +1423,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace in which to update the rule group namespace.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace in which to update the rule group namespace.
@@ -1433,8 +1433,8 @@ pub mod fluent_builders {
             self
         }
         /// The rule groups namespace name.
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// The rule groups namespace name.
@@ -1443,8 +1443,8 @@ pub mod fluent_builders {
             self
         }
         /// The namespace data that define the rule groups.
-        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(signature);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// The namespace data that define the rule groups.
@@ -1453,8 +1453,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -1523,8 +1523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1616,8 +1616,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ARN of the resource.
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// The ARN of the resource.
@@ -1703,8 +1703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// The ID of the workspace being updated.
-        pub fn workspace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.workspace_id(signature.into());
+        pub fn workspace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.workspace_id(input.into());
             self
         }
         /// The ID of the workspace being updated.
@@ -1713,8 +1713,8 @@ pub mod fluent_builders {
             self
         }
         /// The new alias of the workspace.
-        pub fn alias(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alias(signature.into());
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input.into());
             self
         }
         /// The new alias of the workspace.
@@ -1723,8 +1723,8 @@ pub mod fluent_builders {
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.

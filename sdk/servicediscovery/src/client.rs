@@ -350,8 +350,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to assign to this namespace.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to this namespace.</p>
@@ -362,8 +362,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
         /// be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string
         /// (for example, a date/time stamp).</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code> requests to
@@ -377,8 +377,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -475,8 +475,8 @@ pub mod fluent_builders {
         }
         /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map
         /// automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map
@@ -488,8 +488,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
         /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
         /// unique string (for example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
@@ -503,8 +503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -513,8 +513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
-        pub fn vpc(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc(signature.into());
+        pub fn vpc(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc(input.into());
             self
         }
         /// <p>The ID of the Amazon VPC that you want to associate the namespace with.</p>
@@ -545,11 +545,8 @@ pub mod fluent_builders {
         }
         /// <p>Properties for the private DNS
         /// namespace.</p>
-        pub fn properties(
-            mut self,
-            signature: crate::model::PrivateDnsNamespaceProperties,
-        ) -> Self {
-            self.inner = self.inner.properties(signature);
+        pub fn properties(mut self, input: crate::model::PrivateDnsNamespaceProperties) -> Self {
+            self.inner = self.inner.properties(input);
             self
         }
         /// <p>Properties for the private DNS
@@ -627,8 +624,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name that you want to assign to this namespace.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to this namespace.</p>
@@ -639,8 +636,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
         /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
         /// unique string (for example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreatePublicDnsNamespace</code>
@@ -654,8 +651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the namespace.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the namespace.</p>
@@ -686,8 +683,8 @@ pub mod fluent_builders {
         }
         /// <p>Properties for the public DNS
         /// namespace.</p>
-        pub fn properties(mut self, signature: crate::model::PublicDnsNamespaceProperties) -> Self {
-            self.inner = self.inner.properties(signature);
+        pub fn properties(mut self, input: crate::model::PublicDnsNamespaceProperties) -> Self {
+            self.inner = self.inner.properties(input);
             self
         }
         /// <p>Properties for the public DNS
@@ -820,8 +817,8 @@ pub mod fluent_builders {
         /// However, if you use a namespace that's only accessible by API calls, then you can create services that with names
         /// that differ only by case.</p>
         /// </note>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that you want to assign to the service.</p>
@@ -851,8 +848,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
         /// can be specified either here or in the <code>DnsConfig</code> object.</p>
-        pub fn namespace_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_id(signature.into());
+        pub fn namespace_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
@@ -864,8 +861,8 @@ pub mod fluent_builders {
         /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
         /// retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for
         /// example, a date/timestamp).</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
@@ -879,8 +876,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the service.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the service.</p>
@@ -890,8 +887,8 @@ pub mod fluent_builders {
         }
         /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you
         /// register an instance. </p>
-        pub fn dns_config(mut self, signature: crate::model::DnsConfig) -> Self {
-            self.inner = self.inner.dns_config(signature);
+        pub fn dns_config(mut self, input: crate::model::DnsConfig) -> Self {
+            self.inner = self.inner.dns_config(input);
             self
         }
         /// <p>A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you
@@ -912,8 +909,8 @@ pub mod fluent_builders {
         /// <code>HealthCheckConfig</code> but not both.</p>
         /// </important>
         /// <p>For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map Pricing</a>.</p>
-        pub fn health_check_config(mut self, signature: crate::model::HealthCheckConfig) -> Self {
-            self.inner = self.inner.health_check_config(signature);
+        pub fn health_check_config(mut self, input: crate::model::HealthCheckConfig) -> Self {
+            self.inner = self.inner.health_check_config(input);
             self
         }
         /// <p>
@@ -941,9 +938,9 @@ pub mod fluent_builders {
         /// service.</p>
         pub fn health_check_custom_config(
             mut self,
-            signature: crate::model::HealthCheckCustomConfig,
+            input: crate::model::HealthCheckCustomConfig,
         ) -> Self {
-            self.inner = self.inner.health_check_custom_config(signature);
+            self.inner = self.inner.health_check_custom_config(input);
             self
         }
         /// <p>A complex type that contains information about an optional custom health check.</p>
@@ -984,8 +981,8 @@ pub mod fluent_builders {
         /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
         /// API operation. No DNS records is registered for the service instances. The only valid value is
         /// <code>HTTP</code>.</p>
-        pub fn r#type(mut self, signature: crate::model::ServiceTypeOption) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::ServiceTypeOption) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
@@ -1060,8 +1057,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the namespace that you want to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to delete.</p>
@@ -1131,8 +1128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to delete.</p>
@@ -1202,8 +1199,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1212,8 +1209,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The value that you specified for <code>Id</code> in the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request.</p>
@@ -1285,8 +1282,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
         /// <code>Properties</code> member of the namespace.</p>
-        pub fn namespace_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.namespace_name(signature.into());
+        pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.namespace_name(input.into());
             self
         }
         /// <p>The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code> member of the
@@ -1299,8 +1296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service that you specified when you registered the instance.</p>
-        pub fn service_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_name(signature.into());
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_name(input.into());
             self
         }
         /// <p>The name of the service that you specified when you registered the instance.</p>
@@ -1311,8 +1308,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
         /// <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
         /// to 100 instances.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
@@ -1399,8 +1396,8 @@ pub mod fluent_builders {
         /// This is also called failing open.</p>
         /// </dd>
         /// </dl>
-        pub fn health_status(mut self, signature: crate::model::HealthStatusFilter) -> Self {
-            self.inner = self.inner.health_status(signature);
+        pub fn health_status(mut self, input: crate::model::HealthStatusFilter) -> Self {
+            self.inner = self.inner.health_status(input);
             self
         }
         /// <p>The health status of the instances that you want to discover. This parameter is ignored for services that don't
@@ -1494,8 +1491,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1504,8 +1501,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance that you want to get information about.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the instance that you want to get information about.</p>
@@ -1579,8 +1576,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that the instance is associated with.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that the instance is associated with.</p>
@@ -1618,8 +1615,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
         /// <code>GetInstancesHealthStatus</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map
         /// returns up to 100 instances.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
@@ -1633,8 +1630,8 @@ pub mod fluent_builders {
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
         /// <code>GetInstancesHealthStatus</code> request to get the next group of results. Specify the value of
         /// <code>NextToken</code> from the previous response in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>GetInstancesHealthStatus</code> request, omit this value.</p>
@@ -1706,8 +1703,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the namespace that you want to get information about.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to get information about.</p>
@@ -1780,8 +1777,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the operation that you want to get more information about.</p>
-        pub fn operation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.operation_id(signature.into());
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.operation_id(input.into());
             self
         }
         /// <p>The ID of the operation that you want to get more information about.</p>
@@ -1850,8 +1847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to get settings for.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to get settings for.</p>
@@ -1920,8 +1917,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to list instances for.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that you want to list instances for.</p>
@@ -1933,8 +1930,8 @@ pub mod fluent_builders {
         /// <p>If more than <code>MaxResults</code> instances match the specified criteria, you can submit another
         /// <code>ListInstances</code> request to get the next group of results. Specify the value of <code>NextToken</code>
         /// from the previous response in the next request.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListInstances</code> request, omit this value.</p>
@@ -1948,8 +1945,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
         /// <code>ListInstances</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
         /// to 100 instances.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of instances that you want Cloud Map to return in the response to a
@@ -2028,8 +2025,8 @@ pub mod fluent_builders {
         /// possible that no namespaces in the first <code>MaxResults</code> namespaces matched the specified criteria but that
         /// subsequent groups of <code>MaxResults</code> namespaces do contain namespaces that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListNamespaces</code> request, omit this value.</p>
@@ -2048,8 +2045,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a
         /// <code>ListNamespaces</code> request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up
         /// to 100 namespaces.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of namespaces that you want Cloud Map to return in the response to a
@@ -2149,8 +2146,8 @@ pub mod fluent_builders {
         /// possible that no operations in the first <code>MaxResults</code> operations matched the specified criteria but that
         /// subsequent groups of <code>MaxResults</code> operations do contain operations that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListOperations</code> request, omit this value.</p>
@@ -2168,8 +2165,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code>
         /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 operations.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of items that you want Cloud Map to return in the response to a <code>ListOperations</code>
@@ -2270,8 +2267,8 @@ pub mod fluent_builders {
         /// possible that no services in the first <code>MaxResults</code> services matched the specified criteria but that
         /// subsequent groups of <code>MaxResults</code> services do contain services that match the criteria.</p>
         /// </note>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>For the first <code>ListServices</code> request, omit this value.</p>
@@ -2289,8 +2286,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
         /// request. If you don't specify a value for <code>MaxResults</code>, Cloud Map returns up to 100 services.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of services that you want Cloud Map to return in the response to a <code>ListServices</code>
@@ -2381,8 +2378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -2490,8 +2487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to use for settings for the instance.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that you want to use for settings for the instance.</p>
@@ -2523,8 +2520,8 @@ pub mod fluent_builders {
         /// </note>
         /// </li>
         /// </ul>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>An identifier that you want to associate with the instance. Note the following:</p>
@@ -2560,8 +2557,8 @@ pub mod fluent_builders {
         /// every time you submit a <code>RegisterInstance</code> request if you're registering additional instances for the same
         /// namespace and service. <code>CreatorRequestId</code> can be any unique string (for example, a date/time
         /// stamp).</p>
-        pub fn creator_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.creator_request_id(signature.into());
+        pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.creator_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the request and that allows failed <code>RegisterInstance</code> requests to be
@@ -2850,8 +2847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -2939,8 +2936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.</p>
@@ -3028,8 +3025,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the namespace that you want to
         /// update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to
@@ -3042,8 +3039,8 @@ pub mod fluent_builders {
         /// request and that allows failed <code>UpdateHttpNamespace</code> requests to be retried without the risk of running
         /// the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
         /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(signature.into());
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the
@@ -3059,8 +3056,8 @@ pub mod fluent_builders {
         }
         /// <p>Updated properties for the the HTTP
         /// namespace.</p>
-        pub fn namespace(mut self, signature: crate::model::HttpNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(signature);
+        pub fn namespace(mut self, input: crate::model::HttpNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
         /// <p>Updated properties for the the HTTP
@@ -3138,8 +3135,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the
         /// status for.</p>
-        pub fn service_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.service_id(signature.into());
+        pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.service_id(input.into());
             self
         }
         /// <p>The ID of the service that includes the configuration for the custom health check that you want to change the
@@ -3149,8 +3146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the instance that you want to change the health status for.</p>
-        pub fn instance_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.instance_id(signature.into());
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input.into());
             self
         }
         /// <p>The ID of the instance that you want to change the health status for.</p>
@@ -3159,8 +3156,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
-        pub fn status(mut self, signature: crate::model::CustomHealthStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::CustomHealthStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.</p>
@@ -3234,8 +3231,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the namespace that you want to
         /// update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace that you want to
@@ -3248,8 +3245,8 @@ pub mod fluent_builders {
         /// request and that allows failed <code>UpdatePrivateDnsNamespace</code> requests to be retried without the risk of
         /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
         /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(signature.into());
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the
@@ -3265,8 +3262,8 @@ pub mod fluent_builders {
         }
         /// <p>Updated properties for the private DNS
         /// namespace.</p>
-        pub fn namespace(mut self, signature: crate::model::PrivateDnsNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(signature);
+        pub fn namespace(mut self, input: crate::model::PrivateDnsNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
         /// <p>Updated properties for the private DNS
@@ -3341,8 +3338,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the namespace being
         /// updated.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the namespace being
@@ -3355,8 +3352,8 @@ pub mod fluent_builders {
         /// request and that allows failed <code>UpdatePublicDnsNamespace</code> requests to be retried without the risk of
         /// running the operation twice. <code>UpdaterRequestId</code> can be any unique string (for example, a
         /// date/timestamp).</p>
-        pub fn updater_request_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.updater_request_id(signature.into());
+        pub fn updater_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.updater_request_id(input.into());
             self
         }
         /// <p>A unique string that identifies the
@@ -3372,8 +3369,8 @@ pub mod fluent_builders {
         }
         /// <p>Updated properties for the public DNS
         /// namespace.</p>
-        pub fn namespace(mut self, signature: crate::model::PublicDnsNamespaceChange) -> Self {
-            self.inner = self.inner.namespace(signature);
+        pub fn namespace(mut self, input: crate::model::PublicDnsNamespaceChange) -> Self {
+            self.inner = self.inner.namespace(input);
             self
         }
         /// <p>Updated properties for the public DNS
@@ -3470,8 +3467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the service that you want to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the service that you want to update.</p>
@@ -3480,8 +3477,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A complex type that contains the new settings for the service.</p>
-        pub fn service(mut self, signature: crate::model::ServiceChange) -> Self {
-            self.inner = self.inner.service(signature);
+        pub fn service(mut self, input: crate::model::ServiceChange) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
         /// <p>A complex type that contains the new settings for the service.</p>

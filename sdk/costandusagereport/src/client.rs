@@ -182,8 +182,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
-        pub fn report_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(signature.into());
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input.into());
             self
         }
         /// <p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>
@@ -252,8 +252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results that AWS returns for the operation.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that AWS returns for the operation.</p>
@@ -262,8 +262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A generic string.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A generic string.</p>
@@ -333,8 +333,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the report that you want to create. The name must be unique,
         /// is case sensitive, and can't include spaces. </p>
-        pub fn report_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_name(signature.into());
+        pub fn report_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_name(input.into());
             self
         }
         /// <p>The name of the report that you want to create. The name must be unique,
@@ -347,8 +347,8 @@ pub mod fluent_builders {
         /// time unit, report format, compression format, S3 bucket, additional artifacts, and schema
         /// elements in the definition.
         /// </p>
-        pub fn report_definition(mut self, signature: crate::model::ReportDefinition) -> Self {
-            self.inner = self.inner.report_definition(signature);
+        pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
+            self.inner = self.inner.report_definition(input);
             self
         }
         /// <p>The definition of AWS Cost and Usage Report. You can specify the report name,
@@ -424,8 +424,8 @@ pub mod fluent_builders {
         }
         /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed
         /// metadata and data file information. </p>
-        pub fn report_definition(mut self, signature: crate::model::ReportDefinition) -> Self {
-            self.inner = self.inner.report_definition(signature);
+        pub fn report_definition(mut self, input: crate::model::ReportDefinition) -> Self {
+            self.inner = self.inner.report_definition(input);
             self
         }
         /// <p>Represents the output of the PutReportDefinition operation. The content consists of the detailed

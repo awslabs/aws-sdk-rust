@@ -221,11 +221,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the offering.</p>
-        pub fn savings_plan_offering_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.savings_plan_offering_id(signature.into());
+        pub fn savings_plan_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_offering_id(input.into());
             self
         }
         /// <p>The ID of the offering.</p>
@@ -238,8 +235,8 @@ pub mod fluent_builders {
         }
         /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
         /// than three digits after the decimal point.</p>
-        pub fn commitment(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commitment(signature.into());
+        pub fn commitment(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commitment(input.into());
             self
         }
         /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
@@ -250,8 +247,8 @@ pub mod fluent_builders {
         }
         /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
         /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
-        pub fn upfront_payment_amount(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.upfront_payment_amount(signature.into());
+        pub fn upfront_payment_amount(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.upfront_payment_amount(input.into());
             self
         }
         /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
@@ -264,8 +261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-        pub fn purchase_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.purchase_time(signature);
+        pub fn purchase_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.purchase_time(input);
             self
         }
         /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
@@ -277,8 +274,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -370,8 +367,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Savings Plan.</p>
-        pub fn savings_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_id(signature.into());
+        pub fn savings_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_id(input.into());
             self
         }
         /// <p>The ID of the Savings Plan.</p>
@@ -443,8 +440,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the Savings Plan.</p>
-        pub fn savings_plan_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.savings_plan_id(signature.into());
+        pub fn savings_plan_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.savings_plan_id(input.into());
             self
         }
         /// <p>The ID of the Savings Plan.</p>
@@ -473,8 +470,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -484,8 +481,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -589,8 +586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -600,8 +597,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -849,8 +846,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -860,8 +857,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -965,8 +962,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The product type.</p>
-        pub fn product_type(mut self, signature: crate::model::SavingsPlanProductType) -> Self {
-            self.inner = self.inner.product_type(signature);
+        pub fn product_type(mut self, input: crate::model::SavingsPlanProductType) -> Self {
+            self.inner = self.inner.product_type(input);
             self
         }
         /// <p>The product type.</p>
@@ -1113,8 +1110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -1124,8 +1121,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
         /// call with the returned token value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
@@ -1195,8 +1192,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1265,8 +1262,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -1358,8 +1355,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>

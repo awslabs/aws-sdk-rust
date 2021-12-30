@@ -271,8 +271,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The human-readable name of the signing profile.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The human-readable name of the signing profile.</p>
@@ -281,8 +281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the signing profile.</p>
-        pub fn profile_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_version(signature.into());
+        pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_version(input.into());
             self
         }
         /// <p>The version of the signing profile.</p>
@@ -294,8 +294,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
-        pub fn action(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.action(signature.into());
+        pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.action(input.into());
             self
         }
         /// <p>The AWS Signer action permitted as part of cross-account permissions.</p>
@@ -305,8 +305,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
         /// another AWS account ID.</p>
-        pub fn principal(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.principal(signature.into());
+        pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.principal(input.into());
             self
         }
         /// <p>The AWS principal receiving cross-account permissions. This may be an IAM role or
@@ -316,8 +316,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the current profile revision.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>A unique identifier for the current profile revision.</p>
@@ -326,8 +326,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the cross-account permission statement.</p>
-        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(signature.into());
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>A unique identifier for the cross-account permission statement.</p>
@@ -399,8 +399,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be canceled.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be canceled.</p>
@@ -471,8 +471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the signing job on input.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The ID of the signing job on input.</p>
@@ -541,8 +541,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the target signing platform.</p>
-        pub fn platform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(signature.into());
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>The ID of the target signing platform.</p>
@@ -611,8 +611,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the target signing profile.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the target signing profile.</p>
@@ -621,8 +621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID of the profile owner.</p>
-        pub fn profile_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_owner(signature.into());
+        pub fn profile_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_owner(input.into());
             self
         }
         /// <p>The AWS account ID of the profile owner.</p>
@@ -694,8 +694,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Name of the signing profile containing the cross-account permissions.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>Name of the signing profile containing the cross-account permissions.</p>
@@ -704,8 +704,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>String for specifying the next set of paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>String for specifying the next set of paginated results.</p>
@@ -780,8 +780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A status value with which to filter your results.</p>
-        pub fn status(mut self, signature: crate::model::SigningStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::SigningStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>A status value with which to filter your results.</p>
@@ -794,8 +794,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of microcontroller platform that you specified for the distribution of your
         /// code image.</p>
-        pub fn platform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(signature.into());
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>The ID of microcontroller platform that you specified for the distribution of your
@@ -805,8 +805,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IAM principal that requested the signing job.</p>
-        pub fn requested_by(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.requested_by(signature.into());
+        pub fn requested_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.requested_by(input.into());
             self
         }
         /// <p>The IAM principal that requested the signing job.</p>
@@ -819,8 +819,8 @@ pub mod fluent_builders {
         /// <code>nextToken</code> element is set in the response. Use the
         /// <code>nextToken</code> value in a subsequent request to retrieve additional items.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Specifies the maximum number of items to return in the response. Use this parameter
@@ -835,8 +835,8 @@ pub mod fluent_builders {
         /// <p>String for specifying the next set of paginated results to return. After you receive a
         /// response with truncated results, use this parameter in a subsequent request. Set it to
         /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>String for specifying the next set of paginated results to return. After you receive a
@@ -847,8 +847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Filters results to return only signing jobs with revoked signatures.</p>
-        pub fn is_revoked(mut self, signature: bool) -> Self {
-            self.inner = self.inner.is_revoked(signature);
+        pub fn is_revoked(mut self, input: bool) -> Self {
+            self.inner = self.inner.is_revoked(input);
             self
         }
         /// <p>Filters results to return only signing jobs with revoked signatures.</p>
@@ -858,8 +858,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to return only signing jobs with signatures expiring before a
         /// specified timestamp.</p>
-        pub fn signature_expires_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.signature_expires_before(signature);
+        pub fn signature_expires_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.signature_expires_before(input);
             self
         }
         /// <p>Filters results to return only signing jobs with signatures expiring before a
@@ -873,8 +873,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to return only signing jobs with signatures expiring after a specified
         /// timestamp.</p>
-        pub fn signature_expires_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.signature_expires_after(signature);
+        pub fn signature_expires_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.signature_expires_after(input);
             self
         }
         /// <p>Filters results to return only signing jobs with signatures expiring after a specified
@@ -888,8 +888,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to return only signing jobs initiated by a specified IAM
         /// entity.</p>
-        pub fn job_invoker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_invoker(signature.into());
+        pub fn job_invoker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_invoker(input.into());
             self
         }
         /// <p>Filters results to return only signing jobs initiated by a specified IAM
@@ -965,8 +965,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The category type of a signing platform.</p>
-        pub fn category(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.category(signature.into());
+        pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category(input.into());
             self
         }
         /// <p>The category type of a signing platform.</p>
@@ -975,8 +975,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Any partner entities connected to a signing platform.</p>
-        pub fn partner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner(signature.into());
+        pub fn partner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner(input.into());
             self
         }
         /// <p>Any partner entities connected to a signing platform.</p>
@@ -985,8 +985,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The validation template that is used by the target signing platform.</p>
-        pub fn target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target(signature.into());
+        pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target(input.into());
             self
         }
         /// <p>The validation template that is used by the target signing platform.</p>
@@ -995,8 +995,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to be returned by this operation.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to be returned by this operation.</p>
@@ -1007,8 +1007,8 @@ pub mod fluent_builders {
         /// <p>Value for specifying the next set of paginated results to return. After you receive a
         /// response with truncated results, use this parameter in a subsequent request. Set it to
         /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Value for specifying the next set of paginated results to return. After you receive a
@@ -1087,8 +1087,8 @@ pub mod fluent_builders {
         }
         /// <p>Designates whether to include profiles with the status of
         /// <code>CANCELED</code>.</p>
-        pub fn include_canceled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_canceled(signature);
+        pub fn include_canceled(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_canceled(input);
             self
         }
         /// <p>Designates whether to include profiles with the status of
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of profiles to be returned.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of profiles to be returned.</p>
@@ -1110,8 +1110,8 @@ pub mod fluent_builders {
         /// <p>Value for specifying the next set of paginated results to return. After you receive a
         /// response with truncated results, use this parameter in a subsequent request. Set it to
         /// the value of <code>nextToken</code> from the response that you just received.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Value for specifying the next set of paginated results to return. After you receive a
@@ -1123,8 +1123,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters results to return only signing jobs initiated for a specified signing
         /// platform.</p>
-        pub fn platform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(signature.into());
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>Filters results to return only signing jobs initiated for a specified signing
@@ -1213,8 +1213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
@@ -1285,8 +1285,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be created.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be created.</p>
@@ -1296,8 +1296,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
         /// profile.</p>
-        pub fn signing_material(mut self, signature: crate::model::SigningMaterial) -> Self {
-            self.inner = self.inner.signing_material(signature);
+        pub fn signing_material(mut self, input: crate::model::SigningMaterial) -> Self {
+            self.inner = self.inner.signing_material(input);
             self
         }
         /// <p>The AWS Certificate Manager certificate that will be used to sign code with the new signing
@@ -1313,9 +1313,9 @@ pub mod fluent_builders {
         /// profile. If unspecified, the default is 135 months.</p>
         pub fn signature_validity_period(
             mut self,
-            signature: crate::model::SignatureValidityPeriod,
+            input: crate::model::SignatureValidityPeriod,
         ) -> Self {
-            self.inner = self.inner.signature_validity_period(signature);
+            self.inner = self.inner.signature_validity_period(input);
             self
         }
         /// <p>The default validity period override for any signature generated using this signing
@@ -1328,8 +1328,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the signing platform to be created.</p>
-        pub fn platform_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.platform_id(signature.into());
+        pub fn platform_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_id(input.into());
             self
         }
         /// <p>The ID of the signing platform to be created.</p>
@@ -1340,8 +1340,8 @@ pub mod fluent_builders {
         /// <p>A subfield of <code>platform</code>. This specifies any different configuration
         /// options that you want to apply to the chosen platform (such as a different
         /// <code>hash-algorithm</code> or <code>signing-algorithm</code>).</p>
-        pub fn overrides(mut self, signature: crate::model::SigningPlatformOverrides) -> Self {
-            self.inner = self.inner.overrides(signature);
+        pub fn overrides(mut self, input: crate::model::SigningPlatformOverrides) -> Self {
+            self.inner = self.inner.overrides(input);
             self
         }
         /// <p>A subfield of <code>platform</code>. This specifies any different configuration
@@ -1463,8 +1463,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
@@ -1473,8 +1473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An identifier for the current revision of the signing profile permissions.</p>
-        pub fn revision_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_id(signature.into());
+        pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_id(input.into());
             self
         }
         /// <p>An identifier for the current revision of the signing profile permissions.</p>
@@ -1483,8 +1483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for the cross-account permissions statement.</p>
-        pub fn statement_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.statement_id(signature.into());
+        pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.statement_id(input.into());
             self
         }
         /// <p>A unique identifier for the cross-account permissions statement.</p>
@@ -1554,8 +1554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>ID of the signing job to be revoked.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>ID of the signing job to be revoked.</p>
@@ -1564,8 +1564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>AWS account ID of the job owner.</p>
-        pub fn job_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_owner(signature.into());
+        pub fn job_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_owner(input.into());
             self
         }
         /// <p>AWS account ID of the job owner.</p>
@@ -1574,8 +1574,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for revoking the signing job.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for revoking the signing job.</p>
@@ -1646,8 +1646,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the signing profile to be revoked.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile to be revoked.</p>
@@ -1656,8 +1656,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The version of the signing profile to be revoked.</p>
-        pub fn profile_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_version(signature.into());
+        pub fn profile_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_version(input.into());
             self
         }
         /// <p>The version of the signing profile to be revoked.</p>
@@ -1669,8 +1669,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The reason for revoking a signing profile.</p>
-        pub fn reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reason(signature.into());
+        pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reason(input.into());
             self
         }
         /// <p>The reason for revoking a signing profile.</p>
@@ -1681,8 +1681,8 @@ pub mod fluent_builders {
         /// <p>A timestamp for when revocation of a Signing Profile should become effective.
         /// Signatures generated using the signing profile after this timestamp are not
         /// trusted.</p>
-        pub fn effective_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.effective_time(signature);
+        pub fn effective_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.effective_time(input);
             self
         }
         /// <p>A timestamp for when revocation of a Signing Profile should become effective.
@@ -1784,8 +1784,8 @@ pub mod fluent_builders {
         }
         /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
         /// code.</p>
-        pub fn source(mut self, signature: crate::model::Source) -> Self {
-            self.inner = self.inner.source(signature);
+        pub fn source(mut self, input: crate::model::Source) -> Self {
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The S3 bucket that contains the object to sign or a BLOB that contains your raw
@@ -1796,8 +1796,8 @@ pub mod fluent_builders {
         }
         /// <p>The S3 bucket in which to save your signed object. The destination contains the name
         /// of your bucket and an optional prefix.</p>
-        pub fn destination(mut self, signature: crate::model::Destination) -> Self {
-            self.inner = self.inner.destination(signature);
+        pub fn destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The S3 bucket in which to save your signed object. The destination contains the name
@@ -1810,8 +1810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the signing profile.</p>
-        pub fn profile_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_name(signature.into());
+        pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_name(input.into());
             self
         }
         /// <p>The name of the signing profile.</p>
@@ -1821,8 +1821,8 @@ pub mod fluent_builders {
         }
         /// <p>String that identifies the signing request. All calls after the first that use this
         /// token return the same response as the first call.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>String that identifies the signing request. All calls after the first that use this
@@ -1835,8 +1835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The AWS account ID of the signing profile owner.</p>
-        pub fn profile_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.profile_owner(signature.into());
+        pub fn profile_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.profile_owner(input.into());
             self
         }
         /// <p>The AWS account ID of the signing profile owner.</p>
@@ -1911,8 +1911,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
@@ -2005,8 +2005,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>

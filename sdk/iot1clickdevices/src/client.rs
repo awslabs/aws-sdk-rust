@@ -244,8 +244,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
-        pub fn claim_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.claim_code(signature.into());
+        pub fn claim_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.claim_code(input.into());
             self
         }
         /// <p>The claim code, starting with "C-", as provided by the device manufacturer.</p>
@@ -315,8 +315,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -389,8 +389,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -490,8 +490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -564,8 +564,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -635,8 +635,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -645,8 +645,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The device method to invoke.</p>
-        pub fn device_method(mut self, signature: crate::model::DeviceMethod) -> Self {
-            self.inner = self.inner.device_method(signature);
+        pub fn device_method(mut self, input: crate::model::DeviceMethod) -> Self {
+            self.inner = self.inner.device_method(input);
             self
         }
         /// <p>The device method to invoke.</p>
@@ -658,11 +658,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A JSON encoded string containing the device method request parameters.</p>
-        pub fn device_method_parameters(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.device_method_parameters(signature.into());
+        pub fn device_method_parameters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_method_parameters(input.into());
             self
         }
         /// <p>A JSON encoded string containing the device method request parameters.</p>
@@ -735,8 +732,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -747,8 +744,8 @@ pub mod fluent_builders {
         /// <p>The start date for the device event query, in ISO8061 format. For example,
         /// 2018-03-28T15:45:12.880Z
         /// </p>
-        pub fn from_time_stamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.from_time_stamp(signature);
+        pub fn from_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.from_time_stamp(input);
             self
         }
         /// <p>The start date for the device event query, in ISO8061 format. For example,
@@ -763,8 +760,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of
         /// 100 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of
@@ -774,8 +771,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -786,8 +783,8 @@ pub mod fluent_builders {
         /// <p>The end date for the device event query, in ISO8061 format. For example,
         /// 2018-03-28T15:45:12.880Z
         /// </p>
-        pub fn to_time_stamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.to_time_stamp(signature);
+        pub fn to_time_stamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.to_time_stamp(input);
             self
         }
         /// <p>The end date for the device event query, in ISO8061 format. For example,
@@ -861,8 +858,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the device, such as "button".</p>
-        pub fn device_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_type(signature.into());
+        pub fn device_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_type(input.into());
             self
         }
         /// <p>The type of the device, such as "button".</p>
@@ -872,8 +869,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of
         /// 100 is used.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return per request. If not set, a default value of
@@ -883,8 +880,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token to retrieve the next set of results.</p>
@@ -953,8 +950,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -1024,8 +1021,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -1125,8 +1122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -1196,8 +1193,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -1284,8 +1281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The unique identifier of the device.</p>
@@ -1295,8 +1292,8 @@ pub mod fluent_builders {
         }
         /// <p>If true, the device is enabled. If false, the device is
         /// disabled.</p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>If true, the device is enabled. If false, the device is

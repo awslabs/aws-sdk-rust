@@ -360,8 +360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -496,8 +496,8 @@ pub mod fluent_builders {
         /// account used by the application that creates the stream. It is also scoped by Amazon Web Services Region. That is, two streams in two different Amazon Web Services accounts
         /// can have the same name. Two streams in the same Amazon Web Services account but in two
         /// different Regions can also have the same name.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>A name to identify the stream. The stream name is scoped to the Amazon Web Services
@@ -511,8 +511,8 @@ pub mod fluent_builders {
         /// <p>The number of shards that the stream will use. The throughput of the stream is a
         /// function of the number of shards; more shards are required for greater provisioned
         /// throughput.</p>
-        pub fn shard_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.shard_count(signature);
+        pub fn shard_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.shard_count(input);
             self
         }
         /// <p>The number of shards that the stream will use. The throughput of the stream is a
@@ -526,8 +526,8 @@ pub mod fluent_builders {
         /// you can choose between an <b>on-demand</b> capacity mode and a
         /// <b>provisioned</b> capacity mode for your data
         /// streams.</p>
-        pub fn stream_mode_details(mut self, signature: crate::model::StreamModeDetails) -> Self {
-            self.inner = self.inner.stream_mode_details(signature);
+        pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
+            self.inner = self.inner.stream_mode_details(input);
             self
         }
         /// <p> Indicates the capacity mode of the data stream. Currently, in Kinesis Data Streams,
@@ -607,8 +607,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to modify.</p>
@@ -618,8 +618,8 @@ pub mod fluent_builders {
         }
         /// <p>The new retention period of the stream, in hours. Must be less than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_period_hours(signature);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_hours(input);
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be less than the current
@@ -708,8 +708,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to delete.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to delete.</p>
@@ -720,8 +720,8 @@ pub mod fluent_builders {
         /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
         /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
         /// with a <code>ResourceInUseException</code>. </p>
-        pub fn enforce_consumer_deletion(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enforce_consumer_deletion(signature);
+        pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enforce_consumer_deletion(input);
             self
         }
         /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
@@ -801,8 +801,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
         /// Namespaces</a>.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
@@ -813,8 +813,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(signature.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input.into());
             self
         }
         /// <p>The name that you gave to the consumer.</p>
@@ -830,8 +830,8 @@ pub mod fluent_builders {
         /// ListStreamConsumers operation to get a list of the descriptions of all the consumers
         /// that are currently registered with a given data stream. The description of a consumer
         /// contains its ARN.</p>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you
@@ -987,8 +987,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to describe.</p>
@@ -998,8 +998,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of shards to return in a single call. The default value is 100. If
         /// you specify a value greater than 100, at most 100 results are returned.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of shards to return in a single call. The default value is 100. If
@@ -1014,11 +1014,8 @@ pub mod fluent_builders {
         /// <p>If you don't specify this parameter, the default behavior for
         /// <code>DescribeStream</code> is to describe the stream starting with the first shard
         /// in the stream.</p>
-        pub fn exclusive_start_shard_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(signature.into());
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(input.into());
             self
         }
         /// <p>The shard ID of the shard to start with.</p>
@@ -1104,8 +1101,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
         /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
         /// Namespaces</a>.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more
@@ -1116,8 +1113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that you gave to the consumer.</p>
-        pub fn consumer_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(signature.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input.into());
             self
         }
         /// <p>The name that you gave to the consumer.</p>
@@ -1129,8 +1126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer.</p>
@@ -1206,8 +1203,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to describe.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to describe.</p>
@@ -1276,8 +1273,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the Kinesis data stream for which to disable enhanced monitoring.</p>
@@ -1457,8 +1454,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream for which to enable enhanced monitoring.</p>
@@ -1696,8 +1693,8 @@ pub mod fluent_builders {
         /// <p>The position in the shard from which you want to start sequentially reading data
         /// records. A shard iterator specifies this position using the sequence number of a data
         /// record in the shard.</p>
-        pub fn shard_iterator(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_iterator(signature.into());
+        pub fn shard_iterator(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_iterator(input.into());
             self
         }
         /// <p>The position in the shard from which you want to start sequentially reading data
@@ -1713,8 +1710,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you
         /// specify a value that is greater than 10,000, <a>GetRecords</a> throws
         /// <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of records to return. Specify a value of up to 10,000. If you
@@ -1818,8 +1815,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Kinesis data stream.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the Amazon Kinesis data stream.</p>
@@ -1828,8 +1825,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
-        pub fn shard_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_id(signature.into());
+        pub fn shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_id(input.into());
             self
         }
         /// <p>The shard ID of the Kinesis Data Streams shard to get the iterator for.</p>
@@ -1869,8 +1866,8 @@ pub mod fluent_builders {
         /// you always read the most recent data in the shard.</p>
         /// </li>
         /// </ul>
-        pub fn shard_iterator_type(mut self, signature: crate::model::ShardIteratorType) -> Self {
-            self.inner = self.inner.shard_iterator_type(signature);
+        pub fn shard_iterator_type(mut self, input: crate::model::ShardIteratorType) -> Self {
+            self.inner = self.inner.shard_iterator_type(input);
             self
         }
         /// <p>Determines how the shard iterator is used to start reading data records from the
@@ -1914,11 +1911,8 @@ pub mod fluent_builders {
         }
         /// <p>The sequence number of the data record in the shard from which to start reading. Used
         /// with shard iterator type AT_SEQUENCE_NUMBER and AFTER_SEQUENCE_NUMBER.</p>
-        pub fn starting_sequence_number(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.starting_sequence_number(signature.into());
+        pub fn starting_sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.starting_sequence_number(input.into());
             self
         }
         /// <p>The sequence number of the data record in the shard from which to start reading. Used
@@ -1937,8 +1931,8 @@ pub mod fluent_builders {
         /// the iterator returned is for the next (later) record. If the time stamp is older than
         /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
         /// (TRIM_HORIZON).</p>
-        pub fn timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.timestamp(signature);
+        pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.timestamp(input);
             self
         }
         /// <p>The time stamp of the data record from which to start reading. Used with shard
@@ -2024,8 +2018,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to modify.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to modify.</p>
@@ -2035,8 +2029,8 @@ pub mod fluent_builders {
         }
         /// <p>The new retention period of the stream, in hours. Must be more than the current
         /// retention period.</p>
-        pub fn retention_period_hours(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_period_hours(signature);
+        pub fn retention_period_hours(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period_hours(input);
             self
         }
         /// <p>The new retention period of the stream, in hours. Must be more than the current
@@ -2118,8 +2112,8 @@ pub mod fluent_builders {
         /// <p>The name of the data stream whose shards you want to list. </p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the data stream whose shards you want to list. </p>
@@ -2150,8 +2144,8 @@ pub mod fluent_builders {
         /// have 300 seconds to use that value. If you specify an expired token in a call to
         /// <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When the number of shards in the data stream is greater than the default value for the
@@ -2185,11 +2179,8 @@ pub mod fluent_builders {
         /// <code>ListShards</code> to list the shards starting with the first one in the
         /// stream.</p>
         /// <p>You cannot specify this parameter if you specify <code>NextToken</code>.</p>
-        pub fn exclusive_start_shard_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_shard_id(signature.into());
+        pub fn exclusive_start_shard_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_shard_id(input.into());
             self
         }
         /// <p>Specify this parameter to indicate that you want to list the shards starting with the
@@ -2212,8 +2203,8 @@ pub mod fluent_builders {
         /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
         /// you can use in a subsequent call to <code>ListShards</code> to list the next set of
         /// shards.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of shards to return in a single call to <code>ListShards</code>.
@@ -2233,8 +2224,8 @@ pub mod fluent_builders {
         /// two streams you want to list the shards for.</p>
         /// <p>You cannot specify this parameter if you specify the <code>NextToken</code>
         /// parameter.</p>
-        pub fn stream_creation_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.stream_creation_timestamp(signature);
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.stream_creation_timestamp(input);
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name. For
@@ -2268,8 +2259,8 @@ pub mod fluent_builders {
         /// specify the AT_TIMESTAMP type, then all shards that were open at the provided timestamp
         /// are returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
         /// provided timestamp to TIP are returned. </p>
-        pub fn shard_filter(mut self, signature: crate::model::ShardFilter) -> Self {
-            self.inner = self.inner.shard_filter(signature);
+        pub fn shard_filter(mut self, input: crate::model::ShardFilter) -> Self {
+            self.inner = self.inner.shard_filter(input);
             self
         }
         /// <p>Enables you to filter out the response of the <code>ListShards</code> API. You can
@@ -2362,8 +2353,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
         /// consumers. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
         /// Namespaces</a>.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream for which you want to list the registered
@@ -2396,8 +2387,8 @@ pub mod fluent_builders {
         /// specify an expired token in a call to <code>ListStreamConsumers</code>, you get
         /// <code>ExpiredNextTokenException</code>.</p>
         /// </important>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When the number of consumers that are registered with the data stream is greater than
@@ -2430,8 +2421,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of consumers that you want a single call of
         /// <code>ListStreamConsumers</code> to return. The default value is 100. If you specify
         /// a value greater than 100, at most 100 results are returned. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of consumers that you want a single call of
@@ -2446,8 +2437,8 @@ pub mod fluent_builders {
         /// data stream with the same name, you can use this input parameter to specify which of the
         /// two streams you want to list the consumers for. </p>
         /// <p>You can't specify this parameter if you specify the NextToken parameter. </p>
-        pub fn stream_creation_timestamp(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.stream_creation_timestamp(signature);
+        pub fn stream_creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.stream_creation_timestamp(input);
             self
         }
         /// <p>Specify this input parameter to distinguish data streams that have the same name. For
@@ -2539,8 +2530,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of streams to list. The default value is 100. If you specify a
         /// value greater than 100, at most 100 results are returned.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The maximum number of streams to list. The default value is 100. If you specify a
@@ -2552,9 +2543,9 @@ pub mod fluent_builders {
         /// <p>The name of the stream to start the list with.</p>
         pub fn exclusive_start_stream_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.exclusive_start_stream_name(signature.into());
+            self.inner = self.inner.exclusive_start_stream_name(input.into());
             self
         }
         /// <p>The name of the stream to start the list with.</p>
@@ -2627,8 +2618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -2639,11 +2630,8 @@ pub mod fluent_builders {
         /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
         /// <code>ListTagsForStream</code> gets all tags that occur after
         /// <code>ExclusiveStartTagKey</code>. </p>
-        pub fn exclusive_start_tag_key(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.exclusive_start_tag_key(signature.into());
+        pub fn exclusive_start_tag_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclusive_start_tag_key(input.into());
             self
         }
         /// <p>The key to use as the starting point for the list of tags. If this parameter is set,
@@ -2660,8 +2648,8 @@ pub mod fluent_builders {
         /// associated with the stream, <code>HasMoreTags</code> is set to <code>true</code>. To
         /// list additional tags, set <code>ExclusiveStartTagKey</code> to the last key in the
         /// response.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of tags to return. If this number is less than the total number of tags
@@ -2768,8 +2756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for the merge.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream for the merge.</p>
@@ -2778,8 +2766,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
-        pub fn shard_to_merge(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_to_merge(signature.into());
+        pub fn shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_to_merge(input.into());
             self
         }
         /// <p>The shard ID of the shard to combine with the adjacent shard for the merge.</p>
@@ -2791,11 +2779,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shard ID of the adjacent shard for the merge.</p>
-        pub fn adjacent_shard_to_merge(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.adjacent_shard_to_merge(signature.into());
+        pub fn adjacent_shard_to_merge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.adjacent_shard_to_merge(input.into());
             self
         }
         /// <p>The shard ID of the adjacent shard for the merge.</p>
@@ -2902,8 +2887,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream to put the data record into.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream to put the data record into.</p>
@@ -2915,8 +2900,8 @@ pub mod fluent_builders {
         /// serialized. When the data blob (the payload before base64-encoding) is added to the
         /// partition key size, the total size must not exceed the maximum record size (1
         /// MiB).</p>
-        pub fn data(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.data(signature);
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.data(input);
             self
         }
         /// <p>The data blob to put into the record, which is base64-encoded when the blob is
@@ -2934,8 +2919,8 @@ pub mod fluent_builders {
         /// function is used to map partition keys to 128-bit integer values and to map associated
         /// data records to shards. As a result of this hashing mechanism, all data records with the
         /// same partition key map to the same shard within the stream.</p>
-        pub fn partition_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partition_key(signature.into());
+        pub fn partition_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partition_key(input.into());
             self
         }
         /// <p>Determines which shard in the stream the data record is assigned to. Partition keys
@@ -2954,8 +2939,8 @@ pub mod fluent_builders {
         }
         /// <p>The hash value used to explicitly determine the shard the data record is assigned to
         /// by overriding the partition key hash.</p>
-        pub fn explicit_hash_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.explicit_hash_key(signature.into());
+        pub fn explicit_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.explicit_hash_key(input.into());
             self
         }
         /// <p>The hash value used to explicitly determine the shard the data record is assigned to
@@ -2974,9 +2959,9 @@ pub mod fluent_builders {
         /// is not set, records are coarsely ordered based on arrival time.</p>
         pub fn sequence_number_for_ordering(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.sequence_number_for_ordering(signature.into());
+            self.inner = self.inner.sequence_number_for_ordering(input.into());
             self
         }
         /// <p>Guarantees strictly increasing sequence numbers, for puts from the same client and to
@@ -3124,8 +3109,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The stream name associated with the request.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The stream name associated with the request.</p>
@@ -3209,8 +3194,8 @@ pub mod fluent_builders {
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
         /// more info, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service
         /// Namespaces</a>.</p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p>The ARN of the Kinesis data stream that you want to register the consumer with. For
@@ -3222,8 +3207,8 @@ pub mod fluent_builders {
         }
         /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
         /// consumer names don't have to be unique across data streams.</p>
-        pub fn consumer_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_name(signature.into());
+        pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_name(input.into());
             self
         }
         /// <p>For a given Kinesis data stream, each consumer must have a unique name. However,
@@ -3301,8 +3286,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -3427,8 +3412,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for the shard split.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream for the shard split.</p>
@@ -3437,8 +3422,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The shard ID of the shard to split.</p>
-        pub fn shard_to_split(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.shard_to_split(signature.into());
+        pub fn shard_to_split(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.shard_to_split(input.into());
             self
         }
         /// <p>The shard ID of the shard to split.</p>
@@ -3456,8 +3441,8 @@ pub mod fluent_builders {
         /// value and all higher hash key values in hash key range are distributed to one of the
         /// child shards. All the lower hash key values in the range are distributed to the other
         /// child shard.</p>
-        pub fn new_starting_hash_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_starting_hash_key(signature.into());
+        pub fn new_starting_hash_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_starting_hash_key(input.into());
             self
         }
         /// <p>A hash key value for the starting hash key of one of the child shards created by the
@@ -3550,8 +3535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream for which to start encrypting records.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream for which to start encrypting records.</p>
@@ -3560,8 +3545,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, signature: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(signature);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         /// <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
@@ -3603,8 +3588,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
@@ -3717,8 +3702,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream on which to stop encrypting records.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream on which to stop encrypting records.</p>
@@ -3727,8 +3712,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
-        pub fn encryption_type(mut self, signature: crate::model::EncryptionType) -> Self {
-            self.inner = self.inner.encryption_type(signature);
+        pub fn encryption_type(mut self, input: crate::model::EncryptionType) -> Self {
+            self.inner = self.inner.encryption_type(input);
             self
         }
         /// <p>The encryption type. The only valid value is <code>KMS</code>.</p>
@@ -3770,8 +3755,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.key_id(signature.into());
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.key_id(input.into());
             self
         }
         /// <p>The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
@@ -3912,8 +3897,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the stream.</p>
-        pub fn stream_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_name(signature.into());
+        pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_name(input.into());
             self
         }
         /// <p>The name of the stream.</p>
@@ -3941,8 +3926,8 @@ pub mod fluent_builders {
         /// less than 10000 shards.</p>
         /// </li>
         /// </ul>
-        pub fn target_shard_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.target_shard_count(signature);
+        pub fn target_shard_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.target_shard_count(input);
             self
         }
         /// <p>The new number of shards. This value has the following default limits. By default, you
@@ -3970,8 +3955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
-        pub fn scaling_type(mut self, signature: crate::model::ScalingType) -> Self {
-            self.inner = self.inner.scaling_type(signature);
+        pub fn scaling_type(mut self, input: crate::model::ScalingType) -> Self {
+            self.inner = self.inner.scaling_type(input);
             self
         }
         /// <p>The scaling type. Uniform scaling creates shards of equal size.</p>
@@ -4046,8 +4031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
-        pub fn stream_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stream_arn(signature.into());
+        pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stream_arn(input.into());
             self
         }
         /// <p> Specifies the ARN of the data stream whose capacity mode you want to update. </p>
@@ -4057,8 +4042,8 @@ pub mod fluent_builders {
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in
         /// Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams. </p>
-        pub fn stream_mode_details(mut self, signature: crate::model::StreamModeDetails) -> Self {
-            self.inner = self.inner.stream_mode_details(signature);
+        pub fn stream_mode_details(mut self, input: crate::model::StreamModeDetails) -> Self {
+            self.inner = self.inner.stream_mode_details(input);
             self
         }
         /// <p> Specifies the capacity mode to which you want to set your data stream. Currently, in

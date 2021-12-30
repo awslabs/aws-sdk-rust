@@ -318,8 +318,8 @@ pub mod fluent_builders {
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
         /// <code>StartEntitiesDetectionV2Job</code> operation returns this identifier in its
         /// response.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
@@ -392,8 +392,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
         /// StartICD10CMInferenceJob</code> operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. <code>The
@@ -465,8 +465,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
         /// operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
@@ -538,8 +538,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
         /// StartRxNormInferenceJob operation returns this identifier in its response.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier that Amazon Comprehend Medical generated for the job. The
@@ -613,8 +613,8 @@ pub mod fluent_builders {
         }
         /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
         /// string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p> A UTF-8 text string containing the clinical content being examined for entities. Each
@@ -694,8 +694,8 @@ pub mod fluent_builders {
         }
         /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
         /// must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>A UTF-8 string containing the clinical content being examined for entities. Each string
@@ -768,8 +768,8 @@ pub mod fluent_builders {
         }
         /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
         /// string must contain fewer than 20,000 bytes of characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p> A UTF-8 text string containing the clinical content being examined for PHI entities. Each
@@ -843,8 +843,8 @@ pub mod fluent_builders {
         }
         /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
         /// characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The input text used for analysis. The input for InferICD10CM is a string from 1 to 10000
@@ -917,8 +917,8 @@ pub mod fluent_builders {
         }
         /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
         /// characters.</p>
-        pub fn text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.text(signature.into());
+        pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.text(input.into());
             self
         }
         /// <p>The input text used for analysis. The input for InferRxNorm is a string from 1 to 10000
@@ -989,8 +989,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
         /// the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, signature: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
@@ -1003,8 +1003,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -1013,8 +1013,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -1084,8 +1084,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
         /// the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, signature: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -1108,8 +1108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -1180,8 +1180,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
         /// the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, signature: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
@@ -1194,8 +1194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -1204,8 +1204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -1275,8 +1275,8 @@ pub mod fluent_builders {
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
         /// the date and time that they were submitted. You can only set one filter at a time.</p>
-        pub fn filter(mut self, signature: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
-            self.inner = self.inner.filter(signature);
+        pub fn filter(mut self, input: crate::model::ComprehendMedicalAsyncJobFilter) -> Self {
+            self.inner = self.inner.filter(input);
             self
         }
         /// <p>Filters the jobs that are returned. You can filter jobs based on their names, status, or
@@ -1289,8 +1289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -1299,8 +1299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Identifies the next page of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Identifies the next page of results to return.</p>
@@ -1370,8 +1370,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
@@ -1383,8 +1383,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies where to send the output files.</p>
@@ -1397,8 +1397,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
         /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
@@ -1411,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The identifier of the job.</p>
@@ -1422,8 +1422,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
         /// generates one.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
@@ -1437,8 +1437,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
         /// key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
@@ -1523,8 +1523,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
@@ -1536,8 +1536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies where to send the output files.</p>
@@ -1550,8 +1550,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
         /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
@@ -1564,8 +1564,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The identifier of the job.</p>
@@ -1575,8 +1575,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
         /// generates one.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
@@ -1590,8 +1590,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
         /// key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
@@ -1601,8 +1601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
@@ -1675,8 +1675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
@@ -1688,8 +1688,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies where to send the output files.</p>
@@ -1702,8 +1702,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
         /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
@@ -1716,8 +1716,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The identifier of the job.</p>
@@ -1727,8 +1727,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
         /// generates one.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
@@ -1742,8 +1742,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
         /// key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
@@ -1753,8 +1753,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
@@ -1828,8 +1828,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
-        pub fn input_data_config(mut self, signature: crate::model::InputDataConfig) -> Self {
-            self.inner = self.inner.input_data_config(signature);
+        pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
+            self.inner = self.inner.input_data_config(input);
             self
         }
         /// <p>Specifies the format and location of the input data for the job.</p>
@@ -1841,8 +1841,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies where to send the output files.</p>
-        pub fn output_data_config(mut self, signature: crate::model::OutputDataConfig) -> Self {
-            self.inner = self.inner.output_data_config(signature);
+        pub fn output_data_config(mut self, input: crate::model::OutputDataConfig) -> Self {
+            self.inner = self.inner.output_data_config(input);
             self
         }
         /// <p>Specifies where to send the output files.</p>
@@ -1855,8 +1855,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
         /// grants Amazon Comprehend Medical read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-        pub fn data_access_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_access_role_arn(signature.into());
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
@@ -1869,8 +1869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_name(signature.into());
+        pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name(input.into());
             self
         }
         /// <p>The identifier of the job.</p>
@@ -1880,8 +1880,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
         /// generates one.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend Medical
@@ -1895,8 +1895,8 @@ pub mod fluent_builders {
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
         /// key, the files are written in plain text.</p>
-        pub fn kms_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key(signature.into());
+        pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key(input.into());
             self
         }
         /// <p>An AWS Key Management Service key to encrypt your output files. If you do not specify a
@@ -1906,8 +1906,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
-        pub fn language_code(mut self, signature: crate::model::LanguageCode) -> Self {
-            self.inner = self.inner.language_code(signature);
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.inner = self.inner.language_code(input);
             self
         }
         /// <p>The language of the input documents. All documents must be in the same language.</p>
@@ -1979,8 +1979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the medical entities job to stop.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the medical entities job to stop.</p>
@@ -2049,8 +2049,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the job.</p>
@@ -2119,8 +2119,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the PHI detection job to stop.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the PHI detection job to stop.</p>
@@ -2189,8 +2189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The identifier of the job.</p>

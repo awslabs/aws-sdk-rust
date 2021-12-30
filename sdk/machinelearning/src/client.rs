@@ -369,8 +369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the ML object to tag. For example, <code>exampleModelId</code>.</p>
@@ -379,8 +379,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the ML object to tag.</p>
-        pub fn resource_type(mut self, signature: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the ML object to tag.</p>
@@ -464,8 +464,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-supplied ID that uniquely identifies the
         /// <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(signature.into());
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the
@@ -478,8 +478,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
-        pub fn batch_prediction_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_name(signature.into());
+        pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code> can only use the UTF-8 character set.</p>
@@ -491,8 +491,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID of the <code>MLModel</code> that will generate predictions for the group of observations. </p>
@@ -503,9 +503,9 @@ pub mod fluent_builders {
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
         pub fn batch_prediction_data_source_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.batch_prediction_data_source_id(signature.into());
+            self.inner = self.inner.batch_prediction_data_source_id(input.into());
             self
         }
         /// <p>The ID of the <code>DataSource</code> that points to the group of observations to predict.</p>
@@ -518,8 +518,8 @@ pub mod fluent_builders {
         }
         /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
         /// <p>Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-        pub fn output_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.output_uri(signature.into());
+        pub fn output_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_uri(input.into());
             self
         }
         /// <p>The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
@@ -601,8 +601,8 @@ pub mod fluent_builders {
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
         /// becomes the ID for a <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically, an Amazon Resource Number (ARN)
@@ -615,8 +615,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>.</p>
@@ -675,8 +675,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn rds_data(mut self, signature: crate::model::RdsDataSpec) -> Self {
-            self.inner = self.inner.rds_data(signature);
+        pub fn rds_data(mut self, input: crate::model::RdsDataSpec) -> Self {
+            self.inner = self.inner.rds_data(input);
             self
         }
         /// <p>The data specification of an Amazon RDS <code>DataSource</code>:</p>
@@ -737,8 +737,8 @@ pub mod fluent_builders {
         /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
         /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
         /// <p></p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The role that Amazon ML assumes on behalf of the user to create and activate a data
@@ -752,8 +752,8 @@ pub mod fluent_builders {
         /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
         /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.
         /// </p>
-        pub fn compute_statistics(mut self, signature: bool) -> Self {
-            self.inner = self.inner.compute_statistics(signature);
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
@@ -857,8 +857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -870,8 +870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn data_spec(mut self, signature: crate::model::RedshiftDataSpec) -> Self {
-            self.inner = self.inner.data_spec(signature);
+        pub fn data_spec(mut self, input: crate::model::RedshiftDataSpec) -> Self {
+            self.inner = self.inner.data_spec(input);
             self
         }
         /// <p>The data specification of an Amazon Redshift <code>DataSource</code>:</p>
@@ -984,8 +984,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:</p>
@@ -1007,8 +1007,8 @@ pub mod fluent_builders {
         /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
         /// This parameter must be set to <code>true</code> if the <code>DataSource</code> needs to
         /// be used for <code>MLModel</code> training.</p>
-        pub fn compute_statistics(mut self, signature: bool) -> Self {
-            self.inner = self.inner.compute_statistics(signature);
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
@@ -1110,8 +1110,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied identifier that uniquely identifies the <code>DataSource</code>. </p>
@@ -1123,8 +1123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>DataSource</code>. </p>
@@ -1153,8 +1153,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn data_spec(mut self, signature: crate::model::S3DataSpec) -> Self {
-            self.inner = self.inner.data_spec(signature);
+        pub fn data_spec(mut self, input: crate::model::S3DataSpec) -> Self {
+            self.inner = self.inner.data_spec(input);
             self
         }
         /// <p>The data specification of a <code>DataSource</code>:</p>
@@ -1185,8 +1185,8 @@ pub mod fluent_builders {
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
         /// a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code> training.
         /// This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be used for <code>MLModel</code> training.</p>
-        pub fn compute_statistics(mut self, signature: bool) -> Self {
-            self.inner = self.inner.compute_statistics(signature);
+        pub fn compute_statistics(mut self, input: bool) -> Self {
+            self.inner = self.inner.compute_statistics(input);
             self
         }
         /// <p>The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data referenced by
@@ -1268,8 +1268,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
-        pub fn evaluation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(signature.into());
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code>.</p>
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
-        pub fn evaluation_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_name(signature.into());
+        pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>Evaluation</code>.</p>
@@ -1295,8 +1295,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
         /// <p>The schema used in creating the <code>MLModel</code> must match the schema of the <code>DataSource</code> used in the <code>Evaluation</code>.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID of the <code>MLModel</code> to evaluate.</p>
@@ -1307,11 +1307,8 @@ pub mod fluent_builders {
         }
         /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
         /// must match the schema used to create the <code>MLModel</code>.</p>
-        pub fn evaluation_data_source_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.evaluation_data_source_id(signature.into());
+        pub fn evaluation_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_data_source_id(input.into());
             self
         }
         /// <p>The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
@@ -1403,8 +1400,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
@@ -1413,8 +1410,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn ml_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_name(signature.into());
+        pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -1438,8 +1435,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p> For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>.</p>
-        pub fn ml_model_type(mut self, signature: crate::model::MlModelType) -> Self {
-            self.inner = self.inner.ml_model_type(signature);
+        pub fn ml_model_type(mut self, input: crate::model::MlModelType) -> Self {
+            self.inner = self.inner.ml_model_type(input);
             self
         }
         /// <p>The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:</p>
@@ -1574,11 +1571,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
-        pub fn training_data_source_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.training_data_source_id(signature.into());
+        pub fn training_data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.training_data_source_id(input.into());
             self
         }
         /// <p>The <code>DataSource</code> that points to the training data.</p>
@@ -1591,8 +1585,8 @@ pub mod fluent_builders {
         }
         /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
         /// or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-        pub fn recipe(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe(signature.into());
+        pub fn recipe(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe(input.into());
             self
         }
         /// <p>The data recipe for creating the <code>MLModel</code>. You must specify either the recipe
@@ -1602,8 +1596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
-        pub fn recipe_uri(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recipe_uri(signature.into());
+        pub fn recipe_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recipe_uri(input.into());
             self
         }
         /// <p>The Amazon Simple Storage Service (Amazon S3) location and file name that contains the <code>MLModel</code> recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.</p>
@@ -1672,8 +1666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -1747,8 +1741,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(signature.into());
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.</p>
@@ -1823,8 +1817,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
@@ -1901,8 +1895,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
-        pub fn evaluation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(signature.into());
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.</p>
@@ -1979,8 +1973,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>.</p>
@@ -2049,8 +2043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -2137,8 +2131,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the tagged ML object. For example, <code>exampleModelId</code>.</p>
@@ -2147,8 +2141,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the tagged ML object.</p>
-        pub fn resource_type(mut self, signature: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the tagged ML object.</p>
@@ -2254,9 +2248,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn filter_variable(
             mut self,
-            signature: crate::model::BatchPredictionFilterVariable,
+            input: crate::model::BatchPredictionFilterVariable,
         ) -> Self {
-            self.inner = self.inner.filter_variable(signature);
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>BatchPrediction</code>:</p>
@@ -2301,8 +2295,8 @@ pub mod fluent_builders {
         }
         /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
         /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(signature.into());
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
         /// <p>The equal to operator. The <code>BatchPrediction</code> results will have
@@ -2313,8 +2307,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than operator. The <code>BatchPrediction</code> results will
         /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(signature.into());
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
         /// <p>The greater than operator. The <code>BatchPrediction</code> results will
@@ -2325,8 +2319,8 @@ pub mod fluent_builders {
         }
         /// <p>The less than operator. The <code>BatchPrediction</code> results will
         /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(signature.into());
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
         /// <p>The less than operator. The <code>BatchPrediction</code> results will
@@ -2337,8 +2331,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
         /// </p>
-        pub fn ge(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(signature.into());
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
         /// <p>The greater than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
@@ -2348,8 +2342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(signature.into());
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2358,8 +2352,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(signature.into());
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>BatchPrediction</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2385,8 +2379,8 @@ pub mod fluent_builders {
         /// <p>2014-09-09-Holiday</p>
         /// </li>
         /// </ul>
-        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(signature.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
@@ -2423,8 +2417,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>s.</p>
@@ -2447,8 +2441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>An ID of the page in the paginated results.</p>
@@ -2457,8 +2451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -2550,11 +2544,8 @@ pub mod fluent_builders {
         /// <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p>
         /// </li>
         /// </ul>
-        pub fn filter_variable(
-            mut self,
-            signature: crate::model::DataSourceFilterVariable,
-        ) -> Self {
-            self.inner = self.inner.filter_variable(signature);
+        pub fn filter_variable(mut self, input: crate::model::DataSourceFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
@@ -2590,8 +2581,8 @@ pub mod fluent_builders {
         }
         /// <p>The equal to operator. The <code>DataSource</code> results will have
         /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(signature.into());
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
         /// <p>The equal to operator. The <code>DataSource</code> results will have
@@ -2602,8 +2593,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than operator. The <code>DataSource</code> results will
         /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(signature.into());
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
         /// <p>The greater than operator. The <code>DataSource</code> results will
@@ -2614,8 +2605,8 @@ pub mod fluent_builders {
         }
         /// <p>The less than operator. The <code>DataSource</code> results will
         /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(signature.into());
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
         /// <p>The less than operator. The <code>DataSource</code> results will
@@ -2626,8 +2617,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
         /// </p>
-        pub fn ge(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(signature.into());
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
         /// <p>The greater than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
@@ -2637,8 +2628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(signature.into());
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2647,8 +2638,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(signature.into());
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2674,8 +2665,8 @@ pub mod fluent_builders {
         /// <p>2014-09-09-Holiday</p>
         /// </li>
         /// </ul>
-        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(signature.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
@@ -2712,8 +2703,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
@@ -2736,8 +2727,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -2746,8 +2737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p> The maximum number of <code>DataSource</code> to include in the result.</p>
@@ -2848,11 +2839,8 @@ pub mod fluent_builders {
         /// <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</p>
         /// </li>
         /// </ul>
-        pub fn filter_variable(
-            mut self,
-            signature: crate::model::EvaluationFilterVariable,
-        ) -> Self {
-            self.inner = self.inner.filter_variable(signature);
+        pub fn filter_variable(mut self, input: crate::model::EvaluationFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>   
@@ -2897,8 +2885,8 @@ pub mod fluent_builders {
         }
         /// <p>The equal to operator. The <code>Evaluation</code> results will have
         /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(signature.into());
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
         /// <p>The equal to operator. The <code>Evaluation</code> results will have
@@ -2909,8 +2897,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than operator. The <code>Evaluation</code> results will
         /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(signature.into());
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
         /// <p>The greater than operator. The <code>Evaluation</code> results will
@@ -2921,8 +2909,8 @@ pub mod fluent_builders {
         }
         /// <p>The less than operator. The <code>Evaluation</code> results will
         /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(signature.into());
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
         /// <p>The less than operator. The <code>Evaluation</code> results will
@@ -2933,8 +2921,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
         /// </p>
-        pub fn ge(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(signature.into());
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
         /// <p>The greater than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
@@ -2944,8 +2932,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(signature.into());
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -2954,8 +2942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(signature.into());
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -2981,8 +2969,8 @@ pub mod fluent_builders {
         /// <p>2014-09-09-Holiday</p>
         /// </li>
         /// </ul>
-        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(signature.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
@@ -3019,8 +3007,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
@@ -3043,8 +3031,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -3053,8 +3041,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p> The maximum number of <code>Evaluation</code> to include in the result.</p>
@@ -3163,8 +3151,8 @@ pub mod fluent_builders {
         /// <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p>
         /// </li>
         /// </ul>
-        pub fn filter_variable(mut self, signature: crate::model::MlModelFilterVariable) -> Self {
-            self.inner = self.inner.filter_variable(signature);
+        pub fn filter_variable(mut self, input: crate::model::MlModelFilterVariable) -> Self {
+            self.inner = self.inner.filter_variable(input);
             self
         }
         /// <p>Use one of the following variables to filter a list of <code>MLModel</code>:</p>
@@ -3217,8 +3205,8 @@ pub mod fluent_builders {
         }
         /// <p>The equal to operator. The <code>MLModel</code> results will have
         /// <code>FilterVariable</code> values that exactly match the value specified with <code>EQ</code>.</p>
-        pub fn eq(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.eq(signature.into());
+        pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.eq(input.into());
             self
         }
         /// <p>The equal to operator. The <code>MLModel</code> results will have
@@ -3229,8 +3217,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than operator. The <code>MLModel</code> results will
         /// have <code>FilterVariable</code> values that are greater than the value specified with <code>GT</code>.</p>
-        pub fn gt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.gt(signature.into());
+        pub fn gt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.gt(input.into());
             self
         }
         /// <p>The greater than operator. The <code>MLModel</code> results will
@@ -3241,8 +3229,8 @@ pub mod fluent_builders {
         }
         /// <p>The less than operator. The <code>MLModel</code> results will
         /// have <code>FilterVariable</code> values that are less than the value specified with <code>LT</code>.</p>
-        pub fn lt(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.lt(signature.into());
+        pub fn lt(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lt(input.into());
             self
         }
         /// <p>The less than operator. The <code>MLModel</code> results will
@@ -3253,8 +3241,8 @@ pub mod fluent_builders {
         }
         /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
         /// </p>
-        pub fn ge(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ge(signature.into());
+        pub fn ge(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ge(input.into());
             self
         }
         /// <p>The greater than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are greater than or equal to the value specified with <code>GE</code>.
@@ -3264,8 +3252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
-        pub fn le(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.le(signature.into());
+        pub fn le(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.le(input.into());
             self
         }
         /// <p>The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values that are less than or equal to the value specified with <code>LE</code>.</p>
@@ -3274,8 +3262,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
-        pub fn ne(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ne(signature.into());
+        pub fn ne(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ne(input.into());
             self
         }
         /// <p>The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code> values not equal to the value specified with <code>NE</code>.</p>
@@ -3301,8 +3289,8 @@ pub mod fluent_builders {
         /// <p>2014-09-09-Holiday</p>
         /// </li>
         /// </ul>
-        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(signature.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
@@ -3339,8 +3327,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>Results are sorted by <code>FilterVariable</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
@@ -3363,8 +3351,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The ID of the page in the paginated results.</p>
@@ -3373,8 +3361,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
-        pub fn limit(mut self, signature: i32) -> Self {
-            self.inner = self.inner.limit(signature);
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
             self
         }
         /// <p>The number of pages of information to include in the result. The range of acceptable values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.</p>
@@ -3443,8 +3431,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
-        pub fn resource_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_id(signature.into());
+        pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_id(input.into());
             self
         }
         /// <p>The ID of the ML object. For example, <code>exampleModelId</code>. </p>
@@ -3453,8 +3441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the ML object.</p>
-        pub fn resource_type(mut self, signature: crate::model::TaggableResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::TaggableResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The type of the ML object.</p>
@@ -3527,8 +3515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
-        pub fn batch_prediction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(signature.into());
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>An ID assigned to the <code>BatchPrediction</code> at creation.</p>
@@ -3603,8 +3591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> at creation.</p>
@@ -3618,8 +3606,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
         /// <p>If true, <code>DataSourceSchema</code> is returned.</p>
         /// <p>If false, <code>DataSourceSchema</code> is not returned.</p>
-        pub fn verbose(mut self, signature: bool) -> Self {
-            self.inner = self.inner.verbose(signature);
+        pub fn verbose(mut self, input: bool) -> Self {
+            self.inner = self.inner.verbose(input);
             self
         }
         /// <p>Specifies whether the <code>GetDataSource</code> operation should return <code>DataSourceSchema</code>.</p>
@@ -3690,8 +3678,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
-        pub fn evaluation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(signature.into());
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>The ID of the <code>Evaluation</code> to retrieve. The evaluation of each <code>MLModel</code> is recorded and cataloged. The ID provides the means to access the information. </p>
@@ -3765,8 +3753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> at creation.</p>
@@ -3777,8 +3765,8 @@ pub mod fluent_builders {
         /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
         /// <p>If true, <code>Recipe</code> is returned.</p>
         /// <p>If false, <code>Recipe</code> is not returned.</p>
-        pub fn verbose(mut self, signature: bool) -> Self {
-            self.inner = self.inner.verbose(signature);
+        pub fn verbose(mut self, input: bool) -> Self {
+            self.inner = self.inner.verbose(input);
             self
         }
         /// <p>Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.</p>
@@ -3852,8 +3840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier of the <code>MLModel</code>.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>A unique identifier of the <code>MLModel</code>.</p>
@@ -3885,8 +3873,8 @@ pub mod fluent_builders {
             self
         }
         #[allow(missing_docs)] // documentation missing in model
-        pub fn predict_endpoint(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.predict_endpoint(signature.into());
+        pub fn predict_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.predict_endpoint(input.into());
             self
         }
         #[allow(missing_docs)] // documentation missing in model
@@ -3959,8 +3947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
-        pub fn batch_prediction_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_id(signature.into());
+        pub fn batch_prediction_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
@@ -3972,8 +3960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
-        pub fn batch_prediction_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.batch_prediction_name(signature.into());
+        pub fn batch_prediction_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.batch_prediction_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -4046,8 +4034,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>DataSource</code> during creation.</p>
@@ -4059,8 +4047,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
-        pub fn data_source_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_name(signature.into());
+        pub fn data_source_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>DataSource</code> that will replace the current description. </p>
@@ -4133,8 +4121,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
-        pub fn evaluation_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_id(signature.into());
+        pub fn evaluation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>Evaluation</code> during creation.</p>
@@ -4146,8 +4134,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
-        pub fn evaluation_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.evaluation_name(signature.into());
+        pub fn evaluation_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.evaluation_name(input.into());
             self
         }
         /// <p>A new user-supplied name or description of the <code>Evaluation</code> that will replace the current content. </p>
@@ -4220,8 +4208,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-        pub fn ml_model_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_id(signature.into());
+        pub fn ml_model_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_id(input.into());
             self
         }
         /// <p>The ID assigned to the <code>MLModel</code> during creation.</p>
@@ -4230,8 +4218,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-        pub fn ml_model_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ml_model_name(signature.into());
+        pub fn ml_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ml_model_name(input.into());
             self
         }
         /// <p>A user-supplied name or description of the <code>MLModel</code>.</p>
@@ -4244,8 +4232,8 @@ pub mod fluent_builders {
         }
         /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>
         /// <p>Output values greater than or equal to the <code>ScoreThreshold</code> receive a positive result from the <code>MLModel</code>, such as <code>true</code>. Output values less than the <code>ScoreThreshold</code> receive a negative response from the <code>MLModel</code>, such as <code>false</code>.</p>
-        pub fn score_threshold(mut self, signature: f32) -> Self {
-            self.inner = self.inner.score_threshold(signature);
+        pub fn score_threshold(mut self, input: f32) -> Self {
+            self.inner = self.inner.score_threshold(input);
             self
         }
         /// <p>The <code>ScoreThreshold</code> used in binary classification <code>MLModel</code> that marks the boundary between a positive prediction and a negative prediction.</p>

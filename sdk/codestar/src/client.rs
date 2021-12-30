@@ -278,8 +278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to which you will add the IAM user.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project to which you will add the IAM user.</p>
@@ -289,8 +289,8 @@ pub mod fluent_builders {
         }
         /// <p>A user- or system-generated token that identifies the entity that requested the team
         /// member association to the project. This token can be used to repeat the request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A user- or system-generated token that identifies the entity that requested the team
@@ -304,8 +304,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
         /// project.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM user you want to add to the AWS CodeStar
@@ -316,8 +316,8 @@ pub mod fluent_builders {
         }
         /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
         /// a user can take in an AWS CodeStar project.</p>
-        pub fn project_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_role(signature.into());
+        pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_role(input.into());
             self
         }
         /// <p>The AWS CodeStar project role that will apply to this user. This role determines what actions
@@ -328,8 +328,8 @@ pub mod fluent_builders {
         }
         /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
         /// access project resources, for example Amazon EC2 instances.</p>
-        pub fn remote_access_allowed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remote_access_allowed(signature);
+        pub fn remote_access_allowed(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_access_allowed(input);
             self
         }
         /// <p>Whether the team member is allowed to use an SSH public/private key pair to remotely
@@ -401,8 +401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The display name for the project to be created in AWS CodeStar.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The display name for the project to be created in AWS CodeStar.</p>
@@ -411,8 +411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the project to be created in AWS CodeStar.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to be created in AWS CodeStar.</p>
@@ -421,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the project, if any.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the project, if any.</p>
@@ -432,8 +432,8 @@ pub mod fluent_builders {
         }
         /// <p>A user- or system-generated token that identifies the entity that requested project
         /// creation. This token can be used to repeat the request.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A user- or system-generated token that identifies the entity that requested project
@@ -466,8 +466,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the toolchain template file submitted with the project request. If
         /// this parameter is specified, the request must also include the sourceCode parameter.</p>
-        pub fn toolchain(mut self, signature: crate::model::Toolchain) -> Self {
-            self.inner = self.inner.toolchain(signature);
+        pub fn toolchain(mut self, input: crate::model::Toolchain) -> Self {
+            self.inner = self.inner.toolchain(input);
             self
         }
         /// <p>The name of the toolchain template file submitted with the project request. If
@@ -566,8 +566,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -576,8 +576,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS CodeStar. </p>
@@ -587,8 +587,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address that will be displayed as part of the user's profile in
         /// AWS CodeStar.</p>
-        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(signature.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The email address that will be displayed as part of the user's profile in
@@ -603,8 +603,8 @@ pub mod fluent_builders {
         /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
         /// user remote access to project resources, this public key will be used along with the user's
         /// private key for SSH access.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
@@ -679,8 +679,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to be deleted in AWS CodeStar.</p>
@@ -690,8 +690,8 @@ pub mod fluent_builders {
         }
         /// <p>A user- or system-generated token that identifies the entity that requested project
         /// deletion. This token can be used to repeat the request. </p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>A user- or system-generated token that identifies the entity that requested project
@@ -707,8 +707,8 @@ pub mod fluent_builders {
         /// used to generate the project and its resources. This option will delete all AWS resources for
         /// the project (except for any buckets in Amazon S3) as well as deleting the project itself.
         /// Recommended for most use cases.</p>
-        pub fn delete_stack(mut self, signature: bool) -> Self {
-            self.inner = self.inner.delete_stack(signature);
+        pub fn delete_stack(mut self, input: bool) -> Self {
+            self.inner = self.inner.delete_stack(input);
             self
         }
         /// <p>Whether to send a delete request for the primary stack in AWS CloudFormation originally
@@ -782,8 +782,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user to delete from AWS CodeStar.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -922,8 +922,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -995,8 +995,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the AWS CodeStar project from which you want to remove a team member.</p>
@@ -1006,8 +1006,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
         /// the project.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM user or group whom you want to remove from
@@ -1078,8 +1078,8 @@ pub mod fluent_builders {
         }
         /// <p>The continuation token to be used to return the next set of results, if the results
         /// cannot be returned in one response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The continuation token to be used to return the next set of results, if the results
@@ -1089,8 +1089,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
@@ -1159,8 +1159,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -1170,8 +1170,8 @@ pub mod fluent_builders {
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
         /// in one response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
@@ -1181,8 +1181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum amount of data that can be contained in a single set of results.</p>
@@ -1251,8 +1251,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to get tags for.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to get tags for.</p>
@@ -1261,8 +1261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1271,8 +1271,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved for future use.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>Reserved for future use.</p>
@@ -1341,8 +1341,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project for which you want to list team members.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project for which you want to list team members.</p>
@@ -1352,8 +1352,8 @@ pub mod fluent_builders {
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
         /// in one response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
@@ -1363,8 +1363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of team members you want returned in a response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of team members you want returned in a response.</p>
@@ -1434,8 +1434,8 @@ pub mod fluent_builders {
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
         /// in one response.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The continuation token for the next set of results, if the results cannot be returned
@@ -1445,8 +1445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in a response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a response.</p>
@@ -1515,8 +1515,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project you want to add a tag to.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project you want to add a tag to.</p>
@@ -1608,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project to remove tags from.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project to remove tags from.</p>
@@ -1695,8 +1695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project you want to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The ID of the project you want to update.</p>
@@ -1705,8 +1705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the project you want to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the project you want to update.</p>
@@ -1715,8 +1715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the project, if any.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the project, if any.</p>
@@ -1787,8 +1787,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the project.</p>
-        pub fn project_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_id(signature.into());
+        pub fn project_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_id(input.into());
             self
         }
         /// <p>The ID of the project.</p>
@@ -1798,8 +1798,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
         /// attributes.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the user for whom you want to change team membership
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         /// <p>The role assigned to the user in the project. Project roles have different levels of
         /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
         /// Teams</a> in the <i>AWS CodeStar User Guide</i>.</p>
-        pub fn project_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.project_role(signature.into());
+        pub fn project_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_role(input.into());
             self
         }
         /// <p>The role assigned to the user in the project. Project roles have different levels of
@@ -1825,8 +1825,8 @@ pub mod fluent_builders {
         /// <p>Whether a team member is allowed to remotely access project resources using the SSH
         /// public key associated with the user's profile. Even if this is set to True, the user must
         /// associate a public key with their profile before the user can access resources.</p>
-        pub fn remote_access_allowed(mut self, signature: bool) -> Self {
-            self.inner = self.inner.remote_access_allowed(signature);
+        pub fn remote_access_allowed(mut self, input: bool) -> Self {
+            self.inner = self.inner.remote_access_allowed(input);
             self
         }
         /// <p>Whether a team member is allowed to remotely access project resources using the SSH
@@ -1900,8 +1900,8 @@ pub mod fluent_builders {
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS
         /// CodeStar.</p>
-        pub fn user_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_arn(signature.into());
+        pub fn user_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_arn(input.into());
             self
         }
         /// <p>The name that will be displayed as the friendly name for the user in AWS
@@ -1911,8 +1911,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p>The name that is displayed as the friendly name for the user in AWS CodeStar.</p>
@@ -1922,8 +1922,8 @@ pub mod fluent_builders {
         }
         /// <p>The email address that is displayed as part of the user's profile in AWS
         /// CodeStar.</p>
-        pub fn email_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.email_address(signature.into());
+        pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.email_address(input.into());
             self
         }
         /// <p>The email address that is displayed as part of the user's profile in AWS
@@ -1938,8 +1938,8 @@ pub mod fluent_builders {
         /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
         /// user remote access to project resources, this public key will be used along with the user's
         /// private key for SSH access.</p>
-        pub fn ssh_public_key(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ssh_public_key(signature.into());
+        pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ssh_public_key(input.into());
             self
         }
         /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the

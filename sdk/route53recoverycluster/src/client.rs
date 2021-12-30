@@ -186,8 +186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to get the state for.</p>
@@ -263,8 +263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
-        pub fn routing_control_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.routing_control_arn(signature.into());
+        pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.routing_control_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) for the routing control that you want to update the state for.</p>
@@ -276,11 +276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>
-        pub fn routing_control_state(
-            mut self,
-            signature: crate::model::RoutingControlState,
-        ) -> Self {
-            self.inner = self.inner.routing_control_state(signature);
+        pub fn routing_control_state(mut self, input: crate::model::RoutingControlState) -> Self {
+            self.inner = self.inner.routing_control_state(input);
             self
         }
         /// <p>The state of the routing control. You can set the value to be On or Off.</p>

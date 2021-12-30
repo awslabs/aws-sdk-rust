@@ -422,8 +422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the new application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the new application.</p>
@@ -432,8 +432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the new application</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the new application</p>
@@ -442,8 +442,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the service role in the customer's account to be used by AWS SMS.</p>
@@ -453,8 +453,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
         /// application creation.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of
@@ -560,8 +560,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the server.</p>
-        pub fn server_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.server_id(signature.into());
+        pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.server_id(input.into());
             self
         }
         /// <p>The ID of the server.</p>
@@ -570,8 +570,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The seed replication time.</p>
-        pub fn seed_replication_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.seed_replication_time(signature);
+        pub fn seed_replication_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.seed_replication_time(input);
             self
         }
         /// <p>The seed replication time.</p>
@@ -583,8 +583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
-        pub fn frequency(mut self, signature: i32) -> Self {
-            self.inner = self.inner.frequency(signature);
+        pub fn frequency(mut self, input: i32) -> Self {
+            self.inner = self.inner.frequency(input);
             self
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
@@ -593,8 +593,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to run the replication job one time.</p>
-        pub fn run_once(mut self, signature: bool) -> Self {
-            self.inner = self.inner.run_once(signature);
+        pub fn run_once(mut self, input: bool) -> Self {
+            self.inner = self.inner.run_once(input);
             self
         }
         /// <p>Indicates whether to run the replication job one time.</p>
@@ -604,8 +604,8 @@ pub mod fluent_builders {
         }
         /// <p>The license type to be used for the AMI created by a successful replication
         /// run.</p>
-        pub fn license_type(mut self, signature: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(signature);
+        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
+            self.inner = self.inner.license_type(input);
             self
         }
         /// <p>The license type to be used for the AMI created by a successful replication
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the IAM role to be used by the AWS SMS.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role to be used by the AWS SMS.</p>
@@ -628,8 +628,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the replication job.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the replication job.</p>
@@ -639,8 +639,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
         /// maximum number is reached and a new AMI is created.</p>
-        pub fn number_of_recent_amis_to_keep(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_recent_amis_to_keep(signature);
+        pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_recent_amis_to_keep(input);
             self
         }
         /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
@@ -653,8 +653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
-        pub fn encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.encrypted(signature);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.encrypted(input);
             self
         }
         /// <p>Indicates whether the replication job produces encrypted AMIs.</p>
@@ -680,8 +680,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p> If encrypted is <i>true</i> but a KMS key ID is not specified, the
         /// customer's default KMS key for Amazon EBS is used. </p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.
@@ -768,8 +768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -779,8 +779,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to stop all replication jobs corresponding to the servers
         /// in the application while deleting the application.</p>
-        pub fn force_stop_app_replication(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_stop_app_replication(signature);
+        pub fn force_stop_app_replication(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_stop_app_replication(input);
             self
         }
         /// <p>Indicates whether to stop all replication jobs corresponding to the servers
@@ -791,8 +791,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to terminate the stack corresponding to the
         /// application while deleting the application.</p>
-        pub fn force_terminate_app(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_terminate_app(signature);
+        pub fn force_terminate_app(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_terminate_app(input);
             self
         }
         /// <p>Indicates whether to terminate the stack corresponding to the
@@ -862,8 +862,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -932,8 +932,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1002,8 +1002,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1075,8 +1075,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication job.</p>
-        pub fn replication_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_job_id(signature.into());
+        pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_job_id(input.into());
             self
         }
         /// <p>The ID of the replication job.</p>
@@ -1210,8 +1210,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the connector.</p>
-        pub fn connector_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connector_id(signature.into());
+        pub fn connector_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connector_id(input.into());
             self
         }
         /// <p>The ID of the connector.</p>
@@ -1281,8 +1281,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application associated with the change set.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application associated with the change set.</p>
@@ -1291,8 +1291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format for the change set.</p>
-        pub fn changeset_format(mut self, signature: crate::model::OutputFormat) -> Self {
-            self.inner = self.inner.changeset_format(signature);
+        pub fn changeset_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.inner = self.inner.changeset_format(input);
             self
         }
         /// <p>The format for the change set.</p>
@@ -1365,8 +1365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application associated with the AWS CloudFormation template.</p>
@@ -1375,8 +1375,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format for generating the AWS CloudFormation template.</p>
-        pub fn template_format(mut self, signature: crate::model::OutputFormat) -> Self {
-            self.inner = self.inner.template_format(signature);
+        pub fn template_format(mut self, input: crate::model::OutputFormat) -> Self {
+            self.inner = self.inner.template_format(input);
             self
         }
         /// <p>The format for generating the AWS CloudFormation template.</p>
@@ -1448,8 +1448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1518,8 +1518,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1589,8 +1589,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1659,8 +1659,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1729,8 +1729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -1799,8 +1799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -1811,8 +1811,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call. The default value is 50.
         /// To retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default value is 50.
@@ -1883,8 +1883,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication job.</p>
-        pub fn replication_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_job_id(signature.into());
+        pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_job_id(input.into());
             self
         }
         /// <p>The ID of the replication job.</p>
@@ -1896,8 +1896,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -1908,8 +1908,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call. The default value is 50.
         /// To retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default value is 50.
@@ -1980,8 +1980,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication job.</p>
-        pub fn replication_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_job_id(signature.into());
+        pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_job_id(input.into());
             self
         }
         /// <p>The ID of the replication job.</p>
@@ -1993,8 +1993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2005,8 +2005,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call. The default value is 50.
         /// To retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default value is 50.
@@ -2078,8 +2078,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2090,8 +2090,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call. The default value is 50.
         /// To retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default value is 50.
@@ -2181,8 +2181,8 @@ pub mod fluent_builders {
         /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
         /// for AWS Migration Hub in your account. Otherwise, the role that you provide must have the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/new-customer-setup.html#sms-managed">policy
         /// and trust policy</a> described in the <i>AWS Migration Hub User Guide</i>.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the service role. If you omit this parameter, we create a service-linked role
@@ -2316,8 +2316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2403,8 +2403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next set of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next set of results.</p>
@@ -2415,8 +2415,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of results to return in a single call. The default value is 100. To
         /// retrieve the remaining results, make another call with the returned
         /// <code>NextToken</code> value. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in a single call. The default value is 100. To
@@ -2487,8 +2487,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2497,11 +2497,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The notification information.</p>
-        pub fn notification_context(
-            mut self,
-            signature: crate::model::NotificationContext,
-        ) -> Self {
-            self.inner = self.inner.notification_context(signature);
+        pub fn notification_context(mut self, input: crate::model::NotificationContext) -> Self {
+            self.inner = self.inner.notification_context(input);
             self
         }
         /// <p>The notification information.</p>
@@ -2573,8 +2570,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2584,8 +2581,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
         /// application.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of service role in the customer's account that AWS CloudFormation uses to launch the
@@ -2595,8 +2592,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
-        pub fn auto_launch(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_launch(signature);
+        pub fn auto_launch(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_launch(input);
             self
         }
         /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
@@ -2685,8 +2682,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2779,8 +2776,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2892,8 +2889,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2962,8 +2959,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -2972,8 +2969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the replication run.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the replication run.</p>
@@ -3046,8 +3043,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication job.</p>
-        pub fn replication_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_job_id(signature.into());
+        pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_job_id(input.into());
             self
         }
         /// <p>The ID of the replication job.</p>
@@ -3059,8 +3056,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the replication run.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the replication run.</p>
@@ -3130,8 +3127,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -3200,8 +3197,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -3270,8 +3267,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the application.</p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p>The ID of the application.</p>
@@ -3280,8 +3277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new name of the application.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The new name of the application.</p>
@@ -3290,8 +3287,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description of the application.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description of the application.</p>
@@ -3300,8 +3297,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the service role in the customer's account used by AWS SMS.</p>
@@ -3404,8 +3401,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the replication job.</p>
-        pub fn replication_job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.replication_job_id(signature.into());
+        pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.replication_job_id(input.into());
             self
         }
         /// <p>The ID of the replication job.</p>
@@ -3417,8 +3414,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
-        pub fn frequency(mut self, signature: i32) -> Self {
-            self.inner = self.inner.frequency(signature);
+        pub fn frequency(mut self, input: i32) -> Self {
+            self.inner = self.inner.frequency(input);
             self
         }
         /// <p>The time between consecutive replication runs, in hours.</p>
@@ -3429,9 +3426,9 @@ pub mod fluent_builders {
         /// <p>The start time of the next replication run.</p>
         pub fn next_replication_run_start_time(
             mut self,
-            signature: aws_smithy_types::DateTime,
+            input: aws_smithy_types::DateTime,
         ) -> Self {
-            self.inner = self.inner.next_replication_run_start_time(signature);
+            self.inner = self.inner.next_replication_run_start_time(input);
             self
         }
         /// <p>The start time of the next replication run.</p>
@@ -3444,8 +3441,8 @@ pub mod fluent_builders {
         }
         /// <p>The license type to be used for the AMI created by a successful replication
         /// run.</p>
-        pub fn license_type(mut self, signature: crate::model::LicenseType) -> Self {
-            self.inner = self.inner.license_type(signature);
+        pub fn license_type(mut self, input: crate::model::LicenseType) -> Self {
+            self.inner = self.inner.license_type(input);
             self
         }
         /// <p>The license type to be used for the AMI created by a successful replication
@@ -3458,8 +3455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the IAM role to be used by AWS SMS.</p>
-        pub fn role_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_name(signature.into());
+        pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_name(input.into());
             self
         }
         /// <p>The name of the IAM role to be used by AWS SMS.</p>
@@ -3468,8 +3465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the replication job.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of the replication job.</p>
@@ -3479,8 +3476,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
         /// maximum number is reached and a new AMI is created.</p>
-        pub fn number_of_recent_amis_to_keep(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_recent_amis_to_keep(signature);
+        pub fn number_of_recent_amis_to_keep(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_recent_amis_to_keep(input);
             self
         }
         /// <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after the
@@ -3494,8 +3491,8 @@ pub mod fluent_builders {
         }
         /// <p>When true, the replication job produces encrypted AMIs. For more information,
         /// <code>KmsKeyId</code>.</p>
-        pub fn encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.encrypted(signature);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.encrypted(input);
             self
         }
         /// <p>When true, the replication job produces encrypted AMIs. For more information,
@@ -3522,8 +3519,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>If encrypted is enabled but a KMS key ID is not specified, the
         /// customer's default KMS key for Amazon EBS is used.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs.

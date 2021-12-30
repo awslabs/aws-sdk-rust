@@ -1017,9 +1017,9 @@ pub mod fluent_builders {
         /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
         pub fn create_application_request(
             mut self,
-            signature: crate::model::CreateApplicationRequest,
+            input: crate::model::CreateApplicationRequest,
         ) -> Self {
-            self.inner = self.inner.create_application_request(signature);
+            self.inner = self.inner.create_application_request(input);
             self
         }
         /// <p>Specifies the display name of an application and the tags to associate with the application.</p>
@@ -1091,8 +1091,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1104,11 +1104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
-        pub fn write_campaign_request(
-            mut self,
-            signature: crate::model::WriteCampaignRequest,
-        ) -> Self {
-            self.inner = self.inner.write_campaign_request(signature);
+        pub fn write_campaign_request(mut self, input: crate::model::WriteCampaignRequest) -> Self {
+            self.inner = self.inner.write_campaign_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
@@ -1180,11 +1177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn email_template_request(
-            mut self,
-            signature: crate::model::EmailTemplateRequest,
-        ) -> Self {
-            self.inner = self.inner.email_template_request(signature);
+        pub fn email_template_request(mut self, input: crate::model::EmailTemplateRequest) -> Self {
+            self.inner = self.inner.email_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -1196,8 +1190,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1269,8 +1263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1282,8 +1276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        pub fn export_job_request(mut self, signature: crate::model::ExportJobRequest) -> Self {
-            self.inner = self.inner.export_job_request(signature);
+        pub fn export_job_request(mut self, input: crate::model::ExportJobRequest) -> Self {
+            self.inner = self.inner.export_job_request(input);
             self
         }
         /// <p>Specifies the settings for a job that exports endpoint definitions to an Amazon Simple Storage Service (Amazon S3) bucket.</p>
@@ -1355,8 +1349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1368,8 +1362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
-        pub fn import_job_request(mut self, signature: crate::model::ImportJobRequest) -> Self {
-            self.inner = self.inner.import_job_request(signature);
+        pub fn import_job_request(mut self, input: crate::model::ImportJobRequest) -> Self {
+            self.inner = self.inner.import_job_request(input);
             self
         }
         /// <p>Specifies the settings for a job that imports endpoint definitions from an Amazon Simple Storage Service (Amazon S3) bucket.</p>
@@ -1443,9 +1437,9 @@ pub mod fluent_builders {
         /// <p>InApp Template Request.</p>
         pub fn in_app_template_request(
             mut self,
-            signature: crate::model::InAppTemplateRequest,
+            input: crate::model::InAppTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.in_app_template_request(signature);
+            self.inner = self.inner.in_app_template_request(input);
             self
         }
         /// <p>InApp Template Request.</p>
@@ -1457,8 +1451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1530,8 +1524,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1543,11 +1537,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
-        pub fn write_journey_request(
-            mut self,
-            signature: crate::model::WriteJourneyRequest,
-        ) -> Self {
-            self.inner = self.inner.write_journey_request(signature);
+        pub fn write_journey_request(mut self, input: crate::model::WriteJourneyRequest) -> Self {
+            self.inner = self.inner.write_journey_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
@@ -1621,9 +1612,9 @@ pub mod fluent_builders {
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
         pub fn push_notification_template_request(
             mut self,
-            signature: crate::model::PushNotificationTemplateRequest,
+            input: crate::model::PushNotificationTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.push_notification_template_request(signature);
+            self.inner = self.inner.push_notification_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -1635,8 +1626,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1710,9 +1701,9 @@ pub mod fluent_builders {
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
         pub fn create_recommender_configuration(
             mut self,
-            signature: crate::model::CreateRecommenderConfigurationShape,
+            input: crate::model::CreateRecommenderConfigurationShape,
         ) -> Self {
-            self.inner = self.inner.create_recommender_configuration(signature);
+            self.inner = self.inner.create_recommender_configuration(input);
             self
         }
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
@@ -1784,8 +1775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -1797,11 +1788,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-        pub fn write_segment_request(
-            mut self,
-            signature: crate::model::WriteSegmentRequest,
-        ) -> Self {
-            self.inner = self.inner.write_segment_request(signature);
+        pub fn write_segment_request(mut self, input: crate::model::WriteSegmentRequest) -> Self {
+            self.inner = self.inner.write_segment_request(input);
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
@@ -1873,8 +1861,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-        pub fn sms_template_request(mut self, signature: crate::model::SmsTemplateRequest) -> Self {
-            self.inner = self.inner.sms_template_request(signature);
+        pub fn sms_template_request(mut self, input: crate::model::SmsTemplateRequest) -> Self {
+            self.inner = self.inner.sms_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -1886,8 +1874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1959,8 +1947,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -1972,11 +1960,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn voice_template_request(
-            mut self,
-            signature: crate::model::VoiceTemplateRequest,
-        ) -> Self {
-            self.inner = self.inner.voice_template_request(signature);
+        pub fn voice_template_request(mut self, input: crate::model::VoiceTemplateRequest) -> Self {
+            self.inner = self.inner.voice_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -2048,8 +2033,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2121,8 +2106,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2194,8 +2179,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2267,8 +2252,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2340,8 +2325,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2413,8 +2398,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2486,8 +2471,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2559,8 +2544,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2572,8 +2557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -2642,8 +2627,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2715,8 +2700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -2728,8 +2713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -2798,8 +2783,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2811,8 +2796,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(signature.into());
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -2881,8 +2866,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -2954,8 +2939,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3027,8 +3012,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3040,8 +3025,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -3110,8 +3095,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3123,8 +3108,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -3193,8 +3178,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3206,8 +3191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -3276,8 +3261,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(signature.into());
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -3349,8 +3334,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3362,8 +3347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -3432,8 +3417,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3505,8 +3490,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3518,8 +3503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -3588,8 +3573,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3601,8 +3586,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the user.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The unique identifier for the user.</p>
@@ -3671,8 +3656,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3744,8 +3729,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -3757,8 +3742,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -3827,8 +3812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3900,8 +3885,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -3973,8 +3958,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4046,8 +4031,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4119,8 +4104,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4192,8 +4177,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4265,8 +4250,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4278,8 +4263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -4291,8 +4276,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(signature.into());
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -4301,8 +4286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4311,8 +4296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4321,8 +4306,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -4394,8 +4379,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4467,8 +4452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4477,8 +4462,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4547,8 +4532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4620,8 +4605,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4633,8 +4618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4703,8 +4688,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4716,8 +4701,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4726,8 +4711,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4736,8 +4721,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -4806,8 +4791,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4819,8 +4804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -4829,8 +4814,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -4842,8 +4827,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(signature.into());
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -4852,8 +4837,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4862,8 +4847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4872,8 +4857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -4945,8 +4930,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -4958,8 +4943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -4968,8 +4953,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5038,8 +5023,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5051,8 +5036,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -5061,8 +5046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
@@ -5131,8 +5116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5144,8 +5129,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -5154,8 +5139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5164,8 +5149,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5234,8 +5219,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5307,8 +5292,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5380,8 +5365,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -5393,8 +5378,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -5463,8 +5448,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5476,8 +5461,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(signature.into());
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -5546,8 +5531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5619,8 +5604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5632,8 +5617,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the job.</p>
@@ -5702,8 +5687,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5715,8 +5700,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5725,8 +5710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -5795,8 +5780,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5868,8 +5853,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5881,8 +5866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the job.</p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p>The unique identifier for the job.</p>
@@ -5951,8 +5936,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -5964,8 +5949,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -5974,8 +5959,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -6044,8 +6029,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6057,8 +6042,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(signature.into());
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -6127,8 +6112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -6140,8 +6125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -6210,8 +6195,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6223,8 +6208,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6293,8 +6278,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6306,8 +6291,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The last date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
@@ -6319,8 +6304,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6329,8 +6314,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
-        pub fn kpi_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kpi_name(signature.into());
+        pub fn kpi_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kpi_name(input.into());
             self
         }
         /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, to retrieve data for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. Examples are email-open-rate and successful-delivery-rate. For a list of valid values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -6339,8 +6324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6349,8 +6334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6359,8 +6344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The first date and time to retrieve data for, as part of an inclusive date range that filters the query results. This value should be in extended ISO 8601 format and use Coordinated Universal Time (UTC), for example: 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be fewer than 90 days from the current day.</p>
@@ -6434,8 +6419,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6447,8 +6432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey activity.</p>
-        pub fn journey_activity_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_activity_id(signature.into());
+        pub fn journey_activity_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_activity_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey activity.</p>
@@ -6460,8 +6445,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6470,8 +6455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6480,8 +6465,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6550,8 +6535,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6563,8 +6548,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -6573,8 +6558,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6583,8 +6568,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6653,8 +6638,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -6666,8 +6651,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -6736,8 +6721,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(signature.into());
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -6809,8 +6794,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6819,8 +6804,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -6889,8 +6874,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6902,8 +6887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -6972,8 +6957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -6985,8 +6970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -6995,8 +6980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7005,8 +6990,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7075,8 +7060,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7088,8 +7073,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7098,8 +7083,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7108,8 +7093,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7178,8 +7163,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7191,8 +7176,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7201,8 +7186,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7271,8 +7256,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7284,8 +7269,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7294,8 +7279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique version number (Version property) for the campaign version.</p>
@@ -7364,8 +7349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7377,8 +7362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7387,8 +7372,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -7397,8 +7382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7467,8 +7452,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7540,8 +7525,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -7553,8 +7538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -7623,8 +7608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7636,8 +7621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the user.</p>
-        pub fn user_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.user_id(signature.into());
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.user_id(input.into());
             self
         }
         /// <p>The unique identifier for the user.</p>
@@ -7706,8 +7691,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7779,8 +7764,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -7792,8 +7777,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -7862,8 +7847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -7875,8 +7860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -7885,8 +7870,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
-        pub fn token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.token(signature.into());
+        pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.token(input.into());
             self
         }
         /// <p>The NextToken string that specifies which page of results to return in a paginated response.</p>
@@ -7955,8 +7940,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -8025,8 +8010,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8035,8 +8020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8045,8 +8030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
-        pub fn prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.prefix(signature.into());
+        pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.prefix(input.into());
             self
         }
         /// <p>The substring to match in the names of the message templates to include in the results. If you specify this value, Amazon Pinpoint returns only those templates whose names begin with the value that you specify.</p>
@@ -8055,8 +8040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
-        pub fn template_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(signature.into());
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of message template to include in the results. Valid values are: EMAIL, PUSH, SMS, and VOICE. To include all types of templates in the results, don't include this parameter in your request.</p>
@@ -8128,8 +8113,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The  string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8138,8 +8123,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-        pub fn page_size(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.page_size(signature.into());
+        pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_size(input.into());
             self
         }
         /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
@@ -8148,8 +8133,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -8161,8 +8146,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-        pub fn template_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(signature.into());
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
@@ -8236,9 +8221,9 @@ pub mod fluent_builders {
         /// <p>Specifies a phone number to validate and retrieve information about.</p>
         pub fn number_validate_request(
             mut self,
-            signature: crate::model::NumberValidateRequest,
+            input: crate::model::NumberValidateRequest,
         ) -> Self {
-            self.inner = self.inner.number_validate_request(signature);
+            self.inner = self.inner.number_validate_request(input);
             self
         }
         /// <p>Specifies a phone number to validate and retrieve information about.</p>
@@ -8310,8 +8295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8323,8 +8308,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a batch of events to process.</p>
-        pub fn events_request(mut self, signature: crate::model::EventsRequest) -> Self {
-            self.inner = self.inner.events_request(signature);
+        pub fn events_request(mut self, input: crate::model::EventsRequest) -> Self {
+            self.inner = self.inner.events_request(input);
             self
         }
         /// <p>Specifies a batch of events to process.</p>
@@ -8396,8 +8381,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8409,8 +8394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
-        pub fn write_event_stream(mut self, signature: crate::model::WriteEventStream) -> Self {
-            self.inner = self.inner.write_event_stream(signature);
+        pub fn write_event_stream(mut self, input: crate::model::WriteEventStream) -> Self {
+            self.inner = self.inner.write_event_stream(input);
             self
         }
         /// <p>Specifies the Amazon Resource Name (ARN) of an event stream to publish events to and the AWS Identity and Access Management (IAM) role to use when publishing those events.</p>
@@ -8482,8 +8467,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8495,8 +8480,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
-        pub fn attribute_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attribute_type(signature.into());
+        pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attribute_type(input.into());
             self
         }
         /// <p>The type of attribute or attributes to remove. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints, such as the date when an associated user opted in or out of receiving communications from you through a specific type of channel.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints, such as the number of app sessions or the number of items left in a cart.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users, such as first name, last name, and age.</p></li></ul>
@@ -8510,9 +8495,9 @@ pub mod fluent_builders {
         /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
         pub fn update_attributes_request(
             mut self,
-            signature: crate::model::UpdateAttributesRequest,
+            input: crate::model::UpdateAttributesRequest,
         ) -> Self {
-            self.inner = self.inner.update_attributes_request(signature);
+            self.inner = self.inner.update_attributes_request(input);
             self
         }
         /// <p>Specifies one or more attributes to remove from all the endpoints that are associated with an application.</p>
@@ -8584,8 +8569,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8597,8 +8582,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a message.</p>
-        pub fn message_request(mut self, signature: crate::model::MessageRequest) -> Self {
-            self.inner = self.inner.message_request(signature);
+        pub fn message_request(mut self, input: crate::model::MessageRequest) -> Self {
+            self.inner = self.inner.message_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a message.</p>
@@ -8670,8 +8655,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
@@ -8685,9 +8670,9 @@ pub mod fluent_builders {
         /// <p>Send OTP message request parameters.</p>
         pub fn send_otp_message_request_parameters(
             mut self,
-            signature: crate::model::SendOtpMessageRequestParameters,
+            input: crate::model::SendOtpMessageRequestParameters,
         ) -> Self {
-            self.inner = self.inner.send_otp_message_request_parameters(signature);
+            self.inner = self.inner.send_otp_message_request_parameters(input);
             self
         }
         /// <p>Send OTP message request parameters.</p>
@@ -8759,8 +8744,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -8774,9 +8759,9 @@ pub mod fluent_builders {
         /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
         pub fn send_users_message_request(
             mut self,
-            signature: crate::model::SendUsersMessageRequest,
+            input: crate::model::SendUsersMessageRequest,
         ) -> Self {
-            self.inner = self.inner.send_users_message_request(signature);
+            self.inner = self.inner.send_users_message_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.</p>
@@ -8848,8 +8833,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -8858,8 +8843,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
-        pub fn tags_model(mut self, signature: crate::model::TagsModel) -> Self {
-            self.inner = self.inner.tags_model(signature);
+        pub fn tags_model(mut self, input: crate::model::TagsModel) -> Self {
+            self.inner = self.inner.tags_model(input);
             self
         }
         /// <p>Specifies the tags (keys and values) for an application, campaign, message template, or segment.</p>
@@ -8931,8 +8916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -9018,8 +9003,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
-        pub fn adm_channel_request(mut self, signature: crate::model::AdmChannelRequest) -> Self {
-            self.inner = self.inner.adm_channel_request(signature);
+        pub fn adm_channel_request(mut self, input: crate::model::AdmChannelRequest) -> Self {
+            self.inner = self.inner.adm_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the ADM (Amazon Device Messaging) channel for an application.</p>
@@ -9031,8 +9016,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9104,8 +9089,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
-        pub fn apns_channel_request(mut self, signature: crate::model::ApnsChannelRequest) -> Self {
-            self.inner = self.inner.apns_channel_request(signature);
+        pub fn apns_channel_request(mut self, input: crate::model::ApnsChannelRequest) -> Self {
+            self.inner = self.inner.apns_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) channel for an application.</p>
@@ -9117,8 +9102,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9192,9 +9177,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
         pub fn apns_sandbox_channel_request(
             mut self,
-            signature: crate::model::ApnsSandboxChannelRequest,
+            input: crate::model::ApnsSandboxChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_sandbox_channel_request(signature);
+            self.inner = self.inner.apns_sandbox_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) sandbox channel for an application.</p>
@@ -9206,8 +9191,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9281,9 +9266,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
         pub fn apns_voip_channel_request(
             mut self,
-            signature: crate::model::ApnsVoipChannelRequest,
+            input: crate::model::ApnsVoipChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_voip_channel_request(signature);
+            self.inner = self.inner.apns_voip_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP channel for an application.</p>
@@ -9295,8 +9280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9370,9 +9355,9 @@ pub mod fluent_builders {
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
         pub fn apns_voip_sandbox_channel_request(
             mut self,
-            signature: crate::model::ApnsVoipSandboxChannelRequest,
+            input: crate::model::ApnsVoipSandboxChannelRequest,
         ) -> Self {
-            self.inner = self.inner.apns_voip_sandbox_channel_request(signature);
+            self.inner = self.inner.apns_voip_sandbox_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the APNs (Apple Push Notification service) VoIP sandbox channel for an application.</p>
@@ -9384,8 +9369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9457,8 +9442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9472,9 +9457,9 @@ pub mod fluent_builders {
         /// <p>Specifies the default settings for an application.</p>
         pub fn write_application_settings_request(
             mut self,
-            signature: crate::model::WriteApplicationSettingsRequest,
+            input: crate::model::WriteApplicationSettingsRequest,
         ) -> Self {
-            self.inner = self.inner.write_application_settings_request(signature);
+            self.inner = self.inner.write_application_settings_request(input);
             self
         }
         /// <p>Specifies the default settings for an application.</p>
@@ -9546,8 +9531,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9559,11 +9544,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
-        pub fn baidu_channel_request(
-            mut self,
-            signature: crate::model::BaiduChannelRequest,
-        ) -> Self {
-            self.inner = self.inner.baidu_channel_request(signature);
+        pub fn baidu_channel_request(mut self, input: crate::model::BaiduChannelRequest) -> Self {
+            self.inner = self.inner.baidu_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the Baidu (Baidu Cloud Push) channel for an application.</p>
@@ -9635,8 +9617,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9648,8 +9630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the campaign.</p>
-        pub fn campaign_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.campaign_id(signature.into());
+        pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.campaign_id(input.into());
             self
         }
         /// <p>The unique identifier for the campaign.</p>
@@ -9658,11 +9640,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
-        pub fn write_campaign_request(
-            mut self,
-            signature: crate::model::WriteCampaignRequest,
-        ) -> Self {
-            self.inner = self.inner.write_campaign_request(signature);
+        pub fn write_campaign_request(mut self, input: crate::model::WriteCampaignRequest) -> Self {
+            self.inner = self.inner.write_campaign_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a campaign.</p>
@@ -9734,8 +9713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9747,11 +9726,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the email channel for an application.</p>
-        pub fn email_channel_request(
-            mut self,
-            signature: crate::model::EmailChannelRequest,
-        ) -> Self {
-            self.inner = self.inner.email_channel_request(signature);
+        pub fn email_channel_request(mut self, input: crate::model::EmailChannelRequest) -> Self {
+            self.inner = self.inner.email_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the email channel for an application.</p>
@@ -9823,8 +9799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_new_version(signature);
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -9833,11 +9809,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
-        pub fn email_template_request(
-            mut self,
-            signature: crate::model::EmailTemplateRequest,
-        ) -> Self {
-            self.inner = self.inner.email_template_request(signature);
+        pub fn email_template_request(mut self, input: crate::model::EmailTemplateRequest) -> Self {
+            self.inner = self.inner.email_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the email channel.</p>
@@ -9849,8 +9822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -9862,8 +9835,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -9932,8 +9905,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -9945,8 +9918,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
-        pub fn endpoint_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_id(signature.into());
+        pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_id(input.into());
             self
         }
         /// <p>The unique identifier for the endpoint.</p>
@@ -9955,8 +9928,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the channel type and other settings for an endpoint.</p>
-        pub fn endpoint_request(mut self, signature: crate::model::EndpointRequest) -> Self {
-            self.inner = self.inner.endpoint_request(signature);
+        pub fn endpoint_request(mut self, input: crate::model::EndpointRequest) -> Self {
+            self.inner = self.inner.endpoint_request(input);
             self
         }
         /// <p>Specifies the channel type and other settings for an endpoint.</p>
@@ -10028,8 +10001,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10041,11 +10014,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
-        pub fn endpoint_batch_request(
-            mut self,
-            signature: crate::model::EndpointBatchRequest,
-        ) -> Self {
-            self.inner = self.inner.endpoint_batch_request(signature);
+        pub fn endpoint_batch_request(mut self, input: crate::model::EndpointBatchRequest) -> Self {
+            self.inner = self.inner.endpoint_batch_request(input);
             self
         }
         /// <p>Specifies a batch of endpoints to create or update and the settings and attributes to set or change for each endpoint.</p>
@@ -10117,8 +10087,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10130,8 +10100,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
-        pub fn gcm_channel_request(mut self, signature: crate::model::GcmChannelRequest) -> Self {
-            self.inner = self.inner.gcm_channel_request(signature);
+        pub fn gcm_channel_request(mut self, input: crate::model::GcmChannelRequest) -> Self {
+            self.inner = self.inner.gcm_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the GCM channel for an application. This channel enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service.</p>
@@ -10203,8 +10173,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_new_version(signature);
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -10215,9 +10185,9 @@ pub mod fluent_builders {
         /// <p>InApp Template Request.</p>
         pub fn in_app_template_request(
             mut self,
-            signature: crate::model::InAppTemplateRequest,
+            input: crate::model::InAppTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.in_app_template_request(signature);
+            self.inner = self.inner.in_app_template_request(input);
             self
         }
         /// <p>InApp Template Request.</p>
@@ -10229,8 +10199,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10242,8 +10212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -10312,8 +10282,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10325,8 +10295,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -10335,11 +10305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
-        pub fn write_journey_request(
-            mut self,
-            signature: crate::model::WriteJourneyRequest,
-        ) -> Self {
-            self.inner = self.inner.write_journey_request(signature);
+        pub fn write_journey_request(mut self, input: crate::model::WriteJourneyRequest) -> Self {
+            self.inner = self.inner.write_journey_request(input);
             self
         }
         /// <p>Specifies the configuration and other settings for a journey.</p>
@@ -10411,8 +10378,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10424,8 +10391,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the journey.</p>
-        pub fn journey_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.journey_id(signature.into());
+        pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.journey_id(input.into());
             self
         }
         /// <p>The unique identifier for the journey.</p>
@@ -10434,11 +10401,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Changes the status of a journey.</p>
-        pub fn journey_state_request(
-            mut self,
-            signature: crate::model::JourneyStateRequest,
-        ) -> Self {
-            self.inner = self.inner.journey_state_request(signature);
+        pub fn journey_state_request(mut self, input: crate::model::JourneyStateRequest) -> Self {
+            self.inner = self.inner.journey_state_request(input);
             self
         }
         /// <p>Changes the status of a journey.</p>
@@ -10510,8 +10474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_new_version(signature);
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -10522,9 +10486,9 @@ pub mod fluent_builders {
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
         pub fn push_notification_template_request(
             mut self,
-            signature: crate::model::PushNotificationTemplateRequest,
+            input: crate::model::PushNotificationTemplateRequest,
         ) -> Self {
-            self.inner = self.inner.push_notification_template_request(signature);
+            self.inner = self.inner.push_notification_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through a push notification channel.</p>
@@ -10536,8 +10500,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10549,8 +10513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -10619,8 +10583,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
-        pub fn recommender_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.recommender_id(signature.into());
+        pub fn recommender_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommender_id(input.into());
             self
         }
         /// <p>The unique identifier for the recommender model configuration. This identifier is displayed as the <b>Recommender ID</b> on the Amazon Pinpoint console.</p>
@@ -10634,9 +10598,9 @@ pub mod fluent_builders {
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
         pub fn update_recommender_configuration(
             mut self,
-            signature: crate::model::UpdateRecommenderConfigurationShape,
+            input: crate::model::UpdateRecommenderConfigurationShape,
         ) -> Self {
-            self.inner = self.inner.update_recommender_configuration(signature);
+            self.inner = self.inner.update_recommender_configuration(input);
             self
         }
         /// <p>Specifies Amazon Pinpoint configuration settings for retrieving and processing recommendation data from a recommender model.</p>
@@ -10708,8 +10672,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10721,8 +10685,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the segment.</p>
-        pub fn segment_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.segment_id(signature.into());
+        pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.segment_id(input.into());
             self
         }
         /// <p>The unique identifier for the segment.</p>
@@ -10731,11 +10695,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
-        pub fn write_segment_request(
-            mut self,
-            signature: crate::model::WriteSegmentRequest,
-        ) -> Self {
-            self.inner = self.inner.write_segment_request(signature);
+        pub fn write_segment_request(mut self, input: crate::model::WriteSegmentRequest) -> Self {
+            self.inner = self.inner.write_segment_request(input);
             self
         }
         /// <p>Specifies the configuration, dimension, and other settings for a segment. A WriteSegmentRequest object can include a Dimensions object or a SegmentGroups object, but not both.</p>
@@ -10807,8 +10768,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -10820,8 +10781,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the SMS channel for an application.</p>
-        pub fn sms_channel_request(mut self, signature: crate::model::SmsChannelRequest) -> Self {
-            self.inner = self.inner.sms_channel_request(signature);
+        pub fn sms_channel_request(mut self, input: crate::model::SmsChannelRequest) -> Self {
+            self.inner = self.inner.sms_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the SMS channel for an application.</p>
@@ -10893,8 +10854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_new_version(signature);
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -10903,8 +10864,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-        pub fn sms_template_request(mut self, signature: crate::model::SmsTemplateRequest) -> Self {
-            self.inner = self.inner.sms_template_request(signature);
+        pub fn sms_template_request(mut self, input: crate::model::SmsTemplateRequest) -> Self {
+            self.inner = self.inner.sms_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
@@ -10916,8 +10877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -10929,8 +10890,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -11001,9 +10962,9 @@ pub mod fluent_builders {
         /// <p>Specifies which version of a message template to use as the active version of the template.</p>
         pub fn template_active_version_request(
             mut self,
-            signature: crate::model::TemplateActiveVersionRequest,
+            input: crate::model::TemplateActiveVersionRequest,
         ) -> Self {
-            self.inner = self.inner.template_active_version_request(signature);
+            self.inner = self.inner.template_active_version_request(input);
             self
         }
         /// <p>Specifies which version of a message template to use as the active version of the template.</p>
@@ -11015,8 +10976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -11028,8 +10989,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
-        pub fn template_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_type(signature.into());
+        pub fn template_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_type(input.into());
             self
         }
         /// <p>The type of channel that the message template is designed for. Valid values are: EMAIL, PUSH, SMS, and VOICE.</p>
@@ -11101,8 +11062,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
@@ -11114,11 +11075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the status and settings of the voice channel for an application.</p>
-        pub fn voice_channel_request(
-            mut self,
-            signature: crate::model::VoiceChannelRequest,
-        ) -> Self {
-            self.inner = self.inner.voice_channel_request(signature);
+        pub fn voice_channel_request(mut self, input: crate::model::VoiceChannelRequest) -> Self {
+            self.inner = self.inner.voice_channel_request(input);
             self
         }
         /// <p>Specifies the status and settings of the voice channel for an application.</p>
@@ -11190,8 +11148,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
-        pub fn create_new_version(mut self, signature: bool) -> Self {
-            self.inner = self.inner.create_new_version(signature);
+        pub fn create_new_version(mut self, input: bool) -> Self {
+            self.inner = self.inner.create_new_version(input);
             self
         }
         /// <p>Specifies whether to save the updates as a new version of the message template. Valid values are: true, save the updates as a new version; and, false, save the updates to (overwrite) the latest existing version of the template.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint saves the updates to (overwrites) the latest existing version of the template. If you specify a value of true for this parameter, don't specify a value for the version parameter. Otherwise, an error will occur.</p>
@@ -11200,8 +11158,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
-        pub fn template_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.template_name(signature.into());
+        pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.template_name(input.into());
             self
         }
         /// <p>The name of the message template. A template name must start with an alphanumeric character and can contain a maximum of 128 characters. The characters can be alphanumeric characters, underscores (_), or hyphens (-). Template names are case sensitive.</p>
@@ -11213,8 +11171,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
-        pub fn version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version(signature.into());
+        pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version(input.into());
             self
         }
         /// <p>The unique identifier for the version of the message template to update, retrieve information about, or delete. To retrieve identifiers and other information for all the versions of a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If specified, this value must match the identifier for an existing template version. If specified for an update operation, this value must match the identifier for the latest existing version of the template. This restriction helps ensure that race conditions don't occur.</p> <p>If you don't specify a value for this parameter, Amazon Pinpoint does the following:</p> <ul><li><p>For a get operation, retrieves information about the active version of the template.</p></li> <li><p>For an update operation, saves the updates to (overwrites) the latest existing version of the template, if the create-new-version parameter isn't used or is set to false.</p></li> <li><p>For a delete operation, deletes the template, including all versions of the template.</p></li></ul>
@@ -11223,11 +11181,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
-        pub fn voice_template_request(
-            mut self,
-            signature: crate::model::VoiceTemplateRequest,
-        ) -> Self {
-            self.inner = self.inner.voice_template_request(signature);
+        pub fn voice_template_request(mut self, input: crate::model::VoiceTemplateRequest) -> Self {
+            self.inner = self.inner.voice_template_request(input);
             self
         }
         /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
@@ -11299,8 +11254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
-        pub fn application_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.application_id(signature.into());
+        pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.application_id(input.into());
             self
         }
         /// <p>The unique ID of your Amazon Pinpoint application.</p>
@@ -11314,9 +11269,9 @@ pub mod fluent_builders {
         /// <p>Verify OTP message request.</p>
         pub fn verify_otp_message_request_parameters(
             mut self,
-            signature: crate::model::VerifyOtpMessageRequestParameters,
+            input: crate::model::VerifyOtpMessageRequestParameters,
         ) -> Self {
-            self.inner = self.inner.verify_otp_message_request_parameters(signature);
+            self.inner = self.inner.verify_otp_message_request_parameters(input);
             self
         }
         /// <p>Verify OTP message request.</p>

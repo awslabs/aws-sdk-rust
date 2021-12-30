@@ -565,8 +565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -575,8 +575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -666,8 +666,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -676,8 +676,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -776,8 +776,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index that contains the documents to
         /// delete.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the documents to
@@ -807,9 +807,9 @@ pub mod fluent_builders {
         /// source.</p>
         pub fn data_source_sync_job_metric_target(
             mut self,
-            signature: crate::model::DataSourceSyncJobMetricTarget,
+            input: crate::model::DataSourceSyncJobMetricTarget,
         ) -> Self {
-            self.inner = self.inner.data_source_sync_job_metric_target(signature);
+            self.inner = self.inner.data_source_sync_job_metric_target(input);
             self
         }
         /// <p>Maps a particular data source sync job to a particular data
@@ -896,8 +896,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the index to add documents to. The index ID is
         /// returned by the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_CreateIndex.html"> CreateIndex
         /// </a> operation.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index to add documents to. The index ID is
@@ -999,8 +999,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the index to add the documents to. You need to
         /// create the index first using the <code>CreateIndex</code>
         /// operation.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index to add the documents to. You need to
@@ -1014,8 +1014,8 @@ pub mod fluent_builders {
         /// <code>BatchPutDocument</code> operation. For more information, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// Roles for Amazon Kendra</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role that is allowed to run the
@@ -1092,11 +1092,9 @@ pub mod fluent_builders {
         /// document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
-            signature: crate::model::CustomDocumentEnrichmentConfiguration,
+            input: crate::model::CustomDocumentEnrichmentConfiguration,
         ) -> Self {
-            self.inner = self
-                .inner
-                .custom_document_enrichment_configuration(signature);
+            self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
         /// <p>Configuration information for altering your document metadata and content during
@@ -1185,8 +1183,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to clear query suggestions from.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to clear query suggestions from.</p>
@@ -1265,8 +1263,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique name for the data source. A data source name can't be changed
         /// without deleting and recreating the data source.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A unique name for the data source. A data source name can't be changed
@@ -1277,8 +1275,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index that should be associated with this data
         /// source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that should be associated with this data
@@ -1288,8 +1286,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of repository that contains the data source.</p>
-        pub fn r#type(mut self, signature: crate::model::DataSourceType) -> Self {
-            self.inner = self.inner.r#type(signature);
+        pub fn r#type(mut self, input: crate::model::DataSourceType) -> Self {
+            self.inner = self.inner.r#type(input);
             self
         }
         /// <p>The type of repository that contains the data source.</p>
@@ -1307,8 +1305,8 @@ pub mod fluent_builders {
         /// you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>Configuration</code> parameter is required for all other
         /// data sources.</p>
-        pub fn configuration(mut self, signature: crate::model::DataSourceConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>The connector configuration information that is required to access the
@@ -1326,8 +1324,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the data source.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the data source.</p>
@@ -1343,8 +1341,8 @@ pub mod fluent_builders {
         /// <p>You can't specify the <code>Schedule</code> parameter when the
         /// <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do,
         /// you receive a <code>ValidationException</code> exception.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>Sets the frequency that Amazon Kendra will check the documents in your
@@ -1367,8 +1365,8 @@ pub mod fluent_builders {
         /// you receive a <code>ValidationException</code> exception.</p>
         /// <p>The <code>RoleArn</code> parameter is required for all other data
         /// sources.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the
@@ -1407,8 +1405,8 @@ pub mod fluent_builders {
         /// <p>A token that you provide to identify the request to create a data
         /// source. Multiple calls to the <code>CreateDataSource</code> operation with
         /// the same client token will create only one data source.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create a data
@@ -1423,8 +1421,8 @@ pub mod fluent_builders {
         /// by default. For more information on supported languages, including their codes,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.</p>
-        pub fn language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language_code(signature.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language_code(input.into());
             self
         }
         /// <p>The code for a language. This allows you to support a language for all
@@ -1447,11 +1445,9 @@ pub mod fluent_builders {
         /// document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
-            signature: crate::model::CustomDocumentEnrichmentConfiguration,
+            input: crate::model::CustomDocumentEnrichmentConfiguration,
         ) -> Self {
-            self.inner = self
-                .inner
-                .custom_document_enrichment_configuration(signature);
+            self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
         /// <p>Configuration information for altering document metadata and content during the
@@ -1532,8 +1528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A name for your Amazon Kendra experience.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A name for your Amazon Kendra experience.</p>
@@ -1542,8 +1538,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -1555,8 +1551,8 @@ pub mod fluent_builders {
         /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
         /// operations, and Amazon Web Services SSO that stores your user and group information.
         /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
@@ -1571,8 +1567,8 @@ pub mod fluent_builders {
         /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs
         /// and/or FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the
         /// user or group information to grant access to your Amazon Kendra experience.</p>
-        pub fn configuration(mut self, signature: crate::model::ExperienceConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Provides the configuration information for your Amazon Kendra experience. This includes
@@ -1587,8 +1583,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for your Amazon Kendra experience.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for your Amazon Kendra experience.</p>
@@ -1599,8 +1595,8 @@ pub mod fluent_builders {
         /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
         /// Multiple calls to the <code>CreateExperience</code> operation with the same client
         /// token creates only one Amazon Kendra experience.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create your Amazon Kendra experience.
@@ -1671,8 +1667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index that contains the FAQ.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the FAQ.</p>
@@ -1681,8 +1677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name that should be associated with the FAQ.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name that should be associated with the FAQ.</p>
@@ -1691,8 +1687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the FAQ.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the FAQ.</p>
@@ -1701,8 +1697,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The S3 location of the FAQ input data.</p>
-        pub fn s3_path(mut self, signature: crate::model::S3Path) -> Self {
-            self.inner = self.inner.s3_path(signature);
+        pub fn s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.inner = self.inner.s3_path(input);
             self
         }
         /// <p>The S3 location of the FAQ input data.</p>
@@ -1712,8 +1708,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
         /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM Roles for Amazon Kendra</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
@@ -1748,8 +1744,8 @@ pub mod fluent_builders {
         /// <code>S3Path</code> parameter.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
         /// answers</a>.</p>
-        pub fn file_format(mut self, signature: crate::model::FaqFileFormat) -> Self {
-            self.inner = self.inner.file_format(signature);
+        pub fn file_format(mut self, input: crate::model::FaqFileFormat) -> Self {
+            self.inner = self.inner.file_format(input);
             self
         }
         /// <p>The format of the input file. You can choose between a basic CSV format, a CSV format
@@ -1769,8 +1765,8 @@ pub mod fluent_builders {
         /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
         /// the <code>CreateFaqRequest</code> operation with the same client token will create only
         /// one FAQ. </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create a FAQ. Multiple calls to
@@ -1785,8 +1781,8 @@ pub mod fluent_builders {
         /// For more information on supported languages, including their codes,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.</p>
-        pub fn language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language_code(signature.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language_code(input.into());
             self
         }
         /// <p>The code for a language. This allows you to support a language
@@ -1869,8 +1865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name for the new index.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new index.</p>
@@ -1887,8 +1883,8 @@ pub mod fluent_builders {
         /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
         /// <p>For more information on quota limits for enterprise and developer editions,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-        pub fn edition(mut self, signature: crate::model::IndexEdition) -> Self {
-            self.inner = self.inner.edition(signature);
+        pub fn edition(mut self, input: crate::model::IndexEdition) -> Self {
+            self.inner = self.inner.edition(input);
             self
         }
         /// <p>The Amazon Kendra edition to use for the index. Choose
@@ -1912,8 +1908,8 @@ pub mod fluent_builders {
         /// metrics. This is also the role used when you use the
         /// <code>BatchPutDocument</code> operation to index documents from an
         /// Amazon S3 bucket.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>An Identity and Access Management(IAM) role that gives
@@ -1930,9 +1926,9 @@ pub mod fluent_builders {
         /// asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
-            signature: crate::model::ServerSideEncryptionConfiguration,
+            input: crate::model::ServerSideEncryptionConfiguration,
         ) -> Self {
-            self.inner = self.inner.server_side_encryption_configuration(signature);
+            self.inner = self.inner.server_side_encryption_configuration(input);
             self
         }
         /// <p>The identifier of the KMScustomer managed key (CMK) to use to
@@ -1946,8 +1942,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the index.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the index.</p>
@@ -1958,8 +1954,8 @@ pub mod fluent_builders {
         /// <p>A token that you provide to identify the request to create an index.
         /// Multiple calls to the <code>CreateIndex</code> operation with the same
         /// client token will create only one index.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create an index.
@@ -2030,8 +2026,8 @@ pub mod fluent_builders {
         /// </p>
         /// </dd>
         /// </dl>
-        pub fn user_context_policy(mut self, signature: crate::model::UserContextPolicy) -> Self {
-            self.inner = self.inner.user_context_policy(signature);
+        pub fn user_context_policy(mut self, input: crate::model::UserContextPolicy) -> Self {
+            self.inner = self.inner.user_context_policy(input);
             self
         }
         /// <p>The user context policy.</p>
@@ -2066,9 +2062,9 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
-            signature: crate::model::UserGroupResolutionConfiguration,
+            input: crate::model::UserGroupResolutionConfiguration,
         ) -> Self {
-            self.inner = self.inner.user_group_resolution_configuration(signature);
+            self.inner = self.inner.user_group_resolution_configuration(input);
             self
         }
         /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
@@ -2153,8 +2149,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to create a query suggestions block list for.</p>
@@ -2166,8 +2162,8 @@ pub mod fluent_builders {
         /// <p>For example, the block list named 'offensive-words' includes all
         /// offensive words that could appear in user queries and need to be
         /// blocked from suggestions.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>A user friendly name for the block list.</p>
@@ -2181,8 +2177,8 @@ pub mod fluent_builders {
         /// <p>A user-friendly description for the block list.</p>
         /// <p>For example, the description "List of all offensive words that can
         /// appear in user queries and need to be blocked from suggestions."</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A user-friendly description for the block list.</p>
@@ -2197,8 +2193,8 @@ pub mod fluent_builders {
         /// <p>For information on the current quota limits for block lists, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.</p>
-        pub fn source_s3_path(mut self, signature: crate::model::S3Path) -> Self {
-            self.inner = self.inner.source_s3_path(signature);
+        pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.inner = self.inner.source_s3_path(input);
             self
         }
         /// <p>The S3 path to your block list text file in your S3 bucket.</p>
@@ -2215,8 +2211,8 @@ pub mod fluent_builders {
         }
         /// <p>A token that you provide to identify the request to create a
         /// query suggestions block list.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create a
@@ -2231,8 +2227,8 @@ pub mod fluent_builders {
         /// The role needs S3 read permissions to your file in S3 and needs
         /// to give STS (Security Token Service) assume role permissions
         /// to Amazon Kendra.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to
@@ -2327,8 +2323,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the index for the new thesaurus.
         /// </p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The unique identifier of the index for the new thesaurus.
@@ -2338,8 +2334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name for the new thesaurus.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name for the new thesaurus.</p>
@@ -2348,8 +2344,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for the new thesaurus.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for the new thesaurus.</p>
@@ -2360,8 +2356,8 @@ pub mod fluent_builders {
         /// <p>An IAM role that gives Amazon Kendra permissions
         /// to access thesaurus file specified in <code>SourceS3Path</code>.
         /// </p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>An IAM role that gives Amazon Kendra permissions
@@ -2396,8 +2392,8 @@ pub mod fluent_builders {
         }
         /// <p>The thesaurus file Amazon S3 source path.
         /// </p>
-        pub fn source_s3_path(mut self, signature: crate::model::S3Path) -> Self {
-            self.inner = self.inner.source_s3_path(signature);
+        pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.inner = self.inner.source_s3_path(input);
             self
         }
         /// <p>The thesaurus file Amazon S3 source path.
@@ -2413,8 +2409,8 @@ pub mod fluent_builders {
         /// thesaurus. Multiple calls to the <code>CreateThesaurus</code> operation
         /// with the same client token will create only one thesaurus.
         /// </p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>A token that you provide to identify the request to create a
@@ -2490,8 +2486,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the data source to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the data source to delete.</p>
@@ -2501,8 +2497,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the index associated with the data
         /// source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The unique identifier of the index associated with the data
@@ -2574,8 +2570,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience you want to delete.</p>
@@ -2584,8 +2580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to delete.</p>
@@ -2654,8 +2650,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the FAQ to remove.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the FAQ to remove.</p>
@@ -2664,8 +2660,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The index to remove the FAQ from.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The index to remove the FAQ from.</p>
@@ -2738,8 +2734,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the index to delete.</p>
@@ -2822,8 +2818,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to delete a group from.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to delete a group from.</p>
@@ -2839,8 +2835,8 @@ pub mod fluent_builders {
         /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
         /// these groups cannot access customer-related documents stored in Salesforce.
         /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The identifier of the data source you want to delete a group from.</p>
@@ -2859,8 +2855,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the group you want to delete.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group you want to delete.</p>
@@ -2883,8 +2879,8 @@ pub mod fluent_builders {
         /// <p>The default ordering ID is the current UNIX time in milliseconds that the
         /// action was received by Amazon Kendra.
         /// </p>
-        pub fn ordering_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.ordering_id(signature);
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
             self
         }
         /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
@@ -2973,8 +2969,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the you want to delete a block list from.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the you want to delete a block list from.</p>
@@ -2983,8 +2979,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the block list that needs to be deleted.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the block list that needs to be deleted.</p>
@@ -3054,8 +3050,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the thesaurus to delete.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the thesaurus to delete.</p>
@@ -3064,8 +3060,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to delete.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to delete.</p>
@@ -3134,8 +3130,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the data source to describe.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the data source to describe.</p>
@@ -3144,8 +3140,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
@@ -3217,8 +3213,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience you want to get information on.</p>
@@ -3228,8 +3224,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to get
         /// information on.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to get
@@ -3299,8 +3295,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the FAQ.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the FAQ.</p>
@@ -3309,8 +3305,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index that contains the FAQ.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the FAQ.</p>
@@ -3379,8 +3375,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the index to describe.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The name of the index to describe.</p>
@@ -3459,8 +3455,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the index required to check the processing of
         /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
         /// to their groups.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index required to check the processing of
@@ -3473,8 +3469,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the data source to check the processing of
         /// <code>PUT</code> and <code>DELETE</code> actions for mapping
         /// users to their groups.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The identifier of the data source to check the processing of
@@ -3490,8 +3486,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the group required to check the processing of
         /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
         /// to their groups.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group required to check the processing of
@@ -3567,8 +3563,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index for the block list.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for the block list.</p>
@@ -3577,8 +3573,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of the block list.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the block list.</p>
@@ -3653,8 +3649,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index you want to describe query suggestions
         /// settings for.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to describe query suggestions
@@ -3724,8 +3720,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the thesaurus to describe.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the thesaurus to describe.</p>
@@ -3734,8 +3730,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to describe.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to describe.</p>
@@ -3810,8 +3806,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -3820,8 +3816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -3911,8 +3907,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -3921,8 +3917,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -4013,8 +4009,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to get query suggestions from.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to get query suggestions from.</p>
@@ -4029,8 +4025,8 @@ pub mod fluent_builders {
         /// types fewer than two characters or more than 60 characters.
         /// A query must also have at least one search result and contain
         /// at least one word of more than four characters.</p>
-        pub fn query_text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_text(signature.into());
+        pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_text(input.into());
             self
         }
         /// <p>The text of a user's query to generate query suggestions.</p>
@@ -4046,8 +4042,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of query suggestions you want to show
         /// to your users.</p>
-        pub fn max_suggestions_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_suggestions_count(signature);
+        pub fn max_suggestions_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_suggestions_count(input);
             self
         }
         /// <p>The maximum number of query suggestions you want to show
@@ -4119,8 +4115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index to get search metrics data.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index to get search metrics data.</p>
@@ -4163,8 +4159,8 @@ pub mod fluent_builders {
         /// starting on the first day of the month and ending on last day of the month.</p>
         /// </li>
         /// </ul>
-        pub fn interval(mut self, signature: crate::model::Interval) -> Self {
-            self.inner = self.inner.interval(signature);
+        pub fn interval(mut self, input: crate::model::Interval) -> Self {
+            self.inner = self.inner.interval(input);
             self
         }
         /// <p>The time interval or time window to get search metrics data.
@@ -4211,8 +4207,8 @@ pub mod fluent_builders {
         /// <p>For more information about the metrics you can view, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-analytics.html">Gaining
         /// insights with search analytics</a>.</p>
-        pub fn metric_type(mut self, signature: crate::model::MetricType) -> Self {
-            self.inner = self.inner.metric_type(signature);
+        pub fn metric_type(mut self, input: crate::model::MetricType) -> Self {
+            self.inner = self.inner.metric_type(input);
             self
         }
         /// <p>The metric you want to retrieve. You
@@ -4231,8 +4227,8 @@ pub mod fluent_builders {
         /// is more data to retrieve), Amazon Kendra returns a pagination token in
         /// the response. You can use this pagination token to
         /// retrieve the next set of search metrics data.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there
@@ -4244,8 +4240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned data for the metric.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of returned data for the metric.</p>
@@ -4314,8 +4310,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index that contains the data source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
@@ -4327,8 +4323,8 @@ pub mod fluent_builders {
         /// retrieve), Amazon Kendra returns a pagination token in the response. You
         /// can use this pagination token to retrieve the next set of data sources
         /// (<code>DataSourceSummaryItems</code>). </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to
@@ -4340,8 +4336,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of data sources to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of data sources to return.</p>
@@ -4411,8 +4407,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the data source.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the data source.</p>
@@ -4421,8 +4417,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
@@ -4433,8 +4429,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
         /// to retrieve the next set of jobs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -4447,8 +4443,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of synchronization jobs to return in the response.
         /// If there are fewer results in the list, this response contains only the
         /// actual results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of synchronization jobs to return in the response.
@@ -4460,8 +4456,8 @@ pub mod fluent_builders {
         }
         /// <p>When specified, the synchronization jobs returned in the list are
         /// limited to jobs between the specified dates. </p>
-        pub fn start_time_filter(mut self, signature: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.start_time_filter(signature);
+        pub fn start_time_filter(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.start_time_filter(input);
             self
         }
         /// <p>When specified, the synchronization jobs returned in the list are
@@ -4475,8 +4471,8 @@ pub mod fluent_builders {
         }
         /// <p>When specified, only returns synchronization jobs with the
         /// <code>Status</code> field equal to the specified status.</p>
-        pub fn status_filter(mut self, signature: crate::model::DataSourceSyncJobStatus) -> Self {
-            self.inner = self.inner.status_filter(signature);
+        pub fn status_filter(mut self, input: crate::model::DataSourceSyncJobStatus) -> Self {
+            self.inner = self.inner.status_filter(input);
             self
         }
         /// <p>When specified, only returns synchronization jobs with the
@@ -4550,8 +4546,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -4560,8 +4556,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -4572,8 +4568,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of users or groups.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -4584,8 +4580,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned users or groups.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of returned users or groups.</p>
@@ -4658,8 +4654,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience.</p>
@@ -4668,8 +4664,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -4680,8 +4676,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of users or groups.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -4755,8 +4751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience.</p>
@@ -4767,8 +4763,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data
         /// to retrieve), Amazon Kendra returns a pagination token in the response. You can use this
         /// pagination token to retrieve the next set of Amazon Kendra experiences.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data
@@ -4779,8 +4775,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of returned Amazon Kendra experiences.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of returned Amazon Kendra experiences.</p>
@@ -4849,8 +4845,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The index that contains the FAQ lists.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The index that contains the FAQ lists.</p>
@@ -4861,8 +4857,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination token
         /// to retrieve the next set of FAQs.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -4874,8 +4870,8 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
         /// the list, this response contains only the actual results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of FAQs to return in the response. If there are fewer results in
@@ -4950,8 +4946,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index for getting a list of groups mapped
         /// to users before a given ordering or timestamp identifier.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for getting a list of groups mapped
@@ -4962,8 +4958,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the data source for getting a list of groups mapped
         /// to users before a given ordering timestamp identifier.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The identifier of the data source for getting a list of groups mapped
@@ -4977,8 +4973,8 @@ pub mod fluent_builders {
         }
         /// <p>The timestamp identifier used for the latest <code>PUT</code> or
         /// <code>DELETE</code> action for mapping users to their groups.</p>
-        pub fn ordering_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.ordering_id(signature);
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
             self
         }
         /// <p>The timestamp identifier used for the latest <code>PUT</code> or
@@ -4993,8 +4989,8 @@ pub mod fluent_builders {
         /// token to retrieve the next set of groups that are mapped to users before a
         /// given ordering or timestamp identifier.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>
@@ -5011,8 +5007,8 @@ pub mod fluent_builders {
         /// The maximum number of returned groups that are mapped to users before a
         /// given ordering or timestamp identifier.
         /// </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>
@@ -5087,8 +5083,8 @@ pub mod fluent_builders {
         /// retrieve), Amazon Kendra returns a pagination token in the response. You
         /// can use this pagination token to retrieve the next set of indexes
         /// (<code>DataSourceSummaryItems</code>). </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to
@@ -5100,8 +5096,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of data sources to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of data sources to return.</p>
@@ -5180,8 +5176,8 @@ pub mod fluent_builders {
         /// <p>For information on the current quota limits for block lists, see
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas
         /// for Amazon Kendra</a>.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for a list of all block lists that exist for
@@ -5196,8 +5192,8 @@ pub mod fluent_builders {
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
         /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -5208,8 +5204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of block lists to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of block lists to return.</p>
@@ -5280,8 +5276,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
         /// get a list of tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
@@ -5351,8 +5347,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index associated with the thesaurus to list.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to list.</p>
@@ -5364,8 +5360,8 @@ pub mod fluent_builders {
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination token to
         /// retrieve the next set of thesauri (<code>ThesaurusSummaryItems</code>).
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve),
@@ -5377,8 +5373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of thesauri to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of thesauri to return.</p>
@@ -5465,8 +5461,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to map users to their groups.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to map users to their groups.</p>
@@ -5481,8 +5477,8 @@ pub mod fluent_builders {
         /// documents stored in the data sources Confluence and Salesforce. However,
         /// "Sales and Marketing" team only needs access to customer-related documents
         /// stored in Salesforce.</p>
-        pub fn data_source_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_source_id(signature.into());
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input.into());
             self
         }
         /// <p>The identifier of the data source you want to map users to their groups.</p>
@@ -5500,8 +5496,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the group you want to map its users to.</p>
-        pub fn group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.group_id(signature.into());
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input.into());
             self
         }
         /// <p>The identifier of the group you want to map its users to.</p>
@@ -5518,8 +5514,8 @@ pub mod fluent_builders {
         /// sub groups for a group. Your sub groups can contain more than 1000 users,
         /// but the list of sub groups that belong to a group (and/or users) must be
         /// no more than 1000.</p>
-        pub fn group_members(mut self, signature: crate::model::GroupMembers) -> Self {
-            self.inner = self.inner.group_members(signature);
+        pub fn group_members(mut self, input: crate::model::GroupMembers) -> Self {
+            self.inner = self.inner.group_members(input);
             self
         }
         /// <p>The list that contains your users or sub groups that belong
@@ -5551,8 +5547,8 @@ pub mod fluent_builders {
         /// be processed.</p>
         /// <p>The default ordering ID is the current UNIX time in milliseconds that the
         /// action was received by Amazon Kendra.</p>
-        pub fn ordering_id(mut self, signature: i64) -> Self {
-            self.inner = self.inner.ordering_id(signature);
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
             self
         }
         /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
@@ -5575,8 +5571,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
         /// that contains your list of users or sub groups that belong to a group.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
@@ -5670,8 +5666,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the index to search. The identifier is
         /// returned in the response from the <code>CreateIndex</code>
         /// operation.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The unique identifier of the index to search. The identifier is
@@ -5682,8 +5678,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The text to search for.</p>
-        pub fn query_text(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_text(signature.into());
+        pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_text(input.into());
             self
         }
         /// <p>The text to search for.</p>
@@ -5698,8 +5694,8 @@ pub mod fluent_builders {
         /// <p>The <code>AttributeFilter</code> parameter enables you to create a
         /// set of filtering rules that a document must satisfy to be included in
         /// the query results.</p>
-        pub fn attribute_filter(mut self, signature: crate::model::AttributeFilter) -> Self {
-            self.inner = self.inner.attribute_filter(signature);
+        pub fn attribute_filter(mut self, input: crate::model::AttributeFilter) -> Self {
+            self.inner = self.inner.attribute_filter(input);
             self
         }
         /// <p>Enables filtered searches based on document attributes. You can only
@@ -5763,11 +5759,8 @@ pub mod fluent_builders {
         }
         /// <p>Sets the type of query. Only results for the specified query type
         /// are returned.</p>
-        pub fn query_result_type_filter(
-            mut self,
-            signature: crate::model::QueryResultType,
-        ) -> Self {
-            self.inner = self.inner.query_result_type_filter(signature);
+        pub fn query_result_type_filter(mut self, input: crate::model::QueryResultType) -> Self {
+            self.inner = self.inner.query_result_type_filter(input);
             self
         }
         /// <p>Sets the type of query. Only results for the specified query type
@@ -5819,8 +5812,8 @@ pub mod fluent_builders {
         /// <code>PageSize</code> parameter. By default, Amazon Kendra returns
         /// the first page of results. Use this parameter to get result pages after
         /// the first one.</p>
-        pub fn page_number(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_number(signature);
+        pub fn page_number(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_number(input);
             self
         }
         /// <p>Query results are returned in pages the size of the
@@ -5835,8 +5828,8 @@ pub mod fluent_builders {
         /// results. The default page size is 10. The maximum number of results
         /// returned is 100. If you ask for more than 100 results, only 100 are
         /// returned.</p>
-        pub fn page_size(mut self, signature: i32) -> Self {
-            self.inner = self.inner.page_size(signature);
+        pub fn page_size(mut self, input: i32) -> Self {
+            self.inner = self.inner.page_size(input);
             self
         }
         /// <p>Sets the number of results that are returned in each page of
@@ -5854,11 +5847,8 @@ pub mod fluent_builders {
         /// results are sorted by relevance.</p>
         /// <p>If you don't provide sorting configuration, the results are sorted
         /// by the relevance that Amazon Kendra determines for the result.</p>
-        pub fn sorting_configuration(
-            mut self,
-            signature: crate::model::SortingConfiguration,
-        ) -> Self {
-            self.inner = self.inner.sorting_configuration(signature);
+        pub fn sorting_configuration(mut self, input: crate::model::SortingConfiguration) -> Self {
+            self.inner = self.inner.sorting_configuration(input);
             self
         }
         /// <p>Provides information that determines how the results of the query
@@ -5876,8 +5866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user context token or user and group information.</p>
-        pub fn user_context(mut self, signature: crate::model::UserContext) -> Self {
-            self.inner = self.inner.user_context(signature);
+        pub fn user_context(mut self, input: crate::model::UserContext) -> Self {
+            self.inner = self.inner.user_context(input);
             self
         }
         /// <p>The user context token or user and group information.</p>
@@ -5892,8 +5882,8 @@ pub mod fluent_builders {
         /// <code>VisitorId</code> should be a unique identifier, such as a
         /// GUID. Don't use personally identifiable information, such as the user's
         /// email address, as the <code>VisitorId</code>.</p>
-        pub fn visitor_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.visitor_id(signature.into());
+        pub fn visitor_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.visitor_id(input.into());
             self
         }
         /// <p>Provides an identifier for a specific user. The
@@ -5967,8 +5957,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the data source to synchronize.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the data source to synchronize.</p>
@@ -5977,8 +5967,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
@@ -6049,8 +6039,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the data source for which to stop the
         /// synchronization jobs.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the data source for which to stop the
@@ -6060,8 +6050,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source.</p>
@@ -6134,8 +6124,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index that was queried.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that was queried.</p>
@@ -6146,8 +6136,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the specific query for which you are submitting
         /// feedback. The query ID is returned in the response to the
         /// <code>Query</code> operation.</p>
-        pub fn query_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.query_id(signature.into());
+        pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.query_id(input.into());
             self
         }
         /// <p>The identifier of the specific query for which you are submitting
@@ -6259,8 +6249,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
         /// tag.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
@@ -6350,8 +6340,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
         /// remove the tag from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the index, FAQ, or data source to
@@ -6440,8 +6430,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the data source to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of the data source to update.</p>
@@ -6452,8 +6442,8 @@ pub mod fluent_builders {
         /// <p>The name of the data source to update. The name of the data source
         /// can't be updated. To rename a data source you must delete the data source
         /// and re-create it.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the data source to update. The name of the data source
@@ -6465,8 +6455,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the index that contains the data source to
         /// update.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index that contains the data source to
@@ -6476,8 +6466,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Configuration information for an Amazon Kendra data source.</p>
-        pub fn configuration(mut self, signature: crate::model::DataSourceConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::DataSourceConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Configuration information for an Amazon Kendra data source.</p>
@@ -6489,8 +6479,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new description for the data source.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The new description for the data source.</p>
@@ -6499,8 +6489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new update schedule for the data source.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The new update schedule for the data source.</p>
@@ -6510,8 +6500,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
         /// source is accessing resources on your behalf.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the new role to use when the data
@@ -6525,8 +6515,8 @@ pub mod fluent_builders {
         /// by default. For more information on supported languages, including their codes,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-adding-languages.html">Adding
         /// documents in languages other than English</a>.</p>
-        pub fn language_code(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.language_code(signature.into());
+        pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.language_code(input.into());
             self
         }
         /// <p>The code for a language. This allows you to support a language for all
@@ -6549,11 +6539,9 @@ pub mod fluent_builders {
         /// document metadata during the ingestion process</a>.</p>
         pub fn custom_document_enrichment_configuration(
             mut self,
-            signature: crate::model::CustomDocumentEnrichmentConfiguration,
+            input: crate::model::CustomDocumentEnrichmentConfiguration,
         ) -> Self {
-            self.inner = self
-                .inner
-                .custom_document_enrichment_configuration(signature);
+            self.inner = self.inner.custom_document_enrichment_configuration(input);
             self
         }
         /// <p>Configuration information for altering document metadata and content during the
@@ -6634,8 +6622,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of your Amazon Kendra experience you want to update.</p>
@@ -6644,8 +6632,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of your Amazon Kendra experience you want to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of your Amazon Kendra experience you want to update.</p>
@@ -6654,8 +6642,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for your Amazon Kendra experience you want to update.</p>
@@ -6667,8 +6655,8 @@ pub mod fluent_builders {
         /// operations, <code>QuerySuggestions</code> operations, <code>SubmitFeedback</code>
         /// operations, and Amazon Web Services SSO that stores your user and group information.
         /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
@@ -6681,8 +6669,8 @@ pub mod fluent_builders {
         }
         /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
         /// field name that contains the identifiers of your users, such as their emails.</p>
-        pub fn configuration(mut self, signature: crate::model::ExperienceConfiguration) -> Self {
-            self.inner = self.inner.configuration(signature);
+        pub fn configuration(mut self, input: crate::model::ExperienceConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
             self
         }
         /// <p>Provides the user configuration information. This includes the Amazon Web Services SSO
@@ -6695,8 +6683,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of your Amazon Kendra experience you want to update.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description of your Amazon Kendra experience you want to update.</p>
@@ -6765,8 +6753,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the index to update.</p>
@@ -6775,8 +6763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the index to update.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the index to update.</p>
@@ -6786,8 +6774,8 @@ pub mod fluent_builders {
         }
         /// <p>A new IAM role that gives Amazon Kendra permission to access your
         /// Amazon CloudWatch logs.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>A new IAM role that gives Amazon Kendra permission to access your
@@ -6797,8 +6785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A new description for the index.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A new description for the index.</p>
@@ -6834,11 +6822,8 @@ pub mod fluent_builders {
         /// <p>If you are using extra storage units, you can't reduce the storage
         /// capacity below that required to meet the storage needs for your
         /// index.</p>
-        pub fn capacity_units(
-            mut self,
-            signature: crate::model::CapacityUnitsConfiguration,
-        ) -> Self {
-            self.inner = self.inner.capacity_units(signature);
+        pub fn capacity_units(mut self, input: crate::model::CapacityUnitsConfiguration) -> Self {
+            self.inner = self.inner.capacity_units(input);
             self
         }
         /// <p>Sets the number of additional storage and query capacity units that
@@ -6875,8 +6860,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The user context policy.</p>
-        pub fn user_context_policy(mut self, signature: crate::model::UserContextPolicy) -> Self {
-            self.inner = self.inner.user_context_policy(signature);
+        pub fn user_context_policy(mut self, input: crate::model::UserContextPolicy) -> Self {
+            self.inner = self.inner.user_context_policy(input);
             self
         }
         /// <p>The user context policy.</p>
@@ -6892,9 +6877,9 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
         pub fn user_group_resolution_configuration(
             mut self,
-            signature: crate::model::UserGroupResolutionConfiguration,
+            input: crate::model::UserGroupResolutionConfiguration,
         ) -> Self {
-            self.inner = self.inner.user_group_resolution_configuration(signature);
+            self.inner = self.inner.user_group_resolution_configuration(input);
             self
         }
         /// <p>Enables fetching access levels of groups and users from an Amazon Web Services Single Sign On
@@ -6978,8 +6963,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index for a block list.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index for a block list.</p>
@@ -6988,8 +6973,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The unique identifier of a block list.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The unique identifier of a block list.</p>
@@ -6998,8 +6983,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of a block list.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of a block list.</p>
@@ -7008,8 +6993,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description for a block list.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The description for a block list.</p>
@@ -7026,8 +7011,8 @@ pub mod fluent_builders {
         /// <p>If you update your block list, then Amazon Kendra asynchronously refreshes
         /// all query suggestions with the latest content in the S3 file. This
         /// means changes might not take effect immediately.</p>
-        pub fn source_s3_path(mut self, signature: crate::model::S3Path) -> Self {
-            self.inner = self.inner.source_s3_path(signature);
+        pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.inner = self.inner.source_s3_path(input);
             self
         }
         /// <p>The S3 path where your block list text file sits in S3.</p>
@@ -7048,8 +7033,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM (Identity and Access Management) role used to access the
         /// block list text file in S3.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The IAM (Identity and Access Management) role used to access the
@@ -7130,8 +7115,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the index you want to update query suggestions settings for.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index you want to update query suggestions settings for.</p>
@@ -7146,8 +7131,8 @@ pub mod fluent_builders {
         /// <p>In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new
         /// queries to keep suggestions up to date for when you are ready to
         /// switch to ENABLED mode again.</p>
-        pub fn mode(mut self, signature: crate::model::Mode) -> Self {
-            self.inner = self.inner.mode(signature);
+        pub fn mode(mut self, input: crate::model::Mode) -> Self {
+            self.inner = self.inner.mode(input);
             self
         }
         /// <p>Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.</p>
@@ -7164,8 +7149,8 @@ pub mod fluent_builders {
         /// <p>How recent your queries are in your query log time window.</p>
         /// <p>The time window is the number of days from current day to past days.</p>
         /// <p>By default, Amazon Kendra sets this to 180.</p>
-        pub fn query_log_look_back_window_in_days(mut self, signature: i32) -> Self {
-            self.inner = self.inner.query_log_look_back_window_in_days(signature);
+        pub fn query_log_look_back_window_in_days(mut self, input: i32) -> Self {
+            self.inner = self.inner.query_log_look_back_window_in_days(input);
             self
         }
         /// <p>How recent your queries are in your query log time window.</p>
@@ -7190,10 +7175,8 @@ pub mod fluent_builders {
         /// unique users for suggestions.</p>
         /// <p>If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
         /// from all queries.</p>
-        pub fn include_queries_without_user_information(mut self, signature: bool) -> Self {
-            self.inner = self
-                .inner
-                .include_queries_without_user_information(signature);
+        pub fn include_queries_without_user_information(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_queries_without_user_information(input);
             self
         }
         /// <p>
@@ -7222,8 +7205,8 @@ pub mod fluent_builders {
         /// <p>Increasing this number might decrease the number of suggestions. However, this
         /// ensures a query is searched by many users and is truly popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
-        pub fn minimum_number_of_querying_users(mut self, signature: i32) -> Self {
-            self.inner = self.inner.minimum_number_of_querying_users(signature);
+        pub fn minimum_number_of_querying_users(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_number_of_querying_users(input);
             self
         }
         /// <p>The minimum number of unique users who must search a query in order for the query
@@ -7244,8 +7227,8 @@ pub mod fluent_builders {
         /// affects the quality of suggestions as it sets a low bar for a query to be
         /// considered popular to suggest to users.</p>
         /// <p>How you tune this setting depends on your specific needs.</p>
-        pub fn minimum_query_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.minimum_query_count(signature);
+        pub fn minimum_query_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.minimum_query_count(input);
             self
         }
         /// <p>The the minimum number of times a query must be searched in order to be
@@ -7319,8 +7302,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the thesaurus to update.</p>
-        pub fn id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.id(signature.into());
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input.into());
             self
         }
         /// <p>The identifier of the thesaurus to update.</p>
@@ -7329,8 +7312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated name of the thesaurus.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The updated name of the thesaurus.</p>
@@ -7339,8 +7322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to update.</p>
-        pub fn index_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.index_id(signature.into());
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input.into());
             self
         }
         /// <p>The identifier of the index associated with the thesaurus to update.</p>
@@ -7349,8 +7332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated description of the thesaurus.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>The updated description of the thesaurus.</p>
@@ -7359,8 +7342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The updated role ARN of the thesaurus.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The updated role ARN of the thesaurus.</p>
@@ -7370,8 +7353,8 @@ pub mod fluent_builders {
         }
         /// <p>Information required to find a specific file in an Amazon S3
         /// bucket.</p>
-        pub fn source_s3_path(mut self, signature: crate::model::S3Path) -> Self {
-            self.inner = self.inner.source_s3_path(signature);
+        pub fn source_s3_path(mut self, input: crate::model::S3Path) -> Self {
+            self.inner = self.inner.source_s3_path(input);
             self
         }
         /// <p>Information required to find a specific file in an Amazon S3

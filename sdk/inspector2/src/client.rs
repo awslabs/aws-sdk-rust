@@ -374,8 +374,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to be associated.</p>
@@ -444,8 +444,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-        pub fn account_ids(mut self, signature: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(signature);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
@@ -594,8 +594,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the report to be canceled.</p>
-        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(signature.into());
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>The ID of the report to be canceled.</p>
@@ -664,8 +664,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, signature: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
@@ -677,8 +677,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the filter.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the filter.</p>
@@ -687,8 +687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Defines the criteria to be used in the filter for querying findings.</p>
@@ -702,8 +702,8 @@ pub mod fluent_builders {
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
         /// include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not
         /// allowed.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters
@@ -797,8 +797,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The filter criteria to apply to the results of the finding report.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>The filter criteria to apply to the results of the finding report.</p>
@@ -810,8 +810,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The format to generate the report in.</p>
-        pub fn report_format(mut self, signature: crate::model::ReportFormat) -> Self {
-            self.inner = self.inner.report_format(signature);
+        pub fn report_format(mut self, input: crate::model::ReportFormat) -> Self {
+            self.inner = self.inner.report_format(input);
             self
         }
         /// <p>The format to generate the report in.</p>
@@ -823,8 +823,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon S3 export destination for the report.</p>
-        pub fn s3_destination(mut self, signature: crate::model::Destination) -> Self {
-            self.inner = self.inner.s3_destination(signature);
+        pub fn s3_destination(mut self, input: crate::model::Destination) -> Self {
+            self.inner = self.inner.s3_destination(input);
             self
         }
         /// <p>The Amazon S3 export destination for the report.</p>
@@ -896,8 +896,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
-        pub fn arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.arn(signature.into());
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to be deleted.</p>
@@ -1027,8 +1027,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, signature: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(signature);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
@@ -1117,11 +1117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
-        pub fn delegated_admin_account_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.delegated_admin_account_id(signature.into());
+        pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.</p>
@@ -1193,8 +1190,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to disassociate.</p>
@@ -1263,8 +1260,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
-        pub fn account_ids(mut self, signature: std::vec::Vec<std::string::String>) -> Self {
-            self.inner = self.inner.account_ids(signature);
+        pub fn account_ids(mut self, input: std::vec::Vec<std::string::String>) -> Self {
+            self.inner = self.inner.account_ids(input);
             self
         }
         /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
@@ -1293,8 +1290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1363,11 +1360,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
-        pub fn delegated_admin_account_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.delegated_admin_account_id(signature.into());
+        pub fn delegated_admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.delegated_admin_account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the Amazon Inspector delegated administrator.</p>
@@ -1379,8 +1373,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The idempotency token for the request.</p>
-        pub fn client_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_token(signature.into());
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input.into());
             self
         }
         /// <p>The idempotency token for the request.</p>
@@ -1510,8 +1504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the report to retrieve the status of.</p>
-        pub fn report_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.report_id(signature.into());
+        pub fn report_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.report_id(input.into());
             self
         }
         /// <p>The ID of the report to retrieve the status of.</p>
@@ -1580,8 +1574,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
@@ -1650,8 +1644,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The service scan type to check permissions for.</p>
-        pub fn service(mut self, signature: crate::model::Service) -> Self {
-            self.inner = self.inner.service(signature);
+        pub fn service(mut self, input: crate::model::Service) -> Self {
+            self.inner = self.inner.service(input);
             self
         }
         /// <p>The service scan type to check permissions for.</p>
@@ -1660,8 +1654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1673,8 +1667,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -1746,8 +1740,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1759,8 +1753,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -1773,8 +1767,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that contains details on the filters to apply to the coverage data for your
         /// environment.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::CoverageFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>An object that contains details on the filters to apply to the coverage data for your
@@ -1848,8 +1842,8 @@ pub mod fluent_builders {
         }
         /// <p>An object that contains details on the filters to apply to the coverage data for your
         /// environment.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::CoverageFilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::CoverageFilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>An object that contains details on the filters to apply to the coverage data for your
@@ -1862,8 +1856,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value to group the results by.</p>
-        pub fn group_by(mut self, signature: crate::model::GroupKey) -> Self {
-            self.inner = self.inner.group_by(signature);
+        pub fn group_by(mut self, input: crate::model::GroupKey) -> Self {
+            self.inner = self.inner.group_by(input);
             self
         }
         /// <p>The value to group the results by.</p>
@@ -1875,8 +1869,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -1949,8 +1943,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -1962,8 +1956,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2052,8 +2046,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The action the filter applies to matched findings.</p>
-        pub fn action(mut self, signature: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>The action the filter applies to matched findings.</p>
@@ -2068,8 +2062,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2081,8 +2075,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2151,8 +2145,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The type of the aggregation request.</p>
-        pub fn aggregation_type(mut self, signature: crate::model::AggregationType) -> Self {
-            self.inner = self.inner.aggregation_type(signature);
+        pub fn aggregation_type(mut self, input: crate::model::AggregationType) -> Self {
+            self.inner = self.inner.aggregation_type(input);
             self
         }
         /// <p>The type of the aggregation request.</p>
@@ -2167,8 +2161,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2180,8 +2174,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2207,8 +2201,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
-        pub fn aggregation_request(mut self, signature: crate::model::AggregationRequest) -> Self {
-            self.inner = self.inner.aggregation_request(signature);
+        pub fn aggregation_request(mut self, input: crate::model::AggregationRequest) -> Self {
+            self.inner = self.inner.aggregation_request(input);
             self
         }
         /// <p>Details of the aggregation request that is used to filter your aggregation results.</p>
@@ -2280,8 +2274,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2293,8 +2287,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2306,8 +2300,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details on the filters to apply to your finding results.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Details on the filters to apply to your finding results.</p>
@@ -2319,8 +2313,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Details on the sort criteria to apply to your finding results.</p>
-        pub fn sort_criteria(mut self, signature: crate::model::SortCriteria) -> Self {
-            self.inner = self.inner.sort_criteria(signature);
+        pub fn sort_criteria(mut self, input: crate::model::SortCriteria) -> Self {
+            self.inner = self.inner.sort_criteria(input);
             self
         }
         /// <p>Details on the sort criteria to apply to your finding results.</p>
@@ -2394,8 +2388,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
         /// list all members within the organization if <code>False</code>.</p>
-        pub fn only_associated(mut self, signature: bool) -> Self {
-            self.inner = self.inner.only_associated(signature);
+        pub fn only_associated(mut self, input: bool) -> Self {
+            self.inner = self.inner.only_associated(input);
             self
         }
         /// <p>Specifies whether to list only currently associated members if <code>True</code> or to
@@ -2405,8 +2399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2418,8 +2412,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2491,8 +2485,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon resource number (ARN) of the resource to list tags of.</p>
@@ -2561,8 +2555,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return in the response.</p>
@@ -2574,8 +2568,8 @@ pub mod fluent_builders {
         /// of this parameter to null for the first request to a list action. For subsequent calls, use
         /// the <code>NextToken</code> value returned from the previous request to continue listing
         /// results after the first page.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to use for paginating results that are returned in the response. Set the value
@@ -2664,8 +2658,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to apply a tag to.</p>
@@ -2757,8 +2751,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the resource to remove tags from.</p>
@@ -2844,8 +2838,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-        pub fn action(mut self, signature: crate::model::FilterAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::FilterAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
@@ -2857,8 +2851,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the filter.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the filter.</p>
@@ -2867,8 +2861,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Defines the criteria to be update in the filter.</p>
-        pub fn filter_criteria(mut self, signature: crate::model::FilterCriteria) -> Self {
-            self.inner = self.inner.filter_criteria(signature);
+        pub fn filter_criteria(mut self, input: crate::model::FilterCriteria) -> Self {
+            self.inner = self.inner.filter_criteria(input);
             self
         }
         /// <p>Defines the criteria to be update in the filter.</p>
@@ -2880,8 +2874,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the filter.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>The name of the filter.</p>
@@ -2890,8 +2884,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-        pub fn filter_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.filter_arn(signature.into());
+        pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.filter_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
@@ -2960,8 +2954,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>
-        pub fn auto_enable(mut self, signature: crate::model::AutoEnable) -> Self {
-            self.inner = self.inner.auto_enable(signature);
+        pub fn auto_enable(mut self, input: crate::model::AutoEnable) -> Self {
+            self.inner = self.inner.auto_enable(input);
             self
         }
         /// <p>Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.</p>

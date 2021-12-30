@@ -411,8 +411,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The name for an Amplify app. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name for an Amplify app. </p>
@@ -421,8 +421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for an Amplify app. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for an Amplify app. </p>
@@ -431,8 +431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The repository for an Amplify app. </p>
-        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(signature.into());
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The repository for an Amplify app. </p>
@@ -441,8 +441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The platform or framework for an Amplify app. </p>
-        pub fn platform(mut self, signature: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(signature);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p> The platform or framework for an Amplify app. </p>
@@ -451,8 +451,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn iam_service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_service_role_arn(signature.into());
+        pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_service_role_arn(input.into());
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -466,8 +466,8 @@ pub mod fluent_builders {
         /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
         /// token is used to create a webhook and a read-only deploy key. The OAuth token is not
         /// stored. </p>
-        pub fn oauth_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.oauth_token(signature.into());
+        pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.oauth_token(input.into());
             self
         }
         /// <p> The OAuth token for a third-party source control system for an Amplify app. The OAuth
@@ -480,8 +480,8 @@ pub mod fluent_builders {
         /// <p> The personal access token for a third-party source control system for an Amplify app.
         /// The personal access token is used to create a webhook and a read-only deploy key. The
         /// token is not stored. </p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p> The personal access token for a third-party source control system for an Amplify app.
@@ -515,8 +515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
-        pub fn enable_branch_auto_build(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_build(signature);
+        pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_build(input);
             self
         }
         /// <p> Enables the auto building of branches for an Amplify app. </p>
@@ -526,8 +526,8 @@ pub mod fluent_builders {
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
         /// from your Git repository. </p>
-        pub fn enable_branch_auto_deletion(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_deletion(signature);
+        pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
@@ -538,8 +538,8 @@ pub mod fluent_builders {
         }
         /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
         /// are part of this app. </p>
-        pub fn enable_basic_auth(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(signature);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for an Amplify app. This will apply to all branches that
@@ -549,8 +549,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The credentials for basic authorization for an Amplify app. </p>
-        pub fn basic_auth_credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(signature.into());
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The credentials for basic authorization for an Amplify app. </p>
@@ -602,8 +602,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
-        pub fn build_spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(signature.into());
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -612,8 +612,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn custom_headers(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_headers(signature.into());
+        pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_headers(input.into());
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
@@ -625,8 +625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
-        pub fn enable_auto_branch_creation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_branch_creation(signature);
+        pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_branch_creation(input);
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -657,9 +657,9 @@ pub mod fluent_builders {
         /// <p> The automated branch creation configuration for an Amplify app. </p>
         pub fn auto_branch_creation_config(
             mut self,
-            signature: crate::model::AutoBranchCreationConfig,
+            input: crate::model::AutoBranchCreationConfig,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_config(signature);
+            self.inner = self.inner.auto_branch_creation_config(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
@@ -731,8 +731,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -741,8 +741,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name for the backend environment. </p>
@@ -754,8 +754,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
-        pub fn stack_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.stack_name(signature.into());
+        pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.stack_name(input.into());
             self
         }
         /// <p> The AWS CloudFormation stack name of a backend environment. </p>
@@ -764,8 +764,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of deployment artifacts. </p>
-        pub fn deployment_artifacts(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.deployment_artifacts(signature.into());
+        pub fn deployment_artifacts(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.deployment_artifacts(input.into());
             self
         }
         /// <p> The name of deployment artifacts. </p>
@@ -837,8 +837,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -847,8 +847,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -857,8 +857,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for the branch. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for the branch. </p>
@@ -867,8 +867,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Describes the current stage for the branch. </p>
-        pub fn stage(mut self, signature: crate::model::Stage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::Stage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p> Describes the current stage for the branch. </p>
@@ -877,8 +877,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The framework for the branch. </p>
-        pub fn framework(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework(signature.into());
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework(input.into());
             self
         }
         /// <p> The framework for the branch. </p>
@@ -887,8 +887,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables notifications for the branch. </p>
-        pub fn enable_notification(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_notification(signature);
+        pub fn enable_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_notification(input);
             self
         }
         /// <p> Enables notifications for the branch. </p>
@@ -897,8 +897,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables auto building for the branch. </p>
-        pub fn enable_auto_build(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_build(signature);
+        pub fn enable_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_build(input);
             self
         }
         /// <p> Enables auto building for the branch. </p>
@@ -930,8 +930,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
-        pub fn basic_auth_credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(signature.into());
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
@@ -943,8 +943,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
-        pub fn enable_basic_auth(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(signature);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
@@ -954,8 +954,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables performance mode for the branch.</p>
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-        pub fn enable_performance_mode(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_mode(signature);
+        pub fn enable_performance_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_mode(input);
             self
         }
         /// <p>Enables performance mode for the branch.</p>
@@ -988,8 +988,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
-        pub fn build_spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(signature.into());
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
@@ -998,8 +998,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
-        pub fn ttl(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ttl(signature.into());
+        pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ttl(input.into());
             self
         }
         /// <p> The content Time To Live (TTL) for the website in seconds. </p>
@@ -1008,8 +1008,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
@@ -1018,8 +1018,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
-        pub fn enable_pull_request_preview(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_pull_request_preview(signature);
+        pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_pull_request_preview(input);
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
@@ -1030,9 +1030,9 @@ pub mod fluent_builders {
         /// <p> The Amplify environment name for the pull request. </p>
         pub fn pull_request_environment_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pull_request_environment_name(signature.into());
+            self.inner = self.inner.pull_request_environment_name(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
@@ -1045,11 +1045,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
         /// app. </p>
-        pub fn backend_environment_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.backend_environment_arn(signature.into());
+        pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
@@ -1123,8 +1120,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1133,8 +1130,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -1233,8 +1230,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1243,8 +1240,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The domain name for the domain association. </p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The domain name for the domain association. </p>
@@ -1253,8 +1250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
-        pub fn enable_auto_sub_domain(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_sub_domain(signature);
+        pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_sub_domain(input);
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -1301,11 +1298,8 @@ pub mod fluent_builders {
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
         /// Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn auto_sub_domain_iam_role(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.auto_sub_domain_iam_role(signature.into());
+        pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
@@ -1378,8 +1372,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1388,8 +1382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
@@ -1398,8 +1392,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for a webhook. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for a webhook. </p>
@@ -1468,8 +1462,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1538,8 +1532,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID of an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID of an Amplify app. </p>
@@ -1548,8 +1542,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name of a backend environment of an Amplify app. </p>
@@ -1621,8 +1615,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1631,8 +1625,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -1701,8 +1695,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -1711,8 +1705,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -1781,8 +1775,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -1791,8 +1785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -1801,8 +1795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for the job. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for the job. </p>
@@ -1871,8 +1865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(signature.into());
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -1943,8 +1937,8 @@ pub mod fluent_builders {
         }
         /// <p> The time at which the logs should start. The time range specified is inclusive of the
         /// start time. </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p> The time at which the logs should start. The time range specified is inclusive of the
@@ -1958,8 +1952,8 @@ pub mod fluent_builders {
         }
         /// <p> The time at which the logs should end. The time range specified is inclusive of the
         /// end time. </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p> The time at which the logs should end. The time range specified is inclusive of the
@@ -1972,8 +1966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -1982,8 +1976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2052,8 +2046,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2122,8 +2116,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an artifact. </p>
-        pub fn artifact_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.artifact_id(signature.into());
+        pub fn artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.artifact_id(input.into());
             self
         }
         /// <p> The unique ID for an artifact. </p>
@@ -2192,8 +2186,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -2202,8 +2196,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the backend environment. </p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name for the backend environment. </p>
@@ -2275,8 +2269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2285,8 +2279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -2355,8 +2349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique id for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique id for an Amplify app. </p>
@@ -2365,8 +2359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -2435,8 +2429,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2445,8 +2439,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The branch name for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The branch name for the job. </p>
@@ -2455,8 +2449,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for the job. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for the job. </p>
@@ -2525,8 +2519,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(signature.into());
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -2596,8 +2590,8 @@ pub mod fluent_builders {
         }
         /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
         /// its value in another request to retrieve more entries. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass
@@ -2607,8 +2601,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2677,8 +2671,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2687,8 +2681,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name of a branch that is part of an Amplify app. </p>
@@ -2697,8 +2691,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique ID for a job. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for a job. </p>
@@ -2709,8 +2703,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
         /// pagination token is returned in a result, pass its value in here to list more artifacts.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing artifacts from start. If a non-null
@@ -2721,8 +2715,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2791,8 +2785,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2801,8 +2795,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the backend environment </p>
-        pub fn environment_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.environment_name(signature.into());
+        pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.environment_name(input.into());
             self
         }
         /// <p> The name of the backend environment </p>
@@ -2816,8 +2810,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing backend environments from the start.
         /// If a non-null pagination token is returned in a result, pass its value in here to list
         /// more backend environments. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing backend environments from the start.
@@ -2828,8 +2822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2898,8 +2892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -2910,8 +2904,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing branches from the start. If a
         /// non-null pagination token is returned in a result, pass its value in here to list more
         /// branches. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing branches from the start. If a
@@ -2922,8 +2916,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -2992,8 +2986,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3004,8 +2998,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
         /// pagination token is returned in a result. Pass its value in here to list more projects.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing apps from the start. If non-null, a
@@ -3016,8 +3010,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3086,8 +3080,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3096,8 +3090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch. </p>
@@ -3108,8 +3102,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
         /// pagination token is returned in a result, pass its value in here to list more steps.
         /// </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing steps from the start. If a non-null
@@ -3120,8 +3114,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3190,8 +3184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to list tags. </p>
@@ -3260,8 +3254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3272,8 +3266,8 @@ pub mod fluent_builders {
         /// <p> A pagination token. Set to null to start listing webhooks from the start. If
         /// non-null,the pagination token is returned in a result. Pass its value in here to list
         /// more webhooks. </p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p> A pagination token. Set to null to start listing webhooks from the start. If
@@ -3284,8 +3278,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p> The maximum number of records to list in a single response. </p>
@@ -3355,8 +3349,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3365,8 +3359,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -3375,8 +3369,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The job ID for this deployment, generated by the create deployment request. </p>
@@ -3387,8 +3381,8 @@ pub mod fluent_builders {
         /// <p> The source URL for this deployment, used when calling start deployment without create
         /// deployment. The source URL can be any HTTP GET URL that is publicly accessible and
         /// downloads a single .zip file. </p>
-        pub fn source_url(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_url(signature.into());
+        pub fn source_url(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_url(input.into());
             self
         }
         /// <p> The source URL for this deployment, used when calling start deployment without create
@@ -3459,8 +3453,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3469,8 +3463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The branch name for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The branch name for the job. </p>
@@ -3480,8 +3474,8 @@ pub mod fluent_builders {
         }
         /// <p> The unique ID for an existing job. This is required if the value of
         /// <code>jobType</code> is <code>RETRY</code>. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique ID for an existing job. This is required if the value of
@@ -3495,8 +3489,8 @@ pub mod fluent_builders {
         /// that are connected to a repository. The job type <code>RETRY</code> retries an existing
         /// job. If the job type value is <code>RETRY</code>, the <code>jobId</code> is also
         /// required. </p>
-        pub fn job_type(mut self, signature: crate::model::JobType) -> Self {
-            self.inner = self.inner.job_type(signature);
+        pub fn job_type(mut self, input: crate::model::JobType) -> Self {
+            self.inner = self.inner.job_type(input);
             self
         }
         /// <p> Describes the type for the job. The job type <code>RELEASE</code> starts a new job
@@ -3509,8 +3503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> A descriptive reason for starting this job. </p>
-        pub fn job_reason(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_reason(signature.into());
+        pub fn job_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_reason(input.into());
             self
         }
         /// <p> A descriptive reason for starting this job. </p>
@@ -3519,8 +3513,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
-        pub fn commit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_id(signature.into());
+        pub fn commit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_id(input.into());
             self
         }
         /// <p> The commit ID from a third-party repository provider for the job. </p>
@@ -3529,8 +3523,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
-        pub fn commit_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.commit_message(signature.into());
+        pub fn commit_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.commit_message(input.into());
             self
         }
         /// <p> The commit message from a third-party repository provider for the job. </p>
@@ -3542,8 +3536,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The commit date and time for the job. </p>
-        pub fn commit_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.commit_time(signature);
+        pub fn commit_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.commit_time(input);
             self
         }
         /// <p> The commit date and time for the job. </p>
@@ -3615,8 +3609,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3625,8 +3619,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch, for the job. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch, for the job. </p>
@@ -3635,8 +3629,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The unique id for the job. </p>
-        pub fn job_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.job_id(signature.into());
+        pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_id(input.into());
             self
         }
         /// <p> The unique id for the job. </p>
@@ -3705,8 +3699,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to tag a resource. </p>
@@ -3798,8 +3792,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) to use to untag a resource. </p>
@@ -3885,8 +3879,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -3895,8 +3889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for an Amplify app. </p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p> The name for an Amplify app. </p>
@@ -3905,8 +3899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for an Amplify app. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for an Amplify app. </p>
@@ -3915,8 +3909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The platform for an Amplify app. </p>
-        pub fn platform(mut self, signature: crate::model::Platform) -> Self {
-            self.inner = self.inner.platform(signature);
+        pub fn platform(mut self, input: crate::model::Platform) -> Self {
+            self.inner = self.inner.platform(input);
             self
         }
         /// <p> The platform for an Amplify app. </p>
@@ -3925,8 +3919,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-        pub fn iam_service_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_service_role_arn(signature.into());
+        pub fn iam_service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_service_role_arn(input.into());
             self
         }
         /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
@@ -3961,8 +3955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
-        pub fn enable_branch_auto_build(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_build(signature);
+        pub fn enable_branch_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_build(input);
             self
         }
         /// <p> Enables branch auto-building for an Amplify app. </p>
@@ -3972,8 +3966,8 @@ pub mod fluent_builders {
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
         /// from your Git repository. </p>
-        pub fn enable_branch_auto_deletion(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_branch_auto_deletion(signature);
+        pub fn enable_branch_auto_deletion(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_branch_auto_deletion(input);
             self
         }
         /// <p> Automatically disconnects a branch in the Amplify Console when you delete a branch
@@ -3983,8 +3977,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
-        pub fn enable_basic_auth(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(signature);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for an Amplify app. </p>
@@ -3993,8 +3987,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for an Amplify app. </p>
-        pub fn basic_auth_credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(signature.into());
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for an Amplify app. </p>
@@ -4023,8 +4017,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
-        pub fn build_spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(signature.into());
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for an Amplify app. </p>
@@ -4033,8 +4027,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
-        pub fn custom_headers(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.custom_headers(signature.into());
+        pub fn custom_headers(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.custom_headers(input.into());
             self
         }
         /// <p>The custom HTTP headers for an Amplify app.</p>
@@ -4046,8 +4040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
-        pub fn enable_auto_branch_creation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_branch_creation(signature);
+        pub fn enable_auto_branch_creation(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_branch_creation(input);
             self
         }
         /// <p> Enables automated branch creation for an Amplify app. </p>
@@ -4078,9 +4072,9 @@ pub mod fluent_builders {
         /// <p> The automated branch creation configuration for an Amplify app. </p>
         pub fn auto_branch_creation_config(
             mut self,
-            signature: crate::model::AutoBranchCreationConfig,
+            input: crate::model::AutoBranchCreationConfig,
         ) -> Self {
-            self.inner = self.inner.auto_branch_creation_config(signature);
+            self.inner = self.inner.auto_branch_creation_config(input);
             self
         }
         /// <p> The automated branch creation configuration for an Amplify app. </p>
@@ -4092,8 +4086,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the repository for an Amplify app </p>
-        pub fn repository(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.repository(signature.into());
+        pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.repository(input.into());
             self
         }
         /// <p> The name of the repository for an Amplify app </p>
@@ -4104,8 +4098,8 @@ pub mod fluent_builders {
         /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
         /// is used to create a webhook and a read-only deploy key. The OAuth token is not stored.
         /// </p>
-        pub fn oauth_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.oauth_token(signature.into());
+        pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.oauth_token(input.into());
             self
         }
         /// <p> The OAuth token for a third-party source control system for an Amplify app. The token
@@ -4118,8 +4112,8 @@ pub mod fluent_builders {
         /// <p> The personal access token for a third-party source control system for an Amplify app.
         /// The token is used to create webhook and a read-only deploy key. The token is not stored.
         /// </p>
-        pub fn access_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.access_token(signature.into());
+        pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_token(input.into());
             self
         }
         /// <p> The personal access token for a third-party source control system for an Amplify app.
@@ -4190,8 +4184,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -4200,8 +4194,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for the branch. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for the branch. </p>
@@ -4210,8 +4204,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for the branch. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for the branch. </p>
@@ -4220,8 +4214,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The framework for the branch. </p>
-        pub fn framework(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.framework(signature.into());
+        pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.framework(input.into());
             self
         }
         /// <p> The framework for the branch. </p>
@@ -4230,8 +4224,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Describes the current stage for the branch. </p>
-        pub fn stage(mut self, signature: crate::model::Stage) -> Self {
-            self.inner = self.inner.stage(signature);
+        pub fn stage(mut self, input: crate::model::Stage) -> Self {
+            self.inner = self.inner.stage(input);
             self
         }
         /// <p> Describes the current stage for the branch. </p>
@@ -4240,8 +4234,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables notifications for the branch. </p>
-        pub fn enable_notification(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_notification(signature);
+        pub fn enable_notification(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_notification(input);
             self
         }
         /// <p> Enables notifications for the branch. </p>
@@ -4250,8 +4244,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables auto building for the branch. </p>
-        pub fn enable_auto_build(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_build(signature);
+        pub fn enable_auto_build(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_build(input);
             self
         }
         /// <p> Enables auto building for the branch. </p>
@@ -4283,8 +4277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
-        pub fn basic_auth_credentials(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.basic_auth_credentials(signature.into());
+        pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.basic_auth_credentials(input.into());
             self
         }
         /// <p> The basic authorization credentials for the branch. </p>
@@ -4296,8 +4290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
-        pub fn enable_basic_auth(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_basic_auth(signature);
+        pub fn enable_basic_auth(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_basic_auth(input);
             self
         }
         /// <p> Enables basic authorization for the branch. </p>
@@ -4307,8 +4301,8 @@ pub mod fluent_builders {
         }
         /// <p>Enables performance mode for the branch.</p>
         /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
-        pub fn enable_performance_mode(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_performance_mode(signature);
+        pub fn enable_performance_mode(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_performance_mode(input);
             self
         }
         /// <p>Enables performance mode for the branch.</p>
@@ -4318,8 +4312,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
-        pub fn build_spec(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.build_spec(signature.into());
+        pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.build_spec(input.into());
             self
         }
         /// <p> The build specification (build spec) for the branch. </p>
@@ -4328,8 +4322,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
-        pub fn ttl(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.ttl(signature.into());
+        pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ttl(input.into());
             self
         }
         /// <p> The content Time to Live (TTL) for the website in seconds. </p>
@@ -4338,8 +4332,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-        pub fn display_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.display_name(signature.into());
+        pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.display_name(input.into());
             self
         }
         /// <p> The display name for a branch. This is used as the default domain prefix. </p>
@@ -4348,8 +4342,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
-        pub fn enable_pull_request_preview(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_pull_request_preview(signature);
+        pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_pull_request_preview(input);
             self
         }
         /// <p> Enables pull request previews for this branch. </p>
@@ -4360,9 +4354,9 @@ pub mod fluent_builders {
         /// <p> The Amplify environment name for the pull request. </p>
         pub fn pull_request_environment_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.pull_request_environment_name(signature.into());
+            self.inner = self.inner.pull_request_environment_name(input.into());
             self
         }
         /// <p> The Amplify environment name for the pull request. </p>
@@ -4375,11 +4369,8 @@ pub mod fluent_builders {
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
         /// app. </p>
-        pub fn backend_environment_arn(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.backend_environment_arn(signature.into());
+        pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.backend_environment_arn(input.into());
             self
         }
         /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify
@@ -4452,8 +4443,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for an Amplify app. </p>
-        pub fn app_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.app_id(signature.into());
+        pub fn app_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.app_id(input.into());
             self
         }
         /// <p> The unique ID for an Amplify app. </p>
@@ -4462,8 +4453,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name of the domain. </p>
-        pub fn domain_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.domain_name(signature.into());
+        pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.domain_name(input.into());
             self
         }
         /// <p> The name of the domain. </p>
@@ -4472,8 +4463,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
-        pub fn enable_auto_sub_domain(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_auto_sub_domain(signature);
+        pub fn enable_auto_sub_domain(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_auto_sub_domain(input);
             self
         }
         /// <p> Enables the automated creation of subdomains for branches. </p>
@@ -4520,11 +4511,8 @@ pub mod fluent_builders {
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
         /// Resource Name (ARN) for automatically creating subdomains. </p>
-        pub fn auto_sub_domain_iam_role(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.auto_sub_domain_iam_role(signature.into());
+        pub fn auto_sub_domain_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.auto_sub_domain_iam_role(input.into());
             self
         }
         /// <p> The required AWS Identity and Access Management (IAM) service role for the Amazon
@@ -4597,8 +4585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> The unique ID for a webhook. </p>
-        pub fn webhook_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.webhook_id(signature.into());
+        pub fn webhook_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.webhook_id(input.into());
             self
         }
         /// <p> The unique ID for a webhook. </p>
@@ -4607,8 +4595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
-        pub fn branch_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.branch_name(signature.into());
+        pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.branch_name(input.into());
             self
         }
         /// <p> The name for a branch that is part of an Amplify app. </p>
@@ -4617,8 +4605,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The description for a webhook. </p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p> The description for a webhook. </p>

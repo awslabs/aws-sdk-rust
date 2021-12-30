@@ -479,8 +479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-        pub fn customer_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_gateway_arn(signature.into());
+        pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
@@ -492,8 +492,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -505,8 +505,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -515,8 +515,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -585,8 +585,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -598,8 +598,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -608,8 +608,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -684,8 +684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -699,11 +699,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
         pub fn transit_gateway_connect_peer_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .transit_gateway_connect_peer_arn(signature.into());
+            self.inner = self.inner.transit_gateway_connect_peer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
@@ -715,8 +713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -725,8 +723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -795,8 +793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -808,8 +806,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the first device in the connection.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the first device in the connection.</p>
@@ -818,8 +816,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the second device in the connection.</p>
-        pub fn connected_device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_device_id(signature.into());
+        pub fn connected_device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_device_id(input.into());
             self
         }
         /// <p>The ID of the second device in the connection.</p>
@@ -831,8 +829,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the first device.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link for the first device.</p>
@@ -841,8 +839,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the second device.</p>
-        pub fn connected_link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_link_id(signature.into());
+        pub fn connected_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_link_id(input.into());
             self
         }
         /// <p>The ID of the link for the second device.</p>
@@ -855,8 +853,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the connection.</p>
         /// <p>Length Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the connection.</p>
@@ -944,8 +942,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -957,8 +955,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-        pub fn aws_location(mut self, signature: crate::model::AwsLocation) -> Self {
-            self.inner = self.inner.aws_location(signature);
+        pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
+            self.inner = self.inner.aws_location(input);
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
@@ -971,8 +969,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the device.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device.</p>
@@ -982,8 +980,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the device.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the device.</p>
@@ -993,8 +991,8 @@ pub mod fluent_builders {
         }
         /// <p>The vendor of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn vendor(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor(signature.into());
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
@@ -1005,8 +1003,8 @@ pub mod fluent_builders {
         }
         /// <p>The model of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model(signature.into());
+        pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model(input.into());
             self
         }
         /// <p>The model of the device.</p>
@@ -1017,8 +1015,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial number of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
@@ -1031,8 +1029,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location of the device.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The location of the device.</p>
@@ -1041,8 +1039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1129,8 +1127,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the global network.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the global network.</p>
@@ -1217,8 +1215,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1231,8 +1229,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the link.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the link.</p>
@@ -1243,8 +1241,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the link.</p>
@@ -1254,8 +1252,8 @@ pub mod fluent_builders {
             self
         }
         /// <p> The upload speed and download speed in Mbps. </p>
-        pub fn bandwidth(mut self, signature: crate::model::Bandwidth) -> Self {
-            self.inner = self.inner.bandwidth(signature);
+        pub fn bandwidth(mut self, input: crate::model::Bandwidth) -> Self {
+            self.inner = self.inner.bandwidth(input);
             self
         }
         /// <p> The upload speed and download speed in Mbps. </p>
@@ -1268,8 +1266,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the link.</p>
@@ -1279,8 +1277,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1366,8 +1364,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1380,8 +1378,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of your site.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of your site.</p>
@@ -1405,8 +1403,8 @@ pub mod fluent_builders {
         /// <code>Longitude</code>: The longitude of the site.</p>
         /// </li>
         /// </ul>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.</p>
@@ -1506,8 +1504,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1519,8 +1517,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -1593,8 +1591,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1606,8 +1604,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -1677,8 +1675,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1751,8 +1749,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1764,8 +1762,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -1834,8 +1832,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1847,8 +1845,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -1918,8 +1916,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -1931,8 +1929,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-        pub fn transit_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transit_gateway_arn(signature.into());
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -2024,8 +2022,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2034,8 +2032,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2104,8 +2102,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2117,8 +2115,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-        pub fn customer_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.customer_gateway_arn(signature.into());
+        pub fn customer_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
@@ -2191,8 +2189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2204,8 +2202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2214,8 +2212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -2286,8 +2284,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2301,11 +2299,9 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
         pub fn transit_gateway_connect_peer_arn(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .transit_gateway_connect_peer_arn(signature.into());
+            self.inner = self.inner.transit_gateway_connect_peer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway Connect peer.</p>
@@ -2377,8 +2373,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2407,8 +2403,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2417,8 +2413,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2427,8 +2423,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2498,8 +2494,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2528,8 +2524,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2538,8 +2534,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2608,8 +2604,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2638,8 +2634,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2648,8 +2644,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2658,8 +2654,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2729,8 +2725,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2742,8 +2738,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -2752,8 +2748,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -2762,8 +2758,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2772,8 +2768,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2843,8 +2839,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -2873,8 +2869,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -2883,8 +2879,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link type.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The link type.</p>
@@ -2893,8 +2889,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The link provider.</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The link provider.</p>
@@ -2903,8 +2899,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2913,8 +2909,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -2983,8 +2979,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3072,8 +3068,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
@@ -3161,8 +3157,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3171,8 +3167,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3241,8 +3237,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3254,8 +3250,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the registered gateway.</p>
-        pub fn registered_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(signature.into());
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the registered gateway.</p>
@@ -3267,8 +3263,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(signature.into());
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -3277,8 +3273,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -3363,8 +3359,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
@@ -3452,8 +3448,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the gateway.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -3462,8 +3458,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3472,8 +3468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3543,8 +3539,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3556,8 +3552,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the gateway.</p>
-        pub fn registered_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(signature.into());
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -3569,8 +3565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(signature.into());
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -3579,8 +3575,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -3665,8 +3661,8 @@ pub mod fluent_builders {
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
@@ -3754,8 +3750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -3764,8 +3760,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -3774,8 +3770,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -3844,8 +3840,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -3857,11 +3853,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route table.</p>
-        pub fn route_table_identifier(
-            mut self,
-            signature: crate::model::RouteTableIdentifier,
-        ) -> Self {
-            self.inner = self.inner.route_table_identifier(signature);
+        pub fn route_table_identifier(mut self, input: crate::model::RouteTableIdentifier) -> Self {
+            self.inner = self.inner.route_table_identifier(input);
             self
         }
         /// <p>The ID of the route table.</p>
@@ -4075,8 +4068,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4088,8 +4081,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the gateway.</p>
-        pub fn registered_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.registered_gateway_arn(signature.into());
+        pub fn registered_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.registered_gateway_arn(input.into());
             self
         }
         /// <p>The ARN of the gateway.</p>
@@ -4101,8 +4094,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services Region.</p>
-        pub fn aws_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.aws_region(signature.into());
+        pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.aws_region(input.into());
             self
         }
         /// <p>The Amazon Web Services Region.</p>
@@ -4111,8 +4104,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID.</p>
@@ -4197,8 +4190,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The resource type.</p>
@@ -4286,8 +4279,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -4296,8 +4289,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4306,8 +4299,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4376,8 +4369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4389,8 +4382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the route analysis.</p>
-        pub fn route_analysis_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.route_analysis_id(signature.into());
+        pub fn route_analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.route_analysis_id(input.into());
             self
         }
         /// <p>The ID of the route analysis.</p>
@@ -4462,8 +4455,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4492,8 +4485,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4502,8 +4495,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4574,8 +4567,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4607,8 +4600,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4617,8 +4610,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4688,8 +4681,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4720,8 +4713,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -4730,8 +4723,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The token for the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>The token for the next page of results.</p>
@@ -4800,8 +4793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -4872,8 +4865,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4885,8 +4878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
-        pub fn transit_gateway_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.transit_gateway_arn(signature.into());
+        pub fn transit_gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.transit_gateway_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the transit gateway.</p>
@@ -4959,8 +4952,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -4974,9 +4967,9 @@ pub mod fluent_builders {
         /// <p>The source from which traffic originates.</p>
         pub fn source(
             mut self,
-            signature: crate::model::RouteAnalysisEndpointOptionsSpecification,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
         ) -> Self {
-            self.inner = self.inner.source(signature);
+            self.inner = self.inner.source(input);
             self
         }
         /// <p>The source from which traffic originates.</p>
@@ -4990,9 +4983,9 @@ pub mod fluent_builders {
         /// <p>The destination.</p>
         pub fn destination(
             mut self,
-            signature: crate::model::RouteAnalysisEndpointOptionsSpecification,
+            input: crate::model::RouteAnalysisEndpointOptionsSpecification,
         ) -> Self {
-            self.inner = self.inner.destination(signature);
+            self.inner = self.inner.destination(input);
             self
         }
         /// <p>The destination.</p>
@@ -5004,8 +4997,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
-        pub fn include_return_path(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_return_path(signature);
+        pub fn include_return_path(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_return_path(input);
             self
         }
         /// <p>Indicates whether to analyze the return path. The default is <code>false</code>.</p>
@@ -5015,8 +5008,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
         /// The default is <code>false</code>.</p>
-        pub fn use_middleboxes(mut self, signature: bool) -> Self {
-            self.inner = self.inner.use_middleboxes(signature);
+        pub fn use_middleboxes(mut self, input: bool) -> Self {
+            self.inner = self.inner.use_middleboxes(input);
             self
         }
         /// <p>Indicates whether to include the location of middlebox appliances in the route analysis.
@@ -5086,8 +5079,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5173,8 +5166,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource.</p>
@@ -5261,8 +5254,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5274,8 +5267,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the connection.</p>
-        pub fn connection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connection_id(signature.into());
+        pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connection_id(input.into());
             self
         }
         /// <p>The ID of the connection.</p>
@@ -5287,8 +5280,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the first device in the connection.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link for the first device in the connection.</p>
@@ -5297,8 +5290,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link for the second device in the connection.</p>
-        pub fn connected_link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.connected_link_id(signature.into());
+        pub fn connected_link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.connected_link_id(input.into());
             self
         }
         /// <p>The ID of the link for the second device in the connection.</p>
@@ -5311,8 +5304,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the connection.</p>
         /// <p>Length Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the connection.</p>
@@ -5383,8 +5376,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5396,8 +5389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the device.</p>
-        pub fn device_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.device_id(signature.into());
+        pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.device_id(input.into());
             self
         }
         /// <p>The ID of the device.</p>
@@ -5406,8 +5399,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
-        pub fn aws_location(mut self, signature: crate::model::AwsLocation) -> Self {
-            self.inner = self.inner.aws_location(signature);
+        pub fn aws_location(mut self, input: crate::model::AwsLocation) -> Self {
+            self.inner = self.inner.aws_location(input);
             self
         }
         /// <p>The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.</p>
@@ -5420,8 +5413,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the device.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the device.</p>
@@ -5431,8 +5424,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The type of the device.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the device.</p>
@@ -5442,8 +5435,8 @@ pub mod fluent_builders {
         }
         /// <p>The vendor of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn vendor(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vendor(signature.into());
+        pub fn vendor(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor(input.into());
             self
         }
         /// <p>The vendor of the device.</p>
@@ -5454,8 +5447,8 @@ pub mod fluent_builders {
         }
         /// <p>The model of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn model(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.model(signature.into());
+        pub fn model(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.model(input.into());
             self
         }
         /// <p>The model of the device.</p>
@@ -5466,8 +5459,8 @@ pub mod fluent_builders {
         }
         /// <p>The serial number of the device.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn serial_number(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.serial_number(signature.into());
+        pub fn serial_number(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.serial_number(input.into());
             self
         }
         /// <p>The serial number of the device.</p>
@@ -5480,8 +5473,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Describes a location.</p>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>Describes a location.</p>
@@ -5490,8 +5483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of the site.</p>
@@ -5561,8 +5554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of your global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of your global network.</p>
@@ -5575,8 +5568,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the global network.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the global network.</p>
@@ -5647,8 +5640,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5660,8 +5653,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the link.</p>
-        pub fn link_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.link_id(signature.into());
+        pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.link_id(input.into());
             self
         }
         /// <p>The ID of the link.</p>
@@ -5671,8 +5664,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of the link.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the link.</p>
@@ -5683,8 +5676,8 @@ pub mod fluent_builders {
         }
         /// <p>The type of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn r#type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.r#type(signature.into());
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.r#type(input.into());
             self
         }
         /// <p>The type of the link.</p>
@@ -5694,8 +5687,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The upload and download speed in Mbps. </p>
-        pub fn bandwidth(mut self, signature: crate::model::Bandwidth) -> Self {
-            self.inner = self.inner.bandwidth(signature);
+        pub fn bandwidth(mut self, input: crate::model::Bandwidth) -> Self {
+            self.inner = self.inner.bandwidth(input);
             self
         }
         /// <p>The upload and download speed in Mbps. </p>
@@ -5708,8 +5701,8 @@ pub mod fluent_builders {
         }
         /// <p>The provider of the link.</p>
         /// <p>Constraints: Maximum length of 128 characters.</p>
-        pub fn provider(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.provider(signature.into());
+        pub fn provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.provider(input.into());
             self
         }
         /// <p>The provider of the link.</p>
@@ -5779,8 +5772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5792,8 +5785,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN of the resource.</p>
@@ -5886,8 +5879,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the global network.</p>
-        pub fn global_network_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.global_network_id(signature.into());
+        pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.global_network_id(input.into());
             self
         }
         /// <p>The ID of the global network.</p>
@@ -5899,8 +5892,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of your site.</p>
-        pub fn site_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.site_id(signature.into());
+        pub fn site_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.site_id(input.into());
             self
         }
         /// <p>The ID of your site.</p>
@@ -5910,8 +5903,8 @@ pub mod fluent_builders {
         }
         /// <p>A description of your site.</p>
         /// <p>Constraints: Maximum length of 256 characters.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of your site.</p>
@@ -5935,8 +5928,8 @@ pub mod fluent_builders {
         /// <code>Longitude</code>: The longitude of the site.</p>
         /// </li>
         /// </ul>
-        pub fn location(mut self, signature: crate::model::Location) -> Self {
-            self.inner = self.inner.location(signature);
+        pub fn location(mut self, input: crate::model::Location) -> Self {
+            self.inner = self.inner.location(input);
             self
         }
         /// <p>The site location:</p>

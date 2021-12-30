@@ -425,8 +425,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-        pub fn log_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_bucket(signature.into());
+        pub fn log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
@@ -503,8 +503,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
         /// <p>Prior to making the <code>AssociateDRTRole</code> request, you must attach the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to this role.  For more information see <a href=" https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching and Detaching IAM Policies</a>.</p>
-        pub fn role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.role_arn(signature.into());
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role the SRT will use to access your Amazon Web Services account.</p>
@@ -575,8 +575,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to add the health check association to. </p>
-        pub fn protection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_id(signature.into());
+        pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to add the health check association to. </p>
@@ -588,8 +588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
-        pub fn health_check_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_arn(signature.into());
+        pub fn health_check_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the health check to associate with the protection.</p>
@@ -758,8 +758,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Friendly name for the <code>Protection</code> you are creating.</p>
@@ -801,8 +801,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource to be protected.</p>
@@ -921,8 +921,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn protection_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_group_id(signature.into());
+        pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_group_id(input.into());
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
@@ -945,8 +945,8 @@ pub mod fluent_builders {
         /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront and origin resources for CloudFront distributions.</p>
         /// </li>
         /// </ul>
-        pub fn aggregation(mut self, signature: crate::model::ProtectionGroupAggregation) -> Self {
-            self.inner = self.inner.aggregation(signature);
+        pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
+            self.inner = self.inner.aggregation(input);
             self
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
@@ -969,8 +969,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
-        pub fn pattern(mut self, signature: crate::model::ProtectionGroupPattern) -> Self {
-            self.inner = self.inner.pattern(signature);
+        pub fn pattern(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
+            self.inner = self.inner.pattern(input);
             self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type. </p>
@@ -983,8 +983,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group.
         /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-        pub fn resource_type(mut self, signature: crate::model::ProtectedResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group. Newly protected resources of this type are automatically added to the group.
@@ -1154,8 +1154,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
         /// deleted.</p>
-        pub fn protection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_id(signature.into());
+        pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to be
@@ -1228,8 +1228,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn protection_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_group_id(signature.into());
+        pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_group_id(input.into());
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
@@ -1361,8 +1361,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier (ID) for the attack.</p>
-        pub fn attack_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.attack_id(signature.into());
+        pub fn attack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.attack_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the attack.</p>
@@ -1614,8 +1614,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object that is
         /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
-        pub fn protection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_id(signature.into());
+        pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object that is
@@ -1629,8 +1629,8 @@ pub mod fluent_builders {
         }
         /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
         /// described. When submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource for the <a>Protection</a> object that is
@@ -1700,8 +1700,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn protection_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_group_id(signature.into());
+        pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_group_id(input.into());
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
@@ -1836,8 +1836,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -1966,8 +1966,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
-        pub fn log_bucket(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.log_bucket(signature.into());
+        pub fn log_bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.log_bucket(input.into());
             self
         }
         /// <p>The Amazon S3 bucket that contains the logs that you want to share.</p>
@@ -2097,8 +2097,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to remove the health check association from. </p>
-        pub fn protection_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_id(signature.into());
+        pub fn protection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_id(input.into());
             self
         }
         /// <p>The unique identifier (ID) for the <a>Protection</a> object to remove the health check association from. </p>
@@ -2110,8 +2110,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
-        pub fn health_check_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.health_check_arn(signature.into());
+        pub fn health_check_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.health_check_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the health check that is associated with the protection.</p>
@@ -2198,8 +2198,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -2210,8 +2210,8 @@ pub mod fluent_builders {
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
         /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
         /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-        pub fn action(mut self, signature: crate::model::ResponseAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
@@ -2426,8 +2426,8 @@ pub mod fluent_builders {
         }
         /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
         /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
-        pub fn start_time(mut self, signature: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
@@ -2441,8 +2441,8 @@ pub mod fluent_builders {
         }
         /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
         /// but you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp format</a> setting.  </p>
-        pub fn end_time(mut self, signature: crate::model::TimeRange) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: crate::model::TimeRange) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time period for the attacks. This is a <code>timestamp</code> type. The request syntax listing for this call indicates a <code>number</code> type,
@@ -2458,8 +2458,8 @@ pub mod fluent_builders {
         /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
@@ -2477,8 +2477,8 @@ pub mod fluent_builders {
         /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
         /// in the response.</p>
         /// <p>The default setting is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
@@ -2556,8 +2556,8 @@ pub mod fluent_builders {
         /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
@@ -2575,8 +2575,8 @@ pub mod fluent_builders {
         /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
         /// in the response.</p>
         /// <p>The default setting is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
@@ -2654,8 +2654,8 @@ pub mod fluent_builders {
         /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
@@ -2673,8 +2673,8 @@ pub mod fluent_builders {
         /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
         /// in the response.</p>
         /// <p>The default setting is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
@@ -2746,8 +2746,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn protection_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_group_id(signature.into());
+        pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_group_id(input.into());
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
@@ -2765,8 +2765,8 @@ pub mod fluent_builders {
         /// setting. Shield Advanced will not return more than <code>MaxResults</code> objects, but may return fewer, even if more objects are still available.</p>
         /// <p>Whenever more objects remain that Shield Advanced has not yet returned to you, the response will include a <code>NextToken</code> value.</p>
         /// <p>On your first call to a list operation, leave this setting empty.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>When you request a list of objects from Shield Advanced, if the response does not include all of the remaining available objects,
@@ -2784,8 +2784,8 @@ pub mod fluent_builders {
         /// than you indicate in this setting, even if more objects are available. If there are more objects remaining, Shield Advanced will always also return a <code>NextToken</code> value
         /// in the response.</p>
         /// <p>The default setting is 20.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The greatest number of objects that you want Shield Advanced to return to the list request. Shield Advanced might return fewer objects
@@ -2857,8 +2857,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource to get tags for.</p>
@@ -2927,8 +2927,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.</p>
@@ -3014,8 +3014,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the resource that you want to remove tags from.</p>
@@ -3103,8 +3103,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The ARN (Amazon Resource Name) of the resource.</p>
@@ -3115,8 +3115,8 @@ pub mod fluent_builders {
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
         /// protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature,
         /// when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource. </p>
-        pub fn action(mut self, signature: crate::model::ResponseAction) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::ResponseAction) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the
@@ -3269,8 +3269,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-        pub fn protection_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.protection_group_id(signature.into());
+        pub fn protection_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.protection_group_id(input.into());
             self
         }
         /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
@@ -3293,8 +3293,8 @@ pub mod fluent_builders {
         /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
         /// </li>
         /// </ul>
-        pub fn aggregation(mut self, signature: crate::model::ProtectionGroupAggregation) -> Self {
-            self.inner = self.inner.aggregation(signature);
+        pub fn aggregation(mut self, input: crate::model::ProtectionGroupAggregation) -> Self {
+            self.inner = self.inner.aggregation(input);
             self
         }
         /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
@@ -3317,8 +3317,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
-        pub fn pattern(mut self, signature: crate::model::ProtectionGroupPattern) -> Self {
-            self.inner = self.inner.pattern(signature);
+        pub fn pattern(mut self, input: crate::model::ProtectionGroupPattern) -> Self {
+            self.inner = self.inner.pattern(input);
             self
         }
         /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
@@ -3331,8 +3331,8 @@ pub mod fluent_builders {
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
         /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
-        pub fn resource_type(mut self, signature: crate::model::ProtectedResourceType) -> Self {
-            self.inner = self.inner.resource_type(signature);
+        pub fn resource_type(mut self, input: crate::model::ProtectedResourceType) -> Self {
+            self.inner = self.inner.resource_type(input);
             self
         }
         /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
@@ -3422,8 +3422,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
-        pub fn auto_renew(mut self, signature: crate::model::AutoRenew) -> Self {
-            self.inner = self.inner.auto_renew(signature);
+        pub fn auto_renew(mut self, input: crate::model::AutoRenew) -> Self {
+            self.inner = self.inner.auto_renew(input);
             self
         }
         /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>

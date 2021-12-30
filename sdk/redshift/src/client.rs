@@ -1079,8 +1079,8 @@ pub mod fluent_builders {
         }
         /// <p>A string representing the node identifier of the DC1 Reserved Node to be
         /// exchanged.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>A string representing the node identifier of the DC1 Reserved Node to be
@@ -1097,11 +1097,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn target_reserved_node_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .target_reserved_node_offering_id(signature.into());
+            self.inner = self.inner.target_reserved_node_offering_id(input.into());
             self
         }
         /// <p>The unique identifier of the DC2 Reserved Node offering to be used for the exchange.
@@ -1177,8 +1175,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
@@ -1187,8 +1185,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
@@ -1200,8 +1198,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database that receives data from the partner.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database that receives data from the partner.</p>
@@ -1213,8 +1211,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partner that is authorized to send data.</p>
-        pub fn partner_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_name(signature.into());
+        pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_name(input.into());
             self
         }
         /// <p>The name of the partner that is authorized to send data.</p>
@@ -1285,8 +1283,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>
@@ -1298,8 +1296,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
-        pub fn associate_entire_account(mut self, signature: bool) -> Self {
-            self.inner = self.inner.associate_entire_account(signature);
+        pub fn associate_entire_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.associate_entire_account(input);
             self
         }
         /// <p>A value that specifies whether the datashare is associated with the entire account.</p>
@@ -1309,8 +1307,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
         /// datashare.</p>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that is associated with the
@@ -1399,9 +1397,9 @@ pub mod fluent_builders {
         /// <p>The name of the security group to which the ingress rule is added.</p>
         pub fn cluster_security_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_security_group_name(signature.into());
+            self.inner = self.inner.cluster_security_group_name(input.into());
             self
         }
         /// <p>The name of the security group to which the ingress rule is added.</p>
@@ -1413,8 +1411,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP range to be added the Amazon Redshift security group.</p>
-        pub fn cidrip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(signature.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input.into());
             self
         }
         /// <p>The IP range to be added the Amazon Redshift security group.</p>
@@ -1423,11 +1421,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
-        pub fn ec2_security_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.ec2_security_group_name(signature.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input.into());
             self
         }
         /// <p>The EC2 security group to be added the Amazon Redshift security group.</p>
@@ -1445,9 +1440,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn ec2_security_group_owner_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
+            self.inner = self.inner.ec2_security_group_owner_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account number of the owner of the security group specified by the
@@ -1526,8 +1521,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
         /// sharing for.</p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize
@@ -1540,8 +1535,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
-        pub fn consumer_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_identifier(signature.into());
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_identifier(input.into());
             self
         }
         /// <p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID.</p>
@@ -1613,8 +1608,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the cluster to grant access to.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster to grant access to.</p>
@@ -1626,8 +1621,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID to grant access to.</p>
-        pub fn account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(signature.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID to grant access to.</p>
@@ -1718,8 +1713,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot the account is authorized to restore.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot the account is authorized to restore.</p>
@@ -1735,9 +1730,9 @@ pub mod fluent_builders {
         /// specifies anything other than * for the cluster name.</p>
         pub fn snapshot_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_cluster_identifier(signature.into());
+            self.inner = self.inner.snapshot_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is
@@ -1755,9 +1750,9 @@ pub mod fluent_builders {
         /// <p>To share a snapshot with Amazon Web Services Support, specify amazon-redshift-support.</p>
         pub fn account_with_restore_access(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_with_restore_access(signature.into());
+            self.inner = self.inner.account_with_restore_access(input.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account authorized to restore the specified
@@ -1930,8 +1925,8 @@ pub mod fluent_builders {
         /// <p>If you decrease the manual snapshot retention period from its current value, existing
         /// manual snapshots that fall outside of the new retention period will return an error. If
         /// you want to suppress the errors and delete the snapshots, use the force option. </p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that a manual snapshot is retained. If you specify the value -1,
@@ -1949,8 +1944,8 @@ pub mod fluent_builders {
         }
         /// <p>A boolean value indicating whether to override an exception if the retention period
         /// has passed. </p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>A boolean value indicating whether to override an exception if the retention period
@@ -2021,8 +2016,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the cluster that you want to cancel a resize operation
         /// for.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier for the cluster that you want to cancel a resize operation
@@ -2113,11 +2108,8 @@ pub mod fluent_builders {
         /// <code>available</code>.</p>
         /// </li>
         /// </ul>
-        pub fn source_snapshot_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.source_snapshot_identifier(signature.into());
+        pub fn source_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the source snapshot.</p>
@@ -2146,11 +2138,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn source_snapshot_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .source_snapshot_cluster_identifier(signature.into());
+            self.inner = self.inner.source_snapshot_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster the source snapshot was created from. This parameter
@@ -2188,11 +2178,8 @@ pub mod fluent_builders {
         /// <p>Must be unique for the Amazon Web Services account that is making the request.</p>
         /// </li>
         /// </ul>
-        pub fn target_snapshot_identifier(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.target_snapshot_identifier(signature.into());
+        pub fn target_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier given to the new manual snapshot.</p>
@@ -2225,8 +2212,8 @@ pub mod fluent_builders {
         /// snapshot is retained indefinitely. </p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         /// <p>The default value is -1.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
@@ -2303,9 +2290,9 @@ pub mod fluent_builders {
         /// <p>The name of the authentication profile to be created.</p>
         pub fn authentication_profile_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_name(signature.into());
+            self.inner = self.inner.authentication_profile_name(input.into());
             self
         }
         /// <p>The name of the authentication profile to be created.</p>
@@ -2320,9 +2307,9 @@ pub mod fluent_builders {
         /// The maximum length of the JSON string is determined by a quota for your account.</p>
         pub fn authentication_profile_content(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_content(signature.into());
+            self.inner = self.inner.authentication_profile_content(input.into());
             self
         }
         /// <p>The content of the authentication profile in JSON format.
@@ -2421,8 +2408,8 @@ pub mod fluent_builders {
         /// Amazon Redshift Database Developer Guide. </p>
         /// </li>
         /// </ul>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The name of the first database to be created when the cluster is created.</p>
@@ -2474,8 +2461,8 @@ pub mod fluent_builders {
         ///
         /// <p>Example: <code>myexamplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the cluster. You use this identifier to refer to the
@@ -2526,8 +2513,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Default: <code>multi-node</code>
         /// </p>
-        pub fn cluster_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_type(signature.into());
+        pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_type(input.into());
             self
         }
         /// <p>The type of the cluster. When cluster type is specified as</p>
@@ -2559,8 +2546,8 @@ pub mod fluent_builders {
         /// <code>dc2.large</code> | <code>dc2.8xlarge</code> |
         /// <code>ra3.xlplus</code> |  <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
         /// </p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The node type to be provisioned for the cluster. For information about node types,
@@ -2592,8 +2579,8 @@ pub mod fluent_builders {
         /// Words</a> in the Amazon Redshift Database Developer Guide. </p>
         /// </li>
         /// </ul>
-        pub fn master_username(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_username(signature.into());
+        pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_username(input.into());
             self
         }
         /// <p>The user name associated with the admin user account for the cluster that is being
@@ -2641,8 +2628,8 @@ pub mod fluent_builders {
         /// (single quote), " (double quote), \, /, @, or space.</p>
         /// </li>
         /// </ul>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The password associated with the admin user account for the cluster that is being
@@ -2716,11 +2703,8 @@ pub mod fluent_builders {
         /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
         /// <p>If this parameter is not provided the resulting cluster will be deployed outside
         /// virtual private cloud (VPC).</p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name of a cluster subnet group to be associated with this cluster.</p>
@@ -2743,8 +2727,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Constraint: The specified Availability Zone must be in the same region as the
         /// current endpoint.</p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The EC2 Availability Zone (AZ) in which you want Amazon Redshift to provision the
@@ -2775,9 +2759,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -2815,9 +2799,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to be associated with this cluster.</p>
@@ -2852,8 +2836,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>1</code>
         /// </p>
         /// <p>Constraints: Must be a value from 0 to 35.</p>
-        pub fn automated_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.automated_snapshot_retention_period(signature);
+        pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.automated_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that automated snapshots are retained. If the value is 0,
@@ -2875,8 +2859,8 @@ pub mod fluent_builders {
         /// snapshot is retained indefinitely. This setting doesn't change the retention period
         /// of existing snapshots.</p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
@@ -2898,8 +2882,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Valid Values: <code>1150-65535</code>
         /// </p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the cluster accepts incoming connections.</p>
@@ -2920,8 +2904,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Only version 1.0 is currently available.</p>
         /// <p>Example: <code>1.0</code>
         /// </p>
-        pub fn cluster_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_version(signature.into());
+        pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_version(input.into());
             self
         }
         /// <p>The version of the Amazon Redshift engine software that you want to deploy on the
@@ -2944,8 +2928,8 @@ pub mod fluent_builders {
         /// engine that is running on your cluster.</p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn allow_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_version_upgrade(signature);
+        pub fn allow_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_version_upgrade(input);
             self
         }
         /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance
@@ -2970,8 +2954,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>1</code>
         /// </p>
         /// <p>Constraints: Value must be at least 1 and no more than 100.</p>
-        pub fn number_of_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(signature);
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
         /// <p>The number of compute nodes in the cluster. This parameter is required when the
@@ -2990,8 +2974,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
@@ -3001,8 +2985,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
         /// <p>Default: false</p>
-        pub fn encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.encrypted(signature);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.encrypted(input);
             self
         }
         /// <p>If <code>true</code>, the data in the cluster is encrypted at rest. </p>
@@ -3015,11 +2999,9 @@ pub mod fluent_builders {
         /// retrieve the data encryption keys stored in an HSM.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
@@ -3035,9 +3017,9 @@ pub mod fluent_builders {
         /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM configuration that contains the information the
@@ -3054,8 +3036,8 @@ pub mod fluent_builders {
         /// through an Internet gateway. For more information about provisioning clusters in
         /// EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
         /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP (EIP) address for the cluster.</p>
@@ -3086,8 +3068,8 @@ pub mod fluent_builders {
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
@@ -3102,8 +3084,8 @@ pub mod fluent_builders {
         /// the Amazon Redshift Cluster Management Guide.</p>
         /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
         /// <p>Default: false</p>
-        pub fn enhanced_vpc_routing(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enhanced_vpc_routing(signature);
+        pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_vpc_routing(input);
             self
         }
         /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
@@ -3117,8 +3099,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn additional_info(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_info(signature.into());
+        pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_info(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -3157,8 +3139,8 @@ pub mod fluent_builders {
         /// <p>An optional parameter for the name of the maintenance track for the cluster. If you
         /// don't provide a maintenance track name, the cluster is assigned to the
         /// <code>current</code> track.</p>
-        pub fn maintenance_track_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_track_name(signature.into());
+        pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_track_name(input.into());
             self
         }
         /// <p>An optional parameter for the name of the maintenance track for the cluster. If you
@@ -3174,9 +3156,9 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the snapshot schedule.</p>
         pub fn snapshot_schedule_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_schedule_identifier(signature.into());
+            self.inner = self.inner.snapshot_schedule_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the snapshot schedule.</p>
@@ -3188,8 +3170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
-        pub fn availability_zone_relocation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.availability_zone_relocation(signature);
+        pub fn availability_zone_relocation(mut self, input: bool) -> Self {
+            self.inner = self.inner.availability_zone_relocation(input);
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>
@@ -3214,9 +3196,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn aqua_configuration_status(
             mut self,
-            signature: crate::model::AquaConfigurationStatus,
+            input: crate::model::AquaConfigurationStatus,
         ) -> Self {
-            self.inner = self.inner.aqua_configuration_status(signature);
+            self.inner = self.inner.aqua_configuration_status(input);
             self
         }
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p>
@@ -3239,8 +3221,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
-        pub fn default_iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_iam_role_arn(signature.into());
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was created. </p>
@@ -3338,8 +3320,8 @@ pub mod fluent_builders {
         /// <note>
         /// <p>This value is stored as a lower-case string.</p>
         /// </note>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the cluster parameter group.</p>
@@ -3375,8 +3357,8 @@ pub mod fluent_builders {
         /// parameter groups for each Amazon Redshift engine version. The parameter group family names
         /// associated with the default parameter groups provide you the valid values. For example,
         /// a valid family name is "redshift-1.0". </p>
-        pub fn parameter_group_family(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_family(signature.into());
+        pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_family(input.into());
             self
         }
         /// <p>The Amazon Redshift engine version to which the cluster parameter group applies. The
@@ -3394,8 +3376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the parameter group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description of the parameter group.</p>
@@ -3503,9 +3485,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn cluster_security_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_security_group_name(signature.into());
+            self.inner = self.inner.cluster_security_group_name(input.into());
             self
         }
         /// <p>The name for the security group. Amazon Redshift stores the value as a lowercase
@@ -3532,8 +3514,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the security group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the security group.</p>
@@ -3642,8 +3624,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the snapshot that you are requesting. This identifier must
@@ -3673,8 +3655,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier for which you want a snapshot.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier for which you want a snapshot.</p>
@@ -3691,8 +3673,8 @@ pub mod fluent_builders {
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         ///
         /// <p>The default value is -1.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
@@ -3807,11 +3789,8 @@ pub mod fluent_builders {
         /// </ul>
         /// <p>Example: <code>examplesubnetgroup</code>
         /// </p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase
@@ -3838,8 +3817,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description for the subnet group.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A description for the subnet group.</p>
@@ -3944,8 +3923,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the cluster to access.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster to access.</p>
@@ -3957,8 +3936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
-        pub fn resource_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(signature.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster. This is only required if the cluster is in another Amazon Web Services account.</p>
@@ -3974,8 +3953,8 @@ pub mod fluent_builders {
         /// Valid characters are A-Z, a-z, 0-9, and hyphen(-).
         /// The first character must be a letter.
         /// The name can't contain two consecutive hyphens or end with a hyphen.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The Redshift-managed VPC endpoint name.</p>
@@ -3991,8 +3970,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
-        pub fn subnet_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subnet_group_name(signature.into());
+        pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subnet_group_name(input.into());
             self
         }
         /// <p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>
@@ -4112,8 +4091,8 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the event subscription to be created.</p>
@@ -4142,8 +4121,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event
         /// notifications. The ARN is created by Amazon SNS when you create a topic and subscribe to
         /// it.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic used to transmit the event
@@ -4161,8 +4140,8 @@ pub mod fluent_builders {
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
         /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The type of source that will be generating the events. For example, if you want to
@@ -4227,8 +4206,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
         /// subscription.</p>
         /// <p>Values: ERROR, INFO</p>
-        pub fn severity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.severity(signature.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.severity(input.into());
             self
         }
         /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
@@ -4240,8 +4219,8 @@ pub mod fluent_builders {
         }
         /// <p>A boolean value; set to <code>true</code> to activate the subscription, and set to
         /// <code>false</code> to create the subscription but not activate it. </p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>A boolean value; set to <code>true</code> to activate the subscription, and set to
@@ -4338,11 +4317,9 @@ pub mod fluent_builders {
         /// will use to connect to the HSM to use the database encryption keys.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>The identifier to be assigned to the new HSM client certificate that the cluster
@@ -4440,9 +4417,9 @@ pub mod fluent_builders {
         /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>The identifier to be assigned to the new Amazon Redshift HSM configuration.</p>
@@ -4454,8 +4431,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text description of the HSM configuration to be created.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A text description of the HSM configuration to be created.</p>
@@ -4464,8 +4441,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
-        pub fn hsm_ip_address(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_ip_address(signature.into());
+        pub fn hsm_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_ip_address(input.into());
             self
         }
         /// <p>The IP address that the Amazon Redshift cluster must use to access the HSM.</p>
@@ -4478,8 +4455,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their
         /// database encryption keys.</p>
-        pub fn hsm_partition_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_partition_name(signature.into());
+        pub fn hsm_partition_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_partition_name(input.into());
             self
         }
         /// <p>The name of the partition in the HSM where the Amazon Redshift clusters will store their
@@ -4492,8 +4469,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password required to access the HSM partition.</p>
-        pub fn hsm_partition_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.hsm_partition_password(signature.into());
+        pub fn hsm_partition_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hsm_partition_password(input.into());
             self
         }
         /// <p>The password required to access the HSM partition.</p>
@@ -4508,9 +4485,9 @@ pub mod fluent_builders {
         /// server.pem.</p>
         pub fn hsm_server_public_certificate(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_server_public_certificate(signature.into());
+            self.inner = self.inner.hsm_server_public_certificate(input.into());
             self
         }
         /// <p>The HSMs public certificate file. When using Cloud HSM, the file name is
@@ -4603,8 +4580,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the scheduled action. The name must be unique within an account.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action. The name must be unique within an account.
@@ -4618,8 +4595,8 @@ pub mod fluent_builders {
         }
         /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn target_action(mut self, signature: crate::model::ScheduledActionType) -> Self {
-            self.inner = self.inner.target_action(signature);
+        pub fn target_action(mut self, input: crate::model::ScheduledActionType) -> Self {
+            self.inner = self.inner.target_action(input);
             self
         }
         /// <p>A JSON format string of the Amazon Redshift API operation with input parameters.
@@ -4633,8 +4610,8 @@ pub mod fluent_builders {
         }
         /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format.
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>The schedule in <code>at( )</code> or <code>cron( )</code> format.
@@ -4645,8 +4622,8 @@ pub mod fluent_builders {
         }
         /// <p>The IAM role to assume to run the target action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>The IAM role to assume to run the target action.
@@ -4659,9 +4636,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn scheduled_action_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.scheduled_action_description(signature.into());
+            self.inner = self.inner.scheduled_action_description(input.into());
             self
         }
         /// <p>The description of the scheduled action.
@@ -4676,8 +4653,8 @@ pub mod fluent_builders {
         /// <p>The start time in UTC of the scheduled action.
         /// Before this time, the scheduled action does not trigger.
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time in UTC of the scheduled action.
@@ -4692,8 +4669,8 @@ pub mod fluent_builders {
         }
         /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger.
@@ -4707,8 +4684,8 @@ pub mod fluent_builders {
         }
         /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger.
         /// For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>. </p>
-        pub fn enable(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable(signature);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>If true, the schedule is enabled. If false, the scheduled action does not trigger.
@@ -4804,11 +4781,8 @@ pub mod fluent_builders {
         /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
-        pub fn snapshot_copy_grant_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.snapshot_copy_grant_name(signature.into());
+        pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_copy_grant_name(input.into());
             self
         }
         /// <p>The name of the snapshot copy grant. This name must be unique in the region for the
@@ -4840,8 +4814,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift
         /// permission. If no key is specified, the default key is used.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The unique identifier of the customer master key (CMK) to which to grant Amazon Redshift
@@ -4948,8 +4922,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed
         /// for the identifier.</p>
-        pub fn schedule_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_identifier(signature.into());
+        pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_identifier(input.into());
             self
         }
         /// <p>A unique identifier for a snapshot schedule. Only alphanumeric characters are allowed
@@ -4962,8 +4936,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The description of the snapshot schedule.</p>
-        pub fn schedule_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_description(signature.into());
+        pub fn schedule_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_description(input.into());
             self
         }
         /// <p>The description of the snapshot schedule.</p>
@@ -4992,8 +4966,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn dry_run(mut self, signature: bool) -> Self {
-            self.inner = self.inner.dry_run(signature);
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
             self
         }
         /// <p></p>
@@ -5002,8 +4976,8 @@ pub mod fluent_builders {
             self
         }
         /// <p></p>
-        pub fn next_invocations(mut self, signature: i32) -> Self {
-            self.inner = self.inner.next_invocations(signature);
+        pub fn next_invocations(mut self, input: i32) -> Self {
+            self.inner = self.inner.next_invocations(input);
             self
         }
         /// <p></p>
@@ -5077,8 +5051,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
         /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
@@ -5179,8 +5153,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster that you want to limit usage.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster that you want to limit usage.</p>
@@ -5192,8 +5166,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Redshift feature that you want to limit.</p>
-        pub fn feature_type(mut self, signature: crate::model::UsageLimitFeatureType) -> Self {
-            self.inner = self.inner.feature_type(signature);
+        pub fn feature_type(mut self, input: crate::model::UsageLimitFeatureType) -> Self {
+            self.inner = self.inner.feature_type(input);
             self
         }
         /// <p>The Amazon Redshift feature that you want to limit.</p>
@@ -5208,8 +5182,8 @@ pub mod fluent_builders {
         /// If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code> must be <code>data-scanned</code>.
         /// If <code>FeatureType</code> is <code>concurrency-scaling</code>, then <code>LimitType</code> must be <code>time</code>.
         /// </p>
-        pub fn limit_type(mut self, signature: crate::model::UsageLimitLimitType) -> Self {
-            self.inner = self.inner.limit_type(signature);
+        pub fn limit_type(mut self, input: crate::model::UsageLimitLimitType) -> Self {
+            self.inner = self.inner.limit_type(input);
             self
         }
         /// <p>The type of limit. Depending on the feature type, this can be based on a time duration or data size.
@@ -5226,8 +5200,8 @@ pub mod fluent_builders {
         /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).
         /// The value must be a positive number.
         /// </p>
-        pub fn amount(mut self, signature: i64) -> Self {
-            self.inner = self.inner.amount(signature);
+        pub fn amount(mut self, input: i64) -> Self {
+            self.inner = self.inner.amount(input);
             self
         }
         /// <p>The limit amount. If time-based, this amount is in minutes. If data-based, this amount is in terabytes (TB).
@@ -5239,8 +5213,8 @@ pub mod fluent_builders {
         }
         /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.
         /// </p>
-        pub fn period(mut self, signature: crate::model::UsageLimitPeriod) -> Self {
-            self.inner = self.inner.period(signature);
+        pub fn period(mut self, input: crate::model::UsageLimitPeriod) -> Self {
+            self.inner = self.inner.period(input);
             self
         }
         /// <p>The time period that the amount applies to. A <code>weekly</code> period begins on Sunday. The default is <code>monthly</code>.
@@ -5254,8 +5228,8 @@ pub mod fluent_builders {
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log.
         /// For more information about this parameter, see <a>UsageLimit</a>.</p>
-        pub fn breach_action(mut self, signature: crate::model::UsageLimitBreachAction) -> Self {
-            self.inner = self.inner.breach_action(signature);
+        pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
+            self.inner = self.inner.breach_action(input);
             self
         }
         /// <p>The action that Amazon Redshift takes when the limit is reached. The default is log.
@@ -5345,8 +5319,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>
@@ -5359,8 +5333,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
         /// This identifier is an Amazon Web Services account ID.</p>
-        pub fn consumer_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_identifier(signature.into());
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_identifier(input.into());
             self
         }
         /// <p>The identifier of the data consumer that is to have authorization removed from the datashare.
@@ -5435,9 +5409,9 @@ pub mod fluent_builders {
         /// <p>The name of the authentication profile to delete.</p>
         pub fn authentication_profile_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_name(signature.into());
+            self.inner = self.inner.authentication_profile_name(input.into());
             self
         }
         /// <p>The name of the authentication profile to delete.</p>
@@ -5539,8 +5513,8 @@ pub mod fluent_builders {
         /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
         /// </li>
         /// </ul>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster to be deleted.</p>
@@ -5577,8 +5551,8 @@ pub mod fluent_builders {
         /// </note>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn skip_final_cluster_snapshot(mut self, signature: bool) -> Self {
-            self.inner = self.inner.skip_final_cluster_snapshot(signature);
+        pub fn skip_final_cluster_snapshot(mut self, input: bool) -> Self {
+            self.inner = self.inner.skip_final_cluster_snapshot(input);
             self
         }
         /// <p>Determines whether a final snapshot of the cluster is created before Amazon Redshift
@@ -5613,11 +5587,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn final_cluster_snapshot_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .final_cluster_snapshot_identifier(signature.into());
+            self.inner = self.inner.final_cluster_snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the final snapshot that is to be created immediately before
@@ -5646,10 +5618,8 @@ pub mod fluent_builders {
         /// snapshot is retained indefinitely.</p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         /// <p>The default value is -1.</p>
-        pub fn final_cluster_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self
-                .inner
-                .final_cluster_snapshot_retention_period(signature);
+        pub fn final_cluster_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.final_cluster_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
@@ -5739,8 +5709,8 @@ pub mod fluent_builders {
         /// <p>Cannot delete a default cluster parameter group.</p>
         /// </li>
         /// </ul>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to be deleted.</p>
@@ -5831,9 +5801,9 @@ pub mod fluent_builders {
         /// <p>The name of the cluster security group to be deleted.</p>
         pub fn cluster_security_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_security_group_name(signature.into());
+            self.inner = self.inner.cluster_security_group_name(input.into());
             self
         }
         /// <p>The name of the cluster security group to be deleted.</p>
@@ -5914,8 +5884,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be the name of an existing snapshot that is in the
         /// <code>available</code>, <code>failed</code>, or <code>cancelled</code>
         /// state.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the manual snapshot to be deleted.</p>
@@ -5935,9 +5905,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be the name of valid cluster.</p>
         pub fn snapshot_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_cluster_identifier(signature.into());
+            self.inner = self.inner.snapshot_cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster the snapshot was created from. This parameter
@@ -6012,11 +5982,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster subnet group name to be deleted.</p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the cluster subnet group name to be deleted.</p>
@@ -6088,8 +6055,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Redshift-managed VPC endpoint to delete.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The Redshift-managed VPC endpoint to delete.</p>
@@ -6161,8 +6128,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the Amazon Redshift event notification subscription to be deleted.</p>
@@ -6236,11 +6203,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the HSM client certificate to be deleted.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>The identifier of the HSM client certificate to be deleted.</p>
@@ -6314,9 +6279,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>The identifier of the Amazon Redshift HSM configuration to be deleted.</p>
@@ -6388,8 +6353,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
@@ -6398,8 +6363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster that receives data from the partner.</p>
@@ -6411,8 +6376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database that receives data from the partner.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database that receives data from the partner.</p>
@@ -6424,8 +6389,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partner that is authorized to send data.</p>
-        pub fn partner_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_name(signature.into());
+        pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_name(input.into());
             self
         }
         /// <p>The name of the partner that is authorized to send data.</p>
@@ -6495,8 +6460,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scheduled action to delete. </p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action to delete. </p>
@@ -6568,11 +6533,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot copy grant to delete.</p>
-        pub fn snapshot_copy_grant_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.snapshot_copy_grant_name(signature.into());
+        pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_copy_grant_name(input.into());
             self
         }
         /// <p>The name of the snapshot copy grant to delete.</p>
@@ -6644,8 +6606,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier of the snapshot schedule to delete.</p>
-        pub fn schedule_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_identifier(signature.into());
+        pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_identifier(input.into());
             self
         }
         /// <p>A unique identifier of the snapshot schedule to delete.</p>
@@ -6719,8 +6681,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For
         /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For
@@ -6810,8 +6772,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the usage limit to delete.</p>
-        pub fn usage_limit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_limit_id(signature.into());
+        pub fn usage_limit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_limit_id(input.into());
             self
         }
         /// <p>The identifier of the usage limit to delete.</p>
@@ -6962,9 +6924,9 @@ pub mod fluent_builders {
         /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
         pub fn authentication_profile_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_name(signature.into());
+            self.inner = self.inner.authentication_profile_name(input.into());
             self
         }
         /// <p>The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.</p>
@@ -7038,8 +7000,8 @@ pub mod fluent_builders {
         /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are
         /// requesting. This parameter is case sensitive. All clusters defined for an account are
         /// returned by default.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are
@@ -7059,8 +7021,8 @@ pub mod fluent_builders {
         /// <code>marker</code> parameter and retrying the request. </p>
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -7082,8 +7044,8 @@ pub mod fluent_builders {
         /// <code>marker</code> parameter and retrying the request. </p>
         /// <p>Constraints: You can specify either the <code>ClusterIdentifier</code> parameter, or
         /// the <code>marker</code> parameter, but not both.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point for returning a set of
@@ -7177,8 +7139,8 @@ pub mod fluent_builders {
         /// <p>The name of a specific parameter group for which to return details. By default,
         /// details about all parameter groups and the default parameter group are
         /// returned.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of a specific parameter group for which to return details. By default,
@@ -7198,8 +7160,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -7219,8 +7181,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -7359,8 +7321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of a cluster parameter group for which to return details.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of a cluster parameter group for which to return details.</p>
@@ -7377,8 +7339,8 @@ pub mod fluent_builders {
         /// <p>Default: All parameter types returned.</p>
         /// <p>Valid Values: <code>user</code> | <code>engine-default</code>
         /// </p>
-        pub fn source(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source(signature.into());
+        pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source(input.into());
             self
         }
         /// <p>The parameter types to return. Specify <code>user</code> to show parameters that
@@ -7398,8 +7360,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -7419,8 +7381,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -7508,8 +7470,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier of a cluster whose properties you are requesting. This
         /// parameter is case sensitive.</p>
         /// <p>The default is that all clusters defined for an account are returned.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of a cluster whose properties you are requesting. This
@@ -7529,8 +7491,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -7551,8 +7513,8 @@ pub mod fluent_builders {
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
         /// <p>Constraints: You can specify either the <b>ClusterIdentifier</b> parameter or the <b>Marker</b> parameter, but not both. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -7698,9 +7660,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn cluster_security_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_security_group_name(signature.into());
+            self.inner = self.inner.cluster_security_group_name(input.into());
             self
         }
         /// <p>The name of a cluster security group for which you are requesting details. You can
@@ -7721,8 +7683,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -7743,8 +7705,8 @@ pub mod fluent_builders {
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
         /// <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -7885,8 +7847,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster which generated the requested snapshots.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster which generated the requested snapshots.</p>
@@ -7899,8 +7861,8 @@ pub mod fluent_builders {
         }
         /// <p>The snapshot identifier of the snapshot about which to return
         /// information.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The snapshot identifier of the snapshot about which to return
@@ -7916,8 +7878,8 @@ pub mod fluent_builders {
         /// snapshots of all types are returned.</p>
         /// <p>Valid Values: <code>automated</code> | <code>manual</code>
         /// </p>
-        pub fn snapshot_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_type(signature.into());
+        pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_type(input.into());
             self
         }
         /// <p>The type of snapshots for which you are requesting information. By default,
@@ -7937,8 +7899,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2012-07-16T18:00:00Z</code>
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>A value that requests only snapshots created at or after the specified time. The
@@ -7961,8 +7923,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2012-07-16T18:00:00Z</code>
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>A time value that requests only snapshots created at or before the specified time.
@@ -7986,8 +7948,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8007,8 +7969,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -8025,8 +7987,8 @@ pub mod fluent_builders {
         /// filter the results to snapshots owned by a particular account. To describe snapshots you
         /// own, either specify your Amazon Web Services account, or do not specify the
         /// parameter.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot. Use this field to
@@ -8118,8 +8080,8 @@ pub mod fluent_builders {
         /// snapshots are returned. </p>
         /// </li>
         /// </ul>
-        pub fn cluster_exists(mut self, signature: bool) -> Self {
-            self.inner = self.inner.cluster_exists(signature);
+        pub fn cluster_exists(mut self, input: bool) -> Self {
+            self.inner = self.inner.cluster_exists(input);
             self
         }
         /// <p>A value that indicates whether to return snapshots only for an existing cluster.
@@ -8238,11 +8200,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster subnet group for which information is requested.</p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the cluster subnet group for which information is requested.</p>
@@ -8260,8 +8219,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8281,8 +8240,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -8410,8 +8369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the maintenance track. </p>
-        pub fn maintenance_track_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_track_name(signature.into());
+        pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_track_name(input.into());
             self
         }
         /// <p>The name of the maintenance track. </p>
@@ -8423,8 +8382,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>An integer value for the maximum number of maintenance tracks to return.</p>
@@ -8438,8 +8397,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -8520,8 +8479,8 @@ pub mod fluent_builders {
         /// <p>The specific cluster version to return.</p>
         /// <p>Example: <code>1.0</code>
         /// </p>
-        pub fn cluster_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_version(signature.into());
+        pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_version(input.into());
             self
         }
         /// <p>The specific cluster version to return.</p>
@@ -8550,9 +8509,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cluster_parameter_group_family(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_parameter_group_family(signature.into());
+            self.inner = self.inner.cluster_parameter_group_family(input.into());
             self
         }
         /// <p>The name of a specific cluster parameter group family to return details
@@ -8583,8 +8542,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8604,8 +8563,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -8680,8 +8639,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the datashare to describe details of.</p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The identifier of the datashare to describe details of.</p>
@@ -8696,8 +8655,8 @@ pub mod fluent_builders {
         /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
         /// is returned in a <code>marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned marker value. </p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8709,8 +8668,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
@@ -8779,8 +8738,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>
@@ -8790,8 +8749,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
         /// Redshift returns the list of datashares that have the specified status.</p>
-        pub fn status(mut self, signature: crate::model::DataShareStatusForConsumer) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::DataShareStatusForConsumer) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon
@@ -8807,8 +8766,8 @@ pub mod fluent_builders {
         /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
         /// is returned in a <code>marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned marker value. </p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8825,8 +8784,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -8900,8 +8859,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
-        pub fn producer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.producer_arn(signature.into());
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.producer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>
@@ -8911,8 +8870,8 @@ pub mod fluent_builders {
         }
         /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
         /// Redshift returns the list of datashares that have the specified status.</p>
-        pub fn status(mut self, signature: crate::model::DataShareStatusForProducer) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::DataShareStatusForProducer) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>An identifier giving the status of a datashare in the producer. If this field is specified, Amazon
@@ -8928,8 +8887,8 @@ pub mod fluent_builders {
         /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
         /// is returned in a <code>marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned marker value. </p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -8946,8 +8905,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -9026,8 +8985,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group family.</p>
-        pub fn parameter_group_family(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_family(signature.into());
+        pub fn parameter_group_family(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_family(input.into());
             self
         }
         /// <p>The name of the cluster parameter group family.</p>
@@ -9045,8 +9004,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -9066,8 +9025,8 @@ pub mod fluent_builders {
         /// the <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -9141,8 +9100,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier associated with the described endpoint.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier associated with the described endpoint.</p>
@@ -9154,8 +9113,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
-        pub fn resource_owner(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_owner(signature.into());
+        pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_owner(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
@@ -9167,8 +9126,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the endpoint to be described.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The name of the endpoint to be described.</p>
@@ -9180,8 +9139,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
-        pub fn vpc_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.vpc_id(signature.into());
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vpc_id(input.into());
             self
         }
         /// <p>The virtual private cloud (VPC) identifier with access to the cluster.</p>
@@ -9192,8 +9151,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist
         /// than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is
         /// included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -9207,8 +9166,8 @@ pub mod fluent_builders {
         /// <code>DescribeEndpointAccess</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to the value specified by the
         /// <code>MaxRecords</code> parameter.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -9280,8 +9239,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier of the cluster to access.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster to access.</p>
@@ -9294,8 +9253,8 @@ pub mod fluent_builders {
         }
         /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
         /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>
-        pub fn account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(signature.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
             self
         }
         /// <p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
@@ -9307,8 +9266,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether to check authorization from a grantor or grantee point of view.
         /// If true, Amazon Redshift returns endpoint authorizations that you've been granted.
         /// If false (default), checks authorization from a grantor point of view.</p>
-        pub fn grantee(mut self, signature: bool) -> Self {
-            self.inner = self.inner.grantee(signature);
+        pub fn grantee(mut self, input: bool) -> Self {
+            self.inner = self.inner.grantee(input);
             self
         }
         /// <p>Indicates whether to check authorization from a grantor or grantee point of view.
@@ -9321,8 +9280,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist
         /// than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is
         /// included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -9336,8 +9295,8 @@ pub mod fluent_builders {
         /// <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to the value specified by the
         /// <code>MaxRecords</code> parameter.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -9413,8 +9372,8 @@ pub mod fluent_builders {
         /// <p>The source type, such as cluster or parameter group, to which the described event
         /// categories apply.</p>
         /// <p>Valid values: cluster, cluster-snapshot, cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The source type, such as cluster or parameter group, to which the described event
@@ -9510,8 +9469,8 @@ pub mod fluent_builders {
         /// is <code>cluster-snapshot</code>.</p>
         /// </li>
         /// </ul>
-        pub fn source_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_identifier(signature.into());
+        pub fn source_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_identifier(input.into());
             self
         }
         /// <p>The identifier of the event source for which events will be returned. If this
@@ -9570,8 +9529,8 @@ pub mod fluent_builders {
         /// identifier.</p>
         /// </li>
         /// </ul>
-        pub fn source_type(mut self, signature: crate::model::SourceType) -> Self {
-            self.inner = self.inner.source_type(signature);
+        pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
+            self.inner = self.inner.source_type(input);
             self
         }
         /// <p>The event source to retrieve events for. If no value is specified, all events are
@@ -9612,8 +9571,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2009-07-08T18:00Z</code>
         /// </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601
@@ -9633,8 +9592,8 @@ pub mod fluent_builders {
         /// </p>
         /// <p>Example: <code>2009-07-08T18:00Z</code>
         /// </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601
@@ -9654,8 +9613,8 @@ pub mod fluent_builders {
         /// then only events which have occurred after 17:00 will be returned.</p>
         /// <p>Default: <code>60</code>
         /// </p>
-        pub fn duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration(signature);
+        pub fn duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration(input);
             self
         }
         /// <p>The number of minutes prior to the time of the request for which to retrieve
@@ -9674,8 +9633,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -9695,8 +9654,8 @@ pub mod fluent_builders {
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -9781,8 +9740,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the Amazon Redshift event notification subscription to be
         /// described.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the Amazon Redshift event notification subscription to be
@@ -9801,8 +9760,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -9822,8 +9781,8 @@ pub mod fluent_builders {
         /// field of the response. You can retrieve the next set of response records by providing
         /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
         /// </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -9964,11 +9923,9 @@ pub mod fluent_builders {
         /// owned by your Amazon Web Services account.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>The identifier of a specific HSM client certificate for which you want information.
@@ -9988,8 +9945,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -10009,8 +9966,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -10152,9 +10109,9 @@ pub mod fluent_builders {
         /// your Amazon Web Services account.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>The identifier of a specific Amazon Redshift HSM configuration to be described. If no
@@ -10174,8 +10131,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -10195,8 +10152,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -10327,8 +10284,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the cluster from which to get the logging status.</p>
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster from which to get the logging status.</p>
@@ -10407,8 +10364,8 @@ pub mod fluent_builders {
         /// Specify "recommend-node-config" to get configuration recommendations based on an existing cluster or snapshot.
         /// Specify "resize-cluster" to get configuration combinations for elastic resize based on an existing cluster.
         /// </p>
-        pub fn action_type(mut self, signature: crate::model::ActionType) -> Self {
-            self.inner = self.inner.action_type(signature);
+        pub fn action_type(mut self, input: crate::model::ActionType) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
         /// <p>The action type to evaluate for possible node configurations.
@@ -10424,8 +10381,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster to evaluate for possible node configurations.</p>
@@ -10437,8 +10394,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot to evaluate for possible node configurations.</p>
@@ -10452,8 +10409,8 @@ pub mod fluent_builders {
         /// <p>The Amazon Web Services account used to create or copy the snapshot.
         /// Required if you are restoring a snapshot you do not own,
         /// optional if you own the snapshot.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot.
@@ -10489,8 +10446,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -10510,8 +10467,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>500</code>
         /// </p>
         /// <p>Constraints: minimum 100, maximum 500.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -10597,8 +10554,8 @@ pub mod fluent_builders {
         /// offerings matching the specified version.</p>
         /// <p>Default: All versions.</p>
         /// <p>Constraints: Must be one of the version returned from <a>DescribeClusterVersions</a>.</p>
-        pub fn cluster_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_version(signature.into());
+        pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_version(input.into());
             self
         }
         /// <p>The version filter value. Specify this parameter to show only the available
@@ -10614,8 +10571,8 @@ pub mod fluent_builders {
         }
         /// <p>The node type filter value. Specify this parameter to show only the available
         /// offerings matching the specified node type.</p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The node type filter value. Specify this parameter to show only the available
@@ -10631,8 +10588,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -10652,8 +10609,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -10727,8 +10684,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
@@ -10737,8 +10694,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
@@ -10750,8 +10707,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
@@ -10763,8 +10720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
-        pub fn partner_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_name(signature.into());
+        pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_name(input.into());
             self
         }
         /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
@@ -10836,8 +10793,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>The identifier of the source reserved node in a reserved-node exchange request.</p>
@@ -10851,11 +10808,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the reserved-node exchange request.</p>
         pub fn reserved_node_exchange_request_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .reserved_node_exchange_request_id(signature.into());
+            self.inner = self.inner.reserved_node_exchange_request_id(input.into());
             self
         }
         /// <p>The identifier of the reserved-node exchange request.</p>
@@ -10870,8 +10825,8 @@ pub mod fluent_builders {
         /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
         /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned marker value.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -10887,8 +10842,8 @@ pub mod fluent_builders {
         /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous <code>DescribeReservedNodeExchangeStatus</code> request. If this
@@ -10970,11 +10925,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the offering.</p>
-        pub fn reserved_node_offering_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.reserved_node_offering_id(signature.into());
+        pub fn reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_offering_id(input.into());
             self
         }
         /// <p>The unique identifier for the offering.</p>
@@ -10992,8 +10944,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -11013,8 +10965,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -11088,8 +11040,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Identifier for the node reservation.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>Identifier for the node reservation.</p>
@@ -11107,8 +11059,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -11128,8 +11080,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -11211,8 +11163,8 @@ pub mod fluent_builders {
         /// parameter is case-sensitive.</p>
         /// <p>By default, resize operations for all clusters defined for an Amazon Web Services account are
         /// returned.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of a cluster whose resize progress you are requesting. This
@@ -11288,8 +11240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scheduled action to retrieve. </p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action to retrieve. </p>
@@ -11303,9 +11255,9 @@ pub mod fluent_builders {
         /// <p>The type of the scheduled actions to retrieve. </p>
         pub fn target_action_type(
             mut self,
-            signature: crate::model::ScheduledActionTypeValues,
+            input: crate::model::ScheduledActionTypeValues,
         ) -> Self {
-            self.inner = self.inner.target_action_type(signature);
+            self.inner = self.inner.target_action_type(input);
             self
         }
         /// <p>The type of the scheduled actions to retrieve. </p>
@@ -11318,8 +11270,8 @@ pub mod fluent_builders {
         }
         /// <p>The start time in UTC of the scheduled actions to retrieve.
         /// Only active scheduled actions that have invocations after this time are retrieved.</p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>The start time in UTC of the scheduled actions to retrieve.
@@ -11333,8 +11285,8 @@ pub mod fluent_builders {
         }
         /// <p>The end time in UTC of the scheduled action to retrieve.
         /// Only active scheduled actions that have invocations before this time are retrieved.</p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>The end time in UTC of the scheduled action to retrieve.
@@ -11348,8 +11300,8 @@ pub mod fluent_builders {
         }
         /// <p>If true, retrieve only active scheduled actions.
         /// If false, retrieve only disabled scheduled actions. </p>
-        pub fn active(mut self, signature: bool) -> Self {
-            self.inner = self.inner.active(signature);
+        pub fn active(mut self, input: bool) -> Self {
+            self.inner = self.inner.active(input);
             self
         }
         /// <p>If true, retrieve only active scheduled actions.
@@ -11381,8 +11333,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -11402,8 +11354,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -11484,11 +11436,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the snapshot copy grant.</p>
-        pub fn snapshot_copy_grant_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.snapshot_copy_grant_name(signature.into());
+        pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_copy_grant_name(input.into());
             self
         }
         /// <p>The name of the snapshot copy grant.</p>
@@ -11506,8 +11455,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -11528,8 +11477,8 @@ pub mod fluent_builders {
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
         /// <p>Constraints: You can specify either the <b>SnapshotCopyGrantName</b> parameter or the <b>Marker</b> parameter, but not both. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -11655,8 +11604,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier for the cluster whose snapshot schedules you want to
         /// view.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier for the cluster whose snapshot schedules you want to
@@ -11669,8 +11618,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A unique identifier for a snapshot schedule.</p>
-        pub fn schedule_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_identifier(signature.into());
+        pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_identifier(input.into());
             self
         }
         /// <p>A unique identifier for a snapshot schedule.</p>
@@ -11720,8 +11669,8 @@ pub mod fluent_builders {
         /// of records by providing this returned marker value in the <code>marker</code> parameter
         /// and retrying the command. If the <code>marker</code> field is empty, all response
         /// records have been retrieved for the request.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a
@@ -11738,8 +11687,8 @@ pub mod fluent_builders {
         /// is returned in a <code>marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned <code>marker</code>
         /// value.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number or response records to return in each call. If the number of
@@ -11877,8 +11826,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The Amazon Redshift cluster that the table is being restored to.</p>
@@ -11893,11 +11842,8 @@ pub mod fluent_builders {
         /// specify a <code>TableRestoreRequestId</code> value, then
         /// <code>DescribeTableRestoreStatus</code> returns the status of all in-progress table
         /// restore requests.</p>
-        pub fn table_restore_request_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.table_restore_request_id(signature.into());
+        pub fn table_restore_request_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.table_restore_request_id(input.into());
             self
         }
         /// <p>The identifier of the table restore request to return status for. If you don't
@@ -11914,8 +11860,8 @@ pub mod fluent_builders {
         /// <p>The maximum number of records to include in the response. If more records exist
         /// than the specified <code>MaxRecords</code> value, a pagination token called a marker is
         /// included in the response so that the remaining results can be retrieved.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of records to include in the response. If more records exist
@@ -11929,8 +11875,8 @@ pub mod fluent_builders {
         /// <code>DescribeTableRestoreStatus</code> request. If this parameter is specified, the
         /// response includes only records beyond the marker, up to the value specified by the
         /// <code>MaxRecords</code> parameter.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous
@@ -12027,8 +11973,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For
         /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
-        pub fn resource_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_name(signature.into());
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For
@@ -12076,8 +12022,8 @@ pub mod fluent_builders {
         /// <p>For more information about Amazon Redshift resource types and constructing ARNs, go to
         /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-iam-access-control-specify-actions">Specifying Policy Elements: Actions, Effects, Resources, and Principals</a> in
         /// the Amazon Redshift Cluster Management Guide. </p>
-        pub fn resource_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_type(signature.into());
+        pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_type(input.into());
             self
         }
         /// <p>The type of resource with which you want to view tags. Valid resource types are: </p>
@@ -12128,8 +12074,8 @@ pub mod fluent_builders {
         /// is returned in a <code>marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned <code>marker</code> value.
         /// </p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number or response records to return in each call. If the number of
@@ -12146,8 +12092,8 @@ pub mod fluent_builders {
         /// of records by providing this returned marker value in the <code>marker</code> parameter
         /// and retrying the command. If the <code>marker</code> field is empty, all response
         /// records have been retrieved for the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of response records in a
@@ -12289,8 +12235,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the usage limit to describe.</p>
-        pub fn usage_limit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_limit_id(signature.into());
+        pub fn usage_limit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_limit_id(input.into());
             self
         }
         /// <p>The identifier of the usage limit to describe.</p>
@@ -12302,8 +12248,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster for which you want to describe usage limits.</p>
@@ -12315,8 +12261,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The feature type for which you want to describe usage limits.</p>
-        pub fn feature_type(mut self, signature: crate::model::UsageLimitFeatureType) -> Self {
-            self.inner = self.inner.feature_type(signature);
+        pub fn feature_type(mut self, input: crate::model::UsageLimitFeatureType) -> Self {
+            self.inner = self.inner.feature_type(input);
             self
         }
         /// <p>The feature type for which you want to describe usage limits.</p>
@@ -12334,8 +12280,8 @@ pub mod fluent_builders {
         /// <p>Default: <code>100</code>
         /// </p>
         /// <p>Constraints: minimum 20, maximum 100.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -12355,8 +12301,8 @@ pub mod fluent_builders {
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional parameter that specifies the starting point to return a set of response
@@ -12487,8 +12433,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the cluster on which logging is to be stopped.</p>
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster on which logging is to be stopped.</p>
@@ -12569,8 +12515,8 @@ pub mod fluent_builders {
         /// snapshots to a destination region.</p>
         /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
         /// snapshot copy enabled.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the source cluster that you want to disable copying of
@@ -12646,8 +12592,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>
@@ -12660,8 +12606,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that specifies whether association for the datashare is removed from the
         /// entire account.</p>
-        pub fn disassociate_entire_account(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disassociate_entire_account(signature);
+        pub fn disassociate_entire_account(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_entire_account(input);
             self
         }
         /// <p>A value that specifies whether association for the datashare is removed from the
@@ -12672,8 +12618,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that association for
         /// the datashare is removed from.</p>
-        pub fn consumer_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.consumer_arn(signature.into());
+        pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.consumer_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the consumer that association for
@@ -12746,8 +12692,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the cluster on which logging is to be started.</p>
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -12770,8 +12716,8 @@ pub mod fluent_builders {
         /// <p>The cluster must have read bucket and put object permissions</p>
         /// </li>
         /// </ul>
-        pub fn bucket_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.bucket_name(signature.into());
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input.into());
             self
         }
         /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
@@ -12816,8 +12762,8 @@ pub mod fluent_builders {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn s3_key_prefix(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.s3_key_prefix(signature.into());
+        pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.s3_key_prefix(input.into());
             self
         }
         /// <p>The prefix applied to the log file names.</p>
@@ -12919,8 +12865,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
         /// <p>Constraints: Must be the valid name of an existing cluster that does not already
         /// have cross-region snapshot copy enabled.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the source cluster to copy snapshots from.</p>
@@ -12937,8 +12883,8 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.
         /// </p>
-        pub fn destination_region(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.destination_region(signature.into());
+        pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.destination_region(input.into());
             self
         }
         /// <p>The destination Amazon Web Services Region that you want to copy snapshots to.</p>
@@ -12956,8 +12902,8 @@ pub mod fluent_builders {
         /// they are copied from the source region.</p>
         /// <p>Default: 7.</p>
         /// <p>Constraints: Must be at least 1 and no more than 35.</p>
-        pub fn retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_period(signature);
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>The number of days to retain automated snapshots in the destination region after
@@ -12970,11 +12916,8 @@ pub mod fluent_builders {
         }
         /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
         /// cluster are copied to the destination region.</p>
-        pub fn snapshot_copy_grant_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.snapshot_copy_grant_name(signature.into());
+        pub fn snapshot_copy_grant_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_copy_grant_name(input.into());
             self
         }
         /// <p>The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted
@@ -12990,8 +12933,8 @@ pub mod fluent_builders {
         /// after they are copied from the source Amazon Web Services Region. If the value is -1, the manual
         /// snapshot is retained indefinitely. </p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days to retain newly copied snapshots in the destination Amazon Web Services Region
@@ -13116,8 +13059,8 @@ pub mod fluent_builders {
         /// Redshift Database Developer Guide.</p>
         /// </li>
         /// </ul>
-        pub fn db_user(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_user(signature.into());
+        pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_user(input.into());
             self
         }
         /// <p>The name of a database user. If a user name matching <code>DbUser</code> exists in
@@ -13178,8 +13121,8 @@ pub mod fluent_builders {
         /// Redshift Database Developer Guide.</p>
         /// </li>
         /// </ul>
-        pub fn db_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.db_name(signature.into());
+        pub fn db_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.db_name(input.into());
             self
         }
         /// <p>The name of a database that <code>DbUser</code> is authorized to log on to. If
@@ -13211,8 +13154,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the cluster that contains the database for which your are
         /// requesting credentials. This parameter is case sensitive.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster that contains the database for which your are
@@ -13227,8 +13170,8 @@ pub mod fluent_builders {
         /// <p>The number of seconds until the returned temporary password expires.</p>
         /// <p>Constraint: minimum 900, maximum 3600.</p>
         /// <p>Default: 900</p>
-        pub fn duration_seconds(mut self, signature: i32) -> Self {
-            self.inner = self.inner.duration_seconds(signature);
+        pub fn duration_seconds(mut self, input: i32) -> Self {
+            self.inner = self.inner.duration_seconds(input);
             self
         }
         /// <p>The number of seconds until the returned temporary password expires.</p>
@@ -13240,8 +13183,8 @@ pub mod fluent_builders {
         }
         /// <p>Create a database user with the name specified for the user named in
         /// <code>DbUser</code> if one does not exist.</p>
-        pub fn auto_create(mut self, signature: bool) -> Self {
-            self.inner = self.inner.auto_create(signature);
+        pub fn auto_create(mut self, input: bool) -> Self {
+            self.inner = self.inner.auto_create(input);
             self
         }
         /// <p>Create a database user with the name specified for the user named in
@@ -13378,11 +13321,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
-        pub fn action_type(
-            mut self,
-            signature: crate::model::ReservedNodeExchangeActionType,
-        ) -> Self {
-            self.inner = self.inner.action_type(signature);
+        pub fn action_type(mut self, input: crate::model::ReservedNodeExchangeActionType) -> Self {
+            self.inner = self.inner.action_type(input);
             self
         }
         /// <p>The action type of the reserved-node configuration. The action type can be an exchange initiated from either a snapshot or a resize.</p>
@@ -13394,8 +13334,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier for the cluster that is the source for a reserved-node exchange.</p>
@@ -13407,8 +13347,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier for the snapshot that is the source for the reserved-node exchange.</p>
@@ -13423,8 +13363,8 @@ pub mod fluent_builders {
         /// remaining response records exceeds the specified <code>MaxRecords</code> value, a value
         /// is returned in a <code>Marker</code> field of the response. You can retrieve the next
         /// set of records by retrying the command with the returned marker value.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>The maximum number of response records to return in each call. If the number of
@@ -13440,8 +13380,8 @@ pub mod fluent_builders {
         /// specified by the <code>MaxRecords</code> parameter. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>An optional pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code> request. If this
@@ -13516,8 +13456,8 @@ pub mod fluent_builders {
         }
         /// <p>A string representing the node identifier for the DC1 Reserved Node to be
         /// exchanged.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>A string representing the node identifier for the DC1 Reserved Node to be
@@ -13531,8 +13471,8 @@ pub mod fluent_builders {
         }
         /// <p>An integer setting the maximum number of ReservedNodeOfferings to
         /// retrieve.</p>
-        pub fn max_records(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_records(signature);
+        pub fn max_records(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_records(input);
             self
         }
         /// <p>An integer setting the maximum number of ReservedNodeOfferings to
@@ -13543,8 +13483,8 @@ pub mod fluent_builders {
         }
         /// <p>A value that indicates the starting point for the next set of
         /// ReservedNodeOfferings.</p>
-        pub fn marker(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.marker(signature.into());
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input.into());
             self
         }
         /// <p>A value that indicates the starting point for the next set of
@@ -13614,8 +13554,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to be modified.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster to be modified.</p>
@@ -13640,9 +13580,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn aqua_configuration_status(
             mut self,
-            signature: crate::model::AquaConfigurationStatus,
+            input: crate::model::AquaConfigurationStatus,
         ) -> Self {
-            self.inner = self.inner.aqua_configuration_status(signature);
+            self.inner = self.inner.aqua_configuration_status(input);
             self
         }
         /// <p>The new value of AQUA configuration status. Possible values include the following.</p>
@@ -13727,9 +13667,9 @@ pub mod fluent_builders {
         /// <p>The name of the authentication profile to replace.</p>
         pub fn authentication_profile_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_name(signature.into());
+            self.inner = self.inner.authentication_profile_name(input.into());
             self
         }
         /// <p>The name of the authentication profile to replace.</p>
@@ -13744,9 +13684,9 @@ pub mod fluent_builders {
         /// The maximum length of the JSON string is determined by a quota for your account.</p>
         pub fn authentication_profile_content(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.authentication_profile_content(signature.into());
+            self.inner = self.inner.authentication_profile_content(input.into());
             self
         }
         /// <p>The new content of the authentication profile in JSON format.
@@ -13829,8 +13769,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier of the cluster to be modified.</p>
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster to be modified.</p>
@@ -13850,8 +13790,8 @@ pub mod fluent_builders {
         /// your connection is switched to the new cluster. You can use <a>DescribeResize</a> to track the progress of the resize request. </p>
         /// <p>Valid Values: <code> multi-node | single-node </code>
         /// </p>
-        pub fn cluster_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_type(signature.into());
+        pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_type(input.into());
             self
         }
         /// <p>The new cluster type.</p>
@@ -13877,8 +13817,8 @@ pub mod fluent_builders {
         /// <code>dc2.large</code> | <code>dc2.8xlarge</code> |
         /// <code>ra3.xlplus</code> |  <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
         /// </p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The new node type of the cluster. If you specify a new node type, you must also
@@ -13905,8 +13845,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         ///
         /// <p>Valid Values: Integer greater than <code>0</code>.</p>
-        pub fn number_of_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(signature);
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
         /// <p>The new number of nodes of the cluster. If you specify a new number of nodes, you
@@ -14016,8 +13956,8 @@ pub mod fluent_builders {
         /// (single quote), " (double quote), \, /, @, or space.</p>
         /// </li>
         /// </ul>
-        pub fn master_user_password(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.master_user_password(signature.into());
+        pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.master_user_password(input.into());
             self
         }
         /// <p>The new password for the cluster admin user. This change is asynchronously applied
@@ -14063,9 +14003,9 @@ pub mod fluent_builders {
         /// that matches the cluster version.</p>
         pub fn cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the cluster parameter group to apply to this cluster. This change is
@@ -14090,8 +14030,8 @@ pub mod fluent_builders {
         /// <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p>
         /// <p>Default: Uses existing setting.</p>
         /// <p>Constraints: Must be a value from 0 to 35.</p>
-        pub fn automated_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.automated_snapshot_retention_period(signature);
+        pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.automated_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that automated snapshots are retained. If the value is 0,
@@ -14116,8 +14056,8 @@ pub mod fluent_builders {
         /// retroactively change the retention periods of existing manual snapshots.</p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
         /// <p>The default value is -1.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The default for number of days that a newly created manual snapshot is retained. If
@@ -14145,9 +14085,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Must be at least 30 minutes.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which system maintenance can occur, if
@@ -14178,8 +14118,8 @@ pub mod fluent_builders {
         /// in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
         /// <p>Example: <code>1.0</code>
         /// </p>
-        pub fn cluster_version(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_version(signature.into());
+        pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_version(input.into());
             self
         }
         /// <p>The new version number of the Amazon Redshift engine to upgrade to.</p>
@@ -14203,8 +14143,8 @@ pub mod fluent_builders {
         /// cluster during the maintenance window. </p>
         /// <p>Default: <code>false</code>
         /// </p>
-        pub fn allow_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_version_upgrade(signature);
+        pub fn allow_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_version_upgrade(input);
             self
         }
         /// <p>If <code>true</code>, major version upgrades will be applied automatically to the
@@ -14219,11 +14159,9 @@ pub mod fluent_builders {
         /// retrieve the data encryption keys stored in an HSM.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
@@ -14239,9 +14177,9 @@ pub mod fluent_builders {
         /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM configuration that contains the information the
@@ -14275,8 +14213,8 @@ pub mod fluent_builders {
         ///
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn new_cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_cluster_identifier(signature.into());
+        pub fn new_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_cluster_identifier(input.into());
             self
         }
         /// <p>The new identifier for the cluster.</p>
@@ -14310,8 +14248,8 @@ pub mod fluent_builders {
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only
         /// clusters in VPCs can be set to be publicly available.</p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. Only
@@ -14325,8 +14263,8 @@ pub mod fluent_builders {
         /// through an Internet gateway. For more information about provisioning clusters in
         /// EC2-VPC, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
         /// Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The Elastic IP (EIP) address for the cluster.</p>
@@ -14344,8 +14282,8 @@ pub mod fluent_builders {
         /// the Amazon Redshift Cluster Management Guide.</p>
         /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
         /// <p>Default: false</p>
-        pub fn enhanced_vpc_routing(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enhanced_vpc_routing(signature);
+        pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_vpc_routing(input);
             self
         }
         /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
@@ -14364,8 +14302,8 @@ pub mod fluent_builders {
         /// window. When the maintenance track changes, the cluster is switched to the latest
         /// cluster release available for the maintenance track. At this point, the maintenance
         /// track name is applied.</p>
-        pub fn maintenance_track_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_track_name(signature.into());
+        pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_track_name(input.into());
             self
         }
         /// <p>The name for the maintenance track that you want to assign for the cluster. This name
@@ -14386,8 +14324,8 @@ pub mod fluent_builders {
         /// with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>,
         /// we encrypt with the default key. </p>
         /// <p>If the value is not encrypted (false), then the cluster is decrypted. </p>
-        pub fn encrypted(mut self, signature: bool) -> Self {
-            self.inner = self.inner.encrypted(signature);
+        pub fn encrypted(mut self, input: bool) -> Self {
+            self.inner = self.inner.encrypted(input);
             self
         }
         /// <p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you
@@ -14401,8 +14339,8 @@ pub mod fluent_builders {
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
         /// to encrypt data in the cluster.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to use
@@ -14412,8 +14350,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
-        pub fn availability_zone_relocation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.availability_zone_relocation(signature);
+        pub fn availability_zone_relocation(mut self, input: bool) -> Self {
+            self.inner = self.inner.availability_zone_relocation(input);
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>
@@ -14425,8 +14363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>
@@ -14438,8 +14376,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The option to change the port of an Amazon Redshift cluster.</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The option to change the port of an Amazon Redshift cluster.</p>
@@ -14511,8 +14449,8 @@ pub mod fluent_builders {
         /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
         /// <p>Example: <code>examplecluster</code>
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of a cluster whose database revision you want to modify. </p>
@@ -14527,8 +14465,8 @@ pub mod fluent_builders {
         }
         /// <p>The identifier of the database revision. You can retrieve this value from the
         /// response to the <a>DescribeClusterDbRevisions</a> request.</p>
-        pub fn revision_target(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.revision_target(signature.into());
+        pub fn revision_target(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.revision_target(input.into());
             self
         }
         /// <p>The identifier of the database revision. You can retrieve this value from the
@@ -14604,8 +14542,8 @@ pub mod fluent_builders {
         }
         /// <p>The unique identifier of the cluster for which you want to associate or
         /// disassociate IAM roles.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster for which you want to associate or
@@ -14658,8 +14596,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
-        pub fn default_iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_iam_role_arn(signature.into());
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.</p>
@@ -14731,8 +14669,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique identifier for the cluster.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the cluster.</p>
@@ -14744,8 +14682,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
-        pub fn defer_maintenance(mut self, signature: bool) -> Self {
-            self.inner = self.inner.defer_maintenance(signature);
+        pub fn defer_maintenance(mut self, input: bool) -> Self {
+            self.inner = self.inner.defer_maintenance(input);
             self
         }
         /// <p>A boolean indicating whether to enable the deferred maintenance window. </p>
@@ -14756,9 +14694,9 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the deferred maintenance window.</p>
         pub fn defer_maintenance_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.defer_maintenance_identifier(signature.into());
+            self.inner = self.inner.defer_maintenance_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the deferred maintenance window.</p>
@@ -14770,11 +14708,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
-        pub fn defer_maintenance_start_time(
-            mut self,
-            signature: aws_smithy_types::DateTime,
-        ) -> Self {
-            self.inner = self.inner.defer_maintenance_start_time(signature);
+        pub fn defer_maintenance_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.defer_maintenance_start_time(input);
             self
         }
         /// <p>A timestamp indicating the start time for the deferred maintenance window.</p>
@@ -14787,8 +14722,8 @@ pub mod fluent_builders {
         }
         /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an
         /// end time, you can't specify a duration.</p>
-        pub fn defer_maintenance_end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.defer_maintenance_end_time(signature);
+        pub fn defer_maintenance_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.defer_maintenance_end_time(input);
             self
         }
         /// <p>A timestamp indicating end time for the deferred maintenance window. If you specify an
@@ -14802,8 +14737,8 @@ pub mod fluent_builders {
         }
         /// <p>An integer indicating the duration of the maintenance window in days. If you specify a
         /// duration, you can't specify an end time. The duration must be 45 days or less.</p>
-        pub fn defer_maintenance_duration(mut self, signature: i32) -> Self {
-            self.inner = self.inner.defer_maintenance_duration(signature);
+        pub fn defer_maintenance_duration(mut self, input: i32) -> Self {
+            self.inner = self.inner.defer_maintenance_duration(input);
             self
         }
         /// <p>An integer indicating the duration of the maintenance window in days. If you specify a
@@ -14877,8 +14812,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the parameter group to be modified.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to be modified.</p>
@@ -14978,8 +14913,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot whose setting you want to modify.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot whose setting you want to modify.</p>
@@ -14995,8 +14930,8 @@ pub mod fluent_builders {
         /// <p>If the manual snapshot falls outside of the new retention period, you can specify the
         /// force option to immediately delete the snapshot.</p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual
@@ -15013,8 +14948,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean option to override an exception if the retention period has already
         /// passed.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>A Boolean option to override an exception if the retention period has already
@@ -15085,8 +15020,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.
         /// </p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the cluster whose snapshot schedule you want to modify.
@@ -15100,8 +15035,8 @@ pub mod fluent_builders {
         }
         /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the
         /// cluster.</p>
-        pub fn schedule_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_identifier(signature.into());
+        pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_identifier(input.into());
             self
         }
         /// <p>A unique alphanumeric identifier for the schedule that you want to associate with the
@@ -15115,8 +15050,8 @@ pub mod fluent_builders {
         }
         /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the
         /// schedule.</p>
-        pub fn disassociate_schedule(mut self, signature: bool) -> Self {
-            self.inner = self.inner.disassociate_schedule(signature);
+        pub fn disassociate_schedule(mut self, input: bool) -> Self {
+            self.inner = self.inner.disassociate_schedule(input);
             self
         }
         /// <p>A boolean to indicate whether to remove the assoiciation between the cluster and the
@@ -15187,11 +15122,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the subnet group to be modified.</p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group to be modified.</p>
@@ -15203,8 +15135,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A text description of the subnet group to be modified.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>A text description of the subnet group to be modified.</p>
@@ -15292,8 +15224,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The endpoint to be modified.</p>
-        pub fn endpoint_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.endpoint_name(signature.into());
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.endpoint_name(input.into());
             self
         }
         /// <p>The endpoint to be modified.</p>
@@ -15382,8 +15314,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
-        pub fn subscription_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.subscription_name(signature.into());
+        pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.subscription_name(input.into());
             self
         }
         /// <p>The name of the modified Amazon Redshift event notification subscription.</p>
@@ -15396,8 +15328,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event
         /// notification subscription.</p>
-        pub fn sns_topic_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.sns_topic_arn(signature.into());
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sns_topic_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event
@@ -15414,8 +15346,8 @@ pub mod fluent_builders {
         /// If this value is not specified, events are returned for all Amazon Redshift objects in your
         /// Amazon Web Services account. You must specify a source type in order to specify source IDs.</p>
         /// <p>Valid values: cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and scheduled-action.</p>
-        pub fn source_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_type(signature.into());
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_type(input.into());
             self
         }
         /// <p>The type of source that will be generating the events. For example, if you want to
@@ -15480,8 +15412,8 @@ pub mod fluent_builders {
         /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
         /// subscription.</p>
         /// <p>Values: ERROR, INFO</p>
-        pub fn severity(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.severity(signature.into());
+        pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.severity(input.into());
             self
         }
         /// <p>Specifies the Amazon Redshift event severity to be published by the event notification
@@ -15493,8 +15425,8 @@ pub mod fluent_builders {
         }
         /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code>
         /// indicates the subscription is enabled </p>
-        pub fn enabled(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enabled(signature);
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.inner = self.inner.enabled(input);
             self
         }
         /// <p>A Boolean value indicating if the subscription is enabled. <code>true</code>
@@ -15565,8 +15497,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the scheduled action to modify. </p>
-        pub fn scheduled_action_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.scheduled_action_name(signature.into());
+        pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.scheduled_action_name(input.into());
             self
         }
         /// <p>The name of the scheduled action to modify. </p>
@@ -15579,8 +15511,8 @@ pub mod fluent_builders {
         }
         /// <p>A modified JSON format of the scheduled action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn target_action(mut self, signature: crate::model::ScheduledActionType) -> Self {
-            self.inner = self.inner.target_action(signature);
+        pub fn target_action(mut self, input: crate::model::ScheduledActionType) -> Self {
+            self.inner = self.inner.target_action(input);
             self
         }
         /// <p>A modified JSON format of the scheduled action.
@@ -15594,8 +15526,8 @@ pub mod fluent_builders {
         }
         /// <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format.
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
-        pub fn schedule(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule(signature.into());
+        pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule(input.into());
             self
         }
         /// <p>A modified schedule in either <code>at( )</code> or <code>cron( )</code> format.
@@ -15606,8 +15538,8 @@ pub mod fluent_builders {
         }
         /// <p>A different IAM role to assume to run the target action.
         /// For more information about this parameter, see <a>ScheduledAction</a>.</p>
-        pub fn iam_role(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.iam_role(signature.into());
+        pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.iam_role(input.into());
             self
         }
         /// <p>A different IAM role to assume to run the target action.
@@ -15619,9 +15551,9 @@ pub mod fluent_builders {
         /// <p>A modified description of the scheduled action. </p>
         pub fn scheduled_action_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.scheduled_action_description(signature.into());
+            self.inner = self.inner.scheduled_action_description(input.into());
             self
         }
         /// <p>A modified description of the scheduled action. </p>
@@ -15634,8 +15566,8 @@ pub mod fluent_builders {
         }
         /// <p>A modified start time of the scheduled action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn start_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.start_time(signature);
+        pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.start_time(input);
             self
         }
         /// <p>A modified start time of the scheduled action.
@@ -15649,8 +15581,8 @@ pub mod fluent_builders {
         }
         /// <p>A modified end time of the scheduled action.
         /// For more information about this parameter, see <a>ScheduledAction</a>. </p>
-        pub fn end_time(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.end_time(signature);
+        pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.end_time(input);
             self
         }
         /// <p>A modified end time of the scheduled action.
@@ -15663,8 +15595,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
-        pub fn enable(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable(signature);
+        pub fn enable(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable(input);
             self
         }
         /// <p>A modified enable flag of the scheduled action. If true, the scheduled action is active. If false, the scheduled action is disabled. </p>
@@ -15742,8 +15674,8 @@ pub mod fluent_builders {
         /// period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.</p>
         /// <p>Constraints: Must be the valid name of an existing cluster that has cross-region
         /// snapshot copy enabled.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster for which you want to change the retention
@@ -15771,8 +15703,8 @@ pub mod fluent_builders {
         /// indefinitely.</p>
         /// <p>Constraints: The number of days must be either -1 or an integer between 1 and 3,653
         /// for manual snapshots.</p>
-        pub fn retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.retention_period(signature);
+        pub fn retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.retention_period(input);
             self
         }
         /// <p>The number of days to retain automated snapshots in the destination Amazon Web Services Region
@@ -15795,8 +15727,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to apply the snapshot retention period to newly copied manual
         /// snapshots instead of automated snapshots.</p>
-        pub fn manual(mut self, signature: bool) -> Self {
-            self.inner = self.inner.manual(signature);
+        pub fn manual(mut self, input: bool) -> Self {
+            self.inner = self.inner.manual(input);
             self
         }
         /// <p>Indicates whether to apply the snapshot retention period to newly copied manual
@@ -15867,8 +15799,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
-        pub fn schedule_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.schedule_identifier(signature.into());
+        pub fn schedule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.schedule_identifier(input.into());
             self
         }
         /// <p>A unique alphanumeric identifier of the schedule to modify.</p>
@@ -15960,8 +15892,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the usage limit to modify.</p>
-        pub fn usage_limit_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.usage_limit_id(signature.into());
+        pub fn usage_limit_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.usage_limit_id(input.into());
             self
         }
         /// <p>The identifier of the usage limit to modify.</p>
@@ -15974,8 +15906,8 @@ pub mod fluent_builders {
         }
         /// <p>The new limit amount.
         /// For more information about this parameter, see <a>UsageLimit</a>. </p>
-        pub fn amount(mut self, signature: i64) -> Self {
-            self.inner = self.inner.amount(signature);
+        pub fn amount(mut self, input: i64) -> Self {
+            self.inner = self.inner.amount(input);
             self
         }
         /// <p>The new limit amount.
@@ -15986,8 +15918,8 @@ pub mod fluent_builders {
         }
         /// <p>The new action that Amazon Redshift takes when the limit is reached.
         /// For more information about this parameter, see <a>UsageLimit</a>. </p>
-        pub fn breach_action(mut self, signature: crate::model::UsageLimitBreachAction) -> Self {
-            self.inner = self.inner.breach_action(signature);
+        pub fn breach_action(mut self, input: crate::model::UsageLimitBreachAction) -> Self {
+            self.inner = self.inner.breach_action(input);
             self
         }
         /// <p>The new action that Amazon Redshift takes when the limit is reached.
@@ -16060,8 +15992,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to be paused.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster to be paused.</p>
@@ -16141,11 +16073,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
-        pub fn reserved_node_offering_id(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.reserved_node_offering_id(signature.into());
+        pub fn reserved_node_offering_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_offering_id(input.into());
             self
         }
         /// <p>The unique identifier of the reserved node offering you want to purchase.</p>
@@ -16159,8 +16088,8 @@ pub mod fluent_builders {
         /// <p>The number of reserved nodes that you want to purchase.</p>
         /// <p>Default: <code>1</code>
         /// </p>
-        pub fn node_count(mut self, signature: i32) -> Self {
-            self.inner = self.inner.node_count(signature);
+        pub fn node_count(mut self, input: i32) -> Self {
+            self.inner = self.inner.node_count(input);
             self
         }
         /// <p>The number of reserved nodes that you want to purchase.</p>
@@ -16238,8 +16167,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster identifier.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier.</p>
@@ -16311,8 +16240,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
-        pub fn data_share_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.data_share_arn(signature.into());
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_share_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the datashare to reject.</p>
@@ -16387,8 +16316,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the cluster parameter group to be reset.</p>
-        pub fn parameter_group_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.parameter_group_name(signature.into());
+        pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.parameter_group_name(input.into());
             self
         }
         /// <p>The name of the cluster parameter group to be reset.</p>
@@ -16403,8 +16332,8 @@ pub mod fluent_builders {
         /// to their default values. </p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn reset_all_parameters(mut self, signature: bool) -> Self {
-            self.inner = self.inner.reset_all_parameters(signature);
+        pub fn reset_all_parameters(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_all_parameters(input);
             self
         }
         /// <p>If <code>true</code>, all parameters in the specified parameter group will be reset
@@ -16541,8 +16470,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The unique identifier for the cluster to resize.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier for the cluster to resize.</p>
@@ -16554,8 +16483,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new cluster type for the specified cluster.</p>
-        pub fn cluster_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_type(signature.into());
+        pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_type(input.into());
             self
         }
         /// <p>The new cluster type for the specified cluster.</p>
@@ -16564,8 +16493,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>
@@ -16574,8 +16503,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
-        pub fn number_of_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(signature);
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
         /// <p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>
@@ -16586,8 +16515,8 @@ pub mod fluent_builders {
         /// <p>A boolean value indicating whether the resize operation is using the classic resize
         /// process. If you don't provide this parameter or set the value to
         /// <code>false</code>, the resize type is elastic. </p>
-        pub fn classic(mut self, signature: bool) -> Self {
-            self.inner = self.inner.classic(signature);
+        pub fn classic(mut self, input: bool) -> Self {
+            self.inner = self.inner.classic(input);
             self
         }
         /// <p>A boolean value indicating whether the resize operation is using the classic resize
@@ -16598,8 +16527,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the reserved node.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>The identifier of the reserved node.</p>
@@ -16613,11 +16542,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the target reserved node offering.</p>
         pub fn target_reserved_node_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .target_reserved_node_offering_id(signature.into());
+            self.inner = self.inner.target_reserved_node_offering_id(input.into());
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
@@ -16719,8 +16646,8 @@ pub mod fluent_builders {
         /// <p>Must be unique for all clusters within an Amazon Web Services account.</p>
         /// </li>
         /// </ul>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster that will be created from restoring the
@@ -16754,8 +16681,8 @@ pub mod fluent_builders {
         /// case sensitive.</p>
         /// <p>Example: <code>my-snapshot-id</code>
         /// </p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The name of the snapshot from which to create the new cluster. This parameter isn't
@@ -16774,9 +16701,9 @@ pub mod fluent_builders {
         /// specifies anything other than * for the cluster name.</p>
         pub fn snapshot_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_cluster_identifier(signature.into());
+            self.inner = self.inner.snapshot_cluster_identifier(input.into());
             self
         }
         /// <p>The name of the cluster the source snapshot was created from. This parameter is
@@ -16792,8 +16719,8 @@ pub mod fluent_builders {
         /// <p>The port number on which the cluster accepts connections.</p>
         /// <p>Default: The same port as the original cluster.</p>
         /// <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>
-        pub fn port(mut self, signature: i32) -> Self {
-            self.inner = self.inner.port(signature);
+        pub fn port(mut self, input: i32) -> Self {
+            self.inner = self.inner.port(input);
             self
         }
         /// <p>The port number on which the cluster accepts connections.</p>
@@ -16807,8 +16734,8 @@ pub mod fluent_builders {
         /// <p>Default: A random, system-chosen Availability Zone.</p>
         /// <p>Example: <code>us-east-2a</code>
         /// </p>
-        pub fn availability_zone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.availability_zone(signature.into());
+        pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.availability_zone(input.into());
             self
         }
         /// <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
@@ -16826,8 +16753,8 @@ pub mod fluent_builders {
         /// window to the Amazon Redshift engine that is running on the cluster. </p>
         /// <p>Default: <code>true</code>
         /// </p>
-        pub fn allow_version_upgrade(mut self, signature: bool) -> Self {
-            self.inner = self.inner.allow_version_upgrade(signature);
+        pub fn allow_version_upgrade(mut self, input: bool) -> Self {
+            self.inner = self.inner.allow_version_upgrade(input);
             self
         }
         /// <p>If <code>true</code>, major version upgrades can be applied during the maintenance
@@ -16841,11 +16768,8 @@ pub mod fluent_builders {
         /// <p>The name of the subnet group where you want to cluster restored.</p>
         /// <p>A snapshot of cluster in VPC can be restored only in VPC. Therefore, you must
         /// provide subnet group name where you want the cluster restored.</p>
-        pub fn cluster_subnet_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.cluster_subnet_group_name(signature.into());
+        pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_subnet_group_name(input.into());
             self
         }
         /// <p>The name of the subnet group where you want to cluster restored.</p>
@@ -16859,8 +16783,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
-        pub fn publicly_accessible(mut self, signature: bool) -> Self {
-            self.inner = self.inner.publicly_accessible(signature);
+        pub fn publicly_accessible(mut self, input: bool) -> Self {
+            self.inner = self.inner.publicly_accessible(input);
             self
         }
         /// <p>If <code>true</code>, the cluster can be accessed from a public network. </p>
@@ -16870,8 +16794,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
         /// restoring a snapshot you do not own, optional if you own the snapshot.</p>
-        pub fn owner_account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.owner_account(signature.into());
+        pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owner_account(input.into());
             self
         }
         /// <p>The Amazon Web Services account used to create or copy the snapshot. Required if you are
@@ -16887,11 +16811,9 @@ pub mod fluent_builders {
         /// retrieve the data encryption keys stored in an HSM.</p>
         pub fn hsm_client_certificate_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .hsm_client_certificate_identifier(signature.into());
+            self.inner = self.inner.hsm_client_certificate_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster uses to
@@ -16907,9 +16829,9 @@ pub mod fluent_builders {
         /// Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
         pub fn hsm_configuration_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.hsm_configuration_identifier(signature.into());
+            self.inner = self.inner.hsm_configuration_identifier(input.into());
             self
         }
         /// <p>Specifies the name of the HSM configuration that contains the information the
@@ -16922,8 +16844,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The elastic IP (EIP) address for the cluster.</p>
-        pub fn elastic_ip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.elastic_ip(signature.into());
+        pub fn elastic_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.elastic_ip(input.into());
             self
         }
         /// <p>The elastic IP (EIP) address for the cluster.</p>
@@ -16949,9 +16871,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn cluster_parameter_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_parameter_group_name(signature.into());
+            self.inner = self.inner.cluster_parameter_group_name(input.into());
             self
         }
         /// <p>The name of the parameter group to be associated with this cluster.</p>
@@ -17031,9 +16953,9 @@ pub mod fluent_builders {
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.preferred_maintenance_window(signature.into());
+            self.inner = self.inner.preferred_maintenance_window(input.into());
             self
         }
         /// <p>The weekly time range (in UTC) during which automated cluster maintenance can
@@ -17059,8 +16981,8 @@ pub mod fluent_builders {
         /// <p>Default: The value selected for the cluster from which the snapshot was
         /// taken.</p>
         /// <p>Constraints: Must be a value from 0 to 35.</p>
-        pub fn automated_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.automated_snapshot_retention_period(signature);
+        pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.automated_snapshot_retention_period(input);
             self
         }
         /// <p>The number of days that automated snapshots are retained. If the value is 0,
@@ -17082,8 +17004,8 @@ pub mod fluent_builders {
         /// snapshot is retained indefinitely. This setting doesn't change the retention period
         /// of existing snapshots.</p>
         /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
-        pub fn manual_snapshot_retention_period(mut self, signature: i32) -> Self {
-            self.inner = self.inner.manual_snapshot_retention_period(signature);
+        pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
+            self.inner = self.inner.manual_snapshot_retention_period(input);
             self
         }
         /// <p>The default number of days to retain a manual snapshot. If the value is -1, the
@@ -17099,8 +17021,8 @@ pub mod fluent_builders {
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
         /// use to encrypt data in the cluster that you restore from a shared snapshot.</p>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>The Key Management Service (KMS) key ID of the encryption key that you want to
@@ -17120,8 +17042,8 @@ pub mod fluent_builders {
         /// cluster, then resize to a dc2.8large cluster. For more information about node types, see
         /// <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#rs-about-clusters-and-nodes">
         /// About Clusters and Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
-        pub fn node_type(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.node_type(signature.into());
+        pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.node_type(input.into());
             self
         }
         /// <p>The node type that the restored cluster will be provisioned with.</p>
@@ -17145,8 +17067,8 @@ pub mod fluent_builders {
         /// the Amazon Redshift Cluster Management Guide.</p>
         /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
         /// <p>Default: false</p>
-        pub fn enhanced_vpc_routing(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enhanced_vpc_routing(signature);
+        pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
+            self.inner = self.inner.enhanced_vpc_routing(input);
             self
         }
         /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
@@ -17160,8 +17082,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Reserved.</p>
-        pub fn additional_info(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.additional_info(signature.into());
+        pub fn additional_info(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.additional_info(input.into());
             self
         }
         /// <p>Reserved.</p>
@@ -17203,8 +17125,8 @@ pub mod fluent_builders {
         /// snapshot. For example, suppose that you take a snapshot of a cluster that is on the
         /// current track and then change the cluster to be on the trailing track. In this case, the
         /// snapshot and the source cluster are on different tracks.</p>
-        pub fn maintenance_track_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.maintenance_track_name(signature.into());
+        pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.maintenance_track_name(input.into());
             self
         }
         /// <p>The name of the maintenance track for the restored cluster. When you take a snapshot,
@@ -17223,9 +17145,9 @@ pub mod fluent_builders {
         /// <p>A unique identifier for the snapshot schedule.</p>
         pub fn snapshot_schedule_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_schedule_identifier(signature.into());
+            self.inner = self.inner.snapshot_schedule_identifier(input.into());
             self
         }
         /// <p>A unique identifier for the snapshot schedule.</p>
@@ -17237,8 +17159,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of nodes specified when provisioning the restored cluster.</p>
-        pub fn number_of_nodes(mut self, signature: i32) -> Self {
-            self.inner = self.inner.number_of_nodes(signature);
+        pub fn number_of_nodes(mut self, input: i32) -> Self {
+            self.inner = self.inner.number_of_nodes(input);
             self
         }
         /// <p>The number of nodes specified when provisioning the restored cluster.</p>
@@ -17247,8 +17169,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
-        pub fn availability_zone_relocation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.availability_zone_relocation(signature);
+        pub fn availability_zone_relocation(mut self, input: bool) -> Self {
+            self.inner = self.inner.availability_zone_relocation(input);
             self
         }
         /// <p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>
@@ -17273,9 +17195,9 @@ pub mod fluent_builders {
         /// </ul>
         pub fn aqua_configuration_status(
             mut self,
-            signature: crate::model::AquaConfigurationStatus,
+            input: crate::model::AquaConfigurationStatus,
         ) -> Self {
-            self.inner = self.inner.aqua_configuration_status(signature);
+            self.inner = self.inner.aqua_configuration_status(input);
             self
         }
         /// <p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p>
@@ -17298,8 +17220,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
-        pub fn default_iam_role_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.default_iam_role_arn(signature.into());
+        pub fn default_iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.default_iam_role_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified while it was restored from a snapshot.</p>
@@ -17311,8 +17233,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
-        pub fn reserved_node_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.reserved_node_id(signature.into());
+        pub fn reserved_node_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.reserved_node_id(input.into());
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
@@ -17326,11 +17248,9 @@ pub mod fluent_builders {
         /// <p>The identifier of the target reserved node offering.</p>
         pub fn target_reserved_node_offering_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self
-                .inner
-                .target_reserved_node_offering_id(signature.into());
+            self.inner = self.inner.target_reserved_node_offering_id(input.into());
             self
         }
         /// <p>The identifier of the target reserved node offering.</p>
@@ -17413,8 +17333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the Amazon Redshift cluster to restore the table to.</p>
@@ -17428,8 +17348,8 @@ pub mod fluent_builders {
         /// <p>The identifier of the snapshot to restore the table from. This snapshot must have
         /// been created from the Amazon Redshift cluster specified by the
         /// <code>ClusterIdentifier</code> parameter.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot to restore the table from. This snapshot must have
@@ -17443,8 +17363,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the source database that contains the table to restore from.</p>
-        pub fn source_database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_database_name(signature.into());
+        pub fn source_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_database_name(input.into());
             self
         }
         /// <p>The name of the source database that contains the table to restore from.</p>
@@ -17458,8 +17378,8 @@ pub mod fluent_builders {
         /// <p>The name of the source schema that contains the table to restore from. If you do
         /// not specify a <code>SourceSchemaName</code> value, the default is
         /// <code>public</code>.</p>
-        pub fn source_schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_schema_name(signature.into());
+        pub fn source_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_schema_name(input.into());
             self
         }
         /// <p>The name of the source schema that contains the table to restore from. If you do
@@ -17473,8 +17393,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the source table to restore from.</p>
-        pub fn source_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.source_table_name(signature.into());
+        pub fn source_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_table_name(input.into());
             self
         }
         /// <p>The name of the source table to restore from.</p>
@@ -17486,8 +17406,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database to restore the table to.</p>
-        pub fn target_database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_database_name(signature.into());
+        pub fn target_database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_database_name(input.into());
             self
         }
         /// <p>The name of the database to restore the table to.</p>
@@ -17499,8 +17419,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the schema to restore the table to.</p>
-        pub fn target_schema_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.target_schema_name(signature.into());
+        pub fn target_schema_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_schema_name(input.into());
             self
         }
         /// <p>The name of the schema to restore the table to.</p>
@@ -17512,8 +17432,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the table to create as a result of the current request.</p>
-        pub fn new_table_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.new_table_name(signature.into());
+        pub fn new_table_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.new_table_name(input.into());
             self
         }
         /// <p>The name of the table to create as a result of the current request.</p>
@@ -17527,8 +17447,8 @@ pub mod fluent_builders {
         /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive.
         /// If <code>true</code>, the names are case sensitive.
         /// If <code>false</code> (default), the names are not case sensitive.</p>
-        pub fn enable_case_sensitive_identifier(mut self, signature: bool) -> Self {
-            self.inner = self.inner.enable_case_sensitive_identifier(signature);
+        pub fn enable_case_sensitive_identifier(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_case_sensitive_identifier(input);
             self
         }
         /// <p>Indicates whether name identifiers for database, schema, and table are case sensitive.
@@ -17602,8 +17522,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the cluster to be resumed.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster to be resumed.</p>
@@ -17681,9 +17601,9 @@ pub mod fluent_builders {
         /// <p>The name of the security Group from which to revoke the ingress rule.</p>
         pub fn cluster_security_group_name(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.cluster_security_group_name(signature.into());
+            self.inner = self.inner.cluster_security_group_name(input.into());
             self
         }
         /// <p>The name of the security Group from which to revoke the ingress rule.</p>
@@ -17698,8 +17618,8 @@ pub mod fluent_builders {
         /// Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified,
         /// <code>EC2SecurityGroupName</code> and <code>EC2SecurityGroupOwnerId</code> cannot be
         /// provided. </p>
-        pub fn cidrip(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cidrip(signature.into());
+        pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cidrip(input.into());
             self
         }
         /// <p>The IP range for which to revoke access. This range must be a valid Classless
@@ -17713,11 +17633,8 @@ pub mod fluent_builders {
         /// <p>The name of the EC2 Security Group whose access is to be revoked. If
         /// <code>EC2SecurityGroupName</code> is specified, <code>EC2SecurityGroupOwnerId</code>
         /// must also be provided and <code>CIDRIP</code> cannot be provided. </p>
-        pub fn ec2_security_group_name(
-            mut self,
-            signature: impl Into<std::string::String>,
-        ) -> Self {
-            self.inner = self.inner.ec2_security_group_name(signature.into());
+        pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.ec2_security_group_name(input.into());
             self
         }
         /// <p>The name of the EC2 Security Group whose access is to be revoked. If
@@ -17739,9 +17656,9 @@ pub mod fluent_builders {
         /// </p>
         pub fn ec2_security_group_owner_id(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.ec2_security_group_owner_id(signature.into());
+            self.inner = self.inner.ec2_security_group_owner_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account number of the owner of the security group specified in the
@@ -17819,8 +17736,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The cluster to revoke access from.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster to revoke access from.</p>
@@ -17832,8 +17749,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
-        pub fn account(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account(signature.into());
+        pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
@@ -17860,8 +17777,8 @@ pub mod fluent_builders {
         }
         /// <p>Indicates whether to force the revoke action.
         /// If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
-        pub fn force(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force(signature);
+        pub fn force(mut self, input: bool) -> Self {
+            self.inner = self.inner.force(input);
             self
         }
         /// <p>Indicates whether to force the revoke action.
@@ -17937,8 +17854,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The identifier of the snapshot that the account can no longer access.</p>
-        pub fn snapshot_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.snapshot_identifier(signature.into());
+        pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.snapshot_identifier(input.into());
             self
         }
         /// <p>The identifier of the snapshot that the account can no longer access.</p>
@@ -17954,9 +17871,9 @@ pub mod fluent_builders {
         /// specifies anything other than * for the cluster name.</p>
         pub fn snapshot_cluster_identifier(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.snapshot_cluster_identifier(signature.into());
+            self.inner = self.inner.snapshot_cluster_identifier(input.into());
             self
         }
         /// <p>The identifier of the cluster the snapshot was created from. This parameter is
@@ -17973,9 +17890,9 @@ pub mod fluent_builders {
         /// snapshot.</p>
         pub fn account_with_restore_access(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.account_with_restore_access(signature.into());
+            self.inner = self.inner.account_with_restore_access(input.into());
             self
         }
         /// <p>The identifier of the Amazon Web Services account that can no longer restore the specified
@@ -18051,8 +17968,8 @@ pub mod fluent_builders {
         /// for.</p>
         /// <p>Constraints: Must be the name of valid cluster that has encryption
         /// enabled.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The unique identifier of the cluster that you want to rotate the encryption keys
@@ -18127,8 +18044,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-        pub fn account_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.account_id(signature.into());
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.account_id(input.into());
             self
         }
         /// <p>The Amazon Web Services account ID that owns the cluster.</p>
@@ -18137,8 +18054,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
-        pub fn cluster_identifier(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.cluster_identifier(signature.into());
+        pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.cluster_identifier(input.into());
             self
         }
         /// <p>The cluster identifier of the cluster whose partner integration status is being updated.</p>
@@ -18150,8 +18067,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the database whose partner integration status is being updated.</p>
-        pub fn database_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.database_name(signature.into());
+        pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.database_name(input.into());
             self
         }
         /// <p>The name of the database whose partner integration status is being updated.</p>
@@ -18163,8 +18080,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the partner whose integration status is being updated.</p>
-        pub fn partner_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.partner_name(signature.into());
+        pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.partner_name(input.into());
             self
         }
         /// <p>The name of the partner whose integration status is being updated.</p>
@@ -18173,8 +18090,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The value of the updated status.</p>
-        pub fn status(mut self, signature: crate::model::PartnerIntegrationStatus) -> Self {
-            self.inner = self.inner.status(signature);
+        pub fn status(mut self, input: crate::model::PartnerIntegrationStatus) -> Self {
+            self.inner = self.inner.status(input);
             self
         }
         /// <p>The value of the updated status.</p>
@@ -18186,8 +18103,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The status message provided by the partner.</p>
-        pub fn status_message(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.status_message(signature.into());
+        pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.status_message(input.into());
             self
         }
         /// <p>The status message provided by the partner.</p>

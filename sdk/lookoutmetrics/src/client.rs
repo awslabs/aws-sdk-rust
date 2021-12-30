@@ -333,8 +333,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector.</p>
@@ -406,8 +406,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -479,8 +479,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the alert.</p>
-        pub fn alert_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_name(signature.into());
+        pub fn alert_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_name(input.into());
             self
         }
         /// <p>The name of the alert.</p>
@@ -489,8 +489,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
-        pub fn alert_sensitivity_threshold(mut self, signature: i32) -> Self {
-            self.inner = self.inner.alert_sensitivity_threshold(signature);
+        pub fn alert_sensitivity_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.alert_sensitivity_threshold(input);
             self
         }
         /// <p>An integer from 0 to 100 specifying the alert sensitivity threshold.</p>
@@ -499,8 +499,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the alert.</p>
-        pub fn alert_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_description(signature.into());
+        pub fn alert_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_description(input.into());
             self
         }
         /// <p>A description of the alert.</p>
@@ -512,8 +512,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to which the alert is attached.</p>
@@ -525,8 +525,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Action that will be triggered when there is an alert.</p>
-        pub fn action(mut self, signature: crate::model::Action) -> Self {
-            self.inner = self.inner.action(signature);
+        pub fn action(mut self, input: crate::model::Action) -> Self {
+            self.inner = self.inner.action(input);
             self
         }
         /// <p>Action that will be triggered when there is an alert.</p>
@@ -618,8 +618,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the detector.</p>
-        pub fn anomaly_detector_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_name(signature.into());
+        pub fn anomaly_detector_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_name(input.into());
             self
         }
         /// <p>The name of the detector.</p>
@@ -633,9 +633,9 @@ pub mod fluent_builders {
         /// <p>A description of the detector.</p>
         pub fn anomaly_detector_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.anomaly_detector_description(signature.into());
+            self.inner = self.inner.anomaly_detector_description(input.into());
             self
         }
         /// <p>A description of the detector.</p>
@@ -649,9 +649,9 @@ pub mod fluent_builders {
         /// <p>Contains information about the configuration of the anomaly detector.</p>
         pub fn anomaly_detector_config(
             mut self,
-            signature: crate::model::AnomalyDetectorConfig,
+            input: crate::model::AnomalyDetectorConfig,
         ) -> Self {
-            self.inner = self.inner.anomaly_detector_config(signature);
+            self.inner = self.inner.anomaly_detector_config(input);
             self
         }
         /// <p>Contains information about the configuration of the anomaly detector.</p>
@@ -663,8 +663,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the KMS key to use to encrypt your data.</p>
-        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(signature.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The ARN of the KMS key to use to encrypt your data.</p>
@@ -756,8 +756,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the anomaly detector that will use the dataset.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector that will use the dataset.</p>
@@ -769,8 +769,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the dataset.</p>
-        pub fn metric_set_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_name(signature.into());
+        pub fn metric_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_name(input.into());
             self
         }
         /// <p>The name of the dataset.</p>
@@ -782,8 +782,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A description of the dataset you are creating.</p>
-        pub fn metric_set_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(signature.into());
+        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_description(input.into());
             self
         }
         /// <p>A description of the dataset you are creating.</p>
@@ -812,8 +812,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-        pub fn offset(mut self, signature: i32) -> Self {
-            self.inner = self.inner.offset(signature);
+        pub fn offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.offset(input);
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
@@ -822,8 +822,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about the column used for tracking time in your source data.</p>
-        pub fn timestamp_column(mut self, signature: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(signature);
+        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
+            self.inner = self.inner.timestamp_column(input);
             self
         }
         /// <p>Contains information about the column used for tracking time in your source data.</p>
@@ -852,8 +852,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
-        pub fn metric_set_frequency(mut self, signature: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(signature);
+        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
+            self.inner = self.inner.metric_set_frequency(input);
             self
         }
         /// <p>The frequency with which the source data will be analyzed for anomalies.</p>
@@ -865,8 +865,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about how the source data should be interpreted.</p>
-        pub fn metric_source(mut self, signature: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(signature);
+        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
+            self.inner = self.inner.metric_source(input);
             self
         }
         /// <p>Contains information about how the source data should be interpreted.</p>
@@ -878,8 +878,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The time zone in which your source data was recorded.</p>
-        pub fn timezone(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timezone(signature.into());
+        pub fn timezone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timezone(input.into());
             self
         }
         /// <p>The time zone in which your source data was recorded.</p>
@@ -971,8 +971,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the alert to delete.</p>
-        pub fn alert_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(signature.into());
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_arn(input.into());
             self
         }
         /// <p>The ARN of the alert to delete.</p>
@@ -1042,8 +1042,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to delete.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to delete.</p>
@@ -1117,8 +1117,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the alert to describe.</p>
-        pub fn alert_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.alert_arn(signature.into());
+        pub fn alert_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alert_arn(input.into());
             self
         }
         /// <p>The ARN of the alert to describe.</p>
@@ -1189,8 +1189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1202,8 +1202,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp of the anomaly detection job.</p>
-        pub fn timestamp(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.timestamp(signature.into());
+        pub fn timestamp(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.timestamp(input.into());
             self
         }
         /// <p>The timestamp of the anomaly detection job.</p>
@@ -1212,8 +1212,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The number of items to return in the response.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The number of items to return in the response.</p>
@@ -1222,8 +1222,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1294,8 +1294,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to describe.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to describe.</p>
@@ -1369,8 +1369,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset.</p>
-        pub fn metric_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(signature.into());
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset.</p>
@@ -1442,8 +1442,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(signature.into());
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_group_id(input.into());
             self
         }
         /// <p>The ID of the anomaly group.</p>
@@ -1455,8 +1455,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1528,8 +1528,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1543,9 +1543,9 @@ pub mod fluent_builders {
         /// <p>The anomalous metric and group ID.</p>
         pub fn anomaly_group_time_series_feedback(
             mut self,
-            signature: crate::model::AnomalyGroupTimeSeries,
+            input: crate::model::AnomalyGroupTimeSeries,
         ) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(signature);
+            self.inner = self.inner.anomaly_group_time_series_feedback(input);
             self
         }
         /// <p>The anomalous metric and group ID.</p>
@@ -1557,8 +1557,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1567,8 +1567,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1637,11 +1637,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A datasource bucket in Amazon S3.</p>
-        pub fn s3_source_config(
-            mut self,
-            signature: crate::model::SampleDataS3SourceConfig,
-        ) -> Self {
-            self.inner = self.inner.s3_source_config(signature);
+        pub fn s3_source_config(mut self, input: crate::model::SampleDataS3SourceConfig) -> Self {
+            self.inner = self.inner.s3_source_config(input);
             self
         }
         /// <p>A datasource bucket in Amazon S3.</p>
@@ -1715,8 +1712,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the alert's detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the alert's detector.</p>
@@ -1729,8 +1726,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
         /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To
@@ -1740,8 +1737,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results that will be displayed by the request.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results that will be displayed by the request.</p>
@@ -1812,8 +1809,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1823,8 +1820,8 @@ pub mod fluent_builders {
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
         /// retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To
@@ -1894,8 +1891,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -1907,8 +1904,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The minimum severity score for inclusion in the output.</p>
-        pub fn sensitivity_threshold(mut self, signature: i32) -> Self {
-            self.inner = self.inner.sensitivity_threshold(signature);
+        pub fn sensitivity_threshold(mut self, input: i32) -> Self {
+            self.inner = self.inner.sensitivity_threshold(input);
             self
         }
         /// <p>The minimum severity score for inclusion in the output.</p>
@@ -1917,8 +1914,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -1927,8 +1924,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -1997,8 +1994,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -2010,8 +2007,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID of the anomaly group.</p>
-        pub fn anomaly_group_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_group_id(signature.into());
+        pub fn anomaly_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_group_id(input.into());
             self
         }
         /// <p>The ID of the anomaly group.</p>
@@ -2023,8 +2020,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the measure field.</p>
-        pub fn metric_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_name(signature.into());
+        pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_name(input.into());
             self
         }
         /// <p>The name of the measure field.</p>
@@ -2033,8 +2030,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2043,8 +2040,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
@@ -2115,8 +2112,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the anomaly detector containing the metrics sets to list.</p>
@@ -2128,8 +2125,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The maximum number of results to return.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The maximum number of results to return.</p>
@@ -2140,8 +2137,8 @@ pub mod fluent_builders {
         /// <p>If the result of the previous request was truncated, the response includes a
         /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
         /// request. Tokens expire after 24 hours.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>If the result of the previous request was truncated, the response includes a
@@ -2212,8 +2209,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2282,8 +2279,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -2297,9 +2294,9 @@ pub mod fluent_builders {
         /// <p>Feedback for an anomalous metric.</p>
         pub fn anomaly_group_time_series_feedback(
             mut self,
-            signature: crate::model::AnomalyGroupTimeSeriesFeedback,
+            input: crate::model::AnomalyGroupTimeSeriesFeedback,
         ) -> Self {
-            self.inner = self.inner.anomaly_group_time_series_feedback(signature);
+            self.inner = self.inner.anomaly_group_time_series_feedback(input);
             self
         }
         /// <p>Feedback for an anomalous metric.</p>
@@ -2371,8 +2368,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2468,8 +2465,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
-        pub fn resource_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_arn(signature.into());
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_arn(input.into());
             self
         }
         /// <p>The resource's Amazon Resource Name (ARN).</p>
@@ -2555,8 +2552,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the detector to update.</p>
-        pub fn anomaly_detector_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.anomaly_detector_arn(signature.into());
+        pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.anomaly_detector_arn(input.into());
             self
         }
         /// <p>The ARN of the detector to update.</p>
@@ -2568,8 +2565,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
-        pub fn kms_key_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_arn(signature.into());
+        pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of an AWS KMS encryption key.</p>
@@ -2580,9 +2577,9 @@ pub mod fluent_builders {
         /// <p>The updated detector description.</p>
         pub fn anomaly_detector_description(
             mut self,
-            signature: impl Into<std::string::String>,
+            input: impl Into<std::string::String>,
         ) -> Self {
-            self.inner = self.inner.anomaly_detector_description(signature.into());
+            self.inner = self.inner.anomaly_detector_description(input.into());
             self
         }
         /// <p>The updated detector description.</p>
@@ -2596,9 +2593,9 @@ pub mod fluent_builders {
         /// <p>Contains information about the configuration to which the detector will be updated.</p>
         pub fn anomaly_detector_config(
             mut self,
-            signature: crate::model::AnomalyDetectorConfig,
+            input: crate::model::AnomalyDetectorConfig,
         ) -> Self {
-            self.inner = self.inner.anomaly_detector_config(signature);
+            self.inner = self.inner.anomaly_detector_config(input);
             self
         }
         /// <p>Contains information about the configuration to which the detector will be updated.</p>
@@ -2670,8 +2667,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of the dataset to update.</p>
-        pub fn metric_set_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_arn(signature.into());
+        pub fn metric_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_arn(input.into());
             self
         }
         /// <p>The ARN of the dataset to update.</p>
@@ -2683,8 +2680,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dataset's description.</p>
-        pub fn metric_set_description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.metric_set_description(signature.into());
+        pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.metric_set_description(input.into());
             self
         }
         /// <p>The dataset's description.</p>
@@ -2713,8 +2710,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
-        pub fn offset(mut self, signature: i32) -> Self {
-            self.inner = self.inner.offset(signature);
+        pub fn offset(mut self, input: i32) -> Self {
+            self.inner = self.inner.offset(input);
             self
         }
         /// <p>After an interval ends, the amount of seconds that the detector waits before importing data. Offset is only supported for S3 and Redshift datasources.</p>
@@ -2723,8 +2720,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The timestamp column.</p>
-        pub fn timestamp_column(mut self, signature: crate::model::TimestampColumn) -> Self {
-            self.inner = self.inner.timestamp_column(signature);
+        pub fn timestamp_column(mut self, input: crate::model::TimestampColumn) -> Self {
+            self.inner = self.inner.timestamp_column(input);
             self
         }
         /// <p>The timestamp column.</p>
@@ -2753,8 +2750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The dataset's interval.</p>
-        pub fn metric_set_frequency(mut self, signature: crate::model::Frequency) -> Self {
-            self.inner = self.inner.metric_set_frequency(signature);
+        pub fn metric_set_frequency(mut self, input: crate::model::Frequency) -> Self {
+            self.inner = self.inner.metric_set_frequency(input);
             self
         }
         /// <p>The dataset's interval.</p>
@@ -2766,8 +2763,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Contains information about source data used to generate a metric.</p>
-        pub fn metric_source(mut self, signature: crate::model::MetricSource) -> Self {
-            self.inner = self.inner.metric_source(signature);
+        pub fn metric_source(mut self, input: crate::model::MetricSource) -> Self {
+            self.inner = self.inner.metric_source(input);
             self
         }
         /// <p>Contains information about source data used to generate a metric.</p>

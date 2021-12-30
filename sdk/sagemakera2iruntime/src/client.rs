@@ -189,8 +189,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to delete.</p>
-        pub fn human_loop_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(signature.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want to delete.</p>
@@ -263,8 +263,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want information about.</p>
-        pub fn human_loop_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(signature.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want information about.</p>
@@ -336,8 +336,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_after(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_after(signature);
+        pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_after(input);
             self
         }
         /// <p>(Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
@@ -349,8 +349,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
-        pub fn creation_time_before(mut self, signature: aws_smithy_types::DateTime) -> Self {
-            self.inner = self.inner.creation_time_before(signature);
+        pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+            self.inner = self.inner.creation_time_before(input);
             self
         }
         /// <p>(Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
@@ -362,8 +362,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
-        pub fn flow_definition_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(signature.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of a flow definition.</p>
@@ -376,8 +376,8 @@ pub mod fluent_builders {
         }
         /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
         /// <code>Descending</code>.</p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrder) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Optional. The order for displaying results. Valid values: <code>Ascending</code> and
@@ -390,8 +390,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A token to display the next page of results.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>A token to display the next page of results.</p>
@@ -402,8 +402,8 @@ pub mod fluent_builders {
         /// <p>The total number of items to return. If the total number of available items is more than
         /// the value specified in <code>MaxResults</code>, then a <code>NextToken</code> is returned in
         /// the output. You can use this token to display the next page of results. </p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>The total number of items to return. If the total number of available items is more than
@@ -474,8 +474,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop.</p>
-        pub fn human_loop_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(signature.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop.</p>
@@ -488,8 +488,8 @@ pub mod fluent_builders {
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
         /// loop.</p>
-        pub fn flow_definition_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.flow_definition_arn(signature.into());
+        pub fn flow_definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.flow_definition_arn(input.into());
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the flow definition associated with this human
@@ -502,8 +502,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>An object that contains information about the human loop.</p>
-        pub fn human_loop_input(mut self, signature: crate::model::HumanLoopInput) -> Self {
-            self.inner = self.inner.human_loop_input(signature);
+        pub fn human_loop_input(mut self, input: crate::model::HumanLoopInput) -> Self {
+            self.inner = self.inner.human_loop_input(input);
             self
         }
         /// <p>An object that contains information about the human loop.</p>
@@ -516,8 +516,8 @@ pub mod fluent_builders {
         }
         /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
         /// is free of personally identifiable information and/or free of adult content.</p>
-        pub fn data_attributes(mut self, signature: crate::model::HumanLoopDataAttributes) -> Self {
-            self.inner = self.inner.data_attributes(signature);
+        pub fn data_attributes(mut self, input: crate::model::HumanLoopDataAttributes) -> Self {
+            self.inner = self.inner.data_attributes(input);
             self
         }
         /// <p>Attributes of the specified data. Use <code>DataAttributes</code> to specify if your data
@@ -590,8 +590,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the human loop that you want to stop.</p>
-        pub fn human_loop_name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.human_loop_name(signature.into());
+        pub fn human_loop_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.human_loop_name(input.into());
             self
         }
         /// <p>The name of the human loop that you want to stop.</p>

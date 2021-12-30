@@ -369,8 +369,8 @@ pub mod fluent_builders {
         /// Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret to cancel a rotation request. You can specify either the Amazon
@@ -536,8 +536,8 @@ pub mod fluent_builders {
         /// risk confusion and unexpected results when searching for a secret by partial ARN. Secrets Manager
         /// automatically adds a hyphen and six random characters at the end of the ARN.</p>
         /// </note>
-        pub fn name(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.name(signature.into());
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input.into());
             self
         }
         /// <p>Specifies the friendly name of the new secret.</p>
@@ -585,8 +585,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>(Optional) If you include <code>SecretString</code> or <code>SecretBinary</code>, then an
@@ -630,8 +630,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Specifies a user-provided description of the secret.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>(Optional) Specifies a user-provided description of the secret.</p>
@@ -654,8 +654,8 @@ pub mod fluent_builders {
         /// resides in a different account, then you must create a custom CMK and specify the ARN in
         /// this field. </p>
         /// </important>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
@@ -685,8 +685,8 @@ pub mod fluent_builders {
         /// both. They cannot both be empty.</p>
         /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
         /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
-        pub fn secret_binary(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.secret_binary(signature);
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.secret_binary(input);
             self
         }
         /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
@@ -715,8 +715,8 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text
         /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
         /// in the Amazon Web Services CLI User Guide.</p>
-        pub fn secret_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_string(signature.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_string(input.into());
             self
         }
         /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
@@ -877,8 +877,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
         /// destination region.</p>
-        pub fn force_overwrite_replica_secret(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_overwrite_replica_secret(signature);
+        pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_overwrite_replica_secret(input);
             self
         }
         /// <p>(Optional) If set, the replication overwrites a secret with the same name in the
@@ -977,8 +977,8 @@ pub mod fluent_builders {
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to delete the attached resource-based policy for. You
@@ -1098,8 +1098,8 @@ pub mod fluent_builders {
         /// the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or
@@ -1114,8 +1114,8 @@ pub mod fluent_builders {
         /// secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code>
         /// parameter in the same API call.</p>
         /// <p>This value can range from 7 to 30 days with a default value of 30.</p>
-        pub fn recovery_window_in_days(mut self, signature: i64) -> Self {
-            self.inner = self.inner.recovery_window_in_days(signature);
+        pub fn recovery_window_in_days(mut self, input: i64) -> Self {
+            self.inner = self.inner.recovery_window_in_days(input);
             self
         }
         /// <p>(Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
@@ -1145,8 +1145,8 @@ pub mod fluent_builders {
         /// operation does not return the error <code>ResourceNotFoundException</code> in order to
         /// correctly handle retries.</p>
         /// </important>
-        pub fn force_delete_without_recovery(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_delete_without_recovery(signature);
+        pub fn force_delete_without_recovery(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete_without_recovery(input);
             self
         }
         /// <p>(Optional) Specifies that the secret is to be deleted without any recovery window. You
@@ -1266,8 +1266,8 @@ pub mod fluent_builders {
         /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The identifier of the secret whose details you want to retrieve. You can specify either
@@ -1352,8 +1352,8 @@ pub mod fluent_builders {
         }
         /// <p>The desired length of the generated password. The default value if you do not include this
         /// parameter is 32 characters.</p>
-        pub fn password_length(mut self, signature: i64) -> Self {
-            self.inner = self.inner.password_length(signature);
+        pub fn password_length(mut self, input: i64) -> Self {
+            self.inner = self.inner.password_length(input);
             self
         }
         /// <p>The desired length of the generated password. The default value if you do not include this
@@ -1364,8 +1364,8 @@ pub mod fluent_builders {
         }
         /// <p>A string that includes characters that should not be included in the generated password.
         /// The default is that all characters from the included sets can be used.</p>
-        pub fn exclude_characters(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.exclude_characters(signature.into());
+        pub fn exclude_characters(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.exclude_characters(input.into());
             self
         }
         /// <p>A string that includes characters that should not be included in the generated password.
@@ -1379,8 +1379,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that the generated password should not include digits. The default if you do not
         /// include this switch parameter is that digits can be included.</p>
-        pub fn exclude_numbers(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_numbers(signature);
+        pub fn exclude_numbers(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_numbers(input);
             self
         }
         /// <p>Specifies that the generated password should not include digits. The default if you do not
@@ -1399,8 +1399,8 @@ pub mod fluent_builders {
         /// <code>! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | }
         /// ~</code>
         /// </p>
-        pub fn exclude_punctuation(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_punctuation(signature);
+        pub fn exclude_punctuation(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_punctuation(input);
             self
         }
         /// <p>Specifies that the generated password should not include punctuation characters. The
@@ -1419,8 +1419,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that the generated password should not include uppercase letters. The default if
         /// you do not include this switch parameter is that uppercase letters can be included.</p>
-        pub fn exclude_uppercase(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_uppercase(signature);
+        pub fn exclude_uppercase(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_uppercase(input);
             self
         }
         /// <p>Specifies that the generated password should not include uppercase letters. The default if
@@ -1431,8 +1431,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that the generated password should not include lowercase letters. The default if
         /// you do not include this switch parameter is that lowercase letters can be included.</p>
-        pub fn exclude_lowercase(mut self, signature: bool) -> Self {
-            self.inner = self.inner.exclude_lowercase(signature);
+        pub fn exclude_lowercase(mut self, input: bool) -> Self {
+            self.inner = self.inner.exclude_lowercase(input);
             self
         }
         /// <p>Specifies that the generated password should not include lowercase letters. The default if
@@ -1443,8 +1443,8 @@ pub mod fluent_builders {
         }
         /// <p>Specifies that the generated password can include the space character. The default if you
         /// do not include this switch parameter is that the space character is not included.</p>
-        pub fn include_space(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_space(signature);
+        pub fn include_space(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_space(input);
             self
         }
         /// <p>Specifies that the generated password can include the space character. The default if you
@@ -1456,8 +1456,8 @@ pub mod fluent_builders {
         /// <p>A boolean value that specifies whether the generated password must include at least one of
         /// every allowed character type. The default value is <code>True</code> and the operation
         /// requires at least one of every character type.</p>
-        pub fn require_each_included_type(mut self, signature: bool) -> Self {
-            self.inner = self.inner.require_each_included_type(signature);
+        pub fn require_each_included_type(mut self, input: bool) -> Self {
+            self.inner = self.inner.require_each_included_type(input);
             self
         }
         /// <p>A boolean value that specifies whether the generated password must include at least one of
@@ -1557,8 +1557,8 @@ pub mod fluent_builders {
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to retrieve the attached resource-based policy for. You
@@ -1660,8 +1660,8 @@ pub mod fluent_builders {
         /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret containing the version that you want to retrieve. You can specify
@@ -1679,8 +1679,8 @@ pub mod fluent_builders {
         /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
         /// <p>This value is typically a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value with
         /// 32 hexadecimal digits.</p>
-        pub fn version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_id(signature.into());
+        pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_id(input.into());
             self
         }
         /// <p>Specifies the unique identifier of the version of the secret that you want to retrieve. If
@@ -1701,8 +1701,8 @@ pub mod fluent_builders {
         /// to the same secret version . If you don't specify either a <code>VersionStage</code> or
         /// <code>VersionId</code>, then the default is to perform the operation on the version with the
         /// <code>VersionStage</code> value of <code>AWSCURRENT</code>.</p>
-        pub fn version_stage(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_stage(signature.into());
+        pub fn version_stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_stage(input.into());
             self
         }
         /// <p>Specifies the secret version that you want to retrieve by the staging label attached to
@@ -1816,8 +1816,8 @@ pub mod fluent_builders {
         /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
         /// even when there are more results available. You should check <code>NextToken</code> after every
         /// operation to ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>(Optional) Limits the number of results you want to include in
@@ -1836,8 +1836,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> response in a previous request indicating there's more
         /// output available. In a subsequent call, set it to the value of the previous call
         /// <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) Use this parameter in a request if you receive a
@@ -1866,8 +1866,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Lists secrets in the requested order. </p>
-        pub fn sort_order(mut self, signature: crate::model::SortOrderType) -> Self {
-            self.inner = self.inner.sort_order(signature);
+        pub fn sort_order(mut self, input: crate::model::SortOrderType) -> Self {
+            self.inner = self.inner.sort_order(input);
             self
         }
         /// <p>Lists secrets in the requested order. </p>
@@ -1970,8 +1970,8 @@ pub mod fluent_builders {
         /// either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The identifier for the secret containing the versions you want to list. You can specify
@@ -1990,8 +1990,8 @@ pub mod fluent_builders {
         /// get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
         /// even when there are more results available. You should check <code>NextToken</code> after every
         /// operation to ensure that you receive all of the results.</p>
-        pub fn max_results(mut self, signature: i32) -> Self {
-            self.inner = self.inner.max_results(signature);
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
             self
         }
         /// <p>(Optional) Limits the number of results you want to include in
@@ -2010,8 +2010,8 @@ pub mod fluent_builders {
         /// <code>NextToken</code> response in a previous request indicating there's more
         /// output available. In a subsequent call, set it to the value of the previous call
         /// <code>NextToken</code> response to indicate where the output should continue from.</p>
-        pub fn next_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.next_token(signature.into());
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input.into());
             self
         }
         /// <p>(Optional) Use this parameter in a request if you receive a
@@ -2025,8 +2025,8 @@ pub mod fluent_builders {
         /// <p>(Optional) Specifies that you want the results to include versions that do not have any
         /// staging labels attached to them. Such versions are considered deprecated and are subject to
         /// deletion by Secrets Manager as needed.</p>
-        pub fn include_deprecated(mut self, signature: bool) -> Self {
-            self.inner = self.inner.include_deprecated(signature);
+        pub fn include_deprecated(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_deprecated(input);
             self
         }
         /// <p>(Optional) Specifies that you want the results to include versions that do not have any
@@ -2131,8 +2131,8 @@ pub mod fluent_builders {
         /// either the ARN or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to attach the resource-based policy. You can specify
@@ -2148,8 +2148,8 @@ pub mod fluent_builders {
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
-        pub fn resource_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(signature.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
             self
         }
         /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
@@ -2166,8 +2166,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
         /// block resource-based policies that allow broad access to the secret.</p>
-        pub fn block_public_policy(mut self, signature: bool) -> Self {
-            self.inner = self.inner.block_public_policy(signature);
+        pub fn block_public_policy(mut self, input: bool) -> Self {
+            self.inner = self.inner.block_public_policy(input);
             self
         }
         /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
@@ -2329,8 +2329,8 @@ pub mod fluent_builders {
         /// exist.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret to which you want to add a new version. You can specify either the
@@ -2372,8 +2372,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
@@ -2421,8 +2421,8 @@ pub mod fluent_builders {
         ///
         /// <p>This parameter is not accessible if the secret using the Secrets Manager console.</p>
         /// <p></p>
-        pub fn secret_binary(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.secret_binary(signature);
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.secret_binary(input);
             self
         }
         /// <p>(Optional) Specifies binary data that you want to encrypt and store in the new version of
@@ -2451,8 +2451,8 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text
         /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
         /// in the Amazon Web Services CLI User Guide.</p>
-        pub fn secret_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_string(signature.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_string(input.into());
             self
         }
         /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
@@ -2565,8 +2565,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Remove a secret by <code>SecretId</code> from replica Regions.</p>
@@ -2653,8 +2653,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Use the <code>Secret Id</code> to replicate a secret to regions.</p>
@@ -2681,8 +2681,8 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
         /// destination region.</p>
-        pub fn force_overwrite_replica_secret(mut self, signature: bool) -> Self {
-            self.inner = self.inner.force_overwrite_replica_secret(signature);
+        pub fn force_overwrite_replica_secret(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_overwrite_replica_secret(input);
             self
         }
         /// <p>(Optional) If set, Secrets Manager replication overwrites a secret with the same name in the
@@ -2776,8 +2776,8 @@ pub mod fluent_builders {
         /// can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to restore from a previously scheduled deletion. You
@@ -2913,8 +2913,8 @@ pub mod fluent_builders {
         /// Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to rotate. You can specify either the Amazon Resource
@@ -2939,8 +2939,8 @@ pub mod fluent_builders {
         /// <p>Secrets Manager uses this value to prevent the accidental creation of duplicate versions if
         /// there are failures and retries during the function's processing. This value becomes the
         /// <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
@@ -2965,8 +2965,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
-        pub fn rotation_lambda_arn(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.rotation_lambda_arn(signature.into());
+        pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.rotation_lambda_arn(input.into());
             self
         }
         /// <p>(Optional) Specifies the ARN of the Lambda function that can rotate the secret.</p>
@@ -2978,8 +2978,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>A structure that defines the rotation configuration for this secret.</p>
-        pub fn rotation_rules(mut self, signature: crate::model::RotationRulesType) -> Self {
-            self.inner = self.inner.rotation_rules(signature);
+        pub fn rotation_rules(mut self, input: crate::model::RotationRulesType) -> Self {
+            self.inner = self.inner.rotation_rules(input);
             self
         }
         /// <p>A structure that defines the rotation configuration for this secret.</p>
@@ -3051,8 +3051,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Response to <code>StopReplicationToReplica</code> of a secret, based on the <code>SecretId</code>.</p>
@@ -3179,8 +3179,8 @@ pub mod fluent_builders {
         /// Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The identifier for the secret that you want to attach tags to. You can specify either the
@@ -3310,8 +3310,8 @@ pub mod fluent_builders {
         /// the Amazon Resource Name (ARN) or the friendly name of the secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>The identifier for the secret that you want to remove tags from. You can specify either
@@ -3503,8 +3503,8 @@ pub mod fluent_builders {
         /// secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret that you want to modify or to which you want to add a new version.
@@ -3546,8 +3546,8 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <p>This value becomes the <code>VersionId</code> of the new version.</p>
-        pub fn client_request_token(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.client_request_token(signature.into());
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input.into());
             self
         }
         /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
@@ -3588,8 +3588,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
-        pub fn description(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.description(signature.into());
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input.into());
             self
         }
         /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
@@ -3607,8 +3607,8 @@ pub mod fluent_builders {
         /// this field. The user making the call must have permissions to both the secret and the CMK in
         /// their respective accounts.</p>
         /// </important>
-        pub fn kms_key_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.kms_key_id(signature.into());
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.kms_key_id(input.into());
             self
         }
         /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) that Secrets Manager
@@ -3631,8 +3631,8 @@ pub mod fluent_builders {
         /// the contents of the file as a parameter. Either <code>SecretBinary</code> or
         /// <code>SecretString</code> must have a value, but not both. They cannot both be empty.</p>
         /// <p>This parameter is not accessible using the Secrets Manager console.</p>
-        pub fn secret_binary(mut self, signature: aws_smithy_types::Blob) -> Self {
-            self.inner = self.inner.secret_binary(signature);
+        pub fn secret_binary(mut self, input: aws_smithy_types::Blob) -> Self {
+            self.inner = self.inner.secret_binary(input);
             self
         }
         /// <p>(Optional) Specifies updated binary data that you want to encrypt and store in the new
@@ -3658,8 +3658,8 @@ pub mod fluent_builders {
         /// <p>For storing multiple values, we recommend that you use a JSON text
         /// string argument and specify key/value pairs. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters.html">Specifying parameter values for the Amazon Web Services CLI</a>
         /// in the Amazon Web Services CLI User Guide.</p>
-        pub fn secret_string(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_string(signature.into());
+        pub fn secret_string(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_string(input.into());
             self
         }
         /// <p>(Optional) Specifies updated text data that you want to encrypt and store in this new
@@ -3780,8 +3780,8 @@ pub mod fluent_builders {
         /// secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p>Specifies the secret with the version with the list of staging labels you want to modify.
@@ -3794,8 +3794,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The staging label to add to this version.</p>
-        pub fn version_stage(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.version_stage(signature.into());
+        pub fn version_stage(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_stage(input.into());
             self
         }
         /// <p>The staging label to add to this version.</p>
@@ -3811,8 +3811,8 @@ pub mod fluent_builders {
         /// different version, then you must include this parameter and specify the version that the label
         /// is to be removed from. If the label is attached and you either do not specify this parameter,
         /// or the version ID does not match, then the operation fails.</p>
-        pub fn remove_from_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.remove_from_version_id(signature.into());
+        pub fn remove_from_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.remove_from_version_id(input.into());
             self
         }
         /// <p>Specifies the secret version ID of the version that the staging label is to be removed
@@ -3831,8 +3831,8 @@ pub mod fluent_builders {
         /// remove a label from a version, then do not specify this parameter.</p>
         /// <p>If the staging label is already attached to a different version of the secret, then you
         /// must also specify the <code>RemoveFromVersionId</code> parameter. </p>
-        pub fn move_to_version_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.move_to_version_id(signature.into());
+        pub fn move_to_version_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.move_to_version_id(input.into());
             self
         }
         /// <p>(Optional) The secret version ID that you want to add the staging label. If you want to
@@ -3945,8 +3945,8 @@ pub mod fluent_builders {
         /// secret.</p>
         /// <p>For an ARN, we recommend that you specify a complete ARN rather
         /// than a partial ARN.</p>
-        pub fn secret_id(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.secret_id(signature.into());
+        pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.secret_id(input.into());
             self
         }
         /// <p> (Optional) The identifier of the secret with the resource-based policy you want to
@@ -3963,8 +3963,8 @@ pub mod fluent_builders {
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
         /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
-        pub fn resource_policy(mut self, signature: impl Into<std::string::String>) -> Self {
-            self.inner = self.inner.resource_policy(signature.into());
+        pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_policy(input.into());
             self
         }
         /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
